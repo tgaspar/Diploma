@@ -134,40 +134,7 @@ The thesis addresses ...
 
 \subsection{Primer pisanja enaèb} \label{vnos_enacb}
 
-Formule in enaèbe je potrebno oštevilèiti z zaporedno številko v
-oklepaju, npr. (1), in se tako nanje tudi sklicevati. V tekstu je
-potrebno pojasniti pomen posameznih parametrov. Primer:
-
-Enaèba (\ref{eq_1}) opisuje hitrost toèke $\textbf{\textit{v}}$, ki se nahaja
-na telesu:
-\begin{equation}\label{eq_1}
-    \textbf{\textit{v}} = \textbf{\textit{v}}_0 + \boldsymbol{\omega} \times \mathbf{r}
-\end{equation}
-pri èemer $\textbf{\textit{v}}_0$ predstavlja hitrost izhodišèa koordinatnega
-sistema, $\boldsymbol{\omega}$ kotno hitrost, $\mathbf{r}$ pa vektor
-od izhodišèa do toèke.
-
-Enaèbo (\ref{eq_1}) lahko zapišemo v sklopu enaèb po komponentah
-kot:
-\begin{eqnarray}
-% \nonumber prepreci stevilcenje posameznih enacb
-  v_x  &=& v_{0x} + z \;\omega_y - y \;\omega_z \nonumber \\
-  v_y  &=& v_{0y} + x \;\omega_z - z \;\omega_x  \\
-  v_z  &=& v_{0z} + y \;\omega_x - x \;\omega_y \nonumber
-\end{eqnarray}
-
 \subsection{Slike} \label{vnos_slik}
-
-Slike ali fotografije morajo biti oštevilèene in citirane v besedilu
-ter podnaslovljene tako, da je razvidno, kaj predstavljajo. V
-besedilo so vstavljene približno tam, kjer se nanje sklicujemo.
-Slike naj bodo pregledne in naj prikažejo le najpotrebnejšo
-informacijo. Grafi potekov signalov na slikah morajo vsebovati imena
-osi, enote in legendo. Napisi na sliki morajo biti v slovenskem
-jeziku. Za veè podrobnosti o vkljuèevanju vektorskih in bitnih slik v
-okolju LaTex, glej prilogo \ref{dodatekC}.
-
-
 
 
 
@@ -251,160 +218,17 @@ void I2C_Transfer(unsigned Addr,unsigned Data) {
 Postopek dela:
 \begin{description}
 
-    \item[Korak 1] Avtor kreira tekstovno datoteko s konènico \emph{.tex}, ki vsebuje
-tekst in ukaze za oblikovanje teksta (glej osnovno obliko predloge v
-\ref{dodatekB}). Dober uvod v delo z ukazi LaTex so spletna navodila
-\cite{oetiker1995not}. Za pisanje je lahko uporabljen katerikoli
-tekstovni urejevalnik. Priporoèamo uporabo urejevalnikov
-WinEdt\footnote{Dosegljivo na http://www.winedt.org} ali
-TexStudio\footnote{Dosegljivo na http://texstudio.sourceforge.net/},
-ki sta namenski orodji z integriranimi ikonami za posamezne korake.
-Urejevalnika vsebujeta tudi slovar slovenskih
-besed\footnote{Dosegljivo na  http://www.winedt.org/Dict} za sprotno
-preverjanje in deljenje besed.
-
-    \item[Korak 2] Prevajanje izvorne datoteke s prevajalnikom MikTex. Možnost direktnega prevajanja v PDF dokument (ikonca PDFLaTeX), ali pa v EPS dokument (ikonca LaTex - deluje brez vkljuèenih bitnih slik). Pri prevajanju v EPS dokument se najprej ustvari datoteka s konènico \emph{.dvi} (ang. Device Independent file), ki omogoèa ogled dokumenta (ikona DVI Preview).
-    Pri prvem prevajanju se ustvari tudi lista citatov in sklicevanj (datoteka
-    \emph{.aux}).
-
-    \begin{description}
-    \item[Korak 2.1]\footnote{Potrebno samo pri navajanju virov s
-pomoèjo orodja BibTex} Zagon BibTex prevajanja (ikonca Bib), ki na
-    osnovi \emph{.aux} datoteke in podatkov iz baze referenc,
-    ustvari oblikovan spisek referenc (datoteka \emph{.bbl}) glede
-    na izbran stil citiranja (datoteka \emph{.bst}).
-    \item[Korak 2.2]\footnote{Potrebno samo pri navajanju virov s
-pomoèjo orodja BibTex} Ponovno prevajanje s prevajalnikom MikTex, ki
-    v glavni dokument vkljuèi oblikovane reference iz datoteke
-    \emph{.bbl}.
-    \end{description}
-
-    \item[Korak 3] Ponovno prevajanje s prevajalnikom MikTex, ki
-    poveže spisek referenc z navedki v tekstu.
-    \item[Korak 4a] Pretvorba oblikovanega dokumenta v \emph{PostScript} format in nato izvoz v obliki PDF dokumenta:
-    \begin{itemize}
-        \item ikona DVI-PS - pretvorba v datoteko \emph{.ps}
-        \item Ogled \emph{PostScript} datoteke s programom
-        \emph{GhostView}
-        \item Pretvorba v PDF dokument: GhostView:
-        File/Convert/pdfwrite, pri èemer je potrebno izbrati
-        parametre za format PDF/A glede na spletna navodila\footnote{http://svn.ghostscript.com/ghostscript/trunk/gs/doc/Ps2pdf.htm\#PDFA}.
-    \end{itemize}
-    V tem primeru morajo biti vse vkljuèene slike v formatu
-    \emph{PostScript}. V tem naèinu je možna tudi uporaba orodja \emph{PSfrag}, ki omogoèa
-zamenjavo tekstovnih elementov na originalni sliki s poljubnim
-tekstom ali enaèbo.
-    \item[Korak 4b] Pretvorba oblikovanega dokumenta neposredno v
-    PDF format. Ikona PDFTexify. V tem primeru so vkljuèene
-    slike lahko le v formatu PDF, PNG, JPEG ali GIF.
-
-    Pretvorba iz formata PDF v format PDF/A, ki je zahtevan za oddajo v Repozitorij UL, je
-    možna z uporabo spletnega prevajalnika\footnote{http://convert.neevia.com}, programa Adobe Professional (plaèljiva rešitev) ali programa PDFCreator\footnote{http://www.pdfforge.org/pdfcreator} (zastonjska rešitev). Program PDFCreator z nastavitvami\footnote{http://www.jud.ct.gov/external/super/e-services/efile/How-to-Save-or-Convert-to-PDFA.htm}
-omogoèa tiskanje v format PDF/A, saj se namesti kot tiskalnik. 
 \end{description}
-
-
-
 
 \chapter{Primer LaTex kode} \label{dodatekB}
 
-Primer minimalne LaTex datoteke s konènico \emph{.tex}:
-
-\footnotesize
-\begin{verbatim}
-
-\documentclass[a4paper,twoside,openright,12pt]{book}
-
-\usepackage[cp1250]{inputenc}   % uporaba slo sumnikov
-\usepackage[slovene]{babel}
-\usepackage[pdftex]{UNI-LJ-FE-Diploma}    % stil oblike diplome na FE
-
-
-\begin{document}
-
-   Sem sodi tekst...
-
-\end{document}
-
-\end{verbatim}
-\normalsize
-
 \chapter{Vkljuèevanje slik v okolju LaTex} \label{dodatekC}
-
-Vektorske slike morajo biti v formatu EPS shranjene brez glave z bitno sliko
-za predogled. Slike vkljuèujemo z ukazom \verb1\includegraphics1 v okolju \verb1\figure1.
-Dodatno orodje PSFRAG omogoèa zamenjavo napisov na vektorski sliki z napisi LaTex,
-kot so npr. grške èrke ali enaèbe. Za uporabo je potrebna vkljuèitev orodja z ukazom \verb1\usepackage{psfrag}1.
-Primer LaTex kode za zamenjavo napisa $test$ na sliki z LaTex simbolom $\epsilon \;[\mu]$ je:
-
-\footnotesize
-\begin{verbatim}
-\begin{figure}[h]
-\centering
-    \psfrag{test}[B1][B1][1][0]{$\epsilon \;[\mu]$}
-    \includegraphics[width=0.75\columnwidth]{primer_vektorske_slike.eps}
-    \caption{\label{slika4} Primer slike}
-\end{figure}
-\end{verbatim}
-\normalsize
-
-Za vkljuèitev vektorske slike je možno uporabiti tudi makro
-\textbackslash epsslika, ki je vkljuèen v stil za predlogo. Prvi
-parameter v makroju \textbackslash epsslika je podnaslov, drugi pa
-je ime datoteke s sliko brez konènice (privzeta konènica je .eps) in
-hkrati tudi labela za sklicevanje na sliko. Pri stilu je za
-vkljuèevanje slik potrebno izbrati ustrezno opcijo pdftex ali pctex,
-glede na to katero distribucijo LaTeX prevajalnika se uporablja za
-prevajanje.
-
-\slikaeps{Primer vektorske slike eps. Za vkljuèevanje slika ne sme
-imeti glave z bitno sliko za predogled.}{vektorska_slika_2}
-
-Za vkljuèevanje bitne slike ja v predlogi na voljo makro \textbackslash jpgslika.
-Prvi parameter v makroju \textbackslash jpgslika je podnaslov, drugi pa je ime datoteke s
-sliko (privzeta konènica je .jpg) in hkrati tudi labela za sklicevanje na sliko.
-Slike so v tekst vkljuèene v originalni velikosti.
-
-Slika \ref{bitnaslika.png} predstavlja primer vkljuèitve bitne slike
-JPG formata velikosti 9.4 x 7.6 cm.
-
-\bitnaslika{Primer vkljuèitve bitne slike: sistem
-vodenja}{bitnaslika.png}{9.4cm}{7.6cm}
-
-
 
 \chapter{Instalacija programskih orodij za urejanje teksta v
 okolju LaTex } \label{dodatekD}
 
-
-\begin{description}
-    \item[Korak 1] Instalacija paketa MikTex, ki je prevajalnik za dokumente napisane v kodi LaTex.
-    Datoteke dostopne na spletu: \texttt{http://miktex.org/}
-    \item[Korak 2] Instalacija tekstovnega urejevalnika WinEdt.\\
-    Datoteke dostopne na spletu: \texttt{http://www.winedt.com/}
-    \item[Korak 3] Instalacija ogledovalnika \emph{PostScript}
-    dokumentov:
-    \begin{itemize}
-        \item instalacija modula GhostScript
-        \item instalacija modula GhostView
-    \end{itemize}
-    Datoteke dostopne na spletu: \texttt{www.cs.wisc.edu/\textasciitilde ghost/}
-\end{description}
-
-
 \chapter{Predloge za navajanje literature - baza BibTex}
 \label{dodatekE}
-
-Podani so primeri predlog za navajanje èlanka, knjige, prispevka v
-zborniku in dokumenta s spletne strani. Veè predlog za razliène
-primere je skupaj z literaturo navedenih v datoteki
-\texttt{literatura.bib}.
-
-\noindent Izvoz citatov v BibTex formatu je možen na spletni strani
-\texttt{http://scholar.google.com/}, opcija \emph{Import into
-BibTeX}.
-
-
 
 \footnotesize
 \begin{verbatim}

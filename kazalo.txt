@@ -1,4 +1,4 @@
-Magisterska
+﻿Magisterska
 
 
 Kazalo:
@@ -22,7 +22,7 @@ Kazalo:
 		- Implementacija
 		- Rezultati
 	
-		Kontakt s podajnim objektom
+	Kontakt s podajnim objektom
 	Rezultati
 	Simulink knjižice
 	

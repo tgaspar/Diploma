@@ -33,10 +33,7 @@
 
 
 %*************************** ZAHVALA ************************************
-\zahvala V zahvali se kandidati zahvali mentorju in poimensko tudi
-vsem sodelavcem in prijateljem, ki so pomagali in prispevali pri
-delu v laboratoriju, na raèunalniku, v delavnici, pri tehnièni
-izdelavi dela in drugje.
+\zahvala Zahvalil se bi rad staršem za popolno podporo pri študiju. Bratu za, ker mi je dajal motivacijo èeprav tega ni vedel.
 
 
 %*************************** VSEBINA *************************************
@@ -109,98 +106,51 @@ The thesis addresses ...
 534]{juvznivc1992diplomska}.
 
 %*********************** OSREDNJA POGLAVJA ********************************
-\chapter{Izbira teme zakljuènega dela} \label{izbira_teme}
+
+%*********************** PA10 ********************************
+\chapter{Robotski manipulator Mitsubishi PA10} \label{pa10}
 
 \begin{enumerate}
 
 \item 
 \end{enumerate}
 
-\chapter{Prijava zakljuènega dela} \label{prijava}
+%*********************** SERVO KRMILNIK ********************************
+\chapter{Servo Krmilnik} \label{servo}
+\section{Komunikacija}
+\section{odprtost}
 
 \begin{enumerate}
 \item 
 \end{enumerate}
 
-\chapter{Navodilo za pisanje} \label{navodilo_pisanje}
+%*********************** ARCNET SERVER ********************************
+\chapter{arcNET strežnik} \label{arcnet}
 
-\section{Splošna navodila} \label{splosna_navodila}
+\section{arcNET protocol}
+\section{Razlogi za strežnik}
+\section{JR3 senzor}
 
-\begin{enumerate}
-\item 
-\end{enumerate}
+%*********************** ADMITANÈNO VODENJE ********************************
+\chapter{Admitanèno krmiljenje} \label{admitance}
+\section{Teorija}
+\section{Implementacija}
+\section{Rezultati}
 
-\section{Podrobna navodila} \label{podrobna_navodila}
-
-\subsection{Primer pisanja enaèb} \label{vnos_enacb}
-
-\subsection{Slike} \label{vnos_slik}
-
-
-
-
-
-\slikaeps{Primer vkljuèitve slike}{vektorska_slika_1}
-
-%namesto makroja \slikaeps se v MikTexu uporabi tudi naslednji naèin. Za preizkus odkomentirajte spodnje vrstice. Ne dela v PcTeXu.
-%\begin{figure}[h]
-%\centering
-%\includegraphics[width=0.75\columnwidth]{vektorska_slika_1.eps}
-%\caption{\label{oblika_signalov} Primer vkljuèitve slike}
-%\end{figure}
+%*********************** INVERZNA KINEMATIKA ********************************
+\chapter{Krmiljenje z inverzno dinamiko} \label{invdyn}
+\section{Teorija}
+\section{Implementacija}
+\section{Rezultati}
 
 
-\subsection{Tabele}
+%*********************** REZULTATI ********************************
+\chapter{Rezultati} \label{rezultati}
 
+%*********************** SIMULINK KNJIŽNICE ********************************
+\chapter{Simulink knjižice} \label{simulink}
 
-\begin{table}[h]
-\centering
-\begin{footnotesize}
-\begin{tabular}{|l||c|c|}
- \hline Izolant (pri $20^o$C) & $\emph{E}_p$ / (V/m) & $U /$ V  \\
- \hline \hline
- zrak & 3  & 30 \\
- trd papir &  10 & 40 \\
- trda guma & 10  & 36 \\
-  transformatorsko olje & 15 & 34.5 \\
-   porcelan & 20 & 45 \\
-   polivinilklorid (PVC) & 50 & 70 \\
-    polistirol & 80  & 45\\
-  \hline
-\end{tabular}
-\end{footnotesize}
-  \caption{Prebojne trdnosti izolantov in prikljuène napetosti}
-  \label{prebojne_trdnosti}
-\end{table}
-
-\subsection{Programska koda}
-
-Manjši deli programske kode so lahko navedeni in opisani v tekstu.
-Oblika teksta programske kode se loèi od oblike ostalega teksta.
-Primer:
-
-Funkcija, ki omogoèa prenos podatkov, je naslednja:
-
-\small
-\begin{verbatim}
-void I2C_Transfer(unsigned Addr,unsigned Data) {
-    I2CAddress = Addr;
-    I2CData = Data;
-
-    I2CONCLR = 0x000000FF;  // Izbris I2C nastavitev
-    I2CONSET = 0x00000040;  // Vklop I2C prenosa
-    I2CONSET = 0x00000020;  // Start signal
-}
-\end{verbatim}
-\normalsize
-
-
-\chapter{Oddaja zakljuènega dela} \label{oddaja}
-
-
-
-\chapter{Zagovor zakljuènega dela} \label{zagovor}
-
+%*********************** ZAKLJUÈEK ********************************
 \chapter{Zakljuèek} \label{zakljucek}
 
 
@@ -217,7 +167,7 @@ void I2C_Transfer(unsigned Addr,unsigned Data) {
 
 Postopek dela:
 \begin{description}
-
+\item
 \end{description}
 
 \chapter{Primer LaTex kode} \label{dodatekB}

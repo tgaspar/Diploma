@@ -1,0 +1,28 @@
+Magisterska
+
+
+Kazalo:
+	Uvod
+	Robot PA10
+	Servo Krmilnik
+		- komunikacija
+		- odprtost
+	arcNET server
+		- posrednik
+		- komunikacija
+		- frekvenca
+		- prednost/izboljšave
+		- JR3 senzor
+	Admitančno krmiljenje
+		- Teorija
+		- Implementacija
+		- Rezultati
+	Krmiljenje z inverzno dinamiko
+		- Teorija
+		- Implementacija
+		- Rezultati
+	
+		Kontakt s podajnim objektom
+	Rezultati
+	Simulink knjižice
+	

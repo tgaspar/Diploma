@@ -33,7 +33,8 @@
 
 
 %*************************** ZAHVALA ************************************
-\zahvala Zahvalil se bi rad staršem za popolno podporo pri študiju. Bratu za, ker mi je dajal motivacijo èeprav tega ni vedel.
+\zahvala Zahvalil se bi rad staršem za popolno podporo pri študiju, bratu, ker me je motiviral èeprav tega ni vedel ter partnerki, ker je vedela kaj je treba reè v katerem trenutku.
+Zahvalil bi se tudi somentorju Leonu Žlajpahu, ker mi je z izkušnjami ogromno pomagal. 
 
 
 %*************************** VSEBINA *************************************
@@ -102,25 +103,43 @@ The thesis addresses ...
 \chapter{Uvod} \label{uvod}
 
 
-\cite{miklavvcivc2010objavljanje} ali \cite[stran 520 -
-534]{juvznivc1992diplomska}.
-
 %*********************** OSREDNJA POGLAVJA ********************************
 
 %*********************** PA10 ********************************
-\chapter{Robotski manipulator Mitsubishi PA10} \label{pa10}
+\chapter{Mehanska ter senzorska oprema} \label{oprema}
 
-Celotno delo, ki je bilo opravljeno pred pisanjem tega dela je bilo narejeno na robotskem mehanizmu PA10
+\section{Robotski manipulator PA10}
+Celotno delo, ki je bilo opravljeno pred pisanjem tega dela je bilo narejeno na robotskem mehanizmu Portable Arm - PA10, proizvajalca Mitsubishi Heavy Industries. Robotski mehanizem ima 7 sklepov, kar ga uvršèa v kategorijo redundantnih mehanizmov. Mehanizem ima sicer precej omejen delovni prostor, ima pa precej odprt servo krmilik. Odprtost v smislu, da nam omogoèa nastavljanja hitrosti in navore za vsak sklep posebej, omogoèa nam vklapljanje ali izklapljanje zavore ter vklop ali izklop posameznega motorja. Hkrati imamo tudi možnosti nastavljanja krmilniške EEPROM tabele, v kateri so shranjeni pomembni parametri vodenja motorjev, npr. ojaèanja regulatorjev. Robotski manipulator ima tudi prednost prenosljivosti, saj tehta le 36 Kg in je mogoèe ga hitro namestiti na drugi podstavek ali ga premakniti.
 
-\begin{enumerate}
+Harmonic Drive!
 
-\item 
-\end{enumerate}
+\subsection{Kinematièni model}
 
+Robotski manipulator PA10 ima 7 stopenj prostosti. Sklepi so razvršèeni po antropomorfnih spklepih, da spominjajo na èloveško roko. Tako imamo 2 sklepa za ramo (S1 in S2), 2 sklepa za komolec (E1 in E2) ter 3 za zapestje (W1, W2 in W3). 
+
+\input{./Slike/pa10-drawing.tex}
+
+Iz dokumentacije je moè razbrati kinematiène podatke robota ter s pomoèjo teh zgraditi Denavit-Hartemberg tabelo (kasneje D-H tabela). S pomoèjo tabele lahko nato opišemo kinematièni model robota. 
+
+
+\section{Servo Krmilnik} \label{servo}
 %*********************** SERVO KRMILNIK ********************************
-\chapter{Servo Krmilnik} \label{servo}
-\section{Komunikacija}
-\section{odprtost}
+Krmilni signal za krmiljenje motorjev pride iz servo krmilnika. Ta je odgovoren za krmiljenje motorjev tako, da se vrtijo s referenèno hitrostjo ter da proizvajajo referenèni navor. Servo krmilnik je napajan iz omrežne napetosti 230 V / 50 Hz.
+
+
+\subsection{Komunikacija}
+Servo krmilnik ima dva prikljuèka za optiène kable, oddajni (Tx) ter sprejemni (Rx) signal. Komunikacijski protokol s katerim lahko z osebnim raèunalnikov komuniciramo do servo krmilnika je arcNET.
+
+\subsection{Odprtost}
+
+\section{Senzor sile in navorov - JR3}
+
+
+Mnogo krat želimo na vrhu robotskega mehanizma imeti senzor, ki nam pove kakšne sile delujejo na vrh. MV primeru tega dela se je uporabljal JR3 senzor sil in navorov. Senzor JR3 omogoèa merjenje sil ter navorov v vseh treh oseh (X, Y ter Z). Znotraj senzorja so uporovni mostièi. 
+Senzor se prikljuèi na osebni raèunalnik bodisi preko kartice na PCI vodilu ali kartice na ISA vodilu. Med delom je nastala programska oprema za branje sil ter navorov iz registrov DSP cartice, ki je na ISA vodilu. Kartica omogoèa osnovne filtre, ki so veèinoma nizkoprepustni. Vrednosti sil ter navorov dobimo tako, da preberemo vrednost iz registra želenega filtra ter pomnožimo s doloèeno konstanto.
+
+
+
 
 \begin{enumerate}
 \item 
@@ -129,9 +148,13 @@ Celotno delo, ki je bilo opravljeno pred pisanjem tega dela je bilo narejeno na 
 %*********************** ARCNET SERVER ********************************
 \chapter{arcNET strežnik} \label{arcnet}
 
+V sklopu tega dela je nastal UDP - arcNET strežnik, ki skrbi za komunikacijo med servo krmilnikom ter programom za kontrolo. Strežniški program je nastal na operacijskem sistemu Linux ter v programskem jeziku C. Razlog za to je bila zahteva, da je èim bližje realnemu èasu - real time. Strežnik opravlja glavni program s frekvenco 500 Hz. 
+
 \section{arcNET protocol}
 \section{Razlogi za strežnik}
-\section{JR3 senzor}
+
+
+
 
 %*********************** ADMITANÈNO VODENJE ********************************
 \chapter{Admitanèno krmiljenje} \label{admitance}
@@ -152,6 +175,7 @@ Celotno delo, ki je bilo opravljeno pred pisanjem tega dela je bilo narejeno na 
 %*********************** SIMULINK KNJIŽNICE ********************************
 \chapter{Simulink knjižice} \label{simulink}
 
+Ob nastajanju tega dela so bile razvite razne simulink knjižnice za krmiljnenje robota PA10. Namen teh je omogoèiti uporabo robotskega mehanizma PA10 osebam, ki niso seznanjene z vsemi podrobnosti.
 %*********************** ZAKLJUÈEK ********************************
 \chapter{Zakljuèek} \label{zakljucek}
 

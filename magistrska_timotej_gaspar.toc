@@ -5,7 +5,7 @@
 \contentsline {subsection}{\numberline {2.1.1}Kinemati\v cni model}{7}
 \contentsline {section}{\numberline {2.2}Servo Krmilnik}{9}
 \contentsline {subsection}{\numberline {2.2.1}Komunikacija}{9}
-\contentsline {subsection}{\numberline {2.2.2}odprtost}{9}
+\contentsline {subsection}{\numberline {2.2.2}Odprtost}{9}
 \contentsline {section}{\numberline {2.3}Senzor sile in navorov - JR3}{9}
 \contentsline {chapter}{\numberline {3}arcNET stre\v znik}{11}
 \contentsline {section}{\numberline {3.1}arcNET protocol}{11}

@@ -1,4 +1,4 @@
-﻿Magisterska
+﻿Magistrska
 
 
 Kazalo:
@@ -13,16 +13,23 @@ Kazalo:
 		- frekvenca
 		- prednost/izboljšave
 		- JR3 senzor
-	Admitančno krmiljenje
+	Client
+		- Trenutno stanje (Simulink)
+		- Izboljšave - xPC Target (Interpolacija)
+		- Primer Clienta v Simulinku
+	Admitančno vodenje
 		- Teorija
 		- Implementacija
+		- Simulacija
 		- Rezultati
-	Krmiljenje z inverzno dinamiko
+	Vodenje z inverzno dinamiko
 		- Teorija
 		- Implementacija
+		- Simulacija
 		- Rezultati
-	
 	Kontakt s podajnim objektom
+		- Admitančno
+		- Inverzna dinamika
 	Rezultati
-	Simulink knjižice
+	
 	

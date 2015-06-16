@@ -1,22 +1,13 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.1.22)  27 MAY 2015 17:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  16 JUN 2015 16:01
 entering extended mode
 **magistrska_timotej_gaspar.tex
-(C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.tex
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
- lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
-ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
-an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
-ishmax, welsh, loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\book.cls"
-Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\bk12.clo"
-File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+(magistrska_timotej_gaspar.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 69 languages loaded.
+("C:\Program Files\MiKTeX\tex\latex\base\book.cls"
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX\tex\latex\base\bk12.clo"
+File: bk12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -31,34 +22,33 @@ File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+("C:\Program Files\MiKTeX\tex\latex\base\inputenc.sty"
+Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\cp1250.def"
-File: cp1250.def 2008/03/30 v1.1d Input encoding file
+("C:\Program Files\MiKTeX\tex\latex\base\cp1250.def"
+File: cp1250.def 2015/03/17 v1.2c Input encoding file
 ))
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
-Package: babel 2008/07/08 v3.8m The Babel package
+("C:\Program Files\MiKTeX\tex\latex\babel\babel.sty"
+Package: babel 2014/09/25 3.9l The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+("C:\Program Files\MiKTeX\tex\latex\00miktex\bblopts.cfg"
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\Slovene.ldf"
+("C:\Program Files\MiKTeX\tex\latex\babel-slovenian\Slovene.ldf"
 Language: slovene 2005/03/31 v1.2m Slovene support from the babel system
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
-File: babel.def 2008/07/08 v3.8m Babel common definitions
+("C:\Program Files\MiKTeX\tex\latex\babel\babel.def"
+File: babel.def 2014/09/25 3.9l Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
 )
 Package babel Info: Making " an active character on input line 79.
-))
-(C:\Users\Vaio\Documents\GitHub\Diploma\UNI-LJ-FE-Diploma.sty
+)) (UNI-LJ-FE-Diploma.sty
 
 UNI-LJ-FE-Diploma stilska opcija V.1.0 junij 2013
 Stilska opcija za diplome na Fakulteti za elektrotehniko Univerze v Ljubljani
@@ -69,24 +59,24 @@ Dopolnil: Ales Hribar 2006
 Dopolnil: Sebastjan Slajpah, 2013
 Dopolnil in pre\v cistil: Sa\v so Toma\v zi\v c, 2013
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+("C:\Program Files\MiKTeX\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+("C:\Program Files\MiKTeX\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+("C:\Program Files\MiKTeX\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks16
 \ex@=\dimen104
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+("C:\Program Files\MiKTeX\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen105
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+("C:\Program Files\MiKTeX\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count89
@@ -127,31 +117,31 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+("C:\Program Files\MiKTeX\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+("C:\Program Files\MiKTeX\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks21
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+("C:\Program Files\MiKTeX\tex\latex\graphics\graphics.sty"
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files\MiKTeX\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files\MiKTeX\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 94.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+("C:\Program Files\MiKTeX\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count101
@@ -159,28 +149,28 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen113
 \Gin@req@width=\dimen114
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
+("C:\Program Files\MiKTeX\tex\latex\oberdiek\epstopdf.sty"
 Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+("C:\Program Files\MiKTeX\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+("C:\Program Files\MiKTeX\tex\latex\oberdiek\grfext.sty"
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\kvdefinekeys.sty"
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+("C:\Program Files\MiKTeX\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\kvsetkeys.sty"
 Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\etexcmds.sty"
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\ifluatex.sty"
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -189,11 +179,11 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
@@ -224,7 +214,11 @@ G,.JBIG2,.JB2,.eps]
 \yyydec=\count109
 \tmpcount=\count110
 )
-(C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.aux)
+(magistrska_timotej_gaspar.aux
+
+LaTeX Warning: Label `fig:pa10drawing' multiply defined.
+
+)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
@@ -237,8 +231,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
-
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+ ("C:\Program Files\MiKTeX\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count111
 \scratchdimen=\dimen121
@@ -254,7 +247,8 @@ LaTeX Font Info:    ... okay on input line 24.
 ) [1
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3
+{C:/Users/Timotej Gašpar/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [
+2] [3
 
 ]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -263,18 +257,16 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [4
 
-] (C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.toc
-[5])
+] (magistrska_timotej_gaspar.toc [5])
 \tf@toc=\write3
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[6] (C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.lof)
+[6] (magistrska_timotej_gaspar.lof)
 \tf@lof=\write4
-
-[7
+ [7
 
 ]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -283,30 +275,27 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [8
 
-] (C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.lot)
+] (magistrska_timotej_gaspar.lot)
 \tf@lot=\write5
-
-[9]
+ [9]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [10
 
-] (C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.lof)
+] (magistrska_timotej_gaspar.lof)
 \tf@lof=\write6
-
-[11]
+ [11]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [12
 
-] (C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.lof)
+] (magistrska_timotej_gaspar.lof)
 \tf@lof=\write7
-
-[1
+ [1
 
 ]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -315,10 +304,9 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [2
 
-] (C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.lof)
+] (magistrska_timotej_gaspar.lof)
 \tf@lof=\write8
-
-[3]
+ [3]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -336,41 +324,66 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 ]
   2.
-(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\pa10-drawing.tex
-<./Slike/pa10-drawing.png, id=65, 517.935pt x 595.47469pt>
+[7] (Slike/arm_length.tex
+<./Slike/arm_length.png, id=69, 1084.05pt x 175.40532pt>
+File: ./Slike/arm_length.png Graphic file (type png)
+
+<use ./Slike/arm_length.png>
+Package pdftex.def Info: ./Slike/arm_length.png used on input line 2.
+(pdftex.def)             Requested size: 412.56496pt x 66.75374pt.
+) (Slike/pa10-drawing.tex
+<./Slike/pa10-drawing.png, id=71, 517.935pt x 595.47469pt>
 File: ./Slike/pa10-drawing.png Graphic file (type png)
 
 <use ./Slike/pa10-drawing.png>
 Package pdftex.def Info: ./Slike/pa10-drawing.png used on input line 2.
 (pdftex.def)             Requested size: 412.56496pt x 474.35416pt.
-) [7]
+)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[8 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/pa10-drawing.png>]
+[8 <./Slike/arm_length.png>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[9]
+[9 <./Slike/pa10-drawing.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 178.
+
+
+("C:\Program Files\MiKTeX\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 178.
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[10
-
-]
-  3.
-[11]
+[10]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[12
+[11] (Slike/control_mode.tex
+<./Slike/control_mode.png, id=90, 1063.72406pt x 534.49687pt>
+File: ./Slike/control_mode.png Graphic file (type png)
 
-]
-  4.
+<use ./Slike/control_mode.png>
+Package pdftex.def Info: ./Slike/control_mode.png used on input line 2.
+(pdftex.def)             Requested size: 412.56496pt x 207.30298pt.
+)
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[12 <./Slike/control_mode.png>]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
 [13]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -379,7 +392,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [14
 
 ]
-  5.
+  3.
 [15]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -388,7 +401,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [16
 
 ]
-  6.
+  4.
 [17]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -397,7 +410,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [18
 
 ]
-  7.
+  5.
 [19]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -406,15 +419,17 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [20
 
 ]
-  8.
-(C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.bbl) [21]
+  6.
+[21]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [22
 
-] [23]
+]
+  7.
+[23]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -422,17 +437,15 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [24
 
 ]
-  A.
-[25]
+  8.
+(magistrska_timotej_gaspar.bbl) [25]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [26
 
-]
-  B.
-[27]
+] [27]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -440,7 +453,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [28
 
 ]
-  C.
+  A.
 [29]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -449,36 +462,60 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [30
 
 ]
-  D.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [31]
+  B.
+[31]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[32] (C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.aux) ) 
+[32
+
+]
+  C.
+[33]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[34
+
+]
+  D.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[36] (magistrska_timotej_gaspar.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2633 strings out of 493921
- 35797 string characters out of 3147285
- 96122 words of memory out of 3000000
- 5869 multiletter control sequences out of 15000+200000
- 11998 words of font info for 42 fonts, out of 3000000 for 9000
- 841 hyphenation exceptions out of 8191
- 49i,11n,25p,843b,264s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmsl12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmtt10.pfb>
-Output written on magistrska_timotej_gaspar.pdf (44 pages, 186643 bytes).
+ 2782 strings out of 493671
+ 36867 string characters out of 3145458
+ 106848 words of memory out of 3000000
+ 6057 multiletter control sequences out of 15000+200000
+ 12345 words of font info for 43 fonts, out of 3000000 for 9000
+ 1025 hyphenation exceptions out of 8191
+ 49i,11n,25p,650b,264s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+r17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Pr
+ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmtt10.pfb>
+Output written on magistrska_timotej_gaspar.pdf (48 pages, 335105 bytes).
 PDF statistics:
- 180 PDF objects out of 1000 (max. 8388607)
+ 212 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

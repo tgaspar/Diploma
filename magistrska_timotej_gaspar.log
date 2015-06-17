@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  16 JUN 2015 16:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  17 JUN 2015 14:48
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -219,18 +219,18 @@ G,.JBIG2,.JB2,.eps]
 LaTeX Warning: Label `fig:pa10drawing' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
  ("C:\Program Files\MiKTeX\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count111
@@ -349,14 +349,14 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [9 <./Slike/pa10-drawing.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 178.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 179.
 
 
 ("C:\Program Files\MiKTeX\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 178.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 179.
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -393,15 +393,19 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 ]
   3.
-[15]
+
+Underfull \vbox (badness 1062) has occurred while \output is active []
+
+ [15]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[16
+[16]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
 
-]
-  4.
 [17]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -410,7 +414,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [18
 
 ]
-  5.
+  4.
 [19]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -419,7 +423,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [20
 
 ]
-  6.
+  5.
 [21]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -428,7 +432,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [22
 
 ]
-  7.
+  6.
 [23]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -437,15 +441,17 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [24
 
 ]
-  8.
-(magistrska_timotej_gaspar.bbl) [25]
+  7.
+[25]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [26
 
-] [27]
+]
+  8.
+(magistrska_timotej_gaspar.bbl [27]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -453,17 +459,18 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [28
 
 ]
-  A.
-[29]
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+[]\OT1/cmr/m/n/12 A. Pen-na-run, ``Li-nux ARC-net HOWTO.'' Do-se-gljivo:
+ []
+
+) [29]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [30
 
-]
-  B.
-[31]
+] [31]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -471,7 +478,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [32
 
 ]
-  C.
+  A.
 [33]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -480,28 +487,46 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [34
 
 ]
-  D.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [35]
+  B.
+[35]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[36] (magistrska_timotej_gaspar.aux)
+[36
+
+]
+  C.
+[37]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[38
+
+]
+  D.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[40] (magistrska_timotej_gaspar.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2782 strings out of 493671
- 36867 string characters out of 3145458
- 106848 words of memory out of 3000000
- 6057 multiletter control sequences out of 15000+200000
- 12345 words of font info for 43 fonts, out of 3000000 for 9000
+ 2794 strings out of 493671
+ 37022 string characters out of 3145458
+ 106888 words of memory out of 3000000
+ 6068 multiletter control sequences out of 15000+200000
+ 12514 words of font info for 44 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 49i,11n,25p,650b,264s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,11n,25p,660b,264s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/t
@@ -512,10 +537,11 @@ ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmtt10.pfb>
-Output written on magistrska_timotej_gaspar.pdf (48 pages, 335105 bytes).
+/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+
+Output written on magistrska_timotej_gaspar.pdf (52 pages, 356102 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
+ 229 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -15,7 +15,8 @@
 
 %*************************** NASLOVNA STRAN *****************************
 \naslov{Vodenje robota v stiku s podajnim objektom}
-\avtor{Timotej Gašpar} \univerza{Univerza v Ljubljani}
+\avtor{Timotej Gašpar} 
+\univerza{Univerza v Ljubljani}
 \fakulteta{Fakulteta za elektrotehniko}
 \delo{Magistrsko delo}
 \date{Ljubljana, 2015}
@@ -168,7 +169,7 @@ Referenène navore ali hitrosti v sklepih na servo krmilniku nastavljamo preko zu
 Za komunikacijo s servo krmilnikom je bil v namen tega dela narejen vmesnik, ki je podrobneje opisan v poglavju XXX.
 
 
-\subsection{Komunikacija z ARCNET vmesnikom}
+\subsection{Komunikacija z ARCNET vmesnikom} \label{arc_drive}
 
 ArcNET vmesnik na  krmilniku skrbi za komunikacijo med servo krmilniki ter visokonivojskim vmesniku. Dovoli hitrost komunikacije do 5 Mb/0.s Njegova naloga je interpretirati dobljene pakete, primerno nastaviti parametre na servo krmilniku ter posredovati primeren odgovor višjenivojskemu vmesniku.
 Ko višjenivojski vmesnik ne pošilja nobenih ukazov je ARCNET vmesnik v èakanju. V tem stanju èaka na primerno sestavljen paket. Vsak paket se zaène z veliko tiskano èrko zapisano v 8-bitnem ASCII formatu. Z razliènimi èrkami lahko izberemo razlièna stanja oz. naèine delovanja ARCNET vmesnika:
@@ -208,11 +209,39 @@ Senzor sile JR3 ima v svoji notranjosti poleg uporovnih listièev še AD-pretvorni
 
 
 %*********************** ARCNET SERVER ********************************
-\chapter{ strežnik} \label{arcnet}
+\chapter{UDP strežnik za komunikacijo s krmilnikom robota ter senzorjem JR3} \label{arcnet}
+V prejšnjem poglavju so bile opisane mehanske (robotski mehanizem PA-10 in krmilik mehanizma) in senzorne (senzor sile JR3) komponente, ki se jih je za to delo uporabljalo. Vendar pa ni nobena od uporabljenih mehanskih ali senzornih komponent imela delujoèega programskega dela. Za potrebe izvedbe tega dela je tako bila narejena primerna programska oprema, da je omogoèala uporabo mehanske ter senzorne opreme. Nastal strežnik za komunikacijo s krmilnikom robota po ARCNET mreži. Sledil je program za prebiranje vrednosti izmerjenih sil ter navorov iz senzorja JR3.
 
-V prejšnjem poglavju so bile opisane mehanske in senzorne komponente, ki se jih je za to delo uporabljalo. V ta namen je nastala programska oprema, ki omogoèa komunikacijo med uporabniškim programom in krmilnikov robota. Cilj programske opreme je bil zagotoviti èasovno kritiène zahteve po delovanju s konstantno frekvenco ter enostavnost in prijazost do uporabnika. 
+V naslednjih poglavjih se bo podrobneje opisalo delovanje obeh programov ter konèni izdelek, ki predstavlja UDP strežnik. Vsa programska oprema, ki bo opisana je bila zgrajena v programskem jeziku C ter na operacijskem sistemu CentOS Linux z jedrom Kernel 2.6. Razlog za tem je, da je dokumentacija \cite{arc_howto}, ki je bila najdena na internetu in opisuje oporabo ARCNET kartic, opisovala postopke za Kernel 2.6.
 
-\section{ protocol}
+
+\section{ARCNET strežnik}
+
+V poglavju \ref{arc_drive} je opisan ARCNET vmesnik na krmilniku robota. Opisana so stanja vmesnika in kakšne so zahteve za preklapljanje med njimi. V tem poglavju bo opisano vse potrebno za vspostaviti komunikacijo z krmilnikom robota po ARCNET protokolu. 
+
+Uporabnik, ki bi želel uporabljati PCI kartico na raèunalniku za komunikacijo po ARCNET omrežju mora najprej zagotoviti ustrezne gonilnike. Tej so na razpolago v \cite{arc_howto}. Gonilnik se doda v Linux okolju kot modul. Po uspešnem zagonu gonilnika lahko uporabnik vspostavi ARCNET mrežo s standardno Linux komando \verb|ifconfig| in sicer na sledeè naèin:
+\begin{verbatim}
+ifconfig arc0 192.168.1.1
+\end{verbatim}
+Od tukaj dalje lahko uporabnik razvija programsko opremo. V primeru tega dela so avtorji uporabljali programski jezik C. Avtorji tega dela so od tega koraka dalje zaèeli razvijati strežnik za posredovanje ukazov pridobljenih iz UDP omrežja na ARCNET omrežje. UDP omrežje se je uprablilo zato, ker lahko dosegamo visoke hitrosti prenosa podatkov, hkrati pa omogoèa možnost hitrega ukrepanja v primeru izguba paketov.
+Avtorji tega dela so razvili strežnik, ki deluje s frekvenco 500 Hz. To se zagotavlja z onemogoèanjem uporabe namizja ter uporabo Linux C funkcije \verb| clock_gettime(clockid_t clk_id, struct timespec *tp);|. Funcija vrne vrednost sistemskega èasa. S veèkratnim klicom te funkcije lahko vidimo kolko sistemskega èasa je minilo od enega do drugega klica. S tem lahko zagotovimo, da program deluje s neko konstantno frekvenco.
+
+\section{JR3 strežnik}
+
+Senzor sil in navorov JR3 ima se lahko povezuje z osebnim raèunalnikom preko kartice, ki se prikljuèi na vodilo ISA (starejši standard) ter kartice, ki se prikljuèi na vodilo PCI (novejši standard). Na uporabljenem raèunalniku za potrebe tega dela je namešèena kartica na vodilu ISA. Ker je standard starejši je podjetje prenehalo s podporo tega standarda. Kot posledica tega so avtorji tega dela razvili svojo programsko opremo za komunikacijo z notranjimi registri kartice. Osnovne informacije o podatkih do katerih lahko dostopamo po registrih se nahajajo v dokumentaciji \cite{jr3_doc}, ki jo priloži proizvajalec.
+Dokumentacija navaja, da v kolikor želi uporabnik odèitati vrednost sile ali navora Fx mora tako prebrati osnovno vrednost $F_s$ na registru imenovanem (\verb|full scale|), jo pomnožiti z vrednostjo $F_f$, ki je na registru izbranega filtra (\verb|corrent force|). Na zadnje more to vrednost delit s konstanto $K_p$, da pretvori v prave enote (N ali Nm).
+
+\begin{equation}\label{force_filt}
+F_x = \frac{F_s \cdot F_f}{K_p}
+\end{equation}
+
+Ker senzor meri silo in navor v treh smereh je potrebno opraviti izraèun za vsako dimenzijo posebej. 
+
+
+\section{Združitev ARCNET in JR3 strežnika}
+
+
+
 \section{Razlogi za strežnik}
 
 
@@ -276,6 +305,7 @@ Postopek dela:
    pages = "73-77",
    month = jul,
 }
+
 
 @BOOK{knjiga1,
    author = "Donald E. Knuth",

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  18 JUN 2015 09:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  18 JUN 2015 12:42
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -588,6 +588,9 @@ G,.JBIG2,.JB2,.eps]
 
 LaTeX Warning: Label `fig:pa10drawing' multiply defined.
 
+
+LaTeX Warning: Label `fig:qfeedback' multiply defined.
+
 )
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
@@ -871,20 +874,21 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[20]
-  5.
-[21
-
-]
+[20] (BlockDiagrams/x_to_vel.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[22
+[21]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[22]
+  5.
+[23
 
 ]
-  6.
-[23]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -892,7 +896,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [24
 
 ]
-  7.
+  6.
 [25]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -901,8 +905,8 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [26
 
 ]
-  8.
-(magistrska_timotej_gaspar.bbl [27]
+  7.
+[27]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -910,27 +914,27 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [28
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 4--7
-[]\OT1/cmr/m/n/12 A. Pen-na-run, ``Li-nux ARC-net HOWTO.'' Do-se-gljivo:
- []
-
-) [29]
+  8.
+(magistrska_timotej_gaspar.bbl [29]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [30
 
-] [31]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+[]\OT1/cmr/m/n/12 A. Pen-na-run, ``Li-nux ARC-net HOWTO.'' Do-se-gljivo:
+ []
+
+) [31]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [32
 
-]
-  A.
-[33]
+] [33]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -938,7 +942,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [34
 
 ]
-  B.
+  A.
 [35]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -947,7 +951,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [36
 
 ]
-  C.
+  B.
 [37]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -956,25 +960,34 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [38
 
 ]
-  D.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [39]
+  C.
+[39]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[40] (magistrska_timotej_gaspar.aux)
+[40
+
+]
+  D.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[42] (magistrska_timotej_gaspar.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17690 strings out of 493671
- 347419 string characters out of 3145458
- 453529 words of memory out of 3000000
- 20634 multiletter control sequences out of 15000+200000
+ 17757 strings out of 493671
+ 348279 string characters out of 3145458
+ 455286 words of memory out of 3000000
+ 20698 multiletter control sequences out of 15000+200000
  14499 words of font info for 55 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  55i,12n,67p,3304b,1965s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -987,12 +1000,13 @@ r17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Pr
 ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files/MiKTeX/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C
-:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (52 pages, 367935 bytes).
+amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/c
+msy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:
+/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Fil
+es/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on magistrska_timotej_gaspar.pdf (54 pages, 384272 bytes).
 PDF statistics:
- 236 PDF objects out of 1000 (max. 8388607)
+ 246 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

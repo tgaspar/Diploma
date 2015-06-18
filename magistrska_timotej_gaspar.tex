@@ -252,31 +252,93 @@ Ker senzor meri silo in navor v treh smereh je potrebno opraviti izraèun za vsak
 
 Robotski mehanizem PA-10 je industrijski robot s segmenti iz pretežno litega železa. Segmenti imajo relativno veliko maso, sklepi pa relativno visoko trenje. Lahko predpostavimo, da ima manipulator veliko lastno impendanco. Avtor v \cite{mihelj_hapt} za take mehanizme predlaga admitanèno vodenje. To pomeni, da se silo, ki deluje na vrh robota meri s senzorjem sil. To bi lahko naredili tudi posredno z merjenjem navorov v sklepih vendar bo o tem veè v poglavju \ref{invdyn}.
 
-V nadaljevanju bo opisana potrebna teorija za admitanèno vodenje mehanizmov. Zaèelo se bo z vodenjem v notranjih koordinatah, prešlo na vodenje v zunanjih koordinatah nato pa še opisalo admitanèno vodenje.
+V nadaljevanju bo opisana potrebna teorija za admitanèno vodenje mehanizmov. Zaèelo se bo z vodenjem pozicije v notranjih koordinatah, prešlo na vodenje pozicije v zunanjih koordinatah nato pa še opisalo admitanèno vodenje.
 
 \section{Teorija}
+
 
 V poglavju \ref{servo} je opisano, da ima servo krmilnik proporcionalno diferencirni regulator za regulacijo hitrosti v sklepih. Za namen poenostavitve bomo robotski mehanizem aproksimirali kot integrator $\frac{1}{s}$. Spomnimo, da krmilnik robota prejme kod vhodne velièine hitrosti v sklepih ($\omega$), vrne pa kote v sklepih (q). Iz tega sledi enostavna regulacijska enaèba:
 
 \begin{equation} \label{outvel}
-u = \tilde{q}
+\textbf{u} = \textbf{K}_p \cdot \tilde{\textbf{q}}
 \end{equation}
-\begin{equation}
-\tilde{q} = q_{ref} - q
-\end{equation}
-
 
 \begin{figure}
-\input{./BlockDiagrams/vel_to_ang.tex}
-  \caption{Povratna zanka za krmiljenje kota v sklepu}
-  \label{fig:qfeedback}
+	\input{./BlockDiagrams/vel_to_ang.tex}
+	\caption{Povratna zanka za krmiljenje kota v sklepu}
+	\label{fig:qfeedback}
 \end{figure}
+
+\begin{equation}
+\tilde{\textbf{q}} = \textbf{q}_{ref} - \textbf{q}
+\end{equation}
+
+Slika \ref{fig:qfeedback} prikazuje enostavno regulacijsko shemo, ki je uporabljena za krmiliti robota v notranjih koordinatah. Èas, ki ga motor porabi, da pride iz zaèetne v referenèno lego je proporcionalen ojaèanju $K_p$.
+
+Iz tega znanja je sedaj moè realizirati regulacijo v zunanjih koordinatah. Najprej opisati napako vrha robota. Naj bo $x_ref$ željena lega vrha robta in naj bo $x$ trenutna lega. Iz tega sledi enaèba napake:
+
+\begin{equation} \label{xerr}
+\tilde{\textbf{x}} = \textbf{x}_{ref}  - \textbf{x}
+\end{equation}
+
+Napa
+
+Vendar pa je potrebno pred tem poznati kinematièni model robota. V poglavju \ref{dh_params} so bili opisani D-H parametri robota. Avtorji v \cite{bajd_robotika} opišejo kako zapisati kinematiko robota. Potrebno je zapisati Jacobijevo matriko $J$. Z Jacobijevo matriko lahko zapišemo relacijo med spremembo zunanjih koordinatah (vrh robota) ter spremembo notranjimi (koti v sklepih):
+
+\begin{equation} \label{qtox}
+\dot{\textbf{x}} = \textbf{J}(q) \cdot \dot{\textbf{q}}
+\end{equation}
+
+Ker je pri Jacobijevi matriki govora o relaciji med spremebami, se lahko kot spremembo tudi uporabi napako. Z uporabo enaèb \ref{outvel}, \ref{xerr} in \ref{qtox} je moè zapisati enostaven proporcionalni regulator pozicije vrha robota.
+
+Z obratom enaèbe \ref{qtox} se izpostavi $\tilde{q}$:
+
+\begin{equation} \label{qerr}
+\tilde{\textbf{q}} = \textbf{J}^{-1}(q) \cdot \tilde{\textbf{x}}
+\end{equation}
+
+Sedaj je mogoèe regulirni signal, ki krmili hitrost v sklepih robota tako, da bo vrh robota dosegel referenèno lego:
+
+\begin{equation} \label{routcontrol}
+\textbf{u} = \textbf{K}_p \cdot \textbf{J}^{-1}(q) \cdot (\textbf{x}_{ref} - \textbf{x})
+\end{equation}
+
+Avtor v \cite{mihelj_vodenje} opiše, da se mehanski sistem, ki je voden na ta naèin obnaša kot mehanski sistem z \textit{n} - dimenzionalno vzmetjo v notranjih koordinatah. Togost omenjene vzmeti pa doloèa ojaèanje $K_p$.
+
+\begin{figure}
+	\input{./BlockDiagrams/x_to_vel.tex}
+	\caption{Bloèna shema krmiljenja referenène lege vrha robota}
+	\label{fig:qfeedback}
+\end{figure}
+
+Za doseèi admitanèno vodenje je na tem mestu potrebno še vpeljati podatek o silah in navorih, ki delujejo na vrhu robota. Kot omenjeno v poglavju \ref{arcnet} je bil na vrh robota pritrjen senzor sil in navorov JR3. Odèitke senzorja sile bo oznaèen z èrko \textbf{h}. V nadaljevanju bo opisano vodenje pozicije vrha robota z upoštevam željene sile na vrhu robota.
+
+Naj bo napaka v željeni sili definirana kot:
+\begin{equation} \label{herr}
+\tilde{\textbf{h}} = \textbf{h}_{ref} - \textbf{h}
+\end{equation}
+
+Napako bi bilo mogoèe sedaj ojaèati in direktno pripeljati v regulator. Vendar pa avtorji v tem delu predlagajo, da se to napako superponira referenèni legi robota. Na ta se doseže to, da je robot postavljev neko lego in šele tam deluje z neko silo. V nadaljevanju bo predpostavljeno, da je referenèna sila enaka niè. Na ta naèin se enaèba napake sile poenostavi na $\tilde{\textbf{h}} = \textbf{h}$. 
+
+Napako sile prištejemo referenèni pozicijo po tistem, ko jo ojaèamo z matriko ojaèanj $\textbf{K}_h$. Matrika je diagonalna $K_h$ in pove, koliko je vrh robota podajen v posamezne smeri. Novo referenèno pozicijo se bo oznaèilo z $\textbf{x}^*_{ref}$.
+
+\begin{equation} \label{newx}
+	\textbf{x}^*_{ref} = \textbf{x}_{ref} + \tilde{\textbf{h}}
+\end{equation} 
+
+Z vstavitvijo enaèbe \ref{newx} v \ref{routcontrol} je mogoèe zapisati celotno regulacijsko enaèbo za vodenje robota v zunanjih koordinatah z upoštevanjem delovanja zunanjih sil na vrh robota.
+
+\begin{equation} \label{admitcontrol}
+\textbf{u} = \textbf{K}_p \cdot \textbf{J}^{-1}(q) \cdot (\textbf{x}_{ref} + \tilde{\textbf{h}} - \textbf{x})
+\end{equation}
+
+
 	
 \section{Implementacija}
 \section{Rezultati}
 
 %*********************** INVERZNA KINEMATIKA ********************************
-\chapter{K	rmiljenje z inverzno dinamiko} \label{invdyn}
+\chapter{Krmiljenje z inverzno dinamiko} \label{invdyn}
 \section{Teorija}
 \section{Implementacija}
 \section{Rezultati}

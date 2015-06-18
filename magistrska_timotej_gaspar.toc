@@ -13,9 +13,9 @@
 \contentsline {section}{\numberline {3.4}Razlogi za stre\v znik}{17}
 \contentsline {chapter}{\numberline {4}Admitan\v cno krmiljenje}{19}
 \contentsline {section}{\numberline {4.1}Teorija}{19}
-\contentsline {section}{\numberline {4.2}Implementacija}{19}
-\contentsline {section}{\numberline {4.3}Rezultati}{19}
-\contentsline {chapter}{\numberline {5}Krmiljenje z inverzno dinamiko}{21}
+\contentsline {section}{\numberline {4.2}Implementacija}{20}
+\contentsline {section}{\numberline {4.3}Rezultati}{20}
+\contentsline {chapter}{\numberline {5}K rmiljenje z inverzno dinamiko}{21}
 \contentsline {section}{\numberline {5.1}Teorija}{21}
 \contentsline {section}{\numberline {5.2}Implementacija}{21}
 \contentsline {section}{\numberline {5.3}Rezultati}{21}

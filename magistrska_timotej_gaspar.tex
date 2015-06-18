@@ -3,6 +3,8 @@
 
 \documentclass[a4paper,twoside,openright,12pt]{book}
 \usepackage[cp1250]{inputenc}  %Kodna stran za Windows okolje, za linux je kodna stran latin2
+\usepackage{tikz}
+\usepackage[all]{xy}
 \usepackage[Slovene]{babel}    % pravila za slovensko deljenje besed
 \usepackage[pdftex]{UNI-LJ-FE-Diploma} %Stil za diplome na Fakulteti za elektrotehniko (za pdfTeX v MkiTex)
 %\usepackage[pctex]{UNI-LJ-FE-Diploma} %Stil za diplome na Fakulteti za elektrotehniko  (za pcTex)
@@ -229,7 +231,7 @@ Avtorji tega dela so razvili strežnik, ki deluje s frekvenco 500 Hz. To se zagot
 \section{JR3 strežnik}
 
 Senzor sil in navorov JR3 ima se lahko povezuje z osebnim raèunalnikom preko kartice, ki se prikljuèi na vodilo ISA (starejši standard) ter kartice, ki se prikljuèi na vodilo PCI (novejši standard). Na uporabljenem raèunalniku za potrebe tega dela je namešèena kartica na vodilu ISA. Ker je standard starejši je podjetje prenehalo s podporo tega standarda. Kot posledica tega so avtorji tega dela razvili svojo programsko opremo za komunikacijo z notranjimi registri kartice. Osnovne informacije o podatkih do katerih lahko dostopamo po registrih se nahajajo v dokumentaciji \cite{jr3_doc}, ki jo priloži proizvajalec.
-Dokumentacija navaja, da v kolikor želi uporabnik odèitati vrednost sile ali navora Fx mora tako prebrati osnovno vrednost $F_s$ na registru imenovanem (\verb|full scale|), jo pomnožiti z vrednostjo $F_f$, ki je na registru izbranega filtra (\verb|corrent force|). Na zadnje more to vrednost delit s konstanto $K_p$, da pretvori v prave enote (N ali Nm).
+Dokumentacija navaja, da v kolikor želi uporabnik odèitati vrednost sile ali navora Fx mora tako prebrati osnovno vrednost $F_s$ na registru imenovanem (\verb|full scale|), jo pomnožiti z vrednostjo $F_f$, ki je na registru izbranega filtra (\verb|current force|). Na zadnje more to vrednost delit s konstanto $K_p$, da pretvori v prave enote (N ali Nm).
 
 \begin{equation}\label{force_filt}
 F_x = \frac{F_s \cdot F_f}{K_p}
@@ -245,16 +247,36 @@ Ker senzor meri silo in navor v treh smereh je potrebno opraviti izraèun za vsak
 \section{Razlogi za strežnik}
 
 
-
-
 %*********************** ADMITANÈNO VODENJE ********************************
 \chapter{Admitanèno krmiljenje} \label{admitance}
+
+Robotski mehanizem PA-10 je industrijski robot s segmenti iz pretežno litega železa. Segmenti imajo relativno veliko maso, sklepi pa relativno visoko trenje. Lahko predpostavimo, da ima manipulator veliko lastno impendanco. Avtor v \cite{mihelj_hapt} za take mehanizme predlaga admitanèno vodenje. To pomeni, da se silo, ki deluje na vrh robota meri s senzorjem sil. To bi lahko naredili tudi posredno z merjenjem navorov v sklepih vendar bo o tem veè v poglavju \ref{invdyn}.
+
+V nadaljevanju bo opisana potrebna teorija za admitanèno vodenje mehanizmov. Zaèelo se bo z vodenjem v notranjih koordinatah, prešlo na vodenje v zunanjih koordinatah nato pa še opisalo admitanèno vodenje.
+
 \section{Teorija}
+
+V poglavju \ref{servo} je opisano, da ima servo krmilnik proporcionalno diferencirni regulator za regulacijo hitrosti v sklepih. Za namen poenostavitve bomo robotski mehanizem aproksimirali kot integrator $\frac{1}{s}$. Spomnimo, da krmilnik robota prejme kod vhodne velièine hitrosti v sklepih ($\omega$), vrne pa kote v sklepih (q). Iz tega sledi enostavna regulacijska enaèba:
+
+\begin{equation} \label{outvel}
+u = \tilde{q}
+\end{equation}
+\begin{equation}
+\tilde{q} = q_{ref} - q
+\end{equation}
+
+
+\begin{figure}
+\input{./BlockDiagrams/vel_to_ang.tex}
+  \caption{Povratna zanka za krmiljenje kota v sklepu}
+  \label{fig:qfeedback}
+\end{figure}
+	
 \section{Implementacija}
 \section{Rezultati}
 
 %*********************** INVERZNA KINEMATIKA ********************************
-\chapter{Krmiljenje z inverzno dinamiko} \label{invdyn}
+\chapter{K	rmiljenje z inverzno dinamiko} \label{invdyn}
 \section{Teorija}
 \section{Implementacija}
 \section{Rezultati}

@@ -7,6 +7,8 @@
 \usepackage[all]{xy}
 \usepackage[Slovene]{babel}    % pravila za slovensko deljenje besed
 \usepackage[pdftex]{UNI-LJ-FE-Diploma} %Stil za diplome na Fakulteti za elektrotehniko (za pdfTeX v MkiTex)
+\input{./BlockDiagrams/tikzsettings.tex}
+\input{./macros.tex}
 %\usepackage[pctex]{UNI-LJ-FE-Diploma} %Stil za diplome na Fakulteti za elektrotehniko  (za pcTex)
 
 %*************************** PRILAGODITVE *****************************
@@ -254,7 +256,7 @@ Robotski mehanizem PA-10 je industrijski robot s segmenti iz pretežno litega žel
 
 V nadaljevanju bo opisana potrebna teorija za admitanèno vodenje mehanizmov. Zaèelo se bo z vodenjem pozicije v notranjih koordinatah, prešlo na vodenje pozicije v zunanjih koordinatah nato pa še opisalo admitanèno vodenje.
 
-\section{Teorija}
+\section{Teorija} \label{sec:admittheor}
 
 
 V poglavju \ref{servo} je opisano, da ima servo krmilnik proporcionalno diferencirni regulator za regulacijo hitrosti v sklepih. Za namen poenostavitve bomo robotski mehanizem aproksimirali kot integrator $\frac{1}{s}$. Spomnimo, da krmilnik robota prejme kod vhodne velièine hitrosti v sklepih ($\omega$), vrne pa kote v sklepih (q). Iz tega sledi enostavna regulacijska enaèba:
@@ -281,7 +283,6 @@ Iz tega znanja je sedaj moè realizirati regulacijo v zunanjih koordinatah. Najpr
 \tilde{\textbf{x}} = \textbf{x}_{ref}  - \textbf{x}
 \end{equation}
 
-Napa
 
 Vendar pa je potrebno pred tem poznati kinematièni model robota. V poglavju \ref{dh_params} so bili opisani D-H parametri robota. Avtorji v \cite{bajd_robotika} opišejo kako zapisati kinematiko robota. Potrebno je zapisati Jacobijevo matriko $J$. Z Jacobijevo matriko lahko zapišemo relacijo med spremembo zunanjih koordinatah (vrh robota) ter spremembo notranjimi (koti v sklepih):
 
@@ -291,7 +292,7 @@ Vendar pa je potrebno pred tem poznati kinematièni model robota. V poglavju \ref
 
 Ker je pri Jacobijevi matriki govora o relaciji med spremebami, se lahko kot spremembo tudi uporabi napako. Z uporabo enaèb \ref{outvel}, \ref{xerr} in \ref{qtox} je moè zapisati enostaven proporcionalni regulator pozicije vrha robota.
 
-Z obratom enaèbe \ref{qtox} se izpostavi $\tilde{q}$:
+Z množenjem enaèbe \ref{qtox} z inverzom Jacobijeve matrike se lahko izpostavi $\tilde{q}$:
 
 \begin{equation} \label{qerr}
 \tilde{\textbf{q}} = \textbf{J}^{-1}(q) \cdot \tilde{\textbf{x}}
@@ -311,30 +312,39 @@ Avtor v \cite{mihelj_vodenje} opiše, da se mehanski sistem, ki je voden na ta na
 	\label{fig:qfeedback}
 \end{figure}
 
-Za doseèi admitanèno vodenje je na tem mestu potrebno še vpeljati podatek o silah in navorih, ki delujejo na vrhu robota. Kot omenjeno v poglavju \ref{arcnet} je bil na vrh robota pritrjen senzor sil in navorov JR3. Odèitke senzorja sile bo oznaèen z èrko \textbf{h}. V nadaljevanju bo opisano vodenje pozicije vrha robota z upoštevam željene sile na vrhu robota.
+Za doseèi admitanèno vodenje je na tem mestu potrebno še vpeljati podatek o silah in navorih, ki delujejo na vrhu robota. Kot omenjeno v poglavju \ref{arcnet} je bil na vrh robota pritrjen senzor sil in navorov JR3. Odèitke senzorja sile bo oznaèen z èrko $\textbf{h}_{JR3}$. V nadaljevanju bo opisano vodenje pozicije vrha robota z upoštevam željene sile na vrhu robota.
 
 Naj bo napaka v željeni sili definirana kot:
 \begin{equation} \label{herr}
 \tilde{\textbf{h}} = \textbf{h}_{ref} - \textbf{h}
 \end{equation}
 
-Napako bi bilo mogoèe sedaj ojaèati in direktno pripeljati v regulator. Vendar pa avtorji v tem delu predlagajo, da se to napako superponira referenèni legi robota. Na ta se doseže to, da je robot postavljev neko lego in šele tam deluje z neko silo. V nadaljevanju bo predpostavljeno, da je referenèna sila enaka niè. Na ta naèin se enaèba napake sile poenostavi na $\tilde{\textbf{h}} = \textbf{h}$. 
+Napako bi bilo mogoèe sedaj ojaèati in direktno pripeljati v regulator. Vendar pa avtorji v tem delu predlagajo, da se to napako superponira referenèni legi robota. Na ta se doseže to, da je robot postavljev neko lego in šele tam deluje z neko silo. V nadaljevanju bo predpostavljeno, da je referenèna sila enaka niè. Na ta naèin se enaèba napake sile poenostavi na $\tilde{\textbf{h}} = \textbf{h}_{JR3}$. 
 
-Napako sile prištejemo referenèni pozicijo po tistem, ko jo ojaèamo z matriko ojaèanj $\textbf{K}_h$. Matrika je diagonalna $K_h$ in pove, koliko je vrh robota podajen v posamezne smeri. Novo referenèno pozicijo se bo oznaèilo z $\textbf{x}^*_{ref}$.
+Napako sile prištejemo referenèni pozicijo po tistem, ko jo ojaèamo z matriko ojaèanj $\textbf{K}_h$. Matrika  $\textbf{K}_h$ je diagonalna in pove, koliko je vrh robota podajen v posamezne smeri. Novo referenèno pozicijo se bo oznaèilo z $\textbf{x}^*_{ref}$.
 
 \begin{equation} \label{newx}
-	\textbf{x}^*_{ref} = \textbf{x}_{ref} + \tilde{\textbf{h}}
+	\textbf{x}^*_{ref} = \textbf{x}_{ref} +  \textbf{K}_h \cdot \tilde{\textbf{h}}_{JR3}
 \end{equation} 
 
 Z vstavitvijo enaèbe \ref{newx} v \ref{routcontrol} je mogoèe zapisati celotno regulacijsko enaèbo za vodenje robota v zunanjih koordinatah z upoštevanjem delovanja zunanjih sil na vrh robota.
 
 \begin{equation} \label{admitcontrol}
-\textbf{u} = \textbf{K}_p \cdot \textbf{J}^{-1}(q) \cdot (\textbf{x}_{ref} + \tilde{\textbf{h}} - \textbf{x})
+\textbf{u} = \textbf{K}_p \cdot \textbf{J}^{-1}(q) \cdot (\textbf{x}_{ref} + \textbf{K}_h \cdot \tilde{\textbf{h}}_{JR3} - \textbf{x})
 \end{equation}
-
 
 	
 \section{Implementacija}
+
+Avtorji so za implementacijo na robotskem mehanizmu PA-10 uporabili strežnik opisan v poglavju \ref{arcnet} ter programsko okolje \matlab \simulink. Program za vodenje robota je bil v celoti zgrajen v okolju \simulink. Razlogi za izbiro omenjenega programskega paketa so bile dobre predhodne izkušnje avtorjev. Komunikacija z strežnikom je bila realizirana z integriranimi funckijami za pošiljanje paketov po UDP protokolu. S pravim formiranjem paketov je bilo mogoèe pošiljati referenène hitrosti sklepov ter prebirati trenutne kote v sklepih. Ker strežnik pošilja tudi izmerjene sile ter navore na vrhu robota preko JR3 senzorja je mogoèe admitanèno vodenje opisano v \ref{sec:admittheor}.
+
+Avtorji tega dela so pripravili \simulink shemo, ki se izvaja na posveèenem raèunalniku na katerem teèe operacijski sistem Simulink Target. Frekvenca izvajanja programa je nastavljena na 500 Hz tako, da se ujema s frekvenco strežnika. Pripravljen je bil grafièni vmesnik, da lahko bodoèi uporabniki uporabljajo enak program brez predhodnega poznavanja katere ukaze je potrebno izvesti. 
+
+Najprej se je implementiralo admitanèno vodenje s referenèno silo enako 0 N. S spreminjanjem matrike ojaèanj \textbf{K}$_h$ se je spreminjalo podajnost vrha robota. Veèje kot je ojaèanje, veèja je podajnost. Vendar je pri tem zelo pomembno, da sistem ne postane nestabilen. Potrebno je vzeti v zakup, da izmerjene vrednosti senzorja sil JR3 lezejo. Posledièno lahko robot poèasi zaène lesti nekam kamor to ni zaželjeno. Ojaèanje je bilo veèinokrat nižje od 0.1. Kar v praksi pomeni, da se je vrh robota obnašal kot vzmet z koeficentom 10. Iz enaèbe vzmeti $F=\Delta x \cdot k$ je videt, da v kolikor deluje na vrh robota sila 10 N bo premik vrha enak 0.1 m.
+
+Implementirano je bilo tudi vodenje v katerem se je signal senzorja sile integriralo in prištelo na referenèno pozicijo. S tem naèinom je bilo dosežena možnost spreminjanja pozicije vrha robota. V praksi to pomeni, da lahko robot opravlja neko nalogo in v kolikor uporabniku ni všeè lega lahko z roko potisne na vrh robota tako, da bo robot bil v drugaèni legi. To je bilo tudi preverjeno z eksperimentom.
+
+
 \section{Rezultati}
 
 %*********************** INVERZNA KINEMATIKA ********************************

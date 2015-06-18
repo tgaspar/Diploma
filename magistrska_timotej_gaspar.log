@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  18 JUN 2015 12:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  18 JUN 2015 17:08
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -584,7 +584,89 @@ G,.JBIG2,.JB2,.eps]
 \yyydec=\count138
 \tmpcount=\count139
 )
-(magistrska_timotej_gaspar.aux
+(BlockDiagrams/tikzsettings.tex
+("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
+aryshapes.code.tex"
+File: tikzlibraryshapes.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
+aryshapes.geometric.code.tex"
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+
+("C:\Program Files\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.geo
+metric.code.tex"
+File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.0 (rcs-revision 1.1)
+))
+("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
+aryshapes.misc.code.tex"
+File: tikzlibraryshapes.misc.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+("C:\Program Files\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.mis
+c.code.tex"
+File: pgflibraryshapes.misc.code.tex 2013/07/18 v3.0.0 (rcs-revision 1.5)
+))
+("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
+aryshapes.symbols.code.tex"
+File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+("C:\Program Files\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.sym
+bols.code.tex"
+File: pgflibraryshapes.symbols.code.tex 2013/09/11 v3.0.0 (rcs-revision 1.6)
+))
+("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
+aryshapes.arrows.code.tex"
+File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+("C:\Program Files\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.arr
+ows.code.tex"
+File: pgflibraryshapes.arrows.code.tex 2008/06/26 v3.0.0 (rcs-revision 1.1)
+))
+("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
+aryshapes.callouts.code.tex"
+("C:\Program Files\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.cal
+louts.code.tex"))
+("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
+aryshapes.multipart.code.tex"
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+
+("C:\Program Files\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.mul
+tipart.code.tex"
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.0 (rcs-revision 1.2)
+\pgfnodepartlowerbox=\box43
+\pgfnodeparttwobox=\box44
+\pgfnodepartthreebox=\box45
+\pgfnodepartfourbox=\box46
+\pgfnodeparttwentybox=\box47
+\pgfnodepartnineteenbox=\box48
+\pgfnodeparteighteenbox=\box49
+\pgfnodepartseventeenbox=\box50
+\pgfnodepartsixteenbox=\box51
+\pgfnodepartfifteenbox=\box52
+\pgfnodepartfourteenbox=\box53
+\pgfnodepartthirteenbox=\box54
+\pgfnodeparttwelvebox=\box55
+\pgfnodepartelevenbox=\box56
+\pgfnodeparttenbox=\box57
+\pgfnodepartninebox=\box58
+\pgfnodeparteightbox=\box59
+\pgfnodepartsevenbox=\box60
+\pgfnodepartsixbox=\box61
+\pgfnodepartfivebox=\box62
+)))
+("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
+aryfit.code.tex"
+File: tikzlibraryfit.code.tex 2013/07/12 v3.0.0 (rcs-revision 1.5)
+)
+("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
+aryarrows.code.tex"
+File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+("C:\Program Files\MiKTeX\tex\generic\pgf\libraries\pgflibraryarrows.code.tex"
+File: pgflibraryarrows.code.tex 2013/09/23 v3.0.0 (rcs-revision 1.16)
+\arrowsize=\dimen201
+))) (macros.tex) (magistrska_timotej_gaspar.aux
 
 LaTeX Warning: Label `fig:pa10drawing' multiply defined.
 
@@ -592,34 +674,34 @@ LaTeX Warning: Label `fig:pa10drawing' multiply defined.
 LaTeX Warning: Label `fig:qfeedback' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
  ABD: EveryShipout initializing macros
 ("C:\Program Files\MiKTeX\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count140
-\scratchdimen=\dimen201
-\scratchbox=\box43
+\scratchdimen=\dimen202
+\scratchbox=\box63
 \nofMPsegments=\count141
 \nofMParguments=\count142
 \everyMPshowfont=\toks41
 \MPscratchCnt=\count143
-\MPscratchDim=\dimen202
+\MPscratchDim=\dimen203
 \MPnumerator=\count144
 \makeMPintoPDFobject=\count145
 \everyMPtoPDFconversion=\toks42
 )
-Package xypdf Info: Line width: 0.47998pt on input line 27.
+Package xypdf Info: Line width: 0.47998pt on input line 29.
  [1
 
 
@@ -725,14 +807,14 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [9 <./Slike/pa10-drawing.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 181.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 183.
 
 
 ("C:\Program Files\MiKTeX\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 181.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 183.
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -791,85 +873,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 ]
   4.
-(BlockDiagrams/vel_to_ang.tex
-("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
-aryshapes.code.tex"
-File: tikzlibraryshapes.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
-
-("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
-aryshapes.geometric.code.tex"
-File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
-
-
-("C:\Program Files\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.geo
-metric.code.tex"
-File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.0 (rcs-revision 1.1)
-))
-("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
-aryshapes.misc.code.tex"
-File: tikzlibraryshapes.misc.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
-
-("C:\Program Files\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.mis
-c.code.tex"
-File: pgflibraryshapes.misc.code.tex 2013/07/18 v3.0.0 (rcs-revision 1.5)
-))
-("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
-aryshapes.symbols.code.tex"
-File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
-
-("C:\Program Files\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.sym
-bols.code.tex"
-File: pgflibraryshapes.symbols.code.tex 2013/09/11 v3.0.0 (rcs-revision 1.6)
-))
-("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
-aryshapes.arrows.code.tex"
-File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
-
-("C:\Program Files\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.arr
-ows.code.tex"
-File: pgflibraryshapes.arrows.code.tex 2008/06/26 v3.0.0 (rcs-revision 1.1)
-))
-("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
-aryshapes.callouts.code.tex"
-("C:\Program Files\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.cal
-louts.code.tex"))
-("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
-aryshapes.multipart.code.tex"
-File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
-
-
-("C:\Program Files\MiKTeX\tex\generic\pgf\libraries\shapes\pgflibraryshapes.mul
-tipart.code.tex"
-File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.0 (rcs-revision 1.2)
-\pgfnodepartlowerbox=\box44
-\pgfnodeparttwobox=\box45
-\pgfnodepartthreebox=\box46
-\pgfnodepartfourbox=\box47
-\pgfnodeparttwentybox=\box48
-\pgfnodepartnineteenbox=\box49
-\pgfnodeparteighteenbox=\box50
-\pgfnodepartseventeenbox=\box51
-\pgfnodepartsixteenbox=\box52
-\pgfnodepartfifteenbox=\box53
-\pgfnodepartfourteenbox=\box54
-\pgfnodepartthirteenbox=\box55
-\pgfnodeparttwelvebox=\box56
-\pgfnodepartelevenbox=\box57
-\pgfnodeparttenbox=\box58
-\pgfnodepartninebox=\box59
-\pgfnodeparteightbox=\box60
-\pgfnodepartsevenbox=\box61
-\pgfnodepartsixbox=\box62
-\pgfnodepartfivebox=\box63
-)))
-("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
-aryarrows.code.tex"
-File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
-
-("C:\Program Files\MiKTeX\tex\generic\pgf\libraries\pgflibraryarrows.code.tex"
-File: pgflibraryarrows.code.tex 2013/09/23 v3.0.0 (rcs-revision 1.16)
-\arrowsize=\dimen203
-))) [19]
+(BlockDiagrams/vel_to_ang.tex) [19]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -880,15 +884,19 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [21]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 339.
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [22]
-  5.
-[23
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
 
-]
+[23]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -896,7 +904,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [24
 
 ]
-  6.
+  5.
 [25]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -905,7 +913,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [26
 
 ]
-  7.
+  6.
 [27]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -914,8 +922,8 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [28
 
 ]
-  8.
-(magistrska_timotej_gaspar.bbl [29]
+  7.
+[29]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -923,27 +931,27 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [30
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 4--7
-[]\OT1/cmr/m/n/12 A. Pen-na-run, ``Li-nux ARC-net HOWTO.'' Do-se-gljivo:
- []
-
-) [31]
+  8.
+(magistrska_timotej_gaspar.bbl [31]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [32
 
-] [33]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+[]\OT1/cmr/m/n/12 A. Pen-na-run, ``Li-nux ARC-net HOWTO.'' Do-se-gljivo:
+ []
+
+) [33]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [34
 
-]
-  A.
-[35]
+] [35]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -951,7 +959,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [36
 
 ]
-  B.
+  A.
 [37]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -960,7 +968,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [38
 
 ]
-  C.
+  B.
 [39]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -969,28 +977,37 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [40
 
 ]
-  D.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [41]
+  C.
+[41]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[42] (magistrska_timotej_gaspar.aux)
+[42
+
+]
+  D.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[44] (magistrska_timotej_gaspar.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17757 strings out of 493671
- 348279 string characters out of 3145458
- 455286 words of memory out of 3000000
- 20698 multiletter control sequences out of 15000+200000
+ 17804 strings out of 493671
+ 349272 string characters out of 3145458
+ 464186 words of memory out of 3000000
+ 20736 multiletter control sequences out of 15000+200000
  14499 words of font info for 55 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 55i,12n,67p,3304b,1965s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,12n,67p,3304b,729s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/t
@@ -1004,9 +1021,9 @@ amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/c
 msy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:
 /Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Fil
 es/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (54 pages, 384272 bytes).
+Output written on magistrska_timotej_gaspar.pdf (56 pages, 390157 bytes).
 PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
+ 253 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

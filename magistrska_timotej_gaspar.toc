@@ -14,15 +14,15 @@
 \contentsline {chapter}{\numberline {4}Admitan\v cno krmiljenje}{19}
 \contentsline {section}{\numberline {4.1}Teorija}{19}
 \contentsline {section}{\numberline {4.2}Implementacija}{22}
-\contentsline {section}{\numberline {4.3}Rezultati}{22}
-\contentsline {chapter}{\numberline {5}Krmiljenje z inverzno dinamiko}{23}
-\contentsline {section}{\numberline {5.1}Teorija}{23}
-\contentsline {section}{\numberline {5.2}Implementacija}{23}
-\contentsline {section}{\numberline {5.3}Rezultati}{23}
-\contentsline {chapter}{\numberline {6}Rezultati}{25}
-\contentsline {chapter}{\numberline {7}Simulink knji\v zice}{27}
-\contentsline {chapter}{\numberline {8}Zaklju\v cek}{29}
-\contentsline {chapter}{\numberline {A}Appendix 1}{35}
-\contentsline {chapter}{\numberline {B}Appendix 2}{37}
-\contentsline {chapter}{\numberline {C}Appendix 3}{39}
-\contentsline {chapter}{\numberline {D}Predloge za navajanje literature - baza BibTex}{41}
+\contentsline {section}{\numberline {4.3}Rezultati}{23}
+\contentsline {chapter}{\numberline {5}Krmiljenje z inverzno dinamiko}{25}
+\contentsline {section}{\numberline {5.1}Teorija}{25}
+\contentsline {section}{\numberline {5.2}Implementacija}{25}
+\contentsline {section}{\numberline {5.3}Rezultati}{25}
+\contentsline {chapter}{\numberline {6}Rezultati}{27}
+\contentsline {chapter}{\numberline {7}Simulink knji\v zice}{29}
+\contentsline {chapter}{\numberline {8}Zaklju\v cek}{31}
+\contentsline {chapter}{\numberline {A}Appendix 1}{37}
+\contentsline {chapter}{\numberline {B}Appendix 2}{39}
+\contentsline {chapter}{\numberline {C}Appendix 3}{41}
+\contentsline {chapter}{\numberline {D}Predloge za navajanje literature - baza BibTex}{43}

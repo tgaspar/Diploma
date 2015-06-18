@@ -1,20 +1,22 @@
 \centering
 
 
-\usetikzlibrary{shapes, arrows}
+%\usetikzlibrary{shapes, fit, arrows}
 
-\tikzstyle{block} = [draw, rectangle, minimum width = 0.75cm, minimum height = 0.75cm]
-\tikzstyle{sum} = [draw, circle, minimum size=.5cm, node distance=1.75cm]
-\tikzstyle{input} = [coordinate]
-\tikzstyle{output} = [coordinate]
-\tikzstyle{support} = [coordinate]
+%\tikzstyle{block} = [draw, rectangle, minimum width = 0.75cm, minimum height = 0.75cm]
+%\tikzstyle{sum} = [draw, circle, minimum size=.5cm, node distance=1.75cm]
+%\tikzstyle{input} = [coordinate]
+%\tikzstyle{output} = [coordinate]
+%\tikzstyle{support} = [coordinate]
 
 \begin{tikzpicture}[node distance=2cm,auto,=>latex']
 \node [input, name=input] {};
 \node [sum, right of=input] (sum) {};
 \node [block, right of=sum] (jac) {$J^{1}(q)$};
 \node [block, right of=jac] (k1) {$K_p$};
+\node [right of=k1](pa10){};
 \node [block, right of=k1] (int1) {$\frac{1}{s}$};
+\node [fit = (int1)(pa10), dashed,draw,inner sep=0.45cm, label=$PA - 10$] (Box){};
 \node [support, right of=int1](s1){};
 \node [output, right of=s1] (output) {}; 
 \node [block, below of=k1] (geom) {Geometrijski model}; 

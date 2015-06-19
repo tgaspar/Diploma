@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  18 JUN 2015 17:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  19 JUN 2015 17:14
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -666,7 +666,15 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
 ("C:\Program Files\MiKTeX\tex\generic\pgf\libraries\pgflibraryarrows.code.tex"
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.0 (rcs-revision 1.16)
 \arrowsize=\dimen201
-))) (macros.tex) (magistrska_timotej_gaspar.aux
+))
+("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
+arycalc.code.tex"
+File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.0 (rcs-revision 1.9)
+)
+("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
+arypositioning.code.tex"
+File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
+)) (macros.tex) (magistrska_timotej_gaspar.aux
 
 LaTeX Warning: Label `fig:pa10drawing' multiply defined.
 
@@ -873,7 +881,10 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 ]
   4.
-(BlockDiagrams/vel_to_ang.tex) [19]
+(BlockDiagrams/vel_to_ang.tex)
+Underfull \vbox (badness 1874) has occurred while \output is active []
+
+ [19]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -885,7 +896,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [21]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 339.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 344.
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -910,10 +921,11 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[26
+[26] (BlockDiagrams/x_to_tau.tex)
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
 
-]
-  6.
 [27]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -922,7 +934,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [28
 
 ]
-  7.
+  6.
 [29]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -931,8 +943,8 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [30
 
 ]
-  8.
-(magistrska_timotej_gaspar.bbl [31]
+  7.
+[31]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -940,27 +952,27 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [32
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 4--7
-[]\OT1/cmr/m/n/12 A. Pen-na-run, ``Li-nux ARC-net HOWTO.'' Do-se-gljivo:
- []
-
-) [33]
+  8.
+(magistrska_timotej_gaspar.bbl [33]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [34
 
-] [35]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+[]\OT1/cmr/m/n/12 A. Pen-na-run, ``Li-nux ARC-net HOWTO.'' Do-se-gljivo:
+ []
+
+) [35]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [36
 
-]
-  A.
-[37]
+] [37]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -968,7 +980,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [38
 
 ]
-  B.
+  A.
 [39]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -977,7 +989,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [40
 
 ]
-  C.
+  B.
 [41]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -986,28 +998,37 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [42
 
 ]
-  D.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [43]
+  C.
+[43]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[44] (magistrska_timotej_gaspar.aux)
+[44
+
+]
+  D.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [45]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[46] (magistrska_timotej_gaspar.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17804 strings out of 493671
- 349272 string characters out of 3145458
- 464186 words of memory out of 3000000
- 20736 multiletter control sequences out of 15000+200000
+ 18004 strings out of 493671
+ 353324 string characters out of 3145458
+ 466934 words of memory out of 3000000
+ 20927 multiletter control sequences out of 15000+200000
  14499 words of font info for 55 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 55i,12n,67p,3304b,729s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,12n,67p,3304b,730s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/t
@@ -1021,9 +1042,9 @@ amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/c
 msy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:
 /Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Fil
 es/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (56 pages, 390157 bytes).
+Output written on magistrska_timotej_gaspar.pdf (58 pages, 400012 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
+ 259 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

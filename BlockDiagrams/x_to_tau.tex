@@ -1,0 +1,51 @@
+\centering
+
+\begin{tikzpicture}[node distance=2cm,auto,=>latex']
+
+ \coordinate (AroneC) at (25/2,11/2);
+ \coordinate (ArtwoC) at (25/2,5);
+ \coordinate (ArthrC) at (25/2,9/2);
+
+\node [input, name=input] {};
+\node [sum, right of=input] (sum1) {};
+\node [block, right of=sum1] (kp) {$K_p$};
+\node [sum, right of=kp] (sum2) {};
+\node [sum, right of=sum2] (sum3) {};
+\node [sum, right of=sum3] (sum4) {};
+\node [block, right of=sum4] (pa10) {PA-10};
+
+\node [block, below= 0.5cm of pa10] (g) {$\hat{\textbf{g}}(\textbf{q})$};
+\node [block, below= 0.5cm of g] (ff) {$\hat{\textbf{F}}_f$};
+
+\node [block, above of=pa10] (kd) {$\textbf{K}_d$};
+
+\node [output, right of=s1] (output) {};
+
+
+\draw [->] (input) -- node[name = qin] {{$q_{ref}$}} node[pos=0.95] {{\tiny $+$}} (sum1);
+\draw [->] (sum1) -- (kp);
+\draw [->] (kp) -- (sum2);
+\draw [->] (sum2) -- (sum3);
+\draw [->] (sum3) -- (sum4);
+\draw [->] (sum4) -- node[above, pos=0.2]{$u$} (pa10);
+\draw[->] ($(pa10.0) + (0,1/4)$) -- node[above, pos=0.2]{$q$} ($(output.0) + (1.5,1/4)$) ;
+\draw[->] ($(pa10.0) + (0,0)$) -- node[above, pos=0.4]{$\dot{q}$} ($(output.0) + (1.5,0)$) ;
+\draw[->] ($(pa10.0) + (0,-1/4)$) -- node[above, pos=0.6]{$\ddot{q}$} ($(output.0) + (1.5,-1/4)$) ;
+
+\draw [->] ($(output.0) + (0.75,1/4)$) |- (g);
+\draw [->] (g) -| node[pos=0.99, right] {\tiny {$+$}}(sum4);
+
+\draw [->] ($(output.0) + (1.0,0)$) |- (ff);
+\draw [->] (ff) -| node[pos=0.99, right] {\tiny {$+$}}(sum3);
+
+\draw [->] ($(output.0) + (1.0,0)$) |- (kd);
+\draw [->] (kd) -| node[pos=0.99, right] {\tiny {$-$}}(sum2);
+
+\draw [->]($(output.0) + (0.75,1/4)$) -- +(0,1) -| node[pos=0.99, right] {\tiny {$-$}} (sum);
+
+
+\fill ($(output.0) + (0.75,1/4)$) circle [radius=2pt];
+\fill ($(output.0) + (1.0,0)$) circle [radius=2pt];
+
+
+\end{tikzpicture}

@@ -256,10 +256,11 @@ Robotski mehanizem PA-10 je industrijski robot s segmenti iz pretežno litega žel
 
 V nadaljevanju bo opisana potrebna teorija za admitanèno vodenje mehanizmov. Zaèelo se bo z vodenjem pozicije v notranjih koordinatah, prešlo na vodenje pozicije v zunanjih koordinatah nato pa še opisalo admitanèno vodenje.
 
-\section{Teorija} \label{sec:admittheor}
+\section{Vodenje preko inverzne kinematike} \label{sec:admittheor}
 
+\subsection{Vodenje v notranjih koordinatah} \label{sec:admit_inner}
 
-V poglavju \ref{servo} je opisano, da ima servo krmilnik proporcionalno diferencirni regulator za regulacijo hitrosti v sklepih. Za namen poenostavitve bomo robotski mehanizem aproksimirali kot integrator $\frac{1}{s}$. Spomnimo, da krmilnik robota prejme kod vhodne velièine hitrosti v sklepih ($\omega$), vrne pa kote v sklepih (q). Iz tega sledi enostavna regulacijska enaèba:
+V poglavju \ref{servo} je opisano, da ima servo krmilnik proporcionalno diferencirni regulator za regulacijo hitrosti v sklepih. Za namen poenostavitve bomo robotski mehanizem aproksimirali kot integrator $\frac{1}{s}$. Spomnimo, da krmilnik robota prejme kod vhodne velièine hitrosti v sklepih ($\omega$), vrne pa kote v sklepih (\textbf{q}). Iz tega sledi enostavna regulacijska enaèba:
 
 \begin{equation} \label{outvel}
 \textbf{u} = \textbf{K}_p \cdot \tilde{\textbf{q}}
@@ -277,6 +278,8 @@ V poglavju \ref{servo} je opisano, da ima servo krmilnik proporcionalno diferenc
 
 Slika \ref{fig:qfeedback} prikazuje enostavno regulacijsko shemo, ki je uporabljena za krmiliti robota v notranjih koordinatah. Èas, ki ga motor porabi, da pride iz zaèetne v referenèno lego je proporcionalen ojaèanju $K_p$.
 
+\subsection{Vodenje v zunajih koordinatah}
+
 Iz tega znanja je sedaj moè realizirati regulacijo v zunanjih koordinatah. Najprej opisati napako vrha robota. Naj bo $x_ref$ željena lega vrha robta in naj bo $x$ trenutna lega. Iz tega sledi enaèba napake:
 
 \begin{equation} \label{xerr}
@@ -287,7 +290,7 @@ Iz tega znanja je sedaj moè realizirati regulacijo v zunanjih koordinatah. Najpr
 Vendar pa je potrebno pred tem poznati kinematièni model robota. V poglavju \ref{dh_params} so bili opisani D-H parametri robota. Avtorji v \cite{bajd_robotika} opišejo kako zapisati kinematiko robota. Potrebno je zapisati Jacobijevo matriko $J$. Z Jacobijevo matriko lahko zapišemo relacijo med spremembo zunanjih koordinatah (vrh robota) ter spremembo notranjimi (koti v sklepih):
 
 \begin{equation} \label{qtox}
-\dot{\textbf{x}} = \textbf{J}(q) \cdot \dot{\textbf{q}}
+\dot{\textbf{x}} = \textbf{J}(\textbf{q}) \cdot \dot{\textbf{q}}
 \end{equation}
 
 Ker je pri Jacobijevi matriki govora o relaciji med spremebami, se lahko kot spremembo tudi uporabi napako. Z uporabo enaèb \ref{outvel}, \ref{xerr} in \ref{qtox} je moè zapisati enostaven proporcionalni regulator pozicije vrha robota.
@@ -295,13 +298,13 @@ Ker je pri Jacobijevi matriki govora o relaciji med spremebami, se lahko kot spr
 Z množenjem enaèbe \ref{qtox} z inverzom Jacobijeve matrike se lahko izpostavi $\tilde{q}$:
 
 \begin{equation} \label{qerr}
-\tilde{\textbf{q}} = \textbf{J}^{-1}(q) \cdot \tilde{\textbf{x}}
+\tilde{\textbf{q}} = \textbf{J}^{-1}(\textbf{q}) \cdot \tilde{\textbf{x}}
 \end{equation}
 
 Sedaj je mogoèe regulirni signal, ki krmili hitrost v sklepih robota tako, da bo vrh robota dosegel referenèno lego:
 
 \begin{equation} \label{routcontrol}
-\textbf{u} = \textbf{K}_p \cdot \textbf{J}^{-1}(q) \cdot (\textbf{x}_{ref} - \textbf{x})
+\textbf{u} = \textbf{K}_p \cdot \textbf{J}^{-1}(\textbf{q}) \cdot (\textbf{x}_{ref} - \textbf{x})
 \end{equation}
 
 Avtor v \cite{mihelj_vodenje} opiše, da se mehanski sistem, ki je voden na ta naèin obnaša kot mehanski sistem z \textit{n} - dimenzionalno vzmetjo v notranjih koordinatah. Togost omenjene vzmeti pa doloèa ojaèanje $K_p$.
@@ -311,6 +314,8 @@ Avtor v \cite{mihelj_vodenje} opiše, da se mehanski sistem, ki je voden na ta na
 	\caption{Bloèna shema krmiljenja referenène lege vrha robota}
 	\label{fig:qfeedback}
 \end{figure}
+
+\subsection{Upraba zunanjih sil}
 
 Za doseèi admitanèno vodenje je na tem mestu potrebno še vpeljati podatek o silah in navorih, ki delujejo na vrhu robota. Kot omenjeno v poglavju \ref{arcnet} je bil na vrh robota pritrjen senzor sil in navorov JR3. Odèitke senzorja sile bo oznaèen z èrko $\textbf{h}_{JR3}$. V nadaljevanju bo opisano vodenje pozicije vrha robota z upoštevam željene sile na vrhu robota.
 
@@ -330,7 +335,7 @@ Napako sile prištejemo referenèni pozicijo po tistem, ko jo ojaèamo z matriko oj
 Z vstavitvijo enaèbe \ref{newx} v \ref{routcontrol} je mogoèe zapisati celotno regulacijsko enaèbo za vodenje robota v zunanjih koordinatah z upoštevanjem delovanja zunanjih sil na vrh robota.
 
 \begin{equation} \label{admitcontrol}
-\textbf{u} = \textbf{K}_p \cdot \textbf{J}^{-1}(q) \cdot (\textbf{x}_{ref} + \textbf{K}_h \cdot \tilde{\textbf{h}}_{JR3} - \textbf{x})
+\textbf{u} = \textbf{K}_p \cdot \textbf{J}^{-1}(\textbf{q}) \cdot (\textbf{x}_{ref} + \textbf{K}_h \cdot \tilde{\textbf{h}}_{JR3} - \textbf{x})
 \end{equation}
 
 	
@@ -347,9 +352,55 @@ Implementirano je bilo tudi vodenje v katerem se je signal senzorja sile integri
 
 \section{Rezultati}
 
+
+
 %*********************** INVERZNA KINEMATIKA ********************************
 \chapter{Krmiljenje z inverzno dinamiko} \label{invdyn}
+
+Admitaèno krmiljenje industrijskega robota PA-10 ni zahtevno za realizacijo. Delovanje je moèno odvisno od signala pridobljenega iz senzorja sil ter ojaèanj. Za realizacijo osnovnega krmiljenja po notranjih koordinatah je potrebno poznati le kinematièen model, ki pa je relativno enostaven za zgradit. Pri krmiljenju na podlagi inverzne dinamike pa ni tako. Potrebuje se dinamièen model robota, ki pa je veèinoma zakompliciran za zgradit. Potrebno je dobro poznati dinamiène parametre robotskega mehanizma. Èe proizvajalec ni priplavljen te parametre posredovati jih je potrebno identificirati. Avtor v \cite{petric_nevronska} predlaga in zgradi dinamièen model v namen kompenzacije gravitacije s pomoèjo nevronskih mrež. Avtorji tega dela smo ta model uporabili v namene realizacije vodenja. Za kompenzacijo trenja pa so avtorji tega dela uporabili Stribeckov model trenja. Parametre za model pa so pridobili na podlagi eksperimenta.
+
+Zgrajen je bil program v programskem okolju \matlab \simulink, ki deluje s frekvenco 500 Hz in pošilja ukaze o željenih navorov po UDP protokolu na strežnik opisan v poglavju \ref{arc_drive}.
+
 \section{Teorija}
+
+Z uprabo Newton - Eulerjeve metode lahko zapišemo relacijo med navori v sklepih in pospeški, hitrostmi ter kotih v sklepih na sledeè naèin:
+
+\begin{equation} \label{eq:dinamika}
+	\pmb{\tau} = \textbf{B}(\textbf{q}) \cdot \ddot{\textbf{q}} + \textbf{C}(\textbf{q},\dot{\textbf{q}}) \cdot \dot{\textbf{q}} + \textbf{F}_f \cdot \dot{\textbf{q}} + \textbf{g}(\textbf{q})
+\end{equation}
+
+kjer matrika \textbf{B}(\textbf{q}) predstavlja matriko vztrajnosti, matrika $\textbf{C}(\dot{\textbf{q},\textbf{q}})$ predstavlja matriko Coriolisovih in centrifugalnih vplivov, matrika $\textbf{F}_f$ predstavlja matriko parametrov trejnja, matrika \textbf{g}(\textbf{q}) pa vpliv gravitacije. Enaèba predstavlja dinamièen model robota.
+
+V nadaljevanju bodo opisani koraki, ki privedejo do vodenja robota v zunanjih koordinatah preko inverzne dinamike, zaèenjši z vodenjev v notranjih koordinatah.
+
+\subsection{Vodenje v notranjih koordinatah}
+
+V poglavju \ref{sec:admit_inner} je bilo opisano vodenje robota v notranjih koordinatah. Ker je bila v tistem primeru vhodna velièina v krmilnik robota hitrost, je bilo to relativno enostavno realizirat. Ker pa je v primeru vodenja z inverzno kinematiko potrebno kot vhodno velièino podati navor, je pred tem potrebno narediti primeren regulator. Regulator prejme kot referenco pospešek in ven da potreben navor za to doseèi. Ta se lahko nato pošlje na krmilnik robota. Izhdišèna enaèba naj bo \ref{eq:dinamika}. Hitrost ter trenutnen kot se lahko obravnava kot posledica vodenja, zato je regulirna velièina pospešek. V nadaljevanju bo definiran takšen $\ddot{\textbf{q}}$, da bodo sklepi robota sledili referenèni legi.
+
+Iz enaèbe \ref{eq:dinamika} je videt, da je potrebno pospešek z modelom matrike vztrajnostne matrike. V nadaljevanju bodo za lažje branje matrike, ki opisujejo uporabljeni model za oznaèene z znakom  '\^{}'. Želen pospešek bo oznaèen z $\ddot{q}_{ref}$
+
+V kolikor je naloga preprosto sledenje nekih toèk v prostoru lahko referenèni pospešek reguliramo na sledeè naèin:
+
+\begin{equation} \label{eq:din_accel}
+	\ddot{\textbf{q}}_{ref} = \textbf{K}_p \cdot (\textbf{q}_{ref} - \textbf{q}) - \textbf{K}_d \cdot (\dot{\textbf{q}})
+\end{equation}
+
+Matrika $\textbf{K}_p$ predstavlja proporcionalno ojaèanje, $\textbf{K}_d$ pa diferencirno ojaèanje. Za dobro vodenje je potrebno upoštevati tudi napako, ki nastane zaradi trenja ter vpliva gravitacije in to tudi kompenzirati. Tako postane enaèba navora za sledenje referenè legi sledeèa:
+
+\begin{equation}
+	\pmb{u} = \hat{\textbf{B}}(\textbf{q}) \cdot (\textbf{K}_p \cdot (\textbf{q}_{ref} - \textbf{q}) - \textbf{K}_d \cdot (\dot{\textbf{q}})) +  \hat{\textbf{F}}_f \cdot \dot{\textbf{q}} + \hat{\textbf{g}}(\textbf{q})
+\end{equation}
+
+Shemo takega vodenja prikazuje shema \ref{fig:taufeedback}
+
+\begin{figure}[!h]
+	\input{./BlockDiagrams/x_to_tau.tex}
+	\caption{Bloèna shema krmiljenja referenène lege vrha robota z inverzno dinamiko}
+	\label{fig:taufeedback}
+\end{figure}
+
+
+
 \section{Implementacija}
 \section{Rezultati}
 
@@ -392,7 +443,7 @@ Postopek dela:
 @ARTICLE{clanek1,
    author = "L[eslie] A. Aamport",
    title = "The Gnats and Gnus Document Preparation System",
-   journal = "\mbox{G-Animal's} Journal",
+   journal =  "\mbox{G-Animal's} Journal",
    year = 1986,
    volume = 41,
    number = 7,

@@ -15,9 +15,9 @@
 \node [block, right of=sum4] (pa10) {PA-10};
 
 \node [block, below= 0.5cm of pa10] (g) {$\hat{\textbf{g}}(\textbf{q})$};
-\node [block, below= 0.5cm of g] (ff) {$\hat{\textbf{F}}_f$};
+\node [block, above= 0.5cm of pa10] (ff) {$\hat{\textbf{F}}_f$};
 
-\node [block, above of=pa10] (kd) {$\textbf{K}_d$};
+\node [block, above= 0.5 of ff] (kd) {$\textbf{K}_d$};
 
 \node [output, right of=s1] (output) {};
 
@@ -28,9 +28,9 @@
 \draw [->] (sum2) -- (sum3);
 \draw [->] (sum3) -- (sum4);
 \draw [->] (sum4) -- node[above, pos=0.2]{$u$} (pa10);
-\draw[->] ($(pa10.0) + (0,1/4)$) -- node[above, pos=0.2]{$q$} ($(output.0) + (1.5,1/4)$) ;
-\draw[->] ($(pa10.0) + (0,0)$) -- node[above, pos=0.4]{$\dot{q}$} ($(output.0) + (1.5,0)$) ;
-\draw[->] ($(pa10.0) + (0,-1/4)$) -- node[above, pos=0.6]{$\ddot{q}$} ($(output.0) + (1.5,-1/4)$) ;
+\draw[->] ($(pa10.0) + (0,1/4)$) -- node[above =-0.2 cm, pos=0.1]{$q$} ($(output.0) + (1.5,1/4)$) ;
+\draw[->] ($(pa10.0) + (0,0)$) -- node[above =-0.2 cm, pos=0.3]{$\dot{q}$} ($(output.0) + (1.5,0)$) ;
+\draw[->] ($(pa10.0) + (0,-1/4)$) -- node[above =-0.2 cm, pos=0.8]{$\ddot{q}$} ($(output.0) + (1.5,-1/4)$) ;
 
 \draw [->] ($(output.0) + (0.75,1/4)$) |- (g);
 \draw [->] (g) -| node[pos=0.99, right] {\tiny {$+$}}(sum4);
@@ -41,7 +41,7 @@
 \draw [->] ($(output.0) + (1.0,0)$) |- (kd);
 \draw [->] (kd) -| node[pos=0.99, right] {\tiny {$-$}}(sum2);
 
-\draw [->]($(output.0) + (0.75,1/4)$) -- +(0,1) -| node[pos=0.99, right] {\tiny {$-$}} (sum);
+\draw [->]($(output.0) + (0.75,1/4)$) -- +(0,-2) -| node[pos=0.99, right] {\tiny {$-$}} (sum);
 
 
 \fill ($(output.0) + (0.75,1/4)$) circle [radius=2pt];

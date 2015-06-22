@@ -24,7 +24,7 @@
 \fakulteta{Fakulteta za elektrotehniko}
 \delo{Magistrsko delo}
 \date{Ljubljana, 2015}
-\mentor{prof. dr. Aleš Ude}
+\mentor{prof. dr. Matjaž Mihelj}
 \somentor{dr. Leon Žlajpah}
 \begin{document}
 
@@ -278,7 +278,7 @@ V poglavju \ref{servo} je opisano, da ima servo krmilnik proporcionalno diferenc
 
 Slika \ref{fig:qfeedback} prikazuje enostavno regulacijsko shemo, ki je uporabljena za krmiliti robota v notranjih koordinatah. Èas, ki ga motor porabi, da pride iz zaèetne v referenèno lego je proporcionalen ojaèanju $K_p$.
 
-\subsection{Vodenje v zunajih koordinatah}
+\subsection{Vodenje v zunajih koordinatah} \label{sec:admit_out}
 
 Iz tega znanja je sedaj moè realizirati regulacijo v zunanjih koordinatah. Najprej opisati napako vrha robota. Naj bo $x_ref$ željena lega vrha robta in naj bo $x$ trenutna lega. Iz tega sledi enaèba napake:
 
@@ -339,9 +339,9 @@ Z vstavitvijo enaèbe \ref{newx} v \ref{routcontrol} je mogoèe zapisati celotno r
 \end{equation}
 
 	
-\section{Implementacija}
+\section{Implementacija}\label{sec:admitimplement}
 
-Avtorji so za implementacijo na robotskem mehanizmu PA-10 uporabili strežnik opisan v poglavju \ref{arcnet} ter programsko okolje \matlab \simulink. Program za vodenje robota je bil v celoti zgrajen v okolju \simulink. Razlogi za izbiro omenjenega programskega paketa so bile dobre predhodne izkušnje avtorjev. Komunikacija z strežnikom je bila realizirana z integriranimi funckijami za pošiljanje paketov po UDP protokolu. S pravim formiranjem paketov je bilo mogoèe pošiljati referenène hitrosti sklepov ter prebirati trenutne kote v sklepih. Ker strežnik pošilja tudi izmerjene sile ter navore na vrhu robota preko JR3 senzorja je mogoèe admitanèno vodenje opisano v \ref{sec:admittheor}.
+Avtorji so za implementacijo na robotskem mehanizmu PA-10 uporabili strežnik opisan v poglavju \ref{arcnet} ter programsko okolje \matsim. Program za vodenje robota je bil v celoti zgrajen v okolju \simulink. Razlogi za izbiro omenjenega programskega paketa so bile dobre predhodne izkušnje avtorjev. Komunikacija z strežnikom je bila realizirana z integriranimi funckijami za pošiljanje paketov po UDP protokolu. S pravim formiranjem paketov je bilo mogoèe pošiljati referenène hitrosti sklepov ter prebirati trenutne kote v sklepih. Ker strežnik pošilja tudi izmerjene sile ter navore na vrhu robota preko JR3 senzorja je mogoèe admitanèno vodenje opisano v \ref{sec:admittheor}.
 
 Avtorji tega dela so pripravili \simulink shemo, ki se izvaja na posveèenem raèunalniku na katerem teèe operacijski sistem Simulink Target. Frekvenca izvajanja programa je nastavljena na 500 Hz tako, da se ujema s frekvenco strežnika. Pripravljen je bil grafièni vmesnik, da lahko bodoèi uporabniki uporabljajo enak program brez predhodnega poznavanja katere ukaze je potrebno izvesti. 
 
@@ -359,7 +359,7 @@ Implementirano je bilo tudi vodenje v katerem se je signal senzorja sile integri
 
 Admitaèno krmiljenje industrijskega robota PA-10 ni zahtevno za realizacijo. Delovanje je moèno odvisno od signala pridobljenega iz senzorja sil ter ojaèanj. Za realizacijo osnovnega krmiljenja po notranjih koordinatah je potrebno poznati le kinematièen model, ki pa je relativno enostaven za zgradit. Pri krmiljenju na podlagi inverzne dinamike pa ni tako. Potrebuje se dinamièen model robota, ki pa je veèinoma zakompliciran za zgradit. Potrebno je dobro poznati dinamiène parametre robotskega mehanizma. Èe proizvajalec ni priplavljen te parametre posredovati jih je potrebno identificirati. Avtor v \cite{petric_nevronska} predlaga in zgradi dinamièen model v namen kompenzacije gravitacije s pomoèjo nevronskih mrež. Avtorji tega dela smo ta model uporabili v namene realizacije vodenja. Za kompenzacijo trenja pa so avtorji tega dela uporabili Stribeckov model trenja. Parametre za model pa so pridobili na podlagi eksperimenta.
 
-Zgrajen je bil program v programskem okolju \matlab \simulink, ki deluje s frekvenco 500 Hz in pošilja ukaze o željenih navorov po UDP protokolu na strežnik opisan v poglavju \ref{arc_drive}.
+Zgrajen je bil program v programskem okolju \matsim, ki deluje s frekvenco 500 Hz in pošilja ukaze o željenih navorov po UDP protokolu na strežnik opisan v poglavju \ref{arc_drive}.
 
 \section{Teorija}
 
@@ -402,8 +402,19 @@ Shemo takega vodenja prikazuje shema \ref{fig:taufeedback}
 
 
 \section{Implementacija}
-\section{Rezultati}
 
+Postopek implementacije je bil v tem primeru podoben tistemu opisanemu v poglavju \ref{sec:admitimplement}. Tudi tokrat so avtorji uporabili strežnik opisan v poglavju\ref{arcnet} ter programski paket \matsim. Program je deloval s frekvenco 500 Hz na poseveèenem raèunalniku na katerem je potekal operacijski sistem Simulink Target.
+
+Iplementacija je potekala postopoma za vsako stopjo posebaj. Zaèelo se je z zadnjim sklepom saj je najmanj odvisen od ostalih in njegovo premikanje ni preveliko. Testiralo se je najprej kompenzacijo trenja. Izklopilo se je zavoro za posamezen sklep ter se ga je z roko porinilo. Teza je bila, da v kolikor sklep ohrani hitrost gibanja je navor dobro kompenziran. Težava je, da mora tukaj bit ojaèano na meji stabilnosti. V kolikor je kompenzacija prevelika, bo sklep pospeševal, èe pa je premajhna bo zaviral.
+
+Sledila je implementacija kompenzacije gravitacije. Ponovno se je to poskušalo za vsak sklep posebej. Teza je bila, da v kolikor kompenzacija pravilo deluje, bo sklep miroval v kateri koli legi kljub temu, da so zavore izklopljene. Potrebno je bilo nekatera ojaèanja prilagodit, za pravilno delovanje.
+
+Z dobrim modelom trenja in dobro kompenzacijo gravitacije se je testiralo še vodenje v notranjih koordinatah. Spet za posamezne stopnje. Kot referenco se je podalo neko sinusno nihanje. Opazovalo se je graf reference ter graf dejanskega kota. Prilagajalo se je ojaèanja regulatorja tako, da se je graf dejanskega kota èimbolje ujemal z referenènim.
+
+Z dobro delujoèim vodenjem v zunanjih koordinatah je sledila implementacija vodenja v zunanjih koordinatah. To je bilo opravljeno z enakimi bloki za izraèun hitrosti v sklepih kot v primeru admitanènega vodenja. Ojaèanja so bila drugaèe izbrana tako, da so odzivi bili hitri in, da je sistem še vedno bil stabilen.
+
+
+\section{Rezultati}
 
 %*********************** REZULTATI ********************************
 \chapter{Rezultati} \label{rezultati}
@@ -411,7 +422,24 @@ Shemo takega vodenja prikazuje shema \ref{fig:taufeedback}
 %*********************** SIMULINK KNJIŽNICE ********************************
 \chapter{Simulink knjižice} \label{simulink}
 
-Ob nastajanju tega dela so bile razvite razne simulink knjižnice za krmiljnenje robota PA10. Namen teh je omogoèiti uporabo robotskega mehanizma PA10 osebam, ki niso seznanjene z vsemi podrobnosti.
+Avtorji tega dela so za visoko nivojsko vodenje uporabljali programski paket \matsim. Ker je želja avtorjev, da se raziskovalno in razvojno delo na robotu PA-10 v prihodnosti nadaljuje, so nastale \simulink knjižnice. Knjižnice bodoèim uporabnikom omogoèajo uporabo robota brez, da poznajo do podrobnosti vse, kar je bilo opisano do sedaj v tem delu. V nadaljevanju bodo opisani posamezni bloki, ki jih lahko uporabniki dodajo v njihovo \simulink shemo.
+
+\section{Blok PA-10}
+
+Blok imenovan PA-10 je glavni blok za komunikacijo z ARCNET strežnikom, ki teèe na Linux raèunalniku. Blok omogoèa prebiranje vseh statusnih bajtov za vse stopnje robota in glavni statusni bajt. Omogoèa tudi prebiranje vrednosti sil izmerjenih na senzorju JR3 ter kote in navore v sklepih robota. Hkrati pa uporabniku omogoèa izbiro na kakšen naèin bo robota vodil, navorno ali hitrostno. Uporabnik ima tudi možnost vklopa ter izklopa zavor posameznih sklepov ter vklop ali izklop posameznih servo motorjev.
+
+\section{Blok Inverse Dynamics Control}
+
+Blok imenovan Inverse Dynamics Control je nastal z željo, da uporabnik enostavno pripelje v vhod željeno pozicijo v sklepih ali hitrost sklepov v blok in ven dobi potreben navor za to hitrost oz. za ohranjanje pozicije. Uporabnik ima možnost nastavljanja proporcionalnega ter diferencirnega ojaèanja.
+
+\section{Blok Follow Trajectory}
+
+Blok imenovan Follow Trajektory implementira vodenje v zunajih koordinatah. Kot vhod prejme zunanje koordinate, trenutne kote in hitrosti v sklepih. Kot rezultat vrne potrebne hitrosti, za doseganje referenène pozicije. V bloku je realizirano vodenje na naèin, ki je opisan v \ref{sec:admit_out}. 
+
+\section{Blok Admitance Control}
+
+Blok imenovan Admitance Control je namenjen admitaènemu vodenju robota. Blok prejme kot vhod signal želeno referenco izraženo v zunanjih koordinatah ter odèitke senzorja sil. Kot izhod pa poda novo referenèno pozicijo v zunanjih koordinatah, ki jo lahko uporabnik posreduje naprej v blok Follow Trajectory. Bloku Admitance Control se lahko natavlja ojaèanja v posameznih smereh. Na ta naèin se doseže, da je po razliènih oseh razlièno podajen.
+
 %*********************** ZAKLJUÈEK ********************************
 \chapter{Zakljuèek} \label{zakljucek}
 

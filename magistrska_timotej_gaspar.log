@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  22 JUN 2015 16:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  22 JUN 2015 16:41
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -802,14 +802,17 @@ Package pdftex.def Info: ./Slike/arm_length.png used on input line 2.
 File: ./Slike/pa10-drawing.png Graphic file (type png)
 
 <use ./Slike/pa10-drawing.png>
-Package pdftex.def Info: ./Slike/pa10-drawing.png used on input line 2.
-(pdftex.def)             Requested size: 412.56496pt x 474.35416pt.
+Package pdftex.def Info: ./Slike/pa10-drawing.png used on input line 3.
+(pdftex.def)             Requested size: 173.23466pt x 199.16928pt.
 )
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [8 <./Slike/arm_length.png>]
+Underfull \vbox (badness 5548) has occurred while \output is active []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -828,13 +831,8 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[10]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[11] (Slike/control_mode.tex
-<./Slike/control_mode.png, id=93, 1063.72406pt x 534.49687pt>
+[10] (Slike/control_mode.tex
+<./Slike/control_mode.png, id=90, 1063.72406pt x 534.49687pt>
 File: ./Slike/control_mode.png Graphic file (type png)
 
 <use ./Slike/control_mode.png>
@@ -845,56 +843,51 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
+[11]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
 [12 <./Slike/control_mode.png>]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[13]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[14
-
-]
   3.
 
 Underfull \vbox (badness 1062) has occurred while \output is active []
 
- [15]
+ [13
+
+]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[16]
+[14]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[17]
+[15]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[18
+[16
 
 ]
   4.
 (BlockDiagrams/vel_to_ang.tex)
 Underfull \vbox (badness 1874) has occurred while \output is active []
 
- [19]
+ [17]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[20] (BlockDiagrams/x_to_vel.tex)
+[18] (BlockDiagrams/x_to_vel.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[21]
+[19]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 344.
 
@@ -902,77 +895,86 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[22]
+[20]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
+[21]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[22
+
+]
+  5.
 [23]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[24
+[24] (BlockDiagrams/x_to_tau.tex)
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
 
-]
-  5.
 [25]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[26] (BlockDiagrams/x_to_tau.tex)
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[27]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[28]
+[26]
   6.
-[29
+[27
 
 ]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[30
+[28
 
 ]
   7.
-[31]
+[29]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[32]
+[30]
   8.
-(magistrska_timotej_gaspar.bbl [33
+(magistrska_timotej_gaspar.bbl [31
 
 ]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[34
+[32
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 4--7
 []\OT1/cmr/m/n/12 A. Pen-na-run, ``Li-nux ARC-net HOWTO.'' Do-se-gljivo:
  []
 
-) [35]
+) [33]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[34
+
+] [35]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [36
 
-] [37]
+]
+  A.
+[37]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -980,7 +982,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [38
 
 ]
-  A.
+  B.
 [39]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -989,7 +991,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [40
 
 ]
-  B.
+  C.
 [41]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -998,32 +1000,23 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [42
 
 ]
-  C.
-[43]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[44
-
-]
   D.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45]
+ [43]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[46] (magistrska_timotej_gaspar.aux)
+[44] (magistrska_timotej_gaspar.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  18009 strings out of 493671
- 353399 string characters out of 3145458
+ 353406 string characters out of 3145458
  467988 words of memory out of 3000000
  20932 multiletter control sequences out of 15000+200000
  14499 words of font info for 55 fonts, out of 3000000 for 9000
@@ -1042,9 +1035,9 @@ amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/c
 msy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:
 /Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Fil
 es/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (58 pages, 403994 bytes).
+Output written on magistrska_timotej_gaspar.pdf (56 pages, 402615 bytes).
 PDF statistics:
- 259 PDF objects out of 1000 (max. 8388607)
+ 253 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

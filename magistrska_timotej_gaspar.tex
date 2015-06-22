@@ -114,14 +114,14 @@ The thesis addresses ...
 \chapter{Robotski manipulator PA-10 in senzor sile JR3} \label{oprema}
 
 \section{Robotski manipulator PA-10}
-Celotno delo, ki je v tem delu je bilo narejeno na robotskem mehanizmu Portable General Purpose Intellient Arm - PA10, proizvajalca Mitsubishi Heavy Industries. Gre za serijskega robota s sedmimi sklepi. Robotska roka tehta 36 kg in ima nosilnost 10 kg. Servo motorji v sklepih se napajajo preko izmeniène napetosti. Prenosi med v sklepih so realizirani s mehanizmom harmonic drive. Proizvajalec navaja, da lahko bazo robota pritrdimo v katerokoli lego. To pomeni, da ga lahko fiksiramo bodisi na tla, na stane ali na strop. Za namene tega dela je bila baza robota fiksirana na tla.
+Celotno delo, ki je v tem delu opisano je bilo narejeno na robotskem mehanizmu Portable General Purpose Intellient Arm - PA10, proizvajalca Mitsubishi Heavy Industries. Gre za serijskega robota s sedmimi sklepi. Robotska roka tehta 36 kg in ima nosilnost 10 kg. Servo motorji v sklepih se napajajo preko izmeniène napetosti. Prenosi med v sklepih so realizirani z mehanizmom harmonic drive. Proizvajalec navaja, da se lahko bazo robota pritrdi v katerokoli lego. To pomeni, da ga lahko fiksiramo bodisi na tla, na steno ali na strop. Za namene tega dela je bila baza robota fiksirana na tla.
 
 
 \subsection{Denavitt - Hartemberg parametri za robotski manipulator PA-10}
 
-Robotski mehanizem PA-10 ima 7 prostostnih stopenj razporejenih tako, da spominjajo na èloveško roko. Prvi trije sklepi so oznaèeni kot ramenskio sklepi (shoulder), S1, S2, S3. Naslednja dva sta oznaèena kot komolèni sklepi (elbow), E1, E2. Zadnja dva sklepa pa sta oznaèena kot zapestna (wrist), W1, W2. Ker ima robot veè kot 6 prostostnih stopenj ga uvršèamo med redundantne mehanizme. Vsi sklepi so rotacijski.
+Robotski mehanizem PA-10 ima 7 prostostnih stopenj razporejenih tako, da spominjajo na èloveško roko. Prvi trije sklepi so oznaèeni kot ramenski sklepi (shoulder), S1, S2, S3. Naslednja dva sta oznaèena kot komolèni sklepi (elbow), E1, E2. Zadnja dva sklepa pa sta oznaèena kot zapestna (wrist), W1, W2. Ker ima robot veè kot 6 prostostnih stopenj ga uvršèamo med redundantne mehanizme. Vsi sklepi so rotacijski.
 
-Proizvajalec v dokumentaciji navaja zadostno kolièino podatkov, da lahko uporabnik sam zgradi kinematièen model robota. S poznavanjem razdalj in postavitev sklepov je moè definirati Denavit-Hartenberg (kasneje D-H parametri) parametre.
+Proizvajalec v dokumentaciji navaja zadostno kolièino podatkov, da lahko uporabnik sam zgradi kinematièen model robota. S poznavanjem razdalj in postavitev sklepov je moè definirati Denavit-Hartenberg (kasneje D-H) parametre.
 
 \input{./Slike/arm_length.tex}
 
@@ -147,11 +147,11 @@ Proizvajalec v dokumentaciji navaja zadostno kolièino podatkov, da lahko uporabn
   \label{dh_params} 
 \end{table}
 
-S pomoèjo D-H parametrov lahko definiramo geometrijski model robota oz. transformacijsko matriko $ A_{PA10} = A_1 \times A_2 \times ... \times A_7 $, ki nam preslika koordinate iz koordinatnega sistema baze ($ x_{base} $) v koordinatni sistem na vrhu robota($ x_{PA10} $) v odvisnosti od kotov v sklepih. 
+S pomoèjo D-H parametrov lje moè definirati geometrijski model robota oz. transformacijsko matriko $ A_{PA10} = A_1 \cdot A_2 \cdot ... \cdot A_7 $, ki preslika koordinate izražene v koordinatnem sistemu baze ($ x_{base} $) koordinate izražene v koordinatnem sistemu na vrhu robota($ x_{PA10} $) v odvisnosti od kotov $(q)$ v sklepih. 
 Tako velja relacija
 
 \begin{center}
-	$x_{PA10} = A_{PA10} \times x_{base}$
+	$x_{PA10} = A_{PA10}(q) \cdot x_{base}$
 \end{center}
 
 
@@ -163,19 +163,19 @@ Tako velja relacija
 
 \section{Servo Krmilnik} \label{servo}
 %*********************** SERVO KRMILNIK ********************************
-Proizvajalec ob robotskem mehanizmu dostavi tudi krmilnik. V krmilniku je so štiri loèeni krmilniki za servo motorje. Vsak servo krmilnik krmili dva sklepa razen enega. Krmilnik omogoèa vodenje na dva naèina. Prvi naèin predvideva, da motorje krmilimo navorno, drugi pa hitrostno. Razlika je tudi v regulatorjih. Navorno krmiljenje je realizirano z analognim P regulatorjem toka, hitrostna regulacija pa je realizirana z digitalnim PI regulatorjem s frekvenco pribliæno 1500 Hz.
+Proizvajalec ob robotskem mehanizmu dostavi tudi krmilnik. V krmilniku so štiri loèeni krmilniki za servo motorje. Vsak servo krmilnik krmili servo motorja, razen enega. Krmilnik omogoèa vodenje na dva naèina. Prvi naèin predvideva, da motorje krmilimo navorno, drugi pa hitrostno. Razlika je tudi v regulatorjih. Navorno krmiljenje je realizirano z analognim P regulatorjem toka, hitrostna regulacija pa je realizirana z digitalnim PI regulatorjem s frekvenco približno 1500 Hz.
 
-Na zadnji strani krmilinka je stikalo s katerim lahko priklopimo med naèinom delovanj imenovanim "Teach Mode" ter "Run mode". Ko je krmilnik nastavljen na "Teach Mode" so hitrosti v sklepih omejene tako, da se lahko vrh robota premika s maksimalno hitrostjo 250 mm/s
+Na zadnji strani krmilinka je stikalo s katerim lahko preklopimo med dvema naèina delovanja: "Teach Mode" ter "Run mode". Ko je krmilnik nastavljen na "Teach Mode", so hitrosti v sklepih omejene tako, da se lahko vrh robota premika s maksimalno hitrostjo 250 mm/s.
 
-Ob vžigu krmilnika se parametri za vodenje robota naložijo iz EEPROM tabele v RAM. Med temi parametri so recimo tudi ojaèanje proporcionalnega ter integracijskega dela regulatorja, limite posameznih stopenj, razmerje prenosa zobnikov, itd.
+Ob vžigu krmilnika se parametri za vodenje robota naložijo iz EEPROM tabele v RAM. Med temi parametri so tudi ojaèanje proporcionalnega ter integracijskega dela regulatorja, omejitve posameznih stopenj, razmerje prenosa zobnikov, itd.
 
 Referenène navore ali hitrosti v sklepih na servo krmilniku nastavljamo preko zunanjega vmesnika. Krmilnik ima ARCNET vmesnik, ki podpira serijsko komunikacijo po ARCNET protokolu. Krmilink ima loèen konektor za vhod (Rx) ter izhod (Tx). Uporabljena so optièna vodila.
-Za komunikacijo s servo krmilnikom je bil v namen tega dela narejen vmesnik, ki je podrobneje opisan v poglavju XXX.
+Za komunikacijo s servo krmilnikom je bil v namen tega dela narejen vmesnik, ki je podrobneje opisan v poglavju \ref{arcnet}.
 
 
 \subsection{Komunikacija z ARCNET vmesnikom} \label{arc_drive}
 
-ArcNET vmesnik na  krmilniku skrbi za komunikacijo med servo krmilniki ter visokonivojskim vmesniku. Dovoli hitrost komunikacije do 5 Mb/0.s Njegova naloga je interpretirati dobljene pakete, primerno nastaviti parametre na servo krmilniku ter posredovati primeren odgovor višjenivojskemu vmesniku.
+ArcNET vmesnik na  krmilniku skrbi za komunikacijo med servo krmilniki ter visokonivojskim vmesniku. Dovoli hitrost komunikacije do 5 Mb/s Njegova naloga je interpretirati dobljene pakete, primerno nastaviti parametre na servo krmilniku ter posredovati primeren odgovor višjenivojskemu vmesniku.
 Ko višjenivojski vmesnik ne pošilja nobenih ukazov je ARCNET vmesnik v èakanju. V tem stanju èaka na primerno sestavljen paket. Vsak paket se zaène z veliko tiskano èrko zapisano v 8-bitnem ASCII formatu. Z razliènimi èrkami lahko izberemo razlièna stanja oz. naèine delovanja ARCNET vmesnika:
 
 
@@ -191,7 +191,7 @@ Ko višjenivojski vmesnik ne pošilja nobenih ukazov je ARCNET vmesnik v èakanju. 
 
 Tako lahko uporabnik poljubno spremeni razne parametre, ki se uporabljajo za vodenje robota. Možno je na primer spremeniti ojaèanja PI regegulatorja, vendar se teh funkcionalosti v tem delu ni podrobneje raziskalo saj ni bilo potrebe po tem.
 
-V tem delu se je v veèini uporabljalo naèin za vodenje sklepov. Ta naèin se izbere tako, da se ARCNET vmesniku najprej pošlje ukaz, ki se zaène z velikim tiskanim S (ASCII DEC 65), nadaljuje se s pošiljanjem paketov, ki se zaènejo s veliko tiskano èrko C (ASCII DEC 67) ter zakljuèi s tem, da se pošlje paket, ki se zaène z velikim tiskanim E (ASCII 69). Pri tem naèinu delovanja je potrebno posvetiti nekaj pozornosti hitrosti pošiljanja, saj, èe paketi ne pridejo v intervalu specificiranem na krmilniku bo ARCNET vmesnik šel iz tega naèina delovanja nazaj na naèin èakanje.
+V tem delu se je v veèini uporabljalo naèin za vodenje sklepov. Ta naèin se izbere tako, da se ARCNET vmesniku najprej pošlje ukaz, ki se zaène z velikim tiskanim S (ASCII DEC 65), nadaljuje se s pošiljanjem paketov, ki se zaènejo s veliko tiskano èrko C (ASCII DEC 67) ter zakljuèi s tem, da se pošlje paket, ki se zaène z velikim tiskanim E (ASCII 69). Pri tem naèinu delovanja je potrebno posvetiti nekaj pozornosti frekvenci pošiljanja. V kolikor paketi ne pridejo do ARCNET vmesnika v intervalu specificiranem na krmilniku, bo ARCNET vmesnik šel iz tega naèina delovanja nazaj na naèin èakanje.
 
 Paket, ki se zaène s C in nosi podatke o krmiljenju sklepov robota je velik 35 bajtov, 5 za vsak sklep. Prvi bajt je kontrolni in samo prvi trije  biti nosijo podatke o vodenju:
 
@@ -200,8 +200,8 @@ Paket, ki se zaène s C in nosi podatke o krmiljenju sklepov robota je velik 35 b
 	\item vklop ali izklop servo motorja (1 - vklop, 0 - izklop)
 	\item izbira navornega ali hitrostnega naèina (1 - navorni, 0 - hitrostni)
 \end{enumerate}
-Drugi in tretji bajt nosijo podatek o referenènem navoru na sklepu. Ta podatek bo uporabljen le, èe je servo motor nastavljen na navorni naèin delovanja. Dvo bajtni podatek pa je v formatu 0.001 Nm/digit.
-Èetrti in peti bajt nosijo podatek o referenèni hitrosti na sklepu. Podatek je tako kot pri navornem delovanju v uporabi le, ko vodimo servo motor na hitrostnem naèinu. Dvo bajtni podatek je v formatu 0.0002 rad/s/digit.
+Drugi in tretji bajt nosijo podatek o referenènem navoru na sklepu. Ta podatek bo uporabljen le, èe je servo motor nastavljen na navorni naèin delovanja. Dvobajtni podatek pa je v formatu 0.001 Nm/digit.
+Èetrti in peti bajt nosijo podatek o referenèni hitrosti na sklepu. Podatek je tako kot pri navornem delovanju v uporabi le, ko vodimo servo motor na hitrostnem naèinu. Dvobajtni podatek je v formatu 0.0002 rad/s/digit.
 
 \input{./Slike/control_mode.tex}
 
@@ -209,7 +209,7 @@ Drugi in tretji bajt nosijo podatek o referenènem navoru na sklepu. Ta podatek b
 \section{Senzor sile in navorov - JR3}
 
 Za namene tega dela se je med vrhom robota ter prijemalom pritrdilo senzor sil JR3. Senzor nam omogoèa merjenje sil in navorov v X, Y in Z smeri. Sensor je narejen iz uporovnih listièev porazdeljenih po notranjosti. Iz specifikacij senzorja je razvidno, da uporablja 8 uporovnih listièev. S tem, ko na senzor deluje zunanja sila ali navor, se upornost na uporovnih listièih spremeni.
-Senzor sile JR3 ima v svoji notranjosti poleg uporovnih listièev še AD-pretvornik. Iz senzorja tako dobimo podatke o navoru v digitalnem zapisu. Senzor se navadno prikljuèi preko 6 ali 8 pinskega kabla na osebni raèunalnik, na katerem je kartica, ki skrbi za digitalno obdelavo signala. Kartice na osebnem raèunalniku so v ISA ali PCI izvedbi. Za potrebe tega dela se je uporabljala kartica na ISA vodilu. Na kartici je vezje za digitalno procesiranje signalov. V dokumentaciji kartice so opisani trije nizkoprepustni filtri z razliènimi mejnimi frekvencami. V tem delu se je uporabilo filter z mejno frekvenco 500 Hz.
+Senzor sile JR3 ima v svoji notranjosti poleg uporovnih listièev še AD-pretvornik. Iz senzorja pridejo podatki o navoru v digitalnem formatu. Senzor se navadno prikljuèi preko 6 ali 8 žiènega kabla na osebni raèunalnik, na katerem je kartica, ki skrbi za digitalno obdelavo signala. Kartice na osebnem raèunalniku so v ISA ali PCI izvedbi. Za potrebe tega dela se je uporabljala kartica na ISA vodilu. Na kartici je vezje za digitalno procesiranje signalov. V dokumentaciji kartice so opisani trije nizkoprepustni filtri z razliènimi mejnimi frekvencami. V tem delu se je uporabilo filter z mejno frekvenco 500 Hz.
 
 
 %*********************** ARCNET SERVER ********************************

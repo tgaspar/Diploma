@@ -1,14 +1,23 @@
 \begin{thebibliography}{1}
 
+\bibitem{jr3_doc_ext}
+I.~JR3, ``{JR3, Installation manual for force - torque sensors with external
+  electronics}.'' Dosegljivo: \url{http://www.jr3.com/product-manuals.html}.
+\newblock [Dostopano: 6. 17. 2015].
+
+\bibitem{jr3_doc_inst}
+I.~JR3, ``{JR3, DPS-based force sensor receivers, software and installation
+  manual}.'' Dosegljivo: \url{http://www.jr3.com/product-manuals.html}.
+\newblock [Dostopano: 6. 17. 2015].
+
 \bibitem{arc_howto}
 A.~Pennarun, ``{Linux ARCnet HOWTO}.'' Dosegljivo:
   \url{http://apenwarr.ca/arcnet/howto/index.html}.
 \newblock [Dostopano: 6. 17. 2015].
 
-\bibitem{jr3_doc}
-I.~JR3, ``{JR3, DPS-based force sensor recveivers, software and installation
-  manual}.'' Dosegljivo: \url{http://apenwarr.ca/arcnet/howto/index.html}.
-\newblock [Dostopano: 6. 17. 2015].
+\bibitem{lenarcic_robotmeh}
+J.~Lenar\v{c}i\v{c} in T.~Bajd, {\em Robotski mehanizmi}.
+\newblock Ljubljana: Univerza v Ljubljani, Zalo{\v{z}}ba FE in FRI, 2003.
 
 \bibitem{mihelj_hapt}
 M.~Mihelj, {\em Vodenje robotov}.

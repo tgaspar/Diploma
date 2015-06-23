@@ -4,28 +4,31 @@
 \@writefile{toc}{\select@language{slovene}}
 \@writefile{lof}{\select@language{slovene}}
 \@writefile{lot}{\select@language{slovene}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Veli\v cine in simboli}}{xi}}
-\newlabel{prebojne_trdnosti}{{1}{xi}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Veli\v cine in simboli}}{xiii}}
+\newlabel{prebojne_trdnosti}{{1}{xiii}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Uvod}{5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{uvod}{{1}{5}}
+\newlabel{chap:uvod}{{1}{5}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}Robotski manipulator PA-10 in senzor sile JR3}{7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{oprema}{{2}{7}}
+\newlabel{chap:oprema}{{2}{7}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Robotski manipulator PA-10}{7}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Denavitt - Hartemberg parametri za robotski manipulator PA-10}{7}}
+\newlabel{sec:dh}{{2.1.1}{7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Dimenzije roke za identifikacijo D-H parametrov.}}{8}}
-\newlabel{fig:pa10drawing}{{2.1}{8}}
+\newlabel{fig:pa10armlength}{{2.1}{8}}
 \@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces D-H parametri}}{8}}
-\newlabel{dh_params}{{2.1}{8}}
+\newlabel{table:dh_params}{{2.1}{8}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}Servo Krmilnik}{8}}
-\newlabel{servo}{{2.2}{8}}
+\newlabel{sec:servo}{{2.2}{8}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Skica robotskega mehanizma PA 10}}{9}}
 \newlabel{fig:pa10drawing}{{2.2}{9}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Komunikacija z ARCNET vmesnikom}{10}}
-\newlabel{arc_drive}{{2.2.1}{10}}
+\newlabel{sec:arc_drive}{{2.2.1}{10}}
+\citation{jr3_doc_ext}
+\citation{jr3_doc_inst}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Senzor sile in navorov - JR3}{11}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Na\v {c}in za krmiljenje robota}}{12}}
 \newlabel{fig:controlmode}{{2.3}{12}}
@@ -33,93 +36,105 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}UDP stre\v znik za komunikacijo s krmilnikom robota ter senzorjem JR3}{13}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{arcnet}{{3}{13}}
+\newlabel{sec:arcnet}{{3}{13}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}ARCNET stre\v znik}{13}}
 \citation{arc_howto}
-\citation{jr3_doc}
+\citation{jr3_doc_inst}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}JR3 stre\v znik}{14}}
-\newlabel{force_filt}{{3.1}{15}}
+\newlabel{eq:force_filt}{{3.1}{15}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Zdru\v zitev ARCNET in JR3 stre\v znika}{15}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.4}Razlogi za stre\v znik}{15}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Kratek uvod v redundatne mehanizme in pseudoinverz Jacobijeve matrike}{17}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{chap:redundant}{{4}{17}}
+\citation{lenarcic_robotmeh}
+\citation{lenarcic_robotmeh}
+\newlabel{eq:pseudoinv}{{4.2}{18}}
+\newlabel{eq:utezen_p_pseud}{{4.3}{18}}
+\newlabel{eq:dq_p_and_s}{{4.4}{18}}
+\newlabel{eq:mat_n}{{4.5}{18}}
 \citation{mihelj_hapt}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Admitan\v cno krmiljenje}{17}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Admitan\v cno krmiljenje}{21}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{admitance}{{4}{17}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Vodenje preko inverzne kinematike}{17}}
-\newlabel{sec:admittheor}{{4.1}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Vodenje v notranjih koordinatah}{17}}
-\newlabel{sec:admit_inner}{{4.1.1}{17}}
-\newlabel{outvel}{{4.1}{17}}
+\newlabel{chap:admitance}{{5}{21}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Vodenje preko inverzne kinematike}{21}}
+\newlabel{sec:admittheor}{{5.1}{21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Vodenje v notranjih koordinatah}{21}}
+\newlabel{sec:admit_inner}{{5.1.1}{21}}
+\newlabel{eq:outvel}{{5.1}{21}}
 \citation{bajd_robotika}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Povratna zanka za krmiljenje kota v sklepu}}{18}}
-\newlabel{fig:qfeedback}{{4.1}{18}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Vodenje v zunajih koordinatah}{18}}
-\newlabel{sec:admit_out}{{4.1.2}{18}}
-\newlabel{xerr}{{4.3}{18}}
-\newlabel{qtox}{{4.4}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Povratna zanka za krmiljenje kota v sklepu}}{22}}
+\newlabel{fig:qfeedback}{{5.1}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Vodenje v zunajih koordinatah}{22}}
+\newlabel{sec:admit_out}{{5.1.2}{22}}
+\newlabel{eq:xerr}{{5.3}{22}}
+\newlabel{eq:qtox}{{5.4}{22}}
 \citation{mihelj_vodenje}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Blo\v cna shema krmiljenja referen\v cne lege vrha robota}}{19}}
-\newlabel{fig:qfeedback}{{4.2}{19}}
-\newlabel{qerr}{{4.5}{19}}
-\newlabel{routcontrol}{{4.6}{19}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Upraba zunanjih sil}{19}}
-\newlabel{herr}{{4.7}{19}}
-\newlabel{newx}{{4.8}{20}}
-\newlabel{admitcontrol}{{4.9}{20}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Implementacija}{20}}
-\newlabel{sec:admitimplement}{{4.2}{20}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Rezultati}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Blo\v cna shema krmiljenja referen\v cne lege vrha robota}}{23}}
+\newlabel{fig:xfeedback}{{5.2}{23}}
+\newlabel{eq:qerr}{{5.5}{23}}
+\newlabel{eq:outcontrol}{{5.6}{23}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Upraba zunanjih sil}{23}}
+\newlabel{eq:herr}{{5.7}{23}}
+\newlabel{eq:newx}{{5.8}{24}}
+\newlabel{eq:admitcontrol}{{5.9}{24}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Implementacija}{24}}
+\newlabel{sec:admitimplement}{{5.2}{24}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Rezultati}{25}}
 \citation{petric_nevronska}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Krmiljenje z inverzno dinamiko}{23}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Krmiljenje z inverzno dinamiko}{27}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{invdyn}{{5}{23}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Teorija}{23}}
-\newlabel{eq:dinamika}{{5.1}{23}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Vodenje v notranjih koordinatah}{24}}
-\newlabel{eq:din_accel}{{5.2}{24}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Blo\v cna shema krmiljenja referen\v cne lege vrha robota z inverzno dinamiko}}{25}}
-\newlabel{fig:taufeedback}{{5.1}{25}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Implementacija}{25}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Rezultati}{26}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Rezultati}{27}}
+\newlabel{chap:invdyn}{{6}{27}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Teorija}{27}}
+\newlabel{eq:dinamika}{{6.1}{27}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Vodenje v notranjih koordinatah}{28}}
+\newlabel{eq:din_accel}{{6.2}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Blo\v cna shema krmiljenja referen\v cne lege vrha robota z inverzno dinamiko}}{29}}
+\newlabel{fig:taufeedback}{{6.1}{29}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Implementacija}{29}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Rezultati}{30}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Rezultati}{31}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{rezultati}{{6}{27}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Simulink knji\v zice}{29}}
+\newlabel{chap:rezultati}{{7}{31}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Simulink knji\v zice}{33}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{simulink}{{7}{29}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Blok PA-10}{29}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Blok Inverse Dynamics Control}{29}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Blok Follow Trajectory}{30}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.4}Blok Admitance Control}{30}}
+\newlabel{chap:simulink}{{8}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.1}Blok PA-10}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.2}Blok Inverse Dynamics Control}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.3}Blok Follow Trajectory}{34}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.4}Blok Admitance Control}{34}}
 \bibstyle{ieeetrslo}
 \bibdata{literatura}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}Zaklju\v cek}{31}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {9}Zaklju\v cek}{35}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{zakljucek}{{8}{31}}
-\bibcite{arc_howto}{1}
-\bibcite{jr3_doc}{2}
-\bibcite{mihelj_hapt}{3}
-\bibcite{bajd_robotika}{4}
-\bibcite{mihelj_vodenje}{5}
-\bibcite{petric_nevronska}{6}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendix 1}{37}}
+\newlabel{chap:zakljucek}{{9}{35}}
+\bibcite{jr3_doc_ext}{1}
+\bibcite{jr3_doc_inst}{2}
+\bibcite{arc_howto}{3}
+\bibcite{lenarcic_robotmeh}{4}
+\bibcite{mihelj_hapt}{5}
+\bibcite{bajd_robotika}{6}
+\bibcite{mihelj_vodenje}{7}
+\bibcite{petric_nevronska}{8}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendix 1}{41}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{dodatekA}{{A}{37}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Appendix 2}{39}}
+\newlabel{dodatekA}{{A}{41}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Appendix 2}{43}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{dodatekB}{{B}{39}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {C}Appendix 3}{41}}
+\newlabel{dodatekB}{{B}{43}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {C}Appendix 3}{45}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{dodatekC}{{C}{41}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {D}Predloge za navajanje literature - baza BibTex}{43}}
+\newlabel{dodatekC}{{C}{45}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {D}Predloge za navajanje literature - baza BibTex}{47}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{dodatekE}{{D}{43}}
+\newlabel{dodatekE}{{D}{47}}

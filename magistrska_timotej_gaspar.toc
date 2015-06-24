@@ -24,14 +24,13 @@
 \contentsline {subsection}{\numberline {6.1.1}Vodenje v notranjih koordinatah}{28}
 \contentsline {section}{\numberline {6.2}Implementacija}{29}
 \contentsline {section}{\numberline {6.3}Rezultati}{30}
-\contentsline {chapter}{\numberline {7}Rezultati}{31}
-\contentsline {chapter}{\numberline {8}Simulink knji\v zice}{33}
-\contentsline {section}{\numberline {8.1}Blok PA-10}{33}
-\contentsline {section}{\numberline {8.2}Blok Inverse Dynamics Control}{33}
-\contentsline {section}{\numberline {8.3}Blok Follow Trajectory}{34}
-\contentsline {section}{\numberline {8.4}Blok Admitance Control}{34}
-\contentsline {chapter}{\numberline {9}Zaklju\v cek}{35}
-\contentsline {chapter}{\numberline {A}Appendix 1}{41}
-\contentsline {chapter}{\numberline {B}Appendix 2}{43}
-\contentsline {chapter}{\numberline {C}Appendix 3}{45}
-\contentsline {chapter}{\numberline {D}Predloge za navajanje literature - baza BibTex}{47}
+\contentsline {chapter}{\numberline {7}Simulink knji\v zice}{31}
+\contentsline {section}{\numberline {7.1}Blok PA-10}{31}
+\contentsline {section}{\numberline {7.2}Blok Inverse Dynamics Control}{31}
+\contentsline {section}{\numberline {7.3}Blok Follow Trajectory}{32}
+\contentsline {section}{\numberline {7.4}Blok Admitance Control}{32}
+\contentsline {chapter}{\numberline {8}Zaklju\v cek}{33}
+\contentsline {chapter}{\numberline {A}Appendix 1}{39}
+\contentsline {chapter}{\numberline {B}Appendix 2}{41}
+\contentsline {chapter}{\numberline {C}Appendix 3}{43}
+\contentsline {chapter}{\numberline {D}Predloge za navajanje literature - baza BibTex}{45}

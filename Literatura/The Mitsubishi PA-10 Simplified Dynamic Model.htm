@@ -1,0 +1,2264 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta name="Author" content="jsmith">
+   <meta name="GENERATOR" content="Mozilla/4.51 [en] (WinNT; I) [Netscape]">
+   <title>The Mitsubishi PA-10 Simplified Dynamic Model</title>
+</head>
+<body>
+<a name="up"></a>
+<br>We present here the simplified dynamic model of the Mitsubishi PA-10
+Robot as discussed in, "Dynamic Identification and Control of an Industrial
+Robot," by Rodrigo Jamisola,&nbsp; Marcelo Ang, Jr., Tao Ming Lim, Oussama
+Khatib, and Ser Yong Lim.
+<p>The robot dynamic equation:
+</p><p><font face="Symbol">t=</font><font face="Times New Roman,Times">A ddQ
++ H (Q,dQ) + G(Q);</font>
+</p><p>where <font face="Symbol">t</font><font face="Times New Roman,Times">
+is the torque at the joint, </font>A is the Inertia Matrix, H is the Coriolis
+and centrifugal terms, and G is the gravitational terms. Q, dQ, and ddQ
+are the angular positions, velocities and accelerations, respectively.
+</p><p>
+</p><hr width="100%">
+<br><a href="#Some%20trigonometric">Some trigonometric subtitutions</a>
+<br><a href="#The%20Mitsubishi%20Robot%20Physical%20Parameters%20%28provided">The Mitsubishi
+Robot Physical Parameters (provided by Manufacturer)</a>
+<br><a href="#The%20gravitational%20constant">The gravitational constant (m/s^2)</a>
+<br><a href="#The%20gravity">The gravity terms</a>
+<br><a href="#The%20Inertia">The Inertia Matrix</a>
+<br><a href="#The%20lumped%20inertias%20of%20the%20Inertia%20Matrix%20whose">The lumped
+inertias of the Inertia Matrix whose numerical values can be derived by
+experiments</a>
+<br><a href="#The%20Coriolis%20and%20centrifugal%20terms%20%28the%20lumped">The Coriolis
+and centrifugal terms (the lumped inertias found here are the same as the
+lumped inertias found in the Inertia Matrix)</a><a href="#The%20Coriolis%20and%20centrifugal%20terms%20%28the%20lumped"></a>
+<p><a name="Some trigonometric"></a>
+<br>
+</p><hr width="100%">
+<p>Some trigonometric subtitutions:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#up">
+up</a>
+</p><p>C1=cos(Q[1]);
+<br>&nbsp;C2=cos(Q[2]);
+<br>&nbsp;C3=cos(Q[3]);
+<br>&nbsp;C4=cos(Q[4]);
+<br>&nbsp;C5=cos(Q[5]);
+<br>&nbsp;C6=cos(Q[6]);
+<br>&nbsp;C7=cos(Q[7]);
+</p><p>&nbsp;C11=cos(2*Q[1]);
+<br>&nbsp;C22=cos(2*Q[2]);
+<br>&nbsp;C33=cos(2*Q[3]);
+<br>&nbsp;C44=cos(2*Q[4]);
+<br>&nbsp;C55=cos(2*Q[5]);
+<br>&nbsp;C66=cos(2*Q[6]);
+<br>&nbsp;C77=cos(2*Q[7]);
+</p><p>&nbsp;S1=sin(Q[1]);
+<br>&nbsp;S2=sin(Q[2]);
+<br>&nbsp;S3=sin(Q[3]);
+<br>&nbsp;S4=sin(Q[4]);
+<br>&nbsp;S5=sin(Q[5]);
+<br>&nbsp;S6=sin(Q[6]);
+<br>&nbsp;S7=sin(Q[7]);
+</p><p>&nbsp;S11=sin(2*Q[1]);
+<br>&nbsp;S22=sin(2*Q[2]);
+<br>&nbsp;S33=sin(2*Q[3]);
+<br>&nbsp;S44=sin(2*Q[4]);
+<br>&nbsp;S55=sin(2*Q[5]);
+<br>&nbsp;S66=sin(2*Q[6]);
+<br>&nbsp;S77=sin(2*Q[7]);
+</p><p>&nbsp;CC1=pow(C1,2);
+<br>&nbsp;CC2=pow(C2,2);
+<br>&nbsp;CC3=pow(C3,2);
+<br>&nbsp;CC4=pow(C4,2);
+<br>&nbsp;CC5=pow(C5,2);
+<br>&nbsp;CC6=pow(C6,2);
+<br>&nbsp;CC7=pow(C7,2);
+</p><p>&nbsp;SS1=pow(S1,2);
+<br>&nbsp;SS2=pow(S2,2);
+<br>&nbsp;SS3=pow(S3,2);
+<br>&nbsp;SS4=pow(S4,2);
+<br>&nbsp;SS5=pow(S5,2);
+<br>&nbsp;SS6=pow(S6,2);
+<br>&nbsp;SS7=pow(S7,2);
+</p><p><a name="The Mitsubishi Robot Physical Parameters (provided"></a>
+<br>
+</p><hr width="100%">
+<p>The Mitsubishi Robot Physical Parameters (provided by Manufacturer)&nbsp;&nbsp;
+<a href="#up">up</a>
+</p><p>link masses (kg)
+<br>m2= 8.41;
+<br>m3=3.51;
+<br>m4= 4.31;
+<br>m5= 3.45;
+<br>m6= 1.46;
+<br>m7= 0.24;
+</p><p>center of mass (m)
+<br>rz2= 0.06325;
+<br>ry3= 0.08944;
+<br>rz4= 0.04609;
+<br>ry5= 0.1647;
+<br>rz6= -0.03;
+<br>rz7= -0.029;
+</p><p>offset distance (m)
+<br>d1= 0.115;
+<br>d3=&nbsp; 0.450;
+<br>d5=&nbsp; 0.50;
+<br>d7=&nbsp; 0.08;
+<br>&nbsp;
+</p><p>motor constants (link-referenced in kg-m^2):
+<br>Im1=Im2=0.75;
+<br>Im3=Im4=0.2125;
+<br>Im5=Im6=Im7=0.00575;
+</p><p><a name="The gravitational constant"></a>
+<br>
+</p><hr width="100%">
+<p>The gravitational constant (m/s^2)&nbsp;&nbsp;&nbsp;&nbsp; <a href="#up">up</a>
+<br>g= 9.81;
+</p><p><a name="The gravity"></a>
+<br>
+</p><hr width="100%">
+<p>The gravity terms:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#up">up</a>
+</p><p>gravity[1]=0;
+<br>gravity[2]=-(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g*(S2*(d3*(m3 + m4 + m5 + m6 + m7) -
+m3*ry3 + m2*rz2 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C4*(d5*(m5 + m6 + m7) - m5*ry5 + m4*rz4 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C6*(m6*rz6
+ + m7*(d7 + rz7))) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C5*(m6*rz6 + m7*(d7 + rz7))*S4*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C3*(d5*(m5 + m6 + m7) - m5*ry5 + m4*rz4 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C6*(m6*rz6
+ + m7*(d7 + rz7)))*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S4 + (m6*rz6 + m7*(d7 + rz7))*(C3*C4*C5 - S3*S5)*S6)));
+<br>gravity[3]=g*
+<br>&nbsp;&nbsp;&nbsp; S2*((d5*(m5 + m6 + m7) - m5*ry5 + m4*rz4 + C6*(m6*rz6
++ m7*(d7 + rz7)))*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S3*S4 + (m6*rz6
++ m7*(d7 + rz7))*(C4*C5*S3 + C3*S5)*S6);
+<br>gravity[4]=-(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g*(d5*(m5 + m6 + m7) - m5*ry5
++ m4*rz4 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C6*(m6*rz6 + m7*(d7 + rz7)))*(C3*C4*S2 + C2*S4)) +
+<br>&nbsp;&nbsp;&nbsp; C5*g*(m6*rz6 + m7*(d7 + rz7))*(-(C2*C4) + C3*S2*S4)*S6;
+<br>gravity[5]=g*(m6*rz6 + m7*(d7 + rz7))*(C5*S2*S3 + (C3*C4*S2 + C2*S4)*S5)*S6;
+<br>gravity[6]=-(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g*(m6*rz6 + m7*(d7 + rz7))*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C6*(C5*(C3*C4*S2
++ C2*S4) - S2*S3*S5) + (C2*C4 - C3*S2*S4)*S6));
+<br>gravity[7]=0;
+</p><p><a name="The Inertia"></a>
+<br>
+</p><hr width="100%">
+<p>The Inertia Matrix:&nbsp;&nbsp;&nbsp;&nbsp; <a href="#up">up</a>
+<br>a[1][
+<br>&nbsp;&nbsp;&nbsp; 1]=Im1+I18 +(-CC3 + CC2*(1 + CC3))*CC4*I11 + (1
++ (-CC3 + CC2*(1 + CC3))*CC4)*CC5*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I12 +&nbsp; CC2*I21 +
+<br>&nbsp;&nbsp;&nbsp; CC2*CC5*I22 + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 - CC5 + CC3*(-1 + CC4*(1
++ CC5)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CC2*(CC5 - CC4*(1
++ CC5) + CC3*(1 - CC4*(1 + CC5))))*CC6*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I9 + (C2*C3*I20*S2*S44)/2. +
+<br>&nbsp;&nbsp;&nbsp; CC5*I10*(CC3 - CC2*CC3 + C2*C3*S2*S44) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I5*(C4*S33 - C4*CC2*S33
++ 2*C2*S2*S3*S4)*S55)/8. +
+<br>&nbsp;&nbsp;&nbsp; I24*(2*C4*C6 - 2*C5*S4*S6 - S22*S3*S5*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*C3*S2*(2*C6*S4
++ 2*C4*C5*S6) + CC2*(-2*C4*C6 + 2*C5*S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp; CC3*I19*SS2 + 2*I23*(C2*C3*S2*S4 + C4*SS2) +
+<br>&nbsp;&nbsp;&nbsp; I6*(2*C6 + (C5*(C3*C44*S22 - 2*C4*S4 + S44) + 2*C3*S3*S4*S5)*S6
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*S2*(2*C3*C6*S44
+- 2*C4*S3*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CC3*(-(C5*S44*S6)
+- 2*C6*SS4) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CC2*(-2*C6*CC4
++ 2*S4*(C4*C5 - C3*S3*S5)*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(C5*S44*S6 + 2*C6*SS4))) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I4*(-(C4*C66*S33*S55) +
+2*C3*C44*C5*S22*S66 - 4*C4*C5*S4*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C5*S44*S66 + 4*C3*S3*S4*S5*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C2*S2*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*C66*(1 + CC5)*S44 - S3*(C66*S4*S55 + 2*C4*S5*S66)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*CC3*(-(C5*S44*S66) - C66*SS5) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(C4*C66*S33*S55 - 8*C3*C6*S3*S4*S5*S6 + 4*C4*C5*S4*S66 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C66*SS5 + 2*CC3*(2*C5*C6*S44*S6 + C66*SS5))))/8.;
+<br>a[1][2]=
+<br>&nbsp; a[2][1]=(CC4*I11*S2*S33)/2. - (I19*S2*S33)/2. -
+<br>&nbsp;&nbsp;&nbsp; C2*I23*S3*S4 + (C2*I11*S3*S44)/2. +
+<br>&nbsp;&nbsp;&nbsp; I9*(-(C2*(1 + CC5)*CC6*S3*S44)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2. + (CC6*S2*((2 - CC5 - CC4*(1 + CC5))*S33 - C4*CC3*S55))/2.) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I12*(C2*CC5*S3*S44 + S2*((1
++ CC4)*CC5*S33 + C4*CC3*S55)))/2. +
+<br>&nbsp;&nbsp;&nbsp; C2*I24*(-(C3*S5*S6) + S3*(-(C6*S4) - C4*C5*S6))
++
+<br>&nbsp;&nbsp;&nbsp; I6*(S2*(C6*S33 - C6*CC4*S33 + (C5*S33*S44*S6)/2.
++ C33*S4*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*(-(C3*C4*S5*S6)
++ S3*(-(C6*S44) - C44*C5*S6))) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I5*S55*(C2*C3*S4 - C4*S2*SS3))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(-2*C44*C5*S3*S66 + C3*(-(C66*S4*S55) - 2*C4*S5*S66)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(-S33 + 4*C33*C6*S4*S5*S6 + C5*S33*S44*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C4*C66*S55*SS3)))/8.;
+<br>a[1][3]=a[3][1]=
+<br>&nbsp; C2*CC4*I11 + C2*CC4*CC5*I12 + C2*CC5*I14 + C2*I8 +
+<br>&nbsp;&nbsp;&nbsp; C2*(1 - CC4*(1 + CC5))*CC6*I9 +
+<br>&nbsp;&nbsp;&nbsp; C3*I23*S2*S4 - (C3*I17*S2*S44)/2. + (I5*S2*(-(C3*CC5*S44)
++ S3*S4*S55))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + I24*S2*(-(S3*S5*S6) + C3*(C6*S4
++ C4*C5*S6)) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I4*(2*C2*(-C66 + C66*CC5
++ 2*C5*C6*S44*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C3*(C66*(1 + CC5)*S44 + 4*C44*C5*C6*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(C66*S4*S55 + 4*C4*C6*S5*S6))))/8. +
+<br>&nbsp;&nbsp;&nbsp; I6*(S2*(-(C4*S3*S5*S6) + C3*(2*C4*C6*S4 + C44*C5*S6))
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*(C5*S44*S6
++ 2*C6*SS4));
+<br>a[1][4]=
+<br>&nbsp; a[4][1]=-(CC5*I10*S2*S3) +
+<br>&nbsp;&nbsp;&nbsp; C4*I23*S2*S3 + (I7*S2*S3)/8. + (I5*(C2*S4*S55 +
+S2*(-S3 + C3*C4*S55)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + I24*S2*S3*(C4*C6 - C5*S4*S6) +
+<br>&nbsp;&nbsp;&nbsp; I6*(-(C2*C4*S5*S6) + S2*(2*C6*S3 + C3*S4*S5*S6))
++ (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I4*(-(C2*(C66*S4*S55 + 4*C4*C6*S5*S6))
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C3*(-(C4*C66*S55) + 4*C6*S4*S5*S6) + 2*C66*S3*SS5)))/8.;
+<br>a[1][5]=
+<br>&nbsp; a[5][1]=(I3*(C2*C4 - C3*S2*S4))/4. +
+<br>&nbsp;&nbsp;&nbsp; I24*S2*(C3*C5*S6 - C4*S3*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp; I6*(C2*C5*S4*S6 + S2*(C3*C4*C5*S6 - S3*S5*S6)) +
+(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I4*(C2*(-(C4*C66) + 2*C5*C6*S4*S6)
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(-2*C6*S3*S5*S6 + C3*(C66*S4 + C4*C5*S66))))/4.;
+<br>a[1][6]=
+<br>&nbsp; a[6][1]=(I1*(C2*S4*S5 + S2*(C5*S3 + C3*C4*S5)))/2. +
+<br>&nbsp;&nbsp;&nbsp; I6*(C2*C6*S4*S5 + S2*(C5*C6*S3 + C3*C4*C6*S5)) +
+<br>&nbsp;&nbsp;&nbsp; I24*S2*(C3*C6*S5 + S3*(C4*C5*C6 - S4*S6));
+<br>a[1][7]=a[7][1]=
+<br>&nbsp; I2*(C2*(C4*C6 - C5*S4*S6) + S2*(S3*S5*S6 + C3*(-(C6*S4) - C4*C5*S6)));
+</p><p>a[2][2]=Im2+
+<br>&nbsp; I13 + (1 - CC3*(1 + CC4))*CC5*I14 + CC4*I15 + CC3*I16 + CC3*CC4*I17
++
+<br>&nbsp;&nbsp;&nbsp; 2*C4*I23 +
+<br>&nbsp;&nbsp;&nbsp; I24*(2*C4*C6 - 2*C5*S4*S6) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I4*(-C66 + C66*CC4*(1 +
+CC5) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(2*C66 - C66*CC5 - C66*CC4*(1 + CC5)) + (C4*C66*S33*S55)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2. - S33*S4*S5*S66 - C5*S44*S66*SS3))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. + (I5*(-(C4*S33*S55) + C55*SS4))/8.
++
+<br>&nbsp;&nbsp;&nbsp; I6*(2*C6*CC4 + S4*(-2*C4*C5 - S33*S5)*S6 + CC3*(C5*S44*S6
++ 2*C6*SS4));
+<br>a[2][3]=
+<br>&nbsp; a[3][
+<br>&nbsp;&nbsp;&nbsp; 2]=-(I23*S3*S4) + (I11*S3*S44)/2. - (CC5*I14*S3*S44)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. - (CC6*I9*S3*S44)/2. + (C3*I5*S4*S55)/8.
+-
+<br>&nbsp;&nbsp;&nbsp; I24*(C3*S5*S6 + S3*(C6*S4 + C4*C5*S6)) -
+<br>&nbsp;&nbsp;&nbsp; I6*(C3*C4*S5*S6 + S3*(C6*S44 + C44*C5*S6)) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I4*(S3*(C66*CC5*S44 + 2*C44*C5*S66)
++ C3*(C66*S4*S55 + 2*C4*S5*S66)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8.;
+<br>a[2][4]=a[4][2]=
+<br>&nbsp; C3*C4*I23 + (C3*I7)/8. + (I12*(C3*C55 - C4*S3*S55))/2. +
+<br>&nbsp;&nbsp;&nbsp; C3*I24*(C4*C6 - C5*S4*S6) +
+<br>&nbsp;&nbsp;&nbsp; I6*(2*C3*C6 - S3*S4*S5*S6) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I4*(C3*(1 + 2*C66 - 4*CC5*CC6)
++ 2*S3*(C4*CC6*S55 - 2*C6*S4*S5*S6)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8.;
+<br>a[2][5]=
+<br>&nbsp; a[5][2]=(I3*S3*S4)/4. - I6*(C4*C5*S3*S6 + C3*S5*S6) -
+<br>&nbsp;&nbsp;&nbsp; I24*(C5*S3*S6 + C3*C4*S5*S6) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I4*(2*C3*C6*S5*S6 + S3*(C66*S4
++ C4*C5*S66)))/4.;
+<br>a[2][6]=
+<br>&nbsp; a[6][2]=(I1*(C3*C5 - C4*S3*S5))/2. + I6*(C3*C5*C6 - C4*C6*S3*S5)
++
+<br>&nbsp;&nbsp;&nbsp; I24*(-(C6*S3*S5) + C3*(C4*C5*C6 - S4*S6));
+<br>a[2][7]=a[7][2]=I2*(C3*S5*S6 + S3*(C6*S4 + C4*C5*S6));
+<br>&nbsp;
+</p><p>a[3][3]=Im3+I8 +
+<br>&nbsp; CC5*I10 + CC4*I11 + CC4*CC5*I12 +&nbsp; (1 - CC4*(1 + CC5))*CC6*I9
++
+<br>&nbsp;&nbsp;&nbsp; I6*(C5*S44*S6 + 2*C6*SS4) + (I4*(2*C5*C6*S44*S6
+- C66*SS5))/4.;
+<br>a[3][4]=
+<br>&nbsp; a[4][3]=(I5*S4*S55)/8. -
+<br>&nbsp;&nbsp;&nbsp; C4*I6*S5*S6 - (I4*(C66*S4*S55 + 4*C4*C6*S5*S6))/8.;
+<br>a[3][5]=
+<br>&nbsp; a[5][3]=(C4*I3)/4. +
+<br>&nbsp;&nbsp;&nbsp; C5*I6*S4*S6 + (I4*(-(C4*C66) + 2*C5*C6*S4*S6))/4.;
+<br>a[3][6]=a[6][3]=((I1 + 2*C6*I6)*S4*S5)/2.;
+<br>a[3][7]=a[7][3]=I2*(C4*C6 - C5*S4*S6);
+<br>&nbsp;
+</p><p>a[4][4]=Im4+(I7 +C55*I5 + 16*C6*I6 +&nbsp; 2*C66*I4*SS5)/8.;
+<br>a[4][5]=a[5][4]=-((C6*I4 + 2*I6)*S5*S6)/2.;
+<br>a[4][6]=a[6][4]=(C5*(I1 + 2*C6*I6))/2.;
+<br>a[4][7]=a[7][4]=I2*S5*S6;
+<br>&nbsp;
+</p><p>a[5][5]=Im5+(I3 - C66*I4)/4.;
+<br>a[5][6]=a[6][5]=0;
+<br>a[5][7]=a[7][5]=C6*I2;
+<br>a[6][6]=Im6+I1/2.;
+<br>a[6][7]=a[7][6]=0;
+<br>a[7][7]=Im7+I2;
+</p><p><a name="The lumped inertias of the Inertia Matrix whose"></a>
+<br>
+</p><hr width="100%">
+<p>The lumped inertias of the Inertia Matrix whose numerical values can
+be derived by experiments:&nbsp;&nbsp;&nbsp;&nbsp; <a href="#up">up</a>
+</p><p>I1=Ixx7 + 2*Iyy6 + Iyy7 + 2*(m6*pow(rz6,2) + m7*pow(d7 + rz7,2));
+<br>I2=Izz7;
+<br>I3=2*Ixx6 + Ixx7 + 4*Iyy5 + Iyy7 +
+<br>&nbsp;&nbsp;&nbsp; 2*(Izz6 + Izz7 + m6*pow(rz6,2) + m7*pow(d7 + rz7,2));
+<br>I4=2*Ixx6 + Ixx7 + Iyy7 +
+<br>&nbsp;&nbsp;&nbsp; 2*(-Izz6 - Izz7 + m6*pow(rz6,2) + m7*pow(d7 + rz7,2));
+<br>I5=-4*Ixx5 - 2*Ixx6 + Ixx7 + 4*Iyy6 + Iyy7 +
+<br>&nbsp;&nbsp;&nbsp; 2*(2*Izz5 - Izz6 - Izz7 + m6*pow(rz6,2) + m7*pow(d7
++ rz7,2));
+<br>I6=d5*(m6*rz6 + m7*(d7 + rz7));
+<br>I7=4*Ixx5 + 2*Ixx6 + 3*Ixx7 + 8*Iyy4 + 4*Iyy6 + 3*Iyy7 +
+<br>&nbsp;&nbsp;&nbsp; 2*(2*Izz5 + Izz6 + Izz7 + 4*pow(d5,2)*m5 + 4*pow(d5,2)*m6
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4*pow(d5,2)*m7
++ 3*pow(d7,2)*m7 - 8*d5*m5*ry5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4*m5*pow(ry5,2)
++ 4*m4*pow(rz4,2) + 3*m6*pow(rz6,2) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6*d7*m7*rz7
++ 3*m7*pow(rz7,2));
+<br>I8=(4*Ixx4 - 2*Ixx6 + Ixx7 + 4*Iyy3 + 4*Iyy6 + Iyy7 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*(2*Izz5 + Izz6 + Izz7
++ 2*pow(d5,2)*m5 + 2*pow(d5,2)*m6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*pow(d5,2)*m7 + pow(d7,2)*m7 - 4*d5*m5*ry5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*m5*pow(ry5,2) + 2*m4*pow(rz4,2) + m6*pow(rz6,2) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*d7*m7*rz7 + m7*pow(rz7,2)))/4.;
+<br>I9=Ixx6 + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ixx7 + Iyy7 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*(-Izz6 - Izz7
++ m6*pow(rz6,2) + m7*pow(d7 + rz7,2)))/2.;
+<br>I10=(4*Ixx5 + 2*Ixx6 - Ixx7 - 4*Iyy6 - Iyy7 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*(2*Izz5 - Izz6 - Izz7
++ m6*pow(rz6,2) + m7*pow(d7 + rz7,2)))/4.;
+<br>I11=-Ixx4 + Ixx6 + Iyy5 - Iyy6 + Izz4 - Izz5 -
+<br>&nbsp;&nbsp;&nbsp; pow(d5,2)*(m5 + m6 + m7) + 2*d5*m5*ry5 - m5*pow(ry5,2)
+-
+<br>&nbsp;&nbsp;&nbsp; m4*pow(rz4,2);
+<br>I12=-Ixx5 + Ixx7/2. + Iyy6 + Iyy7/2. + Izz5 - Izz6 - Izz7 +
+<br>&nbsp;&nbsp;&nbsp; m6*pow(rz6,2) + m7*pow(d7 + rz7,2);
+<br>I13=Ixx3 + (-4*Ixx5 + 2*Ixx6 + 3*Ixx7 + 8*Iyy2 + 8*Iyy5 + 4*Iyy6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3*Iyy7 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*(4*Izz4 +
+2*Izz5 + Izz6 + Izz7 + 4*pow(d3,2)*m3 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*pow(d3,2)*m4 + 4*pow(d3,2)*m5 + 4*pow(d3,2)*m6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*pow(d3,2)*m7 + 3*pow(d7,2)*m7 - 8*d3*m3*ry3 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*m3*pow(ry3,2) + 4*m2*pow(rz2,2) + 3*m6*pow(rz6,2) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+6*d7*m7*rz7 + 3*m7*pow(rz7,2)))/8.;
+<br>I14=(4*Ixx5 + 2*Ixx6 - Ixx7 - 4*Iyy6 - Iyy7 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*(2*Izz5 - Izz6 - Izz7
++ m6*pow(rz6,2) + m7*pow(d7 + rz7,2)))/4.;
+<br>I15=(8*Ixx4 + 4*Ixx5 - 2*Ixx6 + Ixx7 - 8*Iyy5 + 4*Iyy6 + Iyy7 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*(-4*Izz4 + 2*Izz5 - Izz6
+- Izz7 + 4*pow(d5,2)*m5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*pow(d5,2)*m6 + 4*pow(d5,2)*m7 + pow(d7,2)*m7 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+8*d5*m5*ry5 + 4*m5*pow(ry5,2) + 4*m4*pow(rz4,2) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+m6*pow(rz6,2) + 2*d7*m7*rz7 + m7*pow(rz7,2)))/8.;
+<br>I16=-Ixx3 + Ixx5 + Iyy4 - Iyy5 + Izz3 - Izz4 +
+<br>&nbsp;&nbsp;&nbsp; pow(d5,2)*(m5 + m6 + m7) - 2*d5*m5*ry5 + m5*pow(ry5,2)
++
+<br>&nbsp;&nbsp;&nbsp; m4*pow(rz4,2);
+<br>I17=(-4*Ixx4 + 2*Ixx6 - Ixx7 + 4*Iyy5 - 4*Iyy6 - Iyy7 + 4*Izz4 - 4*Izz5
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*Izz6 + 2*Izz7 - 4*pow(d5,2)*m5
+- 4*pow(d5,2)*m6 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4*pow(d5,2)*m7 - 2*pow(d7,2)*m7
++ 8*d5*m5*ry5 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4*m5*pow(ry5,2) - 4*m4*pow(rz4,2)
+- 2*m6*pow(rz6,2) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4*d7*m7*rz7 - 2*m7*pow(rz7,2))/4.;
+<br>I18=Ixx2 + Ixx5 + Iyy1 + Iyy4 + Izz3 + Izz6 + Izz7 + pow(d3,2)*m3 +
+<br>&nbsp;&nbsp;&nbsp; pow(d3,2)*m4 + pow(d3,2)*m5 + pow(d5,2)*m5 + pow(d3,2)*m6
++
+<br>&nbsp;&nbsp;&nbsp; pow(d5,2)*m6 + pow(d3,2)*m7 + pow(d5,2)*m7 - 2*d3*m3*ry3
++
+<br>&nbsp;&nbsp;&nbsp; m3*pow(ry3,2) - 2*d5*m5*ry5 + m5*pow(ry5,2) + m2*pow(rz2,2)
++
+<br>&nbsp;&nbsp;&nbsp; m4*pow(rz4,2);
+<br>I19=(4*Ixx3 - 4*Ixx5 + 2*Ixx6 + Ixx7 - 4*Iyy4 + 4*Iyy5 + Iyy7 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*(2*Izz3 -
+2*Izz4 + Izz6 + Izz7))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. + (-2*pow(d5,2)*(m5 + m6 + m7) +
+4*d5*m5*ry5 - 2*m5*pow(ry5,2) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*m4*pow(rz4,2)
++ m6*pow(rz6,2) + m7*pow(d7 + rz7,2))/2.;
+<br>I20=(4*Ixx4 - 2*Ixx6 + Ixx7 - 4*Iyy5 + 4*Iyy6 + Iyy7 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*(-2*Izz4 + 2*Izz5 - Izz6
+- Izz7 + 2*pow(d5,2)*m5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*pow(d5,2)*m6 + 2*pow(d5,2)*m7 + pow(d7,2)*m7 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*d5*m5*ry5 + 2*m5*pow(ry5,2) + 2*m4*pow(rz4,2) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+m6*pow(rz6,2) + 2*d7*m7*rz7 + m7*pow(rz7,2)))/2.;
+<br>I21=(-4*Ixx2 + 4*Ixx4 - 4*Ixx5 - 2*Ixx6 + Ixx7 + 4*Iyy3 - 4*Iyy4 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4*Iyy6 + Iyy7 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*(-2*Izz2 + 2*Izz3 - 2*Izz5
++ Izz6 + Izz7 + 2*pow(d3,2)*m3 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*pow(d3,2)*m4 + 2*pow(d3,2)*m5 + 2*pow(d3,2)*m6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*pow(d3,2)*m7 - pow(d7,2)*m7 - 4*d3*m3*ry3 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*m3*pow(ry3,2) + 2*m2*pow(rz2,2) - m6*pow(rz6,2) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*d7*m7*rz7 - m7*pow(rz7,2)))/4.;
+<br>I22=(8*Ixx5 + 2*Ixx6 - 3*Ixx7 - 8*Iyy6 - 3*Iyy7 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*(4*Izz5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3*(-Izz6 - Izz7 + m6*pow(rz6,2) + m7*pow(d7 + rz7,2))))/4.;
+<br>I23=d3*(d5*(m5 + m6 + m7) - m5*ry5 + m4*rz4);
+<br>I24=d3*(m6*rz6 + m7*(d7 + rz7));
+</p><p><a name="The Coriolis and centrifugal terms (the lumped"></a>
+<br>
+</p><hr width="100%">
+<p>The Coriolis and centrifugal terms (the lumped inertias found here are
+the same as the lumped inertias found in the Inertia Matrix):&nbsp;&nbsp;&nbsp;
+<a href="#up">up</a>
+</p><p>h[1][1][1]=0;
+<br>h[1][1][2]=
+<br>&nbsp; h[1][2][1]=(-2*C2*(1 + CC3)*CC4*I11*S2 - 2*C2*(1 + CC3)*CC4*CC5*I12*S2
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*CC3*I19*S2 - 2*C2*I21*S2
+- 2*C2*CC5*I22*S2 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*(CC5 - CC4*(1 + CC5)
++ CC3*(1 - CC4*(1 + CC5)))*CC6*I9*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S2 + (C3*CC2*I20*S44)/2.
+- (C3*I20*S44*SS2)/2. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I23*(2*C2*C4*S2 + C3*CC2*S4
+- C3*S4*SS2) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I5*S55*(2*C2*C4*S2*S33 + 2*CC2*S3*S4 - 2*S3*S4*SS2))/8. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CC5*I10*(2*C2*CC3*S2 + C3*CC2*S44
+- C3*S44*SS2) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-2*C22*S3*S5*S6 + C3*CC2*(2*C6*S4
++ 2*C4*C5*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C2*S2*(-2*C4*C6 + 2*C5*S4*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(2*C6*S4 + 2*C4*C5*S6)*SS2) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(2*C22*C3*C44*C5*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(2*C3*C6*S44 - 2*C4*S3*S5*S6) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C3*C6*S44 - 2*C4*S3*S5*S6)*SS2 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C2*S2*(-2*C6*CC4 + 2*S4*(C4*C5 - C3*S3*S5)*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(C5*S44*S6 + 2*C6*SS4))) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(4*C22*C3*C44*C5*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*CC2*(C3*C66*(1 + CC5)*S44 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(C66*S4*S55
+ + 2*C4*S5*S66)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*(C3*C66*(1 + CC5)*S44 - S3*(C66*S4*S55 + 2*C4*S5*S66))*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+SS2 - 2*C2*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C4*C66*S33*S55 - 8*C3*C6*S3*S4*S5*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C4*C5*S4*S66
+ - 2*C66*SS5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*CC3*(2*C5*C6*S44*S6
+ + C66*SS5))))/8.)/2.;
+<br>h[1][1][3]=
+<br>&nbsp; h[1][3][1]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CC4*I11*(2*C3*S3 - 2*C3*CC2*S3) + CC4*CC5*I12*(2*C3*S3
+- 2*C3*CC2*S3) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CC6*I9*(-2*C3*CC2*(1 - CC4*(1
++ CC5))*S3 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C3*(-1 + CC4*(1 + CC5))*S3) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*I23*S2*S3*S4 - (C2*I20*S2*S3*S44)/2.
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CC5*I10*(-2*C3*S3 + 2*C3*CC2*S3
+- C2*S2*S3*S44) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I5*(2*C33*C4 - 2*C33*C4*CC2 + 2*C2*C3*S2*S4)*S55)/8. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-(C3*S22*S5*S6) - C2*S2*S3*(2*C6*S4
++ 2*C4*C5*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C3*I19*S3*SS2 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C2*S2*(-2*C6*S3*S44
+- 2*C3*C4*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S6*(-(C44*C5*S22*S3) + 2*CC3*S4*S5 - 2*S4*S5*SS3) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C3*S3*(-(C5*S44*S6) - 2*C6*SS4) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(2*S4*S6*(-(CC3*S5) + S5*SS3) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C3*S3*(C5*S44*S6 + 2*C6*SS4))) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-2*C33*C4*C66*S55 - 2*C44*C5*S22*S3*S66 + 4*CC3*S4*S5*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C2*S2*(-(C66*(1 + CC5)*S3*S44) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(C66*S4*S55
+ + 2*C4*S5*S66)) - 4*S4*S5*S66*SS3 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C3*S3*(-(C5*S44*S66) - C66*SS5) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(2*C33*C4*C66*S55 - 8*C6*CC3*S4*S5*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+8*C6*S4*S5*S6*SS3
+ -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C3*S3*(2*C5*C6*S44*S6
+ + C66*SS5))))/8.)/2.;
+<br>h[1][1][4]=
+<br>&nbsp; h[1][4][1]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*C3*C44*CC5*I10*S2 + C2*C3*C44*I20*S2
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C4*(-CC3 + CC2*(1 + CC3))*I11*S4
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C4*(-CC3 + CC2*(1 + CC3))*CC5*I12*S4
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CC6*I9*(-2*C4*CC3*(1 + CC5)*S4
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(2*C4*(1 + CC5)*S4 + 2*C4*CC3*(1 + CC5)*S4)) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I5*(2*C2*C4*S2*S3 - S33*S4 + CC2*S33*S4)*S55)/8. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-2*C6*S4 - 2*C4*C5*S6
++ CC2*(2*C6*S4 + 2*C4*C5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*C3*S2*(2*C4*C6 - 2*C5*S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I23*(C2*C3*C4*S2 - S4*SS2)
++ (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(C66*S33*S4*S55 + 4*C44*C5*S66 - 4*C44*C5*CC3*S66 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C5*CC4*S66 - 4*C3*C5*S22*S44*S66 + 4*C3*C4*S3*S5*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C2*S2*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C3*C44*C66*(1 + CC5) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(C4*C66*S55
+ - 2*S4*S5*S66)) + 4*C5*S66*SS4 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(-(C66*S33*S4*S55) + 8*C44*C5*C6*CC3*S6 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+8*C3*C4*C6*S3*S5*S6
+ + 4*C5*CC4*S66 - 4*C5*S66*SS4)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + I6*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(-4*C4*C6*S4 - 2*C44*C5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*S2*(4*C3*C44*C6 + 2*S3*S4*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(4*C4*C6*S4 + 2*C4*(C4*C5 - C3*S3*S5)*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(4*C4*C6*S4 + 2*C44*C5*S6) - 2*C5*S6*SS4) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S6*(2*C3*C4*S3*S5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C5*(2*C44 - 2*CC4 - 2*C3*S22*S44 + 2*SS4))))/2.;
+<br>h[1][1][5]=
+<br>&nbsp; h[1][5][1]=((C55*I5*(C4*S33 - C4*CC2*S33 + 2*C2*S2*S3*S4))/4.
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C5*(1 + (-CC3 + CC2*(1
++ CC3))*CC4)*I12*S5 - 2*C5*CC2*I22*S5 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C5*I10*(CC3 - CC2*CC3
++ C2*C3*S2*S44)*S5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CC6*I9*(2*C5*S5 - 2*C5*CC3*CC4*S5
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(-2*C5*S5 + 2*C5*CC4*S5 + 2*C5*CC3*CC4*S5)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-(C5*S22*S3*S6) - 2*C2*C3*C4*S2*S5*S6
++ 2*S4*S5*S6 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*CC2*S4*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-2*C2*C4*C5*S2*S3*S6
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*S44*S5*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S6 + (2*C3*C5*S3*S4 - (C3*C44*S22 - 2*C4*S4 + S44)*S5)*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(-(CC3*S44*S5*S6) + 2*S4*(-(C3*C5*S3) - C4*S5)*S6)) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-2*C4*C55*C66*S33 + 4*C3*C5*S3*S4*S66 - 2*C3*C44*S22*S5*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C4*S4*S5*S66 - 2*S44*S5*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(2*C4*C55*C66*S33 - 4*C5*C66*S5 - 8*C3*C5*C6*S3*S4*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*CC3*(2*C5*C66*S5
+ - 2*C6*S44*S5*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C4*S4*S5*S66)
+ + 2*CC3*(-2*C5*C66*S5 + S44*S5*S66) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C2*S2*(-2*C3*C5*C66*S44*S5 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(2*C55*C66*S4
+ + 2*C4*C5*S66))))/8.)/2.;
+<br>h[1][1][6]=
+<br>&nbsp; h[1][6][1]=(-2*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C6*(1 - CC5
++ CC3*(-1 + CC4*(1 + CC5)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(CC5 - CC4*(1 + CC5) + CC3*(1 - CC4*(1 + CC5))))*I9*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-2*C5*C6*S4 - C6*S22*S3*S5
+- 2*C4*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(2*C5*C6*S4 + 2*C4*S6) + C2*C3*S2*(2*C4*C5*C6 - 2*S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C6*(C5*(C3*C44*S22 -
+2*C4*S4 + S44) + 2*C3*S3*S4*S5) - 2*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*S2*(-2*C4*C6*S3*S5 - 2*C3*S44*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(-(C5*C6*S44) + 2*S6*SS4) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(2*C6*S4*(C4*C5 - C3*S3*S5) + 2*CC4*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(C5*C6*S44 - 2*S6*SS4))) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(4*C3*C44*C5*C66*S22 - 8*C4*C5*C66*S4 + 4*C5*C66*S44 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+8*C3*C66*S3*S4*S5 + 2*C4*S33*S55*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C2*S2*(-2*C3*(1 + CC5)*S44*S66 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(4*C4*C66*S5
+ - 2*S4*S55*S66)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*CC3*(-2*C5*C66*S44 + 2*S66*SS5) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(8*C4*C5*C66*S4 - 8*C3*CC6*S3*S4*S5 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C4*S33*S55*S66
+ + 4*S66*SS5 + 8*C3*S3*S4*S5*SS6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*CC3*(2*C5*CC6*S44
+ - 2*S66*SS5 - 2*C5*S44*SS6))))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8.)/2.;
+<br>h[1][1][7]=h[1][7][1]=0;
+<br>h[1][2][2]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*CC4*I11*S33 - C2*I19*S33 + 2*I23*S2*S3*S4
+- I11*S2*S3*S44 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I9*(((1 + CC5)*CC6*S2*S3*S44)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2. + (C2*CC6*((2 - CC5 - CC4*(1 + CC5))*S33 - C4*CC3*S55))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2.) + I12*(-(CC5*S2*S3*S44) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*((1 + CC4)*CC5*S33 + C4*CC3*S55)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I24*S2*(-(C3*S5*S6) +
+S3*(-(C6*S4) - C4*C5*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I6*(C2*(C6*S33 - C6*CC4*S33
++ (C5*S33*S44*S6)/2. + C33*S4*S5*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(-(C3*C4*S5*S6) + S3*(-(C6*S44) - C44*C5*S6))) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I5*S55*(-(C3*S2*S4) - C2*C4*SS3))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. + (I4*(-(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(-2*C44*C5*S3*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(-(C66*S4*S55)
+ - 2*C4*S5*S66))) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(-S33 + 4*C33*C6*S4*S5*S6 + C5*S33*S44*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C4*C66*S55*SS3)))/4.)/2.;
+<br>h[1][2][3]=
+<br>&nbsp; h[1][3][2]=(-(CC4*I11*S2) + C33*CC4*I11*S2 - CC4*CC5*I12*S2
+- CC5*I14*S2 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C33*I19*S2 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I8*S2 - (1 - CC4*(1 + CC5))*CC6*I9*S2
++ (C2*C3*I11*S44)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. - (C2*C3*I17*S44)/2.
++ (I5*(-2*C3*C4*S2*S3 - C2*S3*S4)*S55)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (C2*I5*(-(C3*CC5*S44)
++ S3*S4*S55))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I12*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*C3*CC5*S44 + S2*(2*C33*(1 + CC4)*CC5 - 2*C3*C4*S3*S55)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. + I9*(-(C2*C3*(1
++ CC5)*CC6*S44)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2. + (CC6*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(2*C33*(2 - CC5 - CC4*(1 + CC5)) + 2*C3*C4*S3*S55))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2.) + C2*I24*(S3*S5*S6 + C3*(-(C6*S4) - C4*C5*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*I24*(-(S3*S5*S6) + C3*(C6*S4
++ C4*C5*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(S2*(2*C33*C6 - 2*C33*C6*CC4
++ C33*C5*S44*S6 - 2*S33*S4*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C4*S3*S5*S6 + C3*(-(C6*S44) - C44*C5*S6))) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-2*S2*(-C66 + C66*CC5 + 2*C5*C6*S44*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C3*(C66*(1 + CC5)*S44 + 4*C44*C5*C6*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(C66*S4*S55
+ + 4*C4*C6*S5*S6))))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(-2*C33 + 2*C3*C4*C66*S3*S55 - 8*C6*S33*S4*S5*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C33*C5*S44*S66)
+ +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(-2*C3*C44*C5*S66 - S3*(-(C66*S4*S55) - 2*C4*S5*S66))))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + I6*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(-(C4*S3*S5*S6) + C3*(2*C4*C6*S4 + C44*C5*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C5*S44*S6 + 2*C6*SS4)))/2.;
+<br>h[1][2][4]=
+<br>&nbsp; h[1][4][2]=(-(C2*CC5*I10*S3) + C2*C44*I11*S3 + (C2*I7*S3)/8.
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C4*I11*S2*S33*S4 + (I5*(-(S2*S4*S55)
++ C2*(-S3 + C3*C4*S55)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I12*(2*C2*C44*CC5*S3
++ S2*(-2*C4*CC5*S33*S4 - CC3*S4*S55)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. + I9*(-(C2*C44*(1
++ CC5)*CC6*S3) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC6*S2*(2*C4*(1 + CC5)*S33*S4 + CC3*S4*S55))/2.) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*I24*S3*(C4*C6 - C5*S4*S6)
++ C2*I24*S3*(-(C4*C6) + C5*S4*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C4*S2*S5*S6 + C2*(2*C6*S3
++ C3*S4*S5*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(S2*(2*C4*C6*S33*S4 +
+C44*C5*S33*S6 + C33*C4*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C3*S4*S5*S6 + S3*(-2*C44*C6 + 2*C5*S44*S6))) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I5*S55*(C2*C3*C4 + S2*S4*SS3))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(4*C5*S3*S44*S66 + C3*(-(C4*C66*S55) + 2*S4*S5*S66)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(4*C33*C4*C6*S5*S6 + 2*C44*C5*S33*S66 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C66*S4*S55*SS3)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C66*S4*S55 + 4*C4*C6*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C3*(-(C4*C66*S55) + 4*C6*S4*S5*S6) + 2*C66*S3*SS5)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8.)/2.;
+<br>h[1][2][5]=
+<br>&nbsp; h[1][5][2]=((I3*(-(C4*S2) - C2*C3*S4))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. + (I12*(-2*C2*C5*S3*S44*S5
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(2*C4*C55*CC3 - 2*C5*(1 + CC4)*S33*S5)))/2. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I9*(C2*C5*CC6*S3*S44*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S5 + (CC6*S2*(-2*C4*C55*CC3 + S33*(2*C5*S5 + 2*C5*CC4*S5)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2.) + C2*I24*(C3*C5*S6 - C4*S3*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*I24*(-(C3*C5*S6) + C4*S3*S5*S6)
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C5*S2*S4*S6) + C2*(C3*C4*C5*S6
+- S3*S5*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C2*(-(C3*C4*C5*S6) +
+C44*S3*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C33*C5*S4*S6 - (S33*S44*S5*S6)/2.)) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-(S2*(-(C4*C66) + 2*C5*C6*S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(-2*C6*S3*S5*S6 + C3*(C66*S4 + C4*C5*S66))))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. + (C55*I5*(C2*C3*S4
+- C4*S2*SS3))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. + (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(2*C44*S3*S5*S66 + C3*(-2*C55*C66*S4 - 2*C4*C5*S66)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(4*C33*C5*C6*S4*S6 - S33*S44*S5*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C4*C55*C66*SS3)))/8.)/2.;
+<br>h[1][2][6]=
+<br>&nbsp; h[1][6][2]=((I1*(-(S2*S4*S5) + C2*(C5*S3 + C3*C4*S5)))/2. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C6*S2*S4*S5) + C2*(C5*C6*S3
++ C3*C4*C6*S5)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I9*(C2*C6*(1 + CC5)*S3*S44*S6
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C6*S2*((2 - CC5 - CC4*(1 + CC5))*S33 - C4*CC3*S55)*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*I24*(C3*C6*S5 + S3*(C4*C5*C6
+- S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*I24*(-(C3*C6*S5) + S3*(-(C4*C5*C6)
++ S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(S2*((C5*C6*S33*S44)/2.
++ C33*C6*S4*S5 - S33*S6 + CC4*S33*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(-(C3*C4*C6*S5) + S3*(-(C44*C5*C6) + S44*S6))) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(C2*(-4*C44*C5*C66*S3 + C3*(-4*C4*C66*S5 + 2*S4*S55*S66)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(2*C5*C66*S33*S44 + 4*C33*CC6*S4*S5 - 2*C4*S55*S66*SS3 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C33*S4*S5*SS6)))/8.)/2.;
+<br>h[1][2][7]=
+<br>&nbsp; h[1][7][2]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I2*(-(S2*(C4*C6 - C5*S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(S3*S5*S6 + C3*(-(C6*S4) - C4*C5*S6))))/2.;
+<br>h[1][3][3]=(-2*I23*S2*S3*S4 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I17*S2*S3*S44 + (I5*S2*(CC5*S3*S44
++ C3*S4*S55))/4. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I24*S2*(-(C3*S5*S6) -
+S3*(C6*S4 + C4*C5*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I6*S2*(-(C3*C4*S5*S6)
+- S3*(2*C4*C6*S4 + C44*C5*S6)) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*S2*(-(S3*(C66*(1 + CC5)*S44 + 4*C44*C5*C6*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(C66*S4*S55 + 4*C4*C6*S5*S6)))/4.)/2.;
+<br>h[1][3][4]=
+<br>&nbsp; h[1][4][3]=(-(C3*CC5*I10*S2) - C3*C44*I17*S2 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C3*C4*I23*S2 + (C3*I7*S2)/8.
+- 2*C2*C4*I11*S4 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*C4*CC5*I12*S4 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*C4*(1 + CC5)*CC6*I9*S4
++ (I5*S2*(-C3 - C4*S3*S55))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I5*S2*(-2*C3*C44*CC5
++ C4*S3*S55))/8. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C3*I24*S2*(C4*C6 - C5*S4*S6)
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*S2*(2*C3*C6 - S3*S4*S5*S6)
++ (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(8*C2*C44*C5*C6*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C3*(2*C44*C66*(1 + CC5) - 8*C5*C6*S44*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(C4*C66*S55
+ - 4*C6*S4*S5*S6))))/8. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C2*(4*C4*C6*S4 + 2*C44*C5*S6)
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(S3*S4*S5*S6 + C3*(2*C6*CC4 - 2*C5*S44*S6 - 2*C6*SS4))) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*S2*(-(S3*(-(C4*C66*S55) + 4*C6*S4*S5*S6)) + 2*C3*C66*SS5))/8.)/
+<br>&nbsp;&nbsp;&nbsp; 2.;
+<br>h[1][3][5]=
+<br>&nbsp; h[1][5][3]=((I3*S2*S3*S4)/4. - 2*C2*C5*CC4*I12*S5 - 2*C2*C5*I14*S5
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*C5*CC4*CC6*I9*S5 +
+(I5*S2*(2*C55*S3*S4 + 2*C3*C5*S44*S5))/8. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*S2*(-(C4*C5*S3*S6) -
+C3*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I24*S2*(-(C5*S3*S6) -
+C3*C4*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C2*S44*S5*S6) + S2*(-(C4*C5*S3*S6)
+- C3*C44*S5*S6)) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(2*C2*(-2*C5*C66*S5 - 2*C6*S44*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(-(S3*(2*C55*C66*S4 + 4*C4*C5*C6*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(-2*C5*C66*S44*S5
+ - 4*C44*C6*S5*S6))))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I4*S2*(-2*C3*C6*S5*S6
+- S3*(C66*S4 + C4*C5*S66)))/4.)/2.;
+<br>h[1][3][6]=
+<br>&nbsp; h[1][6][3]=((I1*S2*(C3*C5 - C4*S3*S5))/2. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*S2*(C3*C5*C6 - C4*C6*S3*S5)
+- 2*C2*C6*(1 - CC4*(1 + CC5))*I9*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I24*S2*(-(C6*S3*S5) +
+C3*(C4*C5*C6 - S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(S2*(-(C4*C6*S3*S5) +
+C3*(C44*C5*C6 - 2*C4*S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C5*C6*S44 - 2*S6*SS4)) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(2*C2*(2*C5*CC6*S44 + 2*S66 - 2*CC5*S66 - 2*C5*S44*SS6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C3*(4*C44*C5*CC6 - 2*(1 + CC5)*S44*S66 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C44*C5*SS6)
+ -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(4*C4*CC6*S5
+ - 2*S4*S55*S66 - 4*C4*S5*SS6))))/8.)/
+<br>&nbsp;&nbsp;&nbsp; 2.;
+<br>h[1][3][7]=h[1][7][3]=(I2*S2*(C3*S5*S6 - S3*(-(C6*S4) - C4*C5*S6)))/2.;
+<br>h[1][4][4]=(-2*I23*S2*S3*S4 + (I5*(C2*C4*S55 - C3*S2*S4*S55))/4. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I24*S2*S3*(-(C6*S4) -
+C4*C5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I6*(C3*C4*S2*S5*S6 + C2*S4*S5*S6)
++ (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(C3*S2*(C66*S4*S55 + 4*C4*C6*S5*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C4*C66*S55 - 4*C6*S4*S5*S6)))/4.)/2.;
+<br>h[1][4][5]=
+<br>&nbsp; h[1][5][4]=((I3*(-(C3*C4*S2) - C2*S4))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. + (I5*(2*C3*C4*C55*S2
++ 2*C2*C55*S4))/8. + 2*C5*I10*S2*S3*S5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I24*S2*S3*S4*S5*S6 + I6*(C2*C4*C5*S6
+- C3*C5*S2*S4*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C2*C4*C5*S6) + C3*C5*S2*S4*S6)
++ (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-(C2*(2*C55*C66*S4 + 4*C4*C5*C6*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(4*C5*C66*S3*S5 + C3*(-2*C4*C55*C66 + 4*C5*C6*S4*S6))))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C66*S4 + 2*C4*C5*C6*S6) + C3*S2*(C4*C66 - C5*S4*S66)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.)/2.;
+<br>h[1][4][6]=
+<br>&nbsp; h[1][6][4]=((I1*(C2*C4*S5 - C3*S2*S4*S5))/2. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C2*C4*C6*S5 - C3*C6*S2*S4*S5)
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I24*S2*S3*(-(C5*C6*S4)
+- C4*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C2*C4*C6*S5) + S2*(C3*C6*S4*S5
+- 2*S3*S6)) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-(C2*(4*C4*CC6*S5 - 2*S4*S55*S66 - 4*C4*S5*SS6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(-4*S3*S66*SS5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(4*CC6*S4*S5
+ + 2*C4*S55*S66 - 4*S4*S5*SS6))))/8.)/
+<br>&nbsp;&nbsp;&nbsp; 2.;
+<br>h[1][4][7]=
+<br>&nbsp; h[1][7][4]=(I2*(C2*(-(C6*S4) - C4*C5*S6) + C3*S2*(-(C4*C6) +
+C5*S4*S6)))/2.;
+<br>h[1][5][5]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I24*S2*(-(C4*C5*S3*S6) - C3*S5*S6)
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I6*(-(C2*S4*S5*S6) + S2*(-(C5*S3*S6)
+- C3*C4*S5*S6)) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-2*C2*C6*S4*S5*S6 + S2*(-2*C5*C6*S3*S6 - C3*C4*S5*S66)))/2.)/
+<br>&nbsp;&nbsp;&nbsp; 2.;
+<br>h[1][5][6]=
+<br>&nbsp; h[1][6][5]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I24*S2*(C3*C5*C6 - C4*C6*S3*S5) +
+(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I1*(C2*C5*S4 + S2*(C3*C4*C5 - S3*S5)))/2. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I6*(C2*C5*C6*S4 + S2*(C3*C4*C5*C6
+- C6*S3*S5)) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(C2*(2*C5*CC6*S4 + 2*C4*S66 - 2*C5*S4*SS6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(-2*CC6*S3*S5 + C3*(2*C4*C5*C66 - 2*S4*S66) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*S3*S5*SS6)))/4.)/2.;
+<br>h[1][5][7]=h[1][7][5]=(I2*(C2*S4*S5*S6 + S2*(C5*S3*S6 + C3*C4*S5*S6)))/2.;
+<br>h[1][6][6]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I24*S2*(-(C3*S5*S6) + S3*(-(C6*S4)
+- C4*C5*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I6*(-(C2*S4*S5*S6) + S2*(-(C5*S3*S6)
+- C3*C4*S5*S6)))/2.;
+<br>h[1][6][7]=
+<br>&nbsp; h[1][7][6]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I2*(C2*(-(C5*C6*S4) - C4*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C6*S3*S5 + C3*(-(C4*C5*C6) + S4*S6))))/2.;
+<br>h[1][7][7]=0;
+<br>h[2][1][1]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*(1 + CC3)*CC4*I11*S2 + 2*C2*(1
++ CC3)*CC4*CC5*I12*S2 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*CC3*I19*S2 + 2*C2*I21*S2
++ 2*C2*CC5*I22*S2 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*(CC5 - CC4*(1 + CC5)
++ CC3*(1 - CC4*(1 + CC5)))*CC6*I9*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S2 - (C3*CC2*I20*S44)/2.
++ (C3*I20*S44*SS2)/2. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I23*(2*C2*C4*S2 + C3*CC2*S4
+- C3*S4*SS2) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I5*S55*(2*C2*C4*S2*S33 + 2*CC2*S3*S4 - 2*S3*S4*SS2))/8. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CC5*I10*(2*C2*CC3*S2 + C3*CC2*S44
+- C3*S44*SS2) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-2*C22*S3*S5*S6 + C3*CC2*(2*C6*S4
++ 2*C4*C5*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C2*S2*(-2*C4*C6 + 2*C5*S4*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(2*C6*S4 + 2*C4*C5*S6)*SS2) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(2*C22*C3*C44*C5*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(2*C3*C6*S44 - 2*C4*S3*S5*S6) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C3*C6*S44 - 2*C4*S3*S5*S6)*SS2 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C2*S2*(-2*C6*CC4 + 2*S4*(C4*C5 - C3*S3*S5)*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(C5*S44*S6 + 2*C6*SS4))) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(4*C22*C3*C44*C5*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*CC2*(C3*C66*(1 + CC5)*S44 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(C66*S4*S55
+ + 2*C4*S5*S66)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*(C3*C66*(1 + CC5)*S44 - S3*(C66*S4*S55 + 2*C4*S5*S66))*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+SS2 - 2*C2*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C4*C66*S33*S55 - 8*C3*C6*S3*S4*S5*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C4*C5*S4*S66
+ - 2*C66*SS5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*CC3*(2*C5*C6*S44*S6
+ + C66*SS5))))/8.)/2.;
+<br>h[2][1][2]=h[2][2][1]=0;
+<br>h[2][1][3]=
+<br>&nbsp; h[2][3][1]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CC4*I11*S2 + C33*CC4*I11*S2 + CC4*CC5*I12*S2
++ CC5*I14*S2 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C33*I19*S2 + I8*S2 + (1
+- CC4*(1 + CC5))*CC6*I9*S2 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*C3*I23*S4 + (C2*C3*I11*S44)/2.
++ (C2*C3*I17*S44)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. + (I5*(-2*C3*C4*S2*S3
+- C2*S3*S4)*S55)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. - (C2*I5*(-(C3*CC5*S44)
++ S3*S4*S55))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I12*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*C3*CC5*S44 + S2*(2*C33*(1 + CC4)*CC5 - 2*C3*C4*S3*S55)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. + I9*(-(C2*C3*(1
++ CC5)*CC6*S44)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2. + (CC6*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(2*C33*(2 - CC5 - CC4*(1 + CC5)) + 2*C3*C4*S3*S55))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2.) + C2*I24*(S3*S5*S6 + C3*(-(C6*S4) - C4*C5*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*I24*(-(S3*S5*S6) + C3*(C6*S4
++ C4*C5*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(S2*(2*C33*C6 - 2*C33*C6*CC4
++ C33*C5*S44*S6 - 2*S33*S4*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C4*S3*S5*S6 + C3*(-(C6*S44) - C44*C5*S6))) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-2*S2*(-C66 + C66*CC5 + 2*C5*C6*S44*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C3*(C66*(1 + CC5)*S44 + 4*C44*C5*C6*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(C66*S4*S55
+ + 4*C4*C6*S5*S6))))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(-2*C33 + 2*C3*C4*C66*S3*S55 - 8*C6*S33*S4*S5*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C33*C5*S44*S66)
+ +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(-2*C3*C44*C5*S66 - S3*(-(C66*S4*S55) - 2*C4*S5*S66))))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. - I6*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(-(C4*S3*S5*S6) + C3*(2*C4*C6*S4 + C44*C5*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C5*S44*S6 + 2*C6*SS4)))/2.;
+<br>h[2][1][4]=
+<br>&nbsp; h[2][4][1]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*CC5*I10*S3 + C2*C44*I11*S3 - 2*C2*C4*I23*S3
+- (C2*I7*S3)/8. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C4*I11*S2*S33*S4 - (I5*(-(S2*S4*S55)
++ C2*(-S3 + C3*C4*S55)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I12*(2*C2*C44*CC5*S3
++ S2*(-2*C4*CC5*S33*S4 - CC3*S4*S55)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. + I9*(-(C2*C44*(1
++ CC5)*CC6*S3) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC6*S2*(2*C4*(1 + CC5)*S33*S4 + CC3*S4*S55))/2.) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*I24*S3*(C4*C6 - C5*S4*S6)
++ C2*I24*S3*(-(C4*C6) + C5*S4*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C4*S2*S5*S6 + C2*(2*C6*S3
++ C3*S4*S5*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(S2*(2*C4*C6*S33*S4 +
+C44*C5*S33*S6 + C33*C4*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C3*S4*S5*S6 + S3*(-2*C44*C6 + 2*C5*S44*S6))) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I5*S55*(C2*C3*C4 + S2*S4*SS3))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(4*C5*S3*S44*S66 + C3*(-(C4*C66*S55) + 2*S4*S5*S66)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(4*C33*C4*C6*S5*S6 + 2*C44*C5*S33*S66 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C66*S4*S55*SS3)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. - (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C66*S4*S55 + 4*C4*C6*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C3*(-(C4*C66*S55) + 4*C6*S4*S5*S6) + 2*C66*S3*SS5)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8.)/2.;
+<br>h[2][1][5]=
+<br>&nbsp; h[2][5][1]=(-(I3*(-(C4*S2) - C2*C3*S4))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. + (I12*(-2*C2*C5*S3*S44*S5
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(2*C4*C55*CC3 - 2*C5*(1 + CC4)*S33*S5)))/2. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I9*(C2*C5*CC6*S3*S44*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S5 + (CC6*S2*(-2*C4*C55*CC3 + S33*(2*C5*S5 + 2*C5*CC4*S5)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2.) - C2*I24*(C3*C5*S6 - C4*S3*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*I24*(-(C3*C5*S6) + C4*S3*S5*S6)
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C5*S2*S4*S6) + C2*(C3*C4*C5*S6
+- S3*S5*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C2*(-(C3*C4*C5*S6) +
+C44*S3*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C33*C5*S4*S6 - (S33*S44*S5*S6)/2.)) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-(S2*(-(C4*C66) + 2*C5*C6*S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(-2*C6*S3*S5*S6 + C3*(C66*S4 + C4*C5*S66))))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. + (C55*I5*(C2*C3*S4
+- C4*S2*SS3))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. + (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(2*C44*S3*S5*S66 + C3*(-2*C55*C66*S4 - 2*C4*C5*S66)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(4*C33*C5*C6*S4*S6 - S33*S44*S5*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C4*C55*C66*SS3)))/8.)/2.;
+<br>h[2][1][6]=
+<br>&nbsp; h[2][6][1]=(-(I1*(-(S2*S4*S5) + C2*(C5*S3 + C3*C4*S5)))/2. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C6*S2*S4*S5) + C2*(C5*C6*S3
++ C3*C4*C6*S5)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I9*(C2*C6*(1 + CC5)*S3*S44*S6
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C6*S2*((2 - CC5 - CC4*(1 + CC5))*S33 - C4*CC3*S55)*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*I24*(C3*C6*S5 + S3*(C4*C5*C6
+- S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*I24*(-(C3*C6*S5) + S3*(-(C4*C5*C6)
++ S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(S2*((C5*C6*S33*S44)/2.
++ C33*C6*S4*S5 - S33*S6 + CC4*S33*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(-(C3*C4*C6*S5) + S3*(-(C44*C5*C6) + S44*S6))) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(C2*(-4*C44*C5*C66*S3 + C3*(-4*C4*C66*S5 + 2*S4*S55*S66)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(2*C5*C66*S33*S44 + 4*C33*CC6*S4*S5 - 2*C4*S55*S66*SS3 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C33*S4*S5*SS6)))/8.)/2.;
+<br>h[2][1][7]=
+<br>&nbsp; h[2][7][1]=-(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I2*(-(S2*(C4*C6 - C5*S4*S6))
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(S3*S5*S6 + C3*(-(C6*S4) - C4*C5*S6))))/2.;
+<br>h[2][2][2]=0;
+<br>h[2][2][3]=
+<br>&nbsp; h[2][3][2]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C3*(1 + CC4)*CC5*I14*S3 - 2*C3*I16*S3
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C3*CC4*I17*S3 - (C33*C4*I5*S55)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. + (I4*(-2*C3*(2*C66
+- C66*CC5 - C66*CC4*(1 + CC5))*S3 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C33*C4*C66*S55 - 2*C3*C5*S3*S44*S66 - 2*C33*S4*S5*S66))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. + I6*(-2*C33*S4*S5*S6
+- 2*C3*S3*(C5*S44*S6 + 2*C6*SS4)))/2.;
+<br>h[2][2][4]=
+<br>&nbsp; h[2][4][2]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C4*CC3*CC5*I14*S4 - 2*C4*I15*S4 -
+2*C4*CC3*I17*S4 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I23*S4 + (I5*(2*C4*C55*S4
++ S33*S4*S55))/8. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-2*C6*S4 - 2*C4*C5*S6)
++ (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-2*C4*C66*(1 + CC5)*S4 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C4*C66*CC3*(1 + CC5)*S4 - (C66*S33*S4*S55)/2. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C4*S33*S5*S66 - 2*C44*C5*S66*SS3))/4. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-4*C4*C6*S4 + C4*(-2*C4*C5
+- S33*S5)*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(4*C4*C6*S4 + 2*C44*C5*S6) + 2*C5*S6*SS4))/2.;
+<br>h[2][2][5]=
+<br>&nbsp; h[2][5][2]=(-2*C5*(1 - CC3*(1 + CC4))*I14*S5 + 2*I24*S4*S5*S6
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(CC3*S44*S5*S6) + S4*(-(C5*S33)
++ 2*C4*S5)*S6) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(C4*C55*C66*S33 - 2*C5*C66*CC4*S5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(2*C5*C66*S5 + 2*C5*C66*CC4*S5) - C5*S33*S4*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S44*S5*S66*SS3))/4. + (I5*(-2*C4*C55*S33 - 2*S55*SS4))/8.)/
+<br>&nbsp;&nbsp;&nbsp; 2.;
+<br>h[2][2][6]=
+<br>&nbsp; h[2][6][2]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-2*C5*C6*S4 - 2*C4*S6) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-2*C66*S33*S4*S5 + 2*S66 - 2*CC4*(1 + CC5)*S66 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C4*S33*S55*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(-4*S66 + 2*CC5*S66 + 2*CC4*(1 + CC5)*S66) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C5*C66*S44*SS3))/4. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C6*S4*(-2*C4*C5 - S33*S5)
+- 2*CC4*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(C5*C6*S44 - 2*S6*SS4)))/2.;
+<br>h[2][2][7]=h[2][7][2]=0;
+<br>h[2][3][3]=(-2*C3*I23*S4 + C3*I11*S44 - C3*CC5*I14*S44 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C3*CC6*I9*S44 - (I5*S3*S4*S55)/4.
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I24*(-(S3*S5*S6) + C3*(C6*S4
++ C4*C5*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I6*(-(C4*S3*S5*S6) + C3*(C6*S44
++ C44*C5*S6)) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(C3*(C66*CC5*S44 + 2*C44*C5*S66) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(C66*S4*S55 + 2*C4*S5*S66)))/4.)/2.;
+<br>h[2][3][4]=
+<br>&nbsp; h[2][4][3]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C44*I11*S3 - C44*CC5*I14*S3 - 2*C4*I23*S3
+- (I7*S3)/8. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C44*CC6*I9*S3 + (C3*C4*I5*S55)/8.
++ (I12*(-(C55*S3) - C3*C4*S55))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. - 2*I24*S3*(C4*C6
+- C5*S4*S6) + I6*(-2*C6*S3 - C3*S4*S5*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C3*S4*S5*S6) + S3*(2*C44*C6
+- 2*C5*S44*S6)) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-((1 + 2*C66 - 4*CC5*CC6)*S3) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C3*(C4*CC6*S55 - 2*C6*S4*S5*S6)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. - (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(2*C44*C66*CC5 - 4*C5*S44*S66) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(C4*C66*S55 - 2*S4*S5*S66)))/8.)/2.;
+<br>h[2][3][5]=
+<br>&nbsp; h[2][5][3]=((C3*I3*S4)/4. + (C3*C55*I5*S4)/4. + C5*I14*S3*S44*S5
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C3*C4*C5*S6 - S3*S5*S6)
+- 2*I24*(C3*C5*S6 - C4*S3*S5*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C3*C4*C5*S6 - C44*S3*S5*S6)
+- (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-2*C6*S3*S5*S6 + C3*(C66*S4 + C4*C5*S66)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. - (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(2*C55*C66*S4 + 2*C4*C5*S66) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(-2*C5*C66*S44*S5 - 2*C44*S5*S66)))/8.)/2.;
+<br>h[2][3][6]=
+<br>&nbsp; h[2][6][3]=((I1*(-(C5*S3) - C3*C4*S5))/2. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C5*C6*S3) - C3*C4*C6*S5)
++ C6*I9*S3*S44*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-(C3*C6*S5) - S3*(C4*C5*C6
+- S4*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(C3*C6*S5 + S3*(C4*C5*C6
+- S4*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C3*C4*C6*S5 + S3*(C44*C5*C6
+- S44*S6)) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(S3*(4*C44*C5*C66 - 2*CC5*S44*S66) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(4*C4*C66*S5 - 2*S4*S55*S66)))/8.)/2.;
+<br>h[2][3][7]=h[2][7][3]=(I2*(-(S3*S5*S6) + C3*(C6*S4 + C4*C5*S6)))/2.;
+<br>h[2][4][4]=(-2*C3*I23*S4 + I12*S3*S4*S55 - 2*C4*I6*S3*S5*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C3*I24*(-(C6*S4) - C4*C5*S6)
++ (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*S3*(-(CC6*S4*S55) - 2*C4*C6*S5*S6))/2.)/2.;
+<br>h[2][4][5]=
+<br>&nbsp; h[2][5][4]=((C4*I3*S3)/4. + (I12*(-2*C4*C55*S3 - 2*C3*S55))/2.
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C3*I24*S4*S5*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S6 + (I4*(8*C3*C5*CC6*S5
++ 2*S3*(2*C4*C55*CC6 - 2*C5*C6*S4*S6)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. - (I4*S3*(C4*C66
+- C5*S4*S66))/4.)/2.;
+<br>h[2][4][6]=
+<br>&nbsp; h[2][6][4]=((I1*S3*S4*S5)/2. + C6*I6*S3*S4*S5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C6*S3*S4*S5) - 2*C3*S6)
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C3*I24*(-(C5*C6*S4) -
+C4*S6) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(C3*(8*C6*CC5*S6 - 4*S66) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*S3*(-2*CC6*S4*S5 - 2*C4*C6*S55*S6 + 2*S4*S5*SS6)))/8.)/2.;
+<br>h[2][4][7]=h[2][7][4]=(I2*S3*(C4*C6 - C5*S4*S6))/2.;
+<br>h[2][5][5]=(-2*I24*(C3*C4*C5*S6 - S3*S5*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I6*(C3*C5*S6 - C4*S3*S5*S6)
+- (I4*(2*C3*C5*C6*S6 - C4*S3*S5*S66))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.)/2.;
+<br>h[2][5][6]=
+<br>&nbsp; h[2][6][5]=((I1*(-(C4*C5*S3) - C3*S5))/2. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C4*C5*C6*S3) - C3*C6*S5)
+- I6*(C4*C5*C6*S3 + C3*C6*S5) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-(C5*C6*S3) - C3*C4*C6*S5)
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(C5*C6*S3 + C3*C4*C6*S5)
+- (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(2*C3*CC6*S5 + S3*(2*C4*C5*C66 - 2*S4*S66) - 2*C3*S5*SS6))/4.)/
+<br>&nbsp;&nbsp;&nbsp; 2.;
+<br>h[2][5][7]=h[2][7][5]=(I2*(C3*C5*S6 - C4*S3*S5*S6))/2.;
+<br>h[2][6][6]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I6*(-(C3*C5*S6) + C4*S3*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I24*(S3*S5*S6 + C3*(-(C6*S4)
+- C4*C5*S6)))/2.;
+<br>h[2][6][7]=h[2][7][6]=(I2*(C3*C6*S5 + S3*(C4*C5*C6 - S4*S6)))/2.;
+<br>h[2][7][7]=0;
+<br>h[3][1][1]=(-(CC4*I11*(2*C3*S3 - 2*C3*CC2*S3)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CC4*CC5*I12*(2*C3*S3 - 2*C3*CC2*S3)
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CC6*I9*(-2*C3*CC2*(1 - CC4*(1
++ CC5))*S3 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C3*(-1 + CC4*(1 + CC5))*S3) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*I23*S2*S3*S4 + (C2*I20*S2*S3*S44)/2.
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CC5*I10*(-2*C3*S3 + 2*C3*CC2*S3
+- C2*S2*S3*S44) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I5*(2*C33*C4 - 2*C33*C4*CC2 + 2*C2*C3*S2*S4)*S55)/8. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-(C3*S22*S5*S6) - C2*S2*S3*(2*C6*S4
++ 2*C4*C5*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C3*I19*S3*SS2 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C2*S2*(-2*C6*S3*S44
+- 2*C3*C4*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S6*(-(C44*C5*S22*S3) + 2*CC3*S4*S5 - 2*S4*S5*SS3) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C3*S3*(-(C5*S44*S6) - 2*C6*SS4) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(2*S4*S6*(-(CC3*S5) + S5*SS3) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C3*S3*(C5*S44*S6 + 2*C6*SS4))) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-2*C33*C4*C66*S55 - 2*C44*C5*S22*S3*S66 + 4*CC3*S4*S5*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C2*S2*(-(C66*(1 + CC5)*S3*S44) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(C66*S4*S55
+ + 2*C4*S5*S66)) - 4*S4*S5*S66*SS3 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C3*S3*(-(C5*S44*S66) - C66*SS5) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(2*C33*C4*C66*S55 - 8*C6*CC3*S4*S5*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+8*C6*S4*S5*S6*SS3
+ -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C3*S3*(2*C5*C6*S44*S6
+ + C66*SS5))))/8.)/2.;
+<br>h[3][1][2]=
+<br>&nbsp; h[3][2][1]=(-(CC4*I11*S2) - C33*CC4*I11*S2 - CC4*CC5*I12*S2
+- CC5*I14*S2 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C33*I19*S2 - I8*S2 - (1
+- CC4*(1 + CC5))*CC6*I9*S2 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*C3*I23*S4 - (C2*C3*I11*S44)/2.
+- (C2*C3*I17*S44)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. - (I5*(-2*C3*C4*S2*S3
+- C2*S3*S4)*S55)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (C2*I5*(-(C3*CC5*S44)
++ S3*S4*S55))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. - (I12*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*C3*CC5*S44 + S2*(2*C33*(1 + CC4)*CC5 - 2*C3*C4*S3*S55)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. - I9*(-(C2*C3*(1
++ CC5)*CC6*S44)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2. + (CC6*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(2*C33*(2 - CC5 - CC4*(1 + CC5)) + 2*C3*C4*S3*S55))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2.) - C2*I24*(S3*S5*S6 + C3*(-(C6*S4) - C4*C5*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*I24*(-(S3*S5*S6) + C3*(C6*S4
++ C4*C5*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(S2*(2*C33*C6 - 2*C33*C6*CC4
++ C33*C5*S44*S6 - 2*S33*S4*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C4*S3*S5*S6 + C3*(-(C6*S44) - C44*C5*S6))) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-2*S2*(-C66 + C66*CC5 + 2*C5*C6*S44*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C3*(C66*(1 + CC5)*S44 + 4*C44*C5*C6*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(C66*S4*S55
+ + 4*C4*C6*S5*S6))))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. - (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(-2*C33 + 2*C3*C4*C66*S3*S55 - 8*C6*S33*S4*S5*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C33*C5*S44*S66)
+ +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(-2*C3*C44*C5*S66 - S3*(-(C66*S4*S55) - 2*C4*S5*S66))))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + I6*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(-(C4*S3*S5*S6) + C3*(2*C4*C6*S4 + C44*C5*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C5*S44*S6 + 2*C6*SS4)))/2.;
+<br>h[3][1][3]=h[3][3][1]=0;
+<br>h[3][1][4]=
+<br>&nbsp; h[3][4][1]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C3*CC5*I10*S2 - C3*C44*I17*S2 - (C3*I7*S2)/8.
+- 2*C2*C4*I11*S4 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*C4*CC5*I12*S4 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*C4*(1 + CC5)*CC6*I9*S4
+- (I5*S2*(-C3 - C4*S3*S55))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I5*S2*(-2*C3*C44*CC5
++ C4*S3*S55))/8. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*S2*(2*C3*C6 - S3*S4*S5*S6)
++ (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(8*C2*C44*C5*C6*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C3*(2*C44*C66*(1 + CC5) - 8*C5*C6*S44*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(C4*C66*S55
+ - 4*C6*S4*S5*S6))))/8. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C2*(4*C4*C6*S4 + 2*C44*C5*S6)
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(S3*S4*S5*S6 + C3*(2*C6*CC4 - 2*C5*S44*S6 - 2*C6*SS4))) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*S2*(-(S3*(-(C4*C66*S55) + 4*C6*S4*S5*S6)) + 2*C3*C66*SS5))/8.)/
+<br>&nbsp;&nbsp;&nbsp; 2.;
+<br>h[3][1][5]=
+<br>&nbsp; h[3][5][1]=(-(I3*S2*S3*S4)/4. - 2*C2*C5*CC4*I12*S5 - 2*C2*C5*I14*S5
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*C5*CC4*CC6*I9*S5 +
+(I5*S2*(2*C55*S3*S4 + 2*C3*C5*S44*S5))/8. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*S2*(-(C4*C5*S3*S6) -
+C3*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C2*S44*S5*S6) + S2*(-(C4*C5*S3*S6)
+- C3*C44*S5*S6)) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(2*C2*(-2*C5*C66*S5 - 2*C6*S44*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(-(S3*(2*C55*C66*S4 + 4*C4*C5*C6*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(-2*C5*C66*S44*S5
+ - 4*C44*C6*S5*S6))))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. - (I4*S2*(-2*C3*C6*S5*S6
+- S3*(C66*S4 + C4*C5*S66)))/4.)/2.;
+<br>h[3][1][6]=
+<br>&nbsp; h[3][6][1]=(-(I1*S2*(C3*C5 - C4*S3*S5))/2. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*S2*(C3*C5*C6 - C4*C6*S3*S5)
+- 2*C2*C6*(1 - CC4*(1 + CC5))*I9*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(S2*(-(C4*C6*S3*S5) +
+C3*(C44*C5*C6 - 2*C4*S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C5*C6*S44 - 2*S6*SS4)) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(2*C2*(2*C5*CC6*S44 + 2*S66 - 2*CC5*S66 - 2*C5*S44*SS6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C3*(4*C44*C5*CC6 - 2*(1 + CC5)*S44*S66 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C44*C5*SS6)
+ -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(4*C4*CC6*S5
+ - 2*S4*S55*S66 - 4*C4*S5*SS6))))/8.)/
+<br>&nbsp;&nbsp;&nbsp; 2.;
+<br>h[3][1][7]=h[3][7][1]=-(I2*S2*(C3*S5*S6 - S3*(-(C6*S4) - C4*C5*S6)))/2.;
+<br>h[3][2][2]=(-2*C3*(1 + CC4)*CC5*I14*S3 + 2*C3*I16*S3 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C3*CC4*I17*S3 + (C33*C4*I5*S55)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. - (I4*(-2*C3*(2*C66
+- C66*CC5 - C66*CC4*(1 + CC5))*S3 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C33*C4*C66*S55 - 2*C3*C5*S3*S44*S66 - 2*C33*S4*S5*S66))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. - I6*(-2*C33*S4*S5*S6
+- 2*C3*S3*(C5*S44*S6 + 2*C6*SS4)))/2.;
+<br>h[3][2][3]=h[3][3][2]=0;
+<br>h[3][2][4]=
+<br>&nbsp; h[3][4][2]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C44*I11*S3 - C44*CC5*I14*S3 + (I7*S3)/8.
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C44*CC6*I9*S3 + (C3*C4*I5*S55)/8.
+- (I12*(-(C55*S3) - C3*C4*S55))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. - I6*(-2*C6*S3
+- C3*S4*S5*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C3*S4*S5*S6) + S3*(2*C44*C6
+- 2*C5*S44*S6)) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-((1 + 2*C66 - 4*CC5*CC6)*S3) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C3*(C4*CC6*S55 - 2*C6*S4*S5*S6)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. - (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(2*C44*C66*CC5 - 4*C5*S44*S66) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(C4*C66*S55 - 2*S4*S5*S66)))/8.)/2.;
+<br>h[3][2][5]=
+<br>&nbsp; h[3][5][2]=(-(C3*I3*S4)/4. + (C3*C55*I5*S4)/4. + C5*I14*S3*S44*S5
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C3*C4*C5*S6 - S3*S5*S6)
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C3*C4*C5*S6 - C44*S3*S5*S6)
++ (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-2*C6*S3*S5*S6 + C3*(C66*S4 + C4*C5*S66)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. - (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(2*C55*C66*S4 + 2*C4*C5*S66) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(-2*C5*C66*S44*S5 - 2*C44*S5*S66)))/8.)/2.;
+<br>h[3][2][6]=
+<br>&nbsp; h[3][6][2]=(-(I1*(-(C5*S3) - C3*C4*S5))/2. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C5*C6*S3) - C3*C4*C6*S5)
++ C6*I9*S3*S44*S6 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-(C3*C6*S5) - S3*(C4*C5*C6
+- S4*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(C3*C6*S5 + S3*(C4*C5*C6
+- S4*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C3*C4*C6*S5 + S3*(C44*C5*C6
+- S44*S6)) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(S3*(4*C44*C5*C66 - 2*CC5*S44*S66) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(4*C4*C66*S5 - 2*S4*S55*S66)))/8.)/2.;
+<br>h[3][2][7]=h[3][7][2]=-(I2*(-(S3*S5*S6) + C3*(C6*S4 + C4*C5*S6)))/2.;
+<br>h[3][3][3]=0;
+<br>h[3][3][4]=
+<br>&nbsp; h[3][4][3]=(-2*C4*I11*S4 - 2*C4*CC5*I12*S4 + 2*C4*(1 + CC5)*CC6*I9*S4
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C44*C5*C6*I4*S6 + I6*(4*C4*C6*S4
++ 2*C44*C5*S6))/2.;
+<br>h[3][3][5]=
+<br>&nbsp; h[3][5][3]=(-2*C5*I10*S5 - 2*C5*CC4*I12*S5 + 2*C5*CC4*CC6*I9*S5
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*S44*S5*S6 + (I4*(-2*C5*C66*S5
+- 2*C6*S44*S5*S6))/4.)/2.;
+<br>h[3][3][6]=
+<br>&nbsp; h[3][6][3]=(-2*C6*(1 - CC4*(1 + CC5))*I9*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C5*C6*S44 - 2*S6*SS4)
++ (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(2*C5*CC6*S44 + 2*S66*SS5 - 2*C5*S44*SS6))/4.)/2.;
+<br>h[3][3][7]=h[3][7][3]=0;
+<br>h[3][4][4]=((C4*I5*S55)/4. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I6*S4*S5*S6 - (I4*(C4*C66*S55
+- 4*C6*S4*S5*S6))/4.)/2.;
+<br>h[3][4][5]=
+<br>&nbsp; h[3][5][4]=(-(I3*S4)/4. + (C55*I5*S4)/4. + (I4*(C66*S4 + 2*C4*C5*C6*S6))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. - (I4*(2*C55*C66*S4
++ 4*C4*C5*C6*S6))/8.)/2.;
+<br>h[3][4][6]=
+<br>&nbsp; h[3][6][4]=(-(C4*C6*I6*S5) + (C4*(I1 + 2*C6*I6)*S5)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. - (I4*(4*C4*CC6*S5
+- 2*S4*S55*S66 - 4*C4*S5*SS6))/8.)/2.;
+<br>h[3][4][7]=h[3][7][4]=(I2*(-(C6*S4) - C4*C5*S6))/2.;
+<br>h[3][5][5]=(-(C6*I4*S4*S5*S6) - 2*I6*S4*S5*S6)/2.;
+<br>h[3][5][6]=
+<br>&nbsp; h[3][6][5]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C5*C6*I6*S4 + (C5*(I1 + 2*C6*I6)*S4)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. + (I4*(2*C5*CC6*S4
++ 2*C4*S66 - 2*C5*S4*SS6))/4.)/2.;
+<br>h[3][5][7]=h[3][7][5]=(I2*S4*S5*S6)/2.;
+<br>h[3][6][6]=-(I6*S4*S5*S6);
+<br>h[3][6][7]=h[3][7][6]=(I2*(-(C5*C6*S4) - C4*S6))/2.;
+<br>h[3][7][7]=0;
+<br>h[4][1][1]=(-2*C2*C3*C44*CC5*I10*S2 - C2*C3*C44*I20*S2 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C4*(-CC3 + CC2*(1 + CC3))*I11*S4
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C4*(-CC3 + CC2*(1 + CC3))*CC5*I12*S4
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CC6*I9*(-2*C4*CC3*(1 + CC5)*S4
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(2*C4*(1 + CC5)*S4 + 2*C4*CC3*(1 + CC5)*S4)) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I5*(2*C2*C4*S2*S3 - S33*S4 + CC2*S33*S4)*S55)/8. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-2*C6*S4 - 2*C4*C5*S6
++ CC2*(2*C6*S4 + 2*C4*C5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*C3*S2*(2*C4*C6 - 2*C5*S4*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I23*(C2*C3*C4*S2 - S4*SS2)
+- (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(C66*S33*S4*S55 + 4*C44*C5*S66 - 4*C44*C5*CC3*S66 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C5*CC4*S66 - 4*C3*C5*S22*S44*S66 + 4*C3*C4*S3*S5*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C2*S2*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C3*C44*C66*(1 + CC5) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(C4*C66*S55
+ - 2*S4*S5*S66)) + 4*C5*S66*SS4 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(-(C66*S33*S4*S55) + 8*C44*C5*C6*CC3*S6 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+8*C3*C4*C6*S3*S5*S6
+ + 4*C5*CC4*S66 - 4*C5*S66*SS4)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. - I6*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(-4*C4*C6*S4 - 2*C44*C5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*S2*(4*C3*C44*C6 + 2*S3*S4*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(4*C4*C6*S4 + 2*C4*(C4*C5 - C3*S3*S5)*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(4*C4*C6*S4 + 2*C44*C5*S6) - 2*C5*S6*SS4) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S6*(2*C3*C4*S3*S5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C5*(2*C44 - 2*CC4 - 2*C3*S22*S44 + 2*SS4))))/2.;
+<br>h[4][1][2]=
+<br>&nbsp; h[4][2][1]=(-(C2*CC5*I10*S3) - C2*C44*I11*S3 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*C4*I23*S3 + (C2*I7*S3)/8.
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C4*I11*S2*S33*S4 + (I5*(-(S2*S4*S55)
++ C2*(-S3 + C3*C4*S55)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. - (I12*(2*C2*C44*CC5*S3
++ S2*(-2*C4*CC5*S33*S4 - CC3*S4*S55)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. - I9*(-(C2*C44*(1
++ CC5)*CC6*S3) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC6*S2*(2*C4*(1 + CC5)*S33*S4 + CC3*S4*S55))/2.) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*I24*S3*(C4*C6 - C5*S4*S6)
+- C2*I24*S3*(-(C4*C6) + C5*S4*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C4*S2*S5*S6 + C2*(2*C6*S3
++ C3*S4*S5*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(S2*(2*C4*C6*S33*S4 +
+C44*C5*S33*S6 + C33*C4*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C3*S4*S5*S6 + S3*(-2*C44*C6 + 2*C5*S44*S6))) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I5*S55*(C2*C3*C4 + S2*S4*SS3))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. - (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(4*C5*S3*S44*S66 + C3*(-(C4*C66*S55) + 2*S4*S5*S66)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(4*C33*C4*C6*S5*S6 + 2*C44*C5*S33*S66 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C66*S4*S55*SS3)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C66*S4*S55 + 4*C4*C6*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C3*(-(C4*C66*S55) + 4*C6*S4*S5*S6) + 2*C66*S3*SS5)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8.)/2.;
+<br>h[4][1][3]=
+<br>&nbsp; h[4][3][1]=(-(C3*CC5*I10*S2) + C3*C44*I17*S2 + (C3*I7*S2)/8.
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*C4*I11*S4 + 2*C2*C4*CC5*I12*S4
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*C4*(1 + CC5)*CC6*I9*S4
++ (I5*S2*(-C3 - C4*S3*S55))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. - (I5*S2*(-2*C3*C44*CC5
++ C4*S3*S55))/8. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*S2*(2*C3*C6 - S3*S4*S5*S6)
+- (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(8*C2*C44*C5*C6*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C3*(2*C44*C66*(1 + CC5) - 8*C5*C6*S44*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(C4*C66*S55
+ - 4*C6*S4*S5*S6))))/8. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C2*(4*C4*C6*S4 + 2*C44*C5*S6)
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(S3*S4*S5*S6 + C3*(2*C6*CC4 - 2*C5*S44*S6 - 2*C6*SS4))) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*S2*(-(S3*(-(C4*C66*S55) + 4*C6*S4*S5*S6)) + 2*C3*C66*SS5))/8.)/
+<br>&nbsp;&nbsp;&nbsp; 2.;
+<br>h[4][1][4]=h[4][4][1]=0;
+<br>h[4][1][5]=
+<br>&nbsp; h[4][5][1]=(-(I3*(-(C3*C4*S2) - C2*S4))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. + (I5*(2*C3*C4*C55*S2
++ 2*C2*C55*S4))/8. + 2*C5*I10*S2*S3*S5 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C2*C4*C5*S6 - C3*C5*S2*S4*S6)
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C2*C4*C5*S6) + C3*C5*S2*S4*S6)
++ (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-(C2*(2*C55*C66*S4 + 4*C4*C5*C6*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(4*C5*C66*S3*S5 + C3*(-2*C4*C55*C66 + 4*C5*C6*S4*S6))))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. - (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C66*S4 + 2*C4*C5*C6*S6) + C3*S2*(C4*C66 - C5*S4*S66)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.)/2.;
+<br>h[4][1][6]=
+<br>&nbsp; h[4][6][1]=(-(I1*(C2*C4*S5 - C3*S2*S4*S5))/2. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C2*C4*C6*S5 - C3*C6*S2*S4*S5)
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C2*C4*C6*S5) + S2*(C3*C6*S4*S5
+- 2*S3*S6)) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-(C2*(4*C4*CC6*S5 - 2*S4*S55*S66 - 4*C4*S5*SS6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(-4*S3*S66*SS5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(4*CC6*S4*S5
+ + 2*C4*S55*S66 - 4*S4*S5*SS6))))/8.)/
+<br>&nbsp;&nbsp;&nbsp; 2.;
+<br>h[4][1][7]=
+<br>&nbsp; h[4][7][1]=-(I2*(C2*(-(C6*S4) - C4*C5*S6) + C3*S2*(-(C4*C6)
++ C5*S4*S6)))/
+<br>&nbsp;&nbsp;&nbsp; 2.;
+<br>h[4][2][2]=(-2*C4*CC3*CC5*I14*S4 + 2*C4*I15*S4 + 2*C4*CC3*I17*S4 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*I23*S4 - (I5*(2*C4*C55*S4
++ S33*S4*S55))/8. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-2*C6*S4 - 2*C4*C5*S6)
+- (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-2*C4*C66*(1 + CC5)*S4 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C4*C66*CC3*(1 + CC5)*S4 - (C66*S33*S4*S55)/2. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C4*S33*S5*S66 - 2*C44*C5*S66*SS3))/4. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-4*C4*C6*S4 + C4*(-2*C4*C5
+- S33*S5)*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(4*C4*C6*S4 + 2*C44*C5*S6) + 2*C5*S6*SS4))/2.;
+<br>h[4][2][3]=
+<br>&nbsp; h[4][3][2]=(-(C44*I11*S3) + C44*CC5*I14*S3 - (I7*S3)/8. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C44*CC6*I9*S3 - (C3*C4*I5*S55)/8.
++ (I12*(-(C55*S3) - C3*C4*S55))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. + I6*(-2*C6*S3
+- C3*S4*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C3*S4*S5*S6) + S3*(2*C44*C6
+- 2*C5*S44*S6)) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-((1 + 2*C66 - 4*CC5*CC6)*S3) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C3*(C4*CC6*S55 - 2*C6*S4*S5*S6)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(2*C44*C66*CC5 - 4*C5*S44*S66) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(C4*C66*S55 - 2*S4*S5*S66)))/8.)/2.;
+<br>h[4][2][4]=h[4][4][2]=0;
+<br>h[4][2][5]=
+<br>&nbsp; h[4][5][2]=(-(C4*I3*S3)/4. + (I12*(-2*C4*C55*S3 - 2*C3*S55))/2.
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C5*I6*S3*S4*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S6 + (I4*(8*C3*C5*CC6*S5
++ 2*S3*(2*C4*C55*CC6 - 2*C5*C6*S4*S6)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I4*S3*(C4*C66
+- C5*S4*S66))/4.)/2.;
+<br>h[4][2][6]=
+<br>&nbsp; h[4][6][2]=(-(I1*S3*S4*S5)/2. - C6*I6*S3*S4*S5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C6*S3*S4*S5) - 2*C3*S6)
++ (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(C3*(8*C6*CC5*S6 - 4*S66) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*S3*(-2*CC6*S4*S5 - 2*C4*C6*S55*S6 + 2*S4*S5*SS6)))/8.)/2.;
+<br>h[4][2][7]=h[4][7][2]=-(I2*S3*(C4*C6 - C5*S4*S6))/2.;
+<br>h[4][3][3]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C4*I11*S4 + 2*C4*CC5*I12*S4 - 2*C4*(1
++ CC5)*CC6*I9*S4 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C44*C5*C6*I4*S6 - I6*(4*C4*C6*S4
++ 2*C44*C5*S6))/2.;
+<br>h[4][3][4]=h[4][4][3]=0;
+<br>h[4][3][5]=
+<br>&nbsp; h[4][5][3]=((I3*S4)/4. + (C55*I5*S4)/4. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C4*C5*I6*S6 - (I4*(C66*S4
++ 2*C4*C5*C6*S6))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. - (I4*(2*C55*C66*S4
++ 4*C4*C5*C6*S6))/8.)/2.;
+<br>h[4][3][6]=
+<br>&nbsp; h[4][6][3]=(-(C4*C6*I6*S5) - (C4*(I1 + 2*C6*I6)*S5)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. - (I4*(4*C4*CC6*S5
+- 2*S4*S55*S66 - 4*C4*S5*SS6))/8.)/2.;
+<br>h[4][3][7]=h[4][7][3]=-(I2*(-(C6*S4) - C4*C5*S6))/2.;
+<br>h[4][4][4]=0;
+<br>h[4][4][5]=h[4][5][4]=(4*C5*C66*I4*S5 - 2*I5*S55)/16.;
+<br>h[4][4][6]=h[4][6][4]=(-16*I6*S6 - 4*I4*S66*SS5)/16.;
+<br>h[4][4][7]=h[4][7][4]=0;
+<br>h[4][5][5]=-(C5*(C6*I4 + 2*I6)*S6)/2.;
+<br>h[4][5][6]=
+<br>&nbsp; h[4][6][5]=(-(C6*(C6*I4 + 2*I6)*S5)/2. - ((I1 + 2*C6*I6)*S5)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. + (I4*S5*SS6)/2.)/2.;
+<br>h[4][5][7]=h[4][7][5]=(C5*I2*S6)/2.;
+<br>h[4][6][6]=-(C5*I6*S6);
+<br>h[4][6][7]=h[4][7][6]=(C6*I2*S5)/2.;
+<br>h[4][7][7]=0;
+<br>h[5][1][1]=(-(C55*I5*(C4*S33 - C4*CC2*S33 + 2*C2*S2*S3*S4))/4. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C5*(1 + (-CC3 + CC2*(1
++ CC3))*CC4)*I12*S5 + 2*C5*CC2*I22*S5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C5*I10*(CC3 - CC2*CC3
++ C2*C3*S2*S44)*S5 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CC6*I9*(2*C5*S5 - 2*C5*CC3*CC4*S5
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(-2*C5*S5 + 2*C5*CC4*S5 + 2*C5*CC3*CC4*S5)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-(C5*S22*S3*S6) - 2*C2*C3*C4*S2*S5*S6
++ 2*S4*S5*S6 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*CC2*S4*S5*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-2*C2*C4*C5*S2*S3*S6
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*S44*S5*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S6 + (2*C3*C5*S3*S4 - (C3*C44*S22 - 2*C4*S4 + S44)*S5)*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(-(CC3*S44*S5*S6) + 2*S4*(-(C3*C5*S3) - C4*S5)*S6)) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-2*C4*C55*C66*S33 + 4*C3*C5*S3*S4*S66 - 2*C3*C44*S22*S5*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C4*S4*S5*S66 - 2*S44*S5*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(2*C4*C55*C66*S33 - 4*C5*C66*S5 - 8*C3*C5*C6*S3*S4*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*CC3*(2*C5*C66*S5
+ - 2*C6*S44*S5*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C4*S4*S5*S66)
+ + 2*CC3*(-2*C5*C66*S5 + S44*S5*S66) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C2*S2*(-2*C3*C5*C66*S44*S5 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(2*C55*C66*S4
+ + 2*C4*C5*S66))))/8.)/2.;
+<br>h[5][1][2]=
+<br>&nbsp; h[5][2][1]=((I3*(-(C4*S2) - C2*C3*S4))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. - (I12*(-2*C2*C5*S3*S44*S5
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(2*C4*C55*CC3 - 2*C5*(1 + CC4)*S33*S5)))/2. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I9*(C2*C5*CC6*S3*S44*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S5 + (CC6*S2*(-2*C4*C55*CC3 + S33*(2*C5*S5 + 2*C5*CC4*S5)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2.) + C2*I24*(C3*C5*S6 - C4*S3*S5*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*I24*(-(C3*C5*S6) + C4*S3*S5*S6)
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C5*S2*S4*S6) + C2*(C3*C4*C5*S6
+- S3*S5*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C2*(-(C3*C4*C5*S6) +
+C44*S3*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C33*C5*S4*S6 - (S33*S44*S5*S6)/2.)) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-(S2*(-(C4*C66) + 2*C5*C6*S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(-2*C6*S3*S5*S6 + C3*(C66*S4 + C4*C5*S66))))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. - (C55*I5*(C2*C3*S4
+- C4*S2*SS3))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. - (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(2*C44*S3*S5*S66 + C3*(-2*C55*C66*S4 - 2*C4*C5*S66)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(4*C33*C5*C6*S4*S6 - S33*S44*S5*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C4*C55*C66*SS3)))/8.)/2.;
+<br>h[5][1][3]=
+<br>&nbsp; h[5][3][1]=((I3*S2*S3*S4)/4. + 2*C2*C5*CC4*I12*S5 + 2*C2*C5*I14*S5
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C2*C5*CC4*CC6*I9*S5 -
+(I5*S2*(2*C55*S3*S4 + 2*C3*C5*S44*S5))/8. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*S2*(-(C4*C5*S3*S6) -
+C3*S5*S6) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C2*S44*S5*S6) + S2*(-(C4*C5*S3*S6)
+- C3*C44*S5*S6)) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(2*C2*(-2*C5*C66*S5 - 2*C6*S44*S5*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(-(S3*(2*C55*C66*S4 + 4*C4*C5*C6*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(-2*C5*C66*S44*S5
+ - 4*C44*C6*S5*S6))))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I4*S2*(-2*C3*C6*S5*S6
+- S3*(C66*S4 + C4*C5*S66)))/4.)/2.;
+<br>h[5][1][4]=
+<br>&nbsp; h[5][4][1]=((I3*(-(C3*C4*S2) - C2*S4))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. - (I5*(2*C3*C4*C55*S2
++ 2*C2*C55*S4))/8. - 2*C5*I10*S2*S3*S5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C2*C4*C5*S6 - C3*C5*S2*S4*S6)
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C2*C4*C5*S6) + C3*C5*S2*S4*S6)
+- (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-(C2*(2*C55*C66*S4 + 4*C4*C5*C6*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(4*C5*C66*S3*S5 + C3*(-2*C4*C55*C66 + 4*C5*C6*S4*S6))))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. + (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C66*S4 + 2*C4*C5*C6*S6) + C3*S2*(C4*C66 - C5*S4*S66)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4.)/2.;
+<br>h[5][1][5]=h[5][5][1]=0;
+<br>h[5][1][6]=
+<br>&nbsp; h[5][6][1]=(-(I1*(C2*C5*S4 + S2*(C3*C4*C5 - S3*S5)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. + (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(2*C5*CC6*S4 + 2*C4*S66 - 2*C5*S4*SS6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(-2*CC6*S3*S5 + C3*(2*C4*C5*C66 - 2*S4*S66) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*S3*S5*SS6)))/4.)/2.;
+<br>h[5][1][7]=h[5][7][1]=-(I2*(C2*S4*S5*S6 + S2*(C5*S3*S6 + C3*C4*S5*S6)))/2.;
+<br>h[5][2][2]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C5*(1 - CC3*(1 + CC4))*I14*S5 - 2*I24*S4*S5*S6
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(CC3*S44*S5*S6) + S4*(-(C5*S33)
++ 2*C4*S5)*S6) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(C4*C55*C66*S33 - 2*C5*C66*CC4*S5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(2*C5*C66*S5 + 2*C5*C66*CC4*S5) - C5*S33*S4*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S44*S5*S66*SS3))/4. - (I5*(-2*C4*C55*S33 - 2*S55*SS4))/8.)/
+<br>&nbsp;&nbsp;&nbsp; 2.;
+<br>h[5][2][3]=
+<br>&nbsp; h[5][3][2]=((C3*I3*S4)/4. - (C3*C55*I5*S4)/4. - C5*I14*S3*S44*S5
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C3*C4*C5*S6 - S3*S5*S6)
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C3*C4*C5*S6 - C44*S3*S5*S6)
+- (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-2*C6*S3*S5*S6 + C3*(C66*S4 + C4*C5*S66)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. + (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(2*C55*C66*S4 + 2*C4*C5*S66) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(-2*C5*C66*S44*S5 - 2*C44*S5*S66)))/8.)/2.;
+<br>h[5][2][4]=
+<br>&nbsp; h[5][4][2]=((C4*I3*S3)/4. - (I12*(-2*C4*C55*S3 - 2*C3*S55))/2.
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C5*I6*S3*S4*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S6 - (I4*(8*C3*C5*CC6*S5
++ 2*S3*(2*C4*C55*CC6 - 2*C5*C6*S4*S6)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8. - (I4*S3*(C4*C66
+- C5*S4*S66))/4.)/2.;
+<br>h[5][2][5]=h[5][5][2]=0;
+<br>h[5][2][6]=
+<br>&nbsp; h[5][6][2]=(-(I1*(-(C4*C5*S3) - C3*S5))/2. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C4*C5*C6*S3) - C3*C6*S5)
+- I6*(C4*C5*C6*S3 + C3*C6*S5) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-(C5*C6*S3) - C3*C4*C6*S5)
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(C5*C6*S3 + C3*C4*C6*S5)
+- (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(2*C3*CC6*S5 + S3*(2*C4*C5*C66 - 2*S4*S66) - 2*C3*S5*SS6))/4.)/
+<br>&nbsp;&nbsp;&nbsp; 2.;
+<br>h[5][2][7]=h[5][7][2]=-(I2*(C3*C5*S6 - C4*S3*S5*S6))/2.;
+<br>h[5][3][3]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C5*I10*S5 + 2*C5*CC4*I12*S5 - 2*C5*CC4*CC6*I9*S5
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*S44*S5*S6 - (I4*(-2*C5*C66*S5
+- 2*C6*S44*S5*S6))/4.)/2.;
+<br>h[5][3][4]=
+<br>&nbsp; h[5][4][3]=(-(I3*S4)/4. - (C55*I5*S4)/4. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C4*C5*I6*S6 + (I4*(C66*S4
++ 2*C4*C5*C6*S6))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. + (I4*(2*C55*C66*S4
++ 4*C4*C5*C6*S6))/8.)/2.;
+<br>h[5][3][5]=h[5][5][3]=0;
+<br>h[5][3][6]=
+<br>&nbsp; h[5][6][3]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C5*C6*I6*S4 - (C5*(I1 + 2*C6*I6)*S4)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. + (I4*(2*C5*CC6*S4
++ 2*C4*S66 - 2*C5*S4*SS6))/4.)/2.;
+<br>h[5][3][7]=h[5][7][3]=-(I2*S4*S5*S6)/2.;
+<br>h[5][4][4]=(-4*C5*C66*I4*S5 + 2*I5*S55)/16.;
+<br>h[5][4][5]=h[5][5][4]=0;
+<br>h[5][4][6]=
+<br>&nbsp; h[5][6][4]=(-(C6*(C6*I4 + 2*I6)*S5)/2. + ((I1 + 2*C6*I6)*S5)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. + (I4*S5*SS6)/2.)/2.;
+<br>h[5][4][7]=h[5][7][4]=-(C5*I2*S6)/2.;
+<br>h[5][5][5]=0;
+<br>h[5][5][6]=h[5][6][5]=(I4*S66)/4.;
+<br>h[5][5][7]=h[5][7][5]=0;
+<br>h[5][6][6]=0;
+<br>h[5][6][7]=h[5][7][6]=-(I2*S6)/2.;
+<br>h[5][7][7]=0;
+<br>h[6][1][1]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C6*(1 - CC5 + CC3*(-1 + CC4*(1 + CC5))
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(CC5 - CC4*(1 + CC5) + CC3*(1 - CC4*(1 + CC5))))*I9*S6 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-2*C5*C6*S4 - C6*S22*S3*S5
+- 2*C4*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(2*C5*C6*S4 + 2*C4*S6) + C2*C3*S2*(2*C4*C5*C6 - 2*S4*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C6*(C5*(C3*C44*S22 -
+2*C4*S4 + S44) + 2*C3*S3*S4*S5) - 2*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*S2*(-2*C4*C6*S3*S5 - 2*C3*S44*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(-(C5*C6*S44) + 2*S6*SS4) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(2*C6*S4*(C4*C5 - C3*S3*S5) + 2*CC4*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(C5*C6*S44 - 2*S6*SS4))) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(4*C3*C44*C5*C66*S22 - 8*C4*C5*C66*S4 + 4*C5*C66*S44 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+8*C3*C66*S3*S4*S5 + 2*C4*S33*S55*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C2*S2*(-2*C3*(1 + CC5)*S44*S66 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(4*C4*C66*S5
+ - 2*S4*S55*S66)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*CC3*(-2*C5*C66*S44 + 2*S66*SS5) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC2*(8*C4*C5*C66*S4 - 8*C3*CC6*S3*S4*S5 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C4*S33*S55*S66
+ + 4*S66*SS5 + 8*C3*S3*S4*S5*SS6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*CC3*(2*C5*CC6*S44
+ - 2*S66*SS5 - 2*C5*S44*SS6))))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8.)/2.;
+<br>h[6][1][2]=
+<br>&nbsp; h[6][2][1]=((I1*(-(S2*S4*S5) + C2*(C5*S3 + C3*C4*S5)))/2. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C6*S2*S4*S5) + C2*(C5*C6*S3
++ C3*C4*C6*S5)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I9*(C2*C6*(1 + CC5)*S3*S44*S6
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C6*S2*((2 - CC5 - CC4*(1 + CC5))*S33 - C4*CC3*S55)*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*I24*(C3*C6*S5 + S3*(C4*C5*C6
+- S4*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C2*I24*(-(C3*C6*S5) + S3*(-(C4*C5*C6)
++ S4*S6)) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(S2*((C5*C6*S33*S44)/2.
++ C33*C6*S4*S5 - S33*S6 + CC4*S33*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(-(C3*C4*C6*S5) + S3*(-(C44*C5*C6) + S44*S6))) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(C2*(-4*C44*C5*C66*S3 + C3*(-4*C4*C66*S5 + 2*S4*S55*S66)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(2*C5*C66*S33*S44 + 4*C33*CC6*S4*S5 - 2*C4*S55*S66*SS3 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C33*S4*S5*SS6)))/8.)/2.;
+<br>h[6][1][3]=
+<br>&nbsp; h[6][3][1]=((I1*S2*(C3*C5 - C4*S3*S5))/2. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*S2*(C3*C5*C6 - C4*C6*S3*S5)
++ 2*C2*C6*(1 - CC4*(1 + CC5))*I9*S6 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(S2*(-(C4*C6*S3*S5) +
+C3*(C44*C5*C6 - 2*C4*S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(C5*C6*S44 - 2*S6*SS4)) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(2*C2*(2*C5*CC6*S44 + 2*S66 - 2*CC5*S66 - 2*C5*S44*SS6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C3*(4*C44*C5*CC6 - 2*(1 + CC5)*S44*S66 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4*C44*C5*SS6)
+ -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S3*(4*C4*CC6*S5
+ - 2*S4*S55*S66 - 4*C4*S5*SS6))))/8.)/
+<br>&nbsp;&nbsp;&nbsp; 2.;
+<br>h[6][1][4]=
+<br>&nbsp; h[6][4][1]=((I1*(C2*C4*S5 - C3*S2*S4*S5))/2. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C2*C4*C6*S5 - C3*C6*S2*S4*S5)
+-
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C2*C4*C6*S5) + S2*(C3*C6*S4*S5
+- 2*S3*S6)) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-(C2*(4*C4*CC6*S5 - 2*S4*S55*S66 - 4*C4*S5*SS6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(-4*S3*S66*SS5 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(4*CC6*S4*S5
+ + 2*C4*S55*S66 - 4*S4*S5*SS6))))/8.)/
+<br>&nbsp;&nbsp;&nbsp; 2.;
+<br>h[6][1][5]=
+<br>&nbsp; h[6][5][1]=((I1*(C2*C5*S4 + S2*(C3*C4*C5 - S3*S5)))/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. - (I4*(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(2*C5*CC6*S4 + 2*C4*S66 - 2*C5*S4*SS6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(-2*CC6*S3*S5 + C3*(2*C4*C5*C66 - 2*S4*S66) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*S3*S5*SS6)))/4.)/2.;
+<br>h[6][1][6]=h[6][6][1]=0;
+<br>h[6][1][7]=
+<br>&nbsp; h[6][7][1]=-(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I2*(C2*(-(C5*C6*S4) - C4*S6)
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C6*S3*S5 + C3*(-(C4*C5*C6) + S4*S6))))/2.;
+<br>h[6][2][2]=(-(I24*(-2*C5*C6*S4 - 2*C4*S6)) - (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(-2*C66*S33*S4*S5 + 2*S66 - 2*CC4*(1 + CC5)*S66 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C4*S33*S55*S66 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(-4*S66 + 2*CC5*S66 + 2*CC4*(1 + CC5)*S66) -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*C5*C66*S44*SS3))/4. -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C6*S4*(-2*C4*C5 - S33*S5)
+- 2*CC4*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CC3*(C5*C6*S44 - 2*S6*SS4)))/2.;
+<br>h[6][2][3]=
+<br>&nbsp; h[6][3][2]=((I1*(-(C5*S3) - C3*C4*S5))/2. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C5*C6*S3) - C3*C4*C6*S5)
+- C6*I9*S3*S44*S6 +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-(C3*C6*S5) - S3*(C4*C5*C6
+- S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(C3*C6*S5 + S3*(C4*C5*C6
+- S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C3*C4*C6*S5 + S3*(C44*C5*C6
+- S44*S6)) + (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(S3*(4*C44*C5*C66 - 2*CC5*S44*S66) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C3*(4*C4*C66*S5 - 2*S4*S55*S66)))/8.)/2.;
+<br>h[6][2][4]=
+<br>&nbsp; h[6][4][2]=((I1*S3*S4*S5)/2. + C6*I6*S3*S4*S5 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C6*S3*S4*S5) - 2*C3*S6)
+- (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(C3*(8*C6*CC5*S6 - 4*S66) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2*S3*(-2*CC6*S4*S5 - 2*C4*C6*S55*S6 + 2*S4*S5*SS6)))/8.)/2.;
+<br>h[6][2][5]=
+<br>&nbsp; h[6][5][2]=((I1*(-(C4*C5*S3) - C3*S5))/2. +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(-(C4*C5*C6*S3) - C3*C6*S5)
++ I6*(C4*C5*C6*S3 + C3*C6*S5) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(-(C5*C6*S3) - C3*C4*C6*S5)
++
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I24*(C5*C6*S3 + C3*C4*C6*S5)
++ (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(2*C3*CC6*S5 + S3*(2*C4*C5*C66 - 2*S4*S66) - 2*C3*S5*SS6))/4.)/
+<br>&nbsp;&nbsp;&nbsp; 2.;
+<br>h[6][2][6]=h[6][6][2]=0;
+<br>h[6][2][7]=h[6][7][2]=-(I2*(C3*C6*S5 + S3*(C4*C5*C6 - S4*S6)))/2.;
+<br>h[6][3][3]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2*C6*(1 - CC4*(1 + CC5))*I9*S6 -
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I6*(C5*C6*S44 - 2*S6*SS4)
+- (
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I4*(2*C5*CC6*S44 + 2*S66*SS5 - 2*C5*S44*SS6))/4.)/2.;
+<br>h[6][3][4]=
+<br>&nbsp; h[6][4][3]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C4*C6*I6*S5 + (C4*(I1 + 2*C6*I6)*S5)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. + (I4*(4*C4*CC6*S5
+- 2*S4*S55*S66 - 4*C4*S5*SS6))/8.)/2.;
+<br>h[6][3][5]=
+<br>&nbsp; h[6][5][3]=(-(C5*C6*I6*S4) + (C5*(I1 + 2*C6*I6)*S4)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. - (I4*(2*C5*CC6*S4
++ 2*C4*S66 - 2*C5*S4*SS6))/4.)/2.;
+<br>h[6][3][6]=h[6][6][3]=0;
+<br>h[6][3][7]=h[6][7][3]=-(I2*(-(C5*C6*S4) - C4*S6))/2.;
+<br>h[6][4][4]=(16*I6*S6 + 4*I4*S66*SS5)/16.;
+<br>h[6][4][5]=
+<br>&nbsp; h[6][5][4]=((C6*(C6*I4 + 2*I6)*S5)/2. - ((I1 + 2*C6*I6)*S5)/
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. - (I4*S5*SS6)/2.)/2.;
+<br>h[6][4][6]=h[6][6][4]=0;
+<br>h[6][4][7]=h[6][7][4]=-(C6*I2*S5)/2.;
+<br>h[6][5][5]=-(I4*S66)/4.;
+<br>h[6][5][6]=h[6][6][5]=0;
+<br>h[6][5][7]=h[6][7][5]=(I2*S6)/2.;
+<br>h[6][6][6]=0;
+<br>h[6][6][7]=h[6][7][6]=0;
+<br>h[6][7][7]=0;
+<br>h[7][1][1]=0;
+<br>h[7][1][2]=
+<br>&nbsp; h[7][2][1]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I2*(-(S2*(C4*C6 - C5*S4*S6)) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+C2*(S3*S5*S6 + C3*(-(C6*S4) - C4*C5*S6))))/2.;
+<br>h[7][1][3]=h[7][3][1]=(I2*S2*(C3*S5*S6 - S3*(-(C6*S4) - C4*C5*S6)))/2.;
+<br>h[7][1][4]=
+<br>&nbsp; h[7][4][1]=(I2*(C2*(-(C6*S4) - C4*C5*S6) + C3*S2*(-(C4*C6) +
+C5*S4*S6)))/2.;
+<br>h[7][1][5]=h[7][5][1]=(I2*(C2*S4*S5*S6 + S2*(C5*S3*S6 + C3*C4*S5*S6)))/2.;
+<br>h[7][1][6]=
+<br>&nbsp; h[7][6][1]=(
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I2*(C2*(-(C5*C6*S4) - C4*S6) +
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+S2*(C6*S3*S5 + C3*(-(C4*C5*C6) + S4*S6))))/2.;
+<br>h[7][1][7]=h[7][7][1]=0;
+<br>h[7][2][2]=0;
+<br>h[7][2][3]=h[7][3][2]=(I2*(-(S3*S5*S6) + C3*(C6*S4 + C4*C5*S6)))/2.;
+<br>h[7][2][4]=h[7][4][2]=(I2*S3*(C4*C6 - C5*S4*S6))/2.;
+<br>h[7][2][5]=h[7][5][2]=(I2*(C3*C5*S6 - C4*S3*S5*S6))/2.;
+<br>h[7][2][6]=h[7][6][2]=(I2*(C3*C6*S5 + S3*(C4*C5*C6 - S4*S6)))/2.;
+<br>h[7][2][7]=h[7][7][2]=0;
+<br>h[7][3][3]=0;
+<br>h[7][3][4]=h[7][4][3]=(I2*(-(C6*S4) - C4*C5*S6))/2.;
+<br>h[7][3][5]=h[7][5][3]=(I2*S4*S5*S6)/2.;
+<br>h[7][3][6]=h[7][6][3]=(I2*(-(C5*C6*S4) - C4*S6))/2.;
+<br>h[7][3][7]=h[7][7][3]=0;
+<br>h[7][4][4]=0;
+<br>h[7][4][5]=h[7][5][4]=(C5*I2*S6)/2.;
+<br>h[7][4][6]=h[7][6][4]=(C6*I2*S5)/2.;
+<br>h[7][4][7]=h[7][7][4]=0;
+<br>h[7][5][5]=0;
+<br>h[7][5][6]=h[7][6][5]=-(I2*S6)/2.;
+<br>h[7][5][7]=h[7][7][5]=0;
+<br>h[7][6][6]=0;
+<br>h[7][6][7]=h[7][7][6]=0;
+<br>h[7][7][7]=0;
+<br>&nbsp;
+<br>&nbsp;
+
+
+</p></body></html>

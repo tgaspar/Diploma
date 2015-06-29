@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  24 JUN 2015 16:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  29 JUN 2015 18:03
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -584,6 +584,11 @@ G,.JBIG2,.JB2,.eps]
 \yyydec=\count138
 \tmpcount=\count139
 )
+("C:\Program Files\MiKTeX\tex\latex\cite\cite.sty"
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
 (BlockDiagrams/tikzsettings.tex
 ("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
 aryshapes.code.tex"
@@ -675,18 +680,18 @@ File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.0 (rcs-revision 1.9)
 arypositioning.code.tex"
 File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
 )) (macros.tex) (magistrska_timotej_gaspar.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 ABD: EveryShipout initializing macros
 ("C:\Program Files\MiKTeX\tex\context\base\supp-pdf.mkii"
@@ -703,7 +708,7 @@ ABD: EveryShipout initializing macros
 \makeMPintoPDFobject=\count145
 \everyMPtoPDFconversion=\toks42
 )
-Package xypdf Info: Line width: 0.47998pt on input line 29.
+Package xypdf Info: Line width: 0.47998pt on input line 30.
  [1
 
 
@@ -718,32 +723,28 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [4
 
 ] (magistrska_timotej_gaspar.toc
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1817) has occurred while \output is active []
 
- [5]
-Underfull \vbox (badness 1152) has occurred while \output is active []
-
-
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[6])
+ [5])
 \tf@toc=\write5
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[7]
+[6] (magistrska_timotej_gaspar.lof)
+\tf@lof=\write6
+ [7
+
+]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [8
 
-] (magistrska_timotej_gaspar.lof)
-\tf@lof=\write6
+] (magistrska_timotej_gaspar.lot)
+\tf@lot=\write7
  [9]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -751,23 +752,14 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [10
 
-] (magistrska_timotej_gaspar.lot)
-\tf@lot=\write7
+] (magistrska_timotej_gaspar.lof)
+\tf@lof=\write8
  [11]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [12
-
-] (magistrska_timotej_gaspar.lof)
-\tf@lof=\write8
- [13]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[14
 
 ] (magistrska_timotej_gaspar.lof)
 \tf@lof=\write9
@@ -800,15 +792,19 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 ]
   2.
-[7] (Slike/arm_length.tex
-<./Slike/arm_length.png, id=77, 1084.05pt x 175.40532pt>
-File: ./Slike/arm_length.png Graphic file (type png)
+[7]
 
-<use ./Slike/arm_length.png>
-Package pdftex.def Info: ./Slike/arm_length.png used on input line 2.
-(pdftex.def)             Requested size: 412.56496pt x 66.75374pt.
-) (Slike/pa10-drawing.tex
-<./Slike/pa10-drawing.png, id=79, 517.935pt x 595.47469pt>
+LaTeX Warning: Reference `fig:dh-pa10' on page 8 undefined on input line 140.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 143.
+
+("C:\Program Files\MiKTeX\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 143.
+ (Slike/pa10-drawing.tex
+<./Slike/pa10-drawing.png, id=72, 517.935pt x 595.47469pt>
 File: ./Slike/pa10-drawing.png Graphic file (type png)
 
 <use ./Slike/pa10-drawing.png>
@@ -819,30 +815,23 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[8 <./Slike/arm_length.png>]
-Underfull \vbox (badness 5548) has occurred while \output is active []
-
-
+[8]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [9 <./Slike/pa10-drawing.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 186.
-
-
-("C:\Program Files\MiKTeX\tex\latex\base\omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 186.
-
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[10] (Slike/control_mode.tex
-<./Slike/control_mode.png, id=95, 1063.72406pt x 534.49687pt>
+[10]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[11] (Slike/control_mode.tex
+<./Slike/control_mode.png, id=91, 1063.72406pt x 534.49687pt>
 File: ./Slike/control_mode.png Graphic file (type png)
 
 <use ./Slike/control_mode.png>
@@ -853,148 +842,151 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[11]
+[12 <./Slike/control_mode.png>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[12 <./Slike/control_mode.png>]
+[13]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[14
+
+]
   3.
 
 Underfull \vbox (badness 1062) has occurred while \output is active []
 
- [13
-
-]
+ [15]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[14]
+[16]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[15]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[16
-
-]
-  4.
 [17]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[18]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
+[18
+
+]
+  4.
+
+LaTeX Warning: Reference `chap:oprema' on page 19 undefined on input line 287.
 
 [19]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[20
+[20]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[21]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[22
 
 ]
   5.
 (BlockDiagrams/vel_to_ang.tex)
 Underfull \vbox (badness 1874) has occurred while \output is active []
 
- [21]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
+ [23]
 
-[22] (BlockDiagrams/x_to_vel.tex)
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
+LaTeX Warning: Reference `sec:dh' on page 24 undefined on input line 366.
 
-[23]
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 391.
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[24]
+[24] (BlockDiagrams/x_to_vel.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [25]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 420.
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[26
+[26]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
 
-]
-  6.
 [27]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[28] (BlockDiagrams/x_to_tau.tex)
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
+[28
 
+]
+  6.
 [29]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[30]
-  7.
-[31
+[30] (BlockDiagrams/x_to_tau.tex)
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
 
-]
+[31]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [32]
-  8.
-(magistrska_timotej_gaspar.bbl [33
+  7.
+[33
 
 ]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[34
+[34]
+  8.
+(magistrska_timotej_gaspar.bbl [35
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 14--17
-[]\OT1/cmr/m/n/12 A. Pen-na-run, ``Li-nux ARC-net HOWTO.'' Do-se-gljivo:
- []
-
-) [35]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [36
 
-] [37]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 42--45
+[]\OT1/cmr/m/n/12 A. Pen-na-run, ``Li-nux ARC-net HOWTO.'' Do-se-gljivo:
+ []
+
+[37])
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[38
+[38] [39
 
 ]
-  A.
-[39]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1002,7 +994,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [40
 
 ]
-  B.
+  A.
 [41]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -1011,7 +1003,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [42
 
 ]
-  C.
+  B.
 [43]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -1020,40 +1012,53 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [44
 
 ]
-  D.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [45]
+  C.
+[45]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[46] (magistrska_timotej_gaspar.aux) ) 
+[46
+
+]
+  D.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [47]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[48] (magistrska_timotej_gaspar.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 18018 strings out of 493671
- 353606 string characters out of 3145458
- 468036 words of memory out of 3000000
- 20940 multiletter control sequences out of 15000+200000
+ 18104 strings out of 493671
+ 354618 string characters out of 3145458
+ 470105 words of memory out of 3000000
+ 21026 multiletter control sequences out of 15000+200000
  14123 words of font info for 54 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  55i,12n,67p,3304b,730s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb
-><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program 
-Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmsl12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program
- Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (60 pages, 400725 bytes).
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Prog
+ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cms
+y8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/P
+rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on magistrska_timotej_gaspar.pdf (60 pages, 381546 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
+ 263 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -7,6 +7,7 @@
 \usepackage[all]{xy}
 \usepackage[Slovene]{babel}    % pravila za slovensko deljenje besed
 \usepackage[pdftex]{UNI-LJ-FE-Diploma} %Stil za diplome na Fakulteti za elektrotehniko (za pdfTeX v MkiTex)
+\usepackage{cite}
 \input{./BlockDiagrams/tikzsettings.tex}
 \input{./macros.tex}
 %\usepackage[pctex]{UNI-LJ-FE-Diploma} %Stil za diplome na Fakulteti za elektrotehniko  (za pcTex)
@@ -114,19 +115,47 @@ The thesis addresses ...
 %*********************** OSREDNJA POGLAVJA ********************************
 
 %*********************** PA10 ********************************
-\chapter{Robotski manipulator PA-10 in senzor sile JR3} \label{chap:oprema}
+\chapter{Robotski manipulator PA-10} \label{chap:pa10}
 
-\section{Robotski manipulator PA-10}
-Celotno delo, ki je v tem delu opisano je bilo narejeno na robotskem mehanizmu Portable General Purpose Intellient Arm - PA10, proizvajalca Mitsubishi Heavy Industries. Gre za serijskega robota s sedmimi sklepi. Robotska roka tehta 36 kg in ima nosilnost 10 kg. Servo motorji v sklepih se napajajo preko izmeniène napetosti. Prenosi med v sklepih so realizirani z mehanizmom harmonic drive. Proizvajalec navaja, da se lahko bazo robota pritrdi v katerokoli lego. To pomeni, da ga lahko fiksiramo bodisi na tla, na steno ali na strop. Za namene tega dela je bila baza robota fiksirana na tla.
+Podjetje Mitsubishi Heavy Industries je leta 1992 izdelalo prvega industrijskega redundatnega robota \cite{mhi_pa10}. Podjetje je robota poimenovalo Portable General-purpose Intelligent Arm PA-10, krajše PA-10. Gre za serijskega robota s sedmimi stopnjami prostosti. Prvi trije sklepi so oznaèeni kot ramenski sklepi (shoulder), S1, S2, S3. Naslednja dva sta oznaèena kot komolèni sklepi (elbow), E1, E2. Zadnja dva sklepa pa sta oznaèena kot zapestna (wrist), W1, W2. Glede na zgradbo se ga lahko uvrsti v tako imenovane antropomorfne robote \cite{craig_robintro}. Izraz antropomorfnost izhaja iz dveh grških besed \textit{antropo} - èlovek, \textit{morphe} - oblika. Znaèilnost takih robotov je spretnost saj so vsi sklepi rotacijski \cite{siciliano_robot}.
+
+Robotska roka PA-10 tehta 36 kg in ima nosilnost 10 kg. Servo motorji v sklepih se napajajo preko izmeniène napetosti. Prenosi med v sklepih so realizirani z mehanskim sistemom harmonic drive. Proizvajalec navaja, da se lahko bazo robota pritrdi v katerokoli lego. To pomeni, da se ga lahko fiksira bodisi na tla, na steno ali na strop. Robota PA-10 odlikuje relativno majhna konstrukcija, enostavno rokovanje (menjava konfiguracije) ter odprtost njegovega krmilnika. Prav ti razlogi so povod, da je mnogo insitituciji vzelo tega robota kot ekperimentalni sistem za razvijanje raznih algoritmov vodenja oz. identificiranja (\cite{voung_pa10}, \cite{aalst_pa10}, \cite{rodrigo_pa10},\cite{petric_nevronska}).
 
 
-\subsection{Denavitt - Hartemberg parametri za robotski manipulator PA-10} \label{sec:dh}
 
-Robotski mehanizem PA-10 ima 7 prostostnih stopenj razporejenih tako, da spominjajo na èloveško roko. Prvi trije sklepi so oznaèeni kot ramenski sklepi (shoulder), S1, S2, S3. Naslednja dva sta oznaèena kot komolèni sklepi (elbow), E1, E2. Zadnja dva sklepa pa sta oznaèena kot zapestna (wrist), W1, W2. Ker ima robot veè kot 6 prostostnih stopenj ga uvršèamo med redundantne mehanizme. Vsi sklepi so rotacijski.
+\section{Kinematièni model robota PA-10}
 
-Proizvajalec v dokumentaciji navaja zadostno kolièino podatkov, da lahko uporabnik sam zgradi kinematièen model robota. S poznavanjem razdalj in postavitev sklepov je moè definirati Denavit-Hartenberg (kasneje D-H) parametre.
+Robotski mehanizem se obravnava kot kinematièno verigo \textit{n} med seboj povezanih togih teles. Ker je en konec kinematiène verige povezan v bazo robota je mogoèe reèi, da se premika le vrh robota. Z opisom kinematiène relacije med dvema zaporednima segmentoma je mogoèe to znanje združiti za definiranje kinematiène relacije med bazo in vrhom robota. Homogena transformacijska matrika med dvema sosednjima segmentoma je definirana kot:
 
-\input{./Slike/arm_length.tex}
+\begin{equation}
+	\textbf{T}_{i+1}^i = 
+	\begin{bmatrix}
+		cos(\varTheta_i) && -sin(\varTheta_i) && 0 && a_i \\
+		sin(\varTheta_i) cos(\alpha_i) && cos(\varTheta_i) cos(\alpha_i) && -sin(a_i) && -sin(a_i)d_i \\
+		sin(\varTheta_i) sin(\alpha_i) && cos(\varTheta_i) sin(\alpha_i) && cos(a_i) &&  cos(a_i)d_i \\
+		0 && 0 && 0 && 1
+	\end{bmatrix}.
+\end{equation}
+
+V homogeni transformacijski matriki $\textbf{T}_{i+1}$ so $\textit{a}_i$, $\alpha_i$, $d_i$ in $\varTheta$ parametri tako imenovane Denavit - Hartenberg sistema opisovanja relacij med razliènimi koordinatnimi sistemi. Sklicujoè na sliko \ref{fig:dh-pa10} se opiše parametre kot:
+
+\begin{itemize}
+	\item $\textit{a}_i$ razdalja med $O_i$ in $O_{i+1}$ v smeri $x_i$,
+	\item $\alpha_i$ kot med $O_i$ in $O_{i+1}$ glede na os $x_i$,
+	\item $d_i$ razdalja med $O_{i-1}$ in $O_{i}$ glede na os $z_i$,
+	\item $\varTheta$ razdalja med $O_{i-1}$ in $O_{i}$ glede na os $z_i$,
+\end{itemize}
+
+Zgornje parametre se d
+
+Tako je mogoèe zapisati homogeno transformacijo od baze do vrha robota kot produkt posameznih transformacij
+
+\begin{equation} \label{eq:tob}
+	T_{7}^0 = T_1^0 \cdot T_2^1 \cdot ... \cdot T_7^6.
+\end{equation}
+
+%\input{./Slike/two-coordinates.tex}
+%\input{./Slike/arm_length.tex}
 
 \begin{table}
 \centering	
@@ -150,7 +179,7 @@ Proizvajalec v dokumentaciji navaja zadostno kolièino podatkov, da lahko uporabn
   \label{table:dh_params} 
 \end{table}
 
-S pomoèjo D-H parametrov lje moè definirati geometrijski model robota oz. transformacijsko matriko $ A_{PA10} = A_1 \cdot A_2 \cdot ... \cdot A_7 $, ki preslika koordinate izražene v koordinatnem sistemu baze ($ x_{base} $) koordinate izražene v koordinatnem sistemu na vrhu robota($ x_{PA10} $) v odvisnosti od kotov $(q)$ v sklepih. 
+S pomoèjo D-H parametrov lje moè definirati geometrijski model robota oz. transformacijsko matriko $ A_{PA10} = A_1 \cdot A_2 \cdot ... \cdot A_7 $, ki preslika koordinate izražene v koordinatnem sistemu baze ($ x_{base}$) koordinate izražene v koordinatnem sistemu na vrhu robota($ x_{PA10} $) v odvisnosti od kotov $(q)$ v sklepih. 
 Tako velja relacija
 
 \begin{center}

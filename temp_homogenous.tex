@@ -1,0 +1,50 @@
+
+Na sliki \ref{fig:twocoordinates} sta dva koordinatna sistema $\textbf{O}_0$ in $\textbf{O}_1$. Želja je opisati točko v prostoru 
+\begin{equation} \label{eq:p-point}
+	\textbf{P} = 
+	\begin{bmatrix}
+		P_x \\
+		P_y \\
+		P_z \\
+	\end{bmatrix}.
+\end{equation}
+
+Vektor translacije
+\begin{equation} \label{eq:o0-to-01}
+\textbf{o}_1^0 = 
+\begin{bmatrix}
+{\textbf{o}_1^0}_x \\
+{\textbf{o}_1^0}_y \\
+{\textbf{o}_1^0}_z \\
+\end{bmatrix} 
+\end{equation} 
+in matrika rotacije
+
+\begin{equation} \label{eq:r01}
+\textbf{R}_1^0 = 
+\begin{bmatrix}
+c_\varphi c_\vartheta c_\psi - s_\varphi s_\psi & - c_\varphi c_\vartheta s_\psi - s_\varphi s_\psi && c_\varphi s_\vartheta \\
+s_\varphi c_\vartheta c_\psi - c_\varphi s_\psi & - s_\varphi c_\vartheta s\psi + c_\varphi c_\psi && s_\varphi s_\vartheta \\
+- s_\vartheta c_\psi & s_\vartheta s_\psi && c_\vartheta \\
+\end{bmatrix}
+\end{equation} 
+
+opišeta relacijo med $\textbf{O}_0$ in $\textbf{O}_1$. V \ref{eq:r01} so uporabljene okrajšave za kosinusne ($c$) in sinusne ($s$) funkcije Eulerjevih kotov.
+
+S poznavanjem $\textbf{o}_1^0$ in $\textbf{R}_1^0$ se lahko točko $\textbf{P}$, ki je v začetku izražena v koordinatnemu sistemu $\textbf{O}_0$ izrazi v koordinatnemu sistemu $\textbf{O}_1$ s sledečo transoformacijo:
+
+\begin{equation} \label{eq:basic-transofrm}
+\textbf{p}^0 = \textbf{o}_1^0 + \textbf{R}_1^0 \cdot \textbf{p}^1.
+\end{equation}
+
+Z upoštevanjem ortogonalnosti matrike  $\textbf{R}_1^{0T}$, za katero velja
+
+\begin{equation} \label{eq:r-matrix}
+{\textbf{R}_1^{0}}^{-1} = {\textbf{R}_1^{0}}^{T}
+\end{equation}
+
+in množenjem obeh strani enačbe z ${\textbf{R}_1^{0}}^{-1}$ se lahko izpostavi $\textbf{p}^1$ na sledeč način:
+
+\begin{equation} \label{eq:basic-inverse-transofrm}
+\textbf{p}^1 = - {\textbf{R}_1^{0}}^{T} \cdot \textbf{o}_1^0 + {\textbf{R}_1^{0}}^{T} \cdot \textbf{p}^0.
+\end{equation}

@@ -1,4 +1,32 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{mhi_pa10}
+M.~H.~I. Ltd., ``Mitsubishi clean room robot,'' {\em Seminarska naloga}, 2003.
+
+\bibitem{craig_robintro}
+J.~J. Craig, {\em Introduction to Robotics}.
+\newblock Z.D.A.: Pearson Education International, 2005.
+
+\bibitem{siciliano_robot}
+B.~Siciliano, L.~Sciavicco, L.~Villani  in G.~Oriolo, {\em Robotics, Modelling,
+  Planning and Control}.
+\newblock London: Springer, 2009.
+
+\bibitem{voung_pa10}
+N.~D. Vuong in M.~H.~J. Ang, ``Dynamic model identification for industrial
+  robots,'' {\em Acta Polytechnica Hungarica}, 2009.
+
+\bibitem{aalst_pa10}
+R.~van~der Aalst, M.~H.~J. Ang  in H.~Nijmeijer, ``Dynamic identification of a
+  mitsubishi pa-10 robotic manipulator,'' {\em ICAR}, 1999.
+
+\bibitem{rodrigo_pa10}
+R.~Jamisola, M.~J. Ang, T.~M. Lim, O.~Khatib  in S.~Y. Lim, ``Dynamics
+  identification and control of an industrial robot,'' {\em ICAR}, 1999.
+
+\bibitem{petric_nevronska}
+T.~Petri\v{c} in M.~Munih, ``Kompenzacija trenja in gravitacije na robotu
+  mitsubishi pa-10,'' {\em Seminarska naloga}, 2010.
 
 \bibitem{jr3_doc_ext}
 I.~JR3, ``{JR3, Installation manual for force - torque sensors with external
@@ -31,9 +59,5 @@ T.~Bajd, M.~Mihelj, J.~Lenar\v{c}i\v{c}, A.~Stanovnik  in M.~Munih, {\em
 \bibitem{mihelj_vodenje}
 M.~Mihelj, T.~Bajd  in M.~Munih, {\em Vodenje robotov}.
 \newblock Ljubljana: Univerza v Ljubljani, Zalo{\v{z}}ba FE in FRI, 2011.
-
-\bibitem{petric_nevronska}
-T.~Petri\v{c} in M.~Munih, ``Kompenzacija trenja in gravitacije na robotu
-  mitsubishi pa-10,'' {\em Seminarska naloga}, 2010.
 
 \end{thebibliography}

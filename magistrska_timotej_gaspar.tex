@@ -141,7 +141,7 @@ Z množenjem homogenih transformacijskih matrik posameznih sklepov med seboj se l
 
 
 \begin{equation} \label{eq:tob}
-\textbf{T}_{7}^0 = \textbf{T}_1^0 \cdot \textbf{T}_2^1 \cdot ... \cdot \textbf{T}_7^6.
+\textbf{T}_{7}^0 = \textbf{T}_1^0  \textbf{T}_2^1  ...  \textbf{T}_7^6.
 \end{equation}
 
 V homogeni transformacijski matriki \thom so $\textit{a}_i$, $\alpha_i$, $d_i$ in $\varTheta$ parametri tako imenovaneha Denavit - Hartenberg sistema opisa relacij med razliènimi koordinatnimi sistemi. Posamezni parametri matrike Sklicujoè na sliko \ref{fig:dh-pa10} se opiše parametre kot:
@@ -235,11 +235,40 @@ Opaziti je, da je v primeru robota PA-10 Jacobijeva matrika \textbf{J} razsežnos
 
 \section{Dinamièen model robota PA-10}
 
-Vodenje robota z referenènimi navori veleva poznavanje njegovega dinamiènega modela. Z razliko od kinematiènega modela je pri dinamiènem modelu je število parametrov, ki vplivajo na vodenje veèje. V nadaljevanju bo predstavljen splošen dinamièen model in relacija med silami, ki delujejo na vrhu robota in navori v sklepih.
+Vodenje robota z referenènimi navori veleva poznavanje njegovega dinamiènega modela. S poznavanjem dinamiènega modela je mogoèe opisati silo s katero bo vrh robota deloval v kontaktu z okolico. Z razliko od kinematiènega modela je pri dinamiènem modelu je število parametrov, ki vplivajo na vodenje veèje. V nadaljevanju bo predstavljen splošen dinamièen model in relacija med silami, ki delujejo na vrhu robota in navori v sklepih.
 
-Za opis dinamiènih relacij med segmenti se uporabi Lagrangevo formulacijo \cite{bejczy_dynamics}.
+Enaèbe gibanja kot posledica delovanja sil in navorov se lahko zapišejo z uporabo Lagrangevih formulacij. Lagrangeve formulacije so orodje za sistematièen opis dinamike posameznih segmentov \cite{siciliano_robot}. Z uporabo te formulacije se lahko zapiše enaèbo navorov v sklepih v odvisnosti od kotov, hitrosti in pospeškov v sklepih na sledeè naèin:
+
+\begin{equation} \label{eq:din}
+\pmb{\tau}(\mathbf{\ddot{q}},\mathbf{\dot{q}},\textbf{q}) = \textbf{B}(\textbf{q})  \ddot{\textbf{q}} + \textbf{C}(\textbf{q},\dot{\textbf{q}})  \dot{\textbf{q}} + \textbf{F}_f(\dot{\textbf{q}}, \textbf{q}) + \textbf{g}(\textbf{q}) + \textbf{J}^T(\textbf{q})\textbf{h}.
+\end{equation}
+
+Posamezni èleni zgornje enaèbe bodo opisani v nadaljevanju.
+
+Matrika $\textbf{B}(\textbf{q})$ predstavlja zapis vztrajnosti posameznih segmentov. Odvisna je od trenutne konfiguracije robota. Posamezni èleni pa so izraèunani kot
+
+\begin{equation}
+	h_{i,j} = \sum{i = max(j,k)}^{7} sl[(\frac{\partial}{\partial q_k}T^0_i)(\frac{\partial}{\partial q_j}T^0_i)].
+\end{equation}
+
+Operator \textit{sl} pomeni sled matrike. To je vsota diagonalnih èlenov neke matrike.
+
+Matrika $\mathbf{C}(\mathbf{\mathbf{q},\dot{q}})$ nosi podatke o Coriolisovih in centripetalnih prispevkih. Njeni èleni izraženi s pomoèjo kot 
 
 
+\begin{equation}
+c_{i,j} = \sum_{k=1}^{7} c_{i,j,k} \dot{q}_k	,
+\end{equation}
+kjer so 
+\begin{equation}
+%	c_{i,j,k} = \sum_{i = max(i,j,k)}^{7} sl[(\frac{\partial^2}{\partial q_k \partial q_l }T^0_i)J_i(\frac{\partial}{\partial q_j}T^0_i)^T],
+c_{i,j,k} = \frac{1}{2}(\frac{\partial b_{ij}}{\partial q_k} + \frac{\partial b_{ik}}{\partial q_j} - \frac{\partial b_{jk}}{\partial q_i}),
+\end{equation}
+Christoffelovi simboli in dodatno velja še $i,j,k = 1, \dots ,7$.
+
+Vektor $\mathbf{g}(\mathbf{q})$ nosi podatke o vplivu gravitacijskega pospeška na posamezne segmente robota. Za $g_i$ velja, da predstavlja navor proizveden v sklepu maniuplatorja i zaradi trenutne konfiguracije \cite{siciliano_robot}.
+
+Vektor $\mathbf{F}_f$ opisuje vpliv trenja. Vektor zajema tako Coulombovo trenje kot tudi viskozno trenje. Posamezni èleni vektorja, $f_f$ so prispevki trenja v $i$-tem sklepu.
 
 
 
@@ -319,7 +348,7 @@ Senzor sil in navorov JR3 ima se lahko povezuje z osebnim raèunalnikom preko kar
 Dokumentacija navaja, da v kolikor želi uporabnik odèitati vrednost sile ali navora Fx mora tako prebrati osnovno vrednost $F_s$ na registru imenovanem (\verb|full scale|), jo pomnožiti z vrednostjo $F_f$, ki je na registru izbranega filtra (\verb|current force|). Na zadnje more to vrednost delit s konstanto $K_p$, da pretvori v prave enote (N ali Nm).
 
 \begin{equation}\label{eq:force_filt}
-F_x = \frac{F_s \cdot F_f}{K_p}
+F_x = \frac{F_s  F_f}{K_p}
 \end{equation}
 
 Ker senzor meri silo in navor v treh smereh je potrebno opraviti izraèun za vsako dimenzijo posebej. 
@@ -346,31 +375,31 @@ Naj bodo premiki za izvedmo primarne naloge oznaèeni kot $\textit{d}\textbf{q}_p
 Za izraèun $\textit{d}\textbf{q}_p$ in $\textit{d}\textbf{q}_s$ je potrebno rešiti problem inverzne kinematike. Izraèun inverzne kinematike veleva poznanje inverza Jacobijeve matrike. Vendar pa je v primeru, ko velja \textit{n} $>$ \textit{m} Jacobijeva matrika nesimetrièna. Posledièno ni mogoèe izraèunati njenega inverza. Mogoèe pa je definirati pseudoinverzno Jacobijevo matriko po sledeèi enaèbi:
 
 \begin{equation} \label{eq:pseudoinv}
- \textbf{J}^* = (\textbf{J}^T \cdot \textbf{J})^{-1} \cdot \textbf{J}^T.
+ \textbf{J}^* = (\textbf{J}^T  \textbf{J})^{-1}  \textbf{J}^T.
 \end{equation}
 Pseudoinverz primarne naloge bo oznaèen z $\textbf{J}_p^*$, inverz sekundarne pa $\textbf{J}_s^*$. Smiselno je tudi definirati neke uteži tako, da so kvadrti hitrosti najmanjši \cite{lenarcic_robotmeh}. Definira se neizrojeno poztivno definitno matriko uteži \textbf{A}. Zapiše se utežen pseudoinverz primarne naloge kot
 
 \begin{equation} \label{eq:utezen_p_pseud}
-\textbf{J}_{pA}^* = \textbf{A}^{-1} \cdot \textbf{J}_p^T \cdot (\textbf{J}_p \cdot \textbf{A}^{-1} \cdot \textbf{J}_p^T)^{-1}.
+\textbf{J}_{pA}^* = \textbf{A}^{-1}  \textbf{J}_p^T  (\textbf{J}_p  \textbf{A}^{-1}  \textbf{J}_p^T)^{-1}.
 \end{equation}
 
 Sedaj velja enakost
 
-%\textbf{\textbf{N}_{pA} \cdot}
+%\textbf{\textbf{N}_{pA} }
 
 \begin{equation} \label{eq:dq_p_and_s}
-\textit{d} \textbf{q} = \textbf{J}_{pA}^* \cdot \textit{d}\textbf{p} + \textbf{J}_s^* \cdot \textit{d} \textbf{s},
+\textit{d} \textbf{q} = \textbf{J}_{pA}^*  \textit{d}\textbf{p} + \textbf{J}_s^*  \textit{d} \textbf{s},
 \end{equation}
-ki pa ima eno pomankljivost. Sekundarna naloga ni utežena. Želja je, da sekundarna naloga vpliva na primarno le toliko, kolikor želimo. Definira se tako matriko, ki preslika rezultat množenja $\textbf{J}_s^* \cdot \textit{d} \textbf{s} $ v nièelni prostor matrike $J_p$. Definira se matrika $\textbf{N}_{pA}$ na sledeè naè naèin \cite{lenarcic_robotmeh}:
+ki pa ima eno pomankljivost. Sekundarna naloga ni utežena. Želja je, da sekundarna naloga vpliva na primarno le toliko, kolikor želimo. Definira se tako matriko, ki preslika rezultat množenja $\textbf{J}_s^*  \textit{d} \textbf{s} $ v nièelni prostor matrike $J_p$. Definira se matrika $\textbf{N}_{pA}$ na sledeè naè naèin \cite{lenarcic_robotmeh}:
 
 \begin{equation} \label{eq:mat_n}
- \textbf{N}_{pA} = \textbf{I} - \textbf{J}_{pA}^* \cdot \textbf{J}_p
+ \textbf{N}_{pA} = \textbf{I} - \textbf{J}_{pA}^*  \textbf{J}_p
 \end{equation}
 
 Z množenjem sekundarnega dela enaèbe \ref{eq:dq_p_and_s} z matriko $\textbf{N}_{pA}^*$ dobimo tako konèno enaèbo za izraèun premikov v notranjih koordinatah z upoštevanjem primarne in sekundarne naloge.
 
 \begin{equation}
-\textit{d} \textbf{q} = \textbf{J}_{pA}^* \cdot \textit{d}\textbf{p} + \textbf{N}_{pA} \cdot \textbf{J}_s^* \cdot \textit{d} \textbf{s},
+\textit{d} \textbf{q} = \textbf{J}_{pA}^*  \textit{d}\textbf{p} + \textbf{N}_{pA}  \textbf{J}_s^*  \textit{d} \textbf{s},
 \end{equation}
 
 V poglavjih, ki sledijo se bo predpostavljalo, da je sekundarna naloga neupoštevana in kadarkoli bo zapisana Jacobijeva matrika se bo predpostavilo, da gre za pseudoinverz te matrike. 
@@ -389,7 +418,7 @@ V nadaljevanju bo opisana potrebna teorija za admitanèno vodenje mehanizmov. Zaè
 V poglavju \ref{sec:servo} je opisano, da ima servo krmilnik proporcionalno diferencirni regulator za regulacijo hitrosti v sklepih. Za namen poenostavitve bo robotski mehanizem aproksimiran kot integrator $\frac{1}{s}$. Spomniti je potrebno, da krmilnik robota prejme kod vhodne velièine hitrosti v sklepih ($\omega$), vrne pa kote v sklepih (\textbf{q}). Iz tega sledi enostavna regulacijska enaèba:
 
 \begin{equation} \label{eq:outvel}
-\textbf{u} = \textbf{K}_p \cdot \tilde{\textbf{q}}
+\textbf{u} = \textbf{K}_p  \tilde{\textbf{q}}
 \end{equation}
 
 \begin{figure}
@@ -416,7 +445,7 @@ Iz tega znanja je sedaj moè realizirati regulacijo v zunanjih koordinatah. Najpr
 Vendar pa je potrebno pred tem poznati kinematièni model robota. V poglavju \ref{sec:dh} so bili opisani D-H parametri robota. Avtorji v \cite{bajd_robotika} opišejo kako zapisati kinematiko robota. Potrebno je zapisati Jacobijevo matriko $J$. Z Jacobijevo matriko lahko zapišemo relacijo med spremembo zunanjih koordinatah (vrh robota) ter spremembo notranjimi (koti v sklepih):
 
 \begin{equation} \label{eq:qtox}
-\dot{\textbf{x}} = \textbf{J}(\textbf{q}) \cdot \dot{\textbf{q}}
+\dot{\textbf{x}} = \textbf{J}(\textbf{q})  \dot{\textbf{q}}
 \end{equation}
 
 Ker je pri Jacobijevi matriki govora o relaciji med spremebami, se lahko kot spremembo tudi uporabi napako. Z uporabo enaèb \ref{eq:outvel}, \ref{eq:xerr} in \ref{eq:qtox} je moè zapisati enostaven proporcionalni regulator pozicije vrha robota.
@@ -424,13 +453,13 @@ Ker je pri Jacobijevi matriki govora o relaciji med spremebami, se lahko kot spr
 Z množenjem enaèbe \ref{eq:qtox} z inverzom Jacobijeve matrike se lahko izpostavi $\tilde{q}$:
 
 \begin{equation} \label{eq:qerr}
-\tilde{\textbf{q}} = \textbf{J}^{-1}(\textbf{q}) \cdot \tilde{\textbf{x}}
+\tilde{\textbf{q}} = \textbf{J}^{-1}(\textbf{q})  \tilde{\textbf{x}}
 \end{equation}
 
 Sedaj je mogoèe regulirni signal, ki krmili hitrost v sklepih robota tako, da bo vrh robota dosegel referenèno lego:
 
 \begin{equation} \label{eq:outcontrol}
-\textbf{u} = \textbf{K}_p \cdot \textbf{J}^{-1}(\textbf{q}) \cdot (\textbf{x}_{ref} - \textbf{x})
+\textbf{u} = \textbf{K}_p  \textbf{J}^{-1}(\textbf{q})  (\textbf{x}_{ref} - \textbf{x})
 \end{equation}
 
 Avtor v \cite{mihelj_vodenje} navaja, da se mehanski sistem, ki je voden na ta naèin obnaša kot mehanski sistem z \textit{n} - dimenzionalno vzmetjo v notranjih koordinatah. Togost omenjene vzmeti pa doloèa ojaèanje $K_p$.
@@ -455,13 +484,13 @@ Napako bi bilo mogoèe sedaj ojaèati in direktno pripeljati v regulator. Vendar p
 Napako sile prištejemo referenèni pozicijo po tistem, ko jo ojaèamo z matriko ojaèanj $\textbf{K}_h$. Matrika  $\textbf{K}_h$ je diagonalna in pove, koliko je vrh robota podajen v posamezne smeri. Novo referenèno pozicijo se bo oznaèilo z $\textbf{x}^*_{ref}$.
 
 \begin{equation} \label{eq:newx}
-	\textbf{x}^*_{ref} = \textbf{x}_{ref} +  \textbf{K}_h \cdot \tilde{\textbf{h}}_{JR3}
+	\textbf{x}^*_{ref} = \textbf{x}_{ref} +  \textbf{K}_h  \tilde{\textbf{h}}_{JR3}
 \end{equation} 
 
 Z vstavitvijo enaèbe \ref{eq:newx} v \ref{eq:outcontrol} je mogoèe zapisati celotno regulacijsko enaèbo za vodenje robota v zunanjih koordinatah z upoštevanjem delovanja zunanjih sil na vrh robota.
 
 \begin{equation} \label{eq:admitcontrol}
-\textbf{u} = \textbf{K}_p \cdot \textbf{J}^{-1}(\textbf{q}) \cdot (\textbf{x}_{ref} + \textbf{K}_h \cdot \tilde{\textbf{h}}_{JR3} - \textbf{x})
+\textbf{u} = \textbf{K}_p  \textbf{J}^{-1}(\textbf{q})  (\textbf{x}_{ref} + \textbf{K}_h  \tilde{\textbf{h}}_{JR3} - \textbf{x})
 \end{equation}
 
 	
@@ -471,7 +500,7 @@ Avtorji so za implementacijo na robotskem mehanizmu PA-10 uporabili strežnik opi
 
 Avtorji tega dela so pripravili \simulink shemo, ki se izvaja na posveèenem raèunalniku na katerem teèe operacijski sistem Simulink Target. Frekvenca izvajanja programa je nastavljena na 500 Hz tako, da se ujema s frekvenco strežnika. Pripravljen je bil grafièni vmesnik, da lahko bodoèi uporabniki uporabljajo enak program brez predhodnega poznavanja katere ukaze je potrebno izvesti. 
 
-Najprej se je implementiralo admitanèno vodenje s referenèno silo enako 0 N. S spreminjanjem matrike ojaèanj \textbf{K}$_h$ se je spreminjalo podajnost vrha robota. Veèje kot je ojaèanje, veèja je podajnost. Vendar je pri tem zelo pomembno, da sistem ne postane nestabilen. Potrebno je vzeti v zakup, da izmerjene vrednosti senzorja sil JR3 lezejo. Posledièno lahko robot poèasi zaène lesti nekam kamor to ni zaželjeno. Ojaèanje je bilo veèinokrat nižje od 0.1. Kar v praksi pomeni, da se je vrh robota obnašal kot vzmet z koeficentom 10. Iz enaèbe vzmeti $F=\Delta x \cdot k$ je videt, da v kolikor deluje na vrh robota sila 10 N bo premik vrha enak 0.1 m.
+Najprej se je implementiralo admitanèno vodenje s referenèno silo enako 0 N. S spreminjanjem matrike ojaèanj \textbf{K}$_h$ se je spreminjalo podajnost vrha robota. Veèje kot je ojaèanje, veèja je podajnost. Vendar je pri tem zelo pomembno, da sistem ne postane nestabilen. Potrebno je vzeti v zakup, da izmerjene vrednosti senzorja sil JR3 lezejo. Posledièno lahko robot poèasi zaène lesti nekam kamor to ni zaželjeno. Ojaèanje je bilo veèinokrat nižje od 0.1. Kar v praksi pomeni, da se je vrh robota obnašal kot vzmet z koeficentom 10. Iz enaèbe vzmeti $F=\Delta x  k$ je videt, da v kolikor deluje na vrh robota sila 10 N bo premik vrha enak 0.1 m.
 
 Implementirano je bilo tudi vodenje v katerem se je signal senzorja sile integriralo in prištelo na referenèno pozicijo. S tem naèinom je bilo dosežena možnost spreminjanja pozicije vrha robota. V praksi to pomeni, da lahko robot opravlja neko nalogo in v kolikor uporabniku ni všeè lega lahko z roko potisne na vrh robota tako, da bo robot bil v drugaèni legi. To je bilo tudi preverjeno z eksperimentom.
 
@@ -493,7 +522,7 @@ Zgrajen je bil program v programskem okolju \matsim, ki deluje s frekvenco 500 H
 Z uprabo Newton - Eulerjeve metode lahko zapišemo relacijo med navori v sklepih in pospeški, hitrostmi ter kotih v sklepih na sledeè naèin:
 
 \begin{equation} \label{eq:dinamika}
-	\pmb{\tau} = \textbf{B}(\textbf{q}) \cdot \ddot{\textbf{q}} + \textbf{C}(\textbf{q},\dot{\textbf{q}}) \cdot \dot{\textbf{q}} + \textbf{F}_f \cdot \dot{\textbf{q}} + \textbf{g}(\textbf{q})
+	\pmb{\tau} = \textbf{B}(\textbf{q})  \ddot{\textbf{q}} + \textbf{C}(\textbf{q},\dot{\textbf{q}})  \dot{\textbf{q}} + \textbf{F}_f  \dot{\textbf{q}} + \textbf{g}(\textbf{q})
 \end{equation}
 
 kjer matrika \textbf{B}(\textbf{q}) predstavlja matriko vztrajnosti, matrika $\textbf{C}(\dot{\textbf{q},\textbf{q}})$ predstavlja matriko Coriolisovih in centrifugalnih vplivov, matrika $\textbf{F}_f$ predstavlja matriko parametrov trejnja, matrika \textbf{g}(\textbf{q}) pa vpliv gravitacije. Enaèba predstavlja dinamièen model robota.
@@ -509,13 +538,13 @@ Iz enaèbe \ref{eq:dinamika} je videt, da je potrebno pospešek z modelom matrike 
 V kolikor je naloga preprosto sledenje nekih toèk v prostoru lahko referenèni pospešek reguliramo na sledeè naèin:
 
 \begin{equation} \label{eq:din_accel}
-	\ddot{\textbf{q}}_{ref} = \textbf{K}_p \cdot (\textbf{q}_{ref} - \textbf{q}) - \textbf{K}_d \cdot (\dot{\textbf{q}})
+	\ddot{\textbf{q}}_{ref} = \textbf{K}_p  (\textbf{q}_{ref} - \textbf{q}) - \textbf{K}_d  (\dot{\textbf{q}})
 \end{equation}
 
 Matrika $\textbf{K}_p$ predstavlja proporcionalno ojaèanje, $\textbf{K}_d$ pa diferencirno ojaèanje. Za dobro vodenje je potrebno upoštevati tudi napako, ki nastane zaradi trenja ter vpliva gravitacije in to tudi kompenzirati. Tako postane enaèba navora za sledenje referenè legi sledeèa:
 
 \begin{equation}
-	\pmb{u} = \hat{\textbf{B}}(\textbf{q}) \cdot (\textbf{K}_p \cdot (\textbf{q}_{ref} - \textbf{q}) - \textbf{K}_d \cdot (\dot{\textbf{q}})) +  \hat{\textbf{F}}_f \cdot \dot{\textbf{q}} + \hat{\textbf{g}}(\textbf{q})
+	\pmb{u} = \hat{\textbf{B}}(\textbf{q})  (\textbf{K}_p  (\textbf{q}_{ref} - \textbf{q}) - \textbf{K}_d  (\dot{\textbf{q}})) +  \hat{\textbf{F}}_f  \dot{\textbf{q}} + \hat{\textbf{g}}(\textbf{q})
 \end{equation}
 
 Shemo takega vodenja prikazuje shema \ref{fig:taufeedback}

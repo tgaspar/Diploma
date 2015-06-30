@@ -3,9 +3,9 @@
 \contentsline {chapter}{\numberline {2}Robotski manipulator PA-10}{7}
 \contentsline {section}{\numberline {2.1}Kinemati\v cni model robota PA-10}{7}
 \contentsline {section}{\numberline {2.2}Dinami\v cen model robota PA-10}{11}
-\contentsline {section}{\numberline {2.3}Servo Krmilnik}{11}
-\contentsline {subsection}{\numberline {2.3.1}Komunikacija z ARCNET vmesnikom}{12}
-\contentsline {section}{\numberline {2.4}Senzor sile in navorov - JR3}{14}
+\contentsline {section}{\numberline {2.3}Servo Krmilnik}{12}
+\contentsline {subsection}{\numberline {2.3.1}Komunikacija z ARCNET vmesnikom}{13}
+\contentsline {section}{\numberline {2.4}Senzor sile in navorov - JR3}{15}
 \contentsline {chapter}{\numberline {3}UDP stre\v znik za komunikacijo s krmilnikom robota ter senzorjem JR3}{17}
 \contentsline {section}{\numberline {3.1}ARCNET stre\v znik}{17}
 \contentsline {section}{\numberline {3.2}JR3 stre\v znik}{18}

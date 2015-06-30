@@ -28,6 +28,19 @@ R.~Jamisola, M.~J. Ang, T.~M. Lim, O.~Khatib  in S.~Y. Lim, ``Dynamics
 T.~Petri\v{c} in M.~Munih, ``Kompenzacija trenja in gravitacije na robotu
   mitsubishi pa-10,'' {\em Seminarska naloga}, 2010.
 
+\bibitem{pa10-manual}
+Mitsubishi Heavy Industries, {\em Portable General Purpose Intelligent Arm -
+  Operating Manual}, rev. 1~izd.
+
+\bibitem{lenarcic_robotmeh}
+J.~Lenar\v{c}i\v{c} in T.~Bajd, {\em Robotski mehanizmi}.
+\newblock Ljubljana: Univerza v Ljubljani, Zalo{\v{z}}ba FE in FRI, 2003.
+
+\bibitem{bejczy_dynamics}
+A.~K. Bejczy in R.~P. Paul, ``Simplified robot arm dynamics for control,'' {\em
+  Decision and Control including the Symposium on Adaptive Processes, 1981 20th
+  IEEE Conference on}, str.~261--262, 1981.
+
 \bibitem{jr3_doc_ext}
 I.~JR3, ``{JR3, Installation manual for force - torque sensors with external
   electronics}.'' Dosegljivo: \url{http://www.jr3.com/product-manuals.html}.
@@ -42,10 +55,6 @@ I.~JR3, ``{JR3, DPS-based force sensor receivers, software and installation
 A.~Pennarun, ``{Linux ARCnet HOWTO}.'' Dosegljivo:
   \url{http://apenwarr.ca/arcnet/howto/index.html}.
 \newblock [Dostopano: 6. 17. 2015].
-
-\bibitem{lenarcic_robotmeh}
-J.~Lenar\v{c}i\v{c} in T.~Bajd, {\em Robotski mehanizmi}.
-\newblock Ljubljana: Univerza v Ljubljani, Zalo{\v{z}}ba FE in FRI, 2003.
 
 \bibitem{mihelj_hapt}
 M.~Mihelj, {\em Vodenje robotov}.

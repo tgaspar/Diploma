@@ -117,27 +117,34 @@ The thesis addresses ...
 %*********************** PA10 ********************************
 \chapter{Robotski manipulator PA-10} \label{chap:pa10}
 
-Podjetje Mitsubishi Heavy Industries je leta 1992 izdelalo prvega industrijskega redundatnega robota \cite{mhi_pa10}. Podjetje je robota poimenovalo Portable General-purpose Intelligent Arm PA-10, krajše PA-10. Gre za serijskega robota s sedmimi stopnjami prostosti. Prvi trije sklepi so oznaèeni kot ramenski sklepi (shoulder), S1, S2, S3. Naslednja dva sta oznaèena kot komolèni sklepi (elbow), E1, E2. Zadnja dva sklepa pa sta oznaèena kot zapestna (wrist), W1, W2. Glede na zgradbo se ga lahko uvrsti v tako imenovane antropomorfne robote \cite{craig_robintro}. Izraz antropomorfnost izhaja iz dveh grških besed \textit{antropo} - èlovek, \textit{morphe} - oblika. Znaèilnost takih robotov je spretnost saj so vsi sklepi rotacijski \cite{siciliano_robot}.
+Podjetje Mitsubishi Heavy Industries je leta 1992 izdelalo prvega industrijskega redundatnega robota \cite{mhi_pa10}. Podjetje je robota poimenovalo Portable General-purpose Intelligent Arm PA-10, krajše PA-10. Gre za serijskega robota s sedmimi stopnjami prostosti (slika \ref{fig:pa10drawing}). Prvi trije sklepi so oznaèeni kot ramenski sklepi (shoulder), S1, S2, S3. Naslednja dva sta oznaèena kot komolèni sklepi (elbow), E1, E2. Zadnja dva sklepa pa sta oznaèena kot zapestna (wrist), W1, W2. Glede na zgradbo se ga lahko uvrsti v tako imenovane antropomorfne robote \cite{craig_robintro}. Izraz antropomorfnost izhaja iz dveh grških besed \textit{antropo} - èlovek, \textit{morphe} - oblika. Znaèilnost takih robotov je spretnost saj so vsi sklepi rotacijski \cite{siciliano_robot}.
 
 Robotska roka PA-10 tehta 36 kg in ima nosilnost 10 kg. Servo motorji v sklepih se napajajo preko izmeniène napetosti. Prenosi med v sklepih so realizirani z mehanskim sistemom harmonic drive. Proizvajalec navaja, da se lahko bazo robota pritrdi v katerokoli lego. To pomeni, da se ga lahko fiksira bodisi na tla, na steno ali na strop. Robota PA-10 odlikuje relativno majhna konstrukcija, enostavno rokovanje (menjava konfiguracije) ter odprtost njegovega krmilnika. Prav ti razlogi so povod, da je mnogo insitituciji vzelo tega robota kot ekperimentalni sistem za razvijanje raznih algoritmov vodenja oz. identificiranja (\cite{voung_pa10}, \cite{aalst_pa10}, \cite{rodrigo_pa10},\cite{petric_nevronska}).
 
+\input{./Slike/pa10-drawing.tex}
 
+\section{Kinematièni model robota PA-10} \label{sec:pa10_kin_model}
 
-\section{Kinematièni model robota PA-10}
-
-Robotski mehanizem se obravnava kot kinematièno verigo \textit{n} med seboj povezanih togih teles. Ker je en konec kinematiène verige povezan v bazo robota je mogoèe reèi, da se premika le vrh robota. Z opisom kinematiène relacije med dvema zaporednima segmentoma je mogoèe to znanje združiti za definiranje kinematiène relacije med bazo in vrhom robota. Homogena transformacijska matrika med dvema sosednjima segmentoma je definirana kot:
+Robotski mehanizem se obravnava kot kinematièno verigo \textit{n} med seboj povezanih togih teles, reèemo jim tudi kinematièni pari. Ker je en konec kinematiène verige povezan v bazo robota je mogoèe reèi, da se premika le vrh kinematiène verige. Z opisom kinematiène relacije med dvema zaporednima segmentoma je mogoèe definirati kinematièno relacijo med bazo in vrhom robota. Homogena transformacijska matrika je operator, ki vkljuèuje translacijo in rotacijo med dvema koordinatnima sistemoma. Glede na \cite{siciliano_robot} jo definiramo kot
 
 \begin{equation}
 	\textbf{T}_{i+1}^i = 
 	\begin{bmatrix}
-		cos(\varTheta_i) && -sin(\varTheta_i) && 0 && a_i \\
-		sin(\varTheta_i) cos(\alpha_i) && cos(\varTheta_i) cos(\alpha_i) && -sin(a_i) && -sin(a_i)d_i \\
-		sin(\varTheta_i) sin(\alpha_i) && cos(\varTheta_i) sin(\alpha_i) && cos(a_i) &&  cos(a_i)d_i \\
+		\cos(\varTheta_i) && -\sin(\varTheta_i) && 0 && a_i \\
+		\sin(\varTheta_i) \cos(\alpha_i) && \cos(\varTheta_i) \cos(\alpha_i) && -\sin(a_i) && -\sin(a_i)d_i \\
+		\sin(\varTheta_i) \sin(\alpha_i) && \cos(\varTheta_i) \sin(\alpha_i) && \cos(a_i) &&  \cos(a_i)d_i \\
 		0 && 0 && 0 && 1
 	\end{bmatrix}.
 \end{equation}
 
-V homogeni transformacijski matriki $\textbf{T}_{i+1}$ so $\textit{a}_i$, $\alpha_i$, $d_i$ in $\varTheta$ parametri tako imenovane Denavit - Hartenberg sistema opisovanja relacij med razliènimi koordinatnimi sistemi. Sklicujoè na sliko \ref{fig:dh-pa10} se opiše parametre kot:
+Z množenjem homogenih transformacijskih matrik posameznih sklepov med seboj se lahko zapiše homogeno transformacijo med vrhom robota in njegovo bazo:
+
+
+\begin{equation} \label{eq:tob}
+\textbf{T}_{7}^0 = \textbf{T}_1^0 \cdot \textbf{T}_2^1 \cdot ... \cdot \textbf{T}_7^6.
+\end{equation}
+
+V homogeni transformacijski matriki \thom so $\textit{a}_i$, $\alpha_i$, $d_i$ in $\varTheta$ parametri tako imenovaneha Denavit - Hartenberg sistema opisa relacij med razliènimi koordinatnimi sistemi. Posamezni parametri matrike Sklicujoè na sliko \ref{fig:dh-pa10} se opiše parametre kot:
 
 \begin{itemize}
 	\item $\textit{a}_i$ razdalja med $O_i$ in $O_{i+1}$ v smeri $x_i$,
@@ -146,13 +153,7 @@ V homogeni transformacijski matriki $\textbf{T}_{i+1}$ so $\textit{a}_i$, $\alph
 	\item $\varTheta$ razdalja med $O_{i-1}$ in $O_{i}$ glede na os $z_i$,
 \end{itemize}
 
-Zgornje parametre se d
-
-Tako je mogoèe zapisati homogeno transformacijo od baze do vrha robota kot produkt posameznih transformacij
-
-\begin{equation} \label{eq:tob}
-	T_{7}^0 = T_1^0 \cdot T_2^1 \cdot ... \cdot T_7^6.
-\end{equation}
+Zgornje parametre se za primer robota PA-10 definira s pomoèjo dokumentacije \cite{pa10-manual}. V tabeli \ref{table:dh_params} so zapisani D-H parametri za vsak kinematièni par. Koti v sklepih robota so zapisani kot $q_n$. Kote v sklepih imenujemo tudi notranje koordinate. Z upoštevanjem tega postane matrika \thom funkcija kotov v sklepih $\textbf{q} = [q_1 q_2 \dots q_7]^T$. 
 
 %\input{./Slike/two-coordinates.tex}
 %\input{./Slike/arm_length.tex}
@@ -179,17 +180,66 @@ Tako je mogoèe zapisati homogeno transformacijo od baze do vrha robota kot produ
   \label{table:dh_params} 
 \end{table}
 
-S pomoèjo D-H parametrov lje moè definirati geometrijski model robota oz. transformacijsko matriko $ A_{PA10} = A_1 \cdot A_2 \cdot ... \cdot A_7 $, ki preslika koordinate izražene v koordinatnem sistemu baze ($ x_{base}$) koordinate izražene v koordinatnem sistemu na vrhu robota($ x_{PA10} $) v odvisnosti od kotov $(q)$ v sklepih. 
-Tako velja relacija
+Opis lege vrha robota se da skrajšati in zapisati z minimalnim številom koordinat. Iz matrike homogene transofrmacije je mogoèe izpisati tri koordinate, ki opisujejo pozicijo vrha robota in tri koordinate, ki opisujejo njegovo orientacijo. Pozicija se enostavno izpiše iz prvih treh vrstic zadnjega stolpca. Za zapis orientacije pa se je potrebno sklicati na Eulerjeve kote. Prvi trije stolpci in prve tri vrstice v matriki homogene transformacije opisujejo spremembo orientacije. Èe omenjeno podmatriko zapišemo kot
 
-\begin{center}
-	$x_{PA10} = A_{PA10}(q) \cdot x_{base}$
-\end{center}
+\begin{equation}
+\textbf{R} = 
+\begin{bmatrix}
+r_{11} && r_{12} $$ r_{13} \\
+r_{21} && r_{22} $$ r_{23} \\
+r_{31} && r_{32} $$ r_{33} \\
+\end{bmatrix},
+\end{equation}
+ lahko definiramo tri Eulerjeve kote na sledeè naèin
+  
+\begin{equation}
+	\varphi = \arctan_2(r_{21},r_{11}), 
+	\vartheta = \arctan_2(-r_{31},\sqrt{r_{32}^2 + r_{33}^2}), 
+	\psi = \arctan_2(-r_{32},-r_{33}).
+\end{equation}
+
+Z združitvijo treh koordinat za opis opizcije in treh koordinat za opis orientacije se lahko definira vektor, ki opisuje neko toèko v prostoru baze robota:
+
+\begin{equation}
+	\textbf{x} =
+	\left[ \begin{array}{@{}*{11}{c}@{}}
+		x & y & z & \varphi & \vartheta & \psi \\
+	\end{array} \right]^T.
+\end{equation}
+
+Vektor $p$ se imenuje tudi vekor zunanjih koordinat. Sedaj je mogoèe opisati enaèbo direktne kinematike kot funkcijo $\textbf{q}$:
+
+\begin{equation}
+	\textbf{x} = \textbf{k}(\textbf{q}).
+\end{equation}
+
+Funkcija $\textbf{k}(\textbf{q})$ je vektorska funkcija notranjih koordinat, v katerih so zajete kinematiène enaèbe pozicije in orientacijne mehanizma. Problem direktne kinematike je pri serijskih mehanizmih enostavno rešljiv in ima eno rešitev \cite{lenarcic_robotmeh}.
+
+Dodatno je potrebno še opisati kakšna je hitrost vrha robota v odvisnosti od hitrosti v sklepov. V ta namen se definira Jacobijeva matrika, ki predstavlja parcialne odvode zunanjih koordinat po notranjih 
+
+\begin{equation}
+	\textbf{J} = 
+	\begin{bmatrix}
+		\frac{\partial p_1}{\partial q_1} && \frac{\partial p_1}{\partial q_2} && \dots && \frac{\partial p_1}{\partial q_7} \\
+		\frac{\partial p_2}{\partial q_1} && \frac{\partial p_2}{\partial q_2} && \dots && \frac{\partial p_2}{\partial q_7} \\
+		\vdots && \vdots && \ddots && \vdots \\
+				\frac{\partial p_6}{\partial q_1} && \frac{\partial p_6}{\partial q_2} && \dots && \frac{\partial p_6}{\partial q_7} \\
+	\end{bmatrix}.
+\end{equation}
+
+Opaziti je, da je v primeru robota PA-10 Jacobijeva matrika \textbf{J} razsežnosti 6 $\times$ 7. To se bo dodatno obravnavalo v poglavju \ref{chap:redundant}. Zaenkrat pa se lahko zapiše enaèbo diferencialne kinematike
+
+\begin{equation}
+	\dot{\textbf{p}} = \textbf{J} \dot{\textbf{q}}.
+\end{equation}
+
+\section{Dinamièen model robota PA-10}
+
+Vodenje robota z referenènimi navori veleva poznavanje njegovega dinamiènega modela. Z razliko od kinematiènega modela je pri dinamiènem modelu je število parametrov, ki vplivajo na vodenje veèje. V nadaljevanju bo predstavljen splošen dinamièen model in relacija med silami, ki delujejo na vrhu robota in navori v sklepih.
+
+Za opis dinamiènih relacij med segmenti se uporabi Lagrangevo formulacijo \cite{bejczy_dynamics}.
 
 
-
-
-\input{./Slike/pa10-drawing.tex}
 
 
 

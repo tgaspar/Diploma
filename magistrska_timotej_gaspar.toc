@@ -2,34 +2,35 @@
 \contentsline {chapter}{\numberline {1}Uvod}{5}
 \contentsline {chapter}{\numberline {2}Robotski manipulator PA-10}{7}
 \contentsline {section}{\numberline {2.1}Kinemati\v cni model robota PA-10}{7}
-\contentsline {section}{\numberline {2.2}Servo Krmilnik}{10}
-\contentsline {subsection}{\numberline {2.2.1}Komunikacija z ARCNET vmesnikom}{10}
-\contentsline {section}{\numberline {2.3}Senzor sile in navorov - JR3}{12}
-\contentsline {chapter}{\numberline {3}UDP stre\v znik za komunikacijo s krmilnikom robota ter senzorjem JR3}{15}
-\contentsline {section}{\numberline {3.1}ARCNET stre\v znik}{15}
-\contentsline {section}{\numberline {3.2}JR3 stre\v znik}{16}
-\contentsline {section}{\numberline {3.3}Zdru\v zitev ARCNET in JR3 stre\v znika}{17}
-\contentsline {section}{\numberline {3.4}Razlogi za stre\v znik}{17}
-\contentsline {chapter}{\numberline {4}Kratek uvod v redundatne mehanizme in pseudoinverz Jacobijeve matrike}{19}
-\contentsline {chapter}{\numberline {5}Admitan\v cno krmiljenje}{23}
-\contentsline {section}{\numberline {5.1}Vodenje preko inverzne kinematike}{23}
-\contentsline {subsection}{\numberline {5.1.1}Vodenje v notranjih koordinatah}{23}
-\contentsline {subsection}{\numberline {5.1.2}Vodenje v zunajih koordinatah}{24}
-\contentsline {subsection}{\numberline {5.1.3}Upraba zunanjih sil}{25}
-\contentsline {section}{\numberline {5.2}Implementacija}{26}
-\contentsline {section}{\numberline {5.3}Rezultati}{27}
-\contentsline {chapter}{\numberline {6}Krmiljenje z inverzno dinamiko}{29}
-\contentsline {section}{\numberline {6.1}Teorija}{29}
-\contentsline {subsection}{\numberline {6.1.1}Vodenje v notranjih koordinatah}{30}
-\contentsline {section}{\numberline {6.2}Implementacija}{31}
-\contentsline {section}{\numberline {6.3}Rezultati}{32}
-\contentsline {chapter}{\numberline {7}Simulink knji\v zice}{33}
-\contentsline {section}{\numberline {7.1}Blok PA-10}{33}
-\contentsline {section}{\numberline {7.2}Blok Inverse Dynamics Control}{33}
-\contentsline {section}{\numberline {7.3}Blok Follow Trajectory}{34}
-\contentsline {section}{\numberline {7.4}Blok Admitance Control}{34}
-\contentsline {chapter}{\numberline {8}Zaklju\v cek}{35}
-\contentsline {chapter}{\numberline {A}Appendix 1}{41}
-\contentsline {chapter}{\numberline {B}Appendix 2}{43}
-\contentsline {chapter}{\numberline {C}Appendix 3}{45}
-\contentsline {chapter}{\numberline {D}Predloge za navajanje literature - baza BibTex}{47}
+\contentsline {section}{\numberline {2.2}Dinami\v cen model robota PA-10}{11}
+\contentsline {section}{\numberline {2.3}Servo Krmilnik}{11}
+\contentsline {subsection}{\numberline {2.3.1}Komunikacija z ARCNET vmesnikom}{12}
+\contentsline {section}{\numberline {2.4}Senzor sile in navorov - JR3}{14}
+\contentsline {chapter}{\numberline {3}UDP stre\v znik za komunikacijo s krmilnikom robota ter senzorjem JR3}{17}
+\contentsline {section}{\numberline {3.1}ARCNET stre\v znik}{17}
+\contentsline {section}{\numberline {3.2}JR3 stre\v znik}{18}
+\contentsline {section}{\numberline {3.3}Zdru\v zitev ARCNET in JR3 stre\v znika}{19}
+\contentsline {section}{\numberline {3.4}Razlogi za stre\v znik}{19}
+\contentsline {chapter}{\numberline {4}Kratek uvod v redundatne mehanizme in pseudoinverz Jacobijeve matrike}{21}
+\contentsline {chapter}{\numberline {5}Admitan\v cno krmiljenje}{25}
+\contentsline {section}{\numberline {5.1}Vodenje preko inverzne kinematike}{25}
+\contentsline {subsection}{\numberline {5.1.1}Vodenje v notranjih koordinatah}{25}
+\contentsline {subsection}{\numberline {5.1.2}Vodenje v zunajih koordinatah}{26}
+\contentsline {subsection}{\numberline {5.1.3}Upraba zunanjih sil}{27}
+\contentsline {section}{\numberline {5.2}Implementacija}{28}
+\contentsline {section}{\numberline {5.3}Rezultati}{29}
+\contentsline {chapter}{\numberline {6}Krmiljenje z inverzno dinamiko}{31}
+\contentsline {section}{\numberline {6.1}Teorija}{31}
+\contentsline {subsection}{\numberline {6.1.1}Vodenje v notranjih koordinatah}{32}
+\contentsline {section}{\numberline {6.2}Implementacija}{33}
+\contentsline {section}{\numberline {6.3}Rezultati}{34}
+\contentsline {chapter}{\numberline {7}Simulink knji\v zice}{35}
+\contentsline {section}{\numberline {7.1}Blok PA-10}{35}
+\contentsline {section}{\numberline {7.2}Blok Inverse Dynamics Control}{35}
+\contentsline {section}{\numberline {7.3}Blok Follow Trajectory}{36}
+\contentsline {section}{\numberline {7.4}Blok Admitance Control}{36}
+\contentsline {chapter}{\numberline {8}Zaklju\v cek}{37}
+\contentsline {chapter}{\numberline {A}Appendix 1}{43}
+\contentsline {chapter}{\numberline {B}Appendix 2}{45}
+\contentsline {chapter}{\numberline {C}Appendix 3}{47}
+\contentsline {chapter}{\numberline {D}Predloge za navajanje literature - baza BibTex}{49}

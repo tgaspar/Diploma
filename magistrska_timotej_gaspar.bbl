@@ -36,10 +36,9 @@ Mitsubishi Heavy Industries, {\em Portable General Purpose Intelligent Arm -
 J.~Lenar\v{c}i\v{c} in T.~Bajd, {\em Robotski mehanizmi}.
 \newblock Ljubljana: Univerza v Ljubljani, Zalo{\v{z}}ba FE in FRI, 2003.
 
-\bibitem{bejczy_dynamics}
-A.~K. Bejczy in R.~P. Paul, ``Simplified robot arm dynamics for control,'' {\em
-  Decision and Control including the Symposium on Adaptive Processes, 1981 20th
-  IEEE Conference on}, str.~261--262, 1981.
+\bibitem{zlajpah_dynamics_red}
+L.~?lajpah, ``Dynamics of internal motion of redundant manipulators,'' {\em
+  IEEE}, str.~95 -- 100, 1997.
 
 \bibitem{jr3_doc_ext}
 I.~JR3, ``{JR3, Installation manual for force - torque sensors with external

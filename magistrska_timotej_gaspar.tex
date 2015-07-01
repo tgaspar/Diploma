@@ -117,9 +117,11 @@ The thesis addresses ...
 %*********************** PA10 ********************************
 \chapter{Robotski manipulator PA-10} \label{chap:pa10}
 
-Podjetje Mitsubishi Heavy Industries je leta 1992 izdelalo prvega industrijskega redundatnega robota \cite{mhi_pa10}. Podjetje je robota poimenovalo Portable General-purpose Intelligent Arm PA-10, krajše PA-10. Gre za serijskega robota s sedmimi stopnjami prostosti (slika \ref{fig:pa10drawing}). Prvi trije sklepi so oznaèeni kot ramenski sklepi (shoulder), S1, S2, S3. Naslednja dva sta oznaèena kot komolèni sklepi (elbow), E1, E2. Zadnja dva sklepa pa sta oznaèena kot zapestna (wrist), W1, W2. Glede na zgradbo se ga lahko uvrsti v tako imenovane antropomorfne robote \cite{craig_robintro}. Izraz antropomorfnost izhaja iz dveh grških besed \textit{antropo} - èlovek, \textit{morphe} - oblika. Znaèilnost takih robotov je spretnost saj so vsi sklepi rotacijski \cite{siciliano_robot}.
+Podjetje Mitsubishi Heavy Industries je leta 1992 izdelalo prvega katalogiranega industrijskega redundatnega robota \cite{mhi_pa10}. Podjetje je robota poimenovalo Portable General-purpose Intelligent Arm PA-10, krajše PA-10. Gre za serijskega robota s sedmimi stopnjami prostosti (slika \ref{fig:pa10drawing}). Prvi trije sklepi so oznaèeni kot ramenski sklepi (shoulder), S1, S2, S3. Naslednja dva sta oznaèena kot komolèni sklepi (elbow), E1, E2. Zadnja dva sklepa pa sta oznaèena kot zapestna (wrist), W1, W2. Glede na zgradbo se ga lahko uvrsti v tako imenovane antropomorfne robote \cite{craig_robintro}.
+%Izraz antropomorfnost izhaja iz dveh grških besed \textit{antropo} - èlovek, \textit{morphe} - oblika. 
+Znaèilnost takih robotov je spretnost saj so vsi sklepi rotacijski \cite{siciliano_robot}.
 
-Robotska roka PA-10 tehta 36 kg in ima nosilnost 10 kg. Servo motorji v sklepih se napajajo preko izmeniène napetosti. Prenosi med v sklepih so realizirani z mehanskim sistemom harmonic drive. Proizvajalec navaja, da se lahko bazo robota pritrdi v katerokoli lego. To pomeni, da se ga lahko fiksira bodisi na tla, na steno ali na strop. Robota PA-10 odlikuje relativno majhna konstrukcija, enostavno rokovanje (menjava konfiguracije) ter odprtost njegovega krmilnika. Prav ti razlogi so povod, da je mnogo insitituciji vzelo tega robota kot ekperimentalni sistem za razvijanje raznih algoritmov vodenja oz. identificiranja (\cite{voung_pa10}, \cite{aalst_pa10}, \cite{rodrigo_pa10},\cite{petric_nevronska}).
+Robotska roka PA-10 tehta 36 kg in ima nosilnost 10 kg. Servo motorji v sklepih se napajajo preko izmeniène napetosti. Prenosi med v sklepih so realizirani z mehanskim sistemom harmonic drive. Proizvajalec navaja, da se lahko bazo robota pritrdi v katerokoli lego. To pomeni, da se ga lahko fiksira bodisi na tla, na steno ali na strop. Robota PA-10 odlikuje relativno majhna konstrukcija, enostavno rokovanje (menjava konfiguracije) ter odprtost njegovega krmilnika. Prav ti razlogi so povod, da je mnogo insitituciji vzelo tega robota kot ekperimentalni sistem za razvijanje raznih algoritmov vodenja ali identificiranja dinamiènih parametrov (\cite{voung_pa10}, \cite{aalst_pa10}, \cite{rodrigo_pa10},\cite{petric_nevronska}).
 
 \input{./Slike/pa10-drawing.tex}
 
@@ -144,7 +146,10 @@ Z množenjem homogenih transformacijskih matrik posameznih sklepov med seboj se l
 \textbf{T}_{7}^0 = \textbf{T}_1^0  \textbf{T}_2^1  ...  \textbf{T}_7^6.
 \end{equation}
 
-V homogeni transformacijski matriki \thom so $\textit{a}_i$, $\alpha_i$, $d_i$ in $\varTheta$ parametri tako imenovaneha Denavit - Hartenberg sistema opisa relacij med razliènimi koordinatnimi sistemi. Posamezni parametri matrike Sklicujoè na sliko \ref{fig:dh-pa10} se opiše parametre kot:
+
+V homogeni transformacijski matriki \thom so $\textit{a}_i$, $\alpha_i$, $d_i$ in $\varTheta$ parametri tako imenovaneha Denavit - Hartenberg sistema opisa relacij med razliènimi koordinatnimi sistemi. Sklicujoè na sliko \ref{fig:pa10-dh} se opiše parametre kot:
+
+\input{./Slike/pa10-dh.tex}
 
 \begin{itemize}
 	\item $\textit{a}_i$ razdalja med $O_i$ in $O_{i+1}$ v smeri $x_i$,
@@ -152,8 +157,7 @@ V homogeni transformacijski matriki \thom so $\textit{a}_i$, $\alpha_i$, $d_i$ i
 	\item $d_i$ razdalja med $O_{i-1}$ in $O_{i}$ glede na os $z_i$,
 	\item $\varTheta$ razdalja med $O_{i-1}$ in $O_{i}$ glede na os $z_i$,
 \end{itemize}
-
-Zgornje parametre se za primer robota PA-10 definira s pomoèjo dokumentacije \cite{pa10-manual}. V tabeli \ref{table:dh_params} so zapisani D-H parametri za vsak kinematièni par. Koti v sklepih robota so zapisani kot $q_n$. Kote v sklepih imenujemo tudi notranje koordinate. Z upoštevanjem tega postane matrika \thom funkcija kotov v sklepih $\textbf{q} = [q_1 q_2 \dots q_7]^T$. 
+Zgornje parametre se za primer robota PA-10 definira s pomoèjo dokumentacije \cite{pa10-manual}. V tabeli \ref{table:dh_params} so zapisani D-H parametri za vsak kinematièni par. Koti v sklepih robota so zapisani kot $q_n$. Kote v sklepih imenujemo tudi notranje koordinate. Z upoštevanjem tega postane matrika \thom funkcija kotov v sklepih $\mathbf{q} = \begin{bmatrix} q_1 & q_2 & \dots & q_7 \end{bmatrix}^T$. 
 
 %\input{./Slike/two-coordinates.tex}
 %\input{./Slike/arm_length.tex}
@@ -185,19 +189,18 @@ Opis lege vrha robota se da skrajšati in zapisati z minimalnim številom koordina
 \begin{equation}
 \textbf{R} = 
 \begin{bmatrix}
-r_{11} && r_{12} $$ r_{13} \\
-r_{21} && r_{22} $$ r_{23} \\
-r_{31} && r_{32} $$ r_{33} \\
+r_{11} & r_{12} & r_{13} \\
+r_{21} & r_{22} & r_{23} \\
+r_{31} & r_{32} & r_{33} \\
 \end{bmatrix},
 \end{equation}
- lahko definiramo tri Eulerjeve kote na sledeè naèin
+lahko definiramo tri Eulerjeve kote na sledeè naèin
   
 \begin{equation}
 	\varphi = \arctan_2(r_{21},r_{11}), 
 	\vartheta = \arctan_2(-r_{31},\sqrt{r_{32}^2 + r_{33}^2}), 
 	\psi = \arctan_2(-r_{32},-r_{33}).
 \end{equation}
-
 Z združitvijo treh koordinat za opis opizcije in treh koordinat za opis orientacije se lahko definira vektor, ki opisuje neko toèko v prostoru baze robota:
 
 \begin{equation}
@@ -206,7 +209,6 @@ Z združitvijo treh koordinat za opis opizcije in treh koordinat za opis orientac
 		x & y & z & \varphi & \vartheta & \psi \\
 	\end{array} \right]^T.
 \end{equation}
-
 Vektor $p$ se imenuje tudi vekor zunanjih koordinat. Sedaj je mogoèe opisati enaèbo direktne kinematike kot funkcijo $\textbf{q}$:
 
 \begin{equation}
@@ -229,9 +231,17 @@ Dodatno je potrebno še opisati kakšna je hitrost vrha robota v odvisnosti od hit
 
 Opaziti je, da je v primeru robota PA-10 Jacobijeva matrika \textbf{J} razsežnosti 6 $\times$ 7. To se bo dodatno obravnavalo v poglavju \ref{chap:redundant}. Zaenkrat pa se lahko zapiše enaèbo diferencialne kinematike
 
-\begin{equation}
+\begin{equation} \label{eq:dir_dyn}
 	\dot{\textbf{p}} = \textbf{J} \dot{\textbf{q}}.
 \end{equation}
+Z odvajanjem enaèbe \ref{eq:dir_dyn} je mogoèe zapisati še relacijo med pospeški vrha robota ter pospeški sklepov 
+
+\begin{equation} \label{eq:dir_dyn_accel}
+\ddot{\mathbf{p}} = \mathbf{J} \ddot{\mathbf{q}} + \dot{\mathbf{J}} \dot{\mathbf{q}},
+\end{equation}
+kjer je $\dot{\mathbf{J}}$ odvod Jacobijeve matrike.
+
+
 
 \section{Dinamièen model robota PA-10}
 
@@ -240,18 +250,16 @@ Vodenje robota z referenènimi navori veleva poznavanje njegovega dinamiènega mod
 Enaèbe gibanja kot posledica delovanja sil in navorov se lahko zapišejo z uporabo Lagrangevih formulacij. Lagrangeve formulacije so orodje za sistematièen opis dinamike posameznih segmentov \cite{siciliano_robot}. Z uporabo te formulacije se lahko zapiše enaèbo navorov v sklepih v odvisnosti od kotov, hitrosti in pospeškov v sklepih na sledeè naèin:
 
 \begin{equation} \label{eq:din}
-\pmb{\tau}(\mathbf{\ddot{q}},\mathbf{\dot{q}},\textbf{q}) = \textbf{B}(\textbf{q})  \ddot{\textbf{q}} + \textbf{C}(\textbf{q},\dot{\textbf{q}})  \dot{\textbf{q}} + \textbf{F}_f(\dot{\textbf{q}}, \textbf{q}) + \textbf{g}(\textbf{q}) + \textbf{J}^T(\textbf{q})\textbf{h}.
+\pmb{\tau}(\mathbf{\ddot{q}},\mathbf{\dot{q}},\textbf{q}) = \textbf{B}(\textbf{q})  \ddot{\textbf{q}} + \textbf{C}(\textbf{q},\dot{\textbf{q}})  \dot{\textbf{q}} + \textbf{F}_f(\dot{\textbf{q}}, \textbf{q}) + \textbf{g}(\textbf{q}) + \textbf{J}^T(\textbf{q})\textbf{h}_o.
 \end{equation}
-
 Posamezni èleni zgornje enaèbe bodo opisani v nadaljevanju.
 
 Matrika $\textbf{B}(\textbf{q})$ predstavlja zapis vztrajnosti posameznih segmentov. Odvisna je od trenutne konfiguracije robota. Posamezni èleni pa so izraèunani kot
 
 \begin{equation}
-	h_{i,j} = \sum{i = max(j,k)}^{7} sl[(\frac{\partial}{\partial q_k}T^0_i)(\frac{\partial}{\partial q_j}T^0_i)].
+	h_{i,j} = \sum_{i = max(j,k)}^{7} sl[(\frac{\partial}{\partial q_k}\textbf{T}^0_i)(\frac{\partial}{\partial q_j}\textbf{T}^0_i)].
 \end{equation}
-
-Operator \textit{sl} pomeni sled matrike. To je vsota diagonalnih èlenov neke matrike.
+Operator \textit{sl} je sled matrike. To je vsota diagonalnih èlenov neke matrike.
 
 Matrika $\mathbf{C}(\mathbf{\mathbf{q},\dot{q}})$ nosi podatke o Coriolisovih in centripetalnih prispevkih. Njeni èleni izraženi s pomoèjo kot 
 
@@ -266,13 +274,102 @@ c_{i,j,k} = \frac{1}{2}(\frac{\partial b_{ij}}{\partial q_k} + \frac{\partial b_
 \end{equation}
 Christoffelovi simboli in dodatno velja še $i,j,k = 1, \dots ,7$.
 
-Vektor $\mathbf{g}(\mathbf{q})$ nosi podatke o vplivu gravitacijskega pospeška na posamezne segmente robota. Za $g_i$ velja, da predstavlja navor proizveden v sklepu maniuplatorja i zaradi trenutne konfiguracije \cite{siciliano_robot}.
+Vektor $\mathbf{g}(\mathbf{q})$ nosi podatke o vplivu gravitacijskega pospeška na posamezne segmente robota. Za $g_i$ velja, da predstavlja navor proizveden v sklepu maniuplatorja \textit{i} zaradi trenutne konfiguracije \cite{siciliano_robot}. Posamezen èlen vektorja  $\mathbf{g}(\mathbf{q})$ je podan kot
 
-Vektor $\mathbf{F}_f$ opisuje vpliv trenja. Vektor zajema tako Coulombovo trenje kot tudi viskozno trenje. Posamezni èleni vektorja, $f_f$ so prispevki trenja v $i$-tem sklepu.
+\begin{equation}
+ g_i = \sum_{i=j}^{7} (-m_i \mathbf{g}_0(\frac{\partial}{\partial q_j}\mathbf{T_i^0})^T\textbf{r}_i),
+\end{equation}
+
+kjer je $\textbf{g}_0 $ vektor, ki vsebuje konstanto gravitacijskega pospeška $\textbf{g}_0 = \begin{bmatrix} 0 & 0 & -g\end{bmatrix}^T$ . Vektor $\textbf{r}_i$ opisuje mesto težišèa v segmentu, $m_i$ pa opisuje maso segmenta in je skalar.
+
+Vektor $\mathbf{F}_f$ opisuje vpliv trenja. Vektor zajema tako Coulombovo trenje kot tudi viskozno trenje. Posamezni èleni vektorja, $f_i$ so prispevki trenja v $i$-tem sklepu. Podrobneje se bo ta prispevek obravnaval v poglavju \ref{chap:invdyn}.
+
+Vektor $\textbf{h}_o$ vsebuje sile in navore, ki delujejo na vrh robota v oblki $\textbf{h}_o = \begin{bmatrix} f_x & f_y & f_x & m_x & m_y & m_z \end{bmatrix}$. Prvi trije èleni vektorja opisujejo sile, drugi trije pa navore.
+
+\section{Redundatnost robota PA-10} \label{sec:redundant-pa10}
+
+Kot je bilo opisano ima robotski mehanizem PA-10 sedem sklepov oz. sedem stopenj prostosti ($n = 7$). Takim mehanizmom pravimo da so kinematièno redundatni v kolikor je njihova naloga definirana z $m$ stopnjami prostosti in velja neenakots $n > m$. Industrijski roboti imajo obièajno šest stopenj prostosti, ker je v veèini primerih opisana naloga v prostoru naloge šest dimenzionalna. Èe bi veljalo \textit{n} = \textit{m} bi matrika \textbf{J} bila kvadratna. Posledièno bi je njen inverz možno enostavno definirati in velja relacija
+\begin{equation}
+	\dot{\textbf{q}} = \textbf{J}^{-1} \dot{\textbf{x}}.
+\end{equation}
+Ker pa velja $ n > m$ pa matrika \textbf{J} ni veè kvadratna in njen inverz ne obstaja. V tem primeru je mehanizem redundanten za dano nalogo in je število rešitev inverzne kinematike neskonèno.
+
+V tem primeru obstajajo neke spremembe notranjih koordinat, ki ne vplivajo na premikanje vrha robota. Opis inverzne kinematike z uporabo generaliziranega pseudo inverza Jacobijeve matrike $\textbf{J}^*$ se lahko zapiše kot 
+
+\begin{equation} \label{eq:inv_dyn_null}
+	\dot{\mathbf{q}} = \mathbf{J}^* \dot{\mathbf{p}} + \mathbf{N} \dot{\mathbf{q}}
+\end{equation}
+Matrika $\mathbf{N}$ procjicira vektorje $\dot{\mathbf{q}}$ v nièelni prostor matrike \textbf{J} in je definirana kot $\mathbf{N} = (\mathbf{I} - \mathbf{J}^{\#}\mathbf{J})$. Za izpeljavo generaliziranega pseudoinverza matrike $\mathbf{J}^*$ se v veèini primerov uporablja Moore-Penroseov pseudoinvez, ki se ga dodatno uteži z utežnostno matriko \textbf{A}:
+
+\begin{equation} \label{eq:pseudoinv_def}
+\mathbf{J}^* = \mathbf{J}^{\#} = \mathbf{A}^{-1} \mathbf{J}^T (\mathbf{J}  \mathbf{J}^T)^{-1}.
+\end{equation}
+Mogoèe tudi izpeljat enaèbi, ki prikazuje relacijo med pospeški v sklepih in pospeški na vrhu robota z uporabo pseudonverzne Jacobijeve matrike in matrike \textbf{N}  \cite{zlajpah_dynamics_red}. Odvod enaèbe \ref{eq:pseudoinv_def} z upoštevanjem \ref{eq:dir_dyn_accel} nam da
+
+\begin{equation} \label{eq:pseudoinv_def_accel}
+	\ddot{\textbf{q}} = \textbf{J}^{\#} (\ddot{x} - \dot{\mathbf{J}} \dot{\mathbf{q}}) + (\mathbf{I} - \mathbf{J}^{\#} \mathbf{J})\dot{\mathbf{q}}.
+\end{equation}
+
+Enaèbo \ref{eq:inv_dyn_null} je mogoèe rezširiti z definiranjem dodatne naloge. Sekundarna naloga, naj bo definirana kot
+
+\begin{equation}
+\dot{\mathbf{q_s}} = \mathbf{J}^{\#} \dot{\mathbf{p}_s}.
+\end{equation}
+Vstavi se to v enaèbo \ref{eq:inv_dyn_null} in dobi razširjeno enaèbo za inverzno kinematiko
+
+\begin{equation} \label{eq:final_inv_dyn}
+	\dot{\mathbf{q}} = \textbf{J}^{\#}  \dot{\mathbf{p}}  + \textbf{N} \textbf{J}^{\#}  \dot{\mathbf{p}}_s,
+\end{equation}
 
 
+%BEGIN_FOLD
+%%%%
+%%%%Smiselno je toraj boljše definirati nalogo. Ena opcija je definiranje primarne (\textbf{p}) in sekundarne (\textbf{s}) naloge. Z dodatkom naloge je mogoèe koristnoi izkoristiti kinematièno redundanco robota. Vprašanje je le, kako definirati sekundarno nalogo. V primeru tega dela, je bila definirana sekundarna naloga tako, da je minimizrala premike v sklepih.
+%%%%
+%%%%Naj bodo premiki za izvedmo primarne naloge oznaèeni kot $\textit{d}\textbf{q}_p$, sekundarni pa $\textit{d}\textbf{q}_s$. Tako se lahko zapiše premik za izvedbo obeh nalog kot 
+%%%%\begin{equation}
+%%%%\textit{d}\textbf{q} = \textit{d}\textbf{q}_p + \textit{d}\textbf{q}_s.
+%%%%\end{equation}
+%%%%
+%%%%
+%%%%
+%%%%
+%%%%
+%%%%Za izraèun $\textit{d}\textbf{q}_p$ in $\textit{d}\textbf{q}_s$ je potrebno rešiti problem inverzne kinematike. Izraèun inverzne kinematike veleva poznanje inverza Jacobijeve matrike. Vendar pa je v primeru, ko velja \textit{n} $>$ \textit{m} Jacobijeva matrika ne kvadratna. Posledièno ni mogoèe izraèunati njenega inverza. Definira se pseudoinverz matrike $\textbf{J}$ in ga uporabi
+%%%%
+%%%%Z uporabo Moore-Penroseovega pseudoinversa se minimizira notranje hitrosti in je definira pseudo inverz
+%%%%
+%%%%
+%%%%
+%%%%Pseudoinverz primarne naloge bo oznaèen z $\textbf{J}_p^*$, inverz sekundarne pa $\textbf{J}_s^*$. Smiselno je tudi definirati neke uteži tako, da so kvadrti hitrosti najmanjši \cite{lenarcic_robotmeh}. Definira se neizrojeno poztivno definitno matriko uteži \textbf{A}. Zapiše se utežen pseudoinverz primarne naloge kot
+%%%%
+%%%%\begin{equation} \label{eq:utezen_p_pseud}
+%%%%\textbf{J}_{pA}^* = \textbf{A}^{-1}  \textbf{J}_p^T  (\textbf{J}_p  \textbf{A}^{-1}  \textbf{J}_p^T)^{-1}.
+%%%%\end{equation}
+%%%%
+%%%%Sedaj velja enakost
+%%%%
+%%%%%\textbf{\textbf{N}_{pA} }
+%%%%
+%%%%\begin{equation} \label{eq:dq_p_and_s}
+%%%%\textit{d} \textbf{q} = \textbf{J}_{pA}^*  \textit{d}\textbf{p} + \textbf{J}_s^*  \textit{d} \textbf{s},
+%%%%\end{equation}
+%%%%ki pa ima eno pomankljivost. Sekundarna naloga ni utežena. Želja je, da sekundarna naloga vpliva na primarno le toliko, kolikor želimo. Definira se tako matriko, ki preslika rezultat množenja $\textbf{J}_s^*  \textit{d} \textbf{s} $ v nièelni prostor matrike $J_p$. Definira se matrika $\textbf{N}_{pA}$ na sledeè naè naèin \cite{lenarcic_robotmeh}:
+%%%%
+%%%%\begin{equation} \label{eq:mat_n}
+%%%%\textbf{N}_{pA} = \textbf{I} - \textbf{J}_{pA}^*  \textbf{J}_p
+%%%%\end{equation}
+%%%%
+%%%%Z množenjem sekundarnega dela enaèbe \ref{eq:dq_p_and_s} z matriko $\textbf{N}_{pA}^*$ dobimo tako konèno enaèbo za izraèun premikov v notranjih koordinatah z upoštevanjem primarne in sekundarne naloge.
+%%%%
+%%%%\begin{equation}
+%%%%\textit{d} \textbf{q} = \textbf{J}_{pA}^*  \textit{d}\textbf{p} + \textbf{N}_{pA}  \textbf{J}_s^*  \textit{d} \textbf{s},
+%%%%\end{equation}
+%%%%
+%%%%V poglavjih, ki sledijo se bo predpostavljalo, da je sekundarna naloga neupoštevana in kadarkoli bo zapisana Jacobijeva matrika se bo predpostavilo, da gre za pseudoinverz te matrike. 
+%END_FOLD
 
-\section{Servo Krmilnik} \label{sec:servo}
+\chapter{Servo Krmilnik} \label{chap:servo}
 %*********************** SERVO KRMILNIK ********************************
 Proizvajalec ob robotskem mehanizmu dostavi tudi krmilnik. V krmilniku so štiri loèeni krmilniki za servo motorje. Vsak servo krmilnik krmili servo motorja, razen enega. Krmilnik omogoèa vodenje na dva naèina. Prvi naèin predvideva, da motorje krmilimo navorno, drugi pa hitrostno. Razlika je tudi v regulatorjih. Navorno krmiljenje je realizirano z analognim P regulatorjem toka, hitrostna regulacija pa je realizirana z digitalnim PI regulatorjem s frekvenco približno 1500 Hz.
 
@@ -360,49 +457,7 @@ Ker senzor meri silo in navor v treh smereh je potrebno opraviti izraèun za vsak
 
 \section{Razlogi za strežnik}
 
-%*********************** REDUNDANTNI MEHANIZEM ********************************
-\chapter{Kratek uvod v redundatne mehanizme in pseudoinverz Jacobijeve matrike} \label{chap:redundant}
 
-V poglavju \ref{chap:oprema} je opisan robotski mehanizem PA-10 in omenjeno je tudi, da ima sedem sklepov. Veèina industrijskih robotov jih ima obièajno šest. Število sklepov bo v nadaljevanju oznaèeno s \textit{n}. V kolikor je naloga robota pozicioniranje vrha v neko lego je govora o šest stopnjah prostosti, tri za pozicijo in tri za orientacijo. Stopnje prostosti naloge bodo oznaèene z \textit{m}.  Èe bi veljalo \textit{n} = \textit{m} bi število rešitev inverzne kinematike bilo konèno. V kolikor velja \textit{n} $>$ \textit{m} je mogoèe reèi, da je mehanizem redundanten za dano nalogo in je število rešitev inverzne kinematike neskonèno.
-
-Smiselno je toraj boljše definirati nalogo. Ena opcija je definiranje primarne (\textbf{p}) in sekundarne (\textbf{s}) naloge. Z dodatkom naloge je mogoèe koristnoi izkoristiti kinematièno redundanco robota. Vprašanje je le, kako definirati sekundarno nalogo. V primeru tega dela, je bila definirana sekundarna naloga tako, da je minimizrala premike v sklepih.
-
-Naj bodo premiki za izvedmo primarne naloge oznaèeni kot $\textit{d}\textbf{q}_p$, sekundarni pa $\textit{d}\textbf{q}_s$. Tako se lahko zapiše premik za izvedbo obeh nalog kot 
-\begin{equation}
-	\textit{d}\textbf{q} = \textit{d}\textbf{q}_p + \textit{d}\textbf{q}_s.
-\end{equation}
-
-Za izraèun $\textit{d}\textbf{q}_p$ in $\textit{d}\textbf{q}_s$ je potrebno rešiti problem inverzne kinematike. Izraèun inverzne kinematike veleva poznanje inverza Jacobijeve matrike. Vendar pa je v primeru, ko velja \textit{n} $>$ \textit{m} Jacobijeva matrika nesimetrièna. Posledièno ni mogoèe izraèunati njenega inverza. Mogoèe pa je definirati pseudoinverzno Jacobijevo matriko po sledeèi enaèbi:
-
-\begin{equation} \label{eq:pseudoinv}
- \textbf{J}^* = (\textbf{J}^T  \textbf{J})^{-1}  \textbf{J}^T.
-\end{equation}
-Pseudoinverz primarne naloge bo oznaèen z $\textbf{J}_p^*$, inverz sekundarne pa $\textbf{J}_s^*$. Smiselno je tudi definirati neke uteži tako, da so kvadrti hitrosti najmanjši \cite{lenarcic_robotmeh}. Definira se neizrojeno poztivno definitno matriko uteži \textbf{A}. Zapiše se utežen pseudoinverz primarne naloge kot
-
-\begin{equation} \label{eq:utezen_p_pseud}
-\textbf{J}_{pA}^* = \textbf{A}^{-1}  \textbf{J}_p^T  (\textbf{J}_p  \textbf{A}^{-1}  \textbf{J}_p^T)^{-1}.
-\end{equation}
-
-Sedaj velja enakost
-
-%\textbf{\textbf{N}_{pA} }
-
-\begin{equation} \label{eq:dq_p_and_s}
-\textit{d} \textbf{q} = \textbf{J}_{pA}^*  \textit{d}\textbf{p} + \textbf{J}_s^*  \textit{d} \textbf{s},
-\end{equation}
-ki pa ima eno pomankljivost. Sekundarna naloga ni utežena. Želja je, da sekundarna naloga vpliva na primarno le toliko, kolikor želimo. Definira se tako matriko, ki preslika rezultat množenja $\textbf{J}_s^*  \textit{d} \textbf{s} $ v nièelni prostor matrike $J_p$. Definira se matrika $\textbf{N}_{pA}$ na sledeè naè naèin \cite{lenarcic_robotmeh}:
-
-\begin{equation} \label{eq:mat_n}
- \textbf{N}_{pA} = \textbf{I} - \textbf{J}_{pA}^*  \textbf{J}_p
-\end{equation}
-
-Z množenjem sekundarnega dela enaèbe \ref{eq:dq_p_and_s} z matriko $\textbf{N}_{pA}^*$ dobimo tako konèno enaèbo za izraèun premikov v notranjih koordinatah z upoštevanjem primarne in sekundarne naloge.
-
-\begin{equation}
-\textit{d} \textbf{q} = \textbf{J}_{pA}^*  \textit{d}\textbf{p} + \textbf{N}_{pA}  \textbf{J}_s^*  \textit{d} \textbf{s},
-\end{equation}
-
-V poglavjih, ki sledijo se bo predpostavljalo, da je sekundarna naloga neupoštevana in kadarkoli bo zapisana Jacobijeva matrika se bo predpostavilo, da gre za pseudoinverz te matrike. 
 
 %*********************** ADMITANÈNO VODENJE ********************************
 \chapter{Admitanèno krmiljenje} \label{chap:admitance}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  1 JUL 2015 14:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  2 JUL 2015 15:24
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -679,7 +679,11 @@ File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.0 (rcs-revision 1.9)
 ("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
 arypositioning.code.tex"
 File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
-)) (macros.tex) (magistrska_timotej_gaspar.aux)
+)) (macros.tex) (magistrska_timotej_gaspar.aux
+
+LaTeX Warning: Label `fig:pa10-dh' multiply defined.
+
+)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
@@ -692,8 +696,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
-
-ABD: EveryShipout initializing macros
+ ABD: EveryShipout initializing macros
 ("C:\Program Files\MiKTeX\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count140
@@ -722,26 +725,33 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [4
 
-] (magistrska_timotej_gaspar.toc [5])
+] (magistrska_timotej_gaspar.toc
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+Underfull \vbox (badness 1152) has occurred while \output is active []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[6])
 \tf@toc=\write5
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[6] (magistrska_timotej_gaspar.lof)
-\tf@lof=\write6
- [7
-
-]
+[7]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [8
 
-] (magistrska_timotej_gaspar.lot)
-\tf@lot=\write7
+] (magistrska_timotej_gaspar.lof)
+\tf@lof=\write6
  [9]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -749,14 +759,23 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [10
 
-] (magistrska_timotej_gaspar.lof)
-\tf@lof=\write8
+] (magistrska_timotej_gaspar.lot)
+\tf@lot=\write7
  [11]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [12
+
+] (magistrska_timotej_gaspar.lof)
+\tf@lof=\write8
+ [13]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[14
 
 ] (magistrska_timotej_gaspar.lof)
 \tf@lof=\write9
@@ -790,7 +809,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 ]
   2.
 (Slike/pa10-drawing.tex
-<./Slike/pa10-drawing.png, id=67, 517.935pt x 595.47469pt>
+<./Slike/pa10-drawing.png, id=74, 517.935pt x 595.47469pt>
 File: ./Slike/pa10-drawing.png Graphic file (type png)
 
 <use ./Slike/pa10-drawing.png>
@@ -802,7 +821,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [8 <./Slike/pa10-drawing.png>] (Slike/pa10-dh.tex
-<./Slike/pa10-dh.png, id=81, 676.77844pt x 255.95625pt>
+<./Slike/pa10-dh.png, id=87, 676.77844pt x 255.95625pt>
 File: ./Slike/pa10-dh.png Graphic file (type png)
 
 <use ./Slike/pa10-dh.png>
@@ -859,62 +878,95 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [15
 
 ]
+(Slike/pa10-servocontroller.tex
+<./Slike/pa10-servocontroller.png, id=114, 1028.34187pt x 536.0025pt>
+File: ./Slike/pa10-servocontroller.png Graphic file (type png)
+
+<use ./Slike/pa10-servocontroller.png>
+Package pdftex.def Info: ./Slike/pa10-servocontroller.png used on input line 3.
+
+(pdftex.def)             Requested size: 412.56496pt x 215.04332pt.
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (12.62668pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/12 16    \OT1/cmr/m/sl/12 ARCNET - UDP streznik za komunikacijo s
+ krmilnikom robota ter senzorjem sile
+ []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[16] (Slike/control_mode.tex
-<./Slike/control_mode.png, id=111, 1063.72406pt x 534.49687pt>
+[16 <./Slike/pa10-servocontroller.png>]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[17] (Slike/control_mode.tex
+<./Slike/control_mode.png, id=123, 1063.72406pt x 534.49687pt>
 File: ./Slike/control_mode.png Graphic file (type png)
 
 <use ./Slike/control_mode.png>
 Package pdftex.def Info: ./Slike/control_mode.png used on input line 2.
 (pdftex.def)             Requested size: 412.56496pt x 207.30298pt.
 )
+Overfull \hbox (12.62668pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/12 18    \OT1/cmr/m/sl/12 ARCNET - UDP streznik za komunikacijo s
+ krmilnikom robota ter senzorjem sile
+ []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[17]
+[18]
+Underfull \vbox (badness 1024) has occurred while \output is active []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[18 <./Slike/control_mode.png>]
-  4.
+[19 <./Slike/control_mode.png>]
+Overfull \hbox (12.62668pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/12 20    \OT1/cmr/m/sl/12 ARCNET - UDP streznik za komunikacijo s
+ krmilnikom robota ter senzorjem sile
+ []
 
-Underfull \vbox (badness 1062) has occurred while \output is active []
 
- [19
-
-]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [20]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
+  4.
 
-[21]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
+Underfull \vbox (badness 1062) has occurred while \output is active []
 
-[22
+ [21
 
 ]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[22]
   5.
 
-LaTeX Warning: Reference `sec:servo' on page 23 undefined on input line 473.
+LaTeX Warning: Reference `sec:servo' on page 23 undefined on input line 492.
 
 (BlockDiagrams/vel_to_ang.tex)
 Underfull \vbox (badness 1874) has occurred while \output is active []
 
- [23]
+ [23
 
-LaTeX Warning: Reference `sec:dh' on page 24 undefined on input line 500.
+]
+
+LaTeX Warning: Reference `sec:dh' on page 24 undefined on input line 519.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -928,7 +980,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [25]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 554.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 573.
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -984,7 +1036,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [36
 
 ] [37]
-Underfull \hbox (badness 10000) in paragraph at lines 54--57
+Underfull \hbox (badness 10000) in paragraph at lines 72--75
 []\OT1/cmr/m/n/12 A. Pen-na-run, ``Li-nux ARC-net HOWTO.'' Do-se-gljivo:
  []
 
@@ -1043,12 +1095,15 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 18119 strings out of 493671
- 354893 string characters out of 3145458
- 469188 words of memory out of 3000000
- 21038 multiletter control sequences out of 15000+200000
+ 18121 strings out of 493671
+ 355094 string characters out of 3145458
+ 469262 words of memory out of 3000000
+ 21037 multiletter control sequences out of 15000+200000
  14123 words of font info for 54 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  55i,12n,67p,3304b,730s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1066,9 +1121,9 @@ y6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Pr
 ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (60 pages, 434199 bytes).
+Output written on magistrska_timotej_gaspar.pdf (62 pages, 467806 bytes).
 PDF statistics:
- 269 PDF objects out of 1000 (max. 8388607)
+ 278 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

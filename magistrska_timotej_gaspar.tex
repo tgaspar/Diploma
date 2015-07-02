@@ -121,7 +121,7 @@ Podjetje Mitsubishi Heavy Industries je leta 1992 izdelalo prvega katalogiranega
 %Izraz antropomorfnost izhaja iz dveh grških besed \textit{antropo} - èlovek, \textit{morphe} - oblika. 
 Znaèilnost takih robotov je spretnost saj so vsi sklepi rotacijski \cite{siciliano_robot}.
 
-Robotska roka PA-10 tehta 36 kg in ima nosilnost 10 kg. Servo motorji v sklepih se napajajo preko izmeniène napetosti. Prenosi med v sklepih so realizirani z mehanskim sistemom harmonic drive. Proizvajalec navaja, da se lahko bazo robota pritrdi v katerokoli lego. To pomeni, da se ga lahko fiksira bodisi na tla, na steno ali na strop. Robota PA-10 odlikuje relativno majhna konstrukcija, enostavno rokovanje (menjava konfiguracije) ter odprtost njegovega krmilnika. Prav ti razlogi so povod, da je mnogo insitituciji vzelo tega robota kot ekperimentalni sistem za razvijanje raznih algoritmov vodenja ali identificiranja dinamiènih parametrov (\cite{voung_pa10}, \cite{aalst_pa10}, \cite{rodrigo_pa10},\cite{petric_nevronska}).
+Robotska roka PA-10 tehta 36 kg in ima nosilnost 10 kg. Servo motorji v sklepih se napajajo preko izmeniène napetosti. Prenosi med v sklepih so realizirani z mehanskim sistemom \textit{harmonic drive}. Proizvajalec navaja, da se lahko bazo robota pritrdi v katerokoli lego. To pomeni, da se ga lahko fiksira bodisi na tla, na steno ali na strop. Robota PA-10 odlikuje relativno majhna konstrukcija, enostavno rokovanje (menjava konfiguracije) ter odprtost njegovega krmilnika. Prav ti razlogi so povod, da je mnogo insitituciji vzelo tega robota kot eksperimentalni sistem za razvijanje raznih algoritmov vodenja ali identificiranja dinamiènih parametrov (\cite{voung_pa10}, \cite{aalst_pa10}, \cite{rodrigo_pa10},\cite{petric_nevronska}).
 
 \input{./Slike/pa10-drawing.tex}
 
@@ -147,7 +147,7 @@ Z množenjem homogenih transformacijskih matrik posameznih sklepov med seboj se l
 \end{equation}
 
 
-V homogeni transformacijski matriki \thom so $\textit{a}_i$, $\alpha_i$, $d_i$ in $\varTheta$ parametri tako imenovaneha Denavit - Hartenberg sistema opisa relacij med razliènimi koordinatnimi sistemi. Sklicujoè na sliko \ref{fig:pa10-dh} se opiše parametre kot:
+V homogeni transformacijski matriki \thom so $\textit{a}_i$, $\alpha_i$, $d_i$ in $\varTheta$ parametri tako imenovanega Denavit - Hartenberg sistema opisa relacij med razliènimi koordinatnimi sistemi. Sklicujoè na sliko \ref{fig:pa10-dh} se opiše parametre kot:
 
 \input{./Slike/pa10-dh.tex}
 
@@ -184,7 +184,7 @@ Zgornje parametre se za primer robota PA-10 definira s pomoèjo dokumentacije \ci
   \label{table:dh_params} 
 \end{table}
 
-Opis lege vrha robota se da skrajšati in zapisati z minimalnim številom koordinat. Iz matrike homogene transofrmacije je mogoèe izpisati tri koordinate, ki opisujejo pozicijo vrha robota in tri koordinate, ki opisujejo njegovo orientacijo. Pozicija se enostavno izpiše iz prvih treh vrstic zadnjega stolpca. Za zapis orientacije pa se je potrebno sklicati na Eulerjeve kote. Prvi trije stolpci in prve tri vrstice v matriki homogene transformacije opisujejo spremembo orientacije. Èe omenjeno podmatriko zapišemo kot
+Opis lege vrha robota se da skrajšati in zapisati z minimalnim številom koordinat. Iz matrike homogene transformacije je mogoèe izpisati tri koordinate, ki opisujejo pozicijo vrha robota in tri koordinate, ki opisujejo njegovo orientacijo. Pozicija se enostavno izpiše iz prvih treh vrstic zadnjega stolpca. Za zapis orientacije pa se je potrebno sklicati na Eulerjeve kote. Prvi trije stolpci in prve tri vrstice v matriki homogene transformacije opisujejo spremembo orientacije. Èe omenjeno podmatriko zapišemo kot
 
 \begin{equation}
 \textbf{R} = 
@@ -201,7 +201,7 @@ lahko definiramo tri Eulerjeve kote na sledeè naèin
 	\vartheta = \arctan_2(-r_{31},\sqrt{r_{32}^2 + r_{33}^2}), 
 	\psi = \arctan_2(-r_{32},-r_{33}).
 \end{equation}
-Z združitvijo treh koordinat za opis opizcije in treh koordinat za opis orientacije se lahko definira vektor, ki opisuje neko toèko v prostoru baze robota:
+Z združitvijo treh koordinat za opis pozicije in treh koordinat za opis orientacije se lahko definira vektor, ki opisuje neko toèko v prostoru baze robota:
 
 \begin{equation}
 	\textbf{x} =
@@ -209,13 +209,13 @@ Z združitvijo treh koordinat za opis opizcije in treh koordinat za opis orientac
 		x & y & z & \varphi & \vartheta & \psi \\
 	\end{array} \right]^T.
 \end{equation}
-Vektor $p$ se imenuje tudi vekor zunanjih koordinat. Sedaj je mogoèe opisati enaèbo direktne kinematike kot funkcijo $\textbf{q}$:
+Vektor $p$ se imenuje tudi vektor zunanjih koordinat. Sedaj je mogoèe opisati enaèbo direktne kinematike kot funkcijo $\textbf{q}$:
 
 \begin{equation}
 	\textbf{x} = \textbf{k}(\textbf{q}).
 \end{equation}
 
-Funkcija $\textbf{k}(\textbf{q})$ je vektorska funkcija notranjih koordinat, v katerih so zajete kinematiène enaèbe pozicije in orientacijne mehanizma. Problem direktne kinematike je pri serijskih mehanizmih enostavno rešljiv in ima eno rešitev \cite{lenarcic_robotmeh}.
+Funkcija $\textbf{k}(\textbf{q})$ je vektorska funkcija notranjih koordinat, v katerih so zajete kinematiène enaèbe pozicije in orientacije mehanizma. Problem direktne kinematike je pri serijskih mehanizmih enostavno rešljiv in ima eno rešitev \cite{lenarcic_robotmeh}.
 
 Dodatno je potrebno še opisati kakšna je hitrost vrha robota v odvisnosti od hitrosti v sklepov. V ta namen se definira Jacobijeva matrika, ki predstavlja parcialne odvode zunanjih koordinat po notranjih 
 
@@ -274,7 +274,7 @@ c_{i,j,k} = \frac{1}{2}(\frac{\partial b_{ij}}{\partial q_k} + \frac{\partial b_
 \end{equation}
 Christoffelovi simboli in dodatno velja še $i,j,k = 1, \dots ,7$.
 
-Vektor $\mathbf{g}(\mathbf{q})$ nosi podatke o vplivu gravitacijskega pospeška na posamezne segmente robota. Za $g_i$ velja, da predstavlja navor proizveden v sklepu maniuplatorja \textit{i} zaradi trenutne konfiguracije \cite{siciliano_robot}. Posamezen èlen vektorja  $\mathbf{g}(\mathbf{q})$ je podan kot
+Vektor $\mathbf{g}(\mathbf{q})$ nosi podatke o vplivu gravitacijskega pospeška na posamezne segmente robota. Za $g_i$ velja, da predstavlja navor proizveden v sklepu manipulatorja \textit{i} zaradi trenutne konfiguracije \cite{siciliano_robot}. Posamezen èlen vektorja  $\mathbf{g}(\mathbf{q})$ je podan kot
 
 \begin{equation}
  g_i = \sum_{i=j}^{7} (-m_i \mathbf{g}_0(\frac{\partial}{\partial q_j}\mathbf{T_i^0})^T\textbf{r}_i),
@@ -284,22 +284,22 @@ kjer je $\textbf{g}_0 $ vektor, ki vsebuje konstanto gravitacijskega pospeška $\
 
 Vektor $\mathbf{F}_f$ opisuje vpliv trenja. Vektor zajema tako Coulombovo trenje kot tudi viskozno trenje. Posamezni èleni vektorja, $f_i$ so prispevki trenja v $i$-tem sklepu. Podrobneje se bo ta prispevek obravnaval v poglavju \ref{chap:invdyn}.
 
-Vektor $\textbf{h}_o$ vsebuje sile in navore, ki delujejo na vrh robota v oblki $\textbf{h}_o = \begin{bmatrix} f_x & f_y & f_x & m_x & m_y & m_z \end{bmatrix}$. Prvi trije èleni vektorja opisujejo sile, drugi trije pa navore.
+Vektor $\textbf{h}_o$ vsebuje sile in navore, ki delujejo na vrh robota v obliki $\textbf{h}_o = \begin{bmatrix} f_x & f_y & f_x & m_x & m_y & m_z \end{bmatrix}$. Prvi trije èleni vektorja opisujejo sile, drugi trije pa navore.
 
 \section{Redundatnost robota PA-10} \label{sec:redundant-pa10}
 
-Kot je bilo opisano ima robotski mehanizem PA-10 sedem sklepov oz. sedem stopenj prostosti ($n = 7$). Takim mehanizmom pravimo da so kinematièno redundatni v kolikor je njihova naloga definirana z $m$ stopnjami prostosti in velja neenakots $n > m$. Industrijski roboti imajo obièajno šest stopenj prostosti, ker je v veèini primerih opisana naloga v prostoru naloge šest dimenzionalna. Èe bi veljalo \textit{n} = \textit{m} bi matrika \textbf{J} bila kvadratna. Posledièno bi je njen inverz možno enostavno definirati in velja relacija
+Kot je bilo opisano ima robotski mehanizem PA-10 sedem sklepov oz. sedem stopenj prostosti ($n = 7$). Takim mehanizmom pravimo da so kinematièno redundantni v kolikor je njihova naloga definirana z $m$ stopnjami prostosti in velja neenakost $n > m$. Industrijski roboti imajo obièajno šest stopenj prostosti, ker je v veèini primerih opisana naloga v prostoru naloge šest dimenzionalna. Èe bi veljalo \textit{n} = \textit{m} bi matrika \textbf{J} bila kvadratna. Posledièno bi je njen inverz možno enostavno definirati in velja relacija
 \begin{equation}
 	\dot{\textbf{q}} = \textbf{J}^{-1} \dot{\textbf{x}}.
 \end{equation}
 Ker pa velja $ n > m$ pa matrika \textbf{J} ni veè kvadratna in njen inverz ne obstaja. V tem primeru je mehanizem redundanten za dano nalogo in je število rešitev inverzne kinematike neskonèno.
 
-V tem primeru obstajajo neke spremembe notranjih koordinat, ki ne vplivajo na premikanje vrha robota. Opis inverzne kinematike z uporabo generaliziranega pseudo inverza Jacobijeve matrike $\textbf{J}^*$ se lahko zapiše kot 
+V tem primeru obstajajo neke spremembe notranjih koordinat, ki ne vplivajo na premikanje vrha robota. Opis inverzne kinematike z uporabo generaliziranega pseudo inverzna Jacobijeve matrike $\textbf{J}^*$ se lahko zapiše kot 
 
 \begin{equation} \label{eq:inv_dyn_null}
 	\dot{\mathbf{q}} = \mathbf{J}^* \dot{\mathbf{p}} + \mathbf{N} \dot{\mathbf{q}}
 \end{equation}
-Matrika $\mathbf{N}$ procjicira vektorje $\dot{\mathbf{q}}$ v nièelni prostor matrike \textbf{J} in je definirana kot $\mathbf{N} = (\mathbf{I} - \mathbf{J}^{\#}\mathbf{J})$. Za izpeljavo generaliziranega pseudoinverza matrike $\mathbf{J}^*$ se v veèini primerov uporablja Moore-Penroseov pseudoinvez, ki se ga dodatno uteži z utežnostno matriko \textbf{A}:
+Matrika $\mathbf{N}$ projicira- vektorje $\dot{\mathbf{q}}$ v nièelni prostor matrike \textbf{J} in je definirana kot $\mathbf{N} = (\mathbf{I} - \mathbf{J}^{\#}\mathbf{J})$. Za izpeljavo generaliziranega pseudoinverza matrike $\mathbf{J}^*$ se v veèini primerov uporablja Moore-Penroseov pseudoinvez, ki se ga dodatno uteži z utežnostno matriko \textbf{A}:
 
 \begin{equation} \label{eq:pseudoinv_def}
 \mathbf{J}^* = \mathbf{J}^{\#} = \mathbf{A}^{-1} \mathbf{J}^T (\mathbf{J}  \mathbf{J}^T)^{-1}.
@@ -313,7 +313,7 @@ Mogoèe tudi izpeljat enaèbi, ki prikazuje relacijo med pospeški v sklepih in pos
 Enaèbo \ref{eq:inv_dyn_null} je mogoèe rezširiti z definiranjem dodatne naloge. Sekundarna naloga, naj bo definirana kot
 
 \begin{equation}
-\dot{\mathbf{q_s}} = \mathbf{J}^{\#} \dot{\mathbf{p}_s}.
+\dot{\mathbf{q_s}} = \mathbf{J}^{\#} \dot{\mathbf{p}_s}.	
 \end{equation}
 Vstavi se to v enaèbo \ref{eq:inv_dyn_null} in dobi razširjeno enaèbo za inverzno kinematiko
 
@@ -369,37 +369,49 @@ Vstavi se to v enaèbo \ref{eq:inv_dyn_null} in dobi razširjeno enaèbo za inverzn
 %%%%V poglavjih, ki sledijo se bo predpostavljalo, da je sekundarna naloga neupoštevana in kadarkoli bo zapisana Jacobijeva matrika se bo predpostavilo, da gre za pseudoinverz te matrike. 
 %END_FOLD
 
-\chapter{Servo Krmilnik} \label{chap:servo}
-%*********************** SERVO KRMILNIK ********************************
-Proizvajalec ob robotskem mehanizmu dostavi tudi krmilnik. V krmilniku so štiri loèeni krmilniki za servo motorje. Vsak servo krmilnik krmili servo motorja, razen enega. Krmilnik omogoèa vodenje na dva naèina. Prvi naèin predvideva, da motorje krmilimo navorno, drugi pa hitrostno. Razlika je tudi v regulatorjih. Navorno krmiljenje je realizirano z analognim P regulatorjem toka, hitrostna regulacija pa je realizirana z digitalnim PI regulatorjem s frekvenco približno 1500 Hz.
+%*************************************************************** ARCNET - UDP STREŽNIK ***************************************************************
+\chapter{ARCNET - UDP strežnik za komunikacijo s krmilnikom robota ter senzorjem sile} \label{chap:udp-arcnet-server}
 
-Na zadnji strani krmilinka je stikalo s katerim lahko preklopimo med dvema naèina delovanja: "Teach Mode" ter "Run mode". Ko je krmilnik nastavljen na "Teach Mode", so hitrosti v sklepih omejene tako, da se lahko vrh robota premika s maksimalno hitrostjo 250 mm/s.
+V prejšnjem poglavju je bil opisan kinematièni in dinamièen model robotskega mehanizma. V sklepih robota PA-10 so servo motorji na izmenièni tok. Krmiljenje motorjev se izvaja v krmilniku, ki ga proizvajalec priloži ob nakupu robota. Krmilnik omogoèa vodenje servo motorjev bodisi preko referenène hitrosti ali referenènega navora. V krmilniku je vgrajen ARCNET vmesnik, ki omogoèa priklop krmilnika v ARCNET omrežje. Na ta naèin je omogoèena komunikacija s krmilnikom \cite{pa10-manual}.
 
-Ob vžigu krmilnika se parametri za vodenje robota naložijo iz EEPROM tabele v RAM. Med temi parametri so tudi ojaèanje proporcionalnega ter integracijskega dela regulatorja, omejitve posameznih stopenj, razmerje prenosa zobnikov, itd.
+Z uspešnim vodenjem robota brez taktilne povratne zanke je mogoèe izvesti mnogo razliènih nalog. V zgornjem poglavju je bil opisan dinamièen model robota. S poznavanjem vseh parametrov je v teoriji mogoèe izraèunati sile, ki delujejo na vrh robota $\textbf{h}_o$. V praksi se izkaže, da te parametre ni vedno mogoèe dovolj natanèno definirati. Iz teh razlogov se vgradi senzor sil in navorov med vrhom robota ter prijemalom (\cite{almassri_pressure_sensor}, \cite{mihelj_vodenje}, \cite{eppinger_force_dynamics}). Senzor sil in navorov JR3 je bil uporabljen pri izvedbi tega dela.
 
-Referenène navore ali hitrosti v sklepih na servo krmilniku se nastavljajo preko zunanjega vmesnika. Krmilnik ima ARCNET vmesnik, ki podpira serijsko komunikacijo po ARCNET protokolu. Krmilink ima loèen konektor za vhod (Rx) ter izhod (Tx). Uporabljena so optièna vodila.
-Za komunikacijo s servo krmilnikom je bil v namen tega dela narejen vmesnik, ki je podrobneje opisan v poglavju \ref{sec:arcnet}.
+Želja po združitvi vodenja robota in merjenja sil je privedla do tega, da so avtorji tega dela naredili strežnik ki to omogoèa. Dodaten razlog je bil to, da prejšnja programska oprema za komunikacijo s servo krmilnikom, ni zadošèala èasovnemu kriteriju delovanja s frekvenco 500 Hz.
 
 
-\subsection{Komunikacija z ARCNET vmesnikom} \label{sec:arc_drive}
+%****************************************************** SERVO KRMILNIK ***************************************************************
+\section{Krmilnik servo motorjev robota} \label{sec:servo-drive}
 
-ArcNET vmesnik na  krmilniku skrbi za komunikacijo med servo krmilniki ter visokonivojskim vmesniku. Dovoli hitrost komunikacije do 5 Mb/s Njegova naloga je interpretirati dobljene pakete, primerno nastaviti parametre na servo krmilniku ter posredovati primeren odgovor višjenivojskemu vmesniku.
-Ko višjenivojski vmesnik ne pošilja nobenih ukazov je ARCNET vmesnik v èakanju. V tem stanju èaka na primerno sestavljen paket. Vsak paket se zaène z veliko tiskano èrko zapisano v 8-bitnem ASCII formatu. Z razliènimi èrkami lahko izberemo razlièna stanja oz. naèine delovanja ARCNET vmesnika:
+V prvem poglavju je bilo zapisano, da robota PA-10 med drugim odlikuje prenosnost. To se velja tako za samo robotsko roko kot tudi za krmilnik servo motorjev. Krmilnik z ohišjem ima dimenzije $262 \times 331 \times 396$ mm in tehta 22 Kg. Za sprednji strani krmilnika sta dva zraènika, na zadnji pa so prikljuèki in stikala.
+
+\input{./Slike/pa10-servocontroller.tex}
+
+V ohišju servo krmilnika so vgrajeni štirje krmilniki servo motorjev. Vsak servo krmilnik krmili dva servo motorja, razen enega. Krmilniki omogoèajo vodenje motorjev na dva naèina. Prvi naèin je navorno, drugi pa hitrostno. Razlièna vodenja sta v krmilnikih drugaèe realizirana. Navorno vodenje je realizirano z analognim P regulatorjem toka, hitrostna regulacija pa je realizirana z digitalnim PI regulatorjem s frekvenco približno 1500 Hz.
+
+Krmilnik vsebuje dva pomnilnika. Delovni pomnilnik (RAM) in nastavitveni pomnilnik (EEPROM). V EEPROM tabeli so zapisani razni parametri za nastavitve in vodenje servo krmilnikov. Ob vžigu krmilnika se parametri naložijo iz EEPROM tabele v RAM. Med temi parametri so tudi ojaèanje proporcionalnega ter integracijskega dela regulatorja, omejitve posameznih stopenj, razmerje prenosa zobnikov, itd.
+
+\section{ARCNET vmesnik}\label{sec:arc_drive}
+
+Referenène navore in hitrosti se na krmilniku nastavlja na preko zunanjega vmesnika, ki je povezan na isto ARCNET omrežje kot servo krmilnik. Prikljuèitev na ARCNET omrežje servo krmilniku omogoèa v ohišje vgrajen ARCNET modul. ARCNET je omrežje, ki vkljuèuje podatkovni in fizièni nivo po OSI modelu. Njegova prednost pred Ethernet omrežjem je velika stopnja deterministiènosti \cite{arc_tutorial}. Krmilnik ima dva prikljuèka za optièna 
+vodila, vhod (Rx) ter izhod (Tx). Zgornja meja hitrosti komunikacije za robota PA-10 je 5 Mb/s \cite{pa10-manual}.
+
+ARCNET komunikacija je serijska in paketno zastavljena. Za komunikacijo z modulom je potrebno vsak paket primerno sestaviti. Po \cite{pa10-manual} je potrebno paket zaèeti z naslovom modula, sledi bajt, ki oznaèuje veliko èrko po ASCII formatu, v nadaljevanju. ARCNET modul dodatno vsebuje logiko za preklapljanje med razliènimi stanji. Med stanji preklapljamo s pošiljanjem ustrezne èrke v paketu. Razlièna stanja pa so:
 
 
 \begin{itemize}
-	\item Izpis EEPROM tabele
-	\item Vpis v EEPROM tabelo
-	\item Vpis v RAM tabelo
-	\item Kopiranje iz RAM v EEPROM tabelo
-	\item Postavitev kotov na nièelno vrednost	
-	\item Sporstitev zavor
-	\item Vodenje sklepov
+	\item Izpis EEPROM tabele,
+	\item Vpis v EEPROM tabelo,
+	\item Vpis v RAM tabelo,
+	\item Kopiranje iz RAM v EEPROM tabelo,
+	\item Postavitev kotov na nièelno vrednost,	
+	\item Sporstitev zavor,
+	\item Vodenje sklepov,
+	\item Èakanje
 \end{itemize}
 
-Tako lahko uporabnik poljubno spremeni razne parametre, ki se uporabljajo za vodenje robota. Možno je na primer spremeniti ojaèanja PI regegulatorja, vendar se teh funkcionalosti v tem delu ni podrobneje raziskalo saj ni bilo potrebe po tem.
+Ko višje nivojski vmesnik ne pošilja nobenih ukazov je ARCNET vmesnik v èakanju. V tem stanju èaka na primerno sestavljen paket.
 
-V tem delu se je v veèini uporabljalo naèin za vodenje sklepov. Ta naèin se izbere tako, da se ARCNET vmesniku najprej pošlje ukaz, ki se zaène z velikim tiskanim S (ASCII DEC 65), nadaljuje se s pošiljanjem paketov, ki se zaènejo s veliko tiskano èrko C (ASCII DEC 67) ter zakljuèi s tem, da se pošlje paket, ki se zaène z velikim tiskanim E (ASCII 69). Pri tem naèinu delovanja je potrebno posvetiti nekaj pozornosti frekvenci pošiljanja. V kolikor paketi ne pridejo do ARCNET vmesnika v intervalu specificiranem na krmilniku, bo ARCNET vmesnik šel iz tega naèina delovanja nazaj na naèin èakanje.
+V tem delu se je v veèini uporabljalo naèin za vodenje sklepov. Ta naèin se izbere tako, da se ARCNET vmesniku najprej pošlje ukaz, ki se zaène z velikim tiskanim S (ASCII DEC 65), nadaljuje se s pošiljanjem paketov, ki se zaènejo s veliko tiskano èrko C (ASCII DEC 67) ter zakljuèi s tem, da se pošlje paket, ki se zaène z velikim tiskanim E (ASCII 69) (slika \ref{fig:controlmode}). Pri tem naèinu delovanja je potrebno posvetiti nekaj pozornosti frekvenci pošiljanja. V kolikor paketi ne pridejo do ARCNET vmesnika v intervalu specificiranem v EEPROM tabeli na krmilniku, bo vmesnik šel iz tega naèina delovanja nazaj na naèin èakanje.
 
 Paket, ki se zaène s C in nosi podatke o krmiljenju sklepov robota je velik 35 bajtov, 5 za vsak sklep. Prvi bajt je kontrolni in samo prvi trije  biti nosijo podatke o vodenju:
 
@@ -416,9 +428,26 @@ Drugi in tretji bajt nosijo podatek o referenènem navoru na sklepu. Ta podatek b
 
 \section{Senzor sile in navorov - JR3}
 
-Za namene vodenja opisanega v poglavju \ref{chap:admitance} je med vrhom robota ter prijemalom pritrdilo senzor sil JR3. Senzor nam omogoèa merjenje sil in navorov v X, Y in Z oseh. Sensor je narejen iz uporovnih listièev porazdeljenih po notranjosti. Iz specifikacij senzorja \cite{jr3_doc_ext} je razvidno, da uporablja 8 uporovnih listièev. S tem, ko na senzor deluje zunanja sila ali navor, se upornost na uporovnih listièih spremeni proporcionalno s silo.
+Za namene vodenja opisanega v poglavju \ref{chap:admitance} je med vrhom robota ter prijemalom pritrdilo senzor sil JR3. Senzor nam omogoèa merjenje sil in navorov v X, Y in Z oseh. Senzor je narejen iz uporovnih listièev porazdeljenih po notranjosti v obliki križa. Iz specifikacij senzorja \cite{jr3_doc_ext} je razvidno, da uporablja 8 uporovnih listièev. S tem, ko na senzor deluje zunanja sila ali navor, pride do deformacije materjala na katerem so namešèeni uporovni listièi in se upornost na uporovnih listièih spremeni proporcionalno s silo in togostjo senzorja. Sprememba upornosti se izmeri posredno preko spremembe napetosti na AD-pretvorniku, ki je vgrajen v sam senzor. Napetost se pretvori v silo preko množenja s kalibracijsko matriko \textbf{K}. Naj bo $\textbf{h}_{JR3}$ vektor sil, ki delujejo na senzor in naj bo $\mathbf{\omega}_u$ vektor napetosti na AD-pretvorniku. Enaèba za izraèun sil je
 
-Senzor sile JR3 ima v svoji notranjosti poleg uporovnih listièev še AD-pretvornik tako, da iz senzorja pridejo podatki o navoru v digitalnem formatu. Senzor se lahko ž prikljuèi preko 6 ali 8 žiènega kabla na osebni raèunalnik, na katerem je kartica, ki skrbi za digitalno obdelavo signala. Kartice na osebnem raèunalniku so vkljuèene bodisi na ISA ali PCI vodilo, odvisno od izvedbe. Za potrebe tega dela se je uporabljala kartica na ISA vodilu. Na kartici je vezje za digitalno procesiranje signalov. V dokumentaciji kartice \cite{jr3_doc_inst} so opisani trije nizkoprepustni filtri z razliènimi mejnimi frekvencami. V tem delu se je uporabilo filter z mejno frekvenco 500 Hz.
+\begin{equation}
+\textbf{h}_{JR3} = \textbf{K} \mathbf{\omega}_u
+\end{equation}
+
+
+
+Senzor se prikljuèi preko 6 ali 8 žiènega kabla na raèunalniško kartico, ki je bodisi na ISA ali PCI vodilu. Kabel serijsko pošilja podatke o izmerjenih silah na kartico. Kartica vsebuje vezje za digitalno obdelavo signalov. V dokumentaciji kartice \cite{jr3_doc_inst} so opisani trije nizkoprepustni filtri z razliènimi mejnimi frekvencami. V tem delu se je uporabilo filter z mejno frekvenco 500 Hz.
+
+Na raèunalniku, ki se je uporabljal za to delo, je namešèena kartica na vodilu ISA. Ker je standard starejši, je podjetje prenehalo s podporo tega standarda. Kot posledica tega so avtorji tega dela razvili svojo programsko opremo za komunikacijo z notranjimi registri kartice. Osnovne informacije o podatkih do katerih se lahko dostopa po registrih se nahajajo v dokumentaciji \cite{jr3_doc_inst}.
+Dokumentacija navaja, da v kolikor želi uporabnik odèitati vrednost sile ali navora $F$ mora tako prebrati osnovno vrednost $F_s$ na registru imenovanem (\verb|full scale|), jo pomnožiti z vrednostjo $F_f$, ki je na registru izbranega filtra (\verb|current force|). Na zadnje more to vrednost delit s konstanto $K_p$, da pretvori v primerne enote(N ali Nm).
+
+\begin{equation}\label{eq:force_filt}
+F = \frac{F_s  F_f}{K_p}
+\end{equation}
+Ker senzor meri silo in navor v treh smereh je potrebno opraviti izraèun za vsako od izmerjenih velièin potrebno opravit omenjeno operacijo.
+
+
+\section{Strežnik} \label{sec:streznik}
 
 
 %*********************** ARCNET SERVER ********************************
@@ -438,17 +467,6 @@ ifconfig arc0 192.168.1.1
 \end{verbatim}
 Od tukaj dalje lahko uporabnik razvija programsko opremo. V primeru tega dela so avtorji uporabljali programski jezik C. Avtorji tega dela so od tega koraka dalje zaèeli razvijati strežnik za posredovanje ukazov pridobljenih iz UDP omrežja na ARCNET omrežje. UDP omrežje se je uprablilo, ker lahko omogoèa visoke hitrosti prenosa podatkov, hkrati pa omogoèa stabilnost tudi v primeru izguba paketov.
 Avtorji tega dela so razvili strežnik, ki deluje s frekvenco 500 Hz. To se zagotavlja z onemogoèanjem uporabe namizja ter uporabo Linux C funkcije \verb| clock_gettime(clockid_t clk_id, struct timespec *tp);|. Funcija vrne vrednost sistemskega èasa. Z veèkratnim klicom te funkcije lahko vidimo kolko sistemskega èasa je minilo od enega do drugega klica. S tem lahko zagotovimo, da program deluje z neko konstantno frekvenco in zelo majhnim odstopanjem od nje. 
-
-\section{JR3 strežnik}
-
-Senzor sil in navorov JR3 ima se lahko povezuje z osebnim raèunalnikom preko kartice, ki se prikljuèi na vodilo ISA (starejši standard) ter kartice, ki se prikljuèi na vodilo PCI (novejši standard). Na uporabljenem raèunalniku za potrebe tega dela je namešèena kartica na vodilu ISA. Ker je standard starejši je podjetje prenehalo s podporo tega standarda. Kot posledica tega so avtorji tega dela razvili svojo programsko opremo za komunikacijo z notranjimi registri kartice. Osnovne informacije o podatkih do katerih lahko dostopamo po registrih se nahajajo v dokumentaciji \cite{jr3_doc_inst}, ki jo priloži proizvajalec.
-Dokumentacija navaja, da v kolikor želi uporabnik odèitati vrednost sile ali navora Fx mora tako prebrati osnovno vrednost $F_s$ na registru imenovanem (\verb|full scale|), jo pomnožiti z vrednostjo $F_f$, ki je na registru izbranega filtra (\verb|current force|). Na zadnje more to vrednost delit s konstanto $K_p$, da pretvori v prave enote (N ali Nm).
-
-\begin{equation}\label{eq:force_filt}
-F_x = \frac{F_s  F_f}{K_p}
-\end{equation}
-
-Ker senzor meri silo in navor v treh smereh je potrebno opraviti izraèun za vsako dimenzijo posebej. 
 
 
 \section{Združitev ARCNET in JR3 strežnika}

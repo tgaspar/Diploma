@@ -1,5 +1,9 @@
 \begin{thebibliography}{10}
 
+\bibitem{pa10-manual}
+Mitsubishi Heavy Industries, {\em Portable General Purpose Intelligent Arm -
+  Operating Manual}, rev. 1~izd.
+
 \bibitem{mhi_pa10}
 M.~H.~I. Ltd., ``Mitsubishi clean room robot,'' {\em Seminarska naloga}, 2003.
 
@@ -28,10 +32,6 @@ R.~Jamisola, M.~J. Ang, T.~M. Lim, O.~Khatib  in S.~Y. Lim, ``Dynamics
 T.~Petri\v{c} in M.~Munih, ``Kompenzacija trenja in gravitacije na robotu
   mitsubishi pa-10,'' {\em Seminarska naloga}, 2010.
 
-\bibitem{pa10-manual}
-Mitsubishi Heavy Industries, {\em Portable General Purpose Intelligent Arm -
-  Operating Manual}, rev. 1~izd.
-
 \bibitem{lenarcic_robotmeh}
 J.~Lenar\v{c}i\v{c} in T.~Bajd, {\em Robotski mehanizmi}.
 \newblock Ljubljana: Univerza v Ljubljani, Zalo{\v{z}}ba FE in FRI, 2003.
@@ -39,6 +39,24 @@ J.~Lenar\v{c}i\v{c} in T.~Bajd, {\em Robotski mehanizmi}.
 \bibitem{zlajpah_dynamics_red}
 L.~?lajpah, ``Dynamics of internal motion of redundant manipulators,'' {\em
   IEEE}, str.~95 -- 100, 1997.
+
+\bibitem{almassri_pressure_sensor}
+A.~M. Almassri, W.~Z.~W. Hasan, S.~A. Ahmad, A.~J. Ishak, A.~M. Ghazali, D.~N.
+  Talib  in C.~Wada, ``Pressure sensor: State of the art, design, and
+  application for robotic hand,'' {\em Hindawi Publishing Corporation, Jurnal
+  of Sensors}, 2014.
+
+\bibitem{mihelj_vodenje}
+M.~Mihelj, T.~Bajd  in M.~Munih, {\em Vodenje robotov}.
+\newblock Ljubljana: Univerza v Ljubljani, Zalo{\v{z}}ba FE in FRI, 2011.
+
+\bibitem{eppinger_force_dynamics}
+S.~D. Eppinger in W.~P. Seering, ``Three dynamic problems in robot force
+  control,'' {\em IEEE Transactions on Robotics and Automation}, str.~751 --
+  758, 1992.
+
+\bibitem{arc_tutorial}
+Contemporary Controls, {\em ARCNET Tutorial}.
 
 \bibitem{jr3_doc_ext}
 I.~JR3, ``{JR3, Installation manual for force - torque sensors with external
@@ -63,9 +81,5 @@ M.~Mihelj, {\em Vodenje robotov}.
 T.~Bajd, M.~Mihelj, J.~Lenar\v{c}i\v{c}, A.~Stanovnik  in M.~Munih, {\em
   Robotika}.
 \newblock Ljubljana: Univerza v Ljubljani, Zalo{\v{z}}ba FE in FRI, 2008.
-
-\bibitem{mihelj_vodenje}
-M.~Mihelj, T.~Bajd  in M.~Munih, {\em Vodenje robotov}.
-\newblock Ljubljana: Univerza v Ljubljani, Zalo{\v{z}}ba FE in FRI, 2011.
 
 \end{thebibliography}

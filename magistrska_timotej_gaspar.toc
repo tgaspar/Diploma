@@ -4,14 +4,15 @@
 \contentsline {section}{\numberline {2.1}Kinemati\v cni model robota PA-10}{7}
 \contentsline {section}{\numberline {2.2}Dinami\v cen model robota PA-10}{11}
 \contentsline {section}{\numberline {2.3}Redundatnost robota PA-10}{13}
-\contentsline {chapter}{\numberline {3}Servo Krmilnik}{15}
-\contentsline {subsection}{\numberline {3.0.1}Komunikacija z ARCNET vmesnikom}{16}
-\contentsline {section}{\numberline {3.1}Senzor sile in navorov - JR3}{17}
-\contentsline {chapter}{\numberline {4}UDP stre\v znik za komunikacijo s krmilnikom robota ter senzorjem JR3}{19}
-\contentsline {section}{\numberline {4.1}ARCNET stre\v znik}{19}
-\contentsline {section}{\numberline {4.2}JR3 stre\v znik}{20}
-\contentsline {section}{\numberline {4.3}Zdru\v zitev ARCNET in JR3 stre\v znika}{21}
-\contentsline {section}{\numberline {4.4}Razlogi za stre\v znik}{21}
+\contentsline {chapter}{\numberline {3}ARCNET - UDP stre\v znik za komunikacijo s krmilnikom robota ter senzorjem sile}{15}
+\contentsline {section}{\numberline {3.1}Krmilnik servo motorjev robota}{16}
+\contentsline {section}{\numberline {3.2}ARCNET vmesnik}{17}
+\contentsline {section}{\numberline {3.3}Senzor sile in navorov - JR3}{18}
+\contentsline {section}{\numberline {3.4}Stre\v znik}{20}
+\contentsline {chapter}{\numberline {4}UDP stre\v znik za komunikacijo s krmilnikom robota ter senzorjem JR3}{21}
+\contentsline {section}{\numberline {4.1}ARCNET stre\v znik}{21}
+\contentsline {section}{\numberline {4.2}Zdru\v zitev ARCNET in JR3 stre\v znika}{22}
+\contentsline {section}{\numberline {4.3}Razlogi za stre\v znik}{22}
 \contentsline {chapter}{\numberline {5}Admitan\v cno krmiljenje}{23}
 \contentsline {section}{\numberline {5.1}Vodenje preko inverzne kinematike}{23}
 \contentsline {subsection}{\numberline {5.1.1}Vodenje v notranjih koordinatah}{23}

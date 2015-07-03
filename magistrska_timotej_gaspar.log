@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  2 JUL 2015 15:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  3 JUL 2015 12:26
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -725,10 +725,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [4
 
-] (magistrska_timotej_gaspar.toc
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5]
+] (magistrska_timotej_gaspar.toc [5]
 Underfull \vbox (badness 1152) has occurred while \output is active []
 
 
@@ -942,100 +939,121 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[20]
+[20] (Tabele/udp-command.tex
+Overfull \hbox (23.43582pt too wide) in paragraph at lines 5--15
+ [][] 
+ []
+
+)
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[21]
+Overfull \hbox (12.62668pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/12 22    \OT1/cmr/m/sl/12 ARCNET - UDP streznik za komunikacijo s
+ krmilnikom robota ter senzorjem sile
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[22]
   4.
 
 Underfull \vbox (badness 1062) has occurred while \output is active []
 
- [21
+ [23
 
 ]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[22]
+[24]
   5.
 
-LaTeX Warning: Reference `sec:servo' on page 23 undefined on input line 492.
+LaTeX Warning: Reference `sec:servo' on page 25 undefined on input line 508.
 
 (BlockDiagrams/vel_to_ang.tex)
 Underfull \vbox (badness 1874) has occurred while \output is active []
 
- [23
+ [25
 
 ]
 
-LaTeX Warning: Reference `sec:dh' on page 24 undefined on input line 519.
+LaTeX Warning: Reference `sec:dh' on page 26 undefined on input line 535.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[24] (BlockDiagrams/x_to_vel.tex)
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[25]
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 573.
-
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[26]
+[26] (BlockDiagrams/x_to_vel.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [27]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 589.
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[28
+[28]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
 
-]
-  6.
 [29]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[30] (BlockDiagrams/x_to_tau.tex)
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
+[30
 
+]
+  6.
 [31]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[32]
-  7.
-[33
+[32] (BlockDiagrams/x_to_tau.tex)
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
 
-]
+[33]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [34]
-  8.
-(magistrska_timotej_gaspar.bbl [35
+  7.
+[35
 
 ]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[36
+[36]
+  8.
+(magistrska_timotej_gaspar.bbl [37
 
-] [37]
+]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[38
+
+] [39]
 Underfull \hbox (badness 10000) in paragraph at lines 72--75
 []\OT1/cmr/m/n/12 A. Pen-na-run, ``Li-nux ARC-net HOWTO.'' Do-se-gljivo:
  []
@@ -1045,18 +1063,9 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[38] [39
+[40] [41
 
 ]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[40
-
-]
-  A.
-[41]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1064,7 +1073,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [42
 
 ]
-  B.
+  A.
 [43]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -1073,7 +1082,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [44
 
 ]
-  C.
+  B.
 [45]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -1082,16 +1091,25 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [46
 
 ]
-  D.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [47]
+  C.
+[47]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[48] (magistrska_timotej_gaspar.aux)
+[48
+
+]
+  D.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [49]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[50] (magistrska_timotej_gaspar.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1100,30 +1118,31 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18121 strings out of 493671
- 355094 string characters out of 3145458
- 469262 words of memory out of 3000000
- 21037 multiletter control sequences out of 15000+200000
- 14123 words of font info for 54 fonts, out of 3000000 for 9000
+ 18133 strings out of 493671
+ 355253 string characters out of 3145458
+ 469273 words of memory out of 3000000
+ 21042 multiletter control sequences out of 15000+200000
+ 14968 words of font info for 57 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 55i,12n,67p,3304b,730s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,12n,67p,3304b,716s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTe
 X/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr1
-2.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Pro
-gram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cms
-y6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Pr
-ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (62 pages, 467806 bytes).
+0.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Pro
+gram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmsl12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Pr
+ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmtt12.pfb>
+Output written on magistrska_timotej_gaspar.pdf (64 pages, 489993 bytes).
 PDF statistics:
- 278 PDF objects out of 1000 (max. 8388607)
+ 288 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

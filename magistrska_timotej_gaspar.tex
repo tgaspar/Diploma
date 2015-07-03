@@ -449,6 +449,25 @@ Ker senzor meri silo in navor v treh smereh je potrebno opraviti izraèun za vsak
 
 \section{Strežnik} \label{sec:streznik}
 
+Proizvajalec Mitsubishi Heavy Industries je za upravljanje in programiranje robota pripravil posebno programsko opremo. Iz dokumentacije je razvidno kaj je vse njihova programska oprema omogoèala. Težava pa je, da omenjena programska oprema ni veè dostopna. Proizvajalec je s prodajo robotov PA-10 prenehal v letu 2009, s podporo pa v marcu 2014 (vir: osebno dopisovanje s proizvajalcem). Iz tega razloga je nastala potreba, po lastnem programu, ki bi lahko komuniciral s servo krmilnikom.
+
+Pred zaèetkom izdelave lastnega programskega orodja se je definiralo dve zahtevi. Prva je bila, da program deluje kar se le da hitro in kar se le da v realnem èasu. To izhaja iz vidika stabilnosti vodenja. Avtor v \cite{mihelj_hapt} namreè navaja, da vzorèni èas moèno vpliva na stabilnost vodenja robota v kontaktu z okolico. Veèja kot je vzorèna frekvenca veèja je lahko togost okolice s katero je robot v kontaktu.
+
+Druga zahteva pa je bila enostavna uporaba. Želeli smo, da uporaba programske opreme, ki jo naredimo, zahteva èim manj predznanja o komunikacijskih protokolih po ARCNET mreži. Hkrati pa mora program omogoèati neko mero svobode pri realizaciji visoko nivojskega vodenja.
+
+Dodatno se je kasneje pojavila še želja, da bi programska oprema omogoèala tudi posredovanje meritev izvedenih na senzorju sile JR3. Tako bi nastal nek program, ki bi komuniciral tako s servo kontrolerjem kot s ISA kartico za senzor sile JR3.
+
+Naštete zahteve so privedle do izbire primernega operacijskega sistema in programskega jezika. Tako je bil razvit strežnik v programskem jeziku C na operacijskem sistemu Linux. Strežnik deluje kot posrednik med dvema razliènima omrežjema, ARCNET in UDP.  V nadaljevanju bo opisana zgradba tega strežnika, delovanje ter uporaba.
+
+\subsection{Delovanje programa}
+
+Kot povedano, je nastali program strežnik, kar pomeni, da deluje na klientovo zahtevo. V tem primeru je klient kakršen koli program, ki lahko pošilja UDP pakete po Ethernet omrežju. Klient mora tako formirati ustrezen UDP paket za zaèetek komunikacije. Paket je velik 99 bajtov. Vsebina paketa pa je opisana v tabeli \ref{table:udp-command}.
+
+\input{./Tabele/udp-command.tex}
+
+Kontrolni bajt, referenèni navori ter hitrosti za posamezen motor se posredujejo naprej na krmilnik robota. Ostali bajti pa so namenjeni zagotavljanju varnosti med komunikacijo. Referenèni navori so v Nm, hitrosti pa v rad/s.
+
+S prispelim UDP paketom strežnik pretvori dane navore in hitrosti v format, ki je naveden v dokumentaciji in opisan v \ref{sec:arc_drive}. Kontrolni bajti za posamezne motorje ostanejo nespremenjeni in se posredujejo enaki kot so prispeli. Strežnik prispele podatke zapakira v paket naveden v tabeli \ref{table:arcnet-command}.
 
 %*********************** ARCNET SERVER ********************************
 \chapter{UDP strežnik za komunikacijo s krmilnikom robota ter senzorjem JR3} \label{sec:arcnet}

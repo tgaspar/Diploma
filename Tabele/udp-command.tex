@@ -1,0 +1,17 @@
+
+\begin{table}[h]
+	\centering
+	\begin{footnotesize}
+		\begin{tabular}{|c c c c|}
+		Zaporedna \v{S}tevilka bajta & Opis podatka & Tip podatka &  Koli\v{c}ina\\ \hline
+		0 & Kontrolni bajt za posamezen motor & char & $\times 7$ \\
+		6 & Referen\v{c}ni navor za posamezen motor & signed short int & $\times 7$ \\
+		20 & Referen\v{c}na hitrost za posamezen motor & signed short int & $\times 7$ \\
+		34 & Rezervirani / neuporabljeni bajti & char & $\times 62$ \\
+		96 & \v{S}tartna sekvenca & char & $\times 1$\\
+		97 & Trenuten \v{c}as na klientu & float & $\times 1$\\ \hline
+		\end{tabular}
+	\end{footnotesize}
+	\caption{Opis UDP paketa.}
+	\label{table:udp-command}
+\end{table}

@@ -369,6 +369,7 @@ Vstavi se to v enaèbo \ref{eq:inv_dyn_null} in dobi razširjeno enaèbo za inverzn
 %%%%V poglavjih, ki sledijo se bo predpostavljalo, da je sekundarna naloga neupoštevana in kadarkoli bo zapisana Jacobijeva matrika se bo predpostavilo, da gre za pseudoinverz te matrike. 
 %END_FOLD
 
+
 %*************************************************************** ARCNET - UDP STREŽNIK ***************************************************************
 \chapter{ARCNET - UDP strežnik za komunikacijo s krmilnikom robota ter senzorjem sile} \label{chap:udp-arcnet-server}
 
@@ -467,51 +468,91 @@ Kot povedano, je nastali program strežnik, kar pomeni, da deluje na klientovo za
 
 Kontrolni bajt, referenèni navori ter hitrosti za posamezen motor se posredujejo naprej na krmilnik robota. Ostali bajti pa so namenjeni zagotavljanju varnosti med komunikacijo. Referenèni navori so v Nm, hitrosti pa v rad/s.
 
-S prispelim UDP paketom strežnik pretvori dane navore in hitrosti v format, ki je naveden v dokumentaciji in opisan v \ref{sec:arc_drive}. Kontrolni bajti za posamezne motorje ostanejo nespremenjeni in se posredujejo enaki kot so prispeli. Strežnik prispele podatke zapakira v paket naveden v tabeli \ref{table:arcnet-command}.
+S prispelim UDP paketom strežnik pretvori dane navore in hitrosti v format, ki je naveden v dokumentaciji in opisan v \ref{sec:arc_drive}. Kontrolni bajti za posamezne motorje ostanejo nespremenjeni in se posredujejo enaki kot so prispeli. Strežnik prispele podatke zapakira v ARCNET paket naveden v tabeli \ref{table:arcnet-command}. Paket pošlje po ARCNET omrežju
+
+\input{./Tabele/arcnet-command.tex}
+
+Strežnik nato poèaka na odgovor servo krmilnika. V kolikor odgovor ne prispe v vnaprej predpisanem èasu, se program zaustavi. Strežnik odgovor servo krmilnika najprej pretvori v želeno obliko. Hitrosti in navori v sklepih so ponovno zapisani v formatu navedenem v \ref{sec:arc_drive}. Te podatke pa nato zapakira v UDP paket. Zraven doda še kontrolne bajte. UDP paket poslan klientu je opisan v tabeli \ref{table:udp-reply}.
+
+\input{./Tabele/udp-reply.tex}
+
+Po tistem, ko strežnik prejme in pošlje vse podatke, gre v stanje èakanja, da mine od zaèetka programskega cikla do konca toèno 2 ms. Ohranjanje frekvence èasovnega cikla je kritiènega pomena.
+
+\subsection{Varnostni ukrepi}
+
+V tabelah, ki opisujejo poslane in prejete UDP pakete je mogoèe razbrat, da so nekateri bajti namenjeni ohranjanju komunikacije oz. preverjanju ali sploh še poteka. Eden od takih ukrepov je, da v kolikor nov UDP ali ARCNET paket ne prispe v nekem vnaprej definiranem èasu, program robota zaustavi nato pa gre v èakanje novega paketa. Ko je program v èakanju preverja prispele UDP pakete, v kolikor imajo štartno sekvenco. Ta skrbi za to, da se program zaène izvajat s prvim prispelim UDP paketom. Na ta naèin se poskrbi, da strežnik nebi šele petega UDP paketa prebral in na to zaèel z delovanjem.
+
+Naslednji varnostni ukrep preverja stanje varnostnega gumba (\textit{Emegerncy stop}).  V kolikor se ta pritisne, se na servo krmilniku že sam po sebi sproži ukaz za ustavitev motorjev ter vklop zavor. Na strežniku pa se to pozna tako, da se program zaustavi. V kolikor želimo nadaljevati z vodenjem, je potrebno program ponovno zagnat.
+
+Zaganjanje ter uporaba strežnika je opisana v dodatku \ref{appendix:udp-arcnet-server}.
 
 %*********************** ARCNET SERVER ********************************
-\chapter{UDP strežnik za komunikacijo s krmilnikom robota ter senzorjem JR3} \label{sec:arcnet}
-V prejšnjem poglavju so bile opisane mehanske (robotski mehanizem PA-10 in krmilik mehanizma) in senzorne (senzor sile JR3) komponente, ki se jih je za to delo uporabljalo. Vendar pa ni nobena od uporabljenih mehanskih ali senzornih komponent imela delujoèega programskega dela. Za potrebe izvedbe tega dela je tako bila narejena primerna programska oprema, da je omogoèala uporabo mehanske ter senzorne opreme. Nastal strežnik za komunikacijo s krmilnikom robota po ARCNET mreži. Sledil je program za prebiranje vrednosti izmerjenih sil ter navorov iz senzorja JR3.
+%BEGIN_FOLD
 
-V naslednjih poglavjih se bo podrobneje opisalo delovanje obeh programov ter konèni izdelek, ki predstavlja UDP strežnik. Vsa programska oprema, ki bo opisana je bila zgrajena v programskem jeziku C ter na operacijskem sistemu CentOS Linux z jedrom Kernel 2.6. Razlog za odloèitev, ki je privedla do izbire omenjenega operacijskega sistema, je obstoj dokumentacije \cite{arc_howto} za toèno ta sistem, ki je bila najdena na internetu in opisuje oporabo ARCNET kartic.
+%\chapter{UDP strežnik za komunikacijo s krmilnikom robota ter senzorjem JR3} \label{sec:arcnet}
+%V prejšnjem poglavju so bile opisane mehanske (robotski mehanizem PA-10 in krmilik mehanizma) in senzorne (senzor sile JR3) komponente, ki se jih je za to delo uporabljalo. Vendar pa ni nobena od uporabljenih mehanskih ali senzornih komponent imela delujoèega programskega dela. Za potrebe izvedbe tega dela je tako bila narejena primerna programska oprema, da je omogoèala uporabo mehanske ter senzorne opreme. Nastal strežnik za komunikacijo s krmilnikom robota po ARCNET mreži. Sledil je program za prebiranje vrednosti izmerjenih sil ter navorov iz senzorja JR3.
+%
+%V naslednjih poglavjih se bo podrobneje opisalo delovanje obeh programov ter konèni izdelek, ki predstavlja UDP strežnik. Vsa programska oprema, ki bo opisana je bila zgrajena v programskem jeziku C ter na operacijskem sistemu CentOS Linux z jedrom Kernel 2.6. Razlog za odloèitev, ki je privedla do izbire omenjenega operacijskega sistema, je obstoj dokumentacije \cite{arc_howto} za toèno ta sistem, ki je bila najdena na internetu in opisuje oporabo ARCNET kartic.
+%
+%
+%\section{ARCNET strežnik}
+%
+%V poglavju \ref{sec:arc_drive} je opisan ARCNET vmesnik na krmilniku robota. Opisana so stanja vmesnika in kakšne so zahteve za preklapljanje med njimi. V tem poglavju bo opisano vse potrebno za vspostaviti komunikacijo z krmilnikom robota po ARCNET protokolu. 
+%
+%Uporabnik, ki bi želel uporabljati PCI kartico na raèunalniku za komunikacijo po ARCNET omrežju mora najprej zagotoviti ustrezne gonilnike. Tej so na razpolago v \cite{arc_howto}. Gonilnik se doda v Linux okolju kot modul. Po uspešnem zagonu gonilnika lahko uporabnik vspostavi ARCNET mrežo s standardno Linux komando \verb|ifconfig| in sicer na sledeè naèin:
+%\begin{verbatim}
+%ifconfig arc0 192.168.1.1
+%\end{verbatim}
+%Od tukaj dalje lahko uporabnik razvija programsko opremo. V primeru tega dela so avtorji uporabljali programski jezik C. Avtorji tega dela so od tega koraka dalje zaèeli razvijati strežnik za posredovanje ukazov pridobljenih iz UDP omrežja na ARCNET omrežje. UDP omrežje se je uprablilo, ker lahko omogoèa visoke hitrosti prenosa podatkov, hkrati pa omogoèa stabilnost tudi v primeru izguba paketov.
+%Avtorji tega dela so razvili strežnik, ki deluje s frekvenco 500 Hz. To se zagotavlja z onemogoèanjem uporabe namizja ter uporabo Linux C funkcije \verb| clock_gettime(clockid_t clk_id, struct timespec *tp);|. Funcija vrne vrednost sistemskega èasa. Z veèkratnim klicom te funkcije lahko vidimo kolko sistemskega èasa je minilo od enega do drugega klica. S tem lahko zagotovimo, da program deluje z neko konstantno frekvenco in zelo majhnim odstopanjem od nje. 
+%
+%
+%\section{Združitev ARCNET in JR3 strežnika}
+%
+%
+%
+%\section{Razlogi za strežnik}
 
-
-\section{ARCNET strežnik}
-
-V poglavju \ref{sec:arc_drive} je opisan ARCNET vmesnik na krmilniku robota. Opisana so stanja vmesnika in kakšne so zahteve za preklapljanje med njimi. V tem poglavju bo opisano vse potrebno za vspostaviti komunikacijo z krmilnikom robota po ARCNET protokolu. 
-
-Uporabnik, ki bi želel uporabljati PCI kartico na raèunalniku za komunikacijo po ARCNET omrežju mora najprej zagotoviti ustrezne gonilnike. Tej so na razpolago v \cite{arc_howto}. Gonilnik se doda v Linux okolju kot modul. Po uspešnem zagonu gonilnika lahko uporabnik vspostavi ARCNET mrežo s standardno Linux komando \verb|ifconfig| in sicer na sledeè naèin:
-\begin{verbatim}
-ifconfig arc0 192.168.1.1
-\end{verbatim}
-Od tukaj dalje lahko uporabnik razvija programsko opremo. V primeru tega dela so avtorji uporabljali programski jezik C. Avtorji tega dela so od tega koraka dalje zaèeli razvijati strežnik za posredovanje ukazov pridobljenih iz UDP omrežja na ARCNET omrežje. UDP omrežje se je uprablilo, ker lahko omogoèa visoke hitrosti prenosa podatkov, hkrati pa omogoèa stabilnost tudi v primeru izguba paketov.
-Avtorji tega dela so razvili strežnik, ki deluje s frekvenco 500 Hz. To se zagotavlja z onemogoèanjem uporabe namizja ter uporabo Linux C funkcije \verb| clock_gettime(clockid_t clk_id, struct timespec *tp);|. Funcija vrne vrednost sistemskega èasa. Z veèkratnim klicom te funkcije lahko vidimo kolko sistemskega èasa je minilo od enega do drugega klica. S tem lahko zagotovimo, da program deluje z neko konstantno frekvenco in zelo majhnim odstopanjem od nje. 
-
-
-\section{Združitev ARCNET in JR3 strežnika}
-
-
-
-\section{Razlogi za strežnik}
-
-
+%END_FOLD
 
 %*********************** ADMITANÈNO VODENJE ********************************
-\chapter{Admitanèno krmiljenje} \label{chap:admitance}
+\chapter{Vodenje robota PA-10} \label{chap:vodenje}
 
-Robotski mehanizem PA-10 je industrijski robot s segmenti iz pretežno litega železa. Segmenti imajo relativno veliko maso, sklepi pa relativno visoko trenje. Lahko predpostavimo, da ima manipulator veliko lastno impendanco. Avtor v \cite{mihelj_hapt} za take mehanizme predlaga admitanèno vodenje. To pomeni, da se silo, ki deluje na vrh robota meri s senzorjem sil. To bi lahko naredili tudi posredno z merjenjem navorov v sklepih vendar bo o tem veè v poglavju \ref{chap:invdyn}.
+V prejšnjih poglavjih je bilo govora o pošiljanju referenènih hitrosti in navorov na krmilnik servo motorjev robota PA-10. V poglavju, ki sledi pa bo govora o doloèanju teh krmilnih velièin v namene vodenja robota po prostoru. V tem poglavju bo natanèneje opisano vodenje robota v zunanjih koordinatah. Opisan bo postopek kompenzacije vpliva težnosti prijemala na senzor sile JR3. Na koncu pa bosta opisana dva naèina za krmiljenje robota v stiku z okolico, admitanèno vodenje ter vodenje preko inverzne dinamike.
 
-V nadaljevanju bo opisana potrebna teorija za admitanèno vodenje mehanizmov. Zaèelo se bo z vodenjem pozicije v notranjih koordinatah, prešlo na vodenje pozicije v zunanjih koordinatah nato pa še opisalo admitanèno vodenje.
+
+\section{Kompenzacija mase prijemala na senzorju sile JR3} \label{sec:vodenje-jr3}
+
+Delovanje senzorja sile JR3 je bilo opisano v prejšnjih poglavjih. Senzor je pritrjen na vrh robota in meri navore ter sile, ki delujejo nanj v svojem koordinatnem sistemu. Homogeno transformacijsko matriko smo definirali v poglavju \ref{chap:pa10}. Sile in navore na vrhu robota lahko preslikamo v koordinatni sistem baze preko matrike homogene transformacije
+
+\begin{equation}
+\mathbf{h}_b = \textbf{T}^0_{7} \mathbf{h}_e
+\end{equation}
+
+Robot brez prijemala v praksi ni pretirano uporaben saj lahko opravlja le malo kolièino nalog. Recimo premikanje objektov s porivanjem. V kolikor pa želimo, da bo robot lahko izvajal tudi druge naloge, je potrebno nanj pritrditi primerno prijemalo. Ker pa imamo mi na vrhu robota najprej senzor, pomeni, da omenjeno prijemalo pritrdimo na senzor. Ker ima prijemalo svoje maso, bo na senzor delovala neka sila kot posledica delovanja gravitacije. Kar pomeni, da bomo kljub temu, da senzor ni v kontaktu z okolico, merili neke sile. To pa ni dobrodošlo, saj mi želimo meriti le sile, ki se dogajajo v kontaktu z okolico, prijemalo je namreè del robota. 
+
+Avtorji v \cite{nemec-jr3}  predlagajo metodo za kompenzacijo vpliva gravitacije na senzor sile. 
 
 \section{Vodenje preko inverzne kinematike} \label{sec:admittheor}
 
+Vodenje robota preko vhodnih hitrostih v sklepih je relativno enostaven problem saj PI regulator v krmilniku poskrbi, da se vsak sklep vrti s hitrostjo èimbolj podobno referenèni. Iz tega vidika je prednost ta, da ne glede na konfiguracijo ter obremenitev robota, bo regulator vedno poskrbel èim boljše sledenje referenci. Vplivi gravitacije se kompenzirajo s integrirnim èlenov v regulatorju. V nadaljevanju bo opisano vodenje motorjev robota v želeno lego oziroma vodenje robota v notranjih koordinatah. Nato pa se bo iz tega še izpeljalo vodenje v zunanjih koordinatah.
+
 \subsection{Vodenje v notranjih koordinatah} \label{sec:admit_inner}
 
-V poglavju \ref{sec:servo} je opisano, da ima servo krmilnik proporcionalno diferencirni regulator za regulacijo hitrosti v sklepih. Za namen poenostavitve bo robotski mehanizem aproksimiran kot integrator $\frac{1}{s}$. Spomniti je potrebno, da krmilnik robota prejme kod vhodne velièine hitrosti v sklepih ($\omega$), vrne pa kote v sklepih (\textbf{q}). Iz tega sledi enostavna regulacijska enaèba:
+Krmilnik servo motorjev nam v vsakem danem trenutku vraèa trenuten kot v sklepu. Ker ima PI regulator hitrosti visoka ojaèanja ter visoko frekvenco, bomo za namene poenostavitve aproksimirali motor kot integrator $\frac{1}{s}$. Naj bo referenèni kot v sklepih oznaèen kot $\textbf{q}_{ref}$ in naj bo dejanski kot oznaèen kot $\textbf{q}$. Razlika med njima je napaka v kotu 
+
+\begin{equation}
+	\tilde{\textbf{q}} = \textbf{q}_{ref} - \textbf{q}.
+\end{equation}
+
+S preprostim P regulatorjem lahko kote v sklepu robota vodimo s povratno zanko tako, kot je prikazano na shemi \ref{fig:qfeedback}. S poveèevanjem ojaèanja regulatorja K vplivamo na dinamiko odziva kot tudi na stabilnost. Vhodni signal je tako enak
 
 \begin{equation} \label{eq:outvel}
-\textbf{u} = \textbf{K}_p  \tilde{\textbf{q}}
+\textbf{u} = \textbf{K}_p  \tilde{\textbf{q}}.
 \end{equation}
+Primer odziva takega regulatorja je na sliki \ref{fig:p-reg}.
+
+\input{./Slike/p-reg.tex}
 
 \begin{figure}
 	\input{./BlockDiagrams/vel_to_ang.tex}
@@ -519,11 +560,7 @@ V poglavju \ref{sec:servo} je opisano, da ima servo krmilnik proporcionalno dife
 	\label{fig:qfeedback}
 \end{figure}
 
-\begin{equation}
-\tilde{\textbf{q}} = \textbf{q}_{ref} - \textbf{q}
-\end{equation}
 
-Slika \ref{fig:qfeedback} prikazuje enostavno regulacijsko shemo, ki je uporabljena za krmiliti robota v notranjih koordinatah. Èas, ki ga motor porabi, da pride iz zaèetne v referenèno lego je proporcionalen ojaèanju $K_p$.
 
 \subsection{Vodenje v zunajih koordinatah} \label{sec:admit_out}
 
@@ -561,6 +598,29 @@ Avtor v \cite{mihelj_vodenje} navaja, da se mehanski sistem, ki je voden na ta n
 	\caption{Bloèna shema krmiljenja referenène lege vrha robota}
 	\label{fig:xfeedback}
 \end{figure}
+
+\section{Admitanèno vodenje} \label{sec:vodenje-admitance}
+
+
+
+Robotski mehanizem PA-10 je industrijski robot s segmenti iz pretežno litega železa. Segmenti imajo relativno veliko maso, sklepi pa relativno visoko trenje. Lahko predpostavimo, da ima manipulator veliko lastno impedanco. Pojem mehanske impedance izvira iz analogije elektriène impedance. Predstavlja pa razmerje med silo (\textit{F}) in hitrostjo (\textit{v}) 
+
+\begin{equation}
+Z(s) = \frac{F}{v} = ms + b + \frac{k}{s}
+\end{equation}
+
+oziroma razmerje med silo in pozicijo (\textit{x})
+
+\begin{equation}
+Z(s) = \frac{F}{x} = ms^2 + bs + k
+\end{equation}.
+V zgornijih enaèbah predstavlja \textit{m} maso, \textit{b} viskozno dušenje, \textit{k} togost \cite{mihelj_hapt}.
+
+Vodenje na podlagi admitance oziroma inverza impedance izhaja iz tega, da je krmilna velièina hitrost, krmiljena velièina pa sila.
+
+Avtor v \cite{mihelj_hapt} za take mehanizme predlaga admitanèno vodenje.
+
+V nadaljevanju bo opisana potrebna teorija za admitanèno vodenje mehanizmov. Zaèelo se bo z vodenjem pozicije v notranjih koordinatah, prešlo na vodenje pozicije v zunanjih koordinatah nato pa še opisalo admitanèno vodenje.
 
 \subsection{Upraba zunanjih sil}
 
@@ -702,7 +762,7 @@ Blok imenovan Admitance Control je namenjen admitaènemu vodenju robota. Blok pre
 
 
 \appendix
-\chapter{Appendix 1} \label{dodatekA}
+\chapter{Appendix 1} \label{appendix:udp-arcnet-server}
 \chapter{Appendix 2} \label{dodatekB}
 \chapter{Appendix 3} \label{dodatekC}
 

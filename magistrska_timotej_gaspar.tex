@@ -484,7 +484,7 @@ V tabelah, ki opisujejo poslane in prejete UDP pakete je mogoèe razbrat, da so n
 
 Naslednji varnostni ukrep preverja stanje varnostnega gumba (\textit{Emegerncy stop}).  V kolikor se ta pritisne, se na servo krmilniku že sam po sebi sproži ukaz za ustavitev motorjev ter vklop zavor. Na strežniku pa se to pozna tako, da se program zaustavi. V kolikor želimo nadaljevati z vodenjem, je potrebno program ponovno zagnat.
 
-Zaganjanje ter uporaba strežnika je opisana v dodatku \ref{appendix:udp-arcnet-server}.
+Zaganjanje ter uporaba strežnika je podrobneje opisana v dodatku \ref{appendix:udp-arcnet-server}.
 
 %*********************** ARCNET SERVER ********************************
 %BEGIN_FOLD
@@ -529,13 +529,80 @@ Delovanje senzorja sile JR3 je bilo opisano v prejšnjih poglavjih. Senzor je pri
 \mathbf{h}_b = \textbf{T}^0_{7} \mathbf{h}_e
 \end{equation}
 
-Robot brez prijemala v praksi ni pretirano uporaben saj lahko opravlja le malo kolièino nalog. Recimo premikanje objektov s porivanjem. V kolikor pa želimo, da bo robot lahko izvajal tudi druge naloge, je potrebno nanj pritrditi primerno prijemalo. Ker pa imamo mi na vrhu robota najprej senzor, pomeni, da omenjeno prijemalo pritrdimo na senzor. Ker ima prijemalo svoje maso, bo na senzor delovala neka sila kot posledica delovanja gravitacije. Kar pomeni, da bomo kljub temu, da senzor ni v kontaktu z okolico, merili neke sile. To pa ni dobrodošlo, saj mi želimo meriti le sile, ki se dogajajo v kontaktu z okolico, prijemalo je namreè del robota. 
+Robot brez prijemala v praksi ni pretirano uporaben saj lahko opravlja le malo kolièino nalog. Recimo premikanje objektov s porivanjem. V kolikor pa želimo, da bo robot lahko izvajal tudi druge naloge, je potrebno nanj pritrditi primerno prijemalo. Ker pa imamo mi na vrhu robota najprej senzor, pomeni, da omenjeno prijemalo pritrdimo na senzor. Ker ima prijemalo svoje maso in težišèe, bo na senzor delovala neka sila in navor kot posledica delovanja gravitacije. Kar pomeni, da bomo kljub temu, da senzor ni v kontaktu z okolico, merili neke sile. To pa ni dobrodošlo, saj želimo meriti le sile, ki se so posledica v kontakta z okolico, prijemalo je namreè del robota. Dodatno je potrebno še upoštevati merilni odmik, ki se pojavi kot posledica lezenja uporovnih mostièkov.
 
-Avtorji v \cite{nemec-jr3}  predlagajo metodo za kompenzacijo vpliva gravitacije na senzor sile. 
+\input{./Slike/jr3_coordinatesistem.tex}
+
+
+Zapišemo izmerjeno silo ($\textbf{F}_s$) ter izmerjen navor ($ \textbf{M}_s $) kot posledico teh prispevkov
+
+\begin{equation}
+    \begin{array}{r c l}
+    \textbf{f}_s &=& \textbf{f}_{env} + \textbf{f}_{grav} + \textbf{f}_{off} \\
+    \boldsymbol{\tau}_s &=& \boldsymbol{\tau}_{env} + \boldsymbol{\tau}_{grav} + \boldsymbol{\tau}_{off}.
+    \end{array}
+\end{equation}
+Indeks \textit{env} pomeni oznaèuje silo in navor kot posledico okolice, indeks \textit{grav} oznaèuje silo in navor kot posledica vpliva gravitacije, indeks \textit{off} pa oznaèuje merilni odmik. Želja je, izraèunati \textit{grav} in \textit{off} tako, da ju lahko kompenziramo (odštejemo) in izpostavimo le \textit{env}. Ko vrh robota ni v kontaktu z okolico mora veljati $\textbf{F}_{env} = 0$ in $\textbf{M}_{env} = 0$ in sledi:
+
+\begin{equation}
+\begin{array}{r c l}
+\textbf{f}_{s} &=& \textbf{f}_{grav} + \textbf{f}_{off} \\
+\boldsymbol{\tau}_{s} &=& \boldsymbol{\tau}_{grav} + \boldsymbol{\tau}_{off}.
+\end{array}
+\end{equation}
+
+$\textbf{f}_{grav} $ je odvisen od mase (m) prijemala ter orientacije vrha robota. Koordinatni sistem, ki ga postavimo v težišèe je zaradi poenostavitve enako orientiran kot tisti, ki je v bazi robota. Orientacijo je mogoèe zapisati s poznavanjem kinematiènega modela in bo v nadaljevanju oznaèena z \textbf{R}. Tako je mogoèe doloèiti  prispevek 
+
+\begin{equation}
+	\textbf{f}_{grav} = \textbf{R}
+	\begin{bmatrix}
+	0 \\
+	0 \\
+	mg
+	\end{bmatrix}.
+\end{equation}
+
+
+Avtorji v \cite{omrcen_jr3} pokažejo, da je mogoèe izraèunati $\textbf{f}_{grav}$ in $\textbf{f}_{off}$ na podlagi dveh meritev ($\textbf{f}_{meas}^{(1)}$ in $\textbf{f}_{meas}^{(2)}$). Zapišemo sistem enaèb v matrièni obliki
+
+\begin{equation}
+\begin{bmatrix}	\textbf{f}_{mes}^{(1)} \\ \textbf{f}_{mes}^{(2)} \end{bmatrix} = \begin{bmatrix} \mathbf{R}^{(1)} & \textbf{I} \\ \mathbf{R}^{(2)} & \textbf{I}\end{bmatrix} \begin{bmatrix} \textbf{f}_{grav} \\\textbf{f}_{off} \end{bmatrix}
+\end{equation}
+in izpostavimo $\textbf{f}_{grav}$ in $\textbf{f}_{off}$
+
+\begin{equation}
+ 	\begin{bmatrix}	\textbf{f}_{grav} \\\textbf{f}_{off} \end{bmatrix} = \begin{pmatrix} \begin{bmatrix} \mathbf{R}^{(1)} & \textbf{I} \\ \mathbf{R}^{(2)} & \textbf{I}\end{bmatrix}^T \begin{bmatrix} \mathbf{R}^{(1)} & \textbf{I} \\ \mathbf{R}^{(2)} & \textbf{I}\end{bmatrix}\end{pmatrix}^{-1} \begin{bmatrix} \mathbf{R}^{(1)} & \textbf{I} \\ \mathbf{R}^{(2)} & \textbf{I}\end{bmatrix}^T \begin{bmatrix}	\textbf{f}_{meas}^{(1)} \\ \textbf{f}_{meas}^{(2)} \end{bmatrix}.
+\end{equation}
+
+
+Za navor pa je potrebno poznati tudi translacijski vektor od težišèa do koordinatnega sistema senzorja, v nadaljevanju oznaèen z \textbf{r}. Prispevek navora zaradi vpliva gravitacije je tako 
+\begin{equation}
+\boldsymbol{\tau}_{grav} = \textbf{r} \times \textbf{f}_{grav}.
+\end{equation}
+Dodatno bomo tukaj definirali še $\widehat{\mathbf{f}}_{grav}$, ki je matrièen zapis vektorja $\textbf{f}_{grav}$. Iz treh razliènih meritev navorov ($\boldsymbol{\tau}_{meas}^{(1)}$, $\boldsymbol{\tau}_{meas}^{(2)}$ in  $\boldsymbol{\tau}_{meas}^{(3)}$) in s tremi razliènimi orientacijami ($\textbf{R}^{(1)}$, $\textbf{R}_{meas}^{(2)}$ in  $\textbf{R}_{meas}^{(3)}$) se zapiše sistem enaèb
+
+\begin{equation}
+\begin{bmatrix}	\boldsymbol{\tau}_{meas}^{(1)} \\ \boldsymbol{\tau}_{meas}^{(2)} \\ \boldsymbol{\tau}_{meas}^{(3)} \end{bmatrix} = \begin{bmatrix} \widehat{\mathbf{f}}_{grav}^{(1)} & \textbf{I} \\ \widehat{\mathbf{f}}_{grav}^{(2)} & \textbf{I} \\ \widehat{\mathbf{f}}_{grav}^{(3)} & \textbf{I} \end{bmatrix} \begin{bmatrix}	\textbf{r} \\\boldsymbol{\tau}_{off}\end{bmatrix}.
+\end{equation}
+
+Enaèbo obrnemo in izpostavimo \textbf{r} in $\boldsymbol{\tau}_{grav}$
+
+\begin{equation}
+\begin{bmatrix}	\textbf{r} \\\boldsymbol{\tau}_{off}\end{bmatrix} = \begin{pmatrix} \begin{bmatrix} \widehat{\mathbf{f}}_{grav}^{(1)} & \textbf{I} \\ \widehat{\mathbf{f}}_{grav}^{(2)} & \textbf{I} \\ \widehat{\mathbf{f}}_{grav}^{(3)} & \textbf{I} \end{bmatrix}^T \begin{bmatrix} \widehat{\mathbf{f}}_{grav}^{(1)} & \textbf{I} \\ \widehat{\mathbf{f}}_{grav}^{(2)} & \textbf{I} \\ \widehat{\mathbf{f}}_{grav}^{(3)} & \textbf{I} \end{bmatrix} \end{pmatrix}^{(-1)} \begin{bmatrix} \widehat{\mathbf{f}}_{grav}^{(1)} & \textbf{I} \\ \widehat{\mathbf{f}}_{grav}^{(2)} & \textbf{I} \\ \widehat{\mathbf{f}}_{grav}^{(3)} & \textbf{I} \end{bmatrix}^T \begin{bmatrix}	\boldsymbol{\tau}_{meas}^{(1)} \\ \boldsymbol{\tau}_{meas}^{(2)} \\ \boldsymbol{\tau}_{meas}^{(3)} \end{bmatrix}.
+\end{equation}
+
+Bistveni trije podatki, ki smo jih s temi izraèuni izpostavili so merilni odmik, masa prijemala ter njegovo težišèe. Prednost tega postopka je, da imamo orientacijo senzorja v vseh merilnih pozicijah natanèno doloèeno zaradi poznavanja inverzne kinematike. Hkrati pa lahko ta postopek popolnoma avtomatiziramo, kar smo avtorji tega dela tudi naredili. Postopek je opisan v dodatku \ref{appendix:jr3-calibration}. Upoštevati je potrebno, da so masa ter težišèe prijemala parametri, ki se jih identificira. Merilni odmik pa je èasovno odvisen, kar pomeni, da ga je pred izvršitvijo vsake naloge izmeriti.
+
+V nadaljevanju bo sila ter navor kot posledica interakcije z okolico zapisana v vektorju $\textbf{h}_e$ kot
+\begin{equation}
+\textbf{h}_e = \begin{bmatrix} \textbf{f}_{env} \\ \boldsymbol{\tau}_{env} \end{bmatrix}.
+\end{equation}
+
 
 \section{Vodenje preko inverzne kinematike} \label{sec:admittheor}
 
 Vodenje robota preko vhodnih hitrostih v sklepih je relativno enostaven problem saj PI regulator v krmilniku poskrbi, da se vsak sklep vrti s hitrostjo èimbolj podobno referenèni. Iz tega vidika je prednost ta, da ne glede na konfiguracijo ter obremenitev robota, bo regulator vedno poskrbel èim boljše sledenje referenci. Vplivi gravitacije se kompenzirajo s integrirnim èlenov v regulatorju. V nadaljevanju bo opisano vodenje motorjev robota v želeno lego oziroma vodenje robota v notranjih koordinatah. Nato pa se bo iz tega še izpeljalo vodenje v zunanjih koordinatah.
+
 
 \subsection{Vodenje v notranjih koordinatah} \label{sec:admit_inner}
 
@@ -550,7 +617,7 @@ S preprostim P regulatorjem lahko kote v sklepu robota vodimo s povratno zanko t
 \begin{equation} \label{eq:outvel}
 \textbf{u} = \textbf{K}_p  \tilde{\textbf{q}}.
 \end{equation}
-Primer odziva takega regulatorja je na sliki \ref{fig:p-reg}.
+Primer odziva takega regulatorja pri K = 1 je na sliki \ref{fig:p-reg}.
 
 \input{./Slike/p-reg.tex}
 
@@ -563,6 +630,8 @@ Primer odziva takega regulatorja je na sliki \ref{fig:p-reg}.
 
 
 \subsection{Vodenje v zunajih koordinatah} \label{sec:admit_out}
+
+
 
 Iz tega znanja je sedaj moè realizirati regulacijo v zunanjih koordinatah. Najprej opisati napako vrha robota. Naj bo $x_{ref}$ željena lega vrha robta in naj bo $x$ trenutna lega. Iz tega sledi enaèba napake:
 

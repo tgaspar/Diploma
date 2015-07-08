@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{siciliano_robot}
+B.~Siciliano, L.~Sciavicco, L.~Villani  in G.~Oriolo, {\em Robotics, Modelling,
+  Planning and Control}.
+\newblock London: Springer, 2009.
+
 \bibitem{pa10-manual}
 Mitsubishi Heavy Industries, {\em Portable General Purpose Intelligent Arm -
   Operating Manual}, rev. 1~izd.
@@ -10,11 +15,6 @@ M.~H.~I. Ltd., ``Mitsubishi clean room robot,'' {\em Seminarska naloga}, 2003.
 \bibitem{craig_robintro}
 J.~J. Craig, {\em Introduction to Robotics}.
 \newblock Z.D.A.: Pearson Education International, 2005.
-
-\bibitem{siciliano_robot}
-B.~Siciliano, L.~Sciavicco, L.~Villani  in G.~Oriolo, {\em Robotics, Modelling,
-  Planning and Control}.
-\newblock London: Springer, 2009.
 
 \bibitem{voung_pa10}
 N.~D. Vuong in M.~H.~J. Ang, ``Dynamic model identification for industrial
@@ -35,10 +35,6 @@ T.~Petri\v{c} in M.~Munih, ``Kompenzacija trenja in gravitacije na robotu
 \bibitem{lenarcic_robotmeh}
 J.~Lenar\v{c}i\v{c} in T.~Bajd, {\em Robotski mehanizmi}.
 \newblock Ljubljana: Univerza v Ljubljani, Zalo{\v{z}}ba FE in FRI, 2003.
-
-\bibitem{zlajpah_dynamics_red}
-L.~?lajpah, ``Dynamics of internal motion of redundant manipulators,'' {\em
-  IEEE}, str.~95 -- 100, 1997.
 
 \bibitem{almassri_pressure_sensor}
 A.~M. Almassri, W.~Z.~W. Hasan, S.~A. Ahmad, A.~J. Ishak, A.~M. Ghazali, D.~N.
@@ -77,9 +73,8 @@ D.~Omr?en in B.~Nemec, ``Meritev gibanja kolena z industrijskim robotom -
   avtomatska kompenzacija gravitacije prijemala,'' {\em Strojni?ki vestnik},
   str.~87 -- 97, 2002.
 
-\bibitem{bajd_robotika}
-T.~Bajd, M.~Mihelj, J.~Lenar\v{c}i\v{c}, A.~Stanovnik  in M.~Munih, {\em
-  Robotika}.
-\newblock Ljubljana: Univerza v Ljubljani, Zalo{\v{z}}ba FE in FRI, 2008.
+\bibitem{zupancic_tr}
+B.~Zupan\v{c}i\v{c}, {\em Teorija regulacij}.
+\newblock Ljubljana: Univerza v Ljubljani, Zalo{\v{z}}ba FE in FRI.
 
 \end{thebibliography}

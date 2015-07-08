@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  7 JUL 2015 16:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  8 JUL 2015 15:49
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -679,11 +679,7 @@ File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.0 (rcs-revision 1.9)
 ("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
 arypositioning.code.tex"
 File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
-)) (macros.tex) (magistrska_timotej_gaspar.aux
-
-LaTeX Warning: Label `fig:pa10-dh' multiply defined.
-
-)
+)) (macros.tex) (magistrska_timotej_gaspar.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
@@ -696,7 +692,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
- ABD: EveryShipout initializing macros
+
+ABD: EveryShipout initializing macros
 ("C:\Program Files\MiKTeX\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count140
@@ -725,10 +722,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [4
 
-] (magistrska_timotej_gaspar.toc
-Underfull \vbox (badness 6141) has occurred while \output is active []
-
- [5])
+] (magistrska_timotej_gaspar.toc [5])
 \tf@toc=\write5
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -802,40 +796,59 @@ File: ./Slike/pa10-drawing.png Graphic file (type png)
 <use ./Slike/pa10-drawing.png>
 Package pdftex.def Info: ./Slike/pa10-drawing.png used on input line 3.
 (pdftex.def)             Requested size: 173.23466pt x 199.16928pt.
-) [7]
+) [7] (Slike/d-h_drawing.tex
+Package epstopdf Info: Source file: <./Slike/d-h_drawing.eps>
+(epstopdf)                    date: 2015-07-08 15:44:24
+(epstopdf)                    size: 517962 bytes
+(epstopdf)             Output file: <./Slike/d-h_drawing-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-07-08 15:47:54
+(epstopdf)                    size: 41209 bytes
+(epstopdf)             Command: <epstopdf --outfile=./Slike/d-h_drawing-eps-con
+verted-to.pdf ./Slike/d-h_drawing.eps>
+(epstopdf)             \includegraphics on input line 3.
+Package epstopdf Info: Output file is already uptodate.
+
+<./Slike/d-h_drawing-eps-converted-to.pdf, id=74, 558.085pt x 328.22626pt>
+File: ./Slike/d-h_drawing-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ./Slike/d-h_drawing-eps-converted-to.pdf>
+Package pdftex.def Info: ./Slike/d-h_drawing-eps-converted-to.pdf used on input
+ line 3.
+(pdftex.def)             Requested size: 418.56273pt x 246.16908pt.
+)
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 158.
+
+
+("C:\Program Files\MiKTeX\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 158.
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [8 <./Slike/pa10-drawing.png>] (Slike/pa10-dh.tex
-<./Slike/pa10-dh.png, id=81, 676.77844pt x 255.95625pt>
+<./Slike/pa10-dh.png, id=82, 676.77844pt x 255.95625pt>
 File: ./Slike/pa10-dh.png Graphic file (type png)
 
 <use ./Slike/pa10-dh.png>
 Package pdftex.def Info: ./Slike/pa10-dh.png used on input line 3.
 (pdftex.def)             Requested size: 412.56496pt x 156.03543pt.
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 155.
-
- ("C:\Program Files\MiKTeX\tex\latex\base\omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
-
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[9 <./Slike/pa10-dh.png>]
+[9 <./Slike/d-h_drawing-eps-converted-to.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[10]
+[10 <./Slike/pa10-dh.png>]
 
-LaTeX Warning: Reference `chap:redundant' on page 11 undefined on input line 23
-2.
+LaTeX Warning: Reference `eq:dir_dyn' on page 11 undefined on input line 242.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -848,6 +861,15 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [12]
+Underfull \hbox (badness 1515) in paragraph at lines 309--310
+[]\OT1/cmr/m/n/12 Vektor $[][]$ vse-buje sile in na-vore, ki de-lu-jejo na vrh 
+ro-bota, $[][] =$
+ []
+
+
+Underfull \vbox (badness 1655) has occurred while \output is active []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -858,43 +880,35 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [14]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[15]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[16
+
+]
   3.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15
-
-]
+ [17]
 (Slike/pa10-servocontroller.tex
-<./Slike/pa10-servocontroller.png, id=108, 1028.34187pt x 536.0025pt>
+<./Slike/pa10-servocontroller.png, id=121, 1028.34187pt x 536.0025pt>
 File: ./Slike/pa10-servocontroller.png Graphic file (type png)
 
 <use ./Slike/pa10-servocontroller.png>
 Package pdftex.def Info: ./Slike/pa10-servocontroller.png used on input line 3.
 
-(pdftex.def)             Requested size: 791.51187pt x 412.56496pt.
-
-Overfull \hbox (378.94691pt too wide) in paragraph at lines 3--4
- [][] 
- []
-
+(pdftex.def)             Requested size: 412.56496pt x 215.04332pt.
 )
-Overfull \hbox (12.62668pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/12 16    \OT1/cmr/m/sl/12 ARCNET - UDP streznik za komunikacijo s
- krmilnikom robota ter senzorjem sile
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[16]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[17 <./Slike/pa10-servocontroller.png>]
 Overfull \hbox (12.62668pt too wide) has occurred while \output is active
 \OT1/cmr/m/n/12 18    \OT1/cmr/m/sl/12 ARCNET - UDP streznik za komunikacijo s
  krmilnikom robota ter senzorjem sile
@@ -905,8 +919,13 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[18] (Slike/control_mode.tex
-<./Slike/control_mode.png, id=119, 1063.72406pt x 534.49687pt>
+[18 <./Slike/pa10-servocontroller.png>]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[19] (Slike/control_mode.tex
+<./Slike/control_mode.png, id=130, 1063.72406pt x 534.49687pt>
 File: ./Slike/control_mode.png Graphic file (type png)
 
 <use ./Slike/control_mode.png>
@@ -914,16 +933,8 @@ Package pdftex.def Info: ./Slike/control_mode.png used on input line 2.
 (pdftex.def)             Requested size: 412.56496pt x 207.30298pt.
 )
 
-LaTeX Warning: Reference `chap:admitance' on page 19 undefined on input line 43
-2.
-
-
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[19 <./Slike/control_mode.png>]
-Underfull \vbox (badness 2547) has occurred while \output is active []
+LaTeX Warning: Reference `chap:admitance' on page 20 undefined on input line 48
+6.
 
 
 Overfull \hbox (12.62668pt too wide) has occurred while \output is active
@@ -937,31 +948,14 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [20]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1024) has occurred while \output is active []
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[21] (Tabele/udp-command.tex
-Overfull \hbox (23.43582pt too wide) in paragraph at lines 5--15
- [][] 
- []
-
-) (Tabele/arcnet-command.tex
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (Tabele/udp-reply.tex
-Overfull \hbox (38.01923pt too wide) in paragraph at lines 5--16
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-)
+[21 <./Slike/control_mode.png>]
 Overfull \hbox (12.62668pt too wide) has occurred while \output is active
 \OT1/cmr/m/n/12 22    \OT1/cmr/m/sl/12 ARCNET - UDP streznik za komunikacijo s
  krmilnikom robota ter senzorjem sile
@@ -972,12 +966,25 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[22]
+[22] (Tabele/udp-command.tex
+Overfull \hbox (23.43582pt too wide) in paragraph at lines 5--15
+ [][] 
+ []
+
+)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[23]
+[23] (Tabele/arcnet-command.tex) (Tabele/udp-reply.tex
+Overfull \hbox (38.01923pt too wide) in paragraph at lines 5--16
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)
 Overfull \hbox (12.62668pt too wide) has occurred while \output is active
 \OT1/cmr/m/n/12 24    \OT1/cmr/m/sl/12 ARCNET - UDP streznik za komunikacijo s
  krmilnikom robota ter senzorjem sile
@@ -989,177 +996,160 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [24]
-  4.
-[25
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
 
-] (Slike/jr3_coordinatesistem.tex
+[25]
+Overfull \hbox (12.62668pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/12 26    \OT1/cmr/m/sl/12 ARCNET - UDP streznik za komunikacijo s
+ krmilnikom robota ter senzorjem sile
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[26
+
+]
+  4.
+[27] (Slike/jr3_coordinatesistem.tex
 Package epstopdf Info: Source file: <./Slike/jr3_coordinatesistem.eps>
-(epstopdf)                    date: 2015-07-07 14:01:54
-(epstopdf)                    size: 296450 bytes
+(epstopdf)                    date: 2015-07-08 09:15:11
+(epstopdf)                    size: 311061 bytes
 (epstopdf)             Output file: <./Slike/jr3_coordinatesistem-eps-converted
 -to.pdf>
-(epstopdf)                    date: 2015-07-07 14:05:14
-(epstopdf)                    size: 3991 bytes
+(epstopdf)                    date: 2015-07-08 09:15:22
+(epstopdf)                    size: 6193 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/jr3_coordinatesiste
 m-eps-converted-to.pdf ./Slike/jr3_coordinatesistem.eps>
 (epstopdf)             \includegraphics on input line 3.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/jr3_coordinatesistem-eps-converted-to.pdf, id=146, 455.7025pt x 293.09
-5pt>
+<./Slike/jr3_coordinatesistem-eps-converted-to.pdf, id=159, 458.71375pt x 293.0
+95pt>
 File: ./Slike/jr3_coordinatesistem-eps-converted-to.pdf Graphic file (type pdf)
 
  <use ./Slike/jr3_coordinatesistem-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/jr3_coordinatesistem-eps-converted-to.pdf used
  on input line 3.
-(pdftex.def)             Requested size: 412.56496pt x 265.35728pt.
+(pdftex.def)             Requested size: 229.35631pt x 146.54713pt.
 )
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[26 <./Slike/jr3_coordinatesistem-eps-converted-to.pdf>]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[27]
-
-LaTeX Warning: Reference `appendix:jr3-calibration' on page 28 undefined on inp
-ut line 594.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[28]
-
-LaTeX Warning: Reference `fig:p-reg' on page 29 undefined on input line 620.
-
-(Slike/p-reg.tex
-Package epstopdf Info: Source file: <./Slike/graph-p-reg.eps>
-(epstopdf)                    date: 2015-07-06 18:06:03
-(epstopdf)                    size: 9712 bytes
-(epstopdf)             Output file: <./Slike/graph-p-reg-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-07-06 18:10:02
-(epstopdf)                    size: 3848 bytes
-(epstopdf)             Command: <epstopdf --outfile=./Slike/graph-p-reg-eps-con
-verted-to.pdf ./Slike/graph-p-reg.eps>
-(epstopdf)             \includegraphics on input line 3.
-Package epstopdf Info: Output file is already uptodate.
-
-<./Slike/graph-p-reg-eps-converted-to.pdf, id=164, 1444.39626pt x 730.73pt>
-File: ./Slike/graph-p-reg-eps-converted-to.pdf Graphic file (type pdf)
-
-<use ./Slike/graph-p-reg-eps-converted-to.pdf>
-Package pdftex.def Info: ./Slike/graph-p-reg-eps-converted-to.pdf used on input
- line 3.
-(pdftex.def)             Requested size: 393.67282pt x 199.16928pt.
-) (BlockDiagrams/vel_to_ang.tex)
-
-LaTeX Warning: Reference `sec:dh' on page 29 undefined on input line 643.
-
-
+[28 <./Slike/jr3_coordinatesistem-eps-converted-to.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [29]
+
+LaTeX Warning: Reference `appendix:jr3-calibration' on page 30 undefined on inp
+ut line 648.
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[30 <./Slike/graph-p-reg-eps-converted-to.pdf>] (BlockDiagrams/x_to_vel.tex)
+[30] (BlockDiagrams/vel_to_ang.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [31]
-
-LaTeX Warning: Reference `sec:arcnet' on page 32 undefined on input line 696.
-
-
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[32]
-
-LaTeX Warning: Reference `sec:arcnet' on page 33 undefined on input line 720.
-
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 720.
-
+[32] (BlockDiagrams/x_to_vel.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [33]
+
+LaTeX Warning: Reference `sec:arcnet' on page 34 undefined on input line 758.
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [34]
+
+LaTeX Warning: Reference `sec:arcnet' on page 35 undefined on input line 782.
+
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 782.
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[35]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[36]
   5.
-[35
+[37
 
 ]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[36] (BlockDiagrams/x_to_tau.tex)
+[38] (BlockDiagrams/x_to_tau.tex)
 
-LaTeX Warning: Reference `sec:arcnet' on page 37 undefined on input line 783.
+LaTeX Warning: Reference `sec:arcnet' on page 39 undefined on input line 845.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[37]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[38]
-  6.
-[39
-
-]
+[39]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [40]
+  6.
+[41
+
+]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[42]
   7.
-(magistrska_timotej_gaspar.bbl [41
+(magistrska_timotej_gaspar.bbl [43
 
 ]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[42
+[44
 
-] [43])
+] [45])
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[44] [45
+[46] [47
 
 ]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[46
-
-]
-  A.
-[47]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1167,7 +1157,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [48
 
 ]
-  B.
+  A.
 [49]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -1176,7 +1166,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [50
 
 ]
-  C.
+  B.
 [51]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -1185,50 +1175,57 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [52
 
 ]
-  D.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [53]
+  C.
+[53]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[54] (magistrska_timotej_gaspar.aux)
+[54
+
+]
+  D.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [55]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[56] (magistrska_timotej_gaspar.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 18175 strings out of 493671
- 356199 string characters out of 3145458
- 472336 words of memory out of 3000000
- 21064 multiletter control sequences out of 15000+200000
+ 18178 strings out of 493671
+ 356228 string characters out of 3145458
+ 471344 words of memory out of 3000000
+ 21068 multiletter control sequences out of 15000+200000
  16809 words of font info for 63 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 55i,15n,67p,3304b,718s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,15n,67p,3304b,716s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTe
 X/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
-b10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/P
-rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cms
-l12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
-Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (66 pages, 512793 bytes).
+fonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
+8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/P
+rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+r8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/P
+rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+
+Output written on magistrska_timotej_gaspar.pdf (68 pages, 564326 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
+ 326 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

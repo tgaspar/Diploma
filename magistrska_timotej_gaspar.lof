@@ -2,17 +2,17 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Skica robotskega mehanizma PA 10.}}{8}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Tehni\v {c}na risba robota PA-10. Iz nje se definira D-H parametre. Povzeto po \cite {pa10-manual}.}}{9}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Dva zaporedna \v {c}lena kinemati\v {c}ne verige, povzeto po \cite {siciliano_robot}}}{9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Tehni\v {c}na risba robota PA-10. Iz nje se definira D-H parametre. Povzeto po \cite {pa10-manual}.}}{10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Tehni\v {c}na risba ohi\v {s}ja krmilnika servo motorjev. Povzeto po \cite {pa10-manual}.}}{17}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Na\v {c}in za krmiljenje robota}}{19}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Tehni\v {c}na risba ohi\v {s}ja krmilnika servo motorjev. Povzeto po \cite {pa10-manual}.}}{18}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Na\v {c}in za krmiljenje robota}}{21}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces }}{26}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces }}{30}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Povratna zanka za krmiljenje kota v sklepu}}{30}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Blo\v cna shema krmiljenja referen\v cne lege vrha robota}}{32}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Koordinatni sistem senzorja sile ter koordinatni sistem te\'L\v li\'L\v {}\"A\v Ta prijemala}}{28}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Povratna zanka za krmiljenje kota v sklepu}}{31}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Blo\v cna shema krmiljenja referen\v cne lege vrha robota}}{33}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Blo\v cna shema krmiljenja referen\v cne lege vrha robota z inverzno dinamiko}}{37}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Blo\v cna shema krmiljenja referen\v cne lege vrha robota z inverzno dinamiko}}{39}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

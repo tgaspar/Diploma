@@ -7,12 +7,13 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Tehni\v {c}na risba ohi\v {s}ja krmilnika servo motorjev. Povzeto po \cite {pa10-manual}.}}{18}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Na\v {c}in za krmiljenje robota}}{21}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Stre\v {z}nik kot posrednik med ARCNET ter Ethernet omre\v {z}jem.}}{23}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Koordinatni sistem senzorja sile ter koordinatni sistem te\'L\v li\'L\v {}\"A\v Ta prijemala}}{28}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Koordinatni sistem senzorja sile ter koordinatni sistem te\v {z}i\v {s}\v {c}a prijemala}}{29}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Povratna zanka za krmiljenje kota v sklepu}}{31}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Blo\v cna shema krmiljenja referen\v cne lege vrha robota}}{33}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Blo\v cna shema krmiljenja referen\v cne lege vrha robota z inverzno dinamiko}}{39}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Blo\v cna shema vodenja po notranjih koordinatah preko inverzne dinamike.}}{37}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Blo\v cna shema vodenja po zunanjih koordinatah preko inverzne dinamike.}}{38}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -1,0 +1,94 @@
+\centering
+
+\begin{tikzpicture}[node distance=2cm,auto,=>latex']
+
+ \coordinate (AroneC) at (25/2,11/2);
+ \coordinate (ArtwoC) at (25/2,5);
+ \coordinate (ArthrC) at (25/2,9/2);
+
+\node [input](inputddq) {};
+
+\node [input, below = 0.8 of inputddq](inputdq){};
+\node [sum, right of=inputdq] (sumdq) {};
+\node [block, right of=sumdq] (kd) {$\textbf{K}_d$};
+\node [sum, right of=kd] (sumall) {};
+\node [sum, right of=sumall] (sumdj) {};
+
+\node [block, below of=sumdj] (dj) {$\dot{\mathbf{J}}(\textbf{q},\dot{\mathbf{q}})$};
+\node [block, below = 2.3 of sumall] (jac) {$\mathbf{J}(\textbf{q})$};
+\node [block, below = 2.7 of kd] (gmod) {\textbf{k}(\textbf{q})};
+
+\node [support, below = 0.556 of dj](supdq) {}; 
+\node [support, below = 1.1 of dj](supq) {}; 
+
+
+\node [input, below = 0.8 of inputdq](inputq) {};
+\node [sum, right = 0.6cm of inputq] (sumq) {};
+\node [block, right of=sumq] (kp) {$\textbf{K}_p$};
+
+\node [block, right of=sumdj] (jinv) {$\mathbf{J}^*$};
+
+\node [block, right of=jinv] (B) {$\hat{\mathbf{B}}(\textbf{q})$};
+\node [sum, right of=B] (sum2) {};
+\node [block, below of=sum2] (n) {$\hat{\mathbf{n}}(\textbf{q},\mathbf{\dot{q}})$};
+
+\node [block, right of=sum2, minimum width=2cm,minimum height=2cm] (pa10) {PA-10};
+
+\node [output, right of=pa10] (output) {};
+\node [output, below right = +0.7 of output] (outputdq) {};
+\node [output, above left = +0.7 of output] (outputq) {};
+\node [output, below right = +0.7 of outputdq] (outputddq) {};
+
+
+
+\draw [->] (inputdq) node[above = 0.1 cm of inputdq]{$\mathbf{\dot{x}}_{ref}$} -- node[pos=0.95] {{\tiny $+$}} (sumdq);
+\draw [->] (sumdq) -- (kd);
+\draw [->] (kd) -- node[pos=0.95] {{\tiny $+$}}(sumall);
+
+\draw [->] (inputq) node[above = 0.1 cm of inputq]{$\mathbf{x}_{ref}$} -- node[pos=0.95] {{\tiny $+$}} (sumq);
+\draw [->] (sumq) -- (kp);
+\draw [->] (kp) -| node[pos=0.99, left]{\tiny {$+$}}(sumall);
+
+\draw [->] (inputddq) node[above = 0.1 cm of inputddq]{$\mathbf{\ddot{x}}_{ref}$} -|  node[pos=0.99, right] {\tiny {$+$}}(sumall);
+
+\draw [->] (sumall) -- (sumdj);
+\draw [->] (sumdj) -- (jinv);
+\draw [->] (jinv) -- node[above = 0, pos=0.5]{$\pmb{\alpha}$}(B);
+\draw [->] (B) -- node[pos=0.99, left]{\tiny {$+$}}(sum2);
+\draw [->] (n) -- node[pos=0.99, left]{\tiny {$+$}}(sum2);
+\draw [->] (sum2) -- node[above = 0, pos=0.5]{\textbf{u}}(pa10);
+
+
+\draw[->] ($(pa10.0) + (0,1/2)$) -- node[above =-0.1 cm, pos=0.1]{$\textbf{q}$} ($(output.0) + (1.5,1/2)$) ;
+\draw[->] ($(pa10.0) + (0,-1/2)$) -- node[above =-0.1 cm, pos=0.5]{$\dot{\mathbf{q}}$} ($(output.0) + (1.5,-1/2)$) ;
+
+
+
+%\draw [->] (outputq) -- +(0,-4) -| node[pos=0.99, left]{\tiny {$-$}} (sumq);
+\draw [->] (outputq) |- (gmod);
+\draw [->] (gmod) -| node[pos=0.99, left]{\tiny {$-$}} (sumq);
+\draw [->] (outputdq) |- (jac);
+\draw [->] (jac) -| node[pos=0.99, left]{\tiny {$-$}} (sumdq);
+
+%\draw [->] (outputdq) -- +(0,-2.5) -| node[pos=0.99, left]{\tiny {$-$}} (sumdq);
+
+\draw [->] (outputq) -- +(0,-2.4) |- ($(n.0)+(0,+0.15)$);
+\draw [->] (outputdq) -- +(0,-2.4) |- ($(n.0)+(0,-0.15)$);
+\draw [->] (dj) -- node[pos=0.99, left]{\tiny {$-$}}(sumdj);
+
+\draw [->] ($(supdq.0) + (+0.3,0)$) -- ($(dj.0)+(-0.47,-0.39)$);
+\draw [->] ($(supq.0) + (-0.3,0)$) -- ($(dj.0)+(-1.07,-0.39)$);
+
+
+\fill (outputq) circle [radius=2pt];
+\fill (outputdq)circle [radius=2pt];
+
+\fill ($(outputdq.0) + (0,-1.65)$)circle [radius=2pt];
+\fill ($(outputq.0) + (0,-2.35)$)circle [radius=2pt];
+\fill ($(supdq.0) + (0.3,0)$) circle [radius=2pt];
+\fill ($(supq.0) + (-0.3,0)$) circle [radius=2pt];
+
+%\fill (outputddq)circle [radius=2pt];
+
+
+\end{tikzpicture}

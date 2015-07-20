@@ -1,0 +1,82 @@
+\centering
+
+\begin{tikzpicture}[node distance=2cm,auto,=>latex']
+
+ \coordinate (AroneC) at (25/2,11/2);
+ \coordinate (ArtwoC) at (25/2,5);
+ \coordinate (ArthrC) at (25/2,9/2);
+
+\node [input](inputfref) {};
+\node [sum, right of=inputfref] (sumfe) {};
+\node [block, above right = of sumfe] (cp) {$\textbf{C}_P$};
+\node [block, below right = of sumfe] (ci) {$\textbf{C}_I \int_{0}^{t} (.) d \xi$};
+\node [sum, below right = of cp] (sumfr) {};
+\node [sum, right of=sumfr] (sumx) {};
+\node [block, below of=sumx] (kx) {k(\textbf{q})};
+
+\node [block, right = of sumx] (kp) {$\textbf{K}_P$};
+\node [sum, right of=kp] (sumdx) {};
+\node [block, below = 2.3 of sumdx] (jac) {$\mathbf{J}(\textbf{q})$};
+\node [block, right = of sumdx] (jinv) {$\textbf{J}^*$};
+\node [block, right = of jinv] (b) {$\hat{\mathbf{B}} (\textbf{q})$};
+\node [sum, right of=b] (sumtau) {};
+
+\node [block, below of=sumtau] (n) {$\hat{\mathbf{n}}(\textbf{q},\mathbf{\dot{q}})$};
+\node [block, right of=sumtau, minimum width=2cm,minimum height=2cm] (pa10) {PA-10};
+
+\node [output, right of=pa10] (output) {};
+\node [output, below right = +0.7 of output] (outputdq) {};
+\node [output, above right = +0.7 of output] (outputtau) {};
+\node [output, right =  of output] (outputq) {};
+
+
+
+\draw[->] ($(pa10.0) + (0,1/2)$) -- node[above =-0.1 cm, pos=0.5]{$\pmb{f_e}$} ($(output.0) + (1.5,1/2)$) ;
+\draw[->] (pa10) -- node[above =-0.1 cm, pos=0.5]{$\mathbf{q}$} ($(output.0) + (1.5,0)$) ;
+\draw[->] ($(pa10.0) + (0,-1/2)$) -- node[above =-0.1 cm, pos=0.5]{$\dot{\mathbf{q}}$} ($(output.0) + (1.5,-1/2)$) ;
+
+\draw [->] ($(outputq.0) + (-1.0,0)$)  |- ($(n.0)+(0,+0.15)$);
+\draw [->] (outputdq) |- ($(n.0)+(0,-0.15)$);
+\draw [->] (n) -- node[pos=0.99, left]{\tiny {$+$}}(sumtau);
+\draw [->] (b) -- node[pos=0.99, above]{\tiny {$+$}}(sumtau);
+\draw [->] (jinv) -- node[above = 0, pos=0.5]{$\pmb{\alpha}$}(b);
+\draw [->] (sumtau) -- node[above = 0, pos=0.5]{\textbf{u}}(pa10);
+\draw [->] (sumdx) -- (jinv);
+
+
+\draw [->] (outputdq) |- (jac);
+\draw [->] (jac) -- node[pos=0.90, left]{\tiny {$-$}} (sumdx);
+
+\draw [->] (kp) -- node[pos=0.99, above]{\tiny {$+$}}(sumdx);
+\draw [->] (sumx) -- (kp);
+\draw [->] (sumfr) -- node[pos=0.90,above] {\tiny {$-$}}(sumx);
+
+\draw [->] (cp) -| node[pos=0.99, left]{\tiny {$+$}}(sumfr);
+\draw [->] (ci) -| node[pos=0.99, left]{\tiny {$+$}}(sumfr);
+
+\draw [->] ($(sumfe.0) + (1,0)$) |- (cp);
+\draw [->] ($(sumfe.0) + (1,0)$) |- (ci);
+
+\draw [-] (sumfe) -- ($(sumfe.0) + (1,0)$);
+
+\draw [-]  ($(output.0) + (1,1/2)$) -- ($(output.0) + (1,3)$);
+\draw [->]  ($(output.0) + (1,3)$) -| node[pos=0.99, left]{\tiny {$-$}}(sumfe);
+
+\draw [-]  ($(output.0) + (1,0)$) -- ($(output.0) + (1,-3.5)$);
+\draw [->]  ($(output.0) + (1,-3.5)$) -|(kx);
+\draw [->] (kx) -- node[pos=0.99, left]{\tiny {$+$}}(sumx);
+
+\draw [->]  node[above =-0.1 cm, pos=0.5]{$\pmb{f}_{ref}$}(inputfref) --  node[pos=0.99, above]{\tiny {$+$}}(sumfe);
+
+%\fill (outputq) circle [radius=2pt];
+%\fill (outputdq)circle [radius=2pt];
+%
+%\fill ($(outputdq.0) + (0,-1.65)$)circle [radius=2pt];
+%\fill ($(outputq.0) + (0,-2.35)$)circle [radius=2pt];
+%\fill ($(supdq.0) + (0.3,0)$) circle [radius=2pt];
+%\fill ($(supq.0) + (-0.3,0)$) circle [radius=2pt];
+
+%\fill (outputddq)circle [radius=2pt];
+
+
+\end{tikzpicture}

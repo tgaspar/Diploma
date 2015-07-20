@@ -439,7 +439,7 @@ Z uspešnim vodenjem robota brez taktilne povratne zanke je mogoèe izvesti mnogo 
 
 V prvem poglavju je bilo zapisano, da robota PA-10 med drugim odlikuje prenosnost. To se velja tako za samo robotsko roko kot tudi za krmilnik servo motorjev. Krmilnik z ohišjem ima dimenzije $262 \times 331 \times 396$ mm in maso 22 Kg. Za sprednji strani krmilnika sta dva zraènika, na zadnji pa so prikljuèki in stikala (slika \ref{fig:pa10-servo}).
 
-\input{./Slike/pa10-servocontroller.tex}
+\input{./Slike/pa10-servoscontroller.tex}
 
 V ohišju servo krmilnika so vgrajeni štirje krmilniki servo motorjev. Trije krmilijo po dva motorja, eden pa le enega. Krmilniki omogoèajo vodenje motorjev na dva naèina, navorno in hitrostno. Razlièna vodenja sta v krmilnikih drugaèe realizirana. Navorno vodenje je realizirano z analognim P regulatorjem toka, hitrostna regulacija pa je realizirana z digitalnim PI regulatorjem s frekvenco približno 1500 Hz.
 
@@ -879,12 +879,12 @@ Sedaj lahko definiramo regulator, ki bo dajal take pospeške v sklepih, da bo vrh
 	\textbf{a} = \ddot{\mathbf{x}}_{ref} + \textbf{K}_d \dot{\tilde{\mathbf{x}}} + \textbf{K}_p \tilde{\mathbf{x}}
 \end{equation}
 Z vstavitvijo \ref{eq:accel_dyn_ref} v \ref{eq:accel_dyn} dobimo konèno enaèbo pospeškov v sklepih
-\begin{equation}
+\begin{equation}\label{eq:alpha_inv_dyn}
 	\pmb{\alpha} = \textbf{J}^* (\textbf{q})(\ddot{\mathbf{x}}_{ref} + \textbf{K}_d \dot{\tilde{\mathbf{x}}} + \textbf{K}_p \tilde{\mathbf{x}} - \dot{\mathbf{J}}(\textbf{q},\dot{\mathbf{q}})\dot{\mathbf{q}})
 \end{equation}
 
 Shema takega vodenja je prikazana na sliki \ref{fig:ddx_tau_dyn}.
-\begin{figure}[]
+\begin{figure}
 	\centering
 	\scalebox{.75}{\input{./BlockDiagrams/inv_dyn_x.tex}}
 	\caption{Bloèna shema vodenja po zunanjih koordinatah preko inverzne dinamike.}
@@ -895,10 +895,48 @@ Shema takega vodenja je prikazana na sliki \ref{fig:ddx_tau_dyn}.
 
 Pri izpeljavi vodenja lege robota z inverzno dinamiko smo predpostavili, da so sile interakcije $\textbf{h}_o$ enake niè. Ker pa to v primeru, da je robot v kontaktu z okoljem ni res, je potrebno pogledati kaj se zgodi takrat, ko te sile delujejo na robota. Vzemimo spet dinamièen model robota, ki ga vodimo preko reguliranega pospeška $\pmb{\alpha}$ in dodamo silo interakcije 
 \begin{equation}
-\textbf{u} - \mathbf{J}^T \mathbf{h}_o= \mathbf{\hat{B}}(\textbf{q}) \pmb{\alpha} + \mathbf{\hat{n}}(q,\dot{q}).
+\textbf{u}= \mathbf{\hat{B}}(\textbf{q}) \pmb{\alpha} + \mathbf{\hat{n}}(q,\dot{q}) + \mathbf{J}^T \mathbf{h}_o.
 \end{equation}
-Vidimo, da bodo sedaj navori v sklepi razlièni od izraèunanih preko inverznega dinamiènega modela in posledièno bo med želenim vrhom robota in dejanskim vrhom robota nastala napaka.
+Vidimo, da bodo sedaj navori v sklepi razlièni od izraèunanih preko inverznega dinamiènega modela in posledièno bo med želenim vrhom robota in dejanskim vrhom robota nastala napaka. Vrh robota bo z neko silo deloval na okolje, ki pa jo lahko s senzorjem na vrhu robota oz. med prijemalom in vrhom, izmerimo. Vprašanje je sedaj robota vodimo tako, da bo na okolje deloval z želeno silo.
 
+V literaturi najdemo izraz impedanèno vodenje. Ta naèin vodenja je analogen admitanènemu opisanem v \ref{sec:vodenje-admitance}. V tem primeru gre za posredno vodenje sile preko pozicije. Ker pa je uspešnost vodenja odvisna od togosti okolja je bolje izbrati metodo za direktno vodenje po sili \cite{siciliano_robot}.
+
+Želja po vodenju sile bi naèeloma predvidevala uporabo PD regulatorja za sil. Ker pa je izmerjen signal sile podvržen merilnemu šumu, predstavlja odvajanje tega signala ojaèanje šuma, kar pa vodi v nestabilnost. Zato se v praksi raje implementira vodenje sile in hkrati vodenje pozicije vrha robota.
+
+Sila, ki nastane ob kontaktu z okoljem, bo modelirana z modelom vzmeti in sicer
+\begin{equation}
+	\textbf{h}_e = \textbf{K}(\textbf{x} - \textbf{x}_e),
+\end{equation}
+kjer je \textbf{x} lega vrha robota, $\textbf{x}_e$ lega normale na površino okolice in $ \textbf{K}_{e} $ togost okolice. Situacijo prikazuje slike \ref{fig:enviroment_interraction}.
+\input{./Slike/enviroment_interraction.tex}
+
+Za vodenje lege vrha robota bomo vzeli enaèbo \ref{eq:alpha_inv_dyn}. Ker gre za vodenje po poziciji bomo $\ddot{\mathbf{x}}_{ref}$ postavili na niè in vpeljali referenèno poziciji vrha $\textbf{x}_{ref}$. Enaèba ima sedaj obliko 
+\begin{equation}\label{eq:a_xf}
+	\textbf{a} = \textbf{K}_P (\mathbf{x} - \mathbf{x}_{f}) - \textbf{K}_d \dot{\mathbf{x}},
+\end{equation}
+kjer je  $\mathbf{x}$ lega vrha robota, $ \mathbf{x}_{f} $ pa pozicija odvisna od napake med silo želeno in dejansko silo interakcije. Za $ \mathbf{x}_{f} $ izberemo proporcionalni regulator in zapišemo 
+\begin{equation}\label{eq:xf_C}
+	 \mathbf{x}_{f} = \textbf{C}(\mathbf{h}_{ref} - \textbf{h}_e) = \textbf{C} \tilde{\mathbf{h}},
+\end{equation}
+kjer je matrika C diagonalna matrika in ima pomen podajnosti.
+
+Opazimo lahko, da tako krmiljen robot nikoli ne bo dosegel referenène sile, saj P regulator v statiènih razmerah napake ne iznièi. Zato v matriko C dodamo tudi integratorski del in tako zapišemo matriko C kot
+\begin{equation}
+	\textbf{C} = \textbf{C}_P + \textbf{C}_I \int_{0}^{t} (.) d \xi
+\end{equation}
+
+Zapišimo sedaj konèno enaèbo za regulacijo navorov v motorjih za sledenje referenèni sili na vrhu robot z vstavitvijo \ref{eq:a_xf} v \ref{eq:u_from_ddq} in upoštevaje \ref{eq:xf_C} (\cite{siciliano_robot}):
+
+\begin{equation}
+	\textbf{u} = \mathbf{\hat{B}}(\textbf{q})\textbf{J}^*(\textbf{K}_P (\mathbf{x} - (\textbf{C}_P\tilde{\mathbf{h}} + \textbf{C}_I \int_{0}^{t} \tilde{\mathbf{h}} d \xi) - \textbf{K}_d \dot{\mathbf{x}} ) + \mathbf{\hat{n}}(q,\dot{q}).
+\end{equation}
+Shema takega vodenja je na sliki \ref{fig:tau_force_int}
+\begin{figure}[]
+	\centering
+	\scalebox{.6}{\input{./BlockDiagrams/tau_force_int.tex}}
+	\caption{}
+	\label{fig:tau_force_int}
+\end{figure}
 
 %BEGIN_FOLD
 %\begin{equation} \label{eq:din_mode}

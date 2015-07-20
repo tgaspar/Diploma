@@ -21,13 +21,13 @@
 \contentsline {subsection}{\numberline {4.4.1}Vodenje v notranjih koordinatah}{35}
 \contentsline {subsection}{\numberline {4.4.2}Vodenje v zunanjih koordinatah}{37}
 \contentsline {section}{\numberline {4.5}Interakcija z okoljem}{38}
-\contentsline {chapter}{\numberline {5}Simulink knji\v zice}{39}
-\contentsline {section}{\numberline {5.1}Blok PA-10}{39}
-\contentsline {section}{\numberline {5.2}Blok Inverse Dynamics Control}{39}
-\contentsline {section}{\numberline {5.3}Blok Follow Trajectory}{40}
-\contentsline {section}{\numberline {5.4}Blok Admitance Control}{40}
-\contentsline {chapter}{\numberline {6}Zaklju\v cek}{41}
-\contentsline {chapter}{\numberline {A}Appendix 1}{47}
-\contentsline {chapter}{\numberline {B}Appendix 2}{49}
-\contentsline {chapter}{\numberline {C}Appendix 3}{51}
-\contentsline {chapter}{\numberline {D}Predloge za navajanje literature - baza BibTex}{53}
+\contentsline {chapter}{\numberline {5}Simulink knji\v zice}{41}
+\contentsline {section}{\numberline {5.1}Blok PA-10}{41}
+\contentsline {section}{\numberline {5.2}Blok Inverse Dynamics Control}{41}
+\contentsline {section}{\numberline {5.3}Blok Follow Trajectory}{42}
+\contentsline {section}{\numberline {5.4}Blok Admitance Control}{42}
+\contentsline {chapter}{\numberline {6}Zaklju\v cek}{43}
+\contentsline {chapter}{\numberline {A}Appendix 1}{49}
+\contentsline {chapter}{\numberline {B}Appendix 2}{51}
+\contentsline {chapter}{\numberline {C}Appendix 3}{53}
+\contentsline {chapter}{\numberline {D}Predloge za navajanje literature - baza BibTex}{55}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  17 JUL 2015 18:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  20 JUL 2015 16:39
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -1117,12 +1117,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[36]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 887.
-
-(BlockDiagrams/inv_dyn_x.tex)
+[36] (BlockDiagrams/inv_dyn_x.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1132,45 +1127,78 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[38]
-  5.
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 974.
-[39
+[38] (Slike/enviroment_interraction.tex
+Package epstopdf Info: Source file: <./Slike/enviroment_interraction.eps>
+(epstopdf)                    date: 2015-07-20 16:37:35
+(epstopdf)                    size: 107787 bytes
+(epstopdf)             Output file: <./Slike/enviroment_interraction-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2015-07-20 16:37:41
+(epstopdf)                    size: 3689 bytes
+(epstopdf)             Command: <epstopdf --outfile=./Slike/enviroment_interrac
+tion-eps-converted-to.pdf ./Slike/enviroment_interraction.eps>
+(epstopdf)             \includegraphics on input line 3.
+Package epstopdf Info: Output file is already uptodate.
 
-]
+<./Slike/enviroment_interraction-eps-converted-to.pdf, id=211, 138.5175pt x 243
+.91125pt>
+File: ./Slike/enviroment_interraction-eps-converted-to.pdf Graphic file (type p
+df)
+ <use ./Slike/enviroment_interraction-eps-converted-to.pdf>
+Package pdftex.def Info: ./Slike/enviroment_interraction-eps-converted-to.pdf u
+sed on input line 3.
+(pdftex.def)             Requested size: 69.25858pt x 121.95532pt.
+)
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[39 <./Slike/enviroment_interraction-eps-converted-to.pdf>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 934.
+
+(BlockDiagrams/tau_force_int.tex)
+Overfull \hbox (20.56418pt too wide) in paragraph at lines 936--937
+ [][] 
+ []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [40]
+  5.
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1012.
+
+[41
+
+]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[42]
   6.
-(magistrska_timotej_gaspar.bbl [41
+(magistrska_timotej_gaspar.bbl [43
 
 ]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[42
+[44
 
-] [43])
+] [45])
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[44] [45
+[46] [47
 
 ]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[46
-
-]
-  A.
-[47]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1178,7 +1206,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [48
 
 ]
-  B.
+  A.
 [49]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -1187,7 +1215,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [50
 
 ]
-  C.
+  B.
 [51]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -1196,25 +1224,34 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [52
 
 ]
-  D.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [53]
+  C.
+[53]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[54] (magistrska_timotej_gaspar.aux)
+[54
+
+]
+  D.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [55]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[56] (magistrska_timotej_gaspar.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 18271 strings out of 493671
- 357904 string characters out of 3145458
- 496062 words of memory out of 3000000
- 21155 multiletter control sequences out of 15000+200000
+ 18357 strings out of 493671
+ 359420 string characters out of 3145458
+ 496179 words of memory out of 3000000
+ 21235 multiletter control sequences out of 15000+200000
  16809 words of font info for 63 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  55i,15n,67p,3304b,716s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1235,9 +1272,9 @@ rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
 /amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
 
-Output written on magistrska_timotej_gaspar.pdf (66 pages, 589413 bytes).
+Output written on magistrska_timotej_gaspar.pdf (68 pages, 598534 bytes).
 PDF statistics:
- 323 PDF objects out of 1000 (max. 8388607)
+ 333 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -439,7 +439,7 @@ Z uspešnim vodenjem robota brez taktilne povratne zanke je mogoèe izvesti mnogo 
 
 V prvem poglavju je bilo zapisano, da robota PA-10 med drugim odlikuje prenosnost. To se velja tako za samo robotsko roko kot tudi za krmilnik servo motorjev. Krmilnik z ohišjem ima dimenzije $262 \times 331 \times 396$ mm in maso 22 Kg. Za sprednji strani krmilnika sta dva zraènika, na zadnji pa so prikljuèki in stikala (slika \ref{fig:pa10-servo}).
 
-\input{./Slike/pa10-servoscontroller.tex}
+\input{./Slike/pa10-servocontroller.tex}
 
 V ohišju servo krmilnika so vgrajeni štirje krmilniki servo motorjev. Trije krmilijo po dva motorja, eden pa le enega. Krmilniki omogoèajo vodenje motorjev na dva naèina, navorno in hitrostno. Razlièna vodenja sta v krmilnikih drugaèe realizirana. Navorno vodenje je realizirano z analognim P regulatorjem toka, hitrostna regulacija pa je realizirana z digitalnim PI regulatorjem s frekvenco približno 1500 Hz.
 
@@ -1007,25 +1007,49 @@ Shema takega vodenja je na sliki \ref{fig:tau_force_int}
 %\chapter{Rezultati} \label{chap:rezultati}
 
 %*********************** SIMULINK KNJIŽNICE ********************************
-\chapter{Simulink knjižice} \label{chap:simulink}
+\chapter{Implementacija} \label{chap:implementacija}
 
-Avtorji tega dela so za visoko nivojsko vodenje uporabljali programski paket \matsim. Ker je želja avtorjev, da se raziskovalno in razvojno delo na robotu PA-10 v prihodnosti nadaljuje, so nastale \simulink knjižnice. Knjižnice bodoèim uporabnikom omogoèajo uporabo robota brez, da poznajo do podrobnosti vse, kar je bilo opisano do sedaj v tem delu. V nadaljevanju bodo opisani posamezni bloki, ki jih lahko uporabniki dodajo v njihovo \simulink shemo.
+Poznavanje teoretiènih osnov za vodenje robotov nam omogoèa realizacijo krmiljenja na naèin, ki je najbolj primeren zadani nalogi. V zgornjem poglavju so bile te osnove opisane in prikazane so bile blokovne sheme vodenja. Iz tistih shem, je videti, da je za implementacijo razliènih vodenj potrebno poznati razlièno kolièino parametrov. Pri hitrostnem vodenju je enostavneje, saj je potrebno doloèiti le parametre ojaèanj regulatorja. Pri navornem vodenju robota pa doloèitev parametrov še zdaleè ni enostaven problem saj je potrebno poznati dinamiène parametre samega robota.
 
-\section{Blok PA-10}
+V nadaljevanju tega poglavja, bo opisana implementacija algoritmov vodenja, ki so bili opisani v \ref{chap:vodenje}. Implementacija vodenj je hkrati tudi preizkus s katerim se bo ovrednotilo namensko narejen strežnik. Preverilo se do katere frekvence in s kakšnimi ojaèanji je lahko vodenje v kontaktu z okolice še stabilno.
 
-Blok imenovan PA-10 je glavni blok za komunikacijo z ARCNET strežnikom, ki teèe na Linux raèunalniku. Blok omogoèa prebiranje vseh statusnih bajtov za vse stopnje robota in glavni statusni bajt. Omogoèa tudi prebiranje vrednosti sil izmerjenih na senzorju JR3 ter kote in navore v sklepih robota. Hkrati pa uporabniku omogoèa izbiro na kakšen naèin bo robota vodil, navorno ali hitrostno. Uporabnik ima tudi možnost vklopa ter izklopa zavor posameznih sklepov ter vklop ali izklop posameznih servo motorjev.
+Vodenje bo je bilo realizirano z uporabo strežnika opisanega v poglavju \ref{chap:udp-arcnet-server}. Za komunikacijo s strežnikom je bilo narejeno visoko nivojsko vodenje v programskem paketu \matsim. Razlogi za izbiro omenjenega programskega paketa so bile dobre predhodne izkušnje ter dobro poznavanje delovanja programa s strani avtorjev. \simulink \space bloki, ki se so se uporabljali in bodo v nadaljevanju prikazani na slikah, so podrobneje opisani v dodatku \ref{appendix:simulink-block}.
 
-\section{Blok Inverse Dynamics Control}
+\section{Hitrostno krmiljenje}
 
-Blok imenovan Inverse Dynamics Control je nastal z željo, da uporabnik enostavno pripelje v vhod željeno pozicijo v sklepih ali hitrost sklepov v blok in ven dobi potreben navor za to hitrost oz. za ohranjanje pozicije. Uporabnik ima možnost nastavljanja proporcionalnega ter diferencirnega ojaèanja.
+Implementacija hitrostnega krmiljenja robota je potekala postopoma. Najprej je bilo realizirano pozicijsko vodenje sklepov nato pa vodenje v zunanjih trajektorijah. Ovrednotilo se je, kakšna je dinamika odziva na signal referenèni signal stopnice in kakšna je napaka ob sledenju signalu sinusne oblike s spreminjajoèo se frekvenco.
 
-\section{Blok Follow Trajectory}
+\subsection{Vodenje po trajektoriji}
 
-Blok imenovan Follow Trajektory implementira vodenje v zunajih koordinatah. Kot vhod prejme zunanje koordinate, trenutne kote in hitrosti v sklepih. Kot rezultat vrne potrebne hitrosti, za doseganje referenène pozicije. V bloku je realizirano vodenje na naèin, ki je opisan v \ref{sec:inv_kin_x}. 
 
-\section{Blok Admitance Control}
 
-Blok imenovan Admitance Control je namenjen admitaènemu vodenju robota. Blok prejme kot vhod signal želeno referenco izraženo v zunanjih koordinatah ter odèitke senzorja sil. Kot izhod pa poda novo referenèno pozicijo v zunanjih koordinatah, ki jo lahko uporabnik posreduje naprej v blok Follow Trajectory. Bloku Admitance Control se lahko natavlja ojaèanja v posameznih smereh. Na ta naèin se doseže, da je po razliènih oseh razlièno podajen.
+\subsection{Admitanèno vodenje}
+\section{Navorno krmiljenje}
+\subsection{Kompenzacija trenja}
+\subsection{Vodenje po trajektoriji}
+\subsection{Vodenje v kontaktu z okolico}
+
+
+
+%BEGIN_FOLD
+%Avtorji tega dela so za visoko nivojsko vodenje uporabljali programski paket \matsim. Ker je želja avtorjev, da se raziskovalno in razvojno delo na robotu PA-10 v prihodnosti nadaljuje, so nastale \simulink knjižnice. Knjižnice bodoèim uporabnikom omogoèajo uporabo robota brez, da poznajo do podrobnosti vse, kar je bilo opisano do sedaj v tem delu. V nadaljevanju bodo opisani posamezni bloki, ki jih lahko uporabniki dodajo v njihovo \simulink shemo.
+%
+%\section{Blok PA-10}
+%
+%Blok imenovan PA-10 je glavni blok za komunikacijo z ARCNET strežnikom, ki teèe na Linux raèunalniku. Blok omogoèa prebiranje vseh statusnih bajtov za vse stopnje robota in glavni statusni bajt. Omogoèa tudi prebiranje vrednosti sil izmerjenih na senzorju JR3 ter kote in navore v sklepih robota. Hkrati pa uporabniku omogoèa izbiro na kakšen naèin bo robota vodil, navorno ali hitrostno. Uporabnik ima tudi možnost vklopa ter izklopa zavor posameznih sklepov ter vklop ali izklop posameznih servo motorjev.
+%
+%\section{Blok Inverse Dynamics Control}
+%
+%Blok imenovan Inverse Dynamics Control je nastal z željo, da uporabnik enostavno pripelje v vhod željeno pozicijo v sklepih ali hitrost sklepov v blok in ven dobi potreben navor za to hitrost oz. za ohranjanje pozicije. Uporabnik ima možnost nastavljanja proporcionalnega ter diferencirnega ojaèanja.
+%
+%\section{Blok Follow Trajectory}
+%
+%Blok imenovan Follow Trajektory implementira vodenje v zunajih koordinatah. Kot vhod prejme zunanje koordinate, trenutne kote in hitrosti v sklepih. Kot rezultat vrne potrebne hitrosti, za doseganje referenène pozicije. V bloku je realizirano vodenje na naèin, ki je opisan v \ref{sec:inv_kin_x}. 
+%
+%\section{Blok Admitance Control}
+%
+%Blok imenovan Admitance Control je namenjen admitaènemu vodenju robota. Blok prejme kot vhod signal želeno referenco izraženo v zunanjih koordinatah ter odèitke senzorja sil. Kot izhod pa poda novo referenèno pozicijo v zunanjih koordinatah, ki jo lahko uporabnik posreduje naprej v blok Follow Trajectory. Bloku Admitance Control se lahko natavlja ojaèanja v posameznih smereh. Na ta naèin se doseže, da je po razliènih oseh razlièno podajen.
+%END_FOLD
 
 %*********************** ZAKLJUÈEK ********************************
 \chapter{Zakljuèek} \label{chap:zakljucek}
@@ -1039,62 +1063,13 @@ Blok imenovan Admitance Control je namenjen admitaènemu vodenju robota. Blok pre
 
 
 \appendix
-\chapter{Appendix 1} \label{appendix:udp-arcnet-server}
-\chapter{Appendix 2} \label{dodatekB}
-\chapter{Appendix 3} \label{dodatekC}
+\chapter{Dodatek 1} \label{appendix:udp-arcnet-server}
+\chapter{Dodatek 2} \label{appendix:simulink-block}
+\chapter{Dodatek 3} \label{dodatekC}
 
 
-
-Postopek dela:
-\begin{description}
-\item
-\end{description}
-
-\chapter{Predloge za navajanje literature - baza BibTex}
-\label{dodatekE}
-
-\footnotesize
 \begin{verbatim}
-@ARTICLE{clanek1,
-   author = "L[eslie] A. Aamport",
-   title = "The Gnats and Gnus Document Preparation System",
-   journal =  "\mbox{G-Animal's} Journal",
-   year = 1986,
-   volume = 41,
-   number = 7,
-   pages = "73-77",
-   month = jul,
-}
-
-
-@BOOK{knjiga1,
-   author = "Donald E. Knuth",
-   title = "Seminumerical Algorithms",
-   publisher = "Addison-Wesley",
-   address = "Reading, Massachusetts",
-   year = "1981",
-}
-
-
-@INPROCEEDINGS{vzborniku,
-   author = "Alfred V. Oaho and Jeffrey D. Ullman and Mihalis Yannakakis",
-   title = "On Notions of Information Transfer in {VLSI} Circuits",
-   editor = "Wizard V. Oz and Mihalis Yannakakis",
-   booktitle = "Proc. Fifteenth Annual ACM" # STOC,
-   pages = "133--139",
-   month = mar,
-   year = 1983,
-   address = "Boston",
-   publisher = "Academic Press",
-}
-
-
-@misc{spletna_stran,
-  author = "LLC",
-  title = "{MS Windows NT Kernel Description [Online]}",
-  howpublished = "Dosegljivo: \url{http://web.archive.org}",
-  note = "[Dostopano: 19. 4. 2013]"
-}
+There is no spoon.
 \end{verbatim}
 \normalsize
 

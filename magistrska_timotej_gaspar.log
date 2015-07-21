@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  20 JUL 2015 16:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  21 JUL 2015 10:22
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -1171,9 +1171,12 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [40]
   5.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1012.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1016.
 
-[41
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41
 
 ]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -1225,34 +1228,17 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 ]
   C.
-[53]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[54
-
-]
-  D.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [55]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[56] (magistrska_timotej_gaspar.aux)
+[53] (magistrska_timotej_gaspar.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 18357 strings out of 493671
- 359420 string characters out of 3145458
- 496179 words of memory out of 3000000
- 21235 multiletter control sequences out of 15000+200000
- 16809 words of font info for 63 fonts, out of 3000000 for 9000
+ 18354 strings out of 493671
+ 359410 string characters out of 3145458
+ 497170 words of memory out of 3000000
+ 21233 multiletter control sequences out of 15000+200000
+ 16641 words of font info for 62 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  55i,15n,67p,3304b,716s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
@@ -1270,11 +1256,10 @@ rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
 /MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-
-Output written on magistrska_timotej_gaspar.pdf (68 pages, 598534 bytes).
+/cmtt12.pfb>
+Output written on magistrska_timotej_gaspar.pdf (65 pages, 575977 bytes).
 PDF statistics:
- 333 PDF objects out of 1000 (max. 8388607)
+ 319 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

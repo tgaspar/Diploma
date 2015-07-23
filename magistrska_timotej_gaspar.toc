@@ -6,9 +6,9 @@
 \contentsline {section}{\numberline {2.3}Inverzna kinematika}{14}
 \contentsline {chapter}{\numberline {3}ARCNET - UDP stre\v znik za komunikacijo s krmilnikom robota ter senzorjem sile}{17}
 \contentsline {section}{\numberline {3.1}Krmilnik servo motorjev robota}{18}
-\contentsline {section}{\numberline {3.2}ARCNET vmesnik}{19}
-\contentsline {section}{\numberline {3.3}Senzor sile in navorov - JR3}{20}
-\contentsline {section}{\numberline {3.4}Stre\v znik}{22}
+\contentsline {section}{\numberline {3.2}ARCNET vmesnik}{20}
+\contentsline {section}{\numberline {3.3}Senzor sile in navorov - JR3}{21}
+\contentsline {section}{\numberline {3.4}Stre\v znik}{23}
 \contentsline {subsection}{\numberline {3.4.1}Delovanje programa}{23}
 \contentsline {subsection}{\numberline {3.4.2}Varnostni ukrepi}{25}
 \contentsline {chapter}{\numberline {4}Vodenje robota PA-10}{27}
@@ -24,12 +24,12 @@
 \contentsline {chapter}{\numberline {5}Implementacija}{41}
 \contentsline {section}{\numberline {5.1}Hitrostno krmiljenje}{42}
 \contentsline {subsection}{\numberline {5.1.1}Vodenje po trajektoriji}{42}
-\contentsline {subsection}{\numberline {5.1.2}Admitan\v cno vodenje}{42}
-\contentsline {section}{\numberline {5.2}Navorno krmiljenje}{42}
-\contentsline {subsection}{\numberline {5.2.1}Kompenzacija trenja}{42}
-\contentsline {subsection}{\numberline {5.2.2}Vodenje po trajektoriji}{42}
-\contentsline {subsection}{\numberline {5.2.3}Vodenje v kontaktu z okolico}{42}
-\contentsline {chapter}{\numberline {6}Zaklju\v cek}{43}
-\contentsline {chapter}{\numberline {A}Dodatek 1}{49}
-\contentsline {chapter}{\numberline {B}Dodatek 2}{51}
-\contentsline {chapter}{\numberline {C}Dodatek 3}{53}
+\contentsline {subsection}{\numberline {5.1.2}Admitan\v cno vodenje}{45}
+\contentsline {section}{\numberline {5.2}Navorno krmiljenje}{45}
+\contentsline {subsection}{\numberline {5.2.1}Kompenzacija trenja}{45}
+\contentsline {subsection}{\numberline {5.2.2}Vodenje po trajektoriji}{45}
+\contentsline {subsection}{\numberline {5.2.3}Vodenje v kontaktu z okolico}{45}
+\contentsline {chapter}{\numberline {6}Zaklju\v cek}{47}
+\contentsline {chapter}{\numberline {A}Dodatek 1}{53}
+\contentsline {chapter}{\numberline {B}Dodatek 2}{55}
+\contentsline {chapter}{\numberline {C}Dodatek 3}{57}

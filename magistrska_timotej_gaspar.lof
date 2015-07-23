@@ -5,8 +5,8 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Dva zaporedna \v {c}lena kinemati\v {c}ne verige, povzeto po \cite {siciliano_robot}}}{9}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Tehni\v {c}na risba robota PA-10. Iz nje se definira D-H parametre. Povzeto po \cite {pa10-manual}.}}{10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Tehni\v {c}na risba ohi\v {s}ja krmilnika servo motorjev. Povzeto po \cite {pa10-manual}.}}{18}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Na\v {c}in za krmiljenje robota}}{21}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Tehni\v {c}na risba ohi\v {s}ja krmilnika servo motorjev. Povzeto po \cite {pa10-manual}.}}{19}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Na\v {c}in za krmiljenje robota}}{22}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Stre\v {z}nik kot posrednik med ARCNET ter Ethernet omre\v {z}jem.}}{23}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Koordinatni sistem senzorja sile ter koordinatni sistem te\v {z}i\v {s}\v {c}a prijemala}}{29}
@@ -17,6 +17,10 @@
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Vrh robota v kontaktu z okoljem.}}{39}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces }}{40}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Odziv sklepa na signal stopnice.}}{42}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Odziv sklepa na signal sinusne oblike.}}{43}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Napaka odziva in ovojnica signala napake.}}{44}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Sledenje referenci v obliki kroga na $x$ in $y$ ravnini}}{44}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -484,50 +484,86 @@ Krmilnik vsebuje dva pomnilnika. Delovni pomnilnik (RAM) in nastavitveni pomniln
 
 \section{ARCNET vmesnik}\label{sec:arc_drive}
 
-Referenène navore in hitrosti se na krmilniku nastavlja na preko zunanjega vmesnika, ki je povezan na enako ARCNET omrežje kot servo krmilnik. Prikljuèitev na ARCNET omrežje servo krmilniku omogoèa v ohišje vgrajen ARCNET modul. ARCNET je omrežje, ki vkljuèuje podatkovni in fizièni nivo po OSI modelu. Njegova prednost pred Ethernet omrežjem je velika stopnja deterministiènosti \cite{arc_tutorial}. Krmilnik robota ima dva prikljuèka za optièna vodila, vhod (Rx) ter izhod (Tx). Zgornja meja hitrosti komunikacije z krmilnikom robota je 5 Mb/s \cite{pa10-manual}.
+Referenène navore in hitrosti se na krmilniku nastavlja na preko zunanjega vmesnika, ki je povezan na enako ARCNET omrežje kot servo krmilnik. Prikljuèitev servo krmilnika na omrežje omogoèa v ohišje vgrajen ARCNET modul. ARCNET je omrežje, ki vkljuèuje podatkovni in fizièni nivo po OSI modelu, komunikacija pa je serijska in paketno zastavljena. Njegova prednost pred Ethernet omrežjem je velika stopnja deterministiènosti \cite{arc_tutorial}. Krmilnik robota ima dva prikljuèka za optièna vodila, vhod (Rx) ter izhod (Tx). Zgornja meja hitrosti komunikacije z krmilnikom robota je 5 Mb/s \cite{pa10-manual}.
 
-ARCNET komunikacija je serijska in paketno zastavljena. Pakete, ki jih pošiljamo na krmilnik servo motorjev robota, je potrebno sestavit tako, kot je napisano v dokumentaciji \cite{pa10-manual}. Èe želimo, da bo krmilnik paket prejel, je na prvi bajt potrebno vpisati krmilnikov naslov. ARCNET modul dodatno vsebuje logiko za preklapljanje med razliènimi stanji, v katerih imamo na voljo razliène naèine delovanja. To so:
+Pakete, ki jih pošiljamo na krmilnik servo motorjev robota, je potrebno sestavit tako, kot je napisano v dokumentaciji \cite{pa10-manual}. Èe želimo, da bo krmilnik paket prejel, je na prvi bajt potrebno vpisati krmilnikov naslov. ARCNET modul vsebuje konèni avtomat stanj, ki preklaplja med stanji glede na tip poslanih podatkov. Razlièni tipi podatkov so definirani z razliènimi èrkami, znotraj poslanega paketa. Struktura ARCNET paketa je prikazana na sliki \ref{fig:arcnet-packet}.
+\input{./Slike/arcnet-packet.tex}
+
+Preklapljanje med stanji in potrebne èrke opisuje slika \ref{fig:pa10-state}. Ikona \includegraphics[scale=0.6]{./Slike/little-arrow.eps} oznaèuje stanja, v katerih se avtomat lahko zadrži dlje èasa s ponavljajoèim pošiljanjem paketov z enakim tipom podatkov. Iz teh stanj lahko izstopi v primeru, da nov paket ne pride pravoèasno, ali pa da pride paket s èrko 'E'. Ko višje nivojski vmesnik ne pošilja nobenih ukazov je ARCNET vmesnik v stanju èakanja, v katerem èaka na primerno sestavljen paket.
+
+
+
+\input{./Slike/pa10-state.tex}
+%\begin{itemize}
+%	\item Izpis EEPROM tabele,
+%	\item Vpis v EEPROM tabelo,
+%	\item Vpis v RAM tabelo,
+%	\item Kopiranje iz RAM v EEPROM tabelo,
+%	\item Postavitev kotov na nièelno vrednost,	
+%	\item Sporstitev zavor,
+%	\item Vodenje sklepov,
+%	\item Èakanje
+%\end{itemize}
+
+
+
+Za delo z robotom je pomemben predvsem naèin "Vodenje sklepov", v katerem se dejansko krmili gibanje robota. V tem naèinu je potrebno upoštevati predpisano maksimalno zakasnitev med zaporednima paketoma, ki je definirana v EEPROM tabeli in je tovarniško nastavljena na 300 ms. V kolikor je ta zakasnitev prekoraèena, se avtomat stanj vrne v zaèetno stanje in je krmiljenje prekinjeno. Ta naèin se izbere tako, da se ARCNET vmesniku najprej pošlje ukaz, ki se zaène z velikim tiskanim S, nadaljuje se s pošiljanjem paketov, ki se zaènejo s veliko tiskano èrko C ter zakljuèi s tem, da se pošlje paket, ki se zaène z velikim tiskanim E (slika \ref{fig:pa10-control-state}).
+\input{./Slike/pa10-control-state.tex}. Del paketa, ki je oznaèen z "podatki" nosi podatke, na podlagi katerih se vodi robota. Vendar pa je vsebina podatkovnega dela odvisna od èrke, ki jo pošljemo.
+
+\input{./Slike/arcnet-data.tex}
+
+Paketa, ki se zaèneta s S in E imata podatkovni del prazen. Paket, ki se zaène s C pa ima v podatkovnem delu prvih 35 bajtov zapolnjenih s podatki za vodenje robota. Slika \ref{fig:arcnet-data} prikazuje vsebino podatkovnega dela omenjenih paketov. V sliki so krmilni podatki oznaèeni z $ \mathrm{k}_i $, $\mathrm{n}_i $ in $\mathrm{v}_i $. Njihov pomen pa je
+
 \begin{itemize}
-	\item Izpis EEPROM tabele,
-	\item Vpis v EEPROM tabelo,
-	\item Vpis v RAM tabelo,
-	\item Kopiranje iz RAM v EEPROM tabelo,
-	\item Postavitev kotov na nièelno vrednost,	
-	\item Sporstitev zavor,
-	\item Vodenje sklepov,
-	\item Èakanje
+	\item k - kontrolni bajt (velikost podatka: byte),
+	
+	\begin{itemize}
+		\item bit 0: zavora (1 - vklop, 0 - izklop),
+		\item bit 1: servo motor (1 - vklop, 0 - izklop),
+		\item bit 2: naèin krmiljenja (1 - navor, 0 - hitrost),
+		\item biti 3 - 7: se en uporabljajo,
+	\end{itemize}
+		
+	\item n - referenèni navor (velikost podatka: word)  = 0.001 Nm/digit,
+	
+	
+	\item referenèna hitrost (velikost podatka: word) = 0.0002 rad/s/digit,
+	
 \end{itemize}
-
-Ko višje nivojski vmesnik ne pošilja nobenih ukazov je ARCNET vmesnik v èakanju. V tem stanju èaka na primerno sestavljen paket.
-
-V tem delu se je v veèini uporabljalo naèin za vodenje sklepov. Ta naèin se izbere tako, da se ARCNET vmesniku najprej pošlje ukaz, ki se zaène z velikim tiskanim S (ASCII DEC 65), nadaljuje se s pošiljanjem paketov, ki se zaènejo s veliko tiskano èrko C (ASCII DEC 67) ter zakljuèi s tem, da se pošlje paket, ki se zaène z velikim tiskanim E (ASCII 69) (slika \ref{fig:controlmode}). Pri tem naèinu delovanja je potrebno posvetiti nekaj pozornosti frekvenci pošiljanja. V kolikor paketi ne prispejo do ARCNET vmesnika v intervalu specificiranem v EEPROM tabeli na krmilniku, bo vmesnik preklopil nazaj na naèin èakanja.
-
-Paket, ki se zaène s C in nosi podatke o krmiljenju sklepov robota je velik 35 bajtov, 5 za vsak sklep. Prvi bajt je kontrolni in samo prvi trije biti nosijo podatke o vodenju:
-
-\begin{enumerate}
-	\item vklop ali izklop mehanske zavore (1 - vklop, 0 - izklop)
-	\item vklop ali izklop servo motorja (1 - vklop, 0 - izklop)
-	\item izbira navornega ali hitrostnega naèina (1 - navorni, 0 - hitrostni)
-\end{enumerate}
-Drugi in tretji bajt nosijo podatek o referenènem navoru na sklepu. Ta podatek bo uporabljen le, èe je servo motor nastavljen na navorni naèin delovanja. Dvobajtni podatek pa je v formatu 0.001 Nm/digit.
-Èetrti in peti bajt nosijo podatek o referenèni hitrosti na sklepu. Podatek je tako kot pri navornem delovanju v uporabi le, ko vodimo servo motor na hitrostnem naèinu. Dvobajtni podatek je v formatu 0.0002 rad/s/digit.
-
-\input{./Slike/control_mode.tex}
-
+Poslani referenèni navori in hitrosti gredo od vrednosti 0x0000 do 0xFFFF. Krmlinik ima zaradi varnosti nastavljene omejitve obeh velièin, zato prevelike referenène signale poreže tako, da ustrezajo omejitvam.
 
 \section{Senzor sile in navorov - JR3}
 
-Za namene vodenja opisanega v poglavju \ref{chap:admitance} smo med vrhom robota ter prijemalom pritrdilo senzor sil JR3. Senzor nam omogoèa merjenje sil in navorov v $x$, $y$ in $z$ oseh. Senzor je narejen iz uporovnih listièev porazdeljenih po notranjosti senzorja, ki je v obliki križa. Iz specifikacij senzorja \cite{jr3_doc_ext} je razvidno, da uporablja 6 uporovnih listièev. S tem, ko na senzor deluje zunanja sila ali navor, pride do deformacije materjala na katerem so namešèeni uporovni listièi in se upornost na uporovnih listièih spremeni proporcionalno s silo in togostjo senzorja. Sprememba upornosti se izmeri posredno preko spremembe napetosti na AD-pretvorniku, ki je vgrajen v sam senzor. Napetost se pretvori v silo preko množenja s kalibracijsko matriko \textbf{K}. Naj bo $\textbf{h}_{JR3}$ vektor sil, ki delujejo na senzor in naj bo $\mathbf{\omega}_u$ vektor napetosti na AD-pretvorniku. Enaèba za izraèun sil je
+Za realizacijo vodenja opisanega v poglavju \ref{sec:vodenje-admitance} smo med vrhom robota ter prijemalom pritrdilo senzor sil JR3. Senzor nam omogoèa merjenje sil in navorov v $x$, $y$ in $z$ oseh. Senzor je narejen iz uporovnih listièev porazdeljenih po notranjosti senzorja, ki je v obliki križa. Iz specifikacij senzorja \cite{jr3_doc_ext} je razvidno, da uporablja 6 uporovnih listièev. S tem, ko na senzor deluje zunanja sila ali navor, pride do deformacije materjala na katerem so namešèeni uporovni listièi in se upornost na uporovnih listièih spremeni proporcionalno s silo in togostjo senzorja. Sprememba upornosti se izmeri posredno preko spremembe napetosti na AD-pretvorniku, ki je vgrajen v sam senzor. Napetost se pretvori v silo preko množenja s kalibracijsko matriko $ \textbf{K}_{calib} $. Naj bo $\textbf{h}_{JR3}$ vektor sil, ki delujejo na senzor in naj bo $\mathbf{u}_u$ vektor napetosti na AD-pretvorniku. Enaèba za izraèun sil je
 
 \begin{equation}
-\textbf{h}_{JR3} = \textbf{K} \mathbf{\omega}_u
+\textbf{h}_{JR3} = \textbf{K}_{calib} \mathbf{u}_u
 \end{equation}
 
+Senzor je priklopljen na raèunalnik preko 8 žilnega kabla s kontektorjem tipa RJ-45 v ISA kartico. Elektronika v samem senzorju serijsko pošilja podatke o izmerjenih silah na kartico. Kartica vsebuje vezje za digitalno obdelavo signalov (\textit{digital signal processing} - DPS). V dokumentaciji kartice \cite{jr3_doc_inst} so opisani trije nizkoprepustni filtri z razliènimi mejnimi frekvencami. Uporabili smo filter z mejno frekvenco 500 Hz.
+
+\input{./Slike/dsp-registers.tex}
+
+Arhitektura DSP-ja iz perspektive ISA vodila sestavlja dva 16-bitna registra: naslovni ter podatkovni. Vendar pa ima DSP veliko veè registrov, do katerih dostopamo preko vhodno izhodnih vrtat raèunalnika (\textit{I/O ports}). Na kartici so stikala preko katerih nastavimo osnovni naslov (\textit{base address}) kartice. Èe je osnovni naslov 0x314 bo naslovni register dostopen na 0x314, podatkovni pa na 0x316. Podatke na registrih DPSja preberemo tako, da na naslovni del zapišemo naslov registra. DPS nato napiše vsebino registra na podatkovni register ISA vodila. Èe želimo v register DPSja nekaj zapisati, pa moramo mi zapisati podatek na podatkovni del ISA registra (\ref{fig:dsp-registers}). V sintaksi programskega jezika C bi branje ter pisanje po registrih DSP kartice zgledalo tako:
 
 
-Senzor se prikljuèi preko 6 ali 8 žiènega kabla na raèunalniško kartico, ki je bodisi na ISA ali PCI vodilu. Elektronika v samem senzorju serijsko pošilja podatke o izmerjenih silah na kartico. Kartica vsebuje vezje za digitalno obdelavo signalov. V dokumentaciji kartice \cite{jr3_doc_inst} so opisani trije nizkoprepustni filtri z razliènimi mejnimi frekvencami. Uporabili smo filter z mejno frekvenco 500 Hz.
+\begin{verbatim}
+#define baseAdde 0x314
 
-Na raèunalniku, ki smo ga uporabljali, je namešèena kartica na vodilu ISA. Ker je standard starejši, je podjetje prenehalo s podporo tega standarda. Kot posledica tega smo razvili svojo programsko opremo za komunikacijo z notranjimi registri kartice. Osnovne informacije o podatkih do katerih se lahko dostopa po registrih se nahajajo v dokumentaciji \cite{jr3_doc_inst}.
+int getData(int addr)
+{
+	outport(baseAddr, addr);
+	return inport(baseAddr + 2);
+}
+
+int putData(int addr, int data)
+{
+	outport(baseAddr, addr);
+	outport(baseAddr + 2, data);
+}
+\end{verbatim}
+
+
 Dokumentacija navaja, da v kolikor želi uporabnik odèitati vrednost sile ali navora $F$ mora tako prebrati osnovno vrednost $F_s$ na registru imenovanem (\verb|full scale|), jo pomnožiti z vrednostjo $F_f$, ki je na registru izbranega filtra (\verb|current force|). Na zadnje more to vrednost delit s konstanto $K_p$, da pretvori v primerne enote(N ali Nm).
 
 \begin{equation}\label{eq:force_filt}

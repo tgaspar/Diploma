@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  24 JUL 2015 16:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  27 JUL 2015 14:43
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -647,11 +647,6 @@ G,.JBIG2,.JB2,.eps]
 \yyydec=\count152
 \tmpcount=\count153
 )
-("C:\Program Files\MiKTeX\tex\latex\cite\cite.sty"
-LaTeX Info: Redefining \cite on input line 302.
-LaTeX Info: Redefining \nocite on input line 332.
-Package: cite 2015/02/27  v 5.5
-)
 (BlockDiagrams/tikzsettings.tex
 ("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
 aryshapes.code.tex"
@@ -1115,7 +1110,14 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [21 <./Slike/pa10-state-eps-converted-to.pdf> <./Slike/pa10-control-state-eps-c
-onverted-to.pdf>]
+onverted-to.pdf>] (Slike/jr3-slika.tex
+<./Slike/jr3-slika.png, id=166, 864.831pt x 576.554pt>
+File: ./Slike/jr3-slika.png Graphic file (type png)
+
+<use ./Slike/jr3-slika.png>
+Package pdftex.def Info: ./Slike/jr3-slika.png used on input line 3.
+(pdftex.def)             Requested size: 206.28247pt x 103.80602pt.
+)
 Overfull \hbox (12.62668pt too wide) has occurred while \output is active
 \OT1/cmr/m/n/12 22    \OT1/cmr/m/sl/12 ARCNET - UDP streznik za komunikacijo s
  krmilnikom robota ter senzorjem sile
@@ -1127,34 +1129,35 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [22 <./Slike/arcnet-data-eps-converted-to.pdf>] (Slike/dsp-registers.tex
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1.
-
 Package epstopdf Info: Source file: <./Slike/dsp-registers.eps>
-(epstopdf)                    date: 2015-07-24 16:23:10
-(epstopdf)                    size: 289218 bytes
+(epstopdf)                    date: 2015-07-27 08:37:01
+(epstopdf)                    size: 289672 bytes
 (epstopdf)             Output file: <./Slike/dsp-registers-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2015-07-24 16:23:15
-(epstopdf)                    size: 6564 bytes
+(epstopdf)                    date: 2015-07-27 08:40:01
+(epstopdf)                    size: 6734 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/dsp-registers-eps-c
 onverted-to.pdf ./Slike/dsp-registers.eps>
 (epstopdf)             \includegraphics on input line 3.
 Package epstopdf Info: Output file is already uptodate.
-<./Slike/dsp-registers-eps-converted-to.pdf, id=182, 493.845pt x 261.97874pt>
+
+<./Slike/dsp-registers-eps-converted-to.pdf, id=184, 493.845pt x 261.97874pt>
 File: ./Slike/dsp-registers-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/dsp-registers-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/dsp-registers-eps-converted-to.pdf used on inp
 ut line 3.
 (pdftex.def)             Requested size: 246.92189pt x 130.98904pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 )
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[23]
+[23 <./Slike/jr3-slika.png>]
 Overfull \hbox (12.62668pt too wide) has occurred while \output is active
 \OT1/cmr/m/n/12 24    \OT1/cmr/m/sl/12 ARCNET - UDP streznik za komunikacijo s
  krmilnikom robota ter senzorjem sile
@@ -1165,7 +1168,12 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[24 <./Slike/dsp-registers-eps-converted-to.pdf>] (Slike/udp-arcnet-server.tex
+[24 <./Slike/dsp-registers-eps-converted-to.pdf>]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[25] (Slike/udp-arcnet-server.tex
 Package epstopdf Info: Source file: <./Slike/udp-arcnet-server.eps>
 (epstopdf)                    date: 2015-07-15 10:06:04
 (epstopdf)                    size: 727382 bytes
@@ -1178,7 +1186,7 @@ ps-converted-to.pdf ./Slike/udp-arcnet-server.eps>
 (epstopdf)             \includegraphics on input line 3.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/udp-arcnet-server-eps-converted-to.pdf, id=196, 819.06pt x 408.52625pt
+<./Slike/udp-arcnet-server-eps-converted-to.pdf, id=204, 819.06pt x 408.52625pt
 >
 File: ./Slike/udp-arcnet-server-eps-converted-to.pdf Graphic file (type pdf)
  <use ./Slike/udp-arcnet-server-eps-converted-to.pdf>
@@ -1186,24 +1194,6 @@ Package pdftex.def Info: ./Slike/udp-arcnet-server-eps-converted-to.pdf used on
  input line 3.
 (pdftex.def)             Requested size: 206.28247pt x 102.88557pt.
 ) (Tabele/udp-command.tex
-Overfull \hbox (23.43582pt too wide) in paragraph at lines 5--16
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-)
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[25 <./Slike/udp-arcnet-server-eps-converted-to.pdf>]
-(Tabele/arcnet-command.tex) (Tabele/udp-reply.tex
-Overfull \hbox (38.01923pt too wide) in paragraph at lines 5--16
- [][] 
- []
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1218,12 +1208,44 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[26]
+[26 <./Slike/udp-arcnet-server-eps-converted-to.pdf>]
+(Tabele/arcnet-command.tex)
+Underfull \vbox (badness 1590) has occurred while \output is active []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[27]
+[27] (Tabele/udp-reply.tex) (Slike/server-flowchart.tex
+Package epstopdf Info: Source file: <./Slike/server-flowchart.eps>
+(epstopdf)                    date: 2015-07-27 12:51:59
+(epstopdf)                    size: 849598 bytes
+(epstopdf)             Output file: <./Slike/server-flowchart-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2015-07-27 12:54:29
+(epstopdf)                    size: 12838 bytes
+(epstopdf)             Command: <epstopdf --outfile=./Slike/server-flowchart-ep
+s-converted-to.pdf ./Slike/server-flowchart.eps>
+(epstopdf)             \includegraphics on input line 3.
+Package epstopdf Info: Output file is already uptodate.
+
+<./Slike/server-flowchart-eps-converted-to.pdf, id=215, 688.5725pt x 621.32124p
+t>
+File: ./Slike/server-flowchart-eps-converted-to.pdf Graphic file (type pdf)
+ <use ./Slike/server-flowchart-eps-converted-to.pdf>
+Package pdftex.def Info: ./Slike/server-flowchart-eps-converted-to.pdf used on 
+input line 3.
+(pdftex.def)             Requested size: 309.4237pt x 279.20328pt.
+)
+(Slike/linux-arcnetON.tex
+<./Slike/linux-arcnetON.png, id=216, 508.14844pt x 319.1925pt>
+File: ./Slike/linux-arcnetON.png Graphic file (type png)
+
+<use ./Slike/linux-arcnetON.png>
+Package pdftex.def Info: ./Slike/linux-arcnetON.png used on input line 3.
+(pdftex.def)             Requested size: 309.4237pt x 194.37106pt.
+)
 Overfull \hbox (12.62668pt too wide) has occurred while \output is active
 \OT1/cmr/m/n/12 28    \OT1/cmr/m/sl/12 ARCNET - UDP streznik za komunikacijo s
  krmilnikom robota ter senzorjem sile
@@ -1234,11 +1256,51 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[28
+[28]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[29 <./Slike/server-flowchart-eps-converted-to.pdf> <./Slike/linux-arcnetON.png
+>] (Slike/linux-success.tex
+<./Slike/linux-success.png, id=234, 508.14844pt x 319.1925pt>
+File: ./Slike/linux-success.png Graphic file (type png)
+
+<use ./Slike/linux-success.png>
+Package pdftex.def Info: ./Slike/linux-success.png used on input line 3.
+(pdftex.def)             Requested size: 309.4237pt x 194.37106pt.
+)
+Overfull \hbox (12.62668pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/12 30    \OT1/cmr/m/sl/12 ARCNET - UDP streznik za komunikacijo s
+ krmilnikom robota ter senzorjem sile
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[30 <./Slike/linux-success.png>]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[31]
+Overfull \hbox (12.62668pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/12 32    \OT1/cmr/m/sl/12 ARCNET - UDP streznik za komunikacijo s
+ krmilnikom robota ter senzorjem sile
+ []
+
+
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[32
 
 ]
   4.
-[29] (Slike/jr3_coordinatesistem.tex
+[33] (Slike/jr3_coordinatesistem.tex
 Package epstopdf Info: Source file: <./Slike/jr3_coordinatesistem.eps>
 (epstopdf)                    date: 2015-07-08 09:15:11
 (epstopdf)                    size: 311061 bytes
@@ -1251,7 +1313,7 @@ m-eps-converted-to.pdf ./Slike/jr3_coordinatesistem.eps>
 (epstopdf)             \includegraphics on input line 3.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/jr3_coordinatesistem-eps-converted-to.pdf, id=217, 458.71375pt x 293.0
+<./Slike/jr3_coordinatesistem-eps-converted-to.pdf, id=249, 458.71375pt x 293.0
 95pt>
 File: ./Slike/jr3_coordinatesistem-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -1264,7 +1326,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[30]
+[34]
 Underfull \vbox (badness 3668) has occurred while \output is active []
 
 
@@ -1272,34 +1334,34 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[31 <./Slike/jr3_coordinatesistem-eps-converted-to.pdf>]
+[35 <./Slike/jr3_coordinatesistem-eps-converted-to.pdf>]
 
-LaTeX Warning: Reference `appendix:jr3-calibration' on page 32 undefined on inp
-ut line 719.
+LaTeX Warning: Reference `appendix:jr3-calibration' on page 36 undefined on inp
+ut line 731.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[32] (BlockDiagrams/vel_to_ang.tex)
+[36] (BlockDiagrams/vel_to_ang.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[33]
+[37]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[34] (BlockDiagrams/x_to_vel.tex)
+[38] (BlockDiagrams/x_to_vel.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[35]
+[39]
 
-LaTeX Warning: Reference `sec:arcnet' on page 36 undefined on input line 826.
+LaTeX Warning: Reference `sec:arcnet' on page 40 undefined on input line 838.
 
 
 Underfull \vbox (badness 1371) has occurred while \output is active []
@@ -1309,27 +1371,27 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[36]
+[40]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[37] (BlockDiagrams/inv_dyn_q.tex)
+[41] (BlockDiagrams/inv_dyn_q.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[38] (BlockDiagrams/inv_dyn_x.tex)
+[42] (BlockDiagrams/inv_dyn_x.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[39]
+[43]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[40] (Slike/enviroment_interraction.tex
+[44] (Slike/enviroment_interraction.tex
 Package epstopdf Info: Source file: <./Slike/enviroment_interraction.eps>
 (epstopdf)                    date: 2015-07-20 16:37:35
 (epstopdf)                    size: 107787 bytes
@@ -1342,7 +1404,7 @@ tion-eps-converted-to.pdf ./Slike/enviroment_interraction.eps>
 (epstopdf)             \includegraphics on input line 3.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/enviroment_interraction-eps-converted-to.pdf, id=266, 138.5175pt x 243
+<./Slike/enviroment_interraction-eps-converted-to.pdf, id=298, 138.5175pt x 243
 .91125pt>
 File: ./Slike/enviroment_interraction-eps-converted-to.pdf Graphic file (type p
 df)
@@ -1355,13 +1417,13 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[41 <./Slike/enviroment_interraction-eps-converted-to.pdf>]
+[45 <./Slike/enviroment_interraction-eps-converted-to.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1005.
+               Default added (so using `tbp') on input line 1017.
 
 (BlockDiagrams/tau_force_int.tex)
-Overfull \hbox (20.56418pt too wide) in paragraph at lines 1007--1008
+Overfull \hbox (20.56418pt too wide) in paragraph at lines 1019--1020
  [][] 
  []
 
@@ -1370,15 +1432,15 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[42]
+[46]
   5.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1087.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1099.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43
+ [47
 
 ]
 (Slike/follow_step.tex
@@ -1393,7 +1455,7 @@ verted-to.pdf ./Slike/follow_step.eps>
 (epstopdf)             \includegraphics on input line 3.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/follow_step-eps-converted-to.pdf, id=279, 488.82625pt x 388.45125pt>
+<./Slike/follow_step-eps-converted-to.pdf, id=310, 488.82625pt x 388.45125pt>
 File: ./Slike/follow_step-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/follow_step-eps-converted-to.pdf>
@@ -1412,7 +1474,7 @@ verted-to.pdf ./Slike/follow_sine.eps>
 (epstopdf)             \includegraphics on input line 3.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/follow_sine-eps-converted-to.pdf, id=280, 494.84875pt x 387.4475pt>
+<./Slike/follow_sine-eps-converted-to.pdf, id=311, 494.84875pt x 387.4475pt>
 File: ./Slike/follow_sine-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/follow_sine-eps-converted-to.pdf>
@@ -1424,7 +1486,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[44 <./Slike/follow_step-eps-converted-to.pdf>] (Slike/follow_sine_err.tex
+[48 <./Slike/follow_step-eps-converted-to.pdf>] (Slike/follow_sine_err.tex
 Package epstopdf Info: Source file: <./Slike/follow_sine_err.eps>
 (epstopdf)                    date: 2015-07-23 11:48:47
 (epstopdf)                    size: 1380771 bytes
@@ -1437,7 +1499,7 @@ df>
 (epstopdf)             \includegraphics on input line 3.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/follow_sine_err-eps-converted-to.pdf, id=287, 501.875pt x 387.4475pt>
+<./Slike/follow_sine_err-eps-converted-to.pdf, id=318, 501.875pt x 387.4475pt>
 File: ./Slike/follow_sine_err-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/follow_sine_err-eps-converted-to.pdf>
@@ -1457,7 +1519,7 @@ onverted-to.pdf ./Slike/follow_circle.eps>
 (epstopdf)             \includegraphics on input line 3.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/follow_circle-eps-converted-to.pdf, id=288, 406.51875pt x 391.4625pt>
+<./Slike/follow_circle-eps-converted-to.pdf, id=319, 406.51875pt x 391.4625pt>
 File: ./Slike/follow_circle-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/follow_circle-eps-converted-to.pdf>
@@ -1472,59 +1534,41 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[45 <./Slike/follow_sine-eps-converted-to.pdf>]
+[49 <./Slike/follow_sine-eps-converted-to.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[46 <./Slike/follow_sine_err-eps-converted-to.pdf> <./Slike/follow_circle-eps-c
+[50 <./Slike/follow_sine_err-eps-converted-to.pdf> <./Slike/follow_circle-eps-c
 onverted-to.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[47]
+[51]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[48
+[52
 
 ]
   6.
-(magistrska_timotej_gaspar.bbl [49]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[50
-
-] [51])
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[52] [53
-
-]
+(magistrska_timotej_gaspar.bbl [53]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [54
 
-]
-  A.
-[55]
+] [55])
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[56
+[56] [57
 
 ]
-  B.
-[57]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1532,17 +1576,35 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [58
 
 ]
+  A.
+[59]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[60
+
+]
+  B.
+[61]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[62
+
+]
   C.
-[59] (magistrska_timotej_gaspar.aux)
+[63] (magistrska_timotej_gaspar.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19227 strings out of 493671
- 374873 string characters out of 3145458
- 511835 words of memory out of 3000000
- 22058 multiletter control sequences out of 15000+200000
+ 19174 strings out of 493671
+ 374647 string characters out of 3145458
+ 511297 words of memory out of 3000000
+ 21996 multiletter control sequences out of 15000+200000
  16641 words of font info for 62 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  55i,17n,67p,3304b,722s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1562,9 +1624,9 @@ rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
 /type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (71 pages, 1510636 bytes).
+Output written on magistrska_timotej_gaspar.pdf (75 pages, 3087988 bytes).
 PDF statistics:
- 403 PDF objects out of 1000 (max. 8388607)
+ 436 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 

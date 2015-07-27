@@ -9,27 +9,28 @@
 \contentsline {section}{\numberline {3.2}ARCNET vmesnik}{20}
 \contentsline {section}{\numberline {3.3}Senzor sile in navorov - JR3}{23}
 \contentsline {section}{\numberline {3.4}Stre\v znik}{25}
-\contentsline {subsection}{\numberline {3.4.1}Delovanje programa}{25}
-\contentsline {subsection}{\numberline {3.4.2}Varnostni ukrepi}{27}
-\contentsline {chapter}{\numberline {4}Vodenje robota PA-10}{29}
-\contentsline {section}{\numberline {4.1}Kompenzacija mase prijemala ter merilnega odmika na senzorju sile JR3}{29}
-\contentsline {section}{\numberline {4.2}Vodenje preko inverzne kinematike}{32}
-\contentsline {subsection}{\numberline {4.2.1}Vodenje v notranjih koordinatah}{33}
-\contentsline {subsection}{\numberline {4.2.2}Vodenje v zunanjih koordinatah}{34}
-\contentsline {section}{\numberline {4.3}Admitan\v cno vodenje}{35}
-\contentsline {section}{\numberline {4.4}Krmiljenje z inverzno dinamiko}{37}
-\contentsline {subsection}{\numberline {4.4.1}Vodenje v notranjih koordinatah}{37}
-\contentsline {subsection}{\numberline {4.4.2}Vodenje v zunanjih koordinatah}{39}
-\contentsline {section}{\numberline {4.5}Interakcija z okoljem}{40}
-\contentsline {chapter}{\numberline {5}Implementacija}{43}
-\contentsline {section}{\numberline {5.1}Hitrostno krmiljenje}{44}
-\contentsline {subsection}{\numberline {5.1.1}Vodenje po trajektoriji}{44}
-\contentsline {subsection}{\numberline {5.1.2}Admitan\v cno vodenje}{47}
-\contentsline {section}{\numberline {5.2}Navorno krmiljenje}{47}
-\contentsline {subsection}{\numberline {5.2.1}Kompenzacija trenja}{47}
-\contentsline {subsection}{\numberline {5.2.2}Vodenje po trajektoriji}{47}
-\contentsline {subsection}{\numberline {5.2.3}Vodenje v kontaktu z okolico}{47}
-\contentsline {chapter}{\numberline {6}Zaklju\v cek}{49}
-\contentsline {chapter}{\numberline {A}Dodatek 1}{55}
-\contentsline {chapter}{\numberline {B}Dodatek 2}{57}
-\contentsline {chapter}{\numberline {C}Dodatek 3}{59}
+\contentsline {subsection}{\numberline {3.4.1}Delovanje programa}{26}
+\contentsline {subsection}{\numberline {3.4.2}Uporaba programa}{28}
+\contentsline {subsection}{\numberline {3.4.3}Varnostni ukrepi}{30}
+\contentsline {chapter}{\numberline {4}Vodenje robota PA-10}{33}
+\contentsline {section}{\numberline {4.1}Kompenzacija mase prijemala ter merilnega odmika na senzorju sile JR3}{33}
+\contentsline {section}{\numberline {4.2}Vodenje preko inverzne kinematike}{36}
+\contentsline {subsection}{\numberline {4.2.1}Vodenje v notranjih koordinatah}{37}
+\contentsline {subsection}{\numberline {4.2.2}Vodenje v zunanjih koordinatah}{38}
+\contentsline {section}{\numberline {4.3}Admitan\v cno vodenje}{39}
+\contentsline {section}{\numberline {4.4}Krmiljenje z inverzno dinamiko}{41}
+\contentsline {subsection}{\numberline {4.4.1}Vodenje v notranjih koordinatah}{41}
+\contentsline {subsection}{\numberline {4.4.2}Vodenje v zunanjih koordinatah}{43}
+\contentsline {section}{\numberline {4.5}Interakcija z okoljem}{44}
+\contentsline {chapter}{\numberline {5}Implementacija}{47}
+\contentsline {section}{\numberline {5.1}Hitrostno krmiljenje}{48}
+\contentsline {subsection}{\numberline {5.1.1}Vodenje po trajektoriji}{48}
+\contentsline {subsection}{\numberline {5.1.2}Admitan\v cno vodenje}{51}
+\contentsline {section}{\numberline {5.2}Navorno krmiljenje}{51}
+\contentsline {subsection}{\numberline {5.2.1}Kompenzacija trenja}{51}
+\contentsline {subsection}{\numberline {5.2.2}Vodenje po trajektoriji}{51}
+\contentsline {subsection}{\numberline {5.2.3}Vodenje v kontaktu z okolico}{51}
+\contentsline {chapter}{\numberline {6}Zaklju\v cek}{53}
+\contentsline {chapter}{\numberline {A}Dodatek 1}{59}
+\contentsline {chapter}{\numberline {B}Dodatek 2}{61}
+\contentsline {chapter}{\numberline {C}Dodatek 3}{63}

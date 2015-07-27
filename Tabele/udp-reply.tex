@@ -2,15 +2,15 @@
 \begin{table}[h]
 	\centering
 	\begin{footnotesize}
-		\begin{tabular}{|c c c c |}
-		Zaporedna \v{S}tevilka bajta & Opis podatka & Tip podatka &  Koli\v{c}ina\\ \hline
-		0 & Kontrolni bajt za posamezen motor & char & $\times 7$ \\
-		7 & Trenuten kot v sklepu & float & $\times 7$ \\
-		35 & Trenutni proizveden navor v sklepu & signed short int & $\times 7$ \\
-		63 & Izmerjene sile in navori na JR3 & float & $\times 6$ \\
-		73 & Rezerviran prostor & float & $\times 1$\\
-		112 & \v{C}as, ki je bil porabljen za programski cikel & float & $\times 1$\\
-		116 & \v{C}as, ki ga je poslal klient na bajtu 60 & float & $\times 1$\\ \hline
+		\begin{tabular}{|l l l l |}
+		Zap. \v{s}t. &  Dol\v{z}ina& Opis podatka & Tip podatka\\ \hline
+		0 & $7$ & Kontrolni bajt za posamezen motor & char \\
+		7 & $7$ & Trenuten kot v sklepu & float \\
+		35 & $7$ & Trenutni proizveden navor v sklepu & signed short int \\
+		63 & $6$ & Izmerjene sile in navori na JR3 & float\\
+		73 - 111 & $38$ & Rezerviran prostor & float\\
+		112 & $1$ & \v{C}as, ki je bil porabljen za programski cikel & float\\
+		116 & $1$ & \v{C}as, ki ga je poslal klient na bajtu 60 & float\\ \hline
 		\end{tabular}
 	\end{footnotesize}
 	\caption{Opis poslanega UDP paketa.}

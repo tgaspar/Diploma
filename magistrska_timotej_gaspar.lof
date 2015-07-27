@@ -10,21 +10,25 @@
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram stanj ARCNET modula na krmilniku robota}}{21}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Krmiljenje robota s po\v {s}iljanjem ARCNET paketov.}}{21}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Podatkovni del ARCNET paketa za krmiljenje robota}}{22}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Dostopanje do registrov na ISA kartici za digitalno obdelavo signala iz senzorja senzorja JR3.}}{24}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Stre\v {z}nik kot posrednik med ARCNET ter Ethernet omre\v {z}jem.}}{25}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Senzor sil in navorov JR3.}}{23}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Dostopanje do registrov na ISA kartici za digitalno obdelavo signala iz senzorja senzorja JR3.}}{24}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Stre\v {z}nik kot posrednik med ARCNET ter Ethernet omre\v {z}jem.}}{26}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Diagram poteka programa.}}{29}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Nalaganje ARCNET modula v jedro Linux.}}{29}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Zaganjanje stre\v {z}nika na Linux operacijskem sistemu.}}{30}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Koordinatni sistem senzorja sile ter koordinatni sistem te\v {z}i\v {s}\v {c}a prijemala}}{31}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Povratna zanka za krmiljenje kota v sklepu}}{33}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Blo\v cna shema krmiljenja referen\v cne lege vrha robota}}{35}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Blo\v cna shema vodenja po notranjih koordinatah preko inverzne dinamike.}}{39}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Blo\v cna shema vodenja po zunanjih koordinatah preko inverzne dinamike.}}{40}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Vrh robota v kontaktu z okoljem.}}{41}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces }}{42}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Koordinatni sistem senzorja sile ter koordinatni sistem te\v {z}i\v {s}\v {c}a prijemala}}{35}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Povratna zanka za krmiljenje kota v sklepu}}{37}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Blo\v cna shema krmiljenja referen\v cne lege vrha robota}}{39}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Blo\v cna shema vodenja po notranjih koordinatah preko inverzne dinamike.}}{43}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Blo\v cna shema vodenja po zunanjih koordinatah preko inverzne dinamike.}}{44}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Vrh robota v kontaktu z okoljem.}}{45}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces }}{46}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Odziv sklepa na signal stopnice.}}{44}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Odziv sklepa na signal sinusne oblike.}}{45}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Napaka odziva in ovojnica signala napake.}}{46}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Sledenje referenci v obliki kroga na $x$ in $y$ ravnini}}{46}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Odziv sklepa na signal stopnice.}}{48}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Odziv sklepa na signal sinusne oblike.}}{49}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Napaka odziva in ovojnica signala napake.}}{50}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Sledenje referenci v obliki kroga na $x$ in $y$ ravnini}}{50}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

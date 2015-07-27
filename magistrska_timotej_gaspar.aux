@@ -64,6 +64,7 @@
 \newlabel{chap:udp-arcnet-server}{{3}{17}}
 \citation{mihelj_hapt}
 \citation{pa10-manual}
+\citation{miljavec_stroji}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Krmilnik servo motorjev robota}{18}}
 \newlabel{sec:servo-drive}{{3.1}{18}}
 \citation{arc_tutorial}
@@ -83,106 +84,117 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Podatkovni del ARCNET paketa za krmiljenje robota}}{22}}
 \newlabel{fig:arcnet-data}{{3.5}{22}}
 \citation{jr3_doc_inst}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Senzor sil in navorov JR3.}}{23}}
+\newlabel{fig:jr3-slika}{{3.6}{23}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Senzor sile in navorov - JR3}{23}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Dostopanje do registrov na ISA kartici za digitalno obdelavo signala iz senzorja senzorja JR3.}}{24}}
-\newlabel{fig:dsp-registers}{{3.6}{24}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Stre\v {z}nik kot posrednik med ARCNET ter Ethernet omre\v {z}jem.}}{25}}
-\newlabel{fig:udp-arcnet-server}{{3.7}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Dostopanje do registrov na ISA kartici za digitalno obdelavo signala iz senzorja senzorja JR3.}}{24}}
+\newlabel{fig:dsp-registers}{{3.7}{24}}
 \newlabel{eq:force_filt}{{3.2}{25}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.4}Stre\v znik}{25}}
 \newlabel{sec:streznik}{{3.4}{25}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Delovanje programa}{25}}
-\newlabel{table:udp-command}{{3.4.1}{26}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Opis ARCNET paketa.}}{26}}
-\newlabel{table:arcnet-command}{{3.1}{26}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Opis poslanega UDP paketa.}}{27}}
-\newlabel{table:udp-reply}{{3.2}{27}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Varnostni ukrepi}{27}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Vodenje robota PA-10}{29}}
+\citation{linux_windows}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Stre\v {z}nik kot posrednik med ARCNET ter Ethernet omre\v {z}jem.}}{26}}
+\newlabel{fig:udp-arcnet-server}{{3.8}{26}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Delovanje programa}{26}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Opis prejetega UDP paketa.}}{27}}
+\newlabel{table:udp-command}{{3.1}{27}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Opis ARCNET paketa.}}{27}}
+\newlabel{table:arcnet-command}{{3.2}{27}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Opis poslanega UDP paketa.}}{28}}
+\newlabel{table:udp-reply}{{3.3}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Uporaba programa}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Diagram poteka programa.}}{29}}
+\newlabel{fig:server-flowchart}{{3.9}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces Nalaganje ARCNET modula v jedro Linux.}}{29}}
+\newlabel{fig:linux-arcnetON}{{3.10}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Zaganjanje stre\v {z}nika na Linux operacijskem sistemu.}}{30}}
+\newlabel{fig:linux-success}{{3.11}{30}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Varnostni ukrepi}{30}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Vodenje robota PA-10}{33}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:vodenje}{{4}{29}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Kompenzacija mase prijemala ter merilnega odmika na senzorju sile JR3}{29}}
-\newlabel{sec:vodenje-jr3}{{4.1}{29}}
+\newlabel{chap:vodenje}{{4}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Kompenzacija mase prijemala ter merilnega odmika na senzorju sile JR3}{33}}
+\newlabel{sec:vodenje-jr3}{{4.1}{33}}
 \citation{omrcen_jr3}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Koordinatni sistem senzorja sile ter koordinatni sistem te\v {z}i\v {s}\v {c}a prijemala}}{31}}
-\newlabel{fig:jr3_coordinatesistem}{{4.1}{31}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Vodenje preko inverzne kinematike}{32}}
-\newlabel{sec:admittheor}{{4.2}{32}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Koordinatni sistem senzorja sile ter koordinatni sistem te\v {z}i\v {s}\v {c}a prijemala}}{35}}
+\newlabel{fig:jr3_coordinatesistem}{{4.1}{35}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Vodenje preko inverzne kinematike}{36}}
+\newlabel{sec:admittheor}{{4.2}{36}}
 \citation{zupancic_tr}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Povratna zanka za krmiljenje kota v sklepu}}{33}}
-\newlabel{fig:qfeedback}{{4.2}{33}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Vodenje v notranjih koordinatah}{33}}
-\newlabel{sec:admit_inner}{{4.2.1}{33}}
-\newlabel{eq:p_reg_q}{{4.12}{33}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Povratna zanka za krmiljenje kota v sklepu}}{37}}
+\newlabel{fig:qfeedback}{{4.2}{37}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Vodenje v notranjih koordinatah}{37}}
+\newlabel{sec:admit_inner}{{4.2.1}{37}}
+\newlabel{eq:p_reg_q}{{4.12}{37}}
 \citation{mihelj_vodenje}
-\newlabel{eq:pd_reg_q}{{4.14}{34}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Vodenje v zunanjih koordinatah}{34}}
-\newlabel{sec:inv_kin_x}{{4.2.2}{34}}
-\newlabel{eq:xerr}{{4.15}{34}}
-\newlabel{eq:qtox}{{4.16}{34}}
+\newlabel{eq:pd_reg_q}{{4.14}{38}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Vodenje v zunanjih koordinatah}{38}}
+\newlabel{sec:inv_kin_x}{{4.2.2}{38}}
+\newlabel{eq:xerr}{{4.15}{38}}
+\newlabel{eq:qtox}{{4.16}{38}}
 \citation{mihelj_vodenje}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Blo\v cna shema krmiljenja referen\v cne lege vrha robota}}{35}}
-\newlabel{fig:xfeedback}{{4.3}{35}}
-\newlabel{eq:qerr}{{4.17}{35}}
-\newlabel{eq:outcontrol}{{4.18}{35}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Admitan\v cno vodenje}{35}}
-\newlabel{sec:vodenje-admitance}{{4.3}{35}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Blo\v cna shema krmiljenja referen\v cne lege vrha robota}}{39}}
+\newlabel{fig:xfeedback}{{4.3}{39}}
+\newlabel{eq:qerr}{{4.17}{39}}
+\newlabel{eq:outcontrol}{{4.18}{39}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Admitan\v cno vodenje}{39}}
+\newlabel{sec:vodenje-admitance}{{4.3}{39}}
 \citation{mihelj_hapt}
-\newlabel{eq:herr}{{4.21}{36}}
-\newlabel{eq:xrefforce}{{4.22}{36}}
-\newlabel{eq:admitcontrol}{{4.23}{36}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Krmiljenje z inverzno dinamiko}{37}}
-\newlabel{chap:invdyn}{{4.4}{37}}
-\newlabel{eq:tau_dyn}{{4.25}{37}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Vodenje v notranjih koordinatah}{37}}
-\newlabel{eq:u_from_ddq}{{4.27}{37}}
+\newlabel{eq:herr}{{4.21}{40}}
+\newlabel{eq:xrefforce}{{4.22}{40}}
+\newlabel{eq:admitcontrol}{{4.23}{40}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Krmiljenje z inverzno dinamiko}{41}}
+\newlabel{chap:invdyn}{{4.4}{41}}
+\newlabel{eq:tau_dyn}{{4.25}{41}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Vodenje v notranjih koordinatah}{41}}
+\newlabel{eq:u_from_ddq}{{4.27}{41}}
 \citation{mihelj_vodenje}
 \citation{mihelj_vodenje}
-\newlabel{eq:ddqref_ddq}{{4.29}{38}}
+\newlabel{eq:ddqref_ddq}{{4.29}{42}}
 \citation{siciliano_robot}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Blo\v cna shema vodenja po notranjih koordinatah preko inverzne dinamike.}}{39}}
-\newlabel{fig:ddq_tau_dyn}{{4.4}{39}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Vodenje v zunanjih koordinatah}{39}}
-\newlabel{eq:accel_dyn}{{4.36}{39}}
-\newlabel{eq:accel_dyn_ref}{{4.37}{39}}
-\newlabel{eq:alpha_inv_dyn}{{4.38}{39}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Blo\v cna shema vodenja po notranjih koordinatah preko inverzne dinamike.}}{43}}
+\newlabel{fig:ddq_tau_dyn}{{4.4}{43}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Vodenje v zunanjih koordinatah}{43}}
+\newlabel{eq:accel_dyn}{{4.36}{43}}
+\newlabel{eq:accel_dyn_ref}{{4.37}{43}}
+\newlabel{eq:alpha_inv_dyn}{{4.38}{43}}
 \citation{siciliano_robot}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Blo\v cna shema vodenja po zunanjih koordinatah preko inverzne dinamike.}}{40}}
-\newlabel{fig:ddx_tau_dyn}{{4.5}{40}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Interakcija z okoljem}{40}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Blo\v cna shema vodenja po zunanjih koordinatah preko inverzne dinamike.}}{44}}
+\newlabel{fig:ddx_tau_dyn}{{4.5}{44}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Interakcija z okoljem}{44}}
 \citation{siciliano_robot}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Vrh robota v kontaktu z okoljem.}}{41}}
-\newlabel{fig:enviroment_interraction}{{4.6}{41}}
-\newlabel{eq:a_xf}{{4.41}{41}}
-\newlabel{eq:xf_C}{{4.42}{41}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces }}{42}}
-\newlabel{fig:tau_force_int}{{4.7}{42}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Implementacija}{43}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Vrh robota v kontaktu z okoljem.}}{45}}
+\newlabel{fig:enviroment_interraction}{{4.6}{45}}
+\newlabel{eq:a_xf}{{4.41}{45}}
+\newlabel{eq:xf_C}{{4.42}{45}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces }}{46}}
+\newlabel{fig:tau_force_int}{{4.7}{46}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Implementacija}{47}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:implementacija}{{5}{43}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Odziv sklepa na signal stopnice.}}{44}}
-\newlabel{fig:follow_step}{{5.1}{44}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Hitrostno krmiljenje}{44}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Vodenje po trajektoriji}{44}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Odziv sklepa na signal sinusne oblike.}}{45}}
-\newlabel{fig:follow_sine}{{5.2}{45}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Napaka odziva in ovojnica signala napake.}}{46}}
-\newlabel{fig:follow_sine_err}{{5.3}{46}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Sledenje referenci v obliki kroga na $x$ in $y$ ravnini}}{46}}
-\newlabel{fig:follow_circle}{{5.4}{46}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Admitan\v cno vodenje}{47}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Navorno krmiljenje}{47}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Kompenzacija trenja}{47}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Vodenje po trajektoriji}{47}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Vodenje v kontaktu z okolico}{47}}
+\newlabel{chap:implementacija}{{5}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Odziv sklepa na signal stopnice.}}{48}}
+\newlabel{fig:follow_step}{{5.1}{48}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Hitrostno krmiljenje}{48}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Vodenje po trajektoriji}{48}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Odziv sklepa na signal sinusne oblike.}}{49}}
+\newlabel{fig:follow_sine}{{5.2}{49}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Napaka odziva in ovojnica signala napake.}}{50}}
+\newlabel{fig:follow_sine_err}{{5.3}{50}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Sledenje referenci v obliki kroga na $x$ in $y$ ravnini}}{50}}
+\newlabel{fig:follow_circle}{{5.4}{50}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Admitan\v cno vodenje}{51}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Navorno krmiljenje}{51}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Kompenzacija trenja}{51}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Vodenje po trajektoriji}{51}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Vodenje v kontaktu z okolico}{51}}
 \bibstyle{ieeetrslo}
 \bibdata{literatura}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Zaklju\v cek}{49}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Zaklju\v cek}{53}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:zakljucek}{{6}{49}}
+\newlabel{chap:zakljucek}{{6}{53}}
 \bibcite{siciliano_robot}{1}
 \bibcite{pa10-manual}{2}
 \bibcite{mhi_pa10}{3}
@@ -192,24 +204,24 @@
 \bibcite{rodrigo_pa10}{7}
 \bibcite{petric_nevronska}{8}
 \bibcite{lenarcic_robotmeh}{9}
-\bibcite{almassri_pressure_sensor}{10}
-\bibcite{mihelj_vodenje}{11}
-\bibcite{eppinger_force_dynamics}{12}
-\bibcite{arc_tutorial}{13}
-\bibcite{jr3_doc_ext}{14}
-\bibcite{jr3_doc_inst}{15}
-\bibcite{mihelj_hapt}{16}
-\bibcite{omrcen_jr3}{17}
-\bibcite{zupancic_tr}{18}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Dodatek 1}{55}}
+\bibcite{mihelj_hapt}{10}
+\bibcite{miljavec_stroji}{11}
+\bibcite{arc_tutorial}{12}
+\bibcite{jr3_doc_ext}{13}
+\bibcite{jr3_doc_inst}{14}
+\bibcite{linux_windows}{15}
+\bibcite{omrcen_jr3}{16}
+\bibcite{zupancic_tr}{17}
+\bibcite{mihelj_vodenje}{18}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Dodatek 1}{59}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{appendix:udp-arcnet-server}{{A}{55}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Dodatek 2}{57}}
+\newlabel{appendix:udp-arcnet-server}{{A}{59}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Dodatek 2}{61}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{appendix:simulink-block}{{B}{57}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {C}Dodatek 3}{59}}
+\newlabel{appendix:simulink-block}{{B}{61}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {C}Dodatek 3}{63}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{dodatekC}{{C}{59}}
+\newlabel{dodatekC}{{C}{63}}

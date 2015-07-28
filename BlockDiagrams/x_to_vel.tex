@@ -18,7 +18,7 @@
 \draw [->] (k1) -- node[name = u] {{$u$}} (int1);
 \draw [->] (int1) -- node[name = q] {{$q$}} (output);
 \draw [->](s1) |- node[name = q2] {{$q$}}(geom);
-\draw [->](geom) -| node[name = x] {{$x$}}(sum);
+\draw [->](geom) -| node[name = x] {{$x$}}node[pos=0.95, left] {{\tiny $-$}} (sum);
 
 
 \fill (s1) circle [radius=2pt];

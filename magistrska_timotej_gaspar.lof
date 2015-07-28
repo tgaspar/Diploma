@@ -17,11 +17,11 @@
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Nalaganje ARCNET modula v jedro Linux.}}{29}
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Zaganjanje stre\v {z}nika na Linux operacijskem sistemu.}}{30}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Koordinatni sistem senzorja sile ter koordinatni sistem te\v {z}i\v {s}\v {c}a prijemala}}{35}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Povratna zanka za krmiljenje kota v sklepu}}{37}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Blo\v cna shema krmiljenja referen\v cne lege vrha robota}}{39}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Blo\v cna shema vodenja po notranjih koordinatah preko inverzne dinamike.}}{43}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Blo\v cna shema vodenja po zunanjih koordinatah preko inverzne dinamike.}}{44}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Koordinatni sistem senzorja sile ter koordinatni sistem te\v {z}i\v {s}\v {c}a prijemala}}{34}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Povratna zanka za krmiljenje kota v sklepu}}{38}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Blo\v cna shema krmiljenja referen\v cne lege vrha robota}}{40}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Blo\v cna shema vodenja po notranjih koordinatah preko inverzne dinamike.}}{42}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Blo\v cna shema vodenja po zunanjih koordinatah preko inverzne dinamike.}}{43}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Vrh robota v kontaktu z okoljem.}}{45}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces }}{46}
 \addvspace {10\p@ }

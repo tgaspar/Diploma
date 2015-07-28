@@ -41,8 +41,8 @@
 
 \draw [->] (inputddq) node[above = 0.1 cm of inputddq]{$\mathbf{\ddot{q}}_{ref}$} -|  node[pos=0.99, right] {\tiny {$+$}}(sumall);
 
-\draw [->] (sumall) -- node[above = 0, pos=0.5]{$\pmb{\alpha}$}(B);
-\draw [->] (B) -- node[pos=0.99, left]{\tiny {$+$}}(sum2);
+\draw [->] (sumall) -- node[above = 0, pos=0.5]{$\mathbf{\ddot{q}}_{u} $ }(B);
+\draw [->] (B) -- node[pos=0.99, above]{\tiny {$+$}}(sum2);
 \draw [->] (n) -- node[pos=0.99, left]{\tiny {$+$}}(sum2);
 \draw [->] (sum2) -- node[above = 0, pos=0.5]{\textbf{u}}(pa10);
 

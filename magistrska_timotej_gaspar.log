@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  27 JUL 2015 14:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  28 JUL 2015 16:13
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -1326,18 +1326,15 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[34]
-Underfull \vbox (badness 3668) has occurred while \output is active []
-
-
+[34 <./Slike/jr3_coordinatesistem-eps-converted-to.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[35 <./Slike/jr3_coordinatesistem-eps-converted-to.pdf>]
+[35]
 
 LaTeX Warning: Reference `appendix:jr3-calibration' on page 36 undefined on inp
-ut line 731.
+ut line 755.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -1360,23 +1357,16 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [39]
-
-LaTeX Warning: Reference `sec:arcnet' on page 40 undefined on input line 838.
-
-
-Underfull \vbox (badness 1371) has occurred while \output is active []
-
-
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[40]
+[40] (BlockDiagrams/inv_dyn_q.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[41] (BlockDiagrams/inv_dyn_q.tex)
+[41]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1420,10 +1410,10 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [45 <./Slike/enviroment_interraction-eps-converted-to.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1017.
+               Default added (so using `tbp') on input line 1036.
 
 (BlockDiagrams/tau_force_int.tex)
-Overfull \hbox (20.56418pt too wide) in paragraph at lines 1019--1020
+Overfull \hbox (20.56418pt too wide) in paragraph at lines 1038--1039
  [][] 
  []
 
@@ -1435,7 +1425,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [46]
   5.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1099.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1118.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1601,10 +1591,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19174 strings out of 493671
- 374647 string characters out of 3145458
- 511297 words of memory out of 3000000
- 21996 multiletter control sequences out of 15000+200000
+ 19178 strings out of 493671
+ 374705 string characters out of 3145458
+ 495873 words of memory out of 3000000
+ 22000 multiletter control sequences out of 15000+200000
  16641 words of font info for 62 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  55i,17n,67p,3304b,722s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1624,7 +1614,7 @@ rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
 /type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (75 pages, 3087988 bytes).
+Output written on magistrska_timotej_gaspar.pdf (75 pages, 3089153 bytes).
 PDF statistics:
  436 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

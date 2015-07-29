@@ -3,7 +3,7 @@
 \begin{tikzpicture}[node distance=2cm,auto,=>latex']
 \node [input, name=input] {};
 \node [sum, right of=input] (sum) {};
-\node [block, right of=sum] (jac) {$J^{-1}(q)$};
+\node [block, right of=sum] (jac) {$J^{*}(q)$};
 \node [block, right of=jac] (k1) {$K_p$};
 \node [right of=k1](pa10){};
 \node [block, right of=k1] (int1) {$\frac{1}{s}$};

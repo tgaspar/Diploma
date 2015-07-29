@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  28 JUL 2015 16:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  29 JUL 2015 16:27
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -1361,12 +1361,12 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[40] (BlockDiagrams/inv_dyn_q.tex)
+[40]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[41]
+[41] (BlockDiagrams/inv_dyn_q.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1381,58 +1381,27 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[44] (Slike/enviroment_interraction.tex
-Package epstopdf Info: Source file: <./Slike/enviroment_interraction.eps>
-(epstopdf)                    date: 2015-07-20 16:37:35
-(epstopdf)                    size: 107787 bytes
-(epstopdf)             Output file: <./Slike/enviroment_interraction-eps-conver
-ted-to.pdf>
-(epstopdf)                    date: 2015-07-20 16:37:41
-(epstopdf)                    size: 3689 bytes
-(epstopdf)             Command: <epstopdf --outfile=./Slike/enviroment_interrac
-tion-eps-converted-to.pdf ./Slike/enviroment_interraction.eps>
-(epstopdf)             \includegraphics on input line 3.
-Package epstopdf Info: Output file is already uptodate.
-
-<./Slike/enviroment_interraction-eps-converted-to.pdf, id=298, 138.5175pt x 243
-.91125pt>
-File: ./Slike/enviroment_interraction-eps-converted-to.pdf Graphic file (type p
-df)
- <use ./Slike/enviroment_interraction-eps-converted-to.pdf>
-Package pdftex.def Info: ./Slike/enviroment_interraction-eps-converted-to.pdf u
-sed on input line 3.
-(pdftex.def)             Requested size: 69.25858pt x 121.95532pt.
-)
+[44]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[45 <./Slike/enviroment_interraction-eps-converted-to.pdf>]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1036.
-
-(BlockDiagrams/tau_force_int.tex)
-Overfull \hbox (20.56418pt too wide) in paragraph at lines 1038--1039
- [][] 
- []
-
-
+[45]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[46]
+[46
+
+]
   5.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1118.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1140.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [47
-
-]
+ [47]
 (Slike/follow_step.tex
 Package epstopdf Info: Source file: <./Slike/follow_step.eps>
 (epstopdf)                    date: 2015-07-23 10:47:36
@@ -1445,7 +1414,7 @@ verted-to.pdf ./Slike/follow_step.eps>
 (epstopdf)             \includegraphics on input line 3.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/follow_step-eps-converted-to.pdf, id=310, 488.82625pt x 388.45125pt>
+<./Slike/follow_step-eps-converted-to.pdf, id=307, 488.82625pt x 388.45125pt>
 File: ./Slike/follow_step-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/follow_step-eps-converted-to.pdf>
@@ -1464,7 +1433,7 @@ verted-to.pdf ./Slike/follow_sine.eps>
 (epstopdf)             \includegraphics on input line 3.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/follow_sine-eps-converted-to.pdf, id=311, 494.84875pt x 387.4475pt>
+<./Slike/follow_sine-eps-converted-to.pdf, id=308, 494.84875pt x 387.4475pt>
 File: ./Slike/follow_sine-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/follow_sine-eps-converted-to.pdf>
@@ -1489,7 +1458,7 @@ df>
 (epstopdf)             \includegraphics on input line 3.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/follow_sine_err-eps-converted-to.pdf, id=318, 501.875pt x 387.4475pt>
+<./Slike/follow_sine_err-eps-converted-to.pdf, id=315, 501.875pt x 387.4475pt>
 File: ./Slike/follow_sine_err-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/follow_sine_err-eps-converted-to.pdf>
@@ -1509,7 +1478,7 @@ onverted-to.pdf ./Slike/follow_circle.eps>
 (epstopdf)             \includegraphics on input line 3.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/follow_circle-eps-converted-to.pdf, id=319, 406.51875pt x 391.4625pt>
+<./Slike/follow_circle-eps-converted-to.pdf, id=316, 406.51875pt x 391.4625pt>
 File: ./Slike/follow_circle-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/follow_circle-eps-converted-to.pdf>
@@ -1591,10 +1560,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19178 strings out of 493671
- 374705 string characters out of 3145458
- 495873 words of memory out of 3000000
- 22000 multiletter control sequences out of 15000+200000
+ 19095 strings out of 493671
+ 373239 string characters out of 3145458
+ 496173 words of memory out of 3000000
+ 21923 multiletter control sequences out of 15000+200000
  16641 words of font info for 62 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  55i,17n,67p,3304b,722s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1614,9 +1583,9 @@ rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
 /type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (75 pages, 3089153 bytes).
+Output written on magistrska_timotej_gaspar.pdf (75 pages, 3083221 bytes).
 PDF statistics:
- 436 PDF objects out of 1000 (max. 8388607)
+ 433 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 124 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 119 words of extra memory for PDF output out of 10000 (max. 10000000)
 

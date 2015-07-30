@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  29 JUL 2015 16:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  30 JUL 2015 10:40
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -1386,22 +1386,22 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[45]
+[45] (BlockDiagrams/impendance_control.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[46
-
-]
+[46]
   5.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1140.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1145.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [47]
+ [47
+
+]
 (Slike/follow_step.tex
 Package epstopdf Info: Source file: <./Slike/follow_step.eps>
 (epstopdf)                    date: 2015-07-23 10:47:36
@@ -1560,10 +1560,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19095 strings out of 493671
- 373239 string characters out of 3145458
- 496173 words of memory out of 3000000
- 21923 multiletter control sequences out of 15000+200000
+ 19110 strings out of 493671
+ 373552 string characters out of 3145458
+ 497200 words of memory out of 3000000
+ 21935 multiletter control sequences out of 15000+200000
  16641 words of font info for 62 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  55i,17n,67p,3304b,722s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1583,7 +1583,7 @@ rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
 /type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (75 pages, 3083221 bytes).
+Output written on magistrska_timotej_gaspar.pdf (75 pages, 3087920 bytes).
 PDF statistics:
  433 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

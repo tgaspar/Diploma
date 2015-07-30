@@ -1002,6 +1002,9 @@ Z vstavitvijo enaèbe \ref{eq:xrefforce} v \ref{eq:outcontrol} je mogoèe zapisati
 
 Dobili smo PI regulator sile interakcije. Èeprav je bilo pri definiciji mehanske impedance definirano, da je to razmerje med silo ter hitrostjo, se raje uporablja razmerje med silo ter pozicijo. Meritve sile so podvržene šumu, integrator pa deluje kot nizkopasovni filter. 
 
+Admitanèno vodenje se uporablja takrat, ko lahko robota vodimo le hitrostno ali pozicijsko in želimo vplivati na okolico z neko silo. Silo interakcije pa je doloèimo z modelom okolja. Kontakt si lahko predstavljamo kot interakcijo med togim robotom in podajnim okoljem.
+
+
 \section{Impedanèno vodenje}
 
 Pri izpeljavi vodenja lege robota z inverzno dinamiko smo predpostavili, da so sile interakcije $\textbf{h}_o$ enake niè. Ker pa to v primeru, da je robot v kontaktu z okoljem ni res, je potrebno pogledati kaj se zgodi takrat, ko te sile delujejo na robota. Vzemimo spet dinamièen model robota, ki ga vodimo preko reguliranega pospeška $\ddot{\mathbf{x}}_u$ in dodamo silo interakcije 
@@ -1010,20 +1013,27 @@ Pri izpeljavi vodenja lege robota z inverzno dinamiko smo predpostavili, da so s
 \end{equation}
 Vidimo, da bodo sedaj navori v sklepi razlièni od izraèunanih preko inverznega dinamiènega modela in posledièno bo med želenim vrhom robota in dejanskim vrhom robota nastala napaka. Vrh robota bo z neko silo deloval na okolje, ki pa jo lahko s senzorjem na vrhu robota oz. med prijemalom in vrhom, izmerimo. 
 
-Za izhodišèe vzamemo enaèbo \ref{eq:dyn_err} in \ref{eq:dyn_outer_force} ter zapišemo vpliv zunanje sile na napako pozicije v stacionarnem stanju kot
+Za izhodišèe vzamemo enaèbo \ref{eq:dyn_err} in \ref{eq:dyn_outer_force} ter zapišemo dinamiko napake z upoštevanjem delovanja zunanjih sil
 
 \begin{equation}
-\tilde{\mathbf{x}} = \textbf{K}_p^{-1} \textbf{h}_o
+\ddot{\mathbf{x}}_{ref} + \textbf{K}_d \dot{\tilde{\mathbf{x}}}  + \textbf{K}_p \tilde{\mathbf{x}}.
 \end{equation}
-Zapisana enaèba spominja na enaèbo vzmeti s koeficientom vzmeti $ \textbf{K}_p $. Želja je, to napako zaradi nastale sile kompenzirati. Zato vpeljemo v regulator še podatek iz senzorja ($ \textbf{h}_e $) sil na vrhu robota. Regulator je sedaj zapisan kot
+Èe želimo napako kompenzirati je potrebno v regulator vkljuèiti še podatek o izmerjenih silah na vrhu robota ($ \textbf{h}_e $). Na ta naèin dosežemo to, da se vrh robota obnaša kot neskonèno tog sistem \cite{siciliano_robot}. To pomeni, da èe vodimo robota pozicijsko in pritisnemo na njegov vrh, bo kompenziral nastalo napako.
+
+Zapišemo sedaj celotno enaèbo, ki opisuje navore v sklepih pri impedanènem vodenju
 
 \begin{equation}
-	\ddot{\mathbf{q}}_u = \textbf{J}^* (\textbf{q})(\ddot{\mathbf{x}}_{ref} + \textbf{K}_d \dot{\tilde{\mathbf{x}}} + \textbf{K}_p \tilde{\mathbf{x}} - \dot{\mathbf{J}}(\textbf{q},\dot{\mathbf{q}})\dot{\mathbf{q}} + \textbf{h}_e).
+\textbf{u}= \mathbf{\hat{B}}(\textbf{q}) \textbf{J}^* (\textbf{q})(\ddot{\mathbf{x}}_{ref} + \textbf{K}_d \dot{\tilde{\mathbf{x}}} + \textbf{K}_p \tilde{\mathbf{x}} - \dot{\mathbf{J}}(\textbf{q},\dot{\mathbf{q}})\dot{\mathbf{q}} + \textbf{h}_e) + \mathbf{\hat{n}}(q,\dot{q}) + \mathbf{J}^T \mathbf{h}_o.
 \end{equation}
+Shema takega vodenja je prikazana na sliki \ref{fig:impedance_control}.
+\begin{figure}[!h]
+	\centering
+	\scalebox{.6}{\input{./BlockDiagrams/impendance_control.tex}}
+	\caption{}
+	\label{fig:impedance_control}
+\end{figure}
 
-
-
-
+Impedanèno vodenje se uporablja takrat, ko lahko robota vodimo preko vhodnih navorov. Z razliko od admitanènega vodenja, si lahko kontakt predstavljamo kot interakcijo med zelo togo okolico in podajnim robotom. Podajnost robota pa je odvisna od parametrov vodenja $ (\textbf{K}_p, \textbf{K}_d) $ in kompenzacije sile.
 
 %Za vodenje sile bi naèeloma lahko uporabili PD regulator. Ker pa je izmerjen signal sile podvržen merilnemu šumu, predstavlja odvajanje tega signala ojaèanje šuma, kar lahko vodi v nestabilnost. Zato se v praksi raje implementira vodenje sile in hkrati vodenje pozicije vrha robota.
 %
@@ -1055,12 +1065,7 @@ Zapisana enaèba spominja na enaèbo vzmeti s koeficientom vzmeti $ \textbf{K}_p $
 %	\textbf{u} = \mathbf{\hat{B}}(\textbf{q})\textbf{J}^*(\textbf{K}_P (\mathbf{x} - (\textbf{C}_P\tilde{\mathbf{h}} + \textbf{C}_I \int_{0}^{t} \tilde{\mathbf{h}} d \xi) - \textbf{K}_d \dot{\mathbf{x}} ) + \mathbf{\hat{n}}(q,\dot{q}).
 %\end{equation}
 %Shema takega vodenja je na sliki \ref{fig:tau_force_int}
-%\begin{figure}[]
-%	\centering
-%	\scalebox{.6}{\input{./BlockDiagrams/tau_force_int.tex}}
-%	\caption{}
-%	\label{fig:tau_force_int}
-%\end{figure}
+
 
 %BEGIN_FOLD
 %\begin{equation} \label{eq:din_mode}

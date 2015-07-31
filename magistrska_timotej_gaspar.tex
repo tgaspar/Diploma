@@ -124,7 +124,7 @@ Podjetje Mitsubishi Heavy Industries je leta 1992 izdelalo prvega katalogiranega
 %Izraz antropomorfnost izhaja iz dveh grških besed \textit{antropo} - èlovek, \textit{morphe} - oblika. 
 Znaèilnost takih robotov je spretnost saj so vsi sklepi rotacijski \cite{siciliano_robot}.
 
-Masa robotske roke PA-10 je 36 kg in ima nosilnost 10 kg. Servo motorji v sklepih se napajajo preko izmeniène napetosti. Prenosi med v sklepih so realizirani s harmoniènimi gonili. Baza robota se lahko pritrdi v katerokoli lego. To pomeni, da se ga lahko fiksira bodisi na tla, na steno ali na strop. Robota PA-10 odlikuje relativno lahka konstrukcija, enostavno rokovanje ter odprtost njegovega krmilnika. Prav ti razlogi so povod, da je mnogo instituciji vzelo tega robota kot eksperimentalni sistem za razvijanje raznih algoritmov vodenja (\cite{voung_pa10,aalst_pa10,rodrigo_pa10,petric_nevronska}).
+Masa robotske roke PA-10 je 36 kg in ima nosilnost 10 kg. Servo motorji v sklepih se napajajo preko izmeniène napetosti. Prenosi med v sklepih so realizirani s harmoniènimi gonili. Baza robota se lahko pritrdi v katerokoli lego. To pomeni, da se ga lahko fiksira bodisi na tla, na steno ali na strop. Robota PA-10 odlikuje relativno lahka konstrukcija, enostavno rokovanje ter odprtost njegovega krmilnika. Prav ti razlogi so povod, da je mnogo instituciji vzelo tega robota kot eksperimentalni sistem za razvijanje raznih algoritmov vodenja \cite{voung_pa10,aalst_pa10,rodrigo_pa10,petric_nevronska}.
 
 \input{./Slike/pa10-drawing.tex}
 
@@ -236,7 +236,7 @@ Vektor $x$ se imenuje tudi vektor zunanjih koordinat. Sedaj je mogoèe opisati en
 
 Funkcija $\textbf{k}(\textbf{q})$ je vektorska funkcija notranjih koordinat, v katerih so zajete kinematiène enaèbe pozicije in orientacije mehanizma. Problem direktne kinematike je pri serijskih mehanizmih enostavno rešljiv in ima eno rešitev \cite{lenarcic_robotmeh}.
 
-Potrebno je še opisati, kakšna je hitrost vrha robota v odvisnosti od hitrosti v sklepov. Z odvajanjem enaèbe \ref{eq:dir-kinematics} po $\textbf{q}$ dobimo
+Potrebno je še opisati, kakšna je hitrost vrha robota v odvisnosti od hitrosti v sklepov. Z odvajanjem enaèbe (\ref{eq:dir-kinematics}) po $\textbf{q}$ dobimo
 \begin{equation} \label{eq:dir-kin-vel}
 	\dot{\mathbf{x}}	= \frac{\partial \mathbf{k}(\mathbf{q})}{\partial \mathbf{q}} \mathbf{q} = \textbf{J} \dot{\mathbf{q}},
 \end{equation}
@@ -254,7 +254,7 @@ kjer je \textbf{J} Jacobijeva matrika in predstavlja parcialne odvode zunanjih k
 %\end{equation}
 %END_FOLD
 
-Z odvajanjem enaèbe \ref{eq:dir-kin-vel} je mogoèe zapisati še relacijo med pospeški vrha robota ter pospeški sklepov 
+Z odvajanjem enaèbe (\ref{eq:dir-kin-vel}) je mogoèe zapisati še relacijo med pospeški vrha robota ter pospeški sklepov 
 
 \begin{equation} \label{eq:dir_dyn_accel}
 \ddot{\mathbf{x}} = \mathbf{J} \ddot{\mathbf{q}} + \dot{\mathbf{J}} \dot{\mathbf{q}},
@@ -283,9 +283,9 @@ Enaèbe gibanja kot posledica delovanja sil in navorov se lahko zapišejo z uporab
 		\boldsymbol{\tau} &=&  \displaystyle \frac{d}{dt}(\frac{\partial \Lagrl}{\partial \dot{q}_i}) - \frac{\partial \Lagrl}{q_i}
 	\end{array}
 \end{equation}
-kjer $\Lagrt$ in $\Lagru$ opisujeta kinetièno in potencialno energijo.
+kjer $\Lagrt$ in $\Lagru$ opisujeta kinetièno in potencialno energijo, $ \boldsymbol{\tau} $ pa generalizirane sile.
 
-Lagrangeve formulacije so orodje za sistematièen opis dinamike posameznih segmentov \cite{siciliano_robot}. Z uporabo formulacije \ref{eq:lagrange_form} se lahko zapiše enaèbo navorov v sklepih v odvisnosti od kotov, hitrosti in pospeškov v sklepih na sledeè naèin:
+Lagrangeve formulacije so orodje za sistematièen opis dinamike posameznih segmentov \cite{siciliano_robot}. Z uporabo formulacije (\ref{eq:lagrange_form}) se lahko zapiše enaèbo navorov v sklepih v odvisnosti od kotov, hitrosti in pospeškov v sklepih na sledeè naèin:
 
 \begin{equation} \label{eq:din}
 \pmb{\tau}(\mathbf{\ddot{q}},\mathbf{\dot{q}},\textbf{q}) = \textbf{B}(\textbf{q})  \ddot{\textbf{q}} + \textbf{C}(\textbf{q},\dot{\textbf{q}})  \dot{\textbf{q}} + \textbf{F}_f(\dot{\textbf{q}}, \textbf{q}) + \textbf{g}(\textbf{q}) + \textbf{J}^T(\textbf{q})\textbf{h}_o.
@@ -326,20 +326,20 @@ Vektor $\textbf{h}_o$ vsebuje sile in navore, ki delujejo na vrh robota, $\textb
 
 \section{Inverzna kinematika} \label{sec:redundant-pa10}
 
-Nalogo, ki jo opravlja robot tipièno opišemo s èasovnim potekom vektorja $\textbf{x}$, kot je podan v enaèbi \ref{eq:dir-kinematics}. Da bi lahko izvedli želeno gibanje, je potrebno poiskati ustrezne vrednosti notranjih koordinat $\textbf{q}$, kar predstavimo z enaèbo
+Nalogo, ki jo opravlja robot tipièno opišemo s èasovnim potekom vektorja $\textbf{x}$, kot je podan v enaèbi (\ref{eq:dir-kinematics}). Da bi lahko izvedli želeno gibanje, je potrebno poiskati ustrezne vrednosti notranjih koordinat $\textbf{q}$, kar predstavimo z enaèbo
 
 \begin{equation}\label{eq:inverse-kinematics}
 	\textbf{q} = \textbf{k}^{-1}(\textbf{x}),
 \end{equation}
-kjer je $\textbf{k}^{-1}$ inverz funkcije $ \textbf{k}$ Ta funkcija predstavlja inverzno kinematiko. Èeprav je bila rešitev enaèbe \ref{eq:dir-kinematics} enolièna, pa enaèba \ref{eq:inverse-kinematics} nima vedno enoliène rešitve. Še veè, rešitev obstaja le, èe $\textbf{x}$ leži v delovnem prostoru robota.
+kjer je $\textbf{k}^{-1}$ inverz funkcije $ \textbf{k}$ Ta funkcija predstavlja inverzno kinematiko. Èeprav je bila rešitev enaèbe (\ref{eq:dir-kinematics}) enolièna, pa enaèba (\ref{eq:inverse-kinematics}) nima vedno enoliène rešitve. Še veè, rešitev obstaja le, èe $\textbf{x}$ leži v delovnem prostoru robota.
 
-Pri vodenju robotov veèinoma ne rešujemo inverzne dinamike direktno iz enaèbe \ref{eq:inverse-kinematics} ampak preko hitrosti, torej iz enaèbe \ref{eq:dir-kin-vel}. Èe predpostavimo, da je dimenzionalnost prostora naloge \textit{m} in èe velja, da je $m = n$, potem lahko doloèimo hitrost v sklepih iz relacije
+Pri vodenju robotov veèinoma ne rešujemo inverzne dinamike direktno iz enaèbe (\ref{eq:inverse-kinematics}) ampak preko hitrosti, torej iz enaèbe (\ref{eq:dir-kin-vel}). Èe predpostavimo, da je dimenzionalnost prostora naloge \textit{m} in èe velja, da je $m = n$, potem lahko doloèimo hitrost v sklepih iz relacije
 \begin{equation}
 \dot{\textbf{q}} = \textbf{J}^{-1} \dot{\textbf{x}},
 \end{equation}
 kje je $\textbf{J}^{-1}$ inverz Jacobijeve matrike.
 
-V primeru, da pa ima robot veè stopenj prostosti, kot jih je potrebno za izvedbo naloge, torej èe je $n > m$, potem inverz $\textbf{J}^{-1}$ ne obstaja in je potrebno poiskati rešitev inverzne kinematike drugaèe. Enaèbo \ref{eq:dir-kin-vel} lahko invertiramo z uporabo naslednje zveze
+V primeru, da pa ima robot veè stopenj prostosti, kot jih je potrebno za izvedbo naloge, torej èe je $n > m$, potem inverz $\textbf{J}^{-1}$ ne obstaja in je potrebno poiskati rešitev inverzne kinematike drugaèe. Enaèbo (\ref{eq:dir-kin-vel}) lahko invertiramo z uporabo naslednje zveze
 \begin{equation} \label{eq:inv_dyn_null}
 \dot{\mathbf{q}} = \mathbf{J}^* \dot{\mathbf{p}} + \mathbf{N} \dot{\mathbf{q}},
 \end{equation}
@@ -348,7 +348,7 @@ kjer je $\textbf{J}^*$ generaliziran inverz matrike $\textbf{J}$, matrika $\text
 \mathbf{N} = (\mathbf{I} - \mathbf{J}^{*}\mathbf{J}).
 \end{equation}
 
-Prvi èlen enaèbe \ref{eq:inv_dyn_null} predstavlja partikularno rešitev in zadosti osnovni nalogi, zagotovi, da je vrh robota v $\textbf{x}$. Drugi èlen enaèbe \ref{eq:inv_dyn_null} pa predstavlja homogeno rešitev in omogoèa rekonfiguracijo robotskega mehanizma brez, da se spremeni pozicija vrha robota $\textbf{x}$. Zaradi tega se hitrost $\dot{q}_n$ lahko uporabi za realizacijo dodatnih nalog nižje prioritete.
+Prvi èlen enaèbe (\ref{eq:inv_dyn_null}) predstavlja partikularno rešitev in zadosti osnovni nalogi, zagotovi, da je vrh robota v $\textbf{x}$. Drugi èlen enaèbe (\ref{eq:inv_dyn_null}) pa predstavlja homogeno rešitev in omogoèa rekonfiguracijo robotskega mehanizma brez, da se spremeni pozicija vrha robota $\textbf{x}$. Zaradi tega se hitrost $\dot{q}_n$ lahko uporabi za realizacijo dodatnih nalog nižje prioritete.
 
 
 %BEGIN_FOLD
@@ -373,7 +373,7 @@ ali uteženi Moore-Penroseov pseudoinverz
 \end{equation}
 kjer je $\textbf{W}$ utežnostna matrika.
 
-Z odvajanjem enaèbe \ref{eq:inv_dyn_null} dobimo relacijo med pospeški v sklepih in pospeških na vrhu robota. 
+Z odvajanjem enaèbe (\ref{eq:inv_dyn_null}) dobimo relacijo med pospeški v sklepih in pospeških na vrhu robota. 
 
 \begin{equation} \label{eq:pseudoinv_def_accel}
 	\ddot{\textbf{q}} = \textbf{J}^{*} (\ddot{\mathbf{p}} + \dot{\mathbf{J}}\dot{\mathbf{q}})+\textbf{N} \ddot{\mathbf{q}}_N,
@@ -459,11 +459,11 @@ Krmilnik omogoèa vodenje servo motorjev preko referenène hitrosti ali referenène
 
 Za samo vodenja robota pa se uporablja dodaten vmesnik, t. i. MHI Controller, ki omogoèa krmiljenje robota na razliène naèine. Na žalost pa ima ta vmesnik kar precej omejitev, ki onemogoèajo napredno vodenje robota. Omejujoèe so predvsem naslednje stvari: izvaja se lahko le vodenje po hitrosti, ki navzgor dokaj strogo omejena in najveèja frekvenca vzorèenja je 100 Hz.
 
-Te omejitve v MHI vmesniku omejujejo kvalitetno vodenje z upoštevanjem sil in kompenzacijo dinamiènih vplivov. Ker pa je zasnova krmilnika dokaj odprta in omogoèa komunikacijo preko ARCNET omrežja dokaj dobro, smo razvili lasten krmilni sistem na višjem nivoju, ki bo omogoèal implementacijo sodobnih naèinov vodenja, tako s hitrostmi kot z navornim naèinom vodenja.
+Te omejitve v MHI vmesniku omejujejo kvalitetno vodenje z upoštevanjem sil in kompenzacijo dinamiènih vplivov. Ker pa je zasnova krmilnika dokaj odprta in omogoèa komunikacijo preko ARCNET omrežja dokaj dobro, smo razvili lasten krmilni sistem na višjem nivoju, ki bo omogoèal implementacijo sodobnih naèinov vodenja, tako s hitrostnim kot z navornim naèinom vodenja.
 
-Pred zaèetkom izdelave lastnega programskega orodja se je definiralo dve zahtevi, ki jih mora program izpolnjevat. Prva je bila, da program deluje kar se le da hitro in kar se le da v realnem èasu. To izhaja iz vidika stabilnosti vodenja. Avtor v \cite{mihelj_hapt} namreè navaja, da vzorèni èas moèno vpliva na stabilnost vodenja robota v kontaktu z okolico. Veèja kot je vzorèna frekvenca veèja je lahko togost okolice s katero je robot v kontaktu. Druga zahteva je bila enostavna uporaba. Program bi moral uporabniku omogoèati razvijanje visokonivojskih algoritmov vodenja brez poznavanja detajlov delovanja ARCNET omrežja in krmilnika robota. Uporabnik mora imet možnost izbire programskega okolja za realizacijo vodenja. Dodatno se je kasneje pojavila še želja, da bi programska oprema omogoèala tudi posredovanje meritev izvedenih na senzorju sile JR3.
+Pred zaèetkom izdelave lastnega strežnika se je definiralo dve zahtevi, ki jih mora program izpolnjevat. Prva je bila, da program deluje dovolj hitro, da se lahko izvaja v realnem èasu. To je pomembno za zagotovitev kvalitetnega in stabilnega vodenja. Avtor v \cite{mihelj_hapt} namreè navaja, da vzorèni èas moèno vpliva na stabilnost vodenja robota v kontaktu z okolico. Veèja kot je vzorèna frekvenca veèja je lahko togost okolice s katero je robot v kontaktu. Druga zahteva pa je bila enostavna uporaba. Krmilnik bi moral uporabniku omogoèati razvijanje visokonivojskih algoritmov vodenja brez poznavanja detajlov delovanja ARCNET omrežja in krmilnika robota. Uporabnik mora imeti možnost proste izbire programskega okolja za realizacijo vodenja. Dodatno se je kasneje pojavila še želja, da bi krmilni sistem vkljuèeval tudi vmesnik za senzor sil in navorov JR3.
 
-Naredili smo program, ki je zadostoval vsem navedenim kriterijem in hkrati tudi dopušèa možnost nadgrajevanj. Nastali program deluje kot ARCNET-Ethernet posrednik in deluje na osebnem raèunalniku, ki ima operacijski sistem Linux.
+Razvili smo strežnik, ki je zadostoval vsem navedenim kriterijem in hkrati tudi dopušèa možnost nadgrajevanj. Nastali strežnik deluje kot ARCNET-Ethernet posrednik in deluje na osebnem raèunalniku, ki ima operacijski sistem Linux.
 
 
 %Z uspešnim vodenjem robota brez taktilne povratne zanke je mogoèe izvesti mnogo razliènih nalog. V zgornjem poglavju je bil opisan dinamièen model robota. S poznavanjem vseh parametrov je v teoriji mogoèe izraèunati sile, ki delujejo na vrh robota. V praksi se izkaže, da te parametre ni vedno mogoèe dovolj natanèno definirati. Iz teh razlogov se vgradi senzor sil in navorov med vrhom robota ter prijemalom (\cite{almassri_pressure_sensor}, \cite{mihelj_vodenje}, \cite{eppinger_force_dynamics}). Senzor sil in navorov JR3 je bil uporabljen pri izvedbi tega dela.
@@ -478,30 +478,30 @@ V prvem poglavju je bilo zapisano, da robota PA-10 med drugim odlikuje dobra pre
 
 \input{./Slike/pa10-servocontroller.tex}
 
-V ohišju servo krmilnika so vgrajeni štirje krmilniki servo motorjev. Trije krmilijo po dva motorja, eden pa le enega. Krmilniki omogoèajo vodenje motorjev na dva naèina, navorno in hitrostno. Razlièna vodenja sta v krmilnikih drugaèe realizirana. Navorno vodenje je realizirano z analognim P regulatorjem toka. To izvira iz modela elektriènega motorja, ki pravi, da je navor na gredi proporcionalen toku s katerim motor napajamo \cite{miljavec_stroji}. Hitrostna regulacija pa je realizirana z digitalnim PI regulatorjem s frekvenco približno 1500 Hz. Kot povedano, so prenosi realizirani s harmoniènimi gonili. Prestavno razmerje je 1:50. Na strani reduktorja je 14 - bitni enkoder, kar pomeni, da je resolucija merjenja kota približno $0.4 \cdot 10^{-3}$ stopinj. Krmilnik ima tudi vgrajen varnostni sistem, ki prepreèuje, da bi se sklepi preveè zasukali in ob morebitnem pretiranem zasuku vklopi zavoro in tako prepreèi, da bi šel izven svojih mehanskih omejitev. 
+V ohišju servo krmilnika so vgrajeni štirje krmilniki servo motorjev. Trije krmilijo po dva motorja, eden pa le enega. Krmilniki omogoèajo vodenje motorjev na dva naèina, navorno in hitrostno. Razlièna vodenja sta v krmilnikih drugaèe realizirana. Navorno vodenje je realizirano z analognim P regulatorjem toka. To izvira iz modela elektriènega motorja, ki pravi, da je navor na gredi proporcionalen toku s katerim motor napajamo \cite{miljavec_stroji}. Hitrostna regulacija pa je realizirana z digitalnim PI regulatorjem s frekvenco približno 1500 Hz. Kot povedano, so prenosi realizirani s harmoniènimi gonili. Prestavno razmerje je 1:50. Na strani reduktorja je 14 - bitni enkoder, kar pomeni, da je resolucija merjenja kota približno $0.4 \cdot 10^{-3}$ stopinj. Krmilnik ima tudi vgrajen varnostni sistem, ki prepreèuje, da bi se sklepi preveè zasukali in ob morebitnem pretiranem zasuku vklopi zavoro in tako prepreèi, da bi šel do svojih mehanskih omejitev. 
 
 Krmilnik vsebuje dva pomnilnika. Delovni pomnilnik (RAM) in nastavitveni pomnilnik (EEPROM). V EEPROM tabeli so zapisani parametri za nastavitve in vodenje servo krmilnikov. Ob zagonu krmilnika se parametri naložijo iz EEPROM tabele v RAM. Med naloženimi parametri so tudi ojaèanje proporcionalnega ter integracijskega dela regulatorja, omejitve posameznih stopenj, razmerje prenosa zobnikov, itd.
 
 \section{ARCNET vmesnik}\label{sec:arc_drive}
 
-Referenène navore in hitrosti se na krmilniku nastavlja na preko zunanjega vmesnika, ki je povezan na enako ARCNET omrežje kot servo krmilnik. Prikljuèitev servo krmilnika na omrežje omogoèa v ohišje vgrajen ARCNET modul. ARCNET je omrežje, ki vkljuèuje podatkovni in fizièni nivo po OSI modelu, komunikacija pa je serijska in paketno zastavljena. Njegova prednost pred Ethernet omrežjem je velika stopnja deterministiènosti \cite{arc_tutorial}. Krmilnik robota ima dva prikljuèka za optièna vodila, vhod (Rx) ter izhod (Tx). Zgornja meja hitrosti komunikacije z krmilnikom robota je 5 Mb/s \cite{pa10-manual}.
+Referenène navore in hitrosti se na krmilniku nastavlja na preko zunanjega vmesnika, ki je povezan na enako ARCNET omrežje kot servo krmilnik. Prikljuèitev servo krmilnika na omrežje omogoèa vgrajen ARCNET modul. ARCNET je omrežje, ki vkljuèuje podatkovni in fizièni nivo po OSI modelu, komunikacija pa je serijska in paketno zastavljena. Njegova prednost pred Ethernet omrežjem je velika stopnja deterministiènosti \cite{arc_tutorial}. Krmilnik robota ima dva prikljuèka za optièna vodila, vhod (Rx) ter izhod (Tx). Zgornja meja hitrosti komunikacije z krmilnikom robota je 5 Mb/s \cite{pa10-manual}.
 
-Pakete, ki jih pošiljamo na krmilnik servo motorjev robota, je potrebno sestavit tako, kot je napisano v dokumentaciji \cite{pa10-manual}. Èe želimo, da bo krmilnik paket prejel, je na prvi bajt potrebno vpisati krmilnikov naslov. ARCNET modul vsebuje konèni avtomat stanj, ki preklaplja med stanji glede na tip poslanih podatkov. Razlièni tipi podatkov so definirani z razliènimi èrkami, znotraj poslanega paketa. Struktura ARCNET paketa je prikazana na sliki \ref{fig:arcnet-packet}.
+Pakete, ki jih pošiljamo na krmilnik servo motorjev robota, je potrebno sestavit tako, kot je napisano v dokumentaciji \cite{pa10-manual}. Èe želimo, da bo krmilnik paket prejel, je na prvi bajt potrebno vpisati naslov krmilnika. ARCNET modul vsebuje konèni avtomat stanj, ki preklaplja med stanji glede na tip poslanih podatkov. Razlièni tipi podatkov so definirani z razliènimi kodami, znotraj poslanega paketa. Struktura ARCNET paketa je prikazana na sliki \ref{fig:arcnet-packet}.
 \input{./Slike/arcnet-packet.tex}
 
-Preklapljanje med stanji in potrebne èrke opisuje slika \ref{fig:pa10-state}. Ikona \includegraphics[scale=0.6]{./Slike/little-arrow.eps} oznaèuje stanja, v katerih se avtomat lahko zadrži dlje èasa s ponavljajoèim pošiljanjem paketov z enakim tipom podatkov. Iz teh stanj lahko izstopi v primeru, da nov paket ne pride pravoèasno, ali pa da pride paket s èrko 'E'. Ko višje nivojski vmesnik ne pošilja nobenih ukazov je ARCNET vmesnik v stanju èakanja, v katerem èaka na primerno sestavljen paket.
+Preklapljanje med stanji in potrebne kode za prehod v ta stanja opisuje slika \ref{fig:pa10-state}. Ikona \includegraphics[scale=0.6]{./Slike/little-arrow.eps} oznaèuje stanja, v katerih se avtomat lahko zadrži dlje èasa s ponavljajoèim pošiljanjem paketov z enakim tipom podatkov. Iz teh stanj izstopi v primeru, da nov paket ne pride pravoèasno, ali pa da pride paket s tipa E. Ko višjenivojski vmesnik ne pošilja nobenih ukazov je ARCNET vmesnik v stanju èakanja, v katerem èaka na primerno sestavljen paket.
 
 
 
 \input{./Slike/pa10-state.tex}
 
-Za delo z robotom je pomemben predvsem naèin "Vodenje sklepov", v katerem se dejansko krmili gibanje robota. V tem naèinu je potrebno upoštevati predpisano maksimalno zakasnitev med zaporednima paketoma, ki je definirana v EEPROM tabeli in je tovarniško nastavljena na 300 ms. V kolikor je ta zakasnitev prekoraèena, se avtomat stanj vrne v zaèetno stanje in je krmiljenje prekinjeno. Ta naèin se izbere tako, da se ARCNET vmesniku najprej pošlje ukaz, ki se zaène z velikim tiskanim S, nadaljuje se s pošiljanjem paketov, ki se zaènejo s veliko tiskano èrko C ter zakljuèi s tem, da se pošlje paket, ki se zaène z velikim tiskanim E (slika \ref{fig:pa10-control-state}).
+Za delo z robotom je pomemben predvsem naèin "Vodenje sklepov", v katerem se dejansko krmili gibanje robota. V tem naèinu je potrebno upoštevati predpisano maksimalno zakasnitev med zaporednima paketoma, ki je definirana v EEPROM tabeli in je tovarniško nastavljena na 300 ms. V kolikor je ta zakasnitev prekoraèena, se avtomat stanj vrne v zaèetno stanje in je krmiljenje prekinjeno. Ta naèin se izbere tako, da se ARCNET vmesniku najprej pošlje ukaz tipa S, nadaljuje pa se s pošiljanjem paketov tipa C ter zakljuèi s tem, da se pošlje paket tipa E (slika \ref{fig:pa10-control-state}).
 \input{./Slike/pa10-control-state.tex}
-Del paketa, ki je oznaèen z "podatki" nosi podatke, na podlagi katerih se vodi robota. Vendar pa je vsebina podatkovnega dela odvisna od èrke, ki jo pošljemo.
+Del paketa, ki je oznaèen s "podatki" nosi podatke, na podlagi katerih se vodi robota. Vsebina podatkovnega dela je odvisna od tipa paketa.
 
 \input{./Slike/arcnet-data.tex}
 
-Paketa, ki se zaèneta s S in E imata podatkovni del prazen. Paket, ki se zaène s C pa ima v podatkovnem delu prvih 35 bajtov zapolnjenih s podatki za vodenje robota. Slika \ref{fig:arcnet-data} prikazuje vsebino podatkovnega dela omenjenih paketov. V sliki so krmilni podatki oznaèeni z $ \mathrm{k}_i $, $\mathrm{n}_i $ in $\mathrm{v}_i $. Njihov pomen pa je
+Paketa, tipa S in E imata podatkovni del prazen. Paket tipa C pa ima v podatkovnem delu prvih 35 bajtov zapolnjenih s podatki za vodenje robota. Slika \ref{fig:arcnet-data} prikazuje vsebino podatkovnega dela omenjenih paketov. V sliki so krmilni podatki oznaèeni z $ \mathrm{k}_i $, $\mathrm{n}_i $ in $\mathrm{v}_i $. Njihov pomen pa je:
 
 \begin{itemize}
 	\item k - kontrolni bajt (velikost podatka: byte),
@@ -516,10 +516,10 @@ Paketa, ki se zaèneta s S in E imata podatkovni del prazen. Paket, ki se zaène s
 	\item n - referenèni navor (velikost podatka: word)  = 0.001 Nm/digit,
 	
 	
-	\item v - referenèna hitrost (velikost podatka: word) = 0.0002 rad/s/digit,
+	\item v - referenèna hitrost (velikost podatka: word) = 0.0002 rad/s/digit.
 	
 \end{itemize}
-Poslani referenèni navori in hitrosti gredo od vrednosti 0x0000 do 0xFFFF. Krmlinik ima zaradi varnosti nastavljene omejitve obeh velièin, zato prevelike referenène signale poreže tako, da ustrezajo omejitvam.
+Poslani referenèni navori in hitrosti gredo od vrednosti 0x0000 do 0xFFFF. Krmlinik ima zaradi varnosti nastavljene omejitve obeh velièin, zato prevelike referenène signale omeji in zagotovi varno gibanje do omejitev.
 
 \section{Senzor sile in navorov - JR3}
 
@@ -531,12 +531,12 @@ Za realizacijo vodenja opisanega v poglavju \ref{sec:vodenje-admitance} smo med 
 \textbf{h}_{JR3} = \textbf{K}_{calib} \mathbf{u}_u
 \end{equation}
 
-Senzor je priklopljen na raèunalnik preko 8 žilnega kabla s kontektorjem tipa RJ-45 v ISA kartico. Elektronika v samem senzorju serijsko pošilja podatke o izmerjenih silah na kartico. Kartica vsebuje vezje za digitalno obdelavo signalov (ang. \textit{digital signal processor} - DPS). V dokumentaciji kartice \cite{jr3_doc_inst} so opisani trije nizkoprepustni filtri z razliènimi mejnimi frekvencami. Uporabili smo filter z mejno frekvenco 500 Hz.
+Senzor je priklopljen na raèunalnik preko 8 žilnega kabla s kontektorjem tipa RJ-45 v ISA kartico. Elektronika v samem senzorju serijsko pošilja podatke o izmerjenih silah na kartico. Kartica vsebuje vezje za digitalno obdelavo signalov (ang. \textit{digital signal processor} - DSP). V dokumentaciji kartice \cite{jr3_doc_inst} so opisani trije nizkoprepustni filtri z razliènimi mejnimi frekvencami. Uporabili smo filter z mejno frekvenco 500 Hz.
 
 
 \input{./Slike/dsp-registers.tex}
 
-DSP kartica na ISA vodilu zavzame dva 16-bitna naslova: osnovnega (\textit{base address}) ter naslednjega. Osnovni se uporabi kot naslovni register, drugi pa kot podatkovni register. Preko vhodno/izhodnih vrat raèunalnika lahko nastavljamo vsebino teh registrov. Na ta naèin lahko dalje dostopamo do internih registrov DSP kartice. Na kartici so stikala preko katerih nastavimo osnovni naslov (\textit{base address}) kartice. Èe je osnovni naslov 0x314 bo naslovni register dostopen na 0x314, podatkovni pa na 0x316. Podatke na registrih DPSja preberemo tako, da na naslovni del zapišemo naslov registra. DPS nato napiše vsebino registra na podatkovni register ISA vodila. Èe želimo v register DPSja nekaj zapisati, pa moramo mi zapisati podatek na podatkovni del ISA registra (slika \ref{fig:dsp-registers}). V sintaksi programskega jezika C bi funkciji za branje ter pisanje po registrih DSP kartice zgledalo tako:
+DSP kartica na ISA vodilu zavzame dva 16-bitna naslova: osnovnega (\textit{base address}) ter naslednjega. Osnovni se uporabi kot naslovni register, drugi pa kot podatkovni register. Preko vhodno/izhodnih vrat raèunalnika lahko nastavljamo vsebino teh registrov. Na ta naèin lahko dostopamo do internih registrov DSP kartice. Na kartici so stikala preko katerih nastavimo osnovni naslov (\textit{base address}) kartice. Èe je osnovni naslov 0x314 bo naslovni register dostopen na 0x314, podatkovni pa na 0x316. Podatke na registrih DSPja preberemo tako, da na naslovni del zapišemo naslov registra. DSP nato napiše vsebino registra na podatkovni register ISA vodila. Èe želimo v register DSPja nekaj zapisati, pa moramo mi zapisati podatek na podatkovni del ISA registra (slika \ref{fig:dsp-registers}). Za branje ter pisanje po registrih DSP kartice uporabimo sledeèi funkciji v sintaksi programskega jezika C:
 
 
 \begin{verbatim}
@@ -556,19 +556,19 @@ int putData(int addr, int data)
 \end{verbatim}
 
 
-Dokumentacija navaja, da v kolikor želi uporabnik odèitati vrednost sile ali navora $F$ mora tako prebrati osnovno vrednost $F_s$ na registru imenovanem (\verb|full scale|), jo pomnožiti z vrednostjo $F_f$, ki je na registru izbranega filtra (\verb|current force|). Na zadnje more to vrednost delit s konstanto $K_p$, da pretvori v primerne enote(N ali Nm).
+Dokumentacija navaja, da v kolikor želi uporabnik odèitati vrednost sile ali navora $F$ mora prebrati osnovno vrednost $F_s$ na registru imenovanem (\verb|full scale|), jo pomnožiti z vrednostjo $F_f$, ki je na registru izbranega filtra (\verb|current force|). Nazadnje more to vrednost deliti s konstanto $K_p$, da pretvori podatke v ustrezne enote(N ali Nm).
 
 \begin{equation}\label{eq:force_filt}
 F = \frac{F_s  F_f}{K_p}
 \end{equation}
-Ker senzor meri silo in navor v treh smereh je potrebno opraviti izraèun za vsako od izmerjenih velièin potrebno opravit omenjeno operacijo.
+Ker senzor meri silo in navor v treh smereh, je potrebno opraviti izraèun za vsako smer.
 
 
 \section{Strežnik} \label{sec:streznik}
 
-V uvodu v poglavje smo omenili, da je proizvajalec pripravil program za krmiljenje robota, MHI Controller, vendar smo se zaradi pomanjkljivosti tega programa, avtorji odloèili za izgradnjo lastnega. Definirane zahteve so bile visoka frekvenca, delovanje v realnem èasu ter enostavnost uporabe. Hrati pa je morabil nov program biti sposoben prebirati izmerjene sile na vrhu robota preko JR3 senzorja sil. 
+V uvodu v poglavje smo omenili, da je proizvajalec pripravil vmesnik za krmiljenje robota, MHI Controller, vendar smo se zaradi omejitev tega vmesnika, odloèili za izgradnjo lastnega vmesnika. Definirane zahteve so bile visoka frekvenca, delovanje v realnem èasu ter enostavnost uporabe. Poleg tega pa smo želeli, da nov vmesnik vkljuèuje tudi povezavo s senzorjem sil na vrhu robota.
 
-Ko smo se avtorji lotili izgradnje programa smo se najprej morali odloèiti, na kakšni platformi bo program deloval. Zaradi enostavnosti razvijanja smo izbrali oseben raèunalnik, na katerega se lahko priklopi ISA kartico za senzor sil JR3 ter ARCNET mrežno kartico za komunikacijo s krmilnikom PA-10. Naslednja odloèitev je bila izbira operacijskega sistema. Avtorji smo se odloèali med Windows, Linux ali XPCtarget sistemi. Na koncu smo se odloèili za operacijski sistem Linux, saj ga odlikujejo naslednje lastnosti:
+Ko smo se lotili izgradnje strežnika smo se najprej morali odloèiti, na kakšni platformi bo strežnik deloval. Zaradi enostavnosti razvijanja smo izbrali oseben raèunalnik, na katerega se lahko priklopi ISA kartico za senzor sil JR3 ter ARCNET mrežno kartico za komunikacijo s krmilnikom PA-10. Naslednja odloèitev je bila izbira operacijskega sistema. Odloèali med Windows, Linux ali XPCtarget sistemi. Na koncu smo se odloèili za operacijski sistem Linux, saj ga odlikujejo naslednje lastnosti:
 \begin{itemize}
 	\item prosto dostopen,
 	\item podpora za ARCNET omrežje,
@@ -578,13 +578,13 @@ Ko smo se avtorji lotili izgradnje programa smo se najprej morali odloèiti, na k
 %\input{./Tabele/pro-cons-os.tex}
 
 
-Nov krmilni program deluje kot posrednik med dvema razliènima omrežjema (slika \ref{fig:udp-arcnet-server}), ARCNET in UDP.  V nadaljevanju bo opisana zgradba tega strežnika, delovanje ter uporaba. Uporabnik lahko robota PA-10 krmili s pošiljanjem UDP paketov na strežnik, ki jih ta posreduje na ARCNET omrežje.
+Nov vmesnik deluje kot posrednik med dvema razliènima omrežjema (slika \ref{fig:udp-arcnet-server}), ARCNET in UDP. Osnovna funkcionalnost razvitega strežnika je, da posreduje podatke, ki jih uporabnik pošilja preko UDP paketov, krmilniku robota PA-10 v obliki ARCNET paketov in v drugi smeri stanje robota.  V nadaljevanju bo opisana zgradba tega strežnika, njegovo delovanje ter uporaba. 
 
 \input{./Slike/udp-arcnet-server.tex}
 
 \subsection{Delovanje programa}
 
-Nastali program deluje kot strežnik, kar pomeni, da se odzove na klientovo zahtevo. V tem primeru je klient kakršen koli program, ki lahko pošilja UDP pakete po Ethernet omrežju. Klient mora tako formirati ustrezen UDP paket za zaèetek komunikacije. Paket je velik 99 bajtov. Vsebina paketa pa je opisana v tabeli \ref{table:udp-command}.
+Razviti program deluje kot strežnik, kar pomeni, da se odzove na klientovo zahtevo. Klient je kakršen koli program, ki lahko pošilja UDP pakete po Ethernet omrežju. Za komunikacijo med klientom in strežnikom smo definirali strukture UDP paketa za pošiljanje in sprejem. Paket je velik 99 bajtov. Vsebina paketa pa je opisana v tabeli \ref{table:udp-command}.
 
 \input{./Tabele/udp-command.tex}
 
@@ -598,7 +598,7 @@ Strežnik nato poèaka na odgovor servo krmilnika. Strežnik odgovor servo krmilnik
 
 \input{./Tabele/udp-reply.tex}
 
-Po tistem, ko strežnik prejme in pošlje vse podatke, gre v stanje èakanja, da mine od zaèetka programskega cikla do konca toèno 2 ms. Ohranjanje frekvence èasovnega cikla je kritiènega pomena. Zato strežnik prekine komunikacijo s servo krmilnikom, v kolikor nov UDP paket ne prispe pravoèasno.
+Naloga strežnika je tudi zagotavljanje sinhronega delovanja. Strežnik daje takt komunikaciji. Glede hitrosti komunikacije smo izbrali frekvenco pošiljanja paketov 500 Hz. To pomeni, da strežnik, potem ko prejme in pošlje vse podatke, èaka, da mine od zaèetka cikla toèno 2 ms. Ohranjanje frekvence èasovnega cikla je kritiènega pomena. Zato strežnik prekine komunikacijo s servo krmilnikom, v kolikor nov UDP paket ne prispe pravoèasno.
 
 Diagram delovanja strežnika prikazuje slika \ref{fig:server-flowchart}.
 \input{./Slike/server-flowchart.tex}
@@ -607,18 +607,18 @@ Diagram delovanja strežnika prikazuje slika \ref{fig:server-flowchart}.
 
 Kot povedano, je bil program narejen na Linux operacijskemu sistemu. Prednost tega sistema je tudi uporaba SSH (\textit{Secure Shell}) protokola za oddaljen dostop. Uporabnik lahko na ta naèin zažene strežnik brez, da je fizièno ob raèunalniku. 
 
-Pred zagonom strežnika je potrebno najprej naložiti ARCNET modul v Linux jedro. To napravi uporabnik z zagonom skripte \verb|arcnet_ON|, ki smo jo pripravili avtorji (slika \ref{fig:linux-arcnetON}).
+Pred zagonom strežnika je potrebno najprej naložiti ARCNET modul v Linux jedro. To napravi uporabnik z zagonom skripte \verb|arcnet_ON|, ki smo jo pripravili (slika \ref{fig:linux-arcnetON}).
 \input{./Slike/linux-arcnetON.tex}
-Sledi zagon programa z ukazom \verb|./udparcnet-server|. Gre za standardno Linux sintakso za zagon programov pri èemer \verb|./| pomeni zagon, \verb|udparcnet-server| pa ime programa.  V kolikor želi uporabnik strežnik zagnati tako, da prièakuje ter pošilja UDP podatke na druga vrata (ang. \textit{port}) lahko to doda kot argument programu. Èe želi izbrati vrata 1337 to naredi tako: \verb|./udparcnet-server 1337|. Primer zaganjanja strežnika je na sliki \ref{fig:linux-success}. Od tukaj dalje strežnik èaka na UDP pakete s strani klienta. 
+Sledi zagon programa z ukazom \verb|./udparcnet-server|. Gre za standardno Linux sintakso za zagon programov pri èemer \verb|./| pomeni zagon, \verb|udparcnet-server| pa ime programa.  V kolikor želi uporabnik strežnik zagnati tako, da prièakuje ter pošilja UDP podatke na druga vrata (ang. \textit{port}) lahko to doda kot argument programu. Èe želi izbrati vrata 1337 to naredi tako: \verb|./udparcnet-server 1337|. Primer zaganjanja strežnika je na sliki \ref{fig:linux-success}.
 
-Vidimo lahko, da program javi, èe so bile funkcije v inicializacije uspešne in èe je senzor sil JR3 povezan. V kolikor senzorja ni, strežnik še vedno deluje, vendar so vrednosti poslanih sil enake 0.
+Iz slike \ref{fig:linux-success} vidimo, da program javi, èe so bile funkcije v inicializacije uspešne in èe je senzor sil JR3 povezan. V kolikor senzorja ni, strežnik še vedno deluje, vendar so vrednosti poslanih sil enake 0.
 \input{./Slike/linux-success.tex}
 
 
 
 \subsection{Varnostni ukrepi}
 
-V tabelah, ki opisujejo poslane in prejete UDP pakete je mogoèe razbrat, da so nekateri bajti namenjeni ohranjanju komunikacije oz. preverjanju ali sploh še poteka. Eden od takih ukrepov je, da v kolikor nov UDP ali ARCNET paket ne prispe v nekem vnaprej definiranem èasu, program robota zaustavi nato pa gre v èakanje novega paketa. Ko je program v èakanju preverja prispele UDP pakete, v kolikor imajo štartno sekvenco. Ta skrbi za to, da se program zaène izvajat s prvim prispelim UDP paketom. Na ta naèin se poskrbi, da strežnik nebi šele petega UDP paketa prebral in na to zaèel z delovanjem.
+V tabelah, ki opisujejo poslane in prejete UDP pakete je mogoèe razbrati, da so nekateri bajti namenjeni ohranjanju komunikacije oz. preverjanju ali le-ta sploh še poteka. Eden od takih ukrepov je, da v kolikor nov UDP ali ARCNET paket ne prispe v nekem vnaprej definiranem èasu, program robota zaustavi nato pa gre v èakanje novega paketa. Ko je program v èakanju preverja prispele UDP pakete, v kolikor imajo štartno sekvenco. Ta skrbi za to, da se program zaène izvajat s prvim prispelim UDP paketom. Na ta naèin se poskrbi, da strežnik nebi šele petega UDP paketa prebral in na to zaèel z delovanjem.
 
 Naslednji varnostni ukrep preverja stanje varnostnega gumba (\textit{Emegerncy stop}).  V kolikor se ta pritisne, se na servo krmilniku že sam po sebi sproži ukaz za ustavitev motorjev ter vklop zavor. Na strežniku pa se to pozna tako, da se program zaustavi. V kolikor želimo nadaljevati z vodenjem, je potrebno program ponovno zagnat.
 
@@ -656,12 +656,12 @@ Naslednji varnostni ukrep preverja stanje varnostnega gumba (\textit{Emegerncy s
 %*********************** ADMITANÈNO VODENJE ********************************
 \chapter{Vodenje robota PA-10} \label{chap:vodenje}
 
-V prejšnjih poglavjih je bilo govora o pošiljanju referenènih hitrosti in navorov na krmilnik servo motorjev robota PA-10. V poglavju, ki sledi pa bo govora o doloèanju teh krmilnih velièin v namene vodenja robota po prostoru. V tem poglavju bo natanèneje opisano vodenje robota v zunanjih koordinatah. Opisan bo postopek kompenzacije vpliva težnosti prijemala na senzor sile JR3. Na koncu pa bosta opisana dva naèina za krmiljenje robota v stiku z okolico, admitanèno vodenje ter vodenje preko inverzne dinamike.
+V prejšnjih poglavjih je bilo govora o pošiljanju referenènih hitrosti in navorov na krmilnik servo motorjev robota PA-10. V poglavju, ki sledi, pa bo govora o doloèanju teh krmilnih velièin za vodenja robota. V tem poglavju bo natanèneje opisano tudi vodenje robota v zunanjih koordinatah. Opisan bo postopek kompenzacije vpliva težnosti prijemala na senzor sile JR3. Na koncu pa bosta opisana dva naèina za krmiljenje robota v stiku z okolico, admitanèno vodenje ter vodenje preko inverzne dinamike.
 
 
 \section{Kompenzacija mase prijemala ter merilnega odmika na senzorju sile JR3} \label{sec:vodenje-jr3}
 
-Delovanje senzorja sile JR3 je bilo opisano v prejšnjih poglavjih. Senzor je pritrjen na vrh robota in meri navore ter sile, ki delujejo nanj v njegovem koordinatnem sistemu. Homogeno transformacijsko matriko smo definirali v poglavju \ref{chap:pa10}. Sile in navore na vrhu robota lahko preslikamo v koordinatni sistem baze preko matrike homogene transformacije
+Delovanje senzorja sile JR3 je bilo opisano v prejšnjih poglavjih. Senzor je pritrjen na vrh robota in meri navore ter sile, ki delujejo nanj v njegovem koordinatnem sistemu. Sile in navore na vrhu robota lahko preslikamo v koordinatni sistem baze preko matrike homogene transformacije
 
 \begin{equation}
 \mathbf{h}_b = \textbf{T}^0_{7} \mathbf{h}_e
@@ -716,7 +716,7 @@ Avtorji v \cite{omrcen_jr3} pokažejo, da je mogoèe izraèunati $\textbf{f}_{grav}
 \begin{equation}\label{eq:fmeas12}
 \begin{bmatrix}	\textbf{f}_{mes}^{(1)} \\ \textbf{f}_{mes}^{(2)} \end{bmatrix} = \begin{bmatrix} \mathbf{R}^{(1)} & \textbf{I} \\ \mathbf{R}^{(2)} & \textbf{I}\end{bmatrix} \begin{bmatrix} \textbf{f}_{gz} \\\textbf{f}_{off} \end{bmatrix}.
 \end{equation}
-Upoštevaje \ref{eq:short_r} se nam \ref{eq:fmeas12} poenostavi na 
+Upoštevaje (\ref{eq:short_r}) se nam (\ref{eq:fmeas12}) poenostavi na 
 \begin{equation}\label{eq:fmeas12_short}
 \begin{bmatrix}\mathbf{f}_{mes}^{(1)} \\ \mathbf{f}_{mes}^{(2)} \end{bmatrix} = \begin{bmatrix} \mathbf{R}_3^{(1)} & \mathbf{I} \\ \mathbf{R}_3^{(2)} & \mathbf{I}\end{bmatrix} \begin{bmatrix} \mathbf{f}_{gz} \\ \mathbf{f}_{off} \end{bmatrix} = \mathbf{A}  \begin{bmatrix} mg \\\textbf{f}_{off} \end{bmatrix}.
 \end{equation}
@@ -826,7 +826,7 @@ To enaèbo je mogoèe razumeti tudi kot zvezo med spremembo položaja vrha ter skle
 	\tilde{\textbf{q}} = \textbf{J}^{*}(\textbf{q})  \tilde{\textbf{x}}
 \end{equation}
 
-Z vstavitvijo enaèbe \ref{eq:qerr} v \ref{eq:p_reg_q} dobimo P regulator lege vrha robota.
+Z vstavitvijo enaèbe (\ref{eq:qerr}) v (\ref{eq:p_reg_q}) dobimo P regulator lege vrha robota.
 \begin{equation} \label{eq:outcontrol}
 \textbf{u} = \textbf{K}_p  \textbf{J}^{*}(\textbf{q})  (\textbf{x}_{ref} - \textbf{x}).
 \end{equation}
@@ -867,7 +867,7 @@ Navor proizveden v motorjih robota je linearno odvisen od toka, ki gre v motor. 
 
 Vodenje robota na v navornem naèinu ima to prednost, da lahko podajnost celotnega mehanizma spreminjamo. Tako robot ni nujno podajen le na vrhu ob uporabi senzorja sil, temveè po celotni konstrukciji. Tak naèin vodenja omogoèa dobro interakcijo z okoljem ter èlovekom.
 
-V nadaljevanju bomo opisali vodenje po zunanjih in po notranjih koordinatah. Enaèbo \ref{eq:din} zapišemo drugaèe in sicer brez upoštevanja zunanjih sil na vrh manipulatorja, $\textbf{h}_o = 0$. Dodatno bomo vpeljali še novo velièino
+V nadaljevanju bomo opisali vodenje po zunanjih in po notranjih koordinatah. Enaèbo (\ref{eq:din}) zapišemo drugaèe in sicer brez upoštevanja zunanjih sil na vrh manipulatorja, $\textbf{h}_o = 0$. Dodatno bomo vpeljali še novo velièino
 
 \begin{equation}
 	\textbf{n}(q,\dot{q}) = \textbf{C}(\textbf{q},\dot{\textbf{q}})  \dot{\textbf{q}} + \textbf{F}_f(\dot{\textbf{q}}, \textbf{q}) + \textbf{g}(\textbf{q}),
@@ -890,7 +890,7 @@ Predpostavimo, da poznamo približen dinamièni model robota, t.j. matriko $\mathb
 \begin{equation}\label{eq:u_from_ddq}
 \textbf{u} = \mathbf{\hat{B}}(\textbf{q})\mathbf{\ddot{q}}_{ref} + \mathbf{\hat{n}}(q,\dot{q}).
 \end{equation}
-Vstavimo \ref{eq:u_from_ddq} in \ref{eq:tau_dyn}  v \ref{eq:taueqq} in dobimo
+Vstavimo (\ref{eq:u_from_ddq}) in (\ref{eq:tau_dyn})  v (\ref{eq:taueqq}) in dobimo
 \begin{equation}
 \mathbf{\hat{B}}(\textbf{q})\mathbf{\ddot{q}}_{ref} + \mathbf{\hat{n}}(q,\dot{q}) = \textbf{B}(\textbf{q})  \ddot{\textbf{q}} + \textbf{n}(\textbf{q},\mathbf{\dot{q}}).
 \end{equation}
@@ -898,11 +898,11 @@ Vstavimo \ref{eq:u_from_ddq} in \ref{eq:tau_dyn}  v \ref{eq:taueqq} in dobimo
 \begin{equation}\label{eq:ddqref_ddq}
 \mathbf{\ddot{q}}_{ref} = \ddot{\textbf{q}}.
 \end{equation}
-Enaèba nam pravi, da v kolikor poznamo natanèen dinamièen model, bo vodenje \ref{eq:u_from_ddq} zagotovilo želeno gibanje robota \cite{mihelj_vodenje}. Ker pa dinamiènih parametrov robota v praksni nikoli ne poznamo dovolj natanèno, \ref{eq:ddqref_ddq} ne velja in se pojavi napaka v poziciji sklepov. Zato je smiselno krmilnemu signalu dodati še regulacijo hitrosti ter pozicije in definiramo krmilne pospeške $ \ddot{\mathbf{q}}_u $ kot
+Enaèba nam pravi, da v kolikor poznamo natanèen dinamièen model, bo vodenje (\ref{eq:u_from_ddq}) zagotovilo želeno gibanje robota \cite{mihelj_vodenje}. Ker pa dinamiènih parametrov robota v praksni nikoli ne poznamo dovolj natanèno, (\ref{eq:ddqref_ddq}) ne velja in se pojavi napaka v poziciji sklepov. Zato je smiselno krmilnemu signalu dodati še regulacijo hitrosti ter pozicije in definiramo krmilne pospeške $ \ddot{\mathbf{q}}_u $ kot
 \begin{equation}
 	\ddot{\mathbf{q}}_u = \mathbf{\ddot{q}}_{ref} + \textbf{K}_p (q_{ref} - q) + \textbf{K}_d(\mathbf{\dot{q}} - \mathbf{\dot{q}}).
 \end{equation}
-in jih vstavimo v enaèbo \ref{eq:u_from_ddq} namesto $\pmb{\ddot{q}}_{ref}$. Konèna enaèba za vodenje preko inverzne dinamike je tako
+in jih vstavimo v enaèbo (\ref{eq:u_from_ddq}) namesto $\pmb{\ddot{q}}_{ref}$. Konèna enaèba za vodenje preko inverzne dinamike je tako
 \begin{equation}
 	\textbf{u} = \mathbf{\hat{B}}(\textbf{q})(\mathbf{\ddot{q}}_{ref} + \textbf{K}_p (q_{ref} - q) + \textbf{K}_d(\mathbf{\dot{q}} - \textbf{q})) + \mathbf{\hat{n}}(q,\dot{q}).
 \end{equation}
@@ -947,7 +947,7 @@ Sedaj lahko definiramo regulator, ki bo dajal take pospeške v sklepih, da bo vrh
 \begin{equation}\label{eq:accel_dyn_ref}
 	\ddot{\mathbf{x}}_u = \ddot{\mathbf{x}}_{ref} + \textbf{K}_d \dot{\tilde{\mathbf{x}}} + \textbf{K}_p \tilde{\mathbf{x}}
 \end{equation}
-Z vstavitvijo \ref{eq:accel_dyn_ref} v \ref{eq:accel_dyn} dobimo konèno enaèbo pospeškov v sklepih
+Z vstavitvijo (\ref{eq:accel_dyn_ref}) v (\ref{eq:accel_dyn}) dobimo konèno enaèbo pospeškov v sklepih
 \begin{equation}\label{eq:alpha_inv_dyn}
 	\ddot{\mathbf{q}}_u = \textbf{J}^* (\textbf{q})(\ddot{\mathbf{x}}_{ref} + \textbf{K}_d \dot{\tilde{\mathbf{x}}} + \textbf{K}_p \tilde{\mathbf{x}} - \dot{\mathbf{J}}(\textbf{q},\dot{\mathbf{q}})\dot{\mathbf{q}}).
 \end{equation}
@@ -967,7 +967,7 @@ Shema takega vodenja je prikazana na sliki \ref{fig:ddx_tau_dyn}.
 
 Robotski mehanizmi so v veèini primerov med opravljanjem nalog v kontaktu z okolico. Vendar pa obstaja veliko takih nalog, kjer nas sila med okolico in robotom ne zanima, npr. pobiranje in odlaganje. So pa primeri nalog, ko kljuènega pomena. Primer take naloge je recimo brušenje brušenje površine ali pa interakcija s èlovekom. V nadaljevanju tega poglavja bomo opisali dva naèina vodenja robota v kontaktu z okolico, admitanèno ter impedanèno.
 
-\section{Admitanèno vodenje} \label{sec:vodenje-admitance}
+\subsection{Admitanèno vodenje} \label{sec:vodenje-admitance}
 
 Robotski mehanizem PA-10 je industrijski robot s segmenti iz pretežno litega železa. Segmenti imajo relativno veliko maso, sklepi pa relativno visoko trenje. Lahko predpostavimo, da ima manipulator veliko lastno impedanco. Pojem mehanske impedance izvira iz analogije elektriène impedance. Iz tega izraza izvira tudi izraz za admitanèno vodenje robota. Tako vodenje je uporabno predvsem ob interakciji s èlovekom, saj se celoten robot giblje v skladu z gibanjem èloveške roke \cite{mihelj_hapt}. Predstavlja pa razmerje med silo (\textit{F}) in hitrostjo (\textit{v}).
 
@@ -988,13 +988,13 @@ Za admitanèno vodenje je potrebno upoštevati še podatek o silah in navorih, ki d
 \tilde{\textbf{h}} = \textbf{h}_{ref} - \textbf{h}_e.
 \end{equation}
 
-Sila kot rezultat delovanja robota na okolico je odvisna od hitrosti oz. pozicije vrha robota. Zato lahko napako sile dodamo v regulator lege \ref{eq:outcontrol}. Definiramo referenèno pozicijo v odvisnosti od sile
+Sila kot rezultat delovanja robota na okolico je odvisna od hitrosti oz. pozicije vrha robota. Zato lahko napako sile dodamo v regulator lege (\ref{eq:outcontrol}). Definiramo referenèno pozicijo v odvisnosti od sile
 
 \begin{equation} \label{eq:xrefforce}
 \textbf{x}_{ref} = \textbf{K}_{hP}\tilde{\textbf{h}} + \textbf{K}_{hI} \int_{0}^{t}\tilde{\textbf{h}}d\xi.
 \end{equation}
 
-Z vstavitvijo enaèbe \ref{eq:xrefforce} v \ref{eq:outcontrol} je mogoèe zapisati celotno regulacijsko enaèbo za vodenje robota v zunanjih koordinatah z upoštevanjem delovanja zunanjih sil na vrh robota.
+Z vstavitvijo enaèbe (\ref{eq:xrefforce}) v (\ref{eq:outcontrol}) je mogoèe zapisati celotno regulacijsko enaèbo za vodenje robota v zunanjih koordinatah z upoštevanjem delovanja zunanjih sil na vrh robota.
 
 \begin{equation} \label{eq:admitcontrol}
 \textbf{u} = \textbf{K}_p  \textbf{J}^{-1}(\textbf{K}_{hP}\tilde{\textbf{h}} + \textbf{K}_{hI} \int_{0}^{t}\tilde{\textbf{h}}d\xi - \textbf{x})
@@ -1005,7 +1005,7 @@ Dobili smo PI regulator sile interakcije. Èeprav je bilo pri definiciji mehanske
 Admitanèno vodenje se uporablja takrat, ko lahko robota vodimo le hitrostno ali pozicijsko in želimo vplivati na okolico z neko silo. Silo interakcije pa je doloèimo z modelom okolja. Kontakt si lahko predstavljamo kot interakcijo med togim robotom in podajnim okoljem.
 
 
-\section{Impedanèno vodenje}
+\subsection{Impedanèno vodenje}
 
 Pri izpeljavi vodenja lege robota z inverzno dinamiko smo predpostavili, da so sile interakcije $\textbf{h}_o$ enake niè. Ker pa to v primeru, da je robot v kontaktu z okoljem ni res, je potrebno pogledati kaj se zgodi takrat, ko te sile delujejo na robota. Vzemimo spet dinamièen model robota, ki ga vodimo preko reguliranega pospeška $\ddot{\mathbf{x}}_u$ in dodamo silo interakcije 
 \begin{equation}\label{eq:dyn_outer_force}
@@ -1013,7 +1013,7 @@ Pri izpeljavi vodenja lege robota z inverzno dinamiko smo predpostavili, da so s
 \end{equation}
 Vidimo, da bodo sedaj navori v sklepi razlièni od izraèunanih preko inverznega dinamiènega modela in posledièno bo med želenim vrhom robota in dejanskim vrhom robota nastala napaka. Vrh robota bo z neko silo deloval na okolje, ki pa jo lahko s senzorjem na vrhu robota oz. med prijemalom in vrhom, izmerimo. 
 
-Za izhodišèe vzamemo enaèbo \ref{eq:dyn_err} in \ref{eq:dyn_outer_force} ter zapišemo dinamiko napake z upoštevanjem delovanja zunanjih sil
+Za izhodišèe vzamemo enaèbo (\ref{eq:dyn_err}) in (\ref{eq:dyn_outer_force}) ter zapišemo dinamiko napake z upoštevanjem delovanja zunanjih sil
 
 \begin{equation}
 \ddot{\mathbf{x}}_{ref} + \textbf{K}_d \dot{\tilde{\mathbf{x}}}  + \textbf{K}_p \tilde{\mathbf{x}}.

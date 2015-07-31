@@ -4,9 +4,9 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {2.1}{\ignorespaces D-H parametri}}{10}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Opis prejetega UDP paketa.}}{27}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Opis UDP paketa, ki ga klient po\'L\v {}lje stre\'L\v lniku.}}{27}
 \contentsline {table}{\numberline {3.2}{\ignorespaces Opis ARCNET paketa.}}{27}
-\contentsline {table}{\numberline {3.3}{\ignorespaces Opis poslanega UDP paketa.}}{28}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Opis UDP paketa, ki ga stre\'L\v lnik po\'L\v {}lje klientu.}}{28}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

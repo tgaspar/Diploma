@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  30 JUL 2015 10:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  31 JUL 2015 17:24
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -799,7 +799,10 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[6] (magistrska_timotej_gaspar.lof [7
+[6] (magistrska_timotej_gaspar.lof
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7
 
 ])
 \tf@lof=\write6
@@ -1210,9 +1213,6 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [26 <./Slike/udp-arcnet-server-eps-converted-to.pdf>]
 (Tabele/arcnet-command.tex)
-Underfull \vbox (badness 1590) has occurred while \output is active []
-
-
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1560,10 +1560,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19110 strings out of 493671
- 373552 string characters out of 3145458
+ 19111 strings out of 493671
+ 373560 string characters out of 3145458
  497200 words of memory out of 3000000
- 21935 multiletter control sequences out of 15000+200000
+ 21936 multiletter control sequences out of 15000+200000
  16641 words of font info for 62 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  55i,17n,67p,3304b,722s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1583,7 +1583,7 @@ rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
 /type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (75 pages, 3087920 bytes).
+Output written on magistrska_timotej_gaspar.pdf (75 pages, 3088385 bytes).
 PDF statistics:
  433 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

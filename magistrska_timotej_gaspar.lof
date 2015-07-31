@@ -9,7 +9,7 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Vsebina ARCNET paketa}}{20}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram stanj ARCNET modula na krmilniku robota}}{21}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Krmiljenje robota s po\v {s}iljanjem ARCNET paketov.}}{21}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Podatkovni del ARCNET paketa za krmiljenje robota}}{22}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Podatkovni del ARCNET paketa za krmiljenje robota v odvisnoti od tipa paketa.}}{22}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Senzor sil in navorov JR3.}}{23}
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Dostopanje do registrov na ISA kartici za digitalno obdelavo signala iz senzorja senzorja JR3.}}{24}
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Stre\v {z}nik kot posrednik med ARCNET ter Ethernet omre\v {z}jem.}}{26}

@@ -618,9 +618,11 @@ Iz slike \ref{fig:linux-success} vidimo, da program javi, èe so bile funkcije v 
 
 \subsection{Varnostni ukrepi}
 
-V tabelah, ki opisujejo poslane in prejete UDP pakete je mogoèe razbrati, da so nekateri bajti namenjeni ohranjanju komunikacije oz. preverjanju ali le-ta sploh še poteka. Eden od takih ukrepov je, da v kolikor nov UDP ali ARCNET paket ne prispe v nekem vnaprej definiranem èasu, program robota zaustavi nato pa gre v èakanje novega paketa. Ko je program v èakanju preverja prispele UDP pakete, v kolikor imajo štartno sekvenco. Ta skrbi za to, da se program zaène izvajat s prvim prispelim UDP paketom. Na ta naèin se poskrbi, da strežnik nebi šele petega UDP paketa prebral in na to zaèel z delovanjem.
+V tabelah, ki opisujejo poslane in prejete UDP pakete je mogoèe razbrati, da so nekateri bajti namenjeni ohranjanju komunikacije oz. preverjanju ali le-ta sploh še poteka. Eden od takih ukrepov je, da v kolikor nov UDP ali ARCNET paket ne prispe v nekem vnaprej definiranem èasu, program robota zaustavi nato pa gre v stanje èakanja novega paketa. Ta èas smo nastavili na eno sekundo.
 
-Naslednji varnostni ukrep preverja stanje varnostnega gumba (\textit{Emegerncy stop}).  V kolikor se ta pritisne, se na servo krmilniku že sam po sebi sproži ukaz za ustavitev motorjev ter vklop zavor. Na strežniku pa se to pozna tako, da se program zaustavi. V kolikor želimo nadaljevati z vodenjem, je potrebno program ponovno zagnat.
+Ko je program v èakanju, preverja prispele UDP pakete ali imajo pravilno štartno sekvenco. Na ta naèin poskrbimo, da se vodenje zaène z prvim prejetim UDP paketom in da v primeru prekinjene komunikacije se vodenje ne bi ponovno zaèelo izvajati sredi delovanja višjenivojskega vodenja.
+
+Naslednji varnostni ukrep preverja stanje varnostnega gumba (\textit{Emegerncy stop}).  V kolikor se ta pritisne, se na servo krmilniku že sam po sebi sproži ukaz za ustavitev motorjev ter vklop zavor. Na strežniku pa se to pozna tako, da se program zaustavi. V kolikor želimo nadaljevati z vodenjem, je potrebno program ponovno zagnati.
 
 
 
@@ -667,9 +669,9 @@ Delovanje senzorja sile JR3 je bilo opisano v prejšnjih poglavjih. Senzor je pri
 \mathbf{h}_b = \textbf{T}^0_{7} \mathbf{h}_e
 \end{equation}
 
-Robot brez prijemala v praksi ni pretirano uporaben saj lahko opravlja le malo uporabnih nalog, npr. premikanje objektov s porivanjem. V kolikor pa želimo, da bo robot lahko izvajal tudi druge naloge, je potrebno nanj pritrditi primerno prijemalo. Vendar pa imamo na vrhu robota najprej senzor, kar pomeni, da omenjeno prijemalo pritrdimo na senzor. Ker ima prijemalo svoje maso in težišèe, bo na senzor delovala neka sila in navor kot posledica delovanja gravitacije. Kar pomeni, da bomo kljub temu, da senzor ni v kontaktu z okolico, merili sile. To pa ni dobrodošlo, saj želimo meriti le sile, ki se so posledica kontakta prijemala z okolico. Dodatno je potrebno še upoštevati merilni odmik, ki se pojavi kot posledica lezenja uporovnih mostièkov.
+Robot brez prijemala v praksi ni pretirano uporaben saj lahko opravlja le malo uporabnih nalog, npr. premikanje objektov s porivanjem. V kolikor pa želimo, da bo robot lahko izvajal tudi druge naloge, je potrebno nanj pritrditi primerno prijemalo, ki ga pritrdimo na senzor. Ker ima prijemalo neko maso, bo na senzor delovala neka sila in navor kot posledica delovanja gravitacije. To pomeni, da bomo kljub temu, da senzor ni v kontaktu z okolico, izmerili neke sile. Izmerjene sile so napaka, ki se so posledica kontakta prijemala z okolico. Pri izmerjenih silah je potrebno še upoštevati merilni odmik, ki se pojavi kot posledica lezenja uporovnih mostièkov.
 
-Sile ($\textbf{f}_s$) in navore ($ \textbf{m}_s $), ki jih meri senzor, lahko razdelimo na tri komponente
+Sile ($\textbf{f}_s$) in navore ($ \boldsymbol{\tau}_s $), ki jih meri senzor, lahko razdelimo na tri komponente
 
 \begin{equation}
     \begin{array}{r c l}
@@ -677,7 +679,9 @@ Sile ($\textbf{f}_s$) in navore ($ \textbf{m}_s $), ki jih meri senzor, lahko ra
     \boldsymbol{\tau}_s &=& \boldsymbol{\tau}_{env} + \boldsymbol{\tau}_{grav} + \boldsymbol{\tau}_{off},
     \end{array}
 \end{equation}
-kjer je $(.)_{env}$ zunanja sila in navor, ki deluje na senzor, $(.)_{grav}$ vpliv mase prijemala, èlen $(.)_{off}$ pa predstavlja merilni odmik, ki je posledica lezenja senzorja. Želja je, doloèiti $(.)_{grav}$ in $(.)_{off}$ tako, da ju lahko kompenziramo in doloèimo $(.)_{env}$. Ko vrh robota ni v kontaktu z okolico velja $\textbf{f}_{env} = 0$ in $\boldsymbol{\tau}_{env} = 0$ oziroma:
+kjer z $(.)_{env}$ oznaèimo zunanje sile in navore, ki delujejo na senzor, z $(.)_{grav}$ vpliv mase prijemala, èleni oznaèeni z $(.)_{off}$ pa predstavljajo merilni odmik, ki je posledica lezenja senzorja. Da dobimo vrednosti sil, ki delujejo na vrh robota ($\textbf{f}_s$ in $ \boldsymbol{\tau}_s $), je potrebno kompenzirati vplive gravitacijskih sil prijemala in lazenja senzorja. V ta namen je potrebno identificirati maso in težišèe prijemala ter merilni odmik senzorja. Postopek, ki smo ga razvili, je sledeè.
+
+Ko vrh robota ni v kontaktu z okolico velja $\textbf{f}_{env} = 0$ in $\boldsymbol{\tau}_{env} = 0$ oziroma:
 
 \begin{equation}
 \begin{array}{r c l}
@@ -689,9 +693,9 @@ kjer je $(.)_{env}$ zunanja sila in navor, ki deluje na senzor, $(.)_{grav}$ vpl
 \input{./Slike/jr3_coordinatesistem.tex}
 
 
-Sila $\textbf{f}_{grav} $ je odvisna od mase (m) prijemala ter orientacije vrha robota. Koordinatni sistem prijemala naj bo zaradi poenostavitve vzporeden koordinatnemu sistemu vrha robota. Orientacijo senzorja zapišemo s poznavanjem kinematiènega modela in bo v nadaljevanju oznaèena z \textbf{R}. Tako je mogoèe doloèiti  prispevek 
+Sila $\textbf{f}_{grav} $ je odvisna od mase prijemala (\textit{m}), težišèa ter orientacije vrha robota. Predpostavimo lahko, da so koordinatni sistemi vrha robota, senzorja in prijemala enako orientirani. Orientacijo senzorja zapišemo s poznavanjem kinematiènega modela in bo v nadaljevanju oznaèena z \textbf{R}. Tako je mogoèe doloèiti  prispevek 
 
-\begin{equation}
+\begin{equation}\label{eq:fgravlong}
 	\textbf{f}_{grav} = \textbf{R}
 	\begin{bmatrix}
 	0 \\
@@ -699,8 +703,7 @@ Sila $\textbf{f}_{grav} $ je odvisna od mase (m) prijemala ter orientacije vrha 
 	mg
 	\end{bmatrix} = \textbf{R} \textbf{f}_{gz}.
 \end{equation}
-Ker ima $ \textbf{f}_{gz} $ le en èlen razlièen od niè, lahko iz matrike \textbf{R} vzamemo le tretji stolpec in zapišemo
-
+Ker ima $ \textbf{f}_{gz} $ le en èlen razlièen od niè, lahko enaèbo (\ref{eq:fgravlong}) poenostavimo in dobimo
 
 \begin{equation} \label{eq:short_r}
 \textbf{f}_{grav} = 
@@ -708,66 +711,76 @@ Ker ima $ \textbf{f}_{gz} $ le en èlen razlièen od niè, lahko iz matrike \textbf
 r31 \\
 r32 \\
 r33
-\end{bmatrix}mg = \textbf{R}_3 mg.
+\end{bmatrix}mg = (\textbf{R}_3 g)m,
 \end{equation}
+kjer je $ \textbf{R}_3 $ tretji stolpec matrike \textbf{R}.
 
 Avtorji v \cite{omrcen_jr3} pokažejo, da je mogoèe izraèunati $\textbf{f}_{grav}$ in $\textbf{f}_{off}$ na podlagi najmanj dveh meritev ($\textbf{f}_{meas}^{(1)}$ in $\textbf{f}_{meas}^{(2)}$). Zapišemo sistem enaèb v matrièni obliki
 
 \begin{equation}\label{eq:fmeas12}
 \begin{bmatrix}	\textbf{f}_{mes}^{(1)} \\ \textbf{f}_{mes}^{(2)} \end{bmatrix} = \begin{bmatrix} \mathbf{R}^{(1)} & \textbf{I} \\ \mathbf{R}^{(2)} & \textbf{I}\end{bmatrix} \begin{bmatrix} \textbf{f}_{gz} \\\textbf{f}_{off} \end{bmatrix}.
 \end{equation}
-Upoštevaje (\ref{eq:short_r}) se nam (\ref{eq:fmeas12}) poenostavi na 
+Upoštevaje (\ref{eq:short_r}) se nam enaèba (\ref{eq:fmeas12}) poenostavi na 
 \begin{equation}\label{eq:fmeas12_short}
-\begin{bmatrix}\mathbf{f}_{mes}^{(1)} \\ \mathbf{f}_{mes}^{(2)} \end{bmatrix} = \begin{bmatrix} \mathbf{R}_3^{(1)} & \mathbf{I} \\ \mathbf{R}_3^{(2)} & \mathbf{I}\end{bmatrix} \begin{bmatrix} \mathbf{f}_{gz} \\ \mathbf{f}_{off} \end{bmatrix} = \mathbf{A}  \begin{bmatrix} mg \\\textbf{f}_{off} \end{bmatrix}.
+\begin{bmatrix}\mathbf{f}_{mes}^{(1)} \\ \mathbf{f}_{mes}^{(2)} \end{bmatrix} = \begin{bmatrix} \mathbf{R}_3^{(1)}g & \mathbf{I} \\ \mathbf{R}_3^{(2)}g & \mathbf{I}\end{bmatrix} \begin{bmatrix} m \\ \mathbf{f}_{off} \end{bmatrix} = \mathbf{A}  \begin{bmatrix} m \\\textbf{f}_{off} \end{bmatrix}.
 \end{equation}
 Izrazimo $\textbf{f}_{grav}$ in $\textbf{f}_{off}$
 
 \begin{equation}
- 	\begin{bmatrix}	mg \\\textbf{f}_{off} \end{bmatrix} = \begin{pmatrix} \textbf{A}^T \textbf{A}\end{pmatrix}^{-1} \textbf{A}^T \begin{bmatrix}	\textbf{f}_{meas}^{(1)} \\ \textbf{f}_{meas}^{(2)} \end{bmatrix}.
+ 	\begin{bmatrix}	\widehat{m} \\ \widehat{\textbf{f}}_{off} \end{bmatrix} = \begin{pmatrix} \textbf{A}^T \textbf{A}\end{pmatrix}^{-1} \textbf{A}^T \begin{bmatrix}	\textbf{f}_{meas}^{(1)} \\ \textbf{f}_{meas}^{(2)} \end{bmatrix}.
 \end{equation}
 Enaèba bo veljala le, èe bo matrika \textbf{A} polnega ranga oziroma, èe bosta meritvi linearno neodvisni.
 
 
-Za navor pa je potrebno poznati tudi translacijski vektor od težišèa do koordinatnega sistema senzorja, v nadaljevanju oznaèen z \textbf{r}. Prispevek navora zaradi vpliva gravitacije je tako 
-\begin{equation}
+Za navor pa je potrebno poznati tudi translacijski vektor od težišèa do koordinatnega sistema senzorja, v nadaljevanju oznaèen z \textbf{r}. Prispevek navora zaradi vpliva gravitacije je 
+\begin{equation}\label{eq:taugrav}
 \boldsymbol{\tau}_{grav} = \textbf{r} \times \textbf{f}_{grav}.
 \end{equation}
-Dodatno bomo tukaj definirali še matrièen zapis vektorja $\textbf{f}_{grav}$ kot
+Vektorski produkt bomo nadomestili z uporabo matriènega zapisa vektorja $\textbf{f}_{grav}$ kot
 \begin{equation}
 S(\mathbf{f}_{grav}) =
 \begin{bmatrix}
 0 & -{\mathbf{f}_{grav}}_z & {\mathbf{f}_{grav}}_y \\
-{\mathbf{f}_{grav}}_z & 0 & -{\mathbf{f}{grav}}_x\\
+{\mathbf{f}_{grav}}_z & 0 & -{\mathbf{f}_{grav}}_x\\
 -{\mathbf{f}_{grav}}_y & {\mathbf{f}_{grav}}_x & 0
-\end{bmatrix}.
+\end{bmatrix}
 \end{equation} 
-Iz treh razliènih meritev navorov ($\boldsymbol{\tau}_{meas}^{(1)}$, $\boldsymbol{\tau}_{meas}^{(2)}$ in  $\boldsymbol{\tau}_{meas}^{(3)}$) pri treh razliènih orientacijah ($\textbf{R}^{(1)}$, $\textbf{R}_{meas}^{(2)}$ in  $\textbf{R}_{meas}^{(3)}$) zapišemo sistem enaèb
-
+in enaèbo \ref{eq:taugrav} zapisalo kot
 \begin{equation}
-\begin{bmatrix}	\boldsymbol{\tau}_{meas}^{(1)} \\ \boldsymbol{\tau}_{meas}^{(2)} \\ \boldsymbol{\tau}_{meas}^{(3)} \end{bmatrix} = \begin{bmatrix} \mathbf{S}(\mathbf{f}_{grav})^{(1)} & \textbf{I} \\ \mathbf{S}(\mathbf{f}_{grav})^{(2)} & \textbf{I} \\ \mathbf{S}(\mathbf{f}_{grav})^{(3)} & \textbf{I} \end{bmatrix} \begin{bmatrix}	\textbf{r} \\\boldsymbol{\tau}_{off}\end{bmatrix}.
-\end{equation}
-Enaèbo obrnemo in izrazimo \textbf{r} in $\boldsymbol{\tau}_{grav}$
-
-\begin{equation}
-\begin{bmatrix}	\textbf{r} \\\boldsymbol{\tau}_{off}\end{bmatrix} = \begin{pmatrix} \begin{bmatrix} \mathbf{S}(\mathbf{f}_{grav})^{(1)} & \textbf{I} \\ \mathbf{S}(\mathbf{f}_{grav})^{(2)} & \textbf{I} \\ \mathbf{S}(\mathbf{f}_{grav})^{(3)} & \textbf{I} \end{bmatrix}^T \begin{bmatrix} \mathbf{S}(\mathbf{f}_{grav})^{(1)} & \textbf{I} \\ \mathbf{S}(\mathbf{f}_{grav})^{(2)} & \textbf{I} \\ \mathbf{S}(\mathbf{f}_{grav})^{(3)} & \textbf{I} \end{bmatrix} \end{pmatrix}^{-1} \begin{bmatrix} \mathbf{S}(\mathbf{f}_{grav})^{(1)} & \textbf{I} \\ \mathbf{S}(\mathbf{f}_{grav})^{(2)} & \textbf{I} \\ \mathbf{S}(\mathbf{f}_{grav})^{(3)} & \textbf{I} \end{bmatrix}^T \begin{bmatrix}	\boldsymbol{\tau}_{meas}^{(1)} \\ \boldsymbol{\tau}_{meas}^{(2)} \\ \boldsymbol{\tau}_{meas}^{(3)} \end{bmatrix}.
+\boldsymbol{\tau}_{grav} = \textbf{S}(\textbf{f}_{grav}) \textbf{r}.
 \end{equation}
 
-Bistveni trije podatki, ki smo jih s temi izraèuni izpostavili so merilni odmik, vpliv gravitacije ter težišèe prijemala. Prednost tega postopka je, da imamo orientacijo senzorja v vseh merilnih pozicijah natanèno doloèeno zaradi poznavanja kinematiènega modela robota. Hkrati pa lahko ta postopek popolnoma avtomatiziramo, kar smo tudi naredili. Postopek je opisan v dodatku \ref{appendix:jr3-calibration}. Masa ter težišèe prijemala sta parametra, ki se jih identificira in sta èasovno neodvisna. Zaradi efekta lezenja uporovnih listièev pa je merilni odmik èasovno odvisen in ga je potrebno pogosteje izmeriti.
+Iz treh razliènih meritev navorov ($\boldsymbol{\tau}_{meas}^{(1)}$, $\boldsymbol{\tau}_{meas}^{(2)}$ in  $\boldsymbol{\tau}_{meas}^{(3)}$) pri treh razliènih orientacijah ($\textbf{R}_{meas}^{(1)}$, $\textbf{R}_{meas}^{(2)}$ in  $\textbf{R}_{meas}^{(3)}$) zapišemo sistem enaèb
+
+\begin{equation}
+\begin{bmatrix}	\boldsymbol{\tau}_{meas}^{(1)} \\ \boldsymbol{\tau}_{meas}^{(2)} \\ \boldsymbol{\tau}_{meas}^{(3)} \end{bmatrix} = \begin{bmatrix} \mathbf{S}(\mathbf{f}_{grav})^{(1)} & \textbf{I} \\ \mathbf{S}(\mathbf{f}_{grav})^{(2)} & \textbf{I} \\ \mathbf{S}(\mathbf{f}_{grav})^{(3)} & \textbf{I} \end{bmatrix} \begin{bmatrix}	\textbf{r} \\\boldsymbol{\tau}_{off}\end{bmatrix}
+=\textbf{B}\begin{bmatrix}
+\textbf{r} \\ \boldsymbol{\tau}_{off}
+\end{bmatrix}
+.
+\end{equation}
+Enaèbo obrnemo in izrazimo \textbf{r} ter $\boldsymbol{\tau}_{off}$
+
+\begin{equation}
+\begin{bmatrix}	\textbf{r} \\\boldsymbol{\tau}_{off}\end{bmatrix} = (\textbf{B}^T\textbf{B})^{-1}\textbf{B}^T \begin{bmatrix}	\boldsymbol{\tau}_{meas}^{(1)} \\ \boldsymbol{\tau}_{meas}^{(2)} \\ \boldsymbol{\tau}_{meas}^{(3)} \end{bmatrix}.
+\end{equation}
+
+Bistveni podatki, ki smo jih s temi izraèuni dobili, so ocenjeni merilni odmiki, $ \widehat{\mathbf{f}}_{off} $ in $ \widehat{\boldsymbol{\tau}}_{off} $ ter vpliv gravitacije, $ \widehat{\mathbf{f}}_{grav} = \textbf{R} \begin{bmatrix}0 & 0 & \widehat{m}g \end{bmatrix}^T $ in $ \widehat{\boldsymbol{\tau}}_{grav} = \textbf{S}(\widehat{\mathbf{f}}_{grav}) \widehat{\mathbf{r}}$.  Prednost tega postopka je, da imamo orientacijo senzorja v vseh merilnih pozicijah natanèno doloèeno zaradi poznavanja kinematiènega modela robota. Hkrati pa lahko ta postopek popolnoma avtomatiziramo, kar smo tudi naredili. Postopek je opisan v dodatku \ref{appendix:jr3-calibration}. Masa težišèe prijemala èasovno neodvisna parametra. Zaradi lezenja uporovnih listièev pa je merilni odmik èasovno odvisen in ga je potrebno pogosteje izmeriti.
 
 V nadaljevanju bo sila ter navor kot posledica interakcije z okolico zapisana v vektorju $\textbf{h}_e$ kot
 \begin{equation}
 \textbf{h}_e =  \begin{bmatrix} \textbf{f}_{s} - \widehat{\textbf{f}}_{grav} - \widehat{\textbf{f}}_{off}\\ \boldsymbol{\tau}_s - \widehat{\boldsymbol{\tau}}_{grav} - \widehat{\boldsymbol{\tau}}_{off}\end{bmatrix} = \begin{bmatrix} \textbf{f}_{env} \\ \boldsymbol{\tau}_{env} \end{bmatrix},
 \end{equation}
-kjer so $ (.)_s $ odèiteki senzorja in $ \widehat{(.)} $ izraèunani prispevki.
+kjer so z $ (.)_s $ oznaèeni odèitki senzorja.
 
 \section{Vodenje preko inverzne kinematike} \label{sec:admittheor}
 
-Za vodenje robota preko hitrosti v sklepih se uporablja PI regulator v krmilniku, ki poskrbi, da se vsak sklep vrti s hitrostjo èimbolj podobno referenèni. Iz tega vidika je prednost ta, da ne glede na konfiguracijo ter obremenitev robota, bo regulator poskrbel konvergenco napake proti niè. V nadaljevanju bo opisano vodenje motorjev robota v želeno lego oziroma vodenje robota v notranjih koordinatah. Nato pa se bo iz tega še izpeljalo vodenje v zunanjih koordinatah.
+Za vodenje robota preko hitrosti v sklepih krmilnik uporablja PI regulator, ki poskrbi, da se vsak sklep vrti s hitrostjo èimbolj podobno referenèni.  Predpostavimo lahko, da ne glede na konfiguracijo ter obremenitev robota, regulator zagotovi poskrbel konvergenco napake in stabilnost robota. V nadaljevanju bo opisano vodenje sklepov robota v želeno lego oziroma vodenje robota v notranjih koordinatah. Nato pa se bo iz tega še izpeljalo vodenje v zunanjih koordinatah.
 
 
 \subsection{Vodenje v notranjih koordinatah} \label{sec:admit_inner}
 
-Krmilnik servo motorjev v vsakem danem trenutku vraèa trenuten kot v sklepu. Lastna frekvenca zaprtozanènega sistema je dovolj visoka, da lahko servo sistem za eno stopnjo robota aproksimiramo kot integrator $\frac{1}{s}$. Naj bo referenèni kot v sklepih oznaèen kot $\textbf{q}_{ref}$ in naj bo dejanski kot oznaèen kot $\textbf{q}$. Razlika med njima je napaka v kotu 
+Krmilnik servo motorjev v vsakem danem trenutku vraèa trenuten kot v sklepu. Lastnosti zaprtozanènega sistema so takšne, da lahko servo sistem ene stopnje robota aproksimiramo kot integrator. Naj bo referenèni kot v sklepih oznaèen kot $\textbf{q}_{ref}$ in naj bo dejanski kot oznaèen kot $\textbf{q}$. Razlika med njima je napaka v kotu 
 
 \begin{equation}
 	\tilde{\textbf{q}} = \textbf{q}_{ref} - \textbf{q}.
@@ -794,17 +807,19 @@ Iz blokovnega diagrama lahko zapišemo prenosno funkcijo sistema \textit{P(s)} in
 	P(s) = \frac{K \frac{1}{s}}{1+K \frac{1}{s}} = \frac{K}{s+K}
 \end{equation}
 
-Pogoj stabilnosti je, da vsi poli sistema ležijo na desni strani \textit{s} ravnine. V tem primeru je tako pogoj le, da je $K > 0$. Iz tega bi sledilo, da lahko ojaèanje K poveèujemo v neskonènost. Vendar pa je potrebno tukaj poudariti, da pri previsokih ojaèanjih lahko pride do nestabilnosti, ki pa jih z obravnavanjem robota kot integratorja, ne moremo predvideti. Zato je smiselno, da se z ojaèanji ne pretirava. Lahko pa v namene stabilnosti vnesemo še signal dušenja $\textbf{K}_d \dot{\mathbf{q}}$. Matrika $\textbf{K}_d$ je tako kot $\textbf{K}_p$ diagonalna. Regulirni signal sedaj zapišemo kot
+Pogoj stabilnosti je, da vsi poli sistema ležijo na desni strani \textit{s} ravnine. V tem primeru je tako pogoj $ 0 > K > \frac{2}{T_s}$, kjer je $ T_s $ vzorèni èas (v našem primeru 0.002). 
 
-\begin{equation} \label{eq:pd_reg_q}
- \textbf{u} = \textbf{K}_p \tilde{\mathbf{q}} - \textbf{K}_d \dot{\mathbf{q}}.
-\end{equation}
+%Zato je smiselno, da se z ojaèanji ne pretirava. Lahko pa v namene stabilnosti vnesemo še signal dušenja $\textbf{K}_d \dot{\mathbf{q}}$. Matrika $\textbf{K}_d$ je tako kot $\textbf{K}_p$ diagonalna. Regulirni signal sedaj zapišemo kot
+%
+%\begin{equation} \label{eq:pd_reg_q}
+% \textbf{u} = \textbf{K}_p \tilde{\mathbf{q}} - \textbf{K}_d \dot{\mathbf{q}}.
+%\end{equation}
 
 
 
 \subsection{Vodenje v zunanjih koordinatah} \label{sec:inv_kin_x}
 
-Kinematièni model robota in problem inverzne kinematike je bil opisan v \ref{sec:pa10_kin_model}. Predstavljen je bil problem inverzne kinematike za redundantni sistem ter pseudoinverz Jacobijeve matrike. Zato bo v nadaljevanju uporabljen generaliziran pseudoinverz Jacobijeve matrike.
+Kinematièni model robota in problem inverzne kinematike je bil opisan v \ref{sec:pa10_kin_model}. Predstavljen je bil problem inverzne kinematike za redundantni sistem ter pseudoinverz Jacobijeve matrike. Ker je robot PA-10 redundanten bo v nadaljevanju uporabljen generaliziran pseudoinverz Jacobijeve matrike.
 
 Naj bo $\textbf{x}_{ref}$ vektor referenène lege vrha robota in naj bo $\textbf{x}$ trenutna lega vrha robota. Napaka je tako
 
@@ -823,8 +838,9 @@ Enaèba direktne kinematike nam govori o odnosu med hitrostjo vrha robota ter hit
 To enaèbo je mogoèe razumeti tudi kot zvezo med spremembo položaja vrha ter sklepov robota \cite{mihelj_vodenje}. Zato je mogoèe to enaèbo uporabiti za zapis relacije med napako vrha ter potrebnim odmikov v sklepih preko preko enaèbe za inverzno kinematiko
 
 \begin{equation} \label{eq:qerr}
-	\tilde{\textbf{q}} = \textbf{J}^{*}(\textbf{q})  \tilde{\textbf{x}}
+	\tilde{\textbf{q}} = \textbf{J}^{*}(\textbf{q})  \tilde{\textbf{x}},
 \end{equation}
+ki pa velja le za majhne napake.
 
 Z vstavitvijo enaèbe (\ref{eq:qerr}) v (\ref{eq:p_reg_q}) dobimo P regulator lege vrha robota.
 \begin{equation} \label{eq:outcontrol}
@@ -865,14 +881,14 @@ Avtor v \cite{mihelj_vodenje} navaja, da se mehanski sistem, ki je voden na ta n
 
 Navor proizveden v motorjih robota je linearno odvisen od toka, ki gre v motor. Krmilnik servo motorjev robota PA-10 uporablja P regulator toka za krmiljenje motorjev v navornem naèinu. Problem vodenja robota v zunanjih koordinatah se tako prevede v problem doloèevanja primernega navora za opravljanje naloge. Navore lahko izraèunamo s pomoèjo inverznega dinamiènega modela, kar zahteva dobro poznavanje dinamiènih parametrov. Dinamièen model je bil opisan v \ref{sec:pa10-dynmodel}.
 
-Vodenje robota na v navornem naèinu ima to prednost, da lahko podajnost celotnega mehanizma spreminjamo. Tako robot ni nujno podajen le na vrhu ob uporabi senzorja sil, temveè po celotni konstrukciji. Tak naèin vodenja omogoèa dobro interakcijo z okoljem ter èlovekom.
+Vodenje robota v navornem naèinu ima to prednost, da lahko podajnost celotnega mehanizma spreminjamo. Tako robot ni nujno podajen le na vrhu ob uporabi senzorja sil, temveè po celotni konstrukciji. Tak naèin vodenja omogoèa dobro interakcijo z okoljem ter s èlovekom.
 
 V nadaljevanju bomo opisali vodenje po zunanjih in po notranjih koordinatah. Enaèbo (\ref{eq:din}) zapišemo drugaèe in sicer brez upoštevanja zunanjih sil na vrh manipulatorja, $\textbf{h}_o = 0$. Dodatno bomo vpeljali še novo velièino
 
 \begin{equation}
 	\textbf{n}(q,\dot{q}) = \textbf{C}(\textbf{q},\dot{\textbf{q}})  \dot{\textbf{q}} + \textbf{F}_f(\dot{\textbf{q}}, \textbf{q}) + \textbf{g}(\textbf{q}),
 \end{equation}
-ki združuje vse dinamiène velièine razen vpliva vztrajnosti. Sedaj zapišemo dinamièen model robota v skrajšani obliki
+ki združuje vse dinamiène vplive razen vpliva vztrajnosti. Sedaj zapišemo dinamièen model robota v skrajšani obliki
 
 \begin{equation}\label{eq:tau_dyn}
 \pmb{\tau}(\mathbf{\ddot{q}},\mathbf{\dot{q}},\textbf{q}) = \textbf{B}(\textbf{q})  \ddot{\textbf{q}} + \textbf{n}(\textbf{q},\mathbf{\dot{q}})
@@ -885,7 +901,7 @@ Preden se lotimo vodenja v zunanjih koordinatah je najprej potrebno definirati v
 \begin{equation}\label{eq:taueqq}
 	\pmb{\tau}(q,\dot{q},\ddot{q}) = \textbf{u}.
 \end{equation}
-Predpostavimo, da poznamo približen dinamièni model robota, t.j. matriko $\mathbf{\hat{B}}$ in $\mathbf{\hat{n}}$. Navor za sledenje referenènemu pospešku $\mathbf{\ddot{q}}_{ref}$ sedaj izraèunamo z 
+Predpostavimo, da poznamo približen dinamièni model robota, t.j. ocenjeno matriko $\mathbf{\hat{B}}$ in vektor $\mathbf{\hat{n}}$. Navor za sledenje referenènemu pospešku $\mathbf{\ddot{q}}_{ref}$ sedaj izraèunamo z 
 
 \begin{equation}\label{eq:u_from_ddq}
 \textbf{u} = \mathbf{\hat{B}}(\textbf{q})\mathbf{\ddot{q}}_{ref} + \mathbf{\hat{n}}(q,\dot{q}).
@@ -900,9 +916,9 @@ Vstavimo (\ref{eq:u_from_ddq}) in (\ref{eq:tau_dyn})  v (\ref{eq:taueqq}) in dob
 \end{equation}
 Enaèba nam pravi, da v kolikor poznamo natanèen dinamièen model, bo vodenje (\ref{eq:u_from_ddq}) zagotovilo želeno gibanje robota \cite{mihelj_vodenje}. Ker pa dinamiènih parametrov robota v praksni nikoli ne poznamo dovolj natanèno, (\ref{eq:ddqref_ddq}) ne velja in se pojavi napaka v poziciji sklepov. Zato je smiselno krmilnemu signalu dodati še regulacijo hitrosti ter pozicije in definiramo krmilne pospeške $ \ddot{\mathbf{q}}_u $ kot
 \begin{equation}
-	\ddot{\mathbf{q}}_u = \mathbf{\ddot{q}}_{ref} + \textbf{K}_p (q_{ref} - q) + \textbf{K}_d(\mathbf{\dot{q}} - \mathbf{\dot{q}}).
+	\ddot{\mathbf{q}}_u = \mathbf{\ddot{q}}_{ref} + \textbf{K}_p (\textbf{q}_{ref} - \textbf{q}) + \textbf{K}_d(\mathbf{\dot{q}} - \mathbf{\dot{q}}).
 \end{equation}
-in jih vstavimo v enaèbo (\ref{eq:u_from_ddq}) namesto $\pmb{\ddot{q}}_{ref}$. Konèna enaèba za vodenje preko inverzne dinamike je tako
+in vstavimo $ \ddot{\mathbf{q}}_u $ v enaèbo (\ref{eq:u_from_ddq}) namesto $\pmb{\ddot{q}}_{ref}$. Konèna enaèba za vodenje preko inverzne dinamike je tako
 \begin{equation}
 	\textbf{u} = \mathbf{\hat{B}}(\textbf{q})(\mathbf{\ddot{q}}_{ref} + \textbf{K}_p (q_{ref} - q) + \textbf{K}_d(\mathbf{\dot{q}} - \textbf{q})) + \mathbf{\hat{n}}(q,\dot{q}).
 \end{equation}
@@ -916,10 +932,7 @@ Enaèbo lahko prevedemo v Laplace-ov prostor
 \begin{equation}
 	s^2 + \textbf{K}_ds+\textbf{K}_p = 0
 \end{equation}
-in opazimo, da je to prenosna funkcija drugega reda. Sistem bo asimptotièno stabilen, èe sta $\textbf{K}_p$ in $\textbf{K}_d$ pozitivno definitni. Nesklopljenost sistema dobimo tako, da sta matriki diagonalni. Diagonalne èlene zapišemo v obliki $\textbf{K}_{p_{ii}} = \omega^2{n_{ii}}$ in $\textbf{K}_{d_{ii}} = 2\xi_i \omega_{n_{ii}}$ \cite{mihelj_vodenje}, kjer je $\omega$ lastna frekvenca in $\xi$ dušenje sistema drugega reda.
-
-
-Shema takega vodenja je prikazana na sliki \ref{fig:ddq_tau_dyn}.
+in opazimo, da je to prenosna funkcija drugega reda. Sistem bo asimptotièno stabilen, èe sta $\textbf{K}_p$ in $\textbf{K}_d$ pozitivno definitni. Nesklopljenost sistema dobimo tako, da sta matriki diagonalni. Diagonalne èlene zapišemo v obliki $\textbf{K}_{p_{ii}} = \omega^2{n_{ii}}$ in $\textbf{K}_{d_{ii}} = 2\xi_i \omega_{n_{ii}}$ \cite{mihelj_vodenje}, kjer je $\omega$ lastna frekvenca in $\xi$ dušenje sistema drugega reda. Shema takega vodenja je prikazana na sliki \ref{fig:ddq_tau_dyn}.
 
 \begin{figure}
 	\centering
@@ -938,12 +951,12 @@ in njenega odvoda
 \begin{equation}
 \ddot{\mathbf{x}} = \textbf{J}(\textbf{q})\ddot{\mathbf{q}} +  \dot{\mathbf{J}}(\mathbf{q})\dot{\mathbf{q}}.
 \end{equation}
-dobimo
+lahko definiramo krmilni signal
 \begin{equation}\label{eq:accel_dyn}
-	\ddot{\mathbf{q}}_u = \textbf{J}^* (\textbf{q})(\ddot{\mathbf{x}} - \dot{\mathbf{J}}(\textbf{q},\dot{\mathbf{q}})\dot{\mathbf{q}})
+	\ddot{\mathbf{q}}_u = \textbf{J}^* (\textbf{q})(\ddot{\mathbf{x}_u} - \dot{\mathbf{J}}(\textbf{q},\dot{\mathbf{q}})\dot{\mathbf{q}})
 \end{equation}
 
-Sedaj lahko definiramo regulator, ki bo dajal take pospeške v sklepih, da bo vrh robota sledil referenèni legi. Avtor v \cite{siciliano_robot} predlaga sledeè regulator pospeškov
+Sedaj lahko definiramo regulator v zunanjih koordinatah $ \ddot{\mathbf{x}}_u $, ki bo dajal take pospeške v sklepih, da bo vrh robota sledil referenèni legi. Avtor v \cite{siciliano_robot} predlaga sledeè regulator pospeškov
 \begin{equation}\label{eq:accel_dyn_ref}
 	\ddot{\mathbf{x}}_u = \ddot{\mathbf{x}}_{ref} + \textbf{K}_d \dot{\tilde{\mathbf{x}}} + \textbf{K}_p \tilde{\mathbf{x}}
 \end{equation}
@@ -965,7 +978,7 @@ Shema takega vodenja je prikazana na sliki \ref{fig:ddx_tau_dyn}.
 
 \section{Interakcija z okoljem}
 
-Robotski mehanizmi so v veèini primerov med opravljanjem nalog v kontaktu z okolico. Vendar pa obstaja veliko takih nalog, kjer nas sila med okolico in robotom ne zanima, npr. pobiranje in odlaganje. So pa primeri nalog, ko kljuènega pomena. Primer take naloge je recimo brušenje brušenje površine ali pa interakcija s èlovekom. V nadaljevanju tega poglavja bomo opisali dva naèina vodenja robota v kontaktu z okolico, admitanèno ter impedanèno.
+Robotski mehanizmi so v veèini primerov med opravljanjem nalog v kontaktu z okolico. Vendar pa obstaja veliko takih nalog, kjer nas sila med okolico in robotom ne zanima, npr. pobiranje in odlaganje. So pa primeri nalog, ko so interakcijske sile kljuènega pomena. Primer take naloge je recimo brušenje površine ali pa interakcija s èlovekom. V nadaljevanju tega poglavja bomo opisali dva naèina vodenja robota v kontaktu z okolico, admitanèno ter impedanèno.
 
 \subsection{Admitanèno vodenje} \label{sec:vodenje-admitance}
 
@@ -988,7 +1001,7 @@ Za admitanèno vodenje je potrebno upoštevati še podatek o silah in navorih, ki d
 \tilde{\textbf{h}} = \textbf{h}_{ref} - \textbf{h}_e.
 \end{equation}
 
-Sila kot rezultat delovanja robota na okolico je odvisna od hitrosti oz. pozicije vrha robota. Zato lahko napako sile dodamo v regulator lege (\ref{eq:outcontrol}). Definiramo referenèno pozicijo v odvisnosti od sile
+Sila kot rezultat delovanja robota na okolico je odvisna od hitrosti oz. pozicije vrha robota. Zato lahko napako sile dodamo v regulator lege (\ref{eq:outcontrol}) tako, da definiramo referenèno pozicijo v odvisnosti od sile
 
 \begin{equation} \label{eq:xrefforce}
 \textbf{x}_{ref} = \textbf{K}_{hP}\tilde{\textbf{h}} + \textbf{K}_{hI} \int_{0}^{t}\tilde{\textbf{h}}d\xi.
@@ -997,7 +1010,7 @@ Sila kot rezultat delovanja robota na okolico je odvisna od hitrosti oz. pozicij
 Z vstavitvijo enaèbe (\ref{eq:xrefforce}) v (\ref{eq:outcontrol}) je mogoèe zapisati celotno regulacijsko enaèbo za vodenje robota v zunanjih koordinatah z upoštevanjem delovanja zunanjih sil na vrh robota.
 
 \begin{equation} \label{eq:admitcontrol}
-\textbf{u} = \textbf{K}_p  \textbf{J}^{-1}(\textbf{K}_{hP}\tilde{\textbf{h}} + \textbf{K}_{hI} \int_{0}^{t}\tilde{\textbf{h}}d\xi - \textbf{x})
+\textbf{u} = \textbf{K}_p  \textbf{J}^{*}(\textbf{K}_{hP}\tilde{\textbf{h}} + \textbf{K}_{hI} \int_{0}^{t}\tilde{\textbf{h}}d\xi - \textbf{x})
 \end{equation}
 
 Dobili smo PI regulator sile interakcije. Èeprav je bilo pri definiciji mehanske impedance definirano, da je to razmerje med silo ter hitrostjo, se raje uporablja razmerje med silo ter pozicijo. Meritve sile so podvržene šumu, integrator pa deluje kot nizkopasovni filter. 
@@ -1007,18 +1020,20 @@ Admitanèno vodenje se uporablja takrat, ko lahko robota vodimo le hitrostno ali 
 
 \subsection{Impedanèno vodenje}
 
-Pri izpeljavi vodenja lege robota z inverzno dinamiko smo predpostavili, da so sile interakcije $\textbf{h}_o$ enake niè. Ker pa to v primeru, da je robot v kontaktu z okoljem ni res, je potrebno pogledati kaj se zgodi takrat, ko te sile delujejo na robota. Vzemimo spet dinamièen model robota, ki ga vodimo preko reguliranega pospeška $\ddot{\mathbf{x}}_u$ in dodamo silo interakcije 
+Pri izpeljavi vodenja lege robota z inverzno dinamiko smo predpostavili, da so sile interakcije $\textbf{h}_o$ enake niè. Ker pa to v primeru, da je robot v kontaktu z okoljem ni res, je potrebno pogledati kaj se zgodi takrat, ko te sile delujejo na robota. Vrh robota bo z neko silo deloval na okolje, ki pa jo lahko s senzorjem na vrhu robota oz. med prijemalom in vrhom, izmerimo. Vzemimo spet dinamièen model robota, ki ga vodimo preko reguliranega pospeška $\ddot{\mathbf{x}}_u$ in dodamo silo interakcije 
 \begin{equation}\label{eq:dyn_outer_force}
 \textbf{u}= \mathbf{\hat{B}}(\textbf{q}) \ddot{\mathbf{q}}_u + \mathbf{\hat{n}}(q,\dot{q}) + \mathbf{J}^T \mathbf{h}_o.
 \end{equation}
-Vidimo, da bodo sedaj navori v sklepi razlièni od izraèunanih preko inverznega dinamiènega modela in posledièno bo med želenim vrhom robota in dejanskim vrhom robota nastala napaka. Vrh robota bo z neko silo deloval na okolje, ki pa jo lahko s senzorjem na vrhu robota oz. med prijemalom in vrhom, izmerimo. 
+Vidimo, da bodo sedaj navori v sklepi razlièni od izraèunanih preko inverznega dinamiènega modela in posledièno bo med želeno pozicijo vrha robota in dejansko pozicijo vrha robota nastala napaka. 
 
 Za izhodišèe vzamemo enaèbo (\ref{eq:dyn_err}) in (\ref{eq:dyn_outer_force}) ter zapišemo dinamiko napake z upoštevanjem delovanja zunanjih sil
 
 \begin{equation}
-\ddot{\mathbf{x}}_{ref} + \textbf{K}_d \dot{\tilde{\mathbf{x}}}  + \textbf{K}_p \tilde{\mathbf{x}}.
+\ddot{\mathbf{x}}_{ref} + \textbf{K}_d \dot{\tilde{\mathbf{x}}}  + \textbf{K}_p \tilde{\mathbf{x}} = \textbf{B}_A^{-1}\textbf{h}_o,
 \end{equation}
-Èe želimo napako kompenzirati je potrebno v regulator vkljuèiti še podatek o izmerjenih silah na vrhu robota ($ \textbf{h}_e $). Na ta naèin dosežemo to, da se vrh robota obnaša kot neskonèno tog sistem \cite{siciliano_robot}. To pomeni, da èe vodimo robota pozicijsko in pritisnemo na njegov vrh, bo kompenziral nastalo napako.
+kjer je $ B_A $ analitièna vztrajnostna matrika.
+
+Èe želimo napako kompenzirati je potrebno v regulator vkljuèiti še podatek o izmerjenih silah na vrhu robota ($ \textbf{h}_e $). Na ta naèin dosežemo to, da se vrh robota obnaša kot neskonèno tog sistem glede na vpliv zunanjih sil \cite{siciliano_robot}. To pomeni, da èe vodimo robota pozicijsko in pritisnemo na njegov vrh, bo kompenziral nastalo napako.
 
 Zapišemo sedaj celotno enaèbo, ki opisuje navore v sklepih pri impedanènem vodenju
 
@@ -1138,7 +1153,7 @@ Impedanèno vodenje se uporablja takrat, ko lahko robota vodimo preko vhodnih nav
 %*********************** SIMULINK KNJIŽNICE ********************************
 \chapter{Implementacija} \label{chap:implementacija}
 
-Poznavanje teoretiènih osnov za vodenje robotov nam omogoèa realizacijo krmiljenja na naèin, ki je najbolj primeren zadani nalogi. V zgornjem poglavju so bile te osnove opisane in prikazane so bile blokovne sheme vodenja. Iz tistih shem, je videti, da je za implementacijo razliènih vodenj potrebno poznati razlièno kolièino parametrov. Pri hitrostnem vodenju je enostavneje, saj je potrebno doloèiti le parametre ojaèanj regulatorja. Pri navornem vodenju robota pa doloèitev parametrov še zdaleè ni enostaven problem saj je potrebno poznati dinamiène parametre samega robota.
+Poznavanje teoretiènih osnov za vodenje robotov nam omogoèa realizacijo krmiljenja na naèin, ki je najbolj primeren zadani nalogi. V prejšnjem poglavju so bile te osnove opisane in prikazane so bile blokovne sheme vodenja. Iz tistih shem, je videti, da je za implementacijo razliènih vodenj potrebno poznati razlièno kolièino parametrov. Pri hitrostnem vodenju je enostavneje, saj je potrebno doloèiti le parametre ojaèanj regulatorja. Pri navornem vodenju robota pa doloèitev parametrov še zdaleè ni enostaven problem saj je potrebno poznati dinamiène parametre samega robota.
 
 V nadaljevanju tega poglavja, bo opisana implementacija algoritmov vodenja, ki so bili opisani v poglavju \ref{chap:vodenje}. Implementacija vodenj je hkrati tudi preizkus s katerim se bo ovrednotilo namensko narejen strežnik. Preverilo se do katere frekvence vodenje v kontaktu še dobro sledi referenci in kdaj je še stabilno.
 

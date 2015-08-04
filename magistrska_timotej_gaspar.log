@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  31 JUL 2015 17:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  4 AUG 2015 16:58
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -1213,6 +1213,9 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [26 <./Slike/udp-arcnet-server-eps-converted-to.pdf>]
 (Tabele/arcnet-command.tex)
+Underfull \vbox (badness 1354) has occurred while \output is active []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1334,7 +1337,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [35]
 
 LaTeX Warning: Reference `appendix:jr3-calibration' on page 36 undefined on inp
-ut line 755.
+ut line 768.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -1361,12 +1364,12 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[40]
+[40] (BlockDiagrams/inv_dyn_q.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[41] (BlockDiagrams/inv_dyn_q.tex)
+[41]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1394,7 +1397,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [46]
   5.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1145.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1160.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1560,13 +1563,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19111 strings out of 493671
- 373560 string characters out of 3145458
- 497200 words of memory out of 3000000
- 21936 multiletter control sequences out of 15000+200000
+ 19124 strings out of 493671
+ 373761 string characters out of 3145458
+ 497473 words of memory out of 3000000
+ 21949 multiletter control sequences out of 15000+200000
  16641 words of font info for 62 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 55i,17n,67p,3304b,722s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,13n,67p,3304b,722s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTe
 X/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type
@@ -1583,7 +1586,7 @@ rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
 /type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (75 pages, 3088385 bytes).
+Output written on magistrska_timotej_gaspar.pdf (75 pages, 3087628 bytes).
 PDF statistics:
  433 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

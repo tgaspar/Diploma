@@ -6,6 +6,8 @@
 \usepackage{tikz}
 \usepackage{arydshln,leftidx,mathtools}
 \usepackage{gensymb}
+\usepackage{subfigure}
+\usepackage{hhline}
 \usepackage[all]{xy}
 \usepackage[Slovene]{babel}    % pravila za slovensko deljenje besed
 \usepackage[pdftex]{UNI-LJ-FE-Diploma} %Stil za diplome na Fakulteti za elektrotehniko (za pdfTeX v MkiTex)
@@ -847,7 +849,7 @@ Z vstavitvijo enaèbe (\ref{eq:qerr}) v (\ref{eq:p_reg_q}) dobimo P regulator leg
 \textbf{u} = \textbf{K}_p  \textbf{J}^{*}(\textbf{q})  (\textbf{x}_{ref} - \textbf{x}).
 \end{equation}
 
-Avtor v \cite{mihelj_vodenje} navaja, da se mehanski sistem, ki je voden na ta naèin obnaša kot mehanski sistem z \textit{n} - dimenzionalno vzmetjo v notranjih koordinatah. Togost omenjene vzmeti pa doloèa ojaèanje $\textbf{K}_p$.
+Avtor v \cite{mihelj_vodenje} navaja, da se mehanski sistem, ki je voden na ta naèin, obnaša kot mehanski sistem z \textit{n} - dimenzionalno vzmetjo v notranjih koordinatah. Togost omenjene vzmeti pa doloèa ojaèanje $\textbf{K}_p$.
 
 \begin{figure}
 	\input{./BlockDiagrams/x_to_vel.tex}
@@ -1013,7 +1015,14 @@ Z vstavitvijo enaèbe (\ref{eq:xrefforce}) v (\ref{eq:outcontrol}) je mogoèe zapi
 \textbf{u} = \textbf{K}_p  \textbf{J}^{*}(\textbf{K}_{hP}\tilde{\textbf{h}} + \textbf{K}_{hI} \int_{0}^{t}\tilde{\textbf{h}}d\xi - \textbf{x})
 \end{equation}
 
-Dobili smo PI regulator sile interakcije. Èeprav je bilo pri definiciji mehanske impedance definirano, da je to razmerje med silo ter hitrostjo, se raje uporablja razmerje med silo ter pozicijo. Meritve sile so podvržene šumu, integrator pa deluje kot nizkopasovni filter. 
+\begin{figure}
+	\centering
+	\scalebox{.75}{\input{./BlockDiagrams/x_admitance_control.tex}}
+	\caption{Bloèna shema admitanènega vodenja.}
+	\label{fig:x_admitance_control}
+\end{figure}
+
+Dobili smo PI regulator sile interakcije. Èeprav je bilo pri definiciji mehanske impedance definirano, da je to razmerje med silo ter hitrostjo, se raje uporablja razmerje med silo ter pozicijo. Meritve sile so podvržene šumu, integrator pa deluje kot nizkopasovni filter. Shema vodenja je prikazana na sliki \ref{fig:x_admitance_control}.
 
 Admitanèno vodenje se uporablja takrat, ko lahko robota vodimo le hitrostno ali pozicijsko in želimo vplivati na okolico z neko silo. Silo interakcije pa je doloèimo z modelom okolja. Kontakt si lahko predstavljamo kot interakcijo med togim robotom in podajnim okoljem.
 
@@ -1050,150 +1059,114 @@ Shema takega vodenja je prikazana na sliki \ref{fig:impedance_control}.
 
 Impedanèno vodenje se uporablja takrat, ko lahko robota vodimo preko vhodnih navorov. Z razliko od admitanènega vodenja, si lahko kontakt predstavljamo kot interakcijo med zelo togo okolico in podajnim robotom. Podajnost robota pa je odvisna od parametrov vodenja $ (\textbf{K}_p, \textbf{K}_d) $ in kompenzacije sile.
 
-%Za vodenje sile bi naèeloma lahko uporabili PD regulator. Ker pa je izmerjen signal sile podvržen merilnemu šumu, predstavlja odvajanje tega signala ojaèanje šuma, kar lahko vodi v nestabilnost. Zato se v praksi raje implementira vodenje sile in hkrati vodenje pozicije vrha robota.
-%
-%Sila, ki nastane ob kontaktu z okoljem, bo modelirana z modelom vzmeti in sicer
-%\begin{equation}
-%	\textbf{h}_e = \textbf{K}_e(\textbf{x} - \textbf{x}_e),
-%\end{equation}
-%kjer je \textbf{x} lega vrha robota, $\textbf{x}_e$ lega normale na površino okolice in $ \textbf{K}_{e} $ togost okolice. Situacijo prikazuje slike \ref{fig:enviroment_interraction}.
-%\input{./Slike/enviroment_interraction.tex}
-%
-%Za vodenje lege vrha robota bomo uporabili enaèbo \ref{eq:alpha_inv_dyn}. Ker gre za vodenje po poziciji bomo $\ddot{\mathbf{x}}_{ref}$ postavili na niè in vpeljali referenèno poziciji vrha $\textbf{x}_{ref}$. Enaèba ima sedaj obliko 
-%\begin{equation}\label{eq:a_xf}
-%	\textbf{a} = \textbf{K}_P (\mathbf{x} - \mathbf{x}_{f}) - \textbf{K}_d \dot{\mathbf{x}},
-%\end{equation}
-%kjer je  $\mathbf{x}$ lega vrha robota, $ \mathbf{x}_{f} $ pa pozicija odvisna od napake med silo želeno in dejansko silo interakcije. Za $ \mathbf{x}_{f} $ izberemo proporcionalni regulator in zapišemo 
-%\begin{equation}\label{eq:xf_C}
-%	 \mathbf{x}_{f} = \textbf{C}(\mathbf{h}_{ref} - \textbf{h}_e) = \textbf{C} \tilde{\mathbf{h}},
-%\end{equation}
-%kjer je matrika C diagonalna matrika in ima pomen podajnosti.
-%
-%Opazimo lahko, da tako krmiljen robot nikoli ne bo dosegel referenène sile, saj P regulator v statiènih razmerah napake ne iznièi. Zato v matriko C dodamo tudi integratorski del in tako zapišemo matriko C kot
-%\begin{equation}
-%	\textbf{C} = \textbf{C}_P + \textbf{C}_I \int_{0}^{t} (.) d \xi
-%\end{equation}
-%
-%Zapišimo sedaj konèno enaèbo za regulacijo navorov v motorjih za sledenje referenèni sili na vrhu robot z vstavitvijo \ref{eq:a_xf} v \ref{eq:u_from_ddq} in upoštevaje \ref{eq:xf_C} (\cite{siciliano_robot}):
-%
-%\begin{equation}
-%	\textbf{u} = \mathbf{\hat{B}}(\textbf{q})\textbf{J}^*(\textbf{K}_P (\mathbf{x} - (\textbf{C}_P\tilde{\mathbf{h}} + \textbf{C}_I \int_{0}^{t} \tilde{\mathbf{h}} d \xi) - \textbf{K}_d \dot{\mathbf{x}} ) + \mathbf{\hat{n}}(q,\dot{q}).
-%\end{equation}
-%Shema takega vodenja je na sliki \ref{fig:tau_force_int}
-
-
-%BEGIN_FOLD
-%\begin{equation} \label{eq:din_mode}
-%\pmb{\tau}(\mathbf{\ddot{q}},\mathbf{\dot{q}},\textbf{q}) = \textbf{B}(\textbf{q})  \ddot{\textbf{q}} + \textbf{C}(\textbf{q},\dot{\textbf{q}})  \dot{\textbf{q}} + \textbf{F}_f(\dot{\textbf{q}}, \textbf{q}) + \textbf{g}(\textbf{q}) + \textbf{J}^T(\textbf{q})\textbf{h}_o.
-%\end{equation}
-%
-%Admitaèno krmiljenje industrijskega robota PA-10 ni zahtevno za realizacijo. Delovanje je moèno odvisno od signala pridobljenega iz senzorja sil ter ojaèanj. Za realizacijo osnovnega krmiljenja po notranjih koordinatah je potrebno poznati le kinematièen model, ki pa je relativno enostaven za zgradit. Pri krmiljenju na podlagi inverzne dinamike pa ni tako. Potrebuje se dinamièen model robota, ki pa je veèinoma zakompliciran za zgradit. Potrebno je dobro poznati dinamiène parametre robotskega mehanizma. Èe proizvajalec ni priplavljen te parametre posredovati jih je potrebno identificirati. Avtor v \cite{petric_nevronska} predlaga in zgradi dinamièen model v namen kompenzacije gravitacije s pomoèjo nevronskih mrež. Avtorji tega dela so ta model uporabili v namene realizacije vodenja. Za kompenzacijo trenja pa so avtorji tega dela uporabili Stribeckov model trenja. Parametre za model pa so pridobili na podlagi eksperimenta.
-%
-%\section{Teorija}
-%
-%Z uprabo Newton - Eulerjeve metode lahko zapišemo relacijo med navori v sklepih in pospeški, hitrostmi ter kotih v sklepih na sledeè naèin:
-%
-%\begin{equation} \label{eq:dinamika}
-%	\pmb{\tau} = \textbf{B}(\textbf{q})  \ddot{\textbf{q}} + \textbf{C}(\textbf{q},\dot{\textbf{q}})  \dot{\textbf{q}} + \textbf{F}_f  \dot{\textbf{q}} + \textbf{g}(\textbf{q})
-%\end{equation}
-%
-%kjer matrika \textbf{B}(\textbf{q}) predstavlja matriko vztrajnosti, matrika $\textbf{C}(\dot{\textbf{q},\textbf{q}})$ predstavlja matriko Coriolisovih in centrifugalnih vplivov, matrika $\textbf{F}_f$ predstavlja matriko parametrov trenja, matrika \textbf{g}(\textbf{q}) pa vpliv gravitacije. Enaèba predstavlja dinamièen model robota.
-%
-%V nadaljevanju bodo opisani koraki, ki privedejo do vodenja robota v zunanjih koordinatah preko inverzne dinamike, zaèenjši z vodenjev v notranjih koordinatah.
-%
-%\subsection{Vodenje v notranjih koordinatah}
-%
-%V poglavju \ref{sec:admit_inner} je bilo opisano vodenje robota v notranjih koordinatah. Ker je bila v tistem primeru vhodna velièina v krmilnik robota hitrost, je bilo to relativno enostavno realizirat. Ker pa je v primeru vodenja z inverzno kinematiko potrebno kot vhodno velièino podati navor, je pred tem potrebno narediti primeren regulator. Regulator prejme kot referenco pospešek in ven da potreben navor za to doseèi. Ta se lahko nato pošlje na krmilnik robota. Izhdišèna enaèba naj bo \ref{eq:dinamika}. Hitrost ter trenutnen kot se lahko obravnava kot posledica vodenja, zato je regulirna velièina pospešek. V nadaljevanju bo definiran takšen $\ddot{\textbf{q}}$, da bodo sklepi robota sledili referenèni legi.
-%
-%Iz enaèbe \ref{eq:dinamika} je videt, da je potrebno pospešek z modelom matrike vztrajnostne matrike. V nadaljevanju bodo za lažje branje matrike, ki opisujejo uporabljeni model za oznaèene z znakom  '\^{}'. Želen pospešek bo oznaèen z $\ddot{q}_{ref}$
-%
-%V kolikor je naloga preprosto sledenje nekih toèk v prostoru lahko referenèni pospešek reguliramo na sledeè naèin:
-%
-%\begin{equation} \label{eq:din_accel}
-%	\ddot{\textbf{q}}_{ref} = \textbf{K}_p  (\textbf{q}_{ref} - \textbf{q}) - \textbf{K}_d  (\dot{\textbf{q}})
-%\end{equation}
-%
-%Matrika $\textbf{K}_p$ predstavlja proporcionalno ojaèanje, $\textbf{K}_d$ pa diferencirno ojaèanje. Za dobro vodenje je potrebno upoštevati tudi napako, ki nastane zaradi trenja ter vpliva gravitacije in to tudi kompenzirati. Tako postane enaèba navora za sledenje referenè legi sledeèa:
-%
-%\begin{equation}
-%	\pmb{u} = \hat{\textbf{B}}(\textbf{q})  (\textbf{K}_p  (\textbf{q}_{ref} - \textbf{q}) - \textbf{K}_d  (\dot{\textbf{q}})) +  \hat{\textbf{F}}_f  \dot{\textbf{q}} + \hat{\textbf{g}}(\textbf{q})
-%\end{equation}
-%
-%Shemo takega vodenja prikazuje shema \ref{fig:taufeedback}
-%
-%\begin{figure}[!h]
-%	\input{./BlockDiagrams/x_to_tau.tex}
-%	\caption{Bloèna shema krmiljenja referenène lege vrha robota z inverzno dinamiko}
-%	\label{fig:taufeedback}
-%\end{figure}
-%
-%
-%
-%\section{Implementacija}
-%
-%Postopek implementacije je bil v tem primeru podoben tistemu opisanemu v poglavju \ref{sec:admitimplement}. Tudi tokrat so avtorji uporabili strežnik opisan v poglavju\ref{sec:arcnet} ter programski paket \matsim. Program je deloval s frekvenco 500 Hz na poseveèenem raèunalniku na katerem je potekal operacijski sistem Simulink Target.
-%
-%Iplementacija je potekala postopoma za vsako stopjo posebaj. Zaèelo se je z zadnjim sklepom saj je najmanj odvisen od ostalih in njegovo premikanje ni preveliko. Testiralo se je najprej kompenzacijo trenja. Izklopilo se je zavoro za posamezen sklep ter se ga je z roko porinilo. Teza je bila, da v kolikor sklep ohrani hitrost gibanja je navor dobro kompenziran. Težava je, da mora tukaj bit ojaèano na meji stabilnosti. V kolikor je kompenzacija prevelika, bo sklep pospeševal, èe pa je premajhna bo zaviral.
-%
-%Sledila je implementacija kompenzacije gravitacije. Ponovno se je to poskušalo za vsak sklep posebej. Teza je bila, da v kolikor kompenzacija pravilo deluje, bo sklep miroval v kateri koli legi kljub temu, da so zavore izklopljene. Potrebno je bilo nekatera ojaèanja prilagodit, za pravilno delovanje.
-%
-%Z dobrim modelom trenja in dobro kompenzacijo gravitacije se je testiralo še vodenje v notranjih koordinatah. Spet za posamezne stopnje. Kot referenco se je podalo neko sinusno nihanje. Opazovalo se je graf reference ter graf dejanskega kota. Prilagajalo se je ojaèanja regulatorja tako, da se je graf dejanskega kota èimbolje ujemal z referenènim.
-%
-%Z dobro delujoèim vodenjem v zunanjih koordinatah je sledila implementacija vodenja v zunanjih koordinatah. To je bilo opravljeno z enakimi bloki za izraèun hitrosti v sklepih kot v primeru admitanènega vodenja. Ojaèanja so bila drugaèe izbrana tako, da so odzivi bili hitri in, da je sistem še vedno bil stabilen.
-%
-%
-%\section{Rezultati}
-%
-%V tem poglavju bodo predstavljeni rezultati v obliki grafov. Opisana bodo tudi ojaèanja, ki so se uporabljala. Dejanske številske vrednosti.
-%END_FOLD
-
-%*********************** REZULTATI ********************************
-%\chapter{Rezultati} \label{chap:rezultati}
 
 %*********************** SIMULINK KNJIŽNICE ********************************
 \chapter{Implementacija} \label{chap:implementacija}
 
-Poznavanje teoretiènih osnov za vodenje robotov nam omogoèa realizacijo krmiljenja na naèin, ki je najbolj primeren zadani nalogi. V prejšnjem poglavju so bile te osnove opisane in prikazane so bile blokovne sheme vodenja. Iz tistih shem, je videti, da je za implementacijo razliènih vodenj potrebno poznati razlièno kolièino parametrov. Pri hitrostnem vodenju je enostavneje, saj je potrebno doloèiti le parametre ojaèanj regulatorja. Pri navornem vodenju robota pa doloèitev parametrov še zdaleè ni enostaven problem saj je potrebno poznati dinamiène parametre samega robota.
+Poznavanje teoretiènih osnov za vodenje robotov nam omogoèa realizacijo krmiljenja na naèin, ki je najbolj primeren zadani nalogi. V prejšnjem poglavju so bile te osnove opisane in prikazane so bile blokovne sheme vodenja. Iz tistih shem, je videti, da je za implementacijo razliènih vodenj potrebno poznati razlièno kolièino parametrov. Hitrostno vodenje je enostavnejše, saj je potrebno doloèiti le parametre ojaèanj regulatorja. Pri navornem vodenju robota pa doloèitev parametrov še zdaleè ni enostaven problem saj je potrebno poznati dinamiène parametre samega robota.
 
-V nadaljevanju tega poglavja, bo opisana implementacija algoritmov vodenja, ki so bili opisani v poglavju \ref{chap:vodenje}. Implementacija vodenj je hkrati tudi preizkus s katerim se bo ovrednotilo namensko narejen strežnik. Preverilo se do katere frekvence vodenje v kontaktu še dobro sledi referenci in kdaj je še stabilno.
+V nadaljevanju tega poglavja, bo opisana implementacija algoritmov vodenja, ki so bili opisani v poglavju \ref{chap:vodenje}. Implementacija vodenj je hkrati tudi preizkus s katerim se bo ovrednotilo namensko narejen strežnik.
 
-Vodenje bo je bilo realizirano z uporabo strežnika opisanega v poglavju \ref{chap:udp-arcnet-server}. Za komunikacijo s strežnikom je bilo narejeno visoko nivojsko vodenje v programskem paketu \matsim. Razlogi za izbiro omenjenega programskega paketa so bile dobre predhodne izkušnje ter dobro poznavanje delovanja programa s strani avtorjev. \simulink \space bloki, ki se so se uporabljali in bodo v nadaljevanju prikazani na slikah, so podrobneje opisani v dodatku \ref{appendix:simulink-block}.
+Vodenje bo je bilo realizirano z uporabo strežnika opisanega v poglavju \ref{chap:udp-arcnet-server}. Za komunikacijo s strežnikom je bilo narejeno visoko nivojsko vodenje v programskem paketu \matsim. Razlogi za izbiro omenjenega programskega paketa so bile dobre predhodne izkušnje ter dobro poznavanje delovanja programa s strani avtorjev. \simulink \space bloki, ki smo jih uporabili, bodo v nadaljevanju prikazani na slikah in podrobneje opisani v dodatku \ref{appendix:simulink-block}.
 
-Pri odzivu sistema na signal stopnico se bo preverilo tri pomembne parametre: mrtvi èas, èas ustalitve ter prenihaj.
+Poizkusi za hitrostno in navorno vodenje so potekali z enakimi referenènimi signali, da se lahko med sabo primerja rezultate. Za oba naèina vodenja smo opravili tri poizkuse z razliènimi referenènimi signali:
+\begin{enumerate}
+	\item signal stopnice v notranjih koordinatah,
+	\item sinusni signal z narašèajoèo frekvenco v notranjih koordinatah,
+	\item zarisovanje kroga v zunanjih koordinatah.
+
+\end{enumerate}
+
+Stopnièasto referenco smo izbrali zato, ker je to dober pokazatelj kako se sistem odziva na hitro spremembo. Odzivs smo ovrednotili na podlagi t.i. inženirskih pokazateljev \cite{zupancic_vs}, ki opisujejo uèinkovitost delovanja regulacijskega sistema:
+\begin{itemize}
+	\item mrtvi èas ($ t_m $), sistem še ne odzove na krmiljenje,	
+	\item èas vzpona ($ t_r $), regulirana velièina naraste iz 10\% do 90\% konène vrednosti,
+	\item èas maksimalnega prevzpona ($ t_p $), odziv doseže maksimalno vrednost,
+	\item maksimalni prevzpon ($ M_p $),
+	\item umiritveni èas ($ t_s $), odziv doseže in ostane znotraj 2\% referenène vrednosti.
+\end{itemize}
+
+Zarisovanje kroga z vrhom robota smo izbrali zato, da vodimo vrh robota po prostoru naloge in vidimo, kako dobro deluje sledenje v zunanjih koordinatah. Predpostavka je bila, da z dobrim regulatorjem lahko dosežemo dobro sledenje spreminjajoèi se referenci.
+
+Sinusni signal z narašèajoèo frekvenco smo izbrali zato, ker nam pokaže kako je napaka odvisna od hitrosti spreminjanja reference. Predpostavka je bila, da višja kot je frekvenca, veèja je napaka. 
+
+Vodenje robota v kontaktu z okolico smo tudi ovrednotili tako pri hitrostnem (admitanènem) in navornem (impedanènem) vodenju. V kontaktu z okolico je bil referenèni signal oblikovan tako, daje robot deloval z želeno silo na podlago. Preizkuse smo opravili na referencah dveh razliènih oblik in sicer stopnièaste in sinusne. Za obe razlièni referenci smo opravili tri razliène poizkuse. Pri stopnièastem signalu smo spreminjali amplitudo, pri sinusnem pa frekvenco.
 
 \section{Hitrostno krmiljenje}
 
-Implementacija hitrostnega krmiljenja robota je potekala postopoma. Najprej je bilo realizirano pozicijsko vodenje sklepov nato pa vodenje v zunanjih trajektorijah. Ovrednotilo se je, kakšna je dinamika odziva na signal referenèni signal stopnice in kakšna je napaka ob sledenju signalu sinusne oblike s spreminjajoèo se frekvenco.
 
-\subsection{Vodenje po trajektoriji}
+
+Implementacija hitrostnega krmiljenja robota je potekala postopoma. Najprej smo realizirali pozicijsko vodenje sklepov nato pa vodenje v zunanjih koordinatah.
 
 \input{./Slike/follow_step.tex}
 
-Odziv tretjega sklepa na referenèni signal stopnice je viden na sliki \ref{fig:follow_step}. Preizkus je bil postavljen tako, da je referenca najprej skoèila na 0.1 rad, nato pa spet na niè. Na ta naèin se je sklep vrnil v prvotno lego. Iz grafa se je vidno, da se sistem ustali po VSTAVIÈAS s. Hkrati pa je potrebno opozoriti na mrtvi èas, ki pa je 0,011 s. Videti je tudi, da pride do prenihaja. Ta je posledica vztrajnosti sklepa, ki se pri veliki hitrosti ne more nemudoma ustaviti.
+Odziv tretjega sklepa na referenèni signal stopnice je viden na sliki \ref{fig:follow_step}. Iz pridobljenih podatkov podatkov lahko izmerimo prej definirane inženirske pokazatelje.
+\input{./Tabele/vel_step.tex}
+Vidimo, da krmiljena velièina doseže 98\% referenène vrednosti po približno 0.3 s. Prenihaj je bil v tem primeru le za 0.4\% reference. Tukaj je pomembno opozoriti predvsem na mrtvi èas, ki je 0.012 s. To pomeni, da je v komunikaciji med visokonivojskim in nizkonivojskim krmilnikom zamika za 6 vzorcev. V tem naèinu vodenja to sicer ne predstavlja težav, jih pa lahko predstavlja pri vodenju s silo.
 
 \input{./Slike/follow_sine.tex}
 
-Graf na sliki \ref{fig:follow_sine} prikazuje odziv tretjega sklepa na referenèni signal sinusne oblike. Referenènemu signalu je frekvenca narašèala od 0.1 Hz do 1 Hz v èasovnem intervalu 50 sekund. Na ta naèin se je preverilo, koliko dobro še sledi referenci, ko se ta hitreje spreminja. Z rdeèo obarvan signal napake prikazuje, da je sledenje s poveèevanjem hitrosti slabše. Amplituda napake narašèa v odvisnosti od frekvence. Graf \ref{fig:follow_sine_err} prikazuje poveèan signal napake. Funkcija ovojnice je bila aproksimirana z polinomom drugega in sicer
+Graf na sliki \ref{fig:follow_sine} prikazuje odziv tretjega sklepa na referenèni signal sinusne oblike. Referenènemu signalu je frekvenca narašèala od 0.1 Hz do 1 Hz v èasovnem intervalu 50 sekund. Na ta naèin se je preverilo, koliko dobro še sledi referenci, ko se ta hitreje spreminja. Z rdeèo obarvan signal napake prikazuje, da je sledenje s poveèevanjem hitrosti slabše. Amplituda napake narašèa v odvisnosti od frekvence. Graf \ref{fig:follow_sine_err} prikazuje poveèan signal napake. Funkcija ovojnice je bila aproksimirana s polinomom drugega in sicer
 
-\begin{equation}
- y(f) = (0.0004f  +  0.0033f^2) \frac{1}{50}.
-\end{equation}
-
-\input{./Slike/follow_sine_err.tex}
-
-Tretji poizkus vodenja robota je temeljil na vodenju v zunanjih koordinatah. Referenèna trajektorija je bila v obliki kroga na $x$ in $ y $ ravnini. Graf je na sliki \ref{fig:follow_circle}. Na grafu je videti, da vrh robota dobro sledi referenci. Najveèja napaka v sledenju je bila 0.006 m.
 \input{./Slike/follow_circle.tex}
+Tretji poizkus vodenja robota je temeljil na vodenju v zunanjih koordinatah. Referenèna trajektorija je bila v obliki kroga na $x$ in $ y $ ravnini. Graf je na sliki \ref{fig:follow_circle}. Na grafu je videti, da vrh robota dobro sledi referenci. Graf \ref{fig:follow_circle_err} prikazuje potek signala napake. Najveèja napaka v sledenju je bila 0.006 m.
+
+\input{./Slike/follow_circle_err.tex}
+
+
+
+%\begin{equation}
+% y(f) = (0.0004f  +  0.0033f^2) \frac{1}{50}.
+%\end{equation}
+
+%\input{./Slike/follow_sine_err.tex}
+
+
+
 
 \subsection{Admitanèno vodenje}
+
+Preko admitanènega vodenja smo implementirani sledenje referenci sile. Robot je pritiskal ob leseno površino, ki je bila zaradi varnosti postavljena na tršo spužvo. Na ta naèin smo dosegli to, da je robot resda pritiskal na relativno tog objekt, vendar pa bi v primeru premoènega potiska spužva ublažila udarce. 
+
+Sledenje stopnici prikazujejo grafi na \ref{fig:admitance_step}. Vidimo lahko, da amplituda prenihaja ostaja v podobnem sorazmerju z referenco in se giblje okoli 50\% reference. Se po z veèanjem amplitude reference zmanjšuje umiritveni èas.
+
+\input{./Slike/admitance_step.tex}
+
+Sledenje sinusni referenci pa prikazuje slika \ref{fig:admitance_sine}. Na grafih je opaziti, da s poveèevanjem frekvence se poveèuje tudi napaka. Ta pojav smo opazili tudi pri hitrostnem vodenju in je prièakovano, da je tudi tukaj prisoten. 
+
+\input{./Slike/admitance_sine.tex}
+
 \section{Navorno krmiljenje}
+
+Za implementacijo navornega vodenja je bilo najprej potrebno definirati dinamiène parametre. Na sreèo je robot PA-10 precej razširjen in so nekateri raziskovalci te parametre že identificirali. Podatke o masi robota smo povzeli iz \cite{aalst_pa10,voung_pa10,rodrigo_pa10,petric_nevronska}. Parametre za model trenja smo identificirali sami. Prispevke coriolisovih sil pa pridobili s pomoèjo programa za modeliranje dinamiènih sistemov \textit{sdfast}.
+
+
 \subsection{Kompenzacija trenja}
-\subsection{Vodenje po trajektoriji}
-\subsection{Vodenje v kontaktu z okolico}
+
+Za dobro navorno vodenje je nujno potrebna kompenzacija trenja. Avtorji v  \cite{bompos_pa10} predlagajo izboljšan Stribeckov model. Navor kot posledica trenja je tako aproksimiran s funkcijo
+\begin{equation}
+	\tau(\dot{q}) = f_1\dot{q} + f_2 \mathrm{sign}(\dot{q}) - f_3\mathrm{sign}(\dot{q})e^{-\frac{|\dot{q}|}{f_4}} - f_5 \mathrm{sign}(\dot{q})e^{-\frac{1}{f_6}}.
+\end{equation}
+\input{./Slike/friction_measure.tex}
+
+Parametre $ f_1 \dots f_6 $ smo identificirali z eksperimentom. Ker krmilnik robota vraèa navor, ki ga porabi za izvesti gib, smo robota vodili hitrostno in opazovali, kakšen navor proizvaja v sklepih. Pri tem eksperimentu smo morali robota postaviti v tako konfiguracijo, da gravitacija ni imela vpliv na navor v sklepih. Slika \ref{fig:friction_measure} prikazuje navore v odvisnosti od hitrosti. Iz pridobljenih podatkov smo s pomoèjo \matlab   funkcije za optimizacijo identificirali parametre Stribeckovega modela za vsak sklep razen za drugega. Ko je baza pritrjena na tla ne moremo postaviti robota v tako konfiguracijo, da gravitacija ne bi imela vpliva na navor proizveden v drugem sklepu, kar je tudi vidno na grafu \ref{fig:friction_measure_2}. Za ta sklep smo parametre doloèili arbitrarno. Identificirani parametri so zapisani v tabeli \ref{table:friction_params}.
+\input{./Tabele/friction_params.tex}
+
+
+\subsection{Sledenje referenci}
+
+Za izvedbo navornega vodenja robota smo uporabili dinamièni model, ki ga je zgradil \cite{petric_nevronska}. Dodatno smo uporabili identificirane parametre trenja za kompenzacijo trenja. Izvedba vodenja je potekala postopoma. Najprej se je preverilo delovanje modela tako, da se je robota vodilo tako, da je kompenzirav vpliv gravitacije. Predpostavka je bila, da v kolikor je vpliv gravitacije dobro kompenziran, bo robot ohranjal konfiguracijo v katerikoli legi. Ko smo to dosegli, so sledili poizkusi kot pri hitrostnem vodenju.
+
+Slika \ref{fig:torque_follow_step} prikazuje graf odziva tretjega sklepa na stopnièasto referenco. 
+
+\input{./Slike/torque_follow_step.tex}
+
+\subsection{Impedanèno vodenje}
 
 
 
 %BEGIN_FOLD
-%Avtorji tega dela so za visoko nivojsko vodenje uporabljali programski paket \matsim. Ker je želja avtorjev, da se raziskovalno in razvojno delo na robotu PA-10 v prihodnosti nadaljuje, so nastale \simulink knjižnice. Knjižnice bodoèim uporabnikom omogoèajo uporabo robota brez, da poznajo do podrobnosti vse, kar je bilo opisano do sedaj v tem delu. V nadaljevanju bodo opisani posamezni bloki, ki jih lahko uporabniki dodajo v njihovo \simulink shemo.
+%Za visoko nivojsko vodenje smo uporabljali programski paket \matsim. Ker je želja avtorjev, da se raziskovalno in razvojno delo na robotu PA-10 v prihodnosti nadaljuje, so nastale \simulink knjižnice. Knjižnice bodoèim uporabnikom omogoèajo uporabo robota brez, da poznajo do podrobnosti vse, kar je bilo opisano do sedaj v tem delu. V nadaljevanju bodo opisani posamezni bloki, ki jih lahko uporabniki dodajo v njihovo \simulink shemo.
 %
 %\section{Blok PA-10}
 %

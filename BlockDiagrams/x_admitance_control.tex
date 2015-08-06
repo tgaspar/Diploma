@@ -1,0 +1,45 @@
+\centering
+
+\begin{tikzpicture}[node distance=2cm,auto,=>latex']
+\node [input, name=input] {};
+%\node [right of=input](href){};
+\node [sum, right of=input] (hsum) {};
+\node [support, right = 0.5 of hsum](s3){};
+\node [support, right of=s3](s2){};
+\node [sum, right of=s2] (refsum) {};
+\node [sum, right of=refsum] (sum) {};
+\node [block, above = 0.6 of s2] (kph) {$\textbf{K}_{hP}$};
+\node [block, below right = 0.8 of s2] (kih) {$\textbf{K}_{hI}$};
+\node [block, below left = 0.8 of s2] (int1) {$\int$};
+\node [block, right of=sum] (jac) {$J^{*}(q)$};
+\node [block, right of=jac] (k1) {$K_p$};
+
+\node [block, right of=k1, minimum width=2cm,minimum height=2cm] (pa10) {PA-10};
+\node [support, right of=pa10](s1){};
+\node [output, right of=s1] (output) {}; 
+\node [block, below of=k1] (geom) {Geometrijski model}; 
+
+
+
+\draw [->] (input) -- node[name = href] {$ \textbf{h}_{ref} $}node[pos=0.95, above] {{\tiny $+$}}(hsum);
+\draw [->] (hsum) -- (s3) |- (kph);
+\draw [->] (hsum) -- (s3) |- (int1);
+
+\draw [->] (int1) |- (kih);
+\draw [->] (kph) -| node[pos=0.99, right]{\tiny {$+$}}(refsum);
+\draw [->] (kih) -| node[pos=0.99, right]{\tiny {$+$}}(refsum);
+\draw [->] (refsum) -- node[name = qin] {} node[pos=0.95] {{\tiny $+$}} (sum);
+\draw [->] (sum) -- node[name = xer] {{$\tilde{\mathbf{x}}$}} (jac);
+\draw [->] (jac) -- node[name = qerr] {{$\tilde{\mathbf{q}}$}} (k1);
+\draw [->] (k1) -- node[name = u] {{$u$}} (pa10);
+\draw [->] ($(pa10.0) + (0,1/2)$) -- node[name = q] {{$\textbf{h}_e$}}($(output.0) + (0,1/2)$);
+\draw [->] ($(pa10.0) + (0,-1/2)$) -- node[name = q] {{$\textbf{q}$}}($(output.0) + (0,-1/2)$);
+\draw [->]($(s1.0) + (0,-1/2)$) |- node[name = q2] {{$\textbf{q}$}}(geom);
+\draw [->](geom) -| node[name = x] {{$\textbf{x}$}}node[pos=0.95, left] {{\tiny $-$}} (sum);
+
+\draw [->] ($(s1.0) + (0,1/2)$) -- +(0,1.2) -| node[pos=0.99, right]{\tiny {$-$}} (hsum);
+
+\fill ($(s1.0) + (0,-1/2)$) circle [radius=2pt];
+\fill ($(s1.0) + (0,1/2)$) circle [radius=2pt];
+\fill (s3) circle [radius=2pt];
+\end{tikzpicture}

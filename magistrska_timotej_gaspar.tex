@@ -1115,24 +1115,15 @@ Tretji poizkus vodenja robota je temeljil na vodenju v zunanjih koordinatah. Ref
 
 
 
-%\begin{equation}
-% y(f) = (0.0004f  +  0.0033f^2) \frac{1}{50}.
-%\end{equation}
-
-%\input{./Slike/follow_sine_err.tex}
-
-
-
-
 \subsection{Admitanèno vodenje}
 
 Preko admitanènega vodenja smo implementirani sledenje referenci sile. Robot je pritiskal ob leseno površino, ki je bila zaradi varnosti postavljena na tršo spužvo. Na ta naèin smo dosegli to, da je robot resda pritiskal na relativno tog objekt, vendar pa bi v primeru premoènega potiska spužva ublažila udarce. 
 
-Sledenje stopnici prikazujejo grafi na \ref{fig:admitance_step}. Vidimo lahko, da amplituda prenihaja ostaja v podobnem sorazmerju z referenco in se giblje okoli 50\% reference. Se po z veèanjem amplitude reference zmanjšuje umiritveni èas.
+Sledenje stopnici prikazujejo grafi na \ref{fig:admitance_step}. Vidimo lahko, da amplituda prenihaja ostaja v podobnem sorazmerju z referenco in se giblje okoli 50\% reference. Velik prenihaj izvira iz uporabe integratorja. Se pa z veèanjem amplitude reference zmanjšuje umiritveni èas. To izvira iz tega, ker so oscilacije v ustaljenem stanju približno enake amplitude in posledièno pri veèjih referencah predstavljajo manjši odstotek.
 
 \input{./Slike/admitance_step.tex}
 
-Sledenje sinusni referenci pa prikazuje slika \ref{fig:admitance_sine}. Na grafih je opaziti, da s poveèevanjem frekvence se poveèuje tudi napaka. Ta pojav smo opazili tudi pri hitrostnem vodenju in je prièakovano, da je tudi tukaj prisoten. 
+Sledenje sinusni referenci pa prikazuje slika \ref{fig:admitance_sine}. Na grafih je opaziti, da s poveèevanjem frekvence se poveèuje tudi napaka. Ta pojav smo opazili tudi pri hitrostnem vodenju in je prièakovano, da je tudi tukaj prisoten.
 
 \input{./Slike/admitance_sine.tex}
 
@@ -1157,9 +1148,20 @@ Parametre $ f_1 \dots f_6 $ smo identificirali z eksperimentom. Ker krmilnik rob
 
 Za izvedbo navornega vodenja robota smo uporabili dinamièni model, ki ga je zgradil \cite{petric_nevronska}. Dodatno smo uporabili identificirane parametre trenja za kompenzacijo trenja. Izvedba vodenja je potekala postopoma. Najprej se je preverilo delovanje modela tako, da se je robota vodilo tako, da je kompenzirav vpliv gravitacije. Predpostavka je bila, da v kolikor je vpliv gravitacije dobro kompenziran, bo robot ohranjal konfiguracijo v katerikoli legi. Ko smo to dosegli, so sledili poizkusi kot pri hitrostnem vodenju.
 
-Slika \ref{fig:torque_follow_step} prikazuje graf odziva tretjega sklepa na stopnièasto referenco. 
-
 \input{./Slike/torque_follow_step.tex}
+
+Slika \ref{fig:torque_follow_step} prikazuje graf odziva tretjega sklepa na stopnièasto referenco. Na grafu lahko že takoj opazimo, da je odziv slabši kot tisti pri hitrostnem vodenju, kar se tièe ustaljenega stanja. V ustaljenem stanju regulirana velièina ne doseže referenène vrednosti. Razlog za tem je ne tako dobro kompenzirano trenje. Krmilnik sicer daje nek navor na sklep, vendar je ta premajhen da bi premagal silo trenja. Inženirski pokazatelji vodenja za odziv na stopnico so zapisani v tabeli \ref{table:tq_step}.
+\input{./Tabele/tq_step.tex}
+
+
+
+
+
+\input{./Slike/torque_follow_circle.tex}
+Navorno vodenje robota po trajektoriji v zunanjih koordinatah po krožnici ni bilo tako uspešno kakor pri hitrostnem vodenju. Napaka pri sledenju je bila mnogo veèja kot pri hitrostnem vodenju. Slika \ref{fig:torque_follow_circle} prikazuje graf sledenja, slika \ref{fig:torque_follow_circle_err} pa napako sledenja. Videti je, da sledenje ni tako uspešno. Iz grafa lahko vidimo, da je najveèja napaka skoraj 0.01 m
+\input{./Slike/torque_follow_circle_err.tex}
+
+Problematika navornega krmiljenja je, da je pogojena z dobrim poznavanjem dinamiènega modela. Vsako odstopanje modela od fiziènega robota se pokaže kot napaka v sledenju. Za boljše sledenje bi bilo potrebno dinamiène parametre boljše identificirati.
 
 \subsection{Impedanèno vodenje}
 

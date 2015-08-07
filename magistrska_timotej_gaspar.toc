@@ -26,10 +26,10 @@
 \contentsline {chapter}{\numberline {5}Implementacija}{47}
 \contentsline {section}{\numberline {5.1}Hitrostno krmiljenje}{49}
 \contentsline {subsection}{\numberline {5.1.1}Admitan\v cno vodenje}{52}
-\contentsline {section}{\numberline {5.2}Navorno krmiljenje}{54}
+\contentsline {section}{\numberline {5.2}Navorno krmiljenje}{53}
 \contentsline {subsection}{\numberline {5.2.1}Kompenzacija trenja}{54}
 \contentsline {subsection}{\numberline {5.2.2}Sledenje referenci}{56}
-\contentsline {subsection}{\numberline {5.2.3}Impedan\v cno vodenje}{56}
+\contentsline {subsection}{\numberline {5.2.3}Impedan\v cno vodenje}{57}
 \contentsline {chapter}{\numberline {6}Zaklju\v cek}{59}
 \contentsline {chapter}{\numberline {A}Dodatek 1}{65}
 \contentsline {chapter}{\numberline {B}Dodatek 2}{67}

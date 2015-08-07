@@ -28,25 +28,27 @@
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Odziv sklepa na signal stopnice.}}{49}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Odziv sklepa na signal sinusne oblike.}}{50}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Sledenje referenci v obliki kroga na $x$ in $y$ ravnini}}{51}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Signal napake pri sledenju kro\'L\v lnici}}{51}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Signal napake pri sledenju kro\v {z}nici}}{51}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Odziv robota na stopni\v {c}ast signal sile.}}{52}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$ h_{ref_z}(t_1) = -10 $ N}}}{52}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$ h_{ref_z}(t_1) = -20$ N}}}{52}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$ h_{ref_z}(t_1) = -50 $ N}}}{52}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$ h_{ref_z}(t_1) = -100 $ N}}}{52}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Odziv robota na stopni\v {c}ast signal sile.}}{53}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$ h_{ref_z}(t_1) = -10\qopname \relax o{sin}(\pi ) - 10 $ N}}}{53}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$ h_{ref_z}(t_1) = -10\qopname \relax o{sin}(2\pi ) - 10$ N}}}{53}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$ h_{ref_z}(t_1) = -10\qopname \relax o{sin}(4\pi ) - 10 $ N}}}{53}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$ h_{ref_z}(t) = -10\qopname \relax o{sin}(\pi ) - 10 $ N}}}{53}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$ h_{ref_z}(t) = -10\qopname \relax o{sin}(2\pi ) - 10$ N}}}{53}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$ h_{ref_z}(t) = -10\qopname \relax o{sin}(4\pi ) - 10 $ N}}}{53}
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Merjenje vpliva trenja.}}{55}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Prvi sklep}}}{55}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Drugi sklep}}}{55}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Tretji sklep}}}{55}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {\"A\'Setrti sklep}}}{55}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {\v {C}etrti sklep}}}{55}
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Peti sklep}}}{55}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {\'L\IeC {\nobreakspace }esti sklep}}}{55}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {\v {S}esti sklep}}}{55}
 \contentsline {subfigure}{\numberline {(g)}{\ignorespaces {Sedmi sklep}}}{55}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Odziv sklepa na signal stopnice.}}{57}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Odziv sklepa na signal stopnice.}}{56}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Sledenje referenci v obliki kroga na $x$ in $y$ ravnini}}{57}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Signal napake pri sledenju kro\v {z}nici}}{58}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

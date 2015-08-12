@@ -5,17 +5,18 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Dva zaporedna \v {c}lena kinemati\v {c}ne verige, povzeto po \cite {siciliano_robot}}}{9}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Tehni\v {c}na risba robota PA-10. Iz nje se definira D-H parametre. Povzeto po \cite {pa10-manual}.}}{10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Tehni\v {c}na risba ohi\v {s}ja krmilnika servo motorjev. Povzeto po \cite {pa10-manual}.}}{19}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Vsebina ARCNET paketa}}{20}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram stanj ARCNET modula na krmilniku robota}}{21}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Krmiljenje robota s po\v {s}iljanjem ARCNET paketov.}}{21}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Podatkovni del ARCNET paketa za krmiljenje robota v odvisnoti od tipa paketa.}}{22}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Senzor sil in navorov JR3.}}{23}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Dostopanje do registrov na ISA kartici za digitalno obdelavo signala iz senzorja senzorja JR3.}}{24}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Stre\v {z}nik kot posrednik med ARCNET ter Ethernet omre\v {z}jem.}}{26}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Diagram poteka programa.}}{29}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Nalaganje ARCNET modula v jedro Linux.}}{29}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Zaganjanje stre\v {z}nika na Linux operacijskem sistemu.}}{30}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Osebni ra\v {c}unalnik na katerem je bil razvit stre\v {z}nik. Na sliki vidimo zadnji del ra\v {c}unalnika kjer so priklju\v {c}ki za ARCNET omre\v {z}je ter JR3 senzor.}}{18}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Tehni\v {c}na risba ohi\v {s}ja krmilnika servo motorjev. Povzeto po \cite {pa10-manual}.}}{19}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Vsebina ARCNET paketa}}{21}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagram stanj ARCNET modula na krmilniku robota}}{21}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Krmiljenje robota s po\v {s}iljanjem ARCNET paketov.}}{22}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Podatkovni del ARCNET paketa za krmiljenje robota v odvisnoti od tipa paketa.}}{22}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Senzor sil in navorov JR3.}}{23}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Dostopanje do registrov na ISA kartici za digitalno obdelavo signala iz senzorja senzorja JR3.}}{24}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Stre\v {z}nik kot posrednik med ARCNET ter Ethernet omre\v {z}jem.}}{26}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Diagram poteka programa.}}{29}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Nalaganje ARCNET modula v jedro Linux.}}{30}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Zaganjanje stre\v {z}nika na Linux operacijskem sistemu.}}{30}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Koordinatni sistem senzorja sile ter koordinatni sistem te\v {z}i\v {s}\v {c}a prijemala}}{34}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Povratna zanka za krmiljenje kota v sklepu}}{38}
@@ -29,26 +30,28 @@
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Odziv sklepa na signal sinusne oblike.}}{50}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Sledenje referenci v obliki kroga na $x$ in $y$ ravnini}}{51}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Signal napake pri sledenju kro\v {z}nici}}{51}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Odziv robota na stopni\v {c}ast signal sile.}}{52}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$ h_{ref_z}(t_1) = -10 $ N}}}{52}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$ h_{ref_z}(t_1) = -20$ N}}}{52}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$ h_{ref_z}(t_1) = -50 $ N}}}{52}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$ h_{ref_z}(t_1) = -100 $ N}}}{52}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Vrh robota PA-10 s pritrjenim senzorjem sil in navorov JR3.}}{52}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Odziv robota na stopni\v {c}ast signal sile.}}{53}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$ h_{ref_z}(t) = -10\qopname \relax o{sin}(\pi ) - 10 $ N}}}{53}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$ h_{ref_z}(t) = -10\qopname \relax o{sin}(2\pi ) - 10$ N}}}{53}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$ h_{ref_z}(t) = -10\qopname \relax o{sin}(4\pi ) - 10 $ N}}}{53}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Merjenje vpliva trenja.}}{55}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Prvi sklep}}}{55}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Drugi sklep}}}{55}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Tretji sklep}}}{55}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {\v {C}etrti sklep}}}{55}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Peti sklep}}}{55}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {\v {S}esti sklep}}}{55}
-\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {Sedmi sklep}}}{55}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Odziv sklepa na signal stopnice.}}{56}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Sledenje referenci v obliki kroga na $x$ in $y$ ravnini}}{57}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Signal napake pri sledenju kro\v {z}nici}}{58}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$ h_{ref_z}(t_1) = -10 $ N}}}{53}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$ h_{ref_z}(t_1) = -20$ N}}}{53}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$ h_{ref_z}(t_1) = -50 $ N}}}{53}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$ h_{ref_z}(t_1) = -100 $ N}}}{53}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Odziv robota na stopni\v {c}ast signal sile.}}{54}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$ h_{ref_z}(t) = -10\qopname \relax o{sin}(\pi ) - 10 $ N}}}{54}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$ h_{ref_z}(t) = -10\qopname \relax o{sin}(2\pi ) - 10$ N}}}{54}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$ h_{ref_z}(t) = -10\qopname \relax o{sin}(4\pi ) - 10 $ N}}}{54}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Merjenje vpliva trenja.}}{56}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Prvi sklep}}}{56}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Drugi sklep}}}{56}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Tretji sklep}}}{56}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {\v {C}etrti sklep}}}{56}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Peti sklep}}}{56}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {\v {S}esti sklep}}}{56}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {Sedmi sklep}}}{56}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Odziv sklepa na signal stopnice.}}{57}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Odziv sklepa na signal sinusne oblike.}}{58}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Sledenje referenci v obliki kroga na $x$ in $y$ ravnini}}{59}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Signal napake pri sledenju kro\v {z}nici}}{60}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

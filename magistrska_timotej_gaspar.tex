@@ -102,19 +102,37 @@ simbol uporabljen.
 %********************* POVZETEK V SLOVENŠÈINI ****************************
 \povzetek
 
-\kljucnebesede beseda1, beseda2, beseda3
+Pri tem delu avtorji predstavijo namensko narejen strežnik, ki deluje kot posrednik med UDP ter ARCNET komunikacijo s krmilnikom servo motorjev robota PA-10. Strežnik je nastal z zahtevami po delovanju v realnem èasu in frekvenci cikla 500 Hz.
+
+Raziskalo se je strategije vodenja robotov in se jih je implementiralo na robotu PA-10. Napravilo se je poizkuse s hitrostnim ter navornim naèinom vodenja motorjev v zunanjih in notranjih koordinatah. Dodatno se je še ugotovilo možnosti krmiljenja robota v kontaktu z okolico. Poizkusi so pokazali, da je hitrostno krmiljenje lažje za implementirati, saj ni tako odvisno od dinamiènih parametrov robota. Navorno vodenje se je v tem primeru izkazalo za nezadovoljivo ampak to predvsem zaradi nenatanènega dinamiènega modela.
+
+Dodatno je so med tem delom nastala orodja za krmiljenje robota s programskim paketom \matsim. Na ta naèin se omogoèa nadaljnje delo na robotu za razvijanje algoritmov vodenja.
+
+\kljucnebesede PA-10, inverzna kinematika, inverzna dinamika, vodenje robotov, redundantni mehanizem, impedanèno vodenje, admitanèno vodenje, ARCNET-UDP strežnik
 
 
 %*************************** POVZETEK V ANGLEŠÈINI ***********************
 \abstract
 
-The thesis addresses ...
+For this thesis the authors have developed a server that acts like a man in the middle for a UDP client and ARCNET servo controller of the PA-10 robot. The server was developed with the requirement to work as close to real time as possible with a program cycle of 500 Hz.
 
-\keywords word1, word2, word3
+Robot control strategies were reviewd and implemented on the PA-10. Experiments were made for velocity and torque mode control in joint and task space. Robot control in contact with enviroment was also tested. Through experiments we found that velocity control of robot is easier to implement as it is not so dependent on the dinamic parameters of the robot. Torque control was found to be unsatisfactory due to the model being innacurate.
+
+In addition \matsim libraries were developted for further robot use and research.
+
+\keywords PA-10, inverse kinematics, inverse dynamics, robot control, redundant mechanisms, impendance control, admitance control, ARCNET-UDP server 
 
 
 %***************************** UVOD **************************************
 \chapter{Uvod} \label{chap:uvod}
+
+Robot je po ISO 8373:2012 standardu definiran kot mehanizem programirljiv v dveh ali veè oseh z neko stopnjo avtonomije, ki se premika znotraj njegovega okolja za izpolnjevanje zadanih nalog \cite{iso_robotics}, robotika pa kot znanost in veda, ki preuèuje naèrtovanje, izgradnjo in aplikacijo robotov. Prodaja industrijskih robotov se je v zadnjih 15 letih poveèala za kar 250\% in statistika pravi, da so leta 2014 zabeležili rekordno prodajo robotov z 200.000 prodanimi enotami. Ker sta znanost in industrija tesno povezani lahko trdimo, da je tudi raziskovanje na podroèju robotike v porastu.
+
+Vendar pa se je pri vsakem novem robotu potrebno vrniti na osnovno nalogo: vodenje vrha robota. Dandanes robotski imajo manipulatorji v sklepih elektromotorje, ki jih lahko vodimo na dva naèina, hitrostno ter navorno. Prvi naèin predvideva poznavanje le kinematiènega modela, drugi pa veleva poznavanje tudi dinamiènega modela robota. Oba naèina vodenja sta bila v preteklosti obsežno raziskana in opisana. V tem delu bomo predstavili vodenje robota po prostoru naloge preko hitrosti in navorov. Pregledali bomo tudi, kako voditi robota v stiku z okolico s senzorjem sil na vrhu robota.
+
+Robotski manipulator PA-10 ima sedem sklepov zato ga uvršèamo med redundantne robote. Prenosnost, enostavno rokovanje ter odprtost krmilnika so razlogi, da je robot zelo razširjen v raziskovalnih institucijah. Ker pa je podjetje prenehalo s prodajo ter podporo tega robota, so raziskovalci prepušèeni samostojnemu razvijanju programske opreme za krmiljenje robota. 
+
+Avtorji smo za krmiljenje robota PA-10 v celoti razvili novo programsko za komunikacijo s krmilnikom servo motorjev robota. Pred izdelavo novega krmilnika smo definirali zahteve po delovanju v realnem èasu ter s hitrostjo 500 Hz. Razvili smo tudi višjenivojski krmilnik za implementacijo opisanih strategij vodenja robota. S poizkusi smo ovrednotili delovanje razvitega krmilnika ter analizirali razliène strategije vodenja po prostoru naloge brez in v kontaktu z okolico.
 
 
 %*********************** OSREDNJA POGLAVJA ********************************
@@ -860,23 +878,7 @@ Avtor v \cite{mihelj_vodenje} navaja, da se mehanski sistem, ki je voden na ta n
 \end{figure}
 
 
-%BEGIN_FOLD
-%\section{Implementacija}\label{sec:admitimplement}
-%
-%Avtorji smo za implementacijo na robotskem mehanizmu PA-10 uporabili strežnik opisan v poglavju \ref{sec:arcnet} ter programsko okolje \matsim. Program za vodenje robota je bil v celoti zgrajen v okolju \simulink. Razlogi za izbiro omenjenega programskega paketa so bile dobre predhodne izkušnje avtorjev. Komunikacija z strežnikom je bila realizirana z integriranimi funckijami za pošiljanje paketov po UDP protokolu. S pravim formiranjem paketov je bilo mogoèe pošiljati referenène hitrosti sklepov ter prebirati trenutne kote v sklepih. Ker strežnik pošilja tudi izmerjene sile ter navore na vrhu robota preko JR3 senzorja je mogoèe admitanèno vodenje opisano v \ref{sec:admittheor}.
-%
-%Avtorji tega dela so pripravili \simulink shemo, ki se izvaja na posveèenem raèunalniku na katerem teèe operacijski sistem Simulink RealTime Target. Frekvenca izvajanja programa je nastavljena na 500 Hz tako, da se ujema s frekvenco strežnika. Pripravljen je bil grafièni vmesnik, da lahko bodoèi uporabniki uporabljajo enak program brez predhodnega poznavanja katere ukaze je potrebno izvesti. 
-%
-%Najprej se je implementiralo admitanèno vodenje s referenèno silo enako 0 N. S spreminjanjem matrike ojaèanj \textbf{K}$_h$ se je spreminjalo podajnost vrha robota. Veèje kot je ojaèanje, veèja je podajnost. Vendar je pri tem zelo pomembno, da sistem ne postane nestabilen. Potrebno je vzeti v zakup, da izmerjene vrednosti senzorja sil JR3 lezejo. Posledièno lahko robot poèasi zaène lesti nekam kamor to ni zaželjeno. Ojaèanje je bilo veèinokrat nižje od 0.1. Kar v praksi pomeni, da se je vrh robota obnašal kot vzmet z koeficentom 10. Iz enaèbe vzmeti $F=\Delta x  k$ je videt, da v kolikor deluje na vrh robota sila 10 N bo premik vrha enak 0.1 m.
-%
-%Implementirano je bilo tudi vodenje v katerem se je signal senzorja sile integriralo in prištelo na referenèno pozicijo. S tem naèinom je bilo dosežena možnost spreminjanja pozicije vrha robota. V praksi to pomeni, da lahko robot opravlja neko nalogo in v kolikor uporabniku ni všeè lega lahko z roko potisne na vrh robota tako, da bo robot bil v drugaèni legi. To je bilo tudi preverjeno z eksperimentom.
-%
-%
-%\section{Rezultati}
-%
-%V tem poglavju bodo predstavljeni rezultati v obliki grafov. Opisana bodo tudi ojaèanja, ki so se uporabljala. Dejanske številske vrednosti.
-%
-%END_FOLD
+
 	
 
 
@@ -1194,6 +1196,15 @@ Problematika navornega krmiljenja je, da je pogojena z dobrim poznavanjem dinami
 %*********************** ZAKLJUÈEK ********************************
 \chapter{Zakljuèek} \label{chap:zakljucek}
 
+Skozi delo smo avtorji predstavili dve strategiji vodenja robota ter opisali reševanje problema redundantnosti. Predstavili smo na novo narejen krmilnik, ki deluje kot strežnik ter ovrednotili njegovo delovanje. Skozi eksperimente smo pokazali zadovoljivo delovanje strežnika. Pri eksperimentih smo se tudi seznanili s težavo uporabljenega dinamiènega modela robota PA-10
+
+Opazili smo, da vodenje robota preko vhodnih hitrostih dela prièakovano in zadovoljivo. Vsi eksperimenti so pokazali dobre odzive in majhne napake. Tudi admitanèno vodenje preko referenène sile se je dobro izkazalo z hitrim odzivom in umiritvenim èasom. Prenihaj bi lahko zmanjšali vendar bi s tem tudi zmanjšali dinamiko odziva.
+
+Navorno vodenje robota se je z danim dinamiènim modelom izkazalo kot nezadovoljivo. Odziv na stopnico je bil sicer hitrejši vendar pa napaka ni konvergirala proti niè. Sledenje referenèni trajektoriji v zunanjih koordinatah je imelo veèjo napako kot pri hitrostnem vodenju predvsem pa je bila napaka neenakomerna.
+
+Vse eksperimente smo izvedeli s krmilniki, ki smo jih avtorji izdelali. Nastala so orodja, ki bodo lahko še naprej uporabljena za nadaljnje delo z robotom PA-10.
+
+Nadaljnje delo predvideva izboljšanje identificiranih parametrov dinamiènega modela za boljše vodenje v navornem naèinu. Predvsem se bo izboljšalo parametre za kompenzacijo trenja tako, da dobro delovalo tudi pri nizkih hitrostih. Na ta naèin se bo doseglo dobro konvergenco napake proti niè.
 
 %**************** LITERATURA **********************
 \bibliographystyle{ieeetrslo}
@@ -1204,7 +1215,14 @@ Problematika navornega krmiljenja je, da je pogojena z dobrim poznavanjem dinami
 
 \appendix
 \chapter{Dodatek 1} \label{appendix:udp-arcnet-server}
+
+
+
 \chapter{Dodatek 2} \label{appendix:simulink-block}
+
+Simulink knjižnica, ki je nastala za uporabljanje robota PA-10 v \matsim je prikazana na sliki \ref{fig:simulink-pa-10}. Blok ima 5 vhodov in 5 izhodov. Vhodi v blok so poleg krmilnih š
+\input{./Slike/simulink-pa-10.tex}
+
 \chapter{Dodatek 3} \label{dodatekC}
 
 

@@ -9,6 +9,11 @@ B.~Siciliano, L.~Sciavicco, L.~Villani  in G.~Oriolo, {\em Robotics, Modelling,
 Mitsubishi Heavy Industries, {\em Portable General Purpose Intelligent Arm -
   Operating Manual}, rev. 1~izd.
 
+\bibitem{iso_robotics}
+``{ISO 8373:2012}.'' Dosegljivo:
+  \url{https://www.iso.org/obp/ui/\#iso:std:iso:8373:ed-2:v1:en}.
+\newblock [Dostopano: 13. 8. 2015].
+
 \bibitem{mhi_pa10}
 M.~H.~I. Ltd., ``Mitsubishi clean room robot,'' {\em Seminarska naloga}, 2003.
 
@@ -50,12 +55,12 @@ Contemporary Controls, {\em ARCNET Tutorial}.
 \bibitem{jr3_doc_ext}
 I.~JR3, ``{JR3, Installation manual for force - torque sensors with internal
   electronics}.'' Dosegljivo: \url{http://www.jr3.com/product-manuals.html}.
-\newblock [Dostopano: 6. 17. 2015].
+\newblock [Dostopano: 13. 8. 2015].
 
 \bibitem{jr3_doc_inst}
 I.~JR3, ``{JR3, DPS-based force sensor receivers, software and installation
   manual}.'' Dosegljivo: \url{http://www.jr3.com/product-manuals.html}.
-\newblock [Dostopano: 6. 17. 2015].
+\newblock [Dostopano: 13. 8. 2015].
 
 \bibitem{linux_windows}
 R.~V. Aroca in G.~Cauri, ``A real time operating systems (rtos) comparison,''

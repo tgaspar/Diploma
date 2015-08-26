@@ -808,9 +808,11 @@ Krmilnik servo motorjev v vsakem danem trenutku vraèa trenuten kot v sklepu. Las
 	\tilde{\textbf{q}} = \textbf{q}_{ref} - \textbf{q}.
 \end{equation}
 
-S preprostim P regulatorjem lahko kote v sklepu robota vodimo s povratno zanko tako, kot je prikazano na shemi \ref{fig:qfeedback}\begin{equation} \label{eq:p_reg_q}
+S preprostim P regulatorjem lahko kote v sklepu robota vodimo s povratno zanko tako, kot je prikazano na shemi \ref{fig:qfeedback}
+\begin{equation} \label{eq:p_reg_q}
 \textbf{u} = \textbf{K}_p  \tilde{\textbf{q}}.
-\end{equation}Ojaèanje regulatorja je oznaèeno s $\textbf{K}_p$ in je diagonalna matrika saj ima vsak sklep svoje ojaèanje neodvisno od ostalih. S poveèevanjem ojaèanja regulatorja \textbf{K} vplivamo na dinamiko odziva \cite{zupancic_tr}.
+\end{equation}
+Ojaèanje regulatorja je oznaèeno s $\textbf{K}_p$ in je diagonalna matrika saj ima vsak sklep svoje ojaèanje neodvisno od ostalih. S poveèevanjem ojaèanja regulatorja \textbf{K} vplivamo na dinamiko odziva \cite{zupancic_tr}.
 
 %Primer odziva takega regulatorja pri K = 1 je na sliki \ref{fig:p-reg}.
 
@@ -1083,18 +1085,31 @@ Poizkusi za hitrostno in navorno vodenje so potekali z enakimi referenènimi sign
 
 Stopnièasto referenco smo izbrali, ker je odziv nanjo dober pokazatelj kako se sistem odziva na hitro spremembo. Preden smo nastavili ojaèanja smo zadali pogoj, da odziv ne sme imeti prenihaja oz. naj bo le-ta najmanjši možen. Odziv smo ovrednotili na podlagi t.i. inženirskih pokazateljev \cite{zupancic_vs}, ki opisujejo uèinkovitost delovanja regulacijskega sistema:
 \begin{itemize}
-	\item mrtvi èas ($ t_m $), sistem še ne odzove na krmiljenje,	
+	\item mrtvi èas ($ t_m $), sistem se še ne odzove na krmiljenje,	
 	\item èas vzpona ($ t_r $), regulirana velièina naraste iz 10\% do 90\% konène vrednosti,
 	\item èas maksimalnega prevzpona ($ t_p $), odziv doseže maksimalno vrednost,
 	\item maksimalni prevzpon ($ M_p $),
 	\item umiritveni èas ($ t_s $), odziv doseže in ostane znotraj 2\% referenène vrednosti.
 \end{itemize}
 
-Sinusni signal z narašèajoèo frekvenco smo izbrali zato, ker nam pokaže kako je napaka odvisna od hitrosti spreminjanja reference. Predpostavka je bila, da višja kot je frekvenca, veèja je napaka. 
+Sinusni signal z narašèajoèo frekvenco smo izbrali zato, ker nam pokaže kako je napaka odvisna od hitrosti spreminjanja reference. Predpostavka je bila, da višja kot je frekvenca spreminjanja referenène lege, veèja je napaka. Funkcija referenène lege sklepa je bila
+\begin{equation}
+	q_{ref} = -0,1\sin(f(t) 2 \pi t); \quad \begin{cases}
+	f(t=0) = 0.1\\
+	f(t=45) = 1
+	\end{cases} .
+\end{equation}
 
-Zarisovanje kroga z vrhom robota smo izbrali zato, da vodimo vrh robota po prostoru naloge in vidimo, kako dobro deluje sledenje v zunanjih koordinatah. Predpostavka je bila, da z dobrim regulatorjem lahko dosežemo dobro sledenje spreminjajoèi se referenci.
+Zarisovanje kroga z vrhom robota smo izbrali zato, da vodimo vrh robota po prostoru naloge in vidimo, kako dobro deluje sledenje v zunanjih koordinatah. Predpostavka je bila, da lahko z dobrim regulatorjem dosežemo dobro sledenje spreminjajoèi se referenci, ki je definirana kot
 
-Ovrednotili smo tudi vodenje robota v kontaktu z okolico tako pri hitrostnem (admitanènem) kot tudi pri navornem (impedanènem) vodenju. V kontaktu z okolico je bil referenèni signal oblikovan tako, daje robot deloval z želeno silo na podlago. Preizkuse smo opravili na referencah dveh razliènih oblik in sicer stopnièaste in sinusne. Za obe razlièni referenci smo opravili tri razliène poizkuse. Pri stopnièastem signalu smo spreminjali amplitudo, pri sinusnem pa frekvenco.
+\begin{equation}
+\begin{matrix}
+x_{ref} = 0,55 + 0.1\sin(\frac{\pi}{2}t)\\
+y_{ref} = 0,1\sin(\frac{\pi}{2}t + \frac{\pi}{2}).
+\end{matrix}
+\end{equation}
+
+Ovrednotili smo tudi vodenje robota v kontaktu z okolico tako pri hitrostnem (admitanènem) kot tudi pri navornem (impedanènem) vodenju. V kontaktu z okolico je bil referenèni signal oblikovan tako, da je robot deloval z želeno silo na podlago. Preizkuse smo opravili na referencah dveh razliènih oblik in sicer stopnièaste in sinusne. Za obe razlièni referenci smo opravili tri razliène poizkuse. Pri stopnièastem signalu smo spreminjali amplitudo, pri sinusnem pa frekvenco.
 
 \section{Hitrostno krmiljenje}
 
@@ -1104,7 +1119,7 @@ Implementacija hitrostnega krmiljenja robota je potekala postopoma. Najprej smo 
 
 \input{./Slike/follow_step.tex}
 
-Odziv tretjega sklepa na referenèni signal stopnice je viden na sliki \ref{fig:follow_step}. Iz pridobljenih podatkov podatkov lahko izmerimo prej definirane inženirske pokazatelje.
+Za pozicijsko vodenje sklepov smo uporabili regulator opisan na shemi \ref{fig:qfeedback}. Odziv tretjega sklepa na referenèni signal stopnice je viden na sliki \ref{fig:follow_step}. Iz pridobljenih podatkov podatkov lahko izmerimo prej definirane inženirske pokazatelje.
 \input{./Tabele/vel_step.tex}
 Na grafu je videti, da krmilni signal doseže referenèno vrednost relativno hitro nato pa se za kratek èas od nje spet oddali. To je posledica dinamiènih lastnosti robota in PI regulatorja. Ko se sklep približa referenèni legi zaène motor zavirati in zaradi vztrajnosti se poveèuje I èlen regulatorja. Hitrost pade na vrednost niè, vendar pa je I èlen regulatorja še vedno visok in posledièno se sklep malo zavrti stran od reference. Pomembno je opozoriti tudi na mrtvi èas, ki je 0.008 s. To pomeni, da je v komunikaciji med visokonivojskim in nizkonivojskim krmilnikom zamika za 4 vzorce. V tem naèinu vodenja to sicer ne predstavlja težav, jih pa lahko predstavlja pri vodenju s silo.
 

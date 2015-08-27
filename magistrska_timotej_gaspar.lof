@@ -26,32 +26,31 @@
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Blo\v cna shema admitan\v cnega vodenja.}}{45}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces }}{46}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Odziv sklepa na signal stopnice.}}{49}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Odziv sklepa na signal sinusne oblike.}}{50}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Sledenje referenci v obliki kroga na $x$ in $y$ ravnini}}{51}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Signal napake pri sledenju kro\v {z}nici}}{52}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Vrh robota PA-10 s pritrjenim senzorjem sil in navorov JR3.}}{52}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Odziv robota na stopni\v {c}ast signal sile.}}{53}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$ h_{ref_z}(t_1) = -10 $ N}}}{53}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$ h_{ref_z}(t_1) = -20$ N}}}{53}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$ h_{ref_z}(t_1) = -50 $ N}}}{53}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$ h_{ref_z}(t_1) = -100 $ N}}}{53}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Odziv robota na stopni\v {c}ast signal sile.}}{54}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$ h_{ref_z}(t) = -10\qopname \relax o{sin}(\pi ) - 10 $ N}}}{54}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$ h_{ref_z}(t) = -10\qopname \relax o{sin}(2\pi ) - 10$ N}}}{54}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$ h_{ref_z}(t) = -10\qopname \relax o{sin}(4\pi ) - 10 $ N}}}{54}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Merjenje vpliva trenja.}}{56}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Prvi sklep}}}{56}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Drugi sklep}}}{56}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Tretji sklep}}}{56}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {\v {C}etrti sklep}}}{56}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Peti sklep}}}{56}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {\v {S}esti sklep}}}{56}
-\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {Sedmi sklep}}}{56}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Odziv sklepa na signal stopnice.}}{57}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Odziv sklepa na signal sinusne oblike.}}{58}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Sledenje referenci v obliki kroga na $x$ in $y$ ravnini}}{59}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Signal napake pri sledenju kro\v {z}nici}}{59}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Odzivi tretjega sklepa na signal stopnice pri razli\v {c}nih oja\v {c}anjih in razli\v {c}nih vzor\v {c}nih \v {c}asu.}}{49}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 100 Hz}}}{49}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 500 Hz}}}{49}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Odziv vrha po \textit {x} osi na signal sinusne oblike s spreminjajo\v {c}o se frekvenco za vzor\v {c}ni \v {c}as 100 Hz in 500 Hz.}}{51}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sledenje sinusnemu signalu pri vzor\v {c}nem \v {c}asu 100 Hz.}}}{51}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sledenje sinusnemu signalu pri vzor\v {c}nem \v {c}asu 500 Hz.}}}{51}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Vrh robota PA-10 s pritrjenim senzorjem sil in navorov JR3 v kontaktu z okolico.}}{52}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Odziv robota pri admitan\v {c}nem vodenju na signal stopnice pri vzor\v {c}nem \v {c}asu 100 Hz in 500 Hz .}}{53}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 100 Hz}}}{53}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 500 Hz}}}{53}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Merjenje vpliva trenja.}}{55}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Prvi sklep}}}{55}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Drugi sklep}}}{55}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Tretji sklep}}}{55}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {\v {C}etrti sklep}}}{55}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Peti sklep}}}{55}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {\v {S}esti sklep}}}{55}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {Sedmi sklep}}}{55}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Odzivi tretjega sklepa na signal stopnice pri razli\v {c}nih oja\v {c}anjih in razli\v {c}nih vzor\v {c}nih \v {c}asu.}}{57}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 100 Hz}}}{57}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 500 Hz}}}{57}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Odziv vrha po \textit {x} osi na signal sinusne oblike s spreminjajo\v {c}o se frekvenco za vzor\v {c}ni \v {c}as 100 Hz in 500 Hz.}}{58}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sledenje sinusnemu signalu pri vzor\v {c}nem \v {c}asu 100 Hz.}}}{58}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sledenje sinusnemu signalu pri vzor\v {c}nem \v {c}asu 500 Hz.}}}{58}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Odziv sklepa na stopni\v {c}asto referenco.}}{59}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

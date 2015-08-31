@@ -1092,9 +1092,12 @@ Ovrednotili smo tudi vodenje robota v kontaktu z okolico tako pri hitrostnem (ad
 
 
 
-Implementacija hitrostnega krmiljenja robota je potekala postopoma. Najprej smo realizirali pozicijsko vodenje sklepov nato pa vodenje v zunanjih koordinatah.
+Implementacija hitrostnega krmiljenja robota je potekala postopoma. Najprej smo realizirali pozicijsko vodenje sklepov, sledilo je vodenje v zunanjih koordinatah, na koncu pa smo realizirali še admitanèno vodenje z vhodno referenèno silo. Za vodenje robota so bile uporabljene \simulink sheme, ki so prikazane na sliki \ref{fig:simulink_vel_control}.
+\input{./Slike/simulink_vel_control.tex}
 
 \input{./Slike/follow_step.tex}
+
+\subsection{Vodenje brez kontakta}
 
 Za pozicijsko vodenje sklepov smo uporabili regulator opisan na shemi \ref{fig:qfeedback}. Grafi odzivov so prikazani na sliki \ref{fig:follow_step}. Iz grafov lahko opazimo, da z vzorèno frekvenco 500 Hz lahko uporabimo veèja ojaèanja za doseganje hitrejših odzivov. Pri ojaèanju $ K_p = 13 $ doseže sklep 98\% referenène vrednosti v 0.40 sekunde, z vzorèno frekvenco pa je $ K_p = 10 $ in doseže 98\% referenène vrednosti v 0.47 sekunde. 
 
@@ -1129,6 +1132,9 @@ Za implementacijo navornega vodenja je bilo najprej potrebno definirati dinamièn
 Dinamièni model, ki smo ga za poskuse uporabljali je zgradil \cite{petric_nevronska} z uporabo orodja \textit{sdfast}. Avtor je za dinamièni model uporabil podatke o masah zapisani v tabeli \ref{table:grav_params}. Matrike vztrajnosti za vsak sklep je avtor aproksimiral z matriki dimenzije $ 3 \times 3$, ki ima le diagonalne èlene razliène od niè. Za kompenzacijo trenja smo uporabili parametre, ki smo jih identificirali sami. 
 \input{./Tabele/grav_params.tex} 
 
+Izvedba vodenja je potekala postopoma. Tako kot pri hitrostnem vodenju smo najprej opravili poskus s stopnièasto referenco v notranjih koordinatah, sledil je poskus na signal rampe v zunanjih koordinatah, na koncu pa smo še preverili delovanje impedanènega vodenja. \simulink sheme, ki smo jih za realizacijo vodenja uporabili so prikazane na sliki \ref{fig:simulink_tq_control}.
+\input{./Slike/simulink_tq_control.tex}
+
 \subsection{Kompenzacija trenja}
 
 Za dobro navorno vodenje je nujno potrebna kompenzacija trenja. Avtorji v  \cite{bompos_pa10} predlagajo izboljšan Stribeckov model. Navor kot posledica trenja je tako aproksimiran s funkcijo
@@ -1141,12 +1147,11 @@ Parametre $ f_1 \dots f_6 $ smo identificirali z eksperimentom. Ker krmilnik rob
 \input{./Tabele/friction_params.tex}
 
 
-\subsection{Sledenje referenci}
-Izvedba vodenja je potekala postopoma. Tako kot pri hitrostnem vodenju  smo najprej opravili poskus s stopnièasto referenco v notranjih koordinatah nato pa v odziv na sinusno funkcijo v zunanjih koordinatah. 
+\subsection{Vodenje brez kontakta}
 
 \input{./Slike/torque_follow_step.tex}
 
-Za izvedbo poskusa smo uporabili regulacijski zakon \ref{eq:tq_in_coor}. Slika \ref{fig:torque_follow_step} prikazuje graf odziva tretjega sklepa na stopnièasto referenco. Podobno kot pri hitrostnem smo z višanjem vzorène frekvence lahko uporabili tudi veèja ojaèanja. Vendar pa je bila v tem primeru razlika v ojaèanjih veèja. S frekvenco vzorèenja 100 Hz smo z ojaèanjem 10 dosegli 98\% referenène vrednosti v 0.24 sekunde. S frekvenco vzorèenja 500 Hz pa je bilo ojaèanje 21 in èas vzpona 0.184 sekunde.
+Za izvedbo poskusa za odziv na signal stopnice smo uporabili regulacijski zakon \ref{eq:tq_in_coor}. Slika \ref{fig:torque_follow_step} prikazuje graf odziva tretjega sklepa na stopnièasto referenco. Podobno kot pri hitrostnem smo z višanjem vzorène frekvence lahko uporabili tudi veèja ojaèanja. Vendar pa je bila v tem primeru razlika v ojaèanjih veèja. S frekvenco vzorèenja 100 Hz smo z ojaèanjem 10 dosegli 98\% referenène vrednosti v 0.24 sekunde. S frekvenco vzorèenja 500 Hz pa je bilo ojaèanje 21 in èas vzpona 0.184 sekunde.
 
 Pri obeh frekvencah lahko opazimo, da pri premajhnih ojaèanjih regulirana velièina sploh ne doseže referenène vrednosti. Razlog je ne dovolj natanèno kompenzirano trenje. Vhodni navor je manjši kot je potreben za premagati silo trenja.
 
@@ -1165,14 +1170,15 @@ Problematika navornega krmiljenja je, da je pogojena z dobrim poznavanjem dinami
 
 \subsection{Impedanèno vodenje}
 
-Napišem jutri.
+Tako kot pri admitanènem vodenju smo tudi pri impedanènem vodenju napravili poskus na signalu stopnice vendar je bila tokrat amplituda stopnice 10 N. Odziv prikazuje graf na sliki \ref{fig:follow_step_impedance}. Odziv ima podobno kot pri admitanènem vodenju relativno velik prenihaj. Bistvena razlika pri tem vodenju pa je, da napaka nikoli ne konvergira proti niè. Razlog je podoben kot smo ga navedli pri vodenju v zunanjih koordinatah z uporabo dinamiènega modela in trenje. Kljub temu, da je napaka razlièa od niè, je regulirni signal premajhen, da bi premagal silo trenja. Poskus smo opravili le pri vzorèni frekvenci 500 Hz, saj smo že pri admitanènem vodenju opazili nestabilnost pri manjšanju frekvence in bi pri admitanènem vodenju prièakovali podoben ali slabši odziv. 
+\input{./Slike/impedance_step.tex}
 
 \section{Analiza rezultatov}
 
 Poskusi, ki so temeljili na razliènih naèinih vodenja so nam pokazali lastnosti razvitega strežnika, kvaliteto regulacijskih shem ter kvaliteto uporabljenega dinamiènega modela. Pomembna lastnost strežnika, ki deluje v korist vodenju je visoka vzorèna frekvenca, kar omogoèa veèja ojaèanja ter hitrejše odzive. Pomembno pa je tudi opozorit na zakasnitev v komunikaciji med klientom ter strežnikom, ki pa slabša kvaliteto vodenja. Mrtvi èas je prikazan na sliki \ref{fig:follow_step_vel_zoom}. Zakasnitev v komunikaciji med klientom in strežnikom je 0.08 s kar predstavlja 4 vzorce. Razlog za zakasnitev je lahko uporabljeno stikalo (\textit{ang. switch}) v mreži ali pa delovanje klienta. Pri hitrostnem vodenju brez kontakta okolice ta zakasnitev ne predstavlja veèjih težav v stabilnosti. Pri vodenju z okolico ter na podlagi inverzne dinamike pa jo. Zakasnitev se bo v nadaljnjem delu poskušalo odpraviti.
 \input{./Slike/follow_step_vel_zoom.tex}
 
-Pri vodenju na podlagi inverzne dinamike pa bo potrebno razviti dinamièni model na podlagi bolj natanènih parametrov. Najveèji poudarek bo na èlenih matrik vztrajnosti ter kompenzaciji trenja. Vztrajnost vpliva na kvaliteto vodenja ko nastopijo veèji pospeški, kompenzacija trenja pa takrat, ko je želimo robota voditi z nizko hitrostjo. 
+Pri vodenju na podlagi inverzne dinamike pa bo potrebno razviti dinamièni model na podlagi bolj natanènih parametrov. Najveèji poudarek bo na èlenih matrik vztrajnosti ter kompenzaciji trenja. Vztrajnost vpliva na kvaliteto vodenja ko nastopijo veèji pospeški, kompenzacija trenja pa takrat, ko želimo robota voditi z nizko hitrostjo. 
 
 %BEGIN_FOLD
 %Za visoko nivojsko vodenje smo uporabljali programski paket \matsim. Ker je želja avtorjev, da se raziskovalno in razvojno delo na robotu PA-10 v prihodnosti nadaljuje, so nastale \simulink knjižnice. Knjižnice bodoèim uporabnikom omogoèajo uporabo robota brez, da poznajo do podrobnosti vse, kar je bilo opisano do sedaj v tem delu. V nadaljevanju bodo opisani posamezni bloki, ki jih lahko uporabniki dodajo v njihovo \simulink shemo.
@@ -1197,9 +1203,9 @@ Pri vodenju na podlagi inverzne dinamike pa bo potrebno razviti dinamièni model 
 %*********************** ZAKLJUÈEK ********************************
 \chapter{Zakljuèek} \label{chap:zakljucek}
 
-Skozi delo smo avtorji predstavili strategije vodenja, ki temeljio na hitrostnem in navornem vodenju ter opisali reševanje problema redundantnosti. Predstavili smo na novo razviti krmilnik za robota PA-10, ki deluje kot strežnik ter ovrednotili njegovo delovanje. Skozi eksperimente smo pokazali zadovoljivo delovanje strežnika in opozorili na njegove pomanjkljivosti. 
+Skozi delo smo avtorji predstavili strategije vodenja, ki temeljijo na hitrostnem in navornem vodenju ter opisali reševanje problema redundantnosti. Predstavili smo na novo razviti krmilnik za robota PA-10, ki deluje kot strežnik ter ovrednotili njegovo delovanje. Skozi eksperimente smo pokazali zadovoljivo delovanje strežnika in opozorili na njegove pomanjkljivosti. 
 
-Opazili smo, da vodenje robota preko vhodnih hitrostih dela prièakovano in zadovoljivo, dokler se referenca ne spreminja s preveliko hitrostjo, za kar smo tudi predstavili rešitev. Tudi admitanèno vodenje preko referenène sile se je izkazalo kot dobro s hitrim odzivom in kratkim umiritvenim èasom. Sicer je pri admitanènem vodenju bilo nekaj prenihaja, ki bi ga lahko z zmanjševanjem ojaèanj zmanjšali, vendar bi izgubili hiter odziv.
+Opazili smo, da vodenje robota preko vhodnih hitrostih dela prièakovano in zadovoljivo, dokler se referenca ne spreminja s preveliko hitrostjo, za kar smo tudi predstavili rešitev v obliki v naprej zakljuèene zanke. Tudi admitanèno vodenje preko referenène sile se je izkazalo kot dobro s hitrim odzivom in kratkim umiritvenim èasom. Sicer je pri admitanènem vodenju bilo nekaj prenihaja, ki bi ga lahko z zmanjševanjem ojaèanj zmanjšali, vendar bi izgubili hiter odziv.
 
 Navorno vodenje robota se je z danim dinamiènim modelom izkazalo kot nezadovoljivo. Odziv na stopnico je bil sicer hitrejši vendar pa napaka ni konvergirala proti niè. Sledenje referenèni trajektoriji v zunanjih koordinatah je imelo veèjo napako kot pri hitrostnem vodenju. Razlogi za to so ne dovolj natanèni parametri v dinamiènem modelu.
 

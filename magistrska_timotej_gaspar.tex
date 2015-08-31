@@ -1071,56 +1071,20 @@ Impedanèno vodenje se uporablja takrat, ko lahko robota vodimo preko vhodnih nav
 
 Poznavanje teoretiènih osnov za vodenje robotov nam omogoèa realizacijo krmiljenja na naèin, ki je najbolj primeren zadani nalogi. V prejšnjem poglavju so bile te osnove opisane in prikazane so bile blokovne sheme vodenja. Iz tistih shem, je videti, da je za implementacijo razliènih vodenj potrebno poznati razlièno kolièino parametrov. Hitrostno vodenje je enostavnejše, saj je potrebno doloèiti le parametre ojaèanj regulatorja. Pri navornem vodenju robota pa doloèitev parametrov še zdaleè ni enostaven problem saj je potrebno poznati dinamiène parametre samega robota.
 
-V nadaljevanju tega poglavja, bo opisana implementacija algoritmov vodenja, ki so bili opisani v poglavju \ref{chap:vodenje}. Implementacija vodenj je hkrati tudi preizkus s katerim se bo ovrednotilo razviti UDP-ARNCET strežnik, ki je bil opisan v poglavju \ref{chap:udp-arcnet-server}. Za komunikacijo s strežnikom je bilo narejeno visoko nivojsko vodenje v programskem paketu \matsim. Razlogi za izbiro omenjenega programskega paketa so bile dobre predhodne izkušnje ter dobro poznavanje delovanja programa s strani avtorjev. \simulink \space bloki, ki smo jih uporabili, bodo v nadaljevanju prikazani na slikah in podrobneje opisani v dodatku \ref{appendix:simulink-block}.
+V nadaljevanju tega poglavja, bo opisana implementacija algoritmov vodenja, ki so bili opisani v poglavju \ref{chap:vodenje}. Implementacija vodenj je hkrati tudi preizkus s katerim se bo ovrednotilo razviti UDP-ARNCET strežnik, ki je bil opisan v poglavju \ref{chap:udp-arcnet-server}. Za komunikacijo s strežnikom je bilo narejeno visoko nivojsko vodenje v programskem paketu \matsim. Razlogi za izbiro omenjenega programskega paketa so bile dobre predhodne izkušnje ter dobro poznavanje delovanja programa s strani avtorjev. \simulink \space bloki, ki smo jih uporabili, bodo v nadaljevanju prikazani na slikah in podrobneje opisani v dodatku \ref{appendix:simulink-block}. Programski paket ponuja tudi uporabo èasovno kritiènega operacijskega sistema \rtsim. Mi smo ta sistem uporabili kot klienta, na katerega smo naložili program za višjenivojsko vodenje robota.
 
-Namen poskusov je bil ovrednotiti razviti strežnik. Pokazati smo želeli, kako je višanje frekvence delovanja vplivalo na uspešnost vodenja. V ta namen, samo zgradili testni strežnik, ki deluje s tako frekvenco kot je deloval MHI krmilnik, in sicer 100 Hz. Z obema strežnikoma smo izvedeli enake poskuse vodenja robota in sicer:
+Namen poskusov je bil ovrednotiti razviti strežnik. Pokazati smo želeli, kako je višanje frekvence delovanja vplivalo na uspešnost vodenja. V ta namen, samo razvili še testni strežnik in klienta, ki delujeta s tako frekvenco kot je deloval MHI krmilnik, in sicer 100 Hz. Z obema strežnikoma smo izvedeli enake poskuse vodenja robota in sicer:
 
 \begin{enumerate}
 	\item odziv na stopnièasti referenèni signal pozicije v notranjih koordinatah,
-	\item odziv na referenèni signal pozicije sinusne oblike v zunanjih koordinatah,
-	\item odziv na stopnièasti referenèni signal sile v zunanjih koordinatah.
+	\item odziv na referenèni signal pozicije v obliki rampe v zunanjih koordinatah.
 \end{enumerate}
-Vsi poskusi so bili izvedeni s hitrostnim in na navornim vodenjem.
+Vsi poskusi so bili izvedeni s hitrostnim in z navornim vodenjem.
 	
 Stopnièasti signal je bil izbran zato, da smo ugotovili, kako visoko lahko nastavimo ojaèanje P regulatorja, da regulirani signal nima prenihaja. Dodatno smo tukaj lahko tudi kakšna je zakasnitev v komunikaciji. Z veèjimi vzorènimi èasi se lahko doseže veèja ojaèanja in posledièno tudi hitrejše odzive. 
 
-Sinusni signal z narašèajoèo frekvenco smo izbrali zato, ker nam pokaže kako je napaka odvisna od hitrosti spreminjanja reference. Predpostavka je bila, da višja kot je frekvenca spreminjanja referenène lege, veèja je napaka. Funkcija referenène lege sklepa je bila
-\begin{equation}
-x_{ref} = - 0,01\sin(f(t) 2 \pi t); \quad \begin{cases}
-f(t=0) = 0.1\\
-f(t=45) = 3
-\end{cases}.
-\end{equation}
+Odziv na signal rampe v zunanjih koordinatah smo izbrali zato, da vidimo, kako dobro vrh robota sledi spreminjajoèi se referenci. Predpostavili smo, da bo ob zaèetku ter zakljuèku rampe vrh imel nekaj pogreška, nato pa bo konvergiral proti referenci.
 
-%Poizkusi za hitrostno in navorno vodenje so potekali z enakimi referenènimi signali, da se lahko med sabo primerja rezultate. Za oba naèina vodenja smo opravili tri poizkuse z razliènimi referenènimi signali:
-%\begin{enumerate}
-%	\item signal stopnice v notranjih koordinatah,
-%	\item sinusni signal z narašèajoèo frekvenco v notranjih koordinatah,
-%	\item zarisovanje kroga v zunanjih koordinatah.
-%
-%
-%\end{enumerate}
-
-%Stopnièasto referenco smo izbrali, ker je odziv nanjo dober pokazatelj kako se sistem odziva na hitro spremembo. Preden smo nastavili ojaèanja smo zadali pogoj, da odziv ne sme imeti prenihaja oz. naj bo le-ta najmanjši možen. Odziv smo ovrednotili na podlagi t.i. inženirskih pokazateljev \cite{zupancic_vs}, ki opisujejo uèinkovitost delovanja regulacijskega sistema:
-%\begin{itemize}
-%	\item mrtvi èas ($ t_m $), sistem se še ne odzove na krmiljenje,	
-%	\item èas vzpona ($ t_r $), regulirana velièina naraste iz 10\% do 90\% konène vrednosti,
-%	\item èas maksimalnega prevzpona ($ t_p $), odziv doseže maksimalno vrednost,
-%	\item maksimalni prevzpon ($ M_p $),
-%	\item umiritveni èas ($ t_s $), odziv doseže in ostane znotraj 2\% referenène vrednosti.
-%\end{itemize}
-
-
-
-
-%Zarisovanje kroga z vrhom robota smo izbrali zato, da vodimo vrh robota po prostoru naloge in vidimo, kako dobro deluje sledenje v zunanjih koordinatah. Predpostavka je bila, da lahko z dobrim regulatorjem dosežemo dobro sledenje spreminjajoèi se referenci, ki je definirana kot
-%
-%\begin{equation}
-%\begin{matrix}
-%x_{ref} = 0,55 + 0.1\sin(\frac{\pi}{2}t)\\
-%y_{ref} = 0,1\sin(\frac{\pi}{2}t + \frac{\pi}{2}).
-%\end{matrix}
-%\end{equation}
 
 Ovrednotili smo tudi vodenje robota v kontaktu z okolico tako pri hitrostnem (admitanènem) kot tudi pri navornem (impedanènem) vodenju. V kontaktu z okolico je bil referenèni signal oblikovan tako, da je robot deloval z želeno silo na podlago. Poskus je bil opravljen na stopnièastem signalu na podlagi z veliko togostjo. 
 
@@ -1134,15 +1098,17 @@ Implementacija hitrostnega krmiljenja robota je potekala postopoma. Najprej smo 
 
 Za pozicijsko vodenje sklepov smo uporabili regulator opisan na shemi \ref{fig:qfeedback}. Grafi odzivov so prikazani na sliki \ref{fig:follow_step}. Iz grafov lahko opazimo, da z vzorèno frekvenco 500 Hz lahko uporabimo veèja ojaèanja za doseganje hitrejših odzivov. Pri ojaèanju $ K_p = 13 $ doseže sklep 98\% referenène vrednosti v 0.40 sekunde, z vzorèno frekvenco pa je $ K_p = 10 $ in doseže 98\% referenène vrednosti v 0.47 sekunde. 
 
-Za vodenje robota v zunanjih koordinatah po izbrani trajektoriji smo uporabili regulacijski zakon zapisan v \ref{eq:outcontrol}. Graf \ref{fig:follow_sine} prikazuje sledenje referenci.
-
-\input{./Slike/follow_sine.tex}
-
-Graf na sliki \ref{fig:follow_sine} prikazuje odziv tretjega sklepa na referenèni signal sinusne oblike. Referenènemu signalu je frekvenca narašèala od 0.1 Hz do 3 Hz v èasovnem intervalu 45 sekund. Na ta naèin se je preverilo, kako dobro še sledi referenci, ko se ta hitreje spreminja. Ojaèanja so bila empirièno nastavljena do meje stabilnosti. Z rdeèo obarvan signal napake nam prikazuje, da je sledenje s poveèevanjem hitrosti v obeh primerih slabše, vendar pa pri vzorènem èasu 100 Hz amplituda napake hitreje narašèa. Napako bi lahko odpravili z dodatkov v naprej zakljuèene zanke odvoda referenènega signala
-
+Za vodenje robota v zunanjih koordinatah po izbrani trajektoriji smo uporabili regulacijski zakon zapisan v (\ref{eq:outcontrol}) z dodanim signalom odvoda referenène pozicije v naprej zakljuèeni zanki
 \begin{equation} \label{eq:outcontrol_ff}
-	\textbf{u} =  \textbf{J}^{*}(\textbf{q})(\textbf{K}_p\mathbf{\tilde{x}}_{ref} + \mathbf{\dot{x}}_ref).
+	\textbf{u} =  \textbf{J}^{*}(\textbf{q})(\textbf{K}_p\mathbf{\tilde{x}}_{ref} + \mathbf{\dot{x}}_ref),
 \end{equation}
+kar zagotavlja sledenje referenci pri konstantni hitrosti.
+
+\input{./Slike/follow_ramp_vel.tex}
+
+Graf na sliki \ref{fig:follow_ramp_vel} prikazuje odziv vrha robota na sledenje signalu rampe pri dveh razliènih hitrostih. Opaziti je odstopanje od reference ob èasu nastopa rampe ter ob èasu ustavitve. Karakteristika teh odstopanj je pospeškovna, saj robot ne mora v trenutku pospešit na želeno hitrost zaradi dinamiènih lastnosti. Kar je tudi razvidno od amplitude napake; pri veèji spremembi hitrosti je napaka veèja. Pri tem poskusu so bila ojaèanja empirièno nastavljena do meje stabilnosti pri 500 Hz. Pri poskusu 100 Hz smo uporabili enaka ojaèanja. Videti je, da pri manjši vzorèni frekvenci vrh robota bolj zaniha.
+
+
 
 
 \subsection{Admitanèno vodenje}
@@ -1185,12 +1151,11 @@ Za izvedbo poskusa smo uporabili regulacijski zakon \ref{eq:tq_in_coor}. Slika \
 Pri obeh frekvencah lahko opazimo, da pri premajhnih ojaèanjih regulirana velièina sploh ne doseže referenène vrednosti. Razlog je ne dovolj natanèno kompenzirano trenje. Vhodni navor je manjši kot je potreben za premagati silo trenja.
 
 
-\input{./Slike/torque_follow_sine.tex}
+\input{./Slike/follow_ramp_tq.tex}
 
-Graf na sliki \ref{fig:torque_follow_sine} prikazuje odziv vrha robota na referenèni signal sinusne oblike. Referenèni signal je bil enak kot pri hitrostnem vodenju. Ojaèanja vodenja so bila nastavljena do meje stabilnosti. Opaziti je ponovno boljše sledenje referenci pri veèji vzorèni frekvenci. Vendar pa je potrebno opozoriti na splošno slabše sledenje kot pri hitrostnem vodenju. Razlog je, da uporabljen dinamièen model ne uporablja dovolj natanènih parametre.
+Graf na sliki \ref{fig:follow_ramp_vel} prikazuje odziv vrha robota na sledenje signalu rampe pri dveh razliènih hitrostih v navornem naèinu. Za poskus so bila ojaèanja nastavljena do meje stabilnosti pri vzorèni frekvenci 500 Hz nato pa so bila enaka ojaèanja uporabljena pri vzorèni frekvenci 100 Hz. Na grafu odzivov pri 500 Hz ter 100 Hz se pojavi odstopanje od referenène lege v ustaljenem stanju. Razlog za to je ne tako dobro kompenzirano trenje. Kljub temu, da je v ustaljenem stanju napaka, je krmilni signal premajhen, da bi premagal trenje v sklepih. Dodatno lahko opazimo, da je pri nižji vzorèni frekvenci napaka v ustaljenem stanju veèja ter vsebuje dodatne oscilacije.
 
-Problematika navornega krmiljenja je, da je pogojena z dobrim poznavanjem dinamiènega modela. Vsako odstopanje modela od fiziènega robota se pokaže kot napaka v sledenju ter slabšanje stabilnosti. Dodatna težava, ki se nam je pojavila je bila, da krmilnik robota PA-10 sam po sebi ne vraèa trenutnih hitrosti v sklepih in smo jih zato morali raèunati. 
-Za boljše sledenje bi bilo potrebno dinamiène parametre boljše identificirati. 
+Problematika navornega krmiljenja je, da je pogojena z dobrim poznavanjem dinamiènega modela. Vsako odstopanje modela od fiziènega robota se pokaže kot napaka v sledenju ter slabšanje stabilnosti. Dodatna težava, ki se nam je pojavila je bila, da krmilnik robota PA-10 sam po sebi ne vraèa trenutnih hitrosti v sklepih in smo jih zato morali raèunati, uporabili smo Kalmanov filter \cite{simulink_kalman}. Za boljše sledenje bi bilo potrebno razpolagati z bolj natanènimi dinamiènimi parametri.
 %
 %\input{./Slike/torque_follow_circle.tex}
 %Navorno vodenje robota po trajektoriji v zunanjih koordinatah po krožnici ni bilo tako uspešno kakor pri hitrostnem vodenju. Napaka je pri sledenju bila mnogo veèja kot pri hitrostnem vodenju. Slika \ref{fig:torque_follow_circle} prikazuje graf sledenja, slika \ref{fig:torque_follow_circle_err} pa napako sledenja. Videti je, da sledenje ni tako uspešno. Iz grafa lahko vidimo, da je najveèja napaka malo veè kot 6 mm
@@ -1204,7 +1169,7 @@ Napišem jutri.
 
 \section{Analiza rezultatov}
 
-Poskusi, ki so temeljili na razliènih naèinih vodenja so nam pokazali lastnosti razvitega strežnika ter kvaliteto uporabljenega dinamiènega modela. Pomembna lastnost strežnika, ki deluje v korist vodenju je visoka vzorèna frekvenca, kar omogoèa veèja ojaèanja ter hitrejše odzive. Pomembno pa je tudi opozorit na zakasnitev v komunikaciji med klientom ter strežnikom, ki pa slabša kvaliteto vodenja. Mrtvi èas je prikazan na sliki \ref{fig:follow_step_vel_zoom}. Zakasnitev v komunikaciji med klientom in strežnikom je 0.08 s kar predstavlja 4 vzorce. Razlog za zakasnitev je lahko uporabljeno stikalo (\textit{ang. switch}) v mreži ali pa delovanje klienta. Pri hitrostnem vodenju brez kontakta okolice ta zakasnitev ne predstavlja veèjih težav v stabilnosti. Pri vodenju z okolico ter na podlagi inverzne dinamike pa jo. Zakasnitev se bo v nadaljnjem delu poskušalo odpraviti.
+Poskusi, ki so temeljili na razliènih naèinih vodenja so nam pokazali lastnosti razvitega strežnika, kvaliteto regulacijskih shem ter kvaliteto uporabljenega dinamiènega modela. Pomembna lastnost strežnika, ki deluje v korist vodenju je visoka vzorèna frekvenca, kar omogoèa veèja ojaèanja ter hitrejše odzive. Pomembno pa je tudi opozorit na zakasnitev v komunikaciji med klientom ter strežnikom, ki pa slabša kvaliteto vodenja. Mrtvi èas je prikazan na sliki \ref{fig:follow_step_vel_zoom}. Zakasnitev v komunikaciji med klientom in strežnikom je 0.08 s kar predstavlja 4 vzorce. Razlog za zakasnitev je lahko uporabljeno stikalo (\textit{ang. switch}) v mreži ali pa delovanje klienta. Pri hitrostnem vodenju brez kontakta okolice ta zakasnitev ne predstavlja veèjih težav v stabilnosti. Pri vodenju z okolico ter na podlagi inverzne dinamike pa jo. Zakasnitev se bo v nadaljnjem delu poskušalo odpraviti.
 \input{./Slike/follow_step_vel_zoom.tex}
 
 Pri vodenju na podlagi inverzne dinamike pa bo potrebno razviti dinamièni model na podlagi bolj natanènih parametrov. Najveèji poudarek bo na èlenih matrik vztrajnosti ter kompenzaciji trenja. Vztrajnost vpliva na kvaliteto vodenja ko nastopijo veèji pospeški, kompenzacija trenja pa takrat, ko je želimo robota voditi z nizko hitrostjo. 
@@ -1232,7 +1197,7 @@ Pri vodenju na podlagi inverzne dinamike pa bo potrebno razviti dinamièni model 
 %*********************** ZAKLJUÈEK ********************************
 \chapter{Zakljuèek} \label{chap:zakljucek}
 
-Skozi delo smo avtorji predstavili dve strategiji vodenja robota ter opisali reševanje problema redundantnosti. Predstavili smo na novo narejen krmilnik, ki deluje kot strežnik ter ovrednotili njegovo delovanje. Skozi eksperimente smo pokazali zadovoljivo delovanje strežnika in opozorili na njegove pomanjkljivosti. 
+Skozi delo smo avtorji predstavili strategije vodenja, ki temeljio na hitrostnem in navornem vodenju ter opisali reševanje problema redundantnosti. Predstavili smo na novo razviti krmilnik za robota PA-10, ki deluje kot strežnik ter ovrednotili njegovo delovanje. Skozi eksperimente smo pokazali zadovoljivo delovanje strežnika in opozorili na njegove pomanjkljivosti. 
 
 Opazili smo, da vodenje robota preko vhodnih hitrostih dela prièakovano in zadovoljivo, dokler se referenca ne spreminja s preveliko hitrostjo, za kar smo tudi predstavili rešitev. Tudi admitanèno vodenje preko referenène sile se je izkazalo kot dobro s hitrim odzivom in kratkim umiritvenim èasom. Sicer je pri admitanènem vodenju bilo nekaj prenihaja, ki bi ga lahko z zmanjševanjem ojaèanj zmanjšali, vendar bi izgubili hiter odziv.
 

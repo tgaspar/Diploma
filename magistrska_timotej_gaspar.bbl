@@ -85,4 +85,9 @@ N.~A. Bompos, P.~K. Artemiadis, A.~S. Oikonomopoulos  in K.~J. Kyriakopoulos,
   arm,'' {\em Proceedings of IEEE/ASME Internationak conferenc on Advanced
   Intelligent Mechatronics}, 2007.
 
+\bibitem{simulink_kalman}
+Y.~Cao, ``{Learning the Kalman Filter in Simulink v2.1}.'' Dosegljivo:
+  \url{http://www.mathworks.com/matlabcentral/fileexchange/18465-learning-the-kalman-filter-in-simulink-v2-1}.
+\newblock [Dostopano: 13. 8. 2015].
+
 \end{thebibliography}

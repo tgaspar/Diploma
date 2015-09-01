@@ -1,0 +1,90 @@
+%% Creator: Inkscape 0.48.1, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'zunanje_koordinate_vel.eps' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+
+\begingroup
+  \makeatletter
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}
+    \renewcommand\color[2][]{}%
+  }
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}
+    \renewcommand\transparent[1]{}%
+  }
+  \providecommand\rotatebox[2]{#2}
+  \ifx\svgwidth\undefined
+    \setlength{\unitlength}{534.85714195pt}
+  \else
+    \setlength{\unitlength}{\svgwidth}
+  \fi
+  \global\let\svgwidth\undefined
+  \makeatother
+  \begin{picture}(1,0.75806452)%
+    \put(0,0){\includegraphics[width=\unitlength]{zunanje_koordinate_vel.eps}}%
+    \put(0.02908868,0.51009527){\makebox(0,0)[lb]{\smash{Vodenje v zunanjih koordinatah}}}%
+    \put(0.69428238,0.49221779){\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0.68159277,0.46975571){\makebox(0,0)[lb]{\smash{Speed}}}%
+    \put(0.76312719,0.49221779){\makebox(0,0)[lb]{\smash{Torque/Speed}}}%
+    \put(0.76312719,0.44554335){\makebox(0,0)[lb]{\smash{Torque}}}%
+    \put(0.76312719,0.3988689){\makebox(0,0)[lb]{\smash{Speed}}}%
+    \put(0.76312719,0.35219445){\makebox(0,0)[lb]{\smash{ExtraBytes}}}%
+    \put(0.87631272,0.5038864){\makebox(0,0)[lb]{\smash{ServoStatus}}}%
+    \put(0.88914819,0.46304626){\makebox(0,0)[lb]{\smash{AxisAngle}}}%
+    \put(0.88448075,0.42220612){\makebox(0,0)[lb]{\smash{AxisTorque}}}%
+    \put(0.84947491,0.38136598){\makebox(0,0)[lb]{\smash{JR3 Force sensor}}}%
+    \put(0.90665111,0.34052584){\makebox(0,0)[lb]{\smash{TicToc}}}%
+    \put(0.80484248,0.31222946){\makebox(0,0)[lb]{\smash{PA 10 CONTROL}}}%
+    \put(0.66861144,0.35219445){\makebox(0,0)[lb]{\smash{zeros(1,58)}}}%
+    \put(0.65227538,0.44554335){\makebox(0,0)[lb]{\smash{zeros(7,1)}}}%
+    \put(0.52975496,0.4467102){\makebox(0,0)[lb]{\smash{Matrix}}}%
+    \put(0.52392066,0.43270787){\makebox(0,0)[lb]{\smash{Multiply}}}%
+    \put(0.52975496,0.37086424){\makebox(0,0)[lb]{\smash{Matrix}}}%
+    \put(0.52392066,0.3568619){\makebox(0,0)[lb]{\smash{Multiply}}}%
+    \put(0.168028,0.33469153){\makebox(0,0)[lb]{\smash{q}}}%
+    \put(0.2193699,0.35219445){\makebox(0,0)[lb]{\smash{x}}}%
+    \put(0.2193699,0.31718862){\makebox(0,0)[lb]{\smash{J}}}%
+    \put(0.18203034,0.35569503){\makebox(0,0)[lb]{\smash{PA10}}}%
+    \put(0.1890315,0.3416927){\makebox(0,0)[lb]{\smash{Dir}}}%
+    \put(0.18669778,0.32769036){\makebox(0,0)[lb]{\smash{Kin}}}%
+    \put(0.18786464,0.31368804){\makebox(0,0)[lb]{\smash{Vel}}}%
+    \put(0.1497958,0.28889223){\makebox(0,0)[lb]{\smash{Kinematični model}}}%
+    \put(0.28471412,0.31718862){\makebox(0,0)[lb]{\smash{J}}}%
+    \put(0.28471412,0.28218278){\makebox(0,0)[lb]{\smash{W}}}%
+    \put(0.38273045,0.31718862){\makebox(0,0)[lb]{\smash{Jp}}}%
+    \put(0.38623103,0.28218278){\makebox(0,0)[lb]{\smash{N}}}%
+    \put(0.29988332,0.30668687){\makebox(0,0)[lb]{\smash{Pseudoinverse}}}%
+    \put(0.31155193,0.29268454){\makebox(0,0)[lb]{\smash{(weighted)}}}%
+    \put(0.04200701,0.25884556){\makebox(0,0)[lb]{\smash{diag([0.9; 0.9; 0.9; 0.9; 0.9; 0.9; 0.9])}}}%
+    \put(0.3453909,0.39303459){\makebox(0,0)[lb]{\smash{Kp}}}%
+    \put(0.35282963,0.35890391){\makebox(0,0)[lb]{\smash{Kp}}}%
+    \put(0.08634773,0.39303459){\makebox(0,0)[lb]{\smash{[-0.7 0 0.25 0 -pi/2 0]}}}%
+    \put(0.15169195,0.46304626){\makebox(0,0)[lb]{\smash{Signal 1}}}%
+    \put(0.09568261,0.4770486){\makebox(0,0)[lb]{\smash{Group 1}}}%
+    \put(0.10910152,0.42891557){\makebox(0,0)[lb]{\smash{Signal Builder}}}%
+    \put(0.31038506,0.23550834){\makebox(0,0)[lb]{\smash{zeros(7,1)}}}%
+    \put(0.34305717,0.44554335){\makebox(0,0)[lb]{\smash{du/dt}}}%
+  \end{picture}%
+\endgroup

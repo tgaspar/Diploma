@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  31 AUG 2015 14:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  1 SEP 2015 13:11
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -828,7 +828,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [7
 
 ]
-Underfull \vbox (badness 2932) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -877,6 +877,9 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 109.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [1
 
 ]
@@ -884,11 +887,11 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[2
-
-] (magistrska_timotej_gaspar.lof)
+[2] (magistrska_timotej_gaspar.lof)
 \tf@lof=\write10
- [3]
+ [3
+
+]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1498,21 +1501,46 @@ File: ./Slike/admitance_control.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./Slike/admitance_control.pdf used on input line 14.
 (pdftex.def)             Requested size: 238.40923pt x 145.29617pt.
 ) (Slike/follow_step.tex
-<./Slike/follow_step_100hz_vel.pdf, id=325, 614.295pt x 794.97pt>
-File: ./Slike/follow_step_100hz_vel.pdf Graphic file (type pdf)
+Package epstopdf Info: Source file: <./Slike/follow_step_100hz_vel.eps>
+(epstopdf)                    date: 2015-09-01 12:58:02
+(epstopdf)                    size: 250568 bytes
+(epstopdf)             Output file: <./Slike/follow_step_100hz_vel-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2015-09-01 12:58:46
+(epstopdf)                    size: 19865 bytes
+(epstopdf)             Command: <epstopdf --outfile=./Slike/follow_step_100hz_v
+el-eps-converted-to.pdf ./Slike/follow_step_100hz_vel.eps>
+(epstopdf)             \includegraphics on input line 6.
+Package epstopdf Info: Output file is already uptodate.
 
-<use ./Slike/follow_step_100hz_vel.pdf>
-Package pdftex.def Info: ./Slike/follow_step_100hz_vel.pdf used on input line 6
-.
-(pdftex.def)             Requested size: 307.14674pt x 212.54158pt.
+<./Slike/follow_step_100hz_vel-eps-converted-to.pdf, id=325, 515.9275pt x 408.5
+2625pt>
+File: ./Slike/follow_step_100hz_vel-eps-converted-to.pdf Graphic file (type pdf
+)
+ <use ./Slike/follow_step_100hz_vel-eps-converted-to.pdf>
+Package pdftex.def Info: ./Slike/follow_step_100hz_vel-eps-converted-to.pdf use
+d on input line 6.
+(pdftex.def)             Requested size: 257.96312pt x 204.26262pt.
+Package epstopdf Info: Source file: <./Slike/follow_step_500hz_vel.eps>
+(epstopdf)                    date: 2015-09-01 12:58:11
+(epstopdf)                    size: 504307 bytes
+(epstopdf)             Output file: <./Slike/follow_step_500hz_vel-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2015-09-01 12:58:47
+(epstopdf)                    size: 77684 bytes
+(epstopdf)             Command: <epstopdf --outfile=./Slike/follow_step_500hz_v
+el-eps-converted-to.pdf ./Slike/follow_step_500hz_vel.eps>
+(epstopdf)             \includegraphics on input line 10.
+Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/follow_step_500hz_vel.pdf, id=326, 614.295pt x 794.97pt>
-File: ./Slike/follow_step_500hz_vel.pdf Graphic file (type pdf)
-
-<use ./Slike/follow_step_500hz_vel.pdf>
-Package pdftex.def Info: ./Slike/follow_step_500hz_vel.pdf used on input line 1
-0.
-(pdftex.def)             Requested size: 307.14674pt x 212.54158pt.
+<./Slike/follow_step_500hz_vel-eps-converted-to.pdf, id=326, 509.905pt x 405.51
+5pt>
+File: ./Slike/follow_step_500hz_vel-eps-converted-to.pdf Graphic file (type pdf
+)
+ <use ./Slike/follow_step_500hz_vel-eps-converted-to.pdf>
+Package pdftex.def Info: ./Slike/follow_step_500hz_vel-eps-converted-to.pdf use
+d on input line 10.
+(pdftex.def)             Requested size: 254.95187pt x 202.75699pt.
 )
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -1529,128 +1557,126 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[50 <./Slike/follow_step_100hz_vel.pdf> <./Slike/follow_step_500hz_vel.pdf>]
-(Slike/follow_ramp_vel.tex
+[50 <./Slike/follow_step_100hz_vel-eps-converted-to.pdf> <./Slike/follow_step_5
+00hz_vel-eps-converted-to.pdf>] (Slike/follow_ramp_vel.tex
 Package epstopdf Info: Source file: <./Slike/follow_ramp_100hz_vel_err.eps>
-(epstopdf)                    date: 2015-08-28 18:49:25
-(epstopdf)                    size: 221716 bytes
+(epstopdf)                    date: 2015-09-01 12:09:26
+(epstopdf)                    size: 221651 bytes
 (epstopdf)             Output file: <./Slike/follow_ramp_100hz_vel_err-eps-conv
 erted-to.pdf>
-(epstopdf)                    date: 2015-08-31 08:06:29
-(epstopdf)                    size: 18245 bytes
+(epstopdf)                    date: 2015-09-01 12:15:27
+(epstopdf)                    size: 17878 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/follow_ramp_100hz_v
 el_err-eps-converted-to.pdf ./Slike/follow_ramp_100hz_vel_err.eps>
 (epstopdf)             \includegraphics on input line 6.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/follow_ramp_100hz_vel_err-eps-converted-to.pdf, id=427, 488.82625pt x 
-387.4475pt>
+<./Slike/follow_ramp_100hz_vel_err-eps-converted-to.pdf, id=405, 501.875pt x 18
+5.69376pt>
 File: ./Slike/follow_ramp_100hz_vel_err-eps-converted-to.pdf Graphic file (type
  pdf)
  <use ./Slike/follow_ramp_100hz_vel_err-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/follow_ramp_100hz_vel_err-eps-converted-to.pdf
  used on input line 6.
-(pdftex.def)             Requested size: 244.41252pt x 193.72327pt.
+(pdftex.def)             Requested size: 250.93687pt x 92.84665pt.
 Package epstopdf Info: Source file: <./Slike/follow_ramp_500hz_vel_err.eps>
-(epstopdf)                    date: 2015-08-28 18:49:11
-(epstopdf)                    size: 405648 bytes
+(epstopdf)                    date: 2015-09-01 12:09:24
+(epstopdf)                    size: 404675 bytes
 (epstopdf)             Output file: <./Slike/follow_ramp_500hz_vel_err-eps-conv
 erted-to.pdf>
-(epstopdf)                    date: 2015-08-31 08:14:52
-(epstopdf)                    size: 69016 bytes
+(epstopdf)                    date: 2015-09-01 12:15:28
+(epstopdf)                    size: 66823 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/follow_ramp_500hz_v
 el_err-eps-converted-to.pdf ./Slike/follow_ramp_500hz_vel_err.eps>
 (epstopdf)             \includegraphics on input line 10.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/follow_ramp_500hz_vel_err-eps-converted-to.pdf, id=428, 488.82625pt x 
-387.4475pt>
+<./Slike/follow_ramp_500hz_vel_err-eps-converted-to.pdf, id=406, 501.875pt x 18
+7.70125pt>
 File: ./Slike/follow_ramp_500hz_vel_err-eps-converted-to.pdf Graphic file (type
  pdf)
  <use ./Slike/follow_ramp_500hz_vel_err-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/follow_ramp_500hz_vel_err-eps-converted-to.pdf
  used on input line 10.
-(pdftex.def)             Requested size: 244.41252pt x 193.72327pt.
+(pdftex.def)             Requested size: 250.93687pt x 93.85039pt.
 )
-(Slike/pa10jr3.tex <./Slike/pa10jr3.png, id=429, 454.0965pt x 681.3455pt>
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[51 <./Slike/follow_ramp_100hz_vel_err-eps-converted-to.pdf> <./Slike/follow_ra
+mp_500hz_vel_err-eps-converted-to.pdf>] (Slike/pa10jr3.tex
+<./Slike/pa10jr3.png, id=428, 454.0965pt x 681.3455pt>
 File: ./Slike/pa10jr3.png Graphic file (type png)
 
 <use ./Slike/pa10jr3.png>
 Package pdftex.def Info: ./Slike/pa10jr3.png used on input line 3.
 (pdftex.def)             Requested size: 113.52383pt x 170.33595pt.
-)
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[51]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[52 <./Slike/follow_ramp_100hz_vel_err-eps-converted-to.pdf> <./Slike/follow_ra
-mp_500hz_vel_err-eps-converted-to.pdf>] (Slike/admitance_step.tex
-Package epstopdf Info: Source file: <./Slike/figure_0_hz_5.eps>
-(epstopdf)                    date: 2015-08-27 15:43:08
-(epstopdf)                    size: 59509 bytes
-(epstopdf)             Output file: <./Slike/figure_0_hz_5-eps-converted-to.pdf
->
-(epstopdf)                    date: 2015-08-27 15:43:30
-(epstopdf)                    size: 15070 bytes
-(epstopdf)             Command: <epstopdf --outfile=./Slike/figure_0_hz_5-eps-c
-onverted-to.pdf ./Slike/figure_0_hz_5.eps>
+) (Slike/admitance_step.tex
+Package epstopdf Info: Source file: <./Slike/figure_0_hz_100dt.eps>
+(epstopdf)                    date: 2015-09-01 12:26:56
+(epstopdf)                    size: 103455 bytes
+(epstopdf)             Output file: <./Slike/figure_0_hz_100dt-eps-converted-to
+.pdf>
+(epstopdf)                    date: 2015-09-01 12:30:41
+(epstopdf)                    size: 7610 bytes
+(epstopdf)             Command: <epstopdf --outfile=./Slike/figure_0_hz_100dt-e
+ps-converted-to.pdf ./Slike/figure_0_hz_100dt.eps>
 (epstopdf)             \includegraphics on input line 27.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/figure_0_hz_5-eps-converted-to.pdf, id=454, 483.8075pt x 392.46625pt>
+<./Slike/figure_0_hz_100dt-eps-converted-to.pdf, id=429, 511.9125pt x 194.7275p
+t>
+File: ./Slike/figure_0_hz_100dt-eps-converted-to.pdf Graphic file (type pdf)
+ <use ./Slike/figure_0_hz_100dt-eps-converted-to.pdf>
+Package pdftex.def Info: ./Slike/figure_0_hz_100dt-eps-converted-to.pdf used on
+ input line 27.
+(pdftex.def)             Requested size: 255.95563pt x 97.3635pt.
+Package epstopdf Info: Source file: <./Slike/figure_0_hz_5.eps>
+(epstopdf)                    date: 2015-09-01 12:27:18
+(epstopdf)                    size: 128621 bytes
+(epstopdf)             Output file: <./Slike/figure_0_hz_5-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2015-09-01 12:30:41
+(epstopdf)                    size: 11253 bytes
+(epstopdf)             Command: <epstopdf --outfile=./Slike/figure_0_hz_5-eps-c
+onverted-to.pdf ./Slike/figure_0_hz_5.eps>
+(epstopdf)             \includegraphics on input line 31.
+Package epstopdf Info: Output file is already uptodate.
+
+<./Slike/figure_0_hz_5-eps-converted-to.pdf, id=430, 502.87875pt x 194.7275pt>
 File: ./Slike/figure_0_hz_5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/figure_0_hz_5-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/figure_0_hz_5-eps-converted-to.pdf used on inp
-ut line 27.
-(pdftex.def)             Requested size: 241.90315pt x 196.23264pt.
-Package epstopdf Info: Source file: <./Slike/figure_0_hz_100dt.eps>
-(epstopdf)                    date: 2015-08-27 17:48:16
-(epstopdf)                    size: 33756 bytes
-(epstopdf)             Output file: <./Slike/figure_0_hz_100dt-eps-converted-to
-.pdf>
-(epstopdf)                    date: 2015-08-27 17:50:28
-(epstopdf)                    size: 11177 bytes
-(epstopdf)             Command: <epstopdf --outfile=./Slike/figure_0_hz_100dt-e
-ps-converted-to.pdf ./Slike/figure_0_hz_100dt.eps>
-(epstopdf)             \includegraphics on input line 31.
-Package epstopdf Info: Output file is already uptodate.
+ut line 31.
+(pdftex.def)             Requested size: 251.43875pt x 97.3635pt.
 
-<./Slike/figure_0_hz_100dt-eps-converted-to.pdf, id=455, 489.83pt x 391.4625pt>
-File: ./Slike/figure_0_hz_100dt-eps-converted-to.pdf Graphic file (type pdf)
-<use ./Slike/figure_0_hz_100dt-eps-converted-to.pdf>
-Package pdftex.def Info: ./Slike/figure_0_hz_100dt-eps-converted-to.pdf used on
- input line 31.
-(pdftex.def)             Requested size: 244.9144pt x 195.73076pt.
-) (Tabele/grav_params.tex
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[52 <./Slike/pa10jr3.png>]) (Tabele/grav_params.tex
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 1.
 
 ) (Slike/simulink_tq_control.tex
-<./Slike/notranje_koor_tq.pdf, id=456, 794.97pt x 614.295pt>
+<./Slike/notranje_koor_tq.pdf, id=435, 794.97pt x 614.295pt>
 File: ./Slike/notranje_koor_tq.pdf Graphic file (type pdf)
 
 <use ./Slike/notranje_koor_tq.pdf>
 Package pdftex.def Info: ./Slike/notranje_koor_tq.pdf used on input line 6.
 (pdftex.def)             Requested size: 218.49199pt x 95.50311pt.
 
-<./Slike/zunanje_koor_tq.pdf, id=457, 794.97pt x 614.295pt>
+<./Slike/zunanje_koor_tq.pdf, id=436, 794.97pt x 614.295pt>
 File: ./Slike/zunanje_koor_tq.pdf Graphic file (type pdf)
 
 <use ./Slike/zunanje_koor_tq.pdf>
 Package pdftex.def Info: ./Slike/zunanje_koor_tq.pdf used on input line 10.
 (pdftex.def)             Requested size: 178.65755pt x 140.31688pt.
 
-<./Slike/impedance_control.pdf, id=458, 794.97pt x 614.295pt>
+<./Slike/impedance_control.pdf, id=437, 794.97pt x 614.295pt>
 File: ./Slike/impedance_control.pdf Graphic file (type pdf)
 
 <use ./Slike/impedance_control.pdf>
@@ -1661,180 +1687,242 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[53 <./Slike/pa10jr3.png>]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[54 <./Slike/figure_0_hz_5-eps-converted-to.pdf> <./Slike/figure_0_hz_100dt-eps
+[53 <./Slike/figure_0_hz_100dt-eps-converted-to.pdf> <./Slike/figure_0_hz_5-eps
 -converted-to.pdf>] (Slike/friction_measure.tex
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 2.
 
 Package epstopdf Info: Source file: <./Slike/mesTorque1.eps>
-(epstopdf)                    date: 2015-08-27 17:51:50
-(epstopdf)                    size: 146955 bytes
+(epstopdf)                    date: 2015-09-01 13:09:33
+(epstopdf)                    size: 229067 bytes
 (epstopdf)             Output file: <./Slike/mesTorque1-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-27 17:52:51
-(epstopdf)                    size: 45323 bytes
+(epstopdf)                    date: 2015-09-01 13:08:59
+(epstopdf)                    size: 48059 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/mesTorque1-eps-conv
 erted-to.pdf ./Slike/mesTorque1.eps>
 (epstopdf)             \includegraphics on input line 6.
-Package epstopdf Info: Output file is already uptodate.
-<./Slike/mesTorque1-eps-converted-to.pdf, id=473, 479.7925pt x 387.4475pt>
+runsystem(epstopdf --outfile=./Slike/mesTorque1-eps-converted-to.pdf ./Slike/me
+sTorque1.eps)...executed (allowed).
+
+Package epstopdf Info: Result file: <./Slike/mesTorque1-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-09-01 13:12:05
+(epstopdf)                    size: 48067 bytes.
+<./Slike/mesTorque1-eps-converted-to.pdf, id=462, 503.8825pt x 401.5pt>
 File: ./Slike/mesTorque1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/mesTorque1-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/mesTorque1-eps-converted-to.pdf used on input 
 line 6.
-(pdftex.def)             Requested size: 143.93884pt x 116.23514pt.
+(pdftex.def)             Requested size: 151.16591pt x 120.45091pt.
 Package epstopdf Info: Source file: <./Slike/mesTorque2.eps>
-(epstopdf)                    date: 2015-08-27 17:51:52
-(epstopdf)                    size: 196111 bytes
+(epstopdf)                    date: 2015-09-01 13:09:36
+(epstopdf)                    size: 275557 bytes
 (epstopdf)             Output file: <./Slike/mesTorque2-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-27 17:52:52
-(epstopdf)                    size: 54546 bytes
+(epstopdf)                    date: 2015-09-01 13:09:00
+(epstopdf)                    size: 56189 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/mesTorque2-eps-conv
 erted-to.pdf ./Slike/mesTorque2.eps>
 (epstopdf)             \includegraphics on input line 10.
-Package epstopdf Info: Output file is already uptodate.
+runsystem(epstopdf --outfile=./Slike/mesTorque2-eps-converted-to.pdf ./Slike/me
+sTorque2.eps)...executed (allowed).
 
-<./Slike/mesTorque2-eps-converted-to.pdf, id=474, 486.81876pt x 387.4475pt>
+Package epstopdf Info: Result file: <./Slike/mesTorque2-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-09-01 13:12:06
+(epstopdf)                    size: 56185 bytes.
+
+<./Slike/mesTorque2-eps-converted-to.pdf, id=463, 503.8825pt x 401.5pt>
 File: ./Slike/mesTorque2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/mesTorque2-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/mesTorque2-eps-converted-to.pdf used on input 
 line 10.
-(pdftex.def)             Requested size: 146.04675pt x 116.23514pt.
+(pdftex.def)             Requested size: 151.16591pt x 120.45091pt.
 Package epstopdf Info: Source file: <./Slike/mesTorque3.eps>
-(epstopdf)                    date: 2015-08-27 17:51:54
-(epstopdf)                    size: 147787 bytes
+(epstopdf)                    date: 2015-09-01 13:09:39
+(epstopdf)                    size: 228717 bytes
 (epstopdf)             Output file: <./Slike/mesTorque3-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-27 17:52:52
-(epstopdf)                    size: 44588 bytes
+(epstopdf)                    date: 2015-09-01 13:09:01
+(epstopdf)                    size: 46496 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/mesTorque3-eps-conv
 erted-to.pdf ./Slike/mesTorque3.eps>
 (epstopdf)             \includegraphics on input line 13.
-Package epstopdf Info: Output file is already uptodate.
+runsystem(epstopdf --outfile=./Slike/mesTorque3-eps-converted-to.pdf ./Slike/me
+sTorque3.eps)...executed (allowed).
 
-<./Slike/mesTorque3-eps-converted-to.pdf, id=475, 487.8225pt x 389.455pt>
+Package epstopdf Info: Result file: <./Slike/mesTorque3-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-09-01 13:12:08
+(epstopdf)                    size: 46502 bytes.
+
+<./Slike/mesTorque3-eps-converted-to.pdf, id=464, 520.94624pt x 409.53pt>
 File: ./Slike/mesTorque3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/mesTorque3-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/mesTorque3-eps-converted-to.pdf used on input 
 line 13.
-(pdftex.def)             Requested size: 146.34787pt x 116.83739pt.
+(pdftex.def)             Requested size: 156.28508pt x 122.85994pt.
 Package epstopdf Info: Source file: <./Slike/mesTorque4.eps>
-(epstopdf)                    date: 2015-08-27 17:51:56
-(epstopdf)                    size: 147353 bytes
+(epstopdf)                    date: 2015-09-01 13:09:41
+(epstopdf)                    size: 228103 bytes
 (epstopdf)             Output file: <./Slike/mesTorque4-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-27 17:52:53
-(epstopdf)                    size: 45455 bytes
+(epstopdf)                    date: 2015-09-01 13:09:02
+(epstopdf)                    size: 47571 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/mesTorque4-eps-conv
 erted-to.pdf ./Slike/mesTorque4.eps>
 (epstopdf)             \includegraphics on input line 16.
-Package epstopdf Info: Output file is already uptodate.
+runsystem(epstopdf --outfile=./Slike/mesTorque4-eps-converted-to.pdf ./Slike/me
+sTorque4.eps)...executed (allowed).
 
-<./Slike/mesTorque4-eps-converted-to.pdf, id=476, 487.8225pt x 387.4475pt>
+Package epstopdf Info: Result file: <./Slike/mesTorque4-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-09-01 13:12:08
+(epstopdf)                    size: 47574 bytes.
+
+<./Slike/mesTorque4-eps-converted-to.pdf, id=465, 520.94624pt x 401.5pt>
 File: ./Slike/mesTorque4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/mesTorque4-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/mesTorque4-eps-converted-to.pdf used on input 
 line 16.
-(pdftex.def)             Requested size: 146.34787pt x 116.23514pt.
+(pdftex.def)             Requested size: 156.28508pt x 120.45091pt.
 Package epstopdf Info: Source file: <./Slike/mesTorque5.eps>
-(epstopdf)                    date: 2015-08-27 17:51:57
-(epstopdf)                    size: 147350 bytes
+(epstopdf)                    date: 2015-09-01 13:09:44
+(epstopdf)                    size: 229565 bytes
 (epstopdf)             Output file: <./Slike/mesTorque5-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-27 17:52:54
-(epstopdf)                    size: 41842 bytes
+(epstopdf)                    date: 2015-09-01 13:09:03
+(epstopdf)                    size: 45045 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/mesTorque5-eps-conv
 erted-to.pdf ./Slike/mesTorque5.eps>
 (epstopdf)             \includegraphics on input line 19.
-Package epstopdf Info: Output file is already uptodate.
+runsystem(epstopdf --outfile=./Slike/mesTorque5-eps-converted-to.pdf ./Slike/me
+sTorque5.eps)...executed (allowed).
 
-<./Slike/mesTorque5-eps-converted-to.pdf, id=477, 492.84125pt x 387.4475pt>
+Package epstopdf Info: Result file: <./Slike/mesTorque5-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-09-01 13:12:09
+(epstopdf)                    size: 45048 bytes.
+
+<./Slike/mesTorque5-eps-converted-to.pdf, id=466, 523.9575pt x 401.5pt>
 File: ./Slike/mesTorque5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/mesTorque5-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/mesTorque5-eps-converted-to.pdf used on input 
 line 19.
-(pdftex.def)             Requested size: 147.8535pt x 116.23514pt.
+(pdftex.def)             Requested size: 157.18846pt x 120.45091pt.
 Package epstopdf Info: Source file: <./Slike/mesTorque6.eps>
-(epstopdf)                    date: 2015-08-27 17:51:59
-(epstopdf)                    size: 147400 bytes
+(epstopdf)                    date: 2015-09-01 13:09:47
+(epstopdf)                    size: 229757 bytes
 (epstopdf)             Output file: <./Slike/mesTorque6-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-27 17:52:54
-(epstopdf)                    size: 43545 bytes
+(epstopdf)                    date: 2015-09-01 13:09:04
+(epstopdf)                    size: 45608 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/mesTorque6-eps-conv
 erted-to.pdf ./Slike/mesTorque6.eps>
 (epstopdf)             \includegraphics on input line 22.
-Package epstopdf Info: Output file is already uptodate.
+runsystem(epstopdf --outfile=./Slike/mesTorque6-eps-converted-to.pdf ./Slike/me
+sTorque6.eps)...executed (allowed).
 
-<./Slike/mesTorque6-eps-converted-to.pdf, id=478, 492.84125pt x 387.4475pt>
+Package epstopdf Info: Result file: <./Slike/mesTorque6-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-09-01 13:12:10
+(epstopdf)                    size: 45613 bytes.
+
+<./Slike/mesTorque6-eps-converted-to.pdf, id=467, 523.9575pt x 401.5pt>
 File: ./Slike/mesTorque6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/mesTorque6-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/mesTorque6-eps-converted-to.pdf used on input 
 line 22.
-(pdftex.def)             Requested size: 147.8535pt x 116.23514pt.
+(pdftex.def)             Requested size: 157.18846pt x 120.45091pt.
 Package epstopdf Info: Source file: <./Slike/mesTorque7.eps>
-(epstopdf)                    date: 2015-08-27 17:52:01
-(epstopdf)                    size: 87671 bytes
+(epstopdf)                    date: 2015-09-01 13:09:50
+(epstopdf)                    size: 170614 bytes
 (epstopdf)             Output file: <./Slike/mesTorque7-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-08-27 17:52:55
-(epstopdf)                    size: 26213 bytes
+(epstopdf)                    date: 2015-09-01 13:09:04
+(epstopdf)                    size: 29617 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/mesTorque7-eps-conv
 erted-to.pdf ./Slike/mesTorque7.eps>
 (epstopdf)             \includegraphics on input line 25.
-Package epstopdf Info: Output file is already uptodate.
+runsystem(epstopdf --outfile=./Slike/mesTorque7-eps-converted-to.pdf ./Slike/me
+sTorque7.eps)...executed (allowed).
 
-<./Slike/mesTorque7-eps-converted-to.pdf, id=479, 492.84125pt x 388.45125pt>
+Package epstopdf Info: Result file: <./Slike/mesTorque7-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-09-01 13:12:11
+(epstopdf)                    size: 29622 bytes.
+
+<./Slike/mesTorque7-eps-converted-to.pdf, id=468, 523.9575pt x 408.52625pt>
 File: ./Slike/mesTorque7-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/mesTorque7-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/mesTorque7-eps-converted-to.pdf used on input 
 line 25.
-(pdftex.def)             Requested size: 147.8535pt x 116.53627pt.
+(pdftex.def)             Requested size: 157.18846pt x 122.55882pt.
+
+
+LaTeX Warning: Float too large for page by 10.45262pt on input line 29.
+
 ) (Tabele/friction_params.tex
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 1.
 
 ) (Slike/torque_follow_step.tex
-<./Slike/follow_step_100hz_tq.pdf, id=480, 614.295pt x 794.97pt>
-File: ./Slike/follow_step_100hz_tq.pdf Graphic file (type pdf)
+Package epstopdf Info: Source file: <./Slike/follow_step_100hz_tq.eps>
+(epstopdf)                    date: 2015-09-01 13:00:15
+(epstopdf)                    size: 229804 bytes
+(epstopdf)             Output file: <./Slike/follow_step_100hz_tq-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2015-09-01 13:05:48
+(epstopdf)                    size: 12843 bytes
+(epstopdf)             Command: <epstopdf --outfile=./Slike/follow_step_100hz_t
+q-eps-converted-to.pdf ./Slike/follow_step_100hz_tq.eps>
+(epstopdf)             \includegraphics on input line 6.
+Package epstopdf Info: Output file is already uptodate.
 
-<use ./Slike/follow_step_100hz_tq.pdf>
-Package pdftex.def Info: ./Slike/follow_step_100hz_tq.pdf used on input line 6.
+<./Slike/follow_step_100hz_tq-eps-converted-to.pdf, id=469, 508.90125pt x 405.5
+15pt>
+File: ./Slike/follow_step_100hz_tq-eps-converted-to.pdf Graphic file (type pdf)
 
-(pdftex.def)             Requested size: 307.14674pt x 212.54158pt.
+ <use ./Slike/follow_step_100hz_tq-eps-converted-to.pdf>
+Package pdftex.def Info: ./Slike/follow_step_100hz_tq-eps-converted-to.pdf used
+ on input line 6.
+(pdftex.def)             Requested size: 254.45pt x 202.75699pt.
+Package epstopdf Info: Source file: <./Slike/follow_step_500hz_tq.eps>
+(epstopdf)                    date: 2015-09-01 13:00:19
+(epstopdf)                    size: 546820 bytes
+(epstopdf)             Output file: <./Slike/follow_step_500hz_tq-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2015-09-01 13:05:49
+(epstopdf)                    size: 86388 bytes
+(epstopdf)             Command: <epstopdf --outfile=./Slike/follow_step_500hz_t
+q-eps-converted-to.pdf ./Slike/follow_step_500hz_tq.eps>
+(epstopdf)             \includegraphics on input line 10.
+Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/follow_step_500hz_tq.pdf, id=481, 614.295pt x 794.97pt>
-File: ./Slike/follow_step_500hz_tq.pdf Graphic file (type pdf)
+<./Slike/follow_step_500hz_tq-eps-converted-to.pdf, id=470, 509.905pt x 407.522
+5pt>
+File: ./Slike/follow_step_500hz_tq-eps-converted-to.pdf Graphic file (type pdf)
 
-<use ./Slike/follow_step_500hz_tq.pdf>
-Package pdftex.def Info: ./Slike/follow_step_500hz_tq.pdf used on input line 10
-.
-(pdftex.def)             Requested size: 307.14674pt x 212.54158pt.
+ <use ./Slike/follow_step_500hz_tq-eps-converted-to.pdf>
+Package pdftex.def Info: ./Slike/follow_step_500hz_tq-eps-converted-to.pdf used
+ on input line 10.
+(pdftex.def)             Requested size: 254.95187pt x 203.76074pt.
 )
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[55]
+[54]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[56 <./Slike/notranje_koor_tq.pdf> <./Slike/zunanje_koor_tq.pdf> <./Slike/imped
+[55 <./Slike/notranje_koor_tq.pdf> <./Slike/zunanje_koor_tq.pdf> <./Slike/imped
 ance_control.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[57 <./Slike/mesTorque1-eps-converted-to.pdf> <./Slike/mesTorque2-eps-converted
+[56 <./Slike/mesTorque1-eps-converted-to.pdf> <./Slike/mesTorque2-eps-converted
 -to.pdf> <./Slike/mesTorque3-eps-converted-to.pdf> <./Slike/mesTorque4-eps-conv
 erted-to.pdf> <./Slike/mesTorque5-eps-converted-to.pdf> <./Slike/mesTorque6-eps
 -converted-to.pdf> <./Slike/mesTorque7-eps-converted-to.pdf>]
@@ -1842,49 +1930,54 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[58 <./Slike/follow_step_100hz_tq.pdf> <./Slike/follow_step_500hz_tq.pdf>]
-(Slike/follow_ramp_tq.tex
+[57 <./Slike/follow_step_100hz_tq-eps-converted-to.pdf> <./Slike/follow_step_50
+0hz_tq-eps-converted-to.pdf>] (Slike/follow_ramp_tq.tex
 Package epstopdf Info: Source file: <./Slike/follow_ramp_100hz_tq_err.eps>
-(epstopdf)                    date: 2015-08-28 18:50:01
-(epstopdf)                    size: 223126 bytes
+(epstopdf)                    date: 2015-09-01 12:57:19
+(epstopdf)                    size: 221150 bytes
 (epstopdf)             Output file: <./Slike/follow_ramp_100hz_tq_err-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2015-08-31 08:14:53
-(epstopdf)                    size: 16820 bytes
+(epstopdf)                    date: 2015-09-01 12:58:50
+(epstopdf)                    size: 16082 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/follow_ramp_100hz_t
 q_err-eps-converted-to.pdf ./Slike/follow_ramp_100hz_tq_err.eps>
 (epstopdf)             \includegraphics on input line 6.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/follow_ramp_100hz_tq_err-eps-converted-to.pdf, id=686, 491.8375pt x 38
-7.4475pt>
+<./Slike/follow_ramp_100hz_tq_err-eps-converted-to.pdf, id=674, 509.905pt x 185
+.69376pt>
 File: ./Slike/follow_ramp_100hz_tq_err-eps-converted-to.pdf Graphic file (type 
 pdf)
  <use ./Slike/follow_ramp_100hz_tq_err-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/follow_ramp_100hz_tq_err-eps-converted-to.pdf 
 used on input line 6.
-(pdftex.def)             Requested size: 245.91814pt x 193.72327pt.
+(pdftex.def)             Requested size: 254.95187pt x 92.84665pt.
 Package epstopdf Info: Source file: <./Slike/follow_ramp_500hz_tq_err.eps>
-(epstopdf)                    date: 2015-08-28 18:49:59
-(epstopdf)                    size: 401034 bytes
+(epstopdf)                    date: 2015-09-01 12:57:15
+(epstopdf)                    size: 400962 bytes
 (epstopdf)             Output file: <./Slike/follow_ramp_500hz_tq_err-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2015-08-31 08:14:54
-(epstopdf)                    size: 51214 bytes
+(epstopdf)                    date: 2015-09-01 12:58:51
+(epstopdf)                    size: 49667 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/follow_ramp_500hz_t
 q_err-eps-converted-to.pdf ./Slike/follow_ramp_500hz_tq_err.eps>
 (epstopdf)             \includegraphics on input line 10.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/follow_ramp_500hz_tq_err-eps-converted-to.pdf, id=687, 488.82625pt x 3
-87.4475pt>
+<./Slike/follow_ramp_500hz_tq_err-eps-converted-to.pdf, id=675, 508.90125pt x 1
+85.69376pt>
 File: ./Slike/follow_ramp_500hz_tq_err-eps-converted-to.pdf Graphic file (type 
 pdf)
  <use ./Slike/follow_ramp_500hz_tq_err-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/follow_ramp_500hz_tq_err-eps-converted-to.pdf 
 used on input line 10.
-(pdftex.def)             Requested size: 244.41252pt x 193.72327pt.
+(pdftex.def)             Requested size: 254.45pt x 92.84665pt.
 )
+
+LaTeX Warning: Reference `fig:follow_ramp_tq' on page 58 undefined on input lin
+e 1158.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1892,88 +1985,89 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[59]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[60 <./Slike/follow_ramp_100hz_tq_err-eps-converted-to.pdf> <./Slike/follow_ram
-p_500hz_tq_err-eps-converted-to.pdf>] (Slike/impedance_step.tex
+[58] (Slike/impedance_step.tex
 Package epstopdf Info: Source file: <./Slike/follow_step_impedance.eps>
-(epstopdf)                    date: 2015-08-31 13:52:46
-(epstopdf)                    size: 131541 bytes
+(epstopdf)                    date: 2015-09-01 09:37:12
+(epstopdf)                    size: 130613 bytes
 (epstopdf)             Output file: <./Slike/follow_step_impedance-eps-converte
 d-to.pdf>
-(epstopdf)                    date: 2015-08-31 13:53:14
-(epstopdf)                    size: 12214 bytes
+(epstopdf)                    date: 2015-09-01 09:37:41
+(epstopdf)                    size: 12062 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/follow_step_impedan
 ce-eps-converted-to.pdf ./Slike/follow_step_impedance.eps>
 (epstopdf)             \includegraphics on input line 3.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/follow_step_impedance-eps-converted-to.pdf, id=713, 489.83pt x 390.458
-76pt>
+<./Slike/follow_step_impedance-eps-converted-to.pdf, id=679, 511.9125pt x 193.7
+2375pt>
 File: ./Slike/follow_step_impedance-eps-converted-to.pdf Graphic file (type pdf
 )
  <use ./Slike/follow_step_impedance-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/follow_step_impedance-eps-converted-to.pdf use
 d on input line 3.
-(pdftex.def)             Requested size: 244.9144pt x 195.2289pt.
+(pdftex.def)             Requested size: 255.95563pt x 96.86163pt.
 )
-(Slike/follow_step_vel_zoom.tex
-<./Slike/follow_step_vel_zoom.pdf, id=714, 614.295pt x 794.97pt>
-File: ./Slike/follow_step_vel_zoom.pdf Graphic file (type pdf)
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
 
-<use ./Slike/follow_step_vel_zoom.pdf>
-Package pdftex.def Info: ./Slike/follow_step_vel_zoom.pdf used on input line 3.
+[59 <./Slike/follow_ramp_100hz_tq_err-eps-converted-to.pdf> <./Slike/follow_ram
+p_500hz_tq_err-eps-converted-to.pdf>] (Slike/follow_step_vel_zoom.tex
+Package epstopdf Info: Source file: <./Slike/follow_step_vel_zoom.eps>
+(epstopdf)                    date: 2015-09-01 12:58:15
+(epstopdf)                    size: 100184 bytes
+(epstopdf)             Output file: <./Slike/follow_step_vel_zoom-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2015-09-01 12:58:51
+(epstopdf)                    size: 5564 bytes
+(epstopdf)             Command: <epstopdf --outfile=./Slike/follow_step_vel_zoo
+m-eps-converted-to.pdf ./Slike/follow_step_vel_zoom.eps>
+(epstopdf)             \includegraphics on input line 3.
+Package epstopdf Info: Output file is already uptodate.
 
-(pdftex.def)             Requested size: 307.14674pt x 212.54158pt.
+<./Slike/follow_step_vel_zoom-eps-converted-to.pdf, id=702, 509.905pt x 194.727
+5pt>
+File: ./Slike/follow_step_vel_zoom-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use ./Slike/follow_step_vel_zoom-eps-converted-to.pdf>
+Package pdftex.def Info: ./Slike/follow_step_vel_zoom-eps-converted-to.pdf used
+ on input line 3.
+(pdftex.def)             Requested size: 254.95187pt x 97.3635pt.
 )
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[61 <./Slike/follow_step_impedance-eps-converted-to.pdf>]
-Underfull \vbox (badness 1728) has occurred while \output is active []
-
-
+[60 <./Slike/follow_step_impedance-eps-converted-to.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[62 <./Slike/follow_step_vel_zoom.pdf>]
+[61 <./Slike/follow_step_vel_zoom-eps-converted-to.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[63]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[64
+[62
 
 ]
   6.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65]
+ [63]
 (magistrska_timotej_gaspar.bbl
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[66]
+[64]
 Overfull \hbox (17.50568pt too wide) in paragraph at lines 13--16
 []\OT1/cmr/m/n/12 ``ISO 8373:2012.'' Do-se-gljivo: https://www.iso.org/obp/ui/#
 iso:std:iso:8373:ed-
  []
 
-[67
+[65
 
 ]
 Underfull \hbox (badness 7740) in paragraph at lines 89--92
@@ -1992,33 +2086,33 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[68])
+[66])
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[69]
+[67]
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[68
+
+] [69]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [70
 
-] [71]
+]
+  A.
+[71]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [72
-
-]
-  A.
-[73]
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[74
 
 ]
   B.
@@ -2035,20 +2129,20 @@ converted-to.pdf ./Slike/simulink-pa-10.eps>
 (epstopdf)             \includegraphics on input line 3.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/simulink-pa-10-eps-converted-to.pdf, id=767, 597.23125pt x 845.1575pt>
+<./Slike/simulink-pa-10-eps-converted-to.pdf, id=756, 597.23125pt x 845.1575pt>
 File: ./Slike/simulink-pa-10-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Slike/simulink-pa-10-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/simulink-pa-10-eps-converted-to.pdf used on in
 put line 3.
 (pdftex.def)             Requested size: 298.61488pt x 422.57771pt.
-) [75]
+) [73]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[76 <./Slike/simulink-pa-10-eps-converted-to.pdf>]
+[74 <./Slike/simulink-pa-10-eps-converted-to.pdf>]
   C.
-[77
+[75
 
 ] (magistrska_timotej_gaspar.aux)
 
@@ -2056,10 +2150,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19525 strings out of 493671
- 382757 string characters out of 3145458
- 501760 words of memory out of 3000000
- 22281 multiletter control sequences out of 15000+200000
+ 19527 strings out of 493671
+ 383142 string characters out of 3145458
+ 501818 words of memory out of 3000000
+ 22283 multiletter control sequences out of 15000+200000
  16641 words of font info for 62 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  55i,13n,67p,3304b,722s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2079,9 +2173,9 @@ rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
 /type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (91 pages, 6196615 bytes).
+Output written on magistrska_timotej_gaspar.pdf (89 pages, 6061342 bytes).
 PDF statistics:
- 838 PDF objects out of 1000 (max. 8388607)
+ 826 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  239 words of extra memory for PDF output out of 10000 (max. 10000000)
 

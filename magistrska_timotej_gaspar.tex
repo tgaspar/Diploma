@@ -45,8 +45,9 @@
 
 %*************************** ZAHVALA ************************************
 \zahvala 
-%Zahvalil se bi rad staršem za popolno podporo pri študiju, bratu, ker me je motiviral èeprav tega ni vedel ter partnerki, ker je vedela kaj je treba reèi v katerem trenutku.
-%Zahvalil bi se tudi somentorju Leonu Žlajpahu, ker mi je s svojimi izkušnjami in mentorstvom ogromno pomagal. 
+
+Zahvala gre somentorju Leonu Žlajpahu za pomoè z iskušnjami, znanjem ter dobrimi nasveti.
+Zahvalil se bi rad staršem za popolno podporo pri študiju, bratu, ker me je motiviral èeprav tega ni vedel ter partnerki, ker je vedela katere besede izreèi v katerem trenutku.
 
 
 %*************************** VSEBINA *************************************
@@ -97,7 +98,7 @@ regulirni signal & $u$  & - & - \\
 
 
 
-  \hline
+\hline
 \end{tabular}
 %\end{footnotesize}
   \caption{Velièine in simboli}
@@ -118,11 +119,11 @@ simbol uporabljen.
 %********************* POVZETEK V SLOVENŠÈINI ****************************
 \povzetek
 
-V delu je predstavljen namensko razvit strežnik, ki omogoèa krmiljenje robota Mitsubishi PA-10 preko Ethernet omrežja s pošiljanjem UDP paketov. Strežnik deluje kot posrednik med UDP klientom ter ARCNET krmilnikom servo motorjev robota PA-10. Strežnik deluje v realnem èasu in s frekvenco cikla 500 Hz. Strežnik omogoèa krmiljenje robota preko hitrostnega ali navornega internega regulatorja kar daje uporabnikom možnost, da lahko implementirajo razliène strategije vodenja.
+V delu je predstavljen namensko razvit strežnik, ki omogoèa krmiljenje robota Mitsubishi PA-10 preko Ethernet omrežja s pošiljanjem UDP paketov. Strežnik deluje kot posrednik med UDP klientom ter ARCNET krmilnikom servo motorjev robota PA-10. Strežnik deluje v realnem èasu in s frekvenco cikla 500 Hz. Strežnik omogoèa krmiljenje robota preko hitrostnega ali navornega internega regulatorja, kar daje uporabnikom možnost, da lahko implementirajo razliène strategije vodenja.
 
-V delu je predstavljena uporaba razliènih strategij vodenja robotov. V hitrostnem ter navornem naèinu smo opravili poskuse vodenja v zunanjih ter notranjih koordinatah. Dodatno se je še ugotovilo možnosti vodenje robota v kontaktu z okolico. Poskusi so pokazali, da hitrostno vodenje preko strežnika deluje dobro, saj ni tako odvisno od dinamiènih parametrov robota. Navorno vodenje pa je zasnovano na osnovi dinamiènega modela. Ker smo pri realizaciji razliènih naèinov vodenja po navorih uporabili verjetno nenatanène parametre dinamiènega modela, rezultati v primeru uporabe navornega vodenja niso najboljši.
+V delu je predstavljena uporaba razliènih strategij vodenja robotov. V hitrostnem ter navornem naèinu smo opravili poskuse vodenja v zunanjih ter notranjih koordinatah. Dodatno se je še ugotovilo možnosti vodenja robota v kontaktu z okolico. Poskusi so pokazali, da hitrostno vodenje preko strežnika deluje dobro, saj ni tako odvisno od dinamiènih parametrov robota. Navorno vodenje pa je zasnovano na osnovi dinamiènega modela. Ker smo pri realizaciji razliènih naèinov vodenja po navorih uporabili verjetno nenatanène parametre dinamiènega modela, rezultati v primeru uporabe navornega vodenja niso najboljši.
 
-Vodenje na višjem nivoju smo realizirali v okolju \matsim. Razvili smo veè namenskih blokov, ki omogoèajo enostavno implementacijo algoritmov vodenja in povezave z razvitim strežnikom. 
+Vodenje na višjem nivoju smo realizirali v okolju \matsim. Razvili smo \simulink blok za povezovanje z razvitim stržnikom, kar daje bodoèim uporabnikom možnost enostavnega implementiranja algoritmov vodenja.
 
 \kljucnebesede PA-10, inverzna kinematika, inverzna dinamika, vodenje robotov, redundantni mehanizem, impedanèno vodenje, admitanèno vodenje, ARCNET-UDP strežnik
 
@@ -135,7 +136,7 @@ servo controller of the PA-10 robot. The server works in real time with sample f
 
 Different control strateges for robot control were presented. We made experiments in velocities and toqrque modes for joint and task space controllers. We also experimented on robot control in contact with enviroment. The experiments showed better resoults in velocity mode as the control is not dependent on dynamic parameters. The toqrue control was implemented with the use dynamic model. The absensce of precise dynamic model parameters lead to unprecise responses in torque mode control.
 
-Higher level control was developed with \matsim program. We developed different \simulink blocks which allow easy implementation of different control strategies and connection with the developed control server.
+Higher level control was developed with \matsim program. We developed a \simulink block for communication with the developed server to allow future user easier use.
 
 \keywords PA-10, inverse kinematics, inverse dynamics, robot control, redundant mechanisms, impendance control, admitance control, ARCNET-UDP server 
 
@@ -145,7 +146,7 @@ Higher level control was developed with \matsim program. We developed different 
 
 Robot je po ISO 8373:2012 standardu definiran kot mehanizem programirljiv v dveh ali veè oseh z neko stopnjo avtonomije, ki se premika znotraj njegovega okolja za izpolnjevanje zadanih nalog \cite{iso_robotics}, robotika pa kot znanost in veda, ki preuèuje naèrtovanje, izgradnjo in aplikacijo robotov. Prodaja industrijskih robotov se je v zadnjih 15 letih poveèala za kar 250\% in statistika pravi, da so leta 2014 zabeležili rekordno prodajo robotov z 200.000 prodanimi enotami. Ker sta znanost in industrija tesno povezani lahko trdimo, da je tudi raziskovanje na podroèju robotike v porastu.
 
-Vendar pa se je pri vsakem novem robotu potrebno vrniti na osnovno nalogo: vodenje vrha robota. Dandanes robotski imajo manipulatorji v sklepih elektromotorje, ki jih lahko vodimo na dva naèina, hitrostno ter navorno. Prvi naèin predvideva poznavanje le kinematiènega modela, drugi pa veleva poznavanje tudi dinamiènega modela robota. Oba naèina vodenja sta bila v preteklosti obsežno raziskana in opisana. V tem delu bomo predstavili vodenje robota po prostoru naloge preko hitrosti in navorov. Pregledali bomo tudi, kako voditi robota v stiku z okolico s senzorjem sil na vrhu robota.
+Vendar pa se je pri vsakem novem robotu potrebno vrniti na osnovno nalogo: vodenje vrha robota. Dandanes imajo robotski manipulatorji v sklepih elektromotorje, ki jih lahko vodimo na dva naèina, hitrostno ter navorno. Prvi naèin predvideva poznavanje le kinematiènega modela, drugi pa veleva poznavanje tudi dinamiènega modela robota. Oba naèina vodenja sta bila v preteklosti obsežno raziskana in opisana. V tem delu bomo predstavili vodenje robota po prostoru naloge preko hitrosti in navorov. Pregledali bomo tudi, kako voditi robota v stiku z okolico s senzorjem sil na vrhu robota.
 
 Robotski manipulator PA-10 ima sedem sklepov zato ga uvršèamo med redundantne robote. Prenosnost, enostavno rokovanje ter odprtost krmilnika so razlogi, da je robot zelo razširjen v raziskovalnih institucijah. Ker pa je podjetje prenehalo s prodajo ter podporo tega robota, so raziskovalci prepušèeni samostojnemu razvijanju programske opreme za vodenje robota. 
 
@@ -157,9 +158,9 @@ Za krmiljenje robota PA-10 smo razvili novo programsko za komunikacijo s krmilni
 %*********************** PA10 ********************************
 \chapter{Robotski manipulator PA-10} \label{chap:pa10}
 
-Podjetje Mitsubishi Heavy Industries je leta 1992 izdelalo prvega katalogiranega industrijskega redundatnega robota \cite{mhi_pa10}. Podjetje je robota poimenovalo Portable General-purpose Intelligent Arm PA-10, krajše PA-10. Gre za serijskega robota s sedmimi stopnjami prostosti (slika \ref{fig:pa10drawing}). Prvi trije sklepi so oznaèeni kot ramenski sklepi (shoulder), S1, S2, S3. Naslednja dva sta oznaèena kot komolèni sklepi (elbow), E1, E2. Zadnja dva sklepa pa sta oznaèena kot zapestna (wrist), W1, W2. Glede na zgradbo se ga lahko uvrsti v tako imenovane antropomorfne robote \cite{craig_robintro}.
+Podjetje Mitsubishi Heavy Industries je leta 1992 izdelalo prvega katalogiranega industrijskega redundatnega robota \cite{mhi_pa10}. Podjetje je robota poimenovalo Portable General-purpose Intelligent Arm PA-10, krajše PA-10. Gre za serijskega robota s sedmimi stopnjami prostosti (slika \ref{fig:pa10drawing}). Prvi trije sklepi so oznaèeni kot ramenski sklepi (ang. \textit{shoulder}), S1, S2, S3. Naslednja dva sta oznaèena kot komolèni sklepi (ang. \textit{elbow}), E1, E2. Zadnja dva sklepa pa sta oznaèena kot zapestna (ang. \textit{wrist}), W1, W2. Glede na zgradbo se ga uvrsti v tako imenovane antropomorfne robote \cite{craig_robintro}.
 %Izraz antropomorfnost izhaja iz dveh grških besed \textit{antropo} - èlovek, \textit{morphe} - oblika. 
-Znaèilnost takih robotov je spretnost saj so vsi sklepi rotacijski \cite{siciliano_robot}.
+Znaèilnost takih robotov je visoka stopnja spretnosti saj so vsi sklepi rotacijski \cite{siciliano_robot}.
 
 Masa robotske roke PA-10 je 36 kg in ima nosilnost 10 kg. Servo motorji v sklepih se napajajo preko izmeniène napetosti. Prenosi med v sklepih so realizirani s harmoniènimi gonili. Baza robota se lahko pritrdi v katerokoli lego. To pomeni, da se ga lahko fiksira bodisi na tla, na steno ali na strop. Robota PA-10 odlikuje relativno lahka konstrukcija, enostavno rokovanje ter odprtost njegovega krmilnika. Prav ti razlogi so povod, da je mnogo instituciji vzelo tega robota kot eksperimentalni sistem za razvijanje raznih algoritmov vodenja \cite{voung_pa10,aalst_pa10,rodrigo_pa10,petric_nevronska}.
 
@@ -357,7 +358,7 @@ Vektor $\mathbf{g}(\mathbf{q})$ predstavlja navor proizveden v sklepih manipulat
 
 kjer je $\textbf{g}_0 $ vektor gravitacijskega pospeška $\textbf{g}_0 = \begin{bmatrix} 0 & 0 & -9,81\end{bmatrix}^T$. Vektor $\textbf{r}_i$ opisuje mesto težišèa v segmentu, $m_i$ pa opisuje maso segmenta.
 
-Vektor $\mathbf{F}_f$ opisuje vpliv trenja. Vektor zajema tako Coulombovo trenje kot tudi viskozno trenje. Posamezni èleni vektorja, $f_i$ so prispevki trenja v $i$-tem sklepu. Podrobneje bo ta prispevek obravnavan v poglavju \ref{chap:invdyn}.
+Vektor $\mathbf{F}_f$ opisuje vplive trenja. Vektor zajema tako Coulombovo trenje kot tudi viskozno trenje. Posamezni èleni vektorja, $f_i$ so prispevki trenja v $i$-tem sklepu. Podrobneje bo ta prispevek obravnavan v poglavju \ref{chap:invdyn}.
 
 Vektor $\textbf{h}_o$ vsebuje sile in navore, ki delujejo na vrh robota, $\textbf{h}_o = \begin{bmatrix} f_x & f_y & f_x & m_x & m_y & m_z \end{bmatrix}$, kjer prvi trije èleni vektorja opisujejo sile, drugi trije pa navore.
 
@@ -1030,7 +1031,7 @@ Slika \ref{fig:follow_ramp_vel} prikazuje odzive vrha robota pri sledenju trapez
 \input{./Slike/pa10jr3.tex}
 
 \input{./Slike/admitance_control.tex}
-Za admitanèno vodenje robota smo uporabili regulacijski zakon \ref{eq:admitcontrol}. Bloèna shema vodenja je prikazana na \ref{fig:admitance_control}. Robot je pritiskal na leseno površino, ki je bila zaradi varnosti postavljena na tršo spužvo, kot je prikazano na sliki \ref{fig:pa10jr3}. Na ta naèin smo dosegli, da je robot pritiskal na objekt z relativno trdo površino. Ob zaèetku vsakega poskusa je robot vrh robota bil blizu objekta, vendar se ga ni dotikal.
+Za admitanèno vodenje robota smo uporabili regulacijski zakon (\ref{eq:admitcontrol}). Bloèna shema vodenja je prikazana na \ref{fig:admitance_control}. Robot je pritiskal na leseno površino, ki je bila zaradi varnosti postavljena na tršo spužvo, kot je prikazano na sliki \ref{fig:pa10jr3}. Na ta naèin smo dosegli, da je robot pritiskal na objekt z relativno trdo površino. Ob zaèetku vsakega poskusa je robot vrh robota bil blizu objekta, vendar se ga ni dotikal.
 
 Rezultati poskusa za sledenje stopnièasti referenci so prikazani na sliki \ref{fig:admitance_step}. Najprej smo doloèili ojaèanja regulatorja za vodenje z vzorèno frekvenco 500 Hz ter opravili poskus. Poskus smo z enakimi ojaèanji ponovili z vzorèno frekvenco 100 Hz. Na grafih je videti, da je je vodenje pri frekvenci 500 Hz še stabilno pri vodenju s 100 Hz pa veè ne. S tem, da smo ojaèanja postili enaka smo lahko pokazali kako moèno je stabilnost vodenja v kontaktu z okolico odvisna od vzorène frekvence.
 

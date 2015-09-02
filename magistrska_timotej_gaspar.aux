@@ -112,7 +112,7 @@
 \newlabel{fig:linux-arcnetON}{{3.11}{30}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces Zaganjanje stre\v {z}nika na Linux operacijskem sistemu.}}{30}}
 \newlabel{fig:linux-success}{{3.12}{30}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Varnostni ukrepi}{30}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Varnostni ukrepi}{31}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Vodenje robota PA-10}{33}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -133,19 +133,19 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Vodenje v notranjih koordinatah}{37}}
 \newlabel{sec:admit_inner}{{4.2.1}{37}}
 \newlabel{eq:p_reg_q}{{4.16}{37}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Povratna zanka za krmiljenje kota v sklepu}}{38}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Povratna zanka za vodenje kota v sklepu}}{38}}
 \newlabel{fig:qfeedback}{{4.2}{38}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Vodenje v zunanjih koordinatah}{38}}
 \newlabel{sec:inv_kin_x}{{4.2.2}{38}}
 \newlabel{eq:xerr}{{4.18}{38}}
 \citation{mihelj_vodenje}
 \citation{mihelj_vodenje}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Blo\v cna shema krmiljenja referen\v cne lege vrha robota}}{39}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Blo\v cna shema vodenje referen\v cne lege vrha robota}}{39}}
 \newlabel{fig:xfeedback}{{4.3}{39}}
 \newlabel{eq:qtox}{{4.19}{39}}
 \newlabel{eq:qerr}{{4.20}{39}}
 \newlabel{eq:outcontrol}{{4.21}{39}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Krmiljenje z inverzno dinamiko}{39}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Vodenje z inverzno dinamiko}{39}}
 \newlabel{chap:invdyn}{{4.3}{39}}
 \newlabel{eq:tau_dyn}{{4.23}{40}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Vodenje v notranjih koordinatah}{40}}
@@ -185,80 +185,83 @@
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{chap:implementacija}{{5}{47}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Hitrostno krmiljenje}{48}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Odzivi tretjega sklepa na signal stopnice pri razli\v {c}nih oja\v {c}anjih in razli\v {c}nih vzor\v {c}nih \v {c}asu.}}{49}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 100 Hz}}}{49}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 500 Hz}}}{49}}
-\newlabel{fig:follow_step}{{5.1}{49}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Koncept SIMULINK\textsuperscript  {\textregistered }sheme za vodenje v notranjih koordinatah v hitrostnem na\v {c}inu.}}{50}}
-\newlabel{fig:notranje_koordinate_vel}{{5.2}{50}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Vodenje brez kontakta}{50}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Koncept SIMULINK\textsuperscript  {\textregistered }sheme za vodenje v zunanjih koordinatah v hitrostnem na\v {c}inu.}}{50}}
-\newlabel{fig:zunanje_koordinate_vel}{{5.3}{50}}
-\newlabel{eq:outcontrol_ff}{{5.1}{50}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Odziv vrha po \textit  {z} osi na signal rampe pri dveh razli\v {c}nih hitrostih za vzor\v {c}ni \v {c}as 100 Hz in 500 Hz.}}{51}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Sledenje signalu rampe pri vzor\v {c}nem \v {c}asu 100 Hz.}}}{51}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Sledenje signalu rampe pri vzor\v {c}nem \v {c}asu 500 Hz.}}}{51}}
-\newlabel{fig:follow_ramp_vel}{{5.4}{51}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Admitan\v cno vodenje}{51}}
-\citation{mihelj_hapt}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces SIMULINK\textsuperscript  {\textregistered }shemi za vodenje robota PA-10 po prostoru naloge.}}{48}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {SIMULINK\textsuperscript {\textregistered }shema za hitrostne vodenje}}}{48}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {SIMULINK\textsuperscript {\textregistered }shema za navorno vodenje}}}{48}}
+\newlabel{fig:simulink_vel_tq_control}{{5.1}{48}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Hitrostno vodenje}{49}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Vodenje brez kontakta}{49}}
+\newlabel{eq:outcontrol_ff}{{5.1}{49}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Odzivi tretjega sklepa na signal stopnice pri razli\v {c}nih oja\v {c}anjih in razli\v {c}nih vzor\v {c}nih \v {c}asu.}}{50}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 100 Hz}}}{50}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 500 Hz}}}{50}}
+\newlabel{fig:follow_step}{{5.2}{50}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces SIMULINK\textsuperscript  {\textregistered }shema za vodenje v notranjih koordinatah v hitrostnem na\v {c}inu.}}{51}}
+\newlabel{fig:notranje_koordinate_vel}{{5.3}{51}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces SIMULINK\textsuperscript  {\textregistered }shema regulatorja pozicije za vodenje robota v zunanjih koordinatah v hitrostnem na\v {c}inu.}}{51}}
+\newlabel{fig:zunanje_koordinate_vel}{{5.4}{51}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Odziv vrha robota po \textit  {z} osi na signal pozicije trapezne oblike pri dveh razli\v {c}nih kon\v {c}nih hitrostih za vzor\v {c}no frekvenco 100 Hz in 500 Hz pri hitrostnem vodenju.}}{52}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Sledenje pozicijskemu signalu trapezne oblike pri vzor\v {c}ni frekvenci 100 Hz.}}}{52}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Sledenje pozicijskemu signalu trapezne oblike pri vzor\v {c}ni frekvenci 500 Hz.}}}{52}}
+\newlabel{fig:follow_ramp_vel}{{5.5}{52}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Admitan\v cno vodenje}{52}}
 \citation{voung_pa10}
 \citation{aalst_pa10}
 \citation{rodrigo_pa10}
 \citation{petric_nevronska}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Vrh robota PA-10 s pritrjenim senzorjem sil in navorov JR3 v kontaktu z okolico.}}{52}}
-\newlabel{fig:pa10jr3}{{5.5}{52}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Koncept SIMULINK\textsuperscript  {\textregistered }sheme za admitan\v {c}no vodenje po referen\v {c}ni sili.}}{52}}
-\newlabel{fig:admitance_control}{{5.6}{52}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Vrh robota PA-10 s pritrjenim senzorjem sil in navorov JR3 v kontaktu z okolico.}}{53}}
+\newlabel{fig:pa10jr3}{{5.6}{53}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces SIMULINK\textsuperscript  {\textregistered }shema regulatorja sile in pozicije za admitan\v {c}no vodenje.}}{53}}
+\newlabel{fig:admitance_control}{{5.7}{53}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Navorno voodenje}{53}}
 \citation{petric_nevronska}
-\newlabel{fig:admitance_step_100}{{5.7(a)}{53}}
-\newlabel{sub@fig:admitance_step_100}{{(a)}{53}}
-\newlabel{fig:admitance_step_500}{{5.7(b)}{53}}
-\newlabel{sub@fig:admitance_step_500}{{(b)}{53}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Odziv robota pri admitan\v {c}nem vodenju na signal stopnice pri vzor\v {c}nem \v {c}asu 100 Hz in 500 Hz .}}{53}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 100 Hz}}}{53}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 500 Hz}}}{53}}
-\newlabel{fig:admitance_step}{{5.7}{53}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Navorno krmiljenje}{53}}
-\citation{bompos_pa10}
+\newlabel{fig:admitance_step_100}{{5.8(a)}{54}}
+\newlabel{sub@fig:admitance_step_100}{{(a)}{54}}
+\newlabel{fig:admitance_step_500}{{5.8(b)}{54}}
+\newlabel{sub@fig:admitance_step_500}{{(b)}{54}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Odziv robota pri admitan\v {c}nem vodenju na signal stopnice pri vzor\v {c}nem \v {c}asu 100 Hz in 500 Hz .}}{54}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 100 Hz}}}{54}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 500 Hz}}}{54}}
+\newlabel{fig:admitance_step}{{5.8}{54}}
 \newlabel{table:grav_params}{{5.2}{54}}
 \@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Mase segmentov}}{54}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Kompenzacija trenja}{54}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Vodenje brez kontakta}{54}}
-\newlabel{fig:friction_measure_2}{{5.8(b)}{55}}
-\newlabel{sub@fig:friction_measure_2}{{(b)}{55}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Izmerjeni vplivi trenja ter aproksimiran model.}}{55}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Prvi sklep}}}{55}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Drugi sklep}}}{55}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Tretji sklep}}}{55}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\v {C}etrti sklep}}}{55}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Peti sklep}}}{55}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\v {S}esti sklep}}}{55}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {Sedmi sklep}}}{55}}
-\newlabel{fig:friction_measure}{{5.8}{55}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Odzivi tretjega sklepa na signal stopnice pri razli\v {c}nih oja\v {c}anjih in razli\v {c}nih vzor\v {c}nih \v {c}asu.}}{56}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 100 Hz}}}{56}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 500 Hz}}}{56}}
-\newlabel{fig:torque_follow_step}{{5.9}{56}}
-\newlabel{table:friction_params}{{5.2.1}{57}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Identificirani parametri trenja}}{57}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Koncept SIMULINK\textsuperscript  {\textregistered }sheme za vodenje v notranjih koordinatah v navornem na\v {c}inu z dodanim regulatorjem po hitrosti za bolj natan\v {c}no pozicioniranje pred poskusom.}}{57}}
-\newlabel{fig:notranje_koordinate_tq}{{5.10}{57}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Odziv vrha po \textit  {x} osi na signal sinusne oblike s spreminjajo\v {c}o se frekvenco za vzor\v {c}ni \v {c}as 100 Hz in 500 Hz.}}{58}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Sledenje sinusnemu signalu pri vzor\v {c}nem \v {c}asu 100 Hz.}}}{58}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Sledenje sinusnemu signalu pri vzor\v {c}nem \v {c}asu 500 Hz.}}}{58}}
-\newlabel{fig:torque_follow_sine}{{5.11}{58}}
+\citation{bompos_pa10}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Kompenzacija trenja}{55}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Vodenje brez kontakta}{55}}
+\newlabel{fig:friction_measure_2}{{5.9(b)}{56}}
+\newlabel{sub@fig:friction_measure_2}{{(b)}{56}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Izmerjeni vplivi trenja ter aproksimiran model.}}{56}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Prvi sklep}}}{56}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Drugi sklep}}}{56}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Tretji sklep}}}{56}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\v {C}etrti sklep}}}{56}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Peti sklep}}}{56}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\v {S}esti sklep}}}{56}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {Sedmi sklep}}}{56}}
+\newlabel{fig:friction_measure}{{5.9}{56}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Odzivi tretjega sklepa na signal stopnice pri razli\v {c}nih oja\v {c}anjih in razli\v {c}nih vzor\v {c}nih \v {c}asu.}}{57}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 100 Hz}}}{57}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Odziv na stopnico pri vzor\v {c}nem \v {c}asu 500 Hz}}}{57}}
+\newlabel{fig:torque_follow_step}{{5.10}{57}}
+\newlabel{table:friction_params}{{5.2.1}{58}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Identificirani parametri trenja}}{58}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Koncept SIMULINK\textsuperscript  {\textregistered }sheme za vodenje v notranjih koordinatah v navornem na\v {c}inu z dodanim regulatorjem po hitrosti za bolj natan\v {c}no pozicioniranje pred poskusom.}}{58}}
+\newlabel{fig:notranje_koordinate_tq}{{5.11}{58}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Odziv vrha robota po \textit  {z} osi na signal pozicije trapezne oblike pri dveh razli\v {c}nih kon\"A\v Tnih hitrostih za vzor\v {c}no frekvenco pri navornem vodenju.}}{59}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Sledenje pozicijskemu signalu trapezne oblike pri vzor\v {c}ni frekvenci 100 Hz.}}}{59}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Sledenje pozicijskemu signalu trapezne oblike pri vzor\v {c}ni frekvenci 500 Hz.}}}{59}}
+\newlabel{fig:follow_ramp_tq}{{5.12}{59}}
 \citation{simulink_kalman}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Koncept SIMULINK\textsuperscript  {\textregistered }sheme za vodenje v zunanjih koordinatah v navornem na\v {c}inu z dodanim regulatorjem po hitrosti za bolj natan\v {c}no pozicioniranje pred poskusom.}}{59}}
-\newlabel{fig:zunanje_koordinate_tq}{{5.12}{59}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Impedan\v cno vodenje}{59}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Koncept SIMULINK\textsuperscript  {\textregistered }sheme za impedan\v {c}no vodenje po referen\v {c}ni sili z dodanim regulatorjem po hitrosti za bolj natan\v {c}no pozicioniranje pred poskusom.}}{60}}
-\newlabel{fig:impedance_control_sim}{{5.13}{60}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces Odziv na signal stopnice pri impedan\v {c}nem vodenju.}}{60}}
-\newlabel{fig:follow_step_impedance}{{5.14}{60}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Analiza rezultatov}{60}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces Odziv sklepa na stopni\v {c}asto referenco.}}{61}}
-\newlabel{fig:follow_step_vel_zoom}{{5.15}{61}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces SIMULINK\textsuperscript  {\textregistered }shema regulatorja pozicije v navornem na\v {c}inu.}}{60}}
+\newlabel{fig:zunanje_koordinate_tq}{{5.13}{60}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Impedan\v cno vodenje}{60}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces SIMULINK\textsuperscript  {\textregistered }shema regulatorja sile in pozicije za impedan\v {c}no vodenje.}}{61}}
+\newlabel{fig:impedance_control_sim}{{5.14}{61}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces Odziv na signal stopnice pri impedan\v {c}nem vodenju.}}{61}}
+\newlabel{fig:follow_step_impedance}{{5.15}{61}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Analiza rezultatov}{61}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces Odziv sklepa na stopni\v {c}asto referenco.}}{62}}
+\newlabel{fig:follow_step_vel_zoom}{{5.16}{62}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {6}Zaklju\v cek}{63}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -286,19 +289,17 @@
 \bibcite{mihelj_vodenje}{19}
 \bibcite{bompos_pa10}{20}
 \bibcite{simulink_kalman}{21}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Dodatek 1}{71}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Avtomatska identifikacija parametrov te\v ze prijemala}{71}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{appendix:jr3-calibration}{{A}{71}}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces Uporabni\v {s}ki vmesnik v okolju MATLAB\textsuperscript  {\textregistered }za identifikacijo parametrov prijemala.}}{72}}
-\newlabel{fig:jr3_calibration}{{A.1}{72}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Dodatek 2}{73}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces Uporabni\v {s}ki vmesnik v okolju MATLAB\textsuperscript  {\textregistered }za identifikacijo parametrov prijemala.}}{71}}
+\newlabel{fig:jr3_calibration}{{A.1}{71}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}SIMULINK\textsuperscript  {\textregistered }blok PA-10 CONTROL}{73}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{appendix:simulink-block}{{B}{73}}
-\@writefile{lof}{\contentsline {figure}{\numberline {B.1}{\ignorespaces SIMULINK\textsuperscript  {\textregistered }blok PA-10 CONTROL za vodenje robota PA-10.}}{74}}
-\newlabel{fig:simulink-pa-10}{{B.1}{74}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {C}Dodatek 3}{75}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{dodatekC}{{C}{75}}
+\@writefile{lof}{\contentsline {figure}{\numberline {B.1}{\ignorespaces SIMULINK\textsuperscript  {\textregistered }blok PA-10 CONTROL za vodenje robota PA-10.}}{73}}
+\newlabel{fig:simulink-pa-10}{{B.1}{73}}
+\@writefile{lof}{\contentsline {figure}{\numberline {B.2}{\ignorespaces Vsebina SIMULINK\textsuperscript  {\textregistered }bloka PA-10 CONTROL za vodenje robota PA-10.}}{74}}
+\newlabel{fig:simulink-pa-10-inside}{{B.2}{74}}

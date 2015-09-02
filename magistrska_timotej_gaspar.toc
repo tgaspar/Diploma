@@ -11,28 +11,27 @@
 \contentsline {section}{\numberline {3.4}Stre\v znik}{25}
 \contentsline {subsection}{\numberline {3.4.1}Delovanje programa}{26}
 \contentsline {subsection}{\numberline {3.4.2}Uporaba programa}{28}
-\contentsline {subsection}{\numberline {3.4.3}Varnostni ukrepi}{30}
+\contentsline {subsection}{\numberline {3.4.3}Varnostni ukrepi}{31}
 \contentsline {chapter}{\numberline {4}Vodenje robota PA-10}{33}
 \contentsline {section}{\numberline {4.1}Kompenzacija mase prijemala ter merilnega odmika na senzorju sile JR3}{33}
 \contentsline {section}{\numberline {4.2}Vodenje preko inverzne kinematike}{37}
 \contentsline {subsection}{\numberline {4.2.1}Vodenje v notranjih koordinatah}{37}
 \contentsline {subsection}{\numberline {4.2.2}Vodenje v zunanjih koordinatah}{38}
-\contentsline {section}{\numberline {4.3}Krmiljenje z inverzno dinamiko}{39}
+\contentsline {section}{\numberline {4.3}Vodenje z inverzno dinamiko}{39}
 \contentsline {subsection}{\numberline {4.3.1}Vodenje v notranjih koordinatah}{40}
 \contentsline {subsection}{\numberline {4.3.2}Vodenje v zunanjih koordinatah}{42}
 \contentsline {section}{\numberline {4.4}Interakcija z okoljem}{43}
 \contentsline {subsection}{\numberline {4.4.1}Admitan\v cno vodenje}{43}
 \contentsline {subsection}{\numberline {4.4.2}Impedan\v cno vodenje}{45}
 \contentsline {chapter}{\numberline {5}Implementacija}{47}
-\contentsline {section}{\numberline {5.1}Hitrostno krmiljenje}{48}
-\contentsline {subsection}{\numberline {5.1.1}Vodenje brez kontakta}{50}
-\contentsline {subsection}{\numberline {5.1.2}Admitan\v cno vodenje}{51}
-\contentsline {section}{\numberline {5.2}Navorno krmiljenje}{53}
-\contentsline {subsection}{\numberline {5.2.1}Kompenzacija trenja}{54}
-\contentsline {subsection}{\numberline {5.2.2}Vodenje brez kontakta}{54}
-\contentsline {subsection}{\numberline {5.2.3}Impedan\v cno vodenje}{59}
-\contentsline {section}{\numberline {5.3}Analiza rezultatov}{60}
+\contentsline {section}{\numberline {5.1}Hitrostno vodenje}{49}
+\contentsline {subsection}{\numberline {5.1.1}Vodenje brez kontakta}{49}
+\contentsline {subsection}{\numberline {5.1.2}Admitan\v cno vodenje}{52}
+\contentsline {section}{\numberline {5.2}Navorno voodenje}{53}
+\contentsline {subsection}{\numberline {5.2.1}Kompenzacija trenja}{55}
+\contentsline {subsection}{\numberline {5.2.2}Vodenje brez kontakta}{55}
+\contentsline {subsection}{\numberline {5.2.3}Impedan\v cno vodenje}{60}
+\contentsline {section}{\numberline {5.3}Analiza rezultatov}{61}
 \contentsline {chapter}{\numberline {6}Zaklju\v cek}{63}
-\contentsline {chapter}{\numberline {A}Dodatek 1}{71}
-\contentsline {chapter}{\numberline {B}Dodatek 2}{73}
-\contentsline {chapter}{\numberline {C}Dodatek 3}{75}
+\contentsline {chapter}{\numberline {A}Avtomatska identifikacija parametrov te\v ze prijemala}{71}
+\contentsline {chapter}{\numberline {B}SIMULINK\textsuperscript {\textregistered }blok PA-10 CONTROL}{73}

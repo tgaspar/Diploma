@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  2 SEP 2015 15:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  2 SEP 2015 17:29
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -872,23 +872,25 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 ] (magistrska_timotej_gaspar.lof)
 \tf@lof=\write8
 
-Overfull \hbox (119.97446pt too wide) in paragraph at lines 69--93
+Overfull \hbox (20.76576pt too wide) in paragraph at lines 69--103
  [][] 
  []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 [13]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[14
-
-] (magistrska_timotej_gaspar.lof)
+[14] (magistrska_timotej_gaspar.lof)
 \tf@lof=\write9
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
+
 
 ]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -919,7 +921,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [6]
   2.
 (Slike/pa10-drawing.tex
-<./Slike/pa10-drawing.png, id=78, 517.935pt x 595.47469pt>
+<./Slike/pa10-drawing.png, id=79, 517.935pt x 595.47469pt>
 File: ./Slike/pa10-drawing.png Graphic file (type png)
 
 <use ./Slike/pa10-drawing.png>
@@ -939,7 +941,7 @@ verted-to.pdf ./Slike/d-h_drawing.eps>
 (epstopdf)             \includegraphics on input line 3.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/d-h_drawing-eps-converted-to.pdf, id=83, 558.085pt x 328.22626pt>
+<./Slike/d-h_drawing-eps-converted-to.pdf, id=84, 558.085pt x 328.22626pt>
 File: ./Slike/d-h_drawing-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/d-h_drawing-eps-converted-to.pdf>
@@ -948,7 +950,7 @@ Package pdftex.def Info: ./Slike/d-h_drawing-eps-converted-to.pdf used on input
 (pdftex.def)             Requested size: 418.56273pt x 246.16908pt.
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 179.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 189.
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -985,7 +987,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [12]
-Underfull \hbox (badness 1515) in paragraph at lines 352--353
+Underfull \hbox (badness 1515) in paragraph at lines 362--363
 []\OT1/cmr/m/n/12 Vektor $[][]$ vse-buje sile in na-vore, ki de-lu-jejo na vrh 
 ro-bota, $[][] =$
  []
@@ -1099,14 +1101,14 @@ Package epstopdf Info: Source file: <./Slike/little-arrow.eps>
 (epstopdf)                    size: 2568 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/little-arrow-eps-co
 nverted-to.pdf ./Slike/little-arrow.eps>
-(epstopdf)             \includegraphics on input line 448.
+(epstopdf)             \includegraphics on input line 458.
 Package epstopdf Info: Output file is already uptodate.
 <./Slike/little-arrow-eps-converted-to.pdf, id=147, 21.07875pt x 20.075pt>
 File: ./Slike/little-arrow-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/little-arrow-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/little-arrow-eps-converted-to.pdf used on inpu
-t line 448.
+t line 458.
 (pdftex.def)             Requested size: 12.64732pt x 12.04507pt.
  (Slike/pa10-state.tex
 Package epstopdf Info: Source file: <./Slike/pa10-state.eps>
@@ -2133,7 +2135,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 ]
   B.
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <14.4> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 1112.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 1122.
 
 (Slike/simulink-pa-10.tex
 Package epstopdf Info: Source file: <./Slike/simulink-pa-10.eps>
@@ -2166,7 +2168,7 @@ Package pdftex.def Info: ./Slike/simulink-pa-10-inside.png used on input line 3
 (pdftex.def)             Requested size: 282.45024pt x 78.74278pt.
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/sl' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1150.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1160.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -2177,7 +2179,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 Here is how much of TeX's memory you used:
  19578 strings out of 493671
  384570 string characters out of 3145458
- 501854 words of memory out of 3000000
+ 501853 words of memory out of 3000000
  22316 multiletter control sequences out of 15000+200000
  18926 words of font info for 70 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
@@ -2204,7 +2206,7 @@ es/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/
 cm/cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (88 pages, 6585371 bytes).
+Output written on magistrska_timotej_gaspar.pdf (88 pages, 6585880 bytes).
 PDF statistics:
  679 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

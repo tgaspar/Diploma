@@ -1,21 +1,21 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  2 SEP 2015 23:39
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.1.22)  6 SEP 2015 15:31
 entering extended mode
 **magistrska_timotej_gaspar.tex
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\magistrska_timotej_gaspar.tex
+(C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
 ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
  lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\book.cls"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\book.cls"
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\bk12.clo"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\bk12.clo"
 File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -31,125 +31,115 @@ File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\cp1250.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\cp1250.def"
 File: cp1250.def 2008/03/30 v1.1d Input encoding file
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\frontendlayer\tikz.sty"
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgf.sty"
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\utilities\pgfrcs.sty"
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common.te
-x"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\frontendlayer\tikz.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgf.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgfrcs.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common.tex"
 \pgfutil@everybye=\toks16
-\pgfutil@tempdima=\dimen103
-\pgfutil@tempdimb=\dimen104
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common-li
-sts.tex"))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-latex.def
-"
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-latex.def"
 \pgfutil@abb=\box26
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\utilities\pgfrcs.code.tex"
-Package: pgfrcs 2015/08/07 v3.0.1 (rcs-revision 1.31)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfrcs.code.tex"
+Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
 ))
-Package: pgf 2015/08/07 v3.0.1 (rcs-revision 1.15)
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgfcore.sty"
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgfcore.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count88
 ))
-\Gin@req@height=\dimen105
-\Gin@req@width=\dimen106
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\systemlayer\pgfsys.sty"
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys.code.tex
-"
-Package: pgfsys 2014/07/09 v3.0.1 (rcs-revision 1.48)
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex
-"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\systemlayer\pgfsys.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys.code.tex"
+Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex"
 \pgfkeys@pathtoks=\toks18
 \pgfkeys@temptoks=\toks19
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeysfiltered.c
-ode.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeysfiltered.code.te
+x"
 \pgfkeys@tmptoks=\toks20
 ))
-\pgf@x=\dimen107
-\pgf@y=\dimen108
-\pgf@xa=\dimen109
-\pgf@ya=\dimen110
-\pgf@xb=\dimen111
-\pgf@yb=\dimen112
-\pgf@xc=\dimen113
-\pgf@yc=\dimen114
+\pgf@x=\dimen105
+\pgf@y=\dimen106
+\pgf@xa=\dimen107
+\pgf@ya=\dimen108
+\pgf@xb=\dimen109
+\pgf@yb=\dimen110
+\pgf@xc=\dimen111
+\pgf@yc=\dimen112
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
 \c@pgf@counta=\count89
 \c@pgf@countb=\count90
 \c@pgf@countc=\count91
 \c@pgf@countd=\count92
-\t@pgf@toka=\toks21
-\t@pgf@tokb=\toks22
-\t@pgf@tokc=\toks23
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgf.cfg"
+ ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgf.cfg"
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
-Driver file for pgf: pgfsys-pdftex.def
+Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys-pdftex.d
-ef"
-File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys-pdftex.def"
+File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys-common-p
-df.def"
-File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
+"
+File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 )))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsyssoftpath.
-code.tex"
-File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.t
+ex"
+File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
 \pgfsyssoftpath@smallbuffer@items=\count93
 \pgfsyssoftpath@bigbuffer@items=\count94
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsysprotocol.
-code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsysprotocol.code.t
+ex"
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
-)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+)) ("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -163,217 +153,197 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcore.code.tex
-"
-Package: pgfcore 2010/04/11 v3.0.1 (rcs-revision 1.7)
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex"
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathcalc.code.tex"
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathutil.code.tex")
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathparser.code.tex
-"
-\pgfmath@dimen=\dimen115
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcore.code.tex"
+Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathcalc.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathutil.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathparser.code.tex"
+\pgfmath@dimen=\dimen113
 \pgfmath@count=\count95
 \pgfmath@box=\box27
-\pgfmath@toks=\toks24
-\pgfmath@stack@operand=\toks25
-\pgfmath@stack@operation=\toks26
+\pgfmath@toks=\toks21
+\pgfmath@stack@operand=\toks22
+\pgfmath@stack@operation=\toks23
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.code.
-tex"
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.basic
-.code.tex")
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.trigo
-nometric.code.tex")
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.rando
-m.code.tex")
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.compa
-rison.code.tex")
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.base.
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.basic.code.
+tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.trigonometr
+ic.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.random.code
+.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.comparison.
 code.tex")
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.round
-.code.tex")
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.misc.
-code.tex")
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.integ
-erarithmetics.code.tex")))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfloat.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.base.code.t
+ex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.round.code.
+tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.misc.code.t
+ex"))) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfloat.code.tex
+"
 \c@pgfmathroundto@lastzeros=\count96
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepoints.co
-de.tex"
-File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
-\pgf@picminx=\dimen116
-\pgf@picmaxx=\dimen117
-\pgf@picminy=\dimen118
-\pgf@picmaxy=\dimen119
-\pgf@pathminx=\dimen120
-\pgf@pathmaxx=\dimen121
-\pgf@pathminy=\dimen122
-\pgf@pathmaxy=\dimen123
-\pgf@xx=\dimen124
-\pgf@xy=\dimen125
-\pgf@yx=\dimen126
-\pgf@yy=\dimen127
-\pgf@zx=\dimen128
-\pgf@zy=\dimen129
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
+"
+File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
+\pgf@picminx=\dimen114
+\pgf@picmaxx=\dimen115
+\pgf@picminy=\dimen116
+\pgf@picmaxy=\dimen117
+\pgf@pathminx=\dimen118
+\pgf@pathmaxx=\dimen119
+\pgf@pathminy=\dimen120
+\pgf@pathmaxy=\dimen121
+\pgf@xx=\dimen122
+\pgf@xy=\dimen123
+\pgf@yx=\dimen124
+\pgf@yy=\dimen125
+\pgf@zx=\dimen126
+\pgf@zy=\dimen127
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathconst
-ruct.code.tex"
-File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
-\pgf@path@lastx=\dimen130
-\pgf@path@lasty=\dimen131
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathconstruct.c
+ode.tex"
+File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
+\pgf@path@lastx=\dimen128
+\pgf@path@lasty=\dimen129
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathusage
-.code.tex"
-File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
-\pgf@shorten@end@additional=\dimen132
-\pgf@shorten@start@additional=\dimen133
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathusage.code.
+tex"
+File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
+\pgf@shorten@end@additional=\dimen130
+\pgf@shorten@start@additional=\dimen131
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorescopes.co
-de.tex"
-File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
+"
+File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
 \pgfpic=\box28
 \pgf@hbox=\box29
 \pgf@layerbox@main=\box30
 \pgf@picture@serial@count=\count97
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoregraphicst
-ate.code.tex"
-File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
-\pgflinewidth=\dimen134
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoregraphicstate.co
+de.tex"
+File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
+\pgflinewidth=\dimen132
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretransform
-ations.code.tex"
-File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
-\pgf@pt@x=\dimen135
-\pgf@pt@y=\dimen136
-\pgf@pt@temp=\dimen137
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretransformations
+.code.tex"
+File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
+\pgf@pt@x=\dimen133
+\pgf@pt@y=\dimen134
+\pgf@pt@temp=\dimen135
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorequick.cod
-e.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorequick.code.tex"
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreobjects.c
-ode.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreobjects.code.te
+x"
 File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathproce
-ssing.code.tex"
-File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorearrows.co
-de.tex"
-File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
-\pgfarrowsep=\dimen138
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreshade.cod
-e.tex"
-File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
-\pgf@max=\dimen139
-\pgf@sys@shading@range@num=\count98
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreimage.cod
-e.tex"
-File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreexternal.
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathprocessing.
 code.tex"
-File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
+"
+File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex"
+File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
+\pgf@max=\dimen136
+\pgf@sys@shading@range@num=\count98
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreimage.code.te
+x"
+File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreexternal.code.t
+ex"
+File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
 \pgfexternal@startupbox=\box31
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorelayers.co
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
+"
+File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretransparency.co
 de.tex"
-File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretranspare
-ncy.code.tex"
-File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepatterns.
-code.tex"
-File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepatterns.code.t
+ex"
+File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
 )))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduleshapes.cod
-e.tex"
-File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduleshapes.code.tex"
+File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
 \pgfnodeparttextbox=\box32
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduleplot.code.tex"
+File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduleplot.code.
-tex"
-File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-0-65.
+sty"
+Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen137
+\pgf@nodesepend=\dimen138
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version
--0-65.sty"
-Package: pgfcomp-version-0-65 2007/07/03 v3.0.1 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen140
-\pgf@nodesepend=\dimen141
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version
--1-18.sty"
-Package: pgfcomp-version-1-18 2007/07/23 v3.0.1 (rcs-revision 1.1)
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-1-18.
+sty"
+Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
+)) ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgffor.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgfkeys.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgffor.code.tex"
+Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
+\pgffor@iter=\dimen139
+\pgffor@skip=\dimen140
+\pgffor@stack=\toks24
+\pgffor@toks=\toks25
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\utilities\pgffor.sty"
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\utilities\pgfkeys.sty"
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex"
-)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\math\pgfmath.sty"
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex"))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\utilities\pgffor.code.tex"
-Package: pgffor 2013/12/13 v3.0.1 (rcs-revision 1.25)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex"
+Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex")
-\pgffor@iter=\dimen142
-\pgffor@skip=\dimen143
-\pgffor@stack=\toks27
-\pgffor@toks=\toks28
-))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\tikz.cod
-e.tex"
-Package: tikz 2015/08/07 v3.0.1 (rcs-revision 1.151)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryplothan
-dlers.code.tex"
-File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1 (rcs-revision 1.20)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryplothandlers.
+code.tex"
+File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
 \pgf@plot@mark@count=\count99
-\pgfplotmarksize=\dimen144
+\pgfplotmarksize=\dimen141
 )
-\tikz@lastx=\dimen145
-\tikz@lasty=\dimen146
-\tikz@lastxsaved=\dimen147
-\tikz@lastysaved=\dimen148
-\tikzleveldistance=\dimen149
-\tikzsiblingdistance=\dimen150
+\tikz@lastx=\dimen142
+\tikz@lasty=\dimen143
+\tikz@lastxsaved=\dimen144
+\tikz@lastysaved=\dimen145
+\tikzleveldistance=\dimen146
+\tikzsiblingdistance=\dimen147
 \tikz@figbox=\box33
-\tikz@figbox@bg=\box34
-\tikz@tempbox=\box35
-\tikz@tempbox@bg=\box36
+\tikz@tempbox=\box34
 \tikztreelevel=\count100
 \tikznumberofchildren=\count101
 \tikznumberofcurrentchild=\count102
 \tikz@fig@count=\count103
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\modules\pgfmodulematrix.cod
-e.tex"
-File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmodulematrix.code.tex"
+File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
 \pgfmatrixcurrentrow=\count104
 \pgfmatrixcurrentcolumn=\count105
 \pgf@matrix@numberofcolumns=\count106
 )
 \tikz@expandcount=\count107
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\librarie
-s\tikzlibrarytopaths.code.tex"
-File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1 (rcs-revision 1.2)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+librarytopaths.code.tex"
+File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
 )))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\arydshln\arydshln.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\arydshln\arydshln.sty"
 Package: arydshln 2004/08/31 v1.71 
-\dashlinedash=\dimen151
-\dashlinegap=\dimen152
-\adl@box=\box37
-\adl@height=\dimen153
-\adl@heightsave=\dimen154
-\adl@depth=\dimen155
-\adl@depthsave=\dimen156
-\adl@finaldepth=\dimen157
+\dashlinedash=\dimen148
+\dashlinegap=\dimen149
+\adl@box=\box35
+\adl@height=\dimen150
+\adl@heightsave=\dimen151
+\adl@depth=\dimen152
+\adl@depthsave=\dimen153
+\adl@finaldepth=\dimen154
 \adl@columns=\count108
 \adl@ncol=\count109
 \adl@currentcolumn=\count110
@@ -384,21 +354,21 @@ Package: arydshln 2004/08/31 v1.71
 \adl@gap=\count115
 \adl@cla=\count116
 \adl@clb=\count117
-\adl@everyvbox=\toks29
-\adl@LTpagetotal=\dimen158
+\adl@everyvbox=\toks26
+\adl@LTpagetotal=\dimen155
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\leftidx\leftidx.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\leftidx\leftidx.sty"
 Package: leftidx 2003/09/24 v1.03 Left indices
 )
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\mathtools.sty
+(C:\Users\Vaio\Documents\GitHub\Diploma\mathtools.sty
 Package: mathtools 2015/06/17 v1.17 mathematical typesetting tools
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count118
 \calc@Bcount=\count119
-\calc@Adimen=\dimen159
-\calc@Bdimen=\dimen160
+\calc@Adimen=\dimen156
+\calc@Bdimen=\dimen157
 \calc@Askip=\skip43
 \calc@Bskip=\skip44
 LaTeX Info: Redefining \setlength on input line 76.
@@ -406,27 +376,27 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count120
 \calc@Cskip=\skip45
 )
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\mhsetup.sty
+(C:\Users\Vaio\Documents\GitHub\Diploma\mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks30
-\ex@=\dimen161
+\@emptytoks=\toks27
+\ex@=\dimen158
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen162
+\pmbraise@=\dimen159
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count121
@@ -439,9 +409,9 @@ LaTeX Info: Redefining \overline on input line 306.
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
-\Mathstrutbox@=\box38
-\strutbox@=\box39
-\big@size=\dimen163
+\Mathstrutbox@=\box36
+\strutbox@=\box37
+\big@size=\dimen160
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count126
@@ -449,46 +419,46 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \dotsspace@=\muskip10
 \c@parentequation=\count128
 \dspbrk@lvl=\count129
-\tag@help=\toks31
+\tag@help=\toks28
 \row@=\count130
 \column@=\count131
 \maxfields@=\count132
-\andhelp@=\toks32
-\eqnshift@=\dimen164
-\alignsep@=\dimen165
-\tagshift@=\dimen166
-\tagwidth@=\dimen167
-\totwidth@=\dimen168
-\lineht@=\dimen169
-\@envbody=\toks33
+\andhelp@=\toks29
+\eqnshift@=\dimen161
+\alignsep@=\dimen162
+\tagshift@=\dimen163
+\tagwidth@=\dimen164
+\totwidth@=\dimen165
+\lineht@=\dimen166
+\@envbody=\toks30
 \multlinegap=\skip47
 \multlinetaggap=\skip48
-\mathdisplay@stack=\toks34
+\mathdisplay@stack=\toks31
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \g_MT_multlinerow_int=\count133
-\l_MT_multwidth_dim=\dimen170
+\l_MT_multwidth_dim=\dimen167
 \origjot=\skip49
-\l_MT_shortvdotswithinadjustabove_dim=\dimen171
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen172
-\l_MT_above_intertext_sep=\dimen173
-\l_MT_below_intertext_sep=\dimen174
-\l_MT_above_shortintertext_sep=\dimen175
-\l_MT_below_shortintertext_sep=\dimen176
+\l_MT_shortvdotswithinadjustabove_dim=\dimen168
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen169
+\l_MT_above_intertext_sep=\dimen170
+\l_MT_below_intertext_sep=\dimen171
+\l_MT_above_shortintertext_sep=\dimen172
+\l_MT_below_shortintertext_sep=\dimen173
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\was\gensymb.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\was\gensymb.sty"
 Package: gensymb 2003/07/02 v1.0 (WaS)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\subfigure\subfigure.sty"
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip50
 \subfigcapskip=\skip51
-\subfigcaptopadj=\dimen177
+\subfigcaptopadj=\dimen174
 \subfigbottomskip=\skip52
-\subfigcapmargin=\dimen178
+\subfigcapmargin=\dimen175
 \subfiglabelskip=\skip53
 \c@subfigure=\count134
 \c@lofdepth=\count135
@@ -498,151 +468,150 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.cfg")
+("C:\Program Files\MiKTeX 2.9\tex\latex\subfigure\subfigure.cfg")
 \subfig@top=\skip54
 \subfig@bottom=\skip55
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\hhline.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\hhline.sty"
 Package: hhline 1994/05/23 v2.03 Table rule package (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xy.sty"
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xy.tex" Bootstrap'ing:
-catcodes, docmode,
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xyrecat.tex")
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xyidioms.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xy.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xy.tex" Bootstrap'ing:
+catcodes, docmode, ("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xyrecat.tex"
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xyidioms.tex")
 
- Xy-pic version 3.8.9 <2013/10/06>
- Copyright (c) 1991-2013 by Kristoffer H. Rose <krisrose@tug.org> and others
+ Xy-pic version 3.8.8 <2012/05/24>
+ Copyright (c) 1991-2011 by Kristoffer H. Rose <krisrose@tug.org>
  Xy-pic is free software: see the User's Guide for details.
 
 Loading kernel: messages; fonts; allocations: state,
-\X@c=\dimen179
-\Y@c=\dimen180
-\U@c=\dimen181
-\D@c=\dimen182
-\L@c=\dimen183
-\R@c=\dimen184
-\Edge@c=\toks35
-\X@p=\dimen185
-\Y@p=\dimen186
-\U@p=\dimen187
-\D@p=\dimen188
-\L@p=\dimen189
-\R@p=\dimen190
-\Edge@p=\toks36
-\X@origin=\dimen191
-\Y@origin=\dimen192
-\X@xbase=\dimen193
-\Y@xbase=\dimen194
-\X@ybase=\dimen195
-\Y@ybase=\dimen196
-\X@min=\dimen197
-\Y@min=\dimen198
-\X@max=\dimen199
-\Y@max=\dimen200
-\lastobjectbox@=\box40
-\zerodotbox@=\box41
-\almostz@=\dimen201
+\X@c=\dimen176
+\Y@c=\dimen177
+\U@c=\dimen178
+\D@c=\dimen179
+\L@c=\dimen180
+\R@c=\dimen181
+\Edge@c=\toks32
+\X@p=\dimen182
+\Y@p=\dimen183
+\U@p=\dimen184
+\D@p=\dimen185
+\L@p=\dimen186
+\R@p=\dimen187
+\Edge@p=\toks33
+\X@origin=\dimen188
+\Y@origin=\dimen189
+\X@xbase=\dimen190
+\Y@xbase=\dimen191
+\X@ybase=\dimen192
+\Y@ybase=\dimen193
+\X@min=\dimen194
+\Y@min=\dimen195
+\X@max=\dimen196
+\Y@max=\dimen197
+\lastobjectbox@=\box38
+\zerodotbox@=\box39
+\almostz@=\dimen198
  direction,
-\d@X=\dimen202
-\d@Y=\dimen203
+\d@X=\dimen199
+\d@Y=\dimen200
 \K@=\count138
 \KK@=\count139
 \Direction=\count140
-\K@dXdY=\dimen204
-\K@dYdX=\dimen205
+\K@dXdY=\dimen201
+\K@dYdX=\dimen202
 \xyread@=\read2
 \xywrite@=\write4
 \csp@=\count141
-\quotPTK@=\dimen206
+\quotPTK@=\dimen203
 
 utility macros; pictures: \xy, positions,
-\swaptoks@@=\toks37
-\connectobjectbox@@=\box42
+\swaptoks@@=\toks34
+\connectobjectbox@@=\box40
  objects,
-\styletoks@=\toks38
+\styletoks@=\toks35
  decorations;
 kernel objects: directionals, circles, text; options; algorithms: directions,
 edges, connections;  Xy-pic loaded)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-Package: xy 2013/10/06 Xy-pic version 3.8.9
+Package: xy 2012/05/24 Xy-pic version 3.8.8
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xyall.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xyall.tex"
  Xy-pic option: All features v.3.8
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xycurve.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xycurve.tex"
  Xy-pic option: Curve and Spline extension v.3.12 curve,
 \crv@cnt@=\count142
-\crvpts@=\toks39
-\splinebox@=\box43
-\splineval@=\dimen207
-\splinedepth@=\dimen208
-\splinetol@=\dimen209
-\splinelength@=\dimen210
+\crvpts@=\toks36
+\splinebox@=\box41
+\splineval@=\dimen204
+\splinedepth@=\dimen205
+\splinetol@=\dimen206
+\splinelength@=\dimen207
  circles,
-\L@=\dimen211
+\L@=\dimen208
  loaded)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xyframe.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xyframe.tex"
  Xy-pic option: Frame and Bracket extension v.3.14 loaded)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xycmtip.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xycmtip.tex"
  Xy-pic option: Computer Modern tip extension v.3.7
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xytips.tex"
- Xy-pic option: More Tips extension v.3.11 loaded) loaded)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xyline.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xytips.tex"
+ Xy-pic option: More Tips extension v.3.9 loaded) loaded)
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xyline.tex"
  Xy-pic option: Line styles extension v.3.10
-\xylinethick@=\dimen212
+\xylinethick@=\dimen209
  loaded)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xyrotate.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xyrotate.tex"
  Xy-pic option: Rotate and Scale extension v.3.8 loaded)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xycolor.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xycolor.tex"
  Xy-pic option: Colour extension v.3.11 loaded)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xymatrix.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xymatrix.tex"
  Xy-pic option: Matrix feature v.3.14
 \Row=\count143
 \Col=\count144
-\queue@=\toks40
-\queue@@=\toks41
+\queue@=\toks37
+\queue@@=\toks38
 \qcount@=\count145
 \qcount@@=\count146
 \matrixsize@=\count147
  loaded)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xyarrow.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xyarrow.tex"
  Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xygraph.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xygraph.tex"
  Xy-pic option: Graph feature v.3.11 loaded) loaded)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xypdf.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xypdf.tex"
  Xy-pic option: PDF driver v.1.7 Xy-pic pdf driver: `color' extension support
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xypdf-co.tex" loaded)
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xypdf-co.tex" loaded)
 Xy-pic pdf driver: `curve' extension support
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xypdf-cu.tex" loaded)
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xypdf-cu.tex" loaded)
 Xy-pic pdf driver: `frame' extension support
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xypdf-fr.tex" loaded)
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xypdf-fr.tex" loaded)
 Xy-pic pdf driver: `line' extension support
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xypdf-li.tex" loaded)
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xypdf-li.tex" loaded)
 Xy-pic pdf driver: `rotate' extension support
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xypic\xypdf-ro.tex" loaded)
-loaded)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xypic\xypdf-ro.tex" loaded) loaded))
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2008/07/08 v3.8m The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\Slovene.ldf"
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\Slovene.ldf"
 Language: slovene 2005/03/31 v1.2m Slovene support from the babel system
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2008/07/08 v3.8m Babel common definitions
 \babel@savecnt=\count148
-\U@D=\dimen213
+\U@D=\dimen210
 )
 Package babel Info: Making " an active character on input line 79.
 ))
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\UNI-LJ-FE-Diploma.sty
+(C:\Users\Vaio\Documents\GitHub\Diploma\UNI-LJ-FE-Diploma.sty
 
 UNI-LJ-FE-Diploma stilska opcija V.1.0 junij 2013
 Stilska opcija za diplome na Fakulteti za elektrotehniko Univerze v Ljubljani
@@ -653,28 +622,28 @@ Dopolnil: Ales Hribar 2006
 Dopolnil: Sebastjan Slajpah, 2013
 Dopolnil in pre\v cistil: Sa\v so Toma\v zi\v c, 2013
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
 Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
 Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -683,7 +652,7 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
@@ -697,12 +666,12 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 ))
 \epsffilein=\read3
-\epsfxsize=\dimen214
-\epsfysize=\dimen215
-\epsftsize=\dimen216
-\epsfrsize=\dimen217
-\epsftmp=\dimen218
-\pspoints=\dimen219
+\epsfxsize=\dimen211
+\epsfysize=\dimen212
+\epsftsize=\dimen213
+\epsfrsize=\dimen214
+\epsftmp=\dimen215
+\pspoints=\dimen216
 \xcelo=\count149
 \xdec=\count150
 \xxdec=\count151
@@ -713,100 +682,98 @@ G,.JBIG2,.JB2,.eps]
 \yyydec=\count156
 \tmpcount=\count157
 )
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\BlockDiagrams\tikzsettings.tex
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\librarie
-s\tikzlibraryshapes.code.tex"
-File: tikzlibraryshapes.code.tex 2008/01/09 v3.0.1 (rcs-revision 1.1)
+(C:\Users\Vaio\Documents\GitHub\Diploma\BlockDiagrams\tikzsettings.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+libraryshapes.code.tex"
+File: tikzlibraryshapes.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\librarie
-s\tikzlibraryshapes.geometric.code.tex"
-File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1 (rcs-revision 1.1)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+libraryshapes.geometric.code.tex"
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\libraries\shapes\pgflibrary
-shapes.geometric.code.tex"
-File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1 (rcs-revision 1.1)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\shapes\pgflibraryshapes
+.geometric.code.tex"
+File: pgflibraryshapes.geometric.code.tex 2008/06/26 v2.10 (rcs-revision 1.1)
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\librarie
-s\tikzlibraryshapes.misc.code.tex"
-File: tikzlibraryshapes.misc.code.tex 2008/01/09 v3.0.1 (rcs-revision 1.1)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+libraryshapes.misc.code.tex"
+File: tikzlibraryshapes.misc.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\libraries\shapes\pgflibrary
-shapes.misc.code.tex"
-File: pgflibraryshapes.misc.code.tex 2013/07/18 v3.0.1 (rcs-revision 1.5)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\shapes\pgflibraryshapes
+.misc.code.tex"
+File: pgflibraryshapes.misc.code.tex 2008/10/07 v2.10 (rcs-revision 1.3)
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\librarie
-s\tikzlibraryshapes.symbols.code.tex"
-File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v3.0.1 (rcs-revision 1.1)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+libraryshapes.symbols.code.tex"
+File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\libraries\shapes\pgflibrary
-shapes.symbols.code.tex"
-File: pgflibraryshapes.symbols.code.tex 2013/09/11 v3.0.1 (rcs-revision 1.6)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\shapes\pgflibraryshapes
+.symbols.code.tex"
+File: pgflibraryshapes.symbols.code.tex 2009/10/27 v2.10 (rcs-revision 1.3)
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\librarie
-s\tikzlibraryshapes.arrows.code.tex"
-File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v3.0.1 (rcs-revision 1.1)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+libraryshapes.arrows.code.tex"
+File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\libraries\shapes\pgflibrary
-shapes.arrows.code.tex"
-File: pgflibraryshapes.arrows.code.tex 2008/06/26 v3.0.1 (rcs-revision 1.1)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\shapes\pgflibraryshapes
+.arrows.code.tex"
+File: pgflibraryshapes.arrows.code.tex 2008/06/26 v2.10 (rcs-revision 1.1)
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\librarie
-s\tikzlibraryshapes.callouts.code.tex"
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\libraries\shapes\pgflibrary
-shapes.callouts.code.tex"))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\librarie
-s\tikzlibraryshapes.multipart.code.tex"
-File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1 (rcs-revision 1.1)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+libraryshapes.callouts.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\shapes\pgflibraryshapes
+.callouts.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+libraryshapes.multipart.code.tex"
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\libraries\shapes\pgflibrary
-shapes.multipart.code.tex"
-File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1 (rcs-revision 1.2)
-\pgfnodepartlowerbox=\box44
-\pgfnodeparttwobox=\box45
-\pgfnodepartthreebox=\box46
-\pgfnodepartfourbox=\box47
-\pgfnodeparttwentybox=\box48
-\pgfnodepartnineteenbox=\box49
-\pgfnodeparteighteenbox=\box50
-\pgfnodepartseventeenbox=\box51
-\pgfnodepartsixteenbox=\box52
-\pgfnodepartfifteenbox=\box53
-\pgfnodepartfourteenbox=\box54
-\pgfnodepartthirteenbox=\box55
-\pgfnodeparttwelvebox=\box56
-\pgfnodepartelevenbox=\box57
-\pgfnodeparttenbox=\box58
-\pgfnodepartninebox=\box59
-\pgfnodeparteightbox=\box60
-\pgfnodepartsevenbox=\box61
-\pgfnodepartsixbox=\box62
-\pgfnodepartfivebox=\box63
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\shapes\pgflibraryshapes
+.multipart.code.tex"
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v2.10 (rcs-revision 1.2)
+\pgfnodepartlowerbox=\box42
+\pgfnodeparttwobox=\box43
+\pgfnodepartthreebox=\box44
+\pgfnodepartfourbox=\box45
+\pgfnodeparttwentybox=\box46
+\pgfnodepartnineteenbox=\box47
+\pgfnodeparteighteenbox=\box48
+\pgfnodepartseventeenbox=\box49
+\pgfnodepartsixteenbox=\box50
+\pgfnodepartfifteenbox=\box51
+\pgfnodepartfourteenbox=\box52
+\pgfnodepartthirteenbox=\box53
+\pgfnodeparttwelvebox=\box54
+\pgfnodepartelevenbox=\box55
+\pgfnodeparttenbox=\box56
+\pgfnodepartninebox=\box57
+\pgfnodeparteightbox=\box58
+\pgfnodepartsevenbox=\box59
+\pgfnodepartsixbox=\box60
+\pgfnodepartfivebox=\box61
 )))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\librarie
-s\tikzlibraryfit.code.tex"
-File: tikzlibraryfit.code.tex 2013/07/12 v3.0.1 (rcs-revision 1.5)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+libraryfit.code.tex"
+File: tikzlibraryfit.code.tex 2008/06/21 v2.10 (rcs-revision 1.3)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\librarie
-s\tikzlibraryarrows.code.tex"
-File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1 (rcs-revision 1.1)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+libraryarrows.code.tex"
+File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryarrows.
-code.tex"
-File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1 (rcs-revision 1.16)
-\arrowsize=\dimen220
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryarrows.code.t
+ex"
+File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
+\arrowsize=\dimen217
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\librarie
-s\tikzlibrarycalc.code.tex"
-File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1 (rcs-revision 1.9)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+librarycalc.code.tex"
+File: tikzlibrarycalc.code.tex 2009/09/04 v2.10 (rcs-revision 1.6)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\librarie
-s\tikzlibrarypositioning.code.tex"
-File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1 (rcs-revision 1.7)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+librarypositioning.code.tex"
+File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
 ))
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\macros.tex)
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\magistrska_timotej_gaspar.aux)
+(C:\Users\Vaio\Documents\GitHub\Diploma\macros.tex)
+(C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
@@ -821,19 +788,19 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
 
 ABD: EveryShipout initializing macros
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count158
-\scratchdimen=\dimen221
-\scratchbox=\box64
+\scratchdimen=\dimen218
+\scratchbox=\box62
 \nofMPsegments=\count159
 \nofMParguments=\count160
-\everyMPshowfont=\toks42
+\everyMPshowfont=\toks39
 \MPscratchCnt=\count161
-\MPscratchDim=\dimen222
+\MPscratchDim=\dimen219
 \MPnumerator=\count162
 \makeMPintoPDFobject=\count163
-\everyMPtoPDFconversion=\toks43
+\everyMPtoPDFconversion=\toks40
 )
 LaTeX Info: Redefining \celsius on input line 35.
 Package gensymb Info: Faking symbols for \degree and \celsius on input line 35.
@@ -860,10 +827,10 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [4
 
-] (C:\Users\HrabiaMol\Documents\GitHub\Diploma\magistrska_timotej_gaspar.toc
+] (C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.toc
 [5]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 37.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <8> not available
@@ -875,7 +842,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[6] (C:\Users\HrabiaMol\Documents\GitHub\Diploma\magistrska_timotej_gaspar.lof
+[6] (C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.lof
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7
@@ -905,16 +872,17 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [10
 
-] (C:\Users\HrabiaMol\Documents\GitHub\Diploma\magistrska_timotej_gaspar.lot)
+] (C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.lot)
 \tf@lot=\write7
- [11]
+
+[11]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [12
 
-] (C:\Users\HrabiaMol\Documents\GitHub\Diploma\magistrska_timotej_gaspar.lof)
+] (C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.lof)
 \tf@lof=\write8
 
 Overfull \hbox (20.76576pt too wide) in paragraph at lines 70--104
@@ -929,8 +897,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[14] (C:\Users\HrabiaMol\Documents\GitHub\Diploma\magistrska_timotej_gaspar.lof
-)
+[14] (C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.lof)
 \tf@lof=\write9
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -943,8 +910,9 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[2] (C:\Users\HrabiaMol\Documents\GitHub\Diploma\magistrska_timotej_gaspar.lof)
+[2] (C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.lof)
 \tf@lof=\write10
+
 [3
 
 ]
@@ -966,7 +934,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 [6]
   2.
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\pa10-drawing.tex
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\pa10-drawing.tex
 <./Slike/pa10-drawing.png, id=79, 517.935pt x 595.47469pt>
 File: ./Slike/pa10-drawing.png Graphic file (type png)
 
@@ -976,12 +944,12 @@ Package pdftex.def Info: ./Slike/pa10-drawing.png used on input line 3.
 ) [7
 
 ]
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\d-h_drawing.tex
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\d-h_drawing.tex
 Package epstopdf Info: Source file: <./Slike/d-h_drawing.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-07-11 18:40:12
 (epstopdf)                    size: 517962 bytes
 (epstopdf)             Output file: <./Slike/d-h_drawing-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-07-11 18:40:12
 (epstopdf)                    size: 41209 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/d-h_drawing-eps-con
 verted-to.pdf ./Slike/d-h_drawing.eps>
@@ -1003,8 +971,8 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[8 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/pa10-drawing.png>]
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\pa10-dh.tex
+[8 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/pa10-drawing.png>]
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\pa10-dh.tex
 <./Slike/pa10-dh.png, id=92, 676.77844pt x 255.95625pt>
 File: ./Slike/pa10-dh.png Graphic file (type png)
 
@@ -1016,13 +984,13 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[9 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/d-h_drawing-eps-converted
--to.pdf>]
+[9 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/d-h_drawing-eps-converted-to.p
+df>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[10 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/pa10-dh.png>]
+[10 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/pa10-dh.png>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1033,7 +1001,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [12]
-Underfull \hbox (badness 1515) in paragraph at lines 363--364
+Underfull \hbox (badness 1515) in paragraph at lines 362--363
 []\OT1/cmr/m/n/12 Vektor $[][]$ vse-buje sile in na-vore, ki de-lu-jejo na vrh 
 ro-bota, $[][] =$
  []
@@ -1066,13 +1034,13 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17]
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\pc_zadaj_labels.tex
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\pc_zadaj_labels.tex
 Package epstopdf Info: Source file: <./Slike/pc_zadaj_labels.eps>
-(epstopdf)                    date: 2015-09-02 22:53:18
+(epstopdf)                    date: 2015-08-03 11:44:36
 (epstopdf)                    size: 20962914 bytes
 (epstopdf)             Output file: <./Slike/pc_zadaj_labels-eps-converted-to.p
 df>
-(epstopdf)                    date: 2015-09-02 22:53:18
+(epstopdf)                    date: 2015-09-06 10:58:19
 (epstopdf)                    size: 255813 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/pc_zadaj_labels-eps
 -converted-to.pdf ./Slike/pc_zadaj_labels.eps>
@@ -1100,9 +1068,9 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[18 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/pc_zadaj_labels-eps-conv
-erted-to.pdf>]
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\pa10-servocontroller.tex
+[18 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/pc_zadaj_labels-eps-converted
+-to.pdf>]
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\pa10-servocontroller.tex
 <./Slike/pa10-servocontroller.png, id=141, 1028.34187pt x 536.0025pt>
 File: ./Slike/pa10-servocontroller.png Graphic file (type png)
 
@@ -1115,14 +1083,14 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[19 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/pa10-servocontroller.png
->] (C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\arcnet-packet.tex
+[19 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/pa10-servocontroller.png>]
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\arcnet-packet.tex
 Package epstopdf Info: Source file: <./Slike/arcnet-packet.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-08-03 11:44:35
 (epstopdf)                    size: 348619 bytes
 (epstopdf)             Output file: <./Slike/arcnet-packet-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-08-03 11:44:35
 (epstopdf)                    size: 9316 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/arcnet-packet-eps-c
 onverted-to.pdf ./Slike/arcnet-packet.eps>
@@ -1141,30 +1109,30 @@ ut line 3.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Package epstopdf Info: Source file: <./Slike/little-arrow.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-08-03 11:44:36
 (epstopdf)                    size: 44239 bytes
 (epstopdf)             Output file: <./Slike/little-arrow-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-08-03 11:44:36
 (epstopdf)                    size: 2653 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/little-arrow-eps-co
 nverted-to.pdf ./Slike/little-arrow.eps>
-(epstopdf)             \includegraphics on input line 459.
+(epstopdf)             \includegraphics on input line 457.
 Package epstopdf Info: Output file is already uptodate.
 <./Slike/little-arrow-eps-converted-to.pdf, id=147, 21.07875pt x 20.075pt>
 File: ./Slike/little-arrow-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/little-arrow-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/little-arrow-eps-converted-to.pdf used on inpu
-t line 459.
+t line 457.
 (pdftex.def)             Requested size: 12.64732pt x 12.04507pt.
 
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\pa10-state.tex
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\pa10-state.tex
 Package epstopdf Info: Source file: <./Slike/pa10-state.eps>
-(epstopdf)                    date: 2015-09-02 22:53:18
+(epstopdf)                    date: 2015-08-03 11:44:36
 (epstopdf)                    size: 484905 bytes
 (epstopdf)             Output file: <./Slike/pa10-state-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:18
+(epstopdf)                    date: 2015-08-03 11:44:36
 (epstopdf)                    size: 11446 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/pa10-state-eps-conv
 erted-to.pdf ./Slike/pa10-state.eps>
@@ -1189,15 +1157,14 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[20 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/little-arrow-eps-convert
-ed-to.pdf>])
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\pa10-control-state.tex
+[20 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/little-arrow-eps-converted-to
+.pdf>]) (C:\Users\Vaio\Documents\GitHub\Diploma\Slike\pa10-control-state.tex
 Package epstopdf Info: Source file: <./Slike/pa10-control-state.eps>
-(epstopdf)                    date: 2015-09-02 22:53:18
+(epstopdf)                    date: 2015-09-06 10:58:19
 (epstopdf)                    size: 157706 bytes
 (epstopdf)             Output file: <./Slike/pa10-control-state-eps-converted-t
 o.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:18
+(epstopdf)                    date: 2015-09-06 10:58:19
 (epstopdf)                    size: 7970 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/pa10-control-state-
 eps-converted-to.pdf ./Slike/pa10-control-state.eps>
@@ -1215,12 +1182,12 @@ n input line 3.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\arcnet-data.tex
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\arcnet-data.tex
 Package epstopdf Info: Source file: <./Slike/arcnet-data.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:17
 (epstopdf)                    size: 494021 bytes
 (epstopdf)             Output file: <./Slike/arcnet-data-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:17
 (epstopdf)                    size: 29093 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/arcnet-data-eps-con
 verted-to.pdf ./Slike/arcnet-data.eps>
@@ -1246,9 +1213,9 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[21 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/arcnet-packet-eps-conver
-ted-to.pdf> <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/pa10-state-eps-c
-onverted-to.pdf>]
+[21 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/arcnet-packet-eps-converted-t
+o.pdf> <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/pa10-state-eps-converted-t
+o.pdf>]
 Overfull \hbox (12.62668pt too wide) has occurred while \output is active
 \OT1/cmr/m/n/12 22    \OT1/cmr/m/sl/12 ARCNET - UDP streznik za komunikacijo s
  krmilnikom robota ter senzorjem sile
@@ -1259,10 +1226,9 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[22 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/pa10-control-state-eps-c
-onverted-to.pdf> <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/arcnet-data
--eps-converted-to.pdf>]
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\jr3-slika.tex
+[22 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/pa10-control-state-eps-conver
+ted-to.pdf> <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/arcnet-data-eps-conve
+rted-to.pdf>] (C:\Users\Vaio\Documents\GitHub\Diploma\Slike\jr3-slika.tex
 <./Slike/jr3-slika.png, id=199, 864.831pt x 576.554pt>
 File: ./Slike/jr3-slika.png Graphic file (type png)
 
@@ -1274,14 +1240,14 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[23 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/jr3-slika.png>]
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\dsp-registers.tex
+[23 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/jr3-slika.png>]
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\dsp-registers.tex
 Package epstopdf Info: Source file: <./Slike/dsp-registers.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-08-03 11:44:35
 (epstopdf)                    size: 289672 bytes
 (epstopdf)             Output file: <./Slike/dsp-registers-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-08-03 11:44:35
 (epstopdf)                    size: 6734 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/dsp-registers-eps-c
 onverted-to.pdf ./Slike/dsp-registers.eps>
@@ -1306,19 +1272,19 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[24 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/dsp-registers-eps-conver
-ted-to.pdf>]
+[24 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/dsp-registers-eps-converted-t
+o.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[25] (C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\udp-arcnet-server.tex
+[25] (C:\Users\Vaio\Documents\GitHub\Diploma\Slike\udp-arcnet-server.tex
 Package epstopdf Info: Source file: <./Slike/udp-arcnet-server.eps>
-(epstopdf)                    date: 2015-09-02 22:53:18
+(epstopdf)                    date: 2015-08-03 11:44:36
 (epstopdf)                    size: 727382 bytes
 (epstopdf)             Output file: <./Slike/udp-arcnet-server-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2015-09-02 22:53:18
+(epstopdf)                    date: 2015-08-03 11:44:36
 (epstopdf)                    size: 26526 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/udp-arcnet-server-e
 ps-converted-to.pdf ./Slike/udp-arcnet-server.eps>
@@ -1343,14 +1309,13 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[26 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/udp-arcnet-server-eps-co
-nverted-to.pdf>]
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Tabele\udp-command.tex)
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Tabele\arcnet-command.tex
+[26 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/udp-arcnet-server-eps-convert
+ed-to.pdf>] (C:\Users\Vaio\Documents\GitHub\Diploma\Tabele\udp-command.tex)
+(C:\Users\Vaio\Documents\GitHub\Diploma\Tabele\arcnet-command.tex
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (C:\Users\HrabiaMol\Documents\GitHub\Diploma\Tabele\udp-reply.tex
+) (C:\Users\Vaio\Documents\GitHub\Diploma\Tabele\udp-reply.tex
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1359,13 +1324,13 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[27] (C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\server-flowchart.tex
+[27] (C:\Users\Vaio\Documents\GitHub\Diploma\Slike\server-flowchart.tex
 Package epstopdf Info: Source file: <./Slike/server-flowchart.eps>
-(epstopdf)                    date: 2015-09-02 22:53:18
+(epstopdf)                    date: 2015-08-03 11:44:36
 (epstopdf)                    size: 849598 bytes
 (epstopdf)             Output file: <./Slike/server-flowchart-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2015-09-02 22:53:18
+(epstopdf)                    date: 2015-08-03 11:44:36
 (epstopdf)                    size: 12838 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/server-flowchart-ep
 s-converted-to.pdf ./Slike/server-flowchart.eps>
@@ -1380,7 +1345,7 @@ Package pdftex.def Info: ./Slike/server-flowchart-eps-converted-to.pdf used on
 input line 3.
 (pdftex.def)             Requested size: 309.4237pt x 279.20328pt.
 )
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\linux-arcnetON.tex
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\linux-arcnetON.tex
 <./Slike/linux-arcnetON.png, id=233, 508.14844pt x 319.1925pt>
 File: ./Slike/linux-arcnetON.png Graphic file (type png)
 
@@ -1398,7 +1363,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[28] (C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\linux-success.tex
+[28] (C:\Users\Vaio\Documents\GitHub\Diploma\Slike\linux-success.tex
 <./Slike/linux-success.png, id=237, 508.14844pt x 319.1925pt>
 File: ./Slike/linux-success.png Graphic file (type png)
 
@@ -1413,8 +1378,8 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[29 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/server-flowchart-eps-con
-verted-to.pdf>]
+[29 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/server-flowchart-eps-converte
+d-to.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1428,8 +1393,8 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[30 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/linux-arcnetON.png> <C:/
-Users/HrabiaMol/Documents/GitHub/Diploma/Slike/linux-success.png>]
+[30 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/linux-arcnetON.png> <C:/Users
+/Vaio/Documents/GitHub/Diploma/Slike/linux-success.png>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1449,14 +1414,13 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 ]
   4.
-[33]
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\jr3_coordinatesistem.tex
+[33] (C:\Users\Vaio\Documents\GitHub\Diploma\Slike\jr3_coordinatesistem.tex
 Package epstopdf Info: Source file: <./Slike/jr3_coordinatesistem.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-07-11 18:40:12
 (epstopdf)                    size: 311061 bytes
 (epstopdf)             Output file: <./Slike/jr3_coordinatesistem-eps-converted
 -to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-07-11 18:40:12
 (epstopdf)                    size: 6193 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/jr3_coordinatesiste
 m-eps-converted-to.pdf ./Slike/jr3_coordinatesistem.eps>
@@ -1476,8 +1440,8 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[34 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/jr3_coordinatesistem-eps
--converted-to.pdf>]
+[34 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/jr3_coordinatesistem-eps-conv
+erted-to.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1487,8 +1451,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[36] (C:\Users\HrabiaMol\Documents\GitHub\Diploma\BlockDiagrams\vel_to_ang.tex)
-
+[36] (C:\Users\Vaio\Documents\GitHub\Diploma\BlockDiagrams\vel_to_ang.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1498,7 +1461,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[38] (C:\Users\HrabiaMol\Documents\GitHub\Diploma\BlockDiagrams\x_to_vel.tex)
+[38] (C:\Users\Vaio\Documents\GitHub\Diploma\BlockDiagrams\x_to_vel.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1508,7 +1471,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[40] (C:\Users\HrabiaMol\Documents\GitHub\Diploma\BlockDiagrams\inv_dyn_q.tex)
+[40] (C:\Users\Vaio\Documents\GitHub\Diploma\BlockDiagrams\inv_dyn_q.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1518,14 +1481,13 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[42] (C:\Users\HrabiaMol\Documents\GitHub\Diploma\BlockDiagrams\inv_dyn_x.tex)
+[42] (C:\Users\Vaio\Documents\GitHub\Diploma\BlockDiagrams\inv_dyn_x.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [43]
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\BlockDiagrams\x_admitance_control.
-tex)
+(C:\Users\Vaio\Documents\GitHub\Diploma\BlockDiagrams\x_admitance_control.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -1536,15 +1498,14 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [45]
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\BlockDiagrams\impendance_control.t
-ex)
+(C:\Users\Vaio\Documents\GitHub\Diploma\BlockDiagrams\impendance_control.tex)
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
 [46]
   5.
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\simulink_vel_tq_control.tex
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\simulink_vel_tq_control.tex
 <./Slike/velocity_control.png, id=320, 1413.78188pt x 569.12625pt>
 File: ./Slike/velocity_control.png Graphic file (type png)
 
@@ -1574,15 +1535,15 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[48 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/velocity_control.png> <C
-:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/torque_control.png>]
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\follow_step.tex
+[48 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/velocity_control.png> <C:/Use
+rs/Vaio/Documents/GitHub/Diploma/Slike/torque_control.png>]
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\follow_step.tex
 Package epstopdf Info: Source file: <./Slike/follow_step_100hz_vel.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 252454 bytes
 (epstopdf)             Output file: <./Slike/follow_step_100hz_vel-eps-converte
 d-to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 19865 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/follow_step_100hz_v
 el-eps-converted-to.pdf ./Slike/follow_step_100hz_vel.eps>
@@ -1598,11 +1559,11 @@ Package pdftex.def Info: ./Slike/follow_step_100hz_vel-eps-converted-to.pdf use
 d on input line 6.
 (pdftex.def)             Requested size: 257.96312pt x 204.26262pt.
 Package epstopdf Info: Source file: <./Slike/follow_step_500hz_vel.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 506193 bytes
 (epstopdf)             Output file: <./Slike/follow_step_500hz_vel-eps-converte
 d-to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 77684 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/follow_step_500hz_v
 el-eps-converted-to.pdf ./Slike/follow_step_500hz_vel.eps>
@@ -1618,7 +1579,7 @@ Package pdftex.def Info: ./Slike/follow_step_500hz_vel-eps-converted-to.pdf use
 d on input line 10.
 (pdftex.def)             Requested size: 254.95187pt x 202.75699pt.
 )
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\notranje_koordinate_vel.tex
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\notranje_koordinate_vel.tex
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 1.
@@ -1631,7 +1592,7 @@ Package pdftex.def Info: ./Slike/notranje_koordinate_vel.png used on input line
  3.
 (pdftex.def)             Requested size: 312.79283pt x 124.59016pt.
 )
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\zunanje_koordinate_vel.tex
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\zunanje_koordinate_vel.tex
 <./Slike/zunanje_koordinate_vel.png, id=335, 1359.57938pt x 502.87875pt>
 File: ./Slike/zunanje_koordinate_vel.png Graphic file (type png)
 
@@ -1643,13 +1604,13 @@ Package pdftex.def Info: ./Slike/zunanje_koordinate_vel.png used on input line
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\follow_ramp_vel.tex
+) (C:\Users\Vaio\Documents\GitHub\Diploma\Slike\follow_ramp_vel.tex
 Package epstopdf Info: Source file: <./Slike/follow_ramp_100hz_vel_err.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:17
 (epstopdf)                    size: 223537 bytes
 (epstopdf)             Output file: <./Slike/follow_ramp_100hz_vel_err-eps-conv
 erted-to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:17
 (epstopdf)                    size: 17878 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/follow_ramp_100hz_v
 el_err-eps-converted-to.pdf ./Slike/follow_ramp_100hz_vel_err.eps>
@@ -1665,11 +1626,11 @@ Package pdftex.def Info: ./Slike/follow_ramp_100hz_vel_err-eps-converted-to.pdf
  used on input line 6.
 (pdftex.def)             Requested size: 250.93687pt x 92.84665pt.
 Package epstopdf Info: Source file: <./Slike/follow_ramp_500hz_vel_err.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:17
 (epstopdf)                    size: 406561 bytes
 (epstopdf)             Output file: <./Slike/follow_ramp_500hz_vel_err-eps-conv
 erted-to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:17
 (epstopdf)                    size: 66823 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/follow_ramp_500hz_v
 el_err-eps-converted-to.pdf ./Slike/follow_ramp_500hz_vel_err.eps>
@@ -1694,13 +1655,13 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[50 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/follow_step_100hz_vel-ep
-s-converted-to.pdf> <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/follow_s
-tep_500hz_vel-eps-converted-to.pdf>]
+[50 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/follow_step_100hz_vel-eps-con
+verted-to.pdf> <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/follow_step_500hz_
+vel-eps-converted-to.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\pa10jr3.tex
+) (C:\Users\Vaio\Documents\GitHub\Diploma\Slike\pa10jr3.tex
 <./Slike/pa10jr3.png, id=362, 454.0965pt x 681.3455pt>
 File: ./Slike/pa10jr3.png Graphic file (type png)
 
@@ -1715,9 +1676,9 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[51 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/notranje_koordinate_vel.
-png> <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/zunanje_koordinate_vel.
-png>]) (C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\admitance_control.tex
+[51 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/notranje_koordinate_vel.png> 
+<C:/Users/Vaio/Documents/GitHub/Diploma/Slike/zunanje_koordinate_vel.png>])
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\admitance_control.tex
 <./Slike/admitance_control.png, id=367, 1407.75937pt x 597.73312pt>
 File: ./Slike/admitance_control.png Graphic file (type png)
 
@@ -1728,28 +1689,20 @@ Package pdftex.def Info: ./Slike/admitance_control.png used on input line 3.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-)
-Overfull \hbox (2.61108pt too wide) has occurred while \output is active
-[] 
- []
-
-[52 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/follow_ramp_100hz_vel_er
-r-eps-converted-to.pdf> <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/foll
-ow_ramp_500hz_vel_err-eps-converted-to.pdf>]
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\admitance_step.tex
+) (C:\Users\Vaio\Documents\GitHub\Diploma\Slike\admitance_step.tex
 Package epstopdf Info: Source file: <./Slike/figure_0_hz_100dt.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:17
 (epstopdf)                    size: 104409 bytes
 (epstopdf)             Output file: <./Slike/figure_0_hz_100dt-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:17
 (epstopdf)                    size: 7610 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/figure_0_hz_100dt-e
 ps-converted-to.pdf ./Slike/figure_0_hz_100dt.eps>
 (epstopdf)             \includegraphics on input line 27.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/figure_0_hz_100dt-eps-converted-to.pdf, id=389, 511.9125pt x 194.7275p
+<./Slike/figure_0_hz_100dt-eps-converted-to.pdf, id=368, 511.9125pt x 194.7275p
 t>
 File: ./Slike/figure_0_hz_100dt-eps-converted-to.pdf Graphic file (type pdf)
  <use ./Slike/figure_0_hz_100dt-eps-converted-to.pdf>
@@ -1757,54 +1710,64 @@ Package pdftex.def Info: ./Slike/figure_0_hz_100dt-eps-converted-to.pdf used on
  input line 27.
 (pdftex.def)             Requested size: 255.95563pt x 97.3635pt.
 Package epstopdf Info: Source file: <./Slike/figure_0_hz_5.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:17
 (epstopdf)                    size: 129575 bytes
 (epstopdf)             Output file: <./Slike/figure_0_hz_5-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:17
 (epstopdf)                    size: 11253 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/figure_0_hz_5-eps-c
 onverted-to.pdf ./Slike/figure_0_hz_5.eps>
 (epstopdf)             \includegraphics on input line 31.
 Package epstopdf Info: Output file is already uptodate.
 
-<./Slike/figure_0_hz_5-eps-converted-to.pdf, id=390, 502.87875pt x 194.7275pt>
+<./Slike/figure_0_hz_5-eps-converted-to.pdf, id=369, 502.87875pt x 194.7275pt>
 File: ./Slike/figure_0_hz_5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/figure_0_hz_5-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/figure_0_hz_5-eps-converted-to.pdf used on inp
 ut line 31.
 (pdftex.def)             Requested size: 251.43875pt x 97.3635pt.
-)
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[53 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/pa10jr3.png> <C:/Users/H
-rabiaMol/Documents/GitHub/Diploma/Slike/admitance_control.png>]
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Tabele\grav_params.tex
+[52 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/follow_ramp_100hz_vel_err-eps
+-converted-to.pdf> <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/follow_ramp_50
+0hz_vel_err-eps-converted-to.pdf>])
+Overfull \hbox (2.61108pt too wide) has occurred while \output is active
+[] 
+ []
+
+[53 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/pa10jr3.png> <C:/Users/Vaio/D
+ocuments/GitHub/Diploma/Slike/admitance_control.png>]
+(C:\Users\Vaio\Documents\GitHub\Diploma\Tabele\grav_params.tex
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 1.
 
 )
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[54 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/figure_0_hz_100dt-eps-co
-nverted-to.pdf> <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/figure_0_hz_
-5-eps-converted-to.pdf>]
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\friction_measure.tex
+[54 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/figure_0_hz_100dt-eps-convert
+ed-to.pdf> <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/figure_0_hz_5-eps-conv
+erted-to.pdf>]
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\friction_measure.tex
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 2.
 
 Package epstopdf Info: Source file: <./Slike/mesTorque1.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 230021 bytes
 (epstopdf)             Output file: <./Slike/mesTorque1-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 48067 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/mesTorque1-eps-conv
 erted-to.pdf ./Slike/mesTorque1.eps>
@@ -1818,10 +1781,10 @@ Package pdftex.def Info: ./Slike/mesTorque1-eps-converted-to.pdf used on input
 line 6.
 (pdftex.def)             Requested size: 151.16591pt x 120.45091pt.
 Package epstopdf Info: Source file: <./Slike/mesTorque2.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 276511 bytes
 (epstopdf)             Output file: <./Slike/mesTorque2-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 56185 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/mesTorque2-eps-conv
 erted-to.pdf ./Slike/mesTorque2.eps>
@@ -1836,10 +1799,10 @@ Package pdftex.def Info: ./Slike/mesTorque2-eps-converted-to.pdf used on input
 line 10.
 (pdftex.def)             Requested size: 151.16591pt x 120.45091pt.
 Package epstopdf Info: Source file: <./Slike/mesTorque3.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 229671 bytes
 (epstopdf)             Output file: <./Slike/mesTorque3-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 46502 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/mesTorque3-eps-conv
 erted-to.pdf ./Slike/mesTorque3.eps>
@@ -1854,10 +1817,10 @@ Package pdftex.def Info: ./Slike/mesTorque3-eps-converted-to.pdf used on input
 line 13.
 (pdftex.def)             Requested size: 156.28508pt x 122.85994pt.
 Package epstopdf Info: Source file: <./Slike/mesTorque4.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 229057 bytes
 (epstopdf)             Output file: <./Slike/mesTorque4-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 47574 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/mesTorque4-eps-conv
 erted-to.pdf ./Slike/mesTorque4.eps>
@@ -1872,10 +1835,10 @@ Package pdftex.def Info: ./Slike/mesTorque4-eps-converted-to.pdf used on input
 line 16.
 (pdftex.def)             Requested size: 156.28508pt x 120.45091pt.
 Package epstopdf Info: Source file: <./Slike/mesTorque5.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 230519 bytes
 (epstopdf)             Output file: <./Slike/mesTorque5-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 45048 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/mesTorque5-eps-conv
 erted-to.pdf ./Slike/mesTorque5.eps>
@@ -1890,11 +1853,11 @@ Package pdftex.def Info: ./Slike/mesTorque5-eps-converted-to.pdf used on input
 line 19.
 (pdftex.def)             Requested size: 157.18846pt x 120.45091pt.
 Package epstopdf Info: Source file: <./Slike/mesTorque6.eps>
-(epstopdf)                    date: 2015-09-02 22:53:18
+(epstopdf)                    date: 2015-09-06 10:58:19
 (epstopdf)                    size: 230711 bytes
 (epstopdf)             Output file: <./Slike/mesTorque6-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-02 23:34:26
-(epstopdf)                    size: 45613 bytes
+(epstopdf)                    date: 2015-09-06 11:40:35
+(epstopdf)                    size: 45624 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/mesTorque6-eps-conv
 erted-to.pdf ./Slike/mesTorque6.eps>
 (epstopdf)             \includegraphics on input line 22.
@@ -1908,10 +1871,10 @@ Package pdftex.def Info: ./Slike/mesTorque6-eps-converted-to.pdf used on input
 line 22.
 (pdftex.def)             Requested size: 157.18846pt x 120.45091pt.
 Package epstopdf Info: Source file: <./Slike/mesTorque7.eps>
-(epstopdf)                    date: 2015-09-02 22:53:18
+(epstopdf)                    date: 2015-09-06 10:58:19
 (epstopdf)                    size: 171568 bytes
 (epstopdf)             Output file: <./Slike/mesTorque7-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:18
+(epstopdf)                    date: 2015-09-06 10:58:19
 (epstopdf)                    size: 29622 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/mesTorque7-eps-conv
 erted-to.pdf ./Slike/mesTorque7.eps>
@@ -1929,18 +1892,18 @@ line 25.
 
 LaTeX Warning: Float too large for page by 10.45262pt on input line 29.
 
-) (C:\Users\HrabiaMol\Documents\GitHub\Diploma\Tabele\friction_params.tex
+) (C:\Users\Vaio\Documents\GitHub\Diploma\Tabele\friction_params.tex
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 1.
 
-) (C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\torque_follow_step.tex
+) (C:\Users\Vaio\Documents\GitHub\Diploma\Slike\torque_follow_step.tex
 Package epstopdf Info: Source file: <./Slike/follow_step_100hz_tq.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 231690 bytes
 (epstopdf)             Output file: <./Slike/follow_step_100hz_tq-eps-converted
 -to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 12843 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/follow_step_100hz_t
 q-eps-converted-to.pdf ./Slike/follow_step_100hz_tq.eps>
@@ -1956,11 +1919,11 @@ Package pdftex.def Info: ./Slike/follow_step_100hz_tq-eps-converted-to.pdf used
  on input line 6.
 (pdftex.def)             Requested size: 254.45pt x 202.75699pt.
 Package epstopdf Info: Source file: <./Slike/follow_step_500hz_tq.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 548706 bytes
 (epstopdf)             Output file: <./Slike/follow_step_500hz_tq-eps-converted
 -to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 86388 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/follow_step_500hz_t
 q-eps-converted-to.pdf ./Slike/follow_step_500hz_tq.eps>
@@ -1976,7 +1939,7 @@ Package pdftex.def Info: ./Slike/follow_step_500hz_tq-eps-converted-to.pdf used
  on input line 10.
 (pdftex.def)             Requested size: 254.95187pt x 203.76074pt.
 )
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\notranje_koordinate_tq.tex
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\notranje_koordinate_tq.tex
 <./Slike/notranje_koordinate_tq.png, id=429, 1261.71375pt x 405.01312pt>
 File: ./Slike/notranje_koordinate_tq.png Graphic file (type png)
 
@@ -1994,33 +1957,33 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[56 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/mesTorque1-eps-converted
--to.pdf> <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/mesTorque2-eps-conv
-erted-to.pdf> <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/mesTorque3-eps
--converted-to.pdf> <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/mesTorque
-4-eps-converted-to.pdf> <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/mesT
-orque5-eps-converted-to.pdf> <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike
-/mesTorque6-eps-converted-to.pdf> <C:/Users/HrabiaMol/Documents/GitHub/Diploma/
-Slike/mesTorque7-eps-converted-to.pdf>]
+[56 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/mesTorque1-eps-converted-to.p
+df> <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/mesTorque2-eps-converted-to.p
+df> <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/mesTorque3-eps-converted-to.p
+df> <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/mesTorque4-eps-converted-to.p
+df> <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/mesTorque5-eps-converted-to.p
+df> <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/mesTorque6-eps-converted-to.p
+df> <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/mesTorque7-eps-converted-to.p
+df>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[57 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/follow_step_100hz_tq-eps
--converted-to.pdf> <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/follow_st
-ep_500hz_tq-eps-converted-to.pdf>]
+[57 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/follow_step_100hz_tq-eps-conv
+erted-to.pdf> <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/follow_step_500hz_t
+q-eps-converted-to.pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[58 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/notranje_koordinate_tq.p
-ng>] (C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\follow_ramp_tq.tex
+[58 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/notranje_koordinate_tq.png>]
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\follow_ramp_tq.tex
 Package epstopdf Info: Source file: <./Slike/follow_ramp_100hz_tq_err.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:17
 (epstopdf)                    size: 223036 bytes
 (epstopdf)             Output file: <./Slike/follow_ramp_100hz_tq_err-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:17
 (epstopdf)                    size: 16082 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/follow_ramp_100hz_t
 q_err-eps-converted-to.pdf ./Slike/follow_ramp_100hz_tq_err.eps>
@@ -2036,11 +1999,11 @@ Package pdftex.def Info: ./Slike/follow_ramp_100hz_tq_err-eps-converted-to.pdf
 used on input line 6.
 (pdftex.def)             Requested size: 254.95187pt x 92.84665pt.
 Package epstopdf Info: Source file: <./Slike/follow_ramp_500hz_tq_err.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:17
 (epstopdf)                    size: 402848 bytes
 (epstopdf)             Output file: <./Slike/follow_ramp_500hz_tq_err-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:17
 (epstopdf)                    size: 49667 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/follow_ramp_500hz_t
 q_err-eps-converted-to.pdf ./Slike/follow_ramp_500hz_tq_err.eps>
@@ -2056,7 +2019,7 @@ Package pdftex.def Info: ./Slike/follow_ramp_500hz_tq_err-eps-converted-to.pdf
 used on input line 10.
 (pdftex.def)             Requested size: 254.45pt x 92.84665pt.
 )
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\zunanje_koordinate_tq.tex
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\zunanje_koordinate_tq.tex
 <./Slike/zunanje_koordinate_tq.png, id=504, 1373.13pt x 624.83438pt>
 File: ./Slike/zunanje_koordinate_tq.png Graphic file (type png)
 
@@ -2072,10 +2035,10 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[59 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/follow_ramp_100hz_tq_err
--eps-converted-to.pdf> <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/follo
-w_ramp_500hz_tq_err-eps-converted-to.pdf>]
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\impedance_control.tex
+[59 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/follow_ramp_100hz_tq_err-eps-
+converted-to.pdf> <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/follow_ramp_500
+hz_tq_err-eps-converted-to.pdf>]
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\impedance_control.tex
 <./Slike/impedance_control.png, id=527, 1416.79312pt x 591.71063pt>
 File: ./Slike/impedance_control.png Graphic file (type png)
 
@@ -2086,13 +2049,13 @@ Package pdftex.def Info: ./Slike/impedance_control.png used on input line 3.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\impedance_step.tex
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\impedance_step.tex
 Package epstopdf Info: Source file: <./Slike/follow_step_impedance.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 131597 bytes
 (epstopdf)             Output file: <./Slike/follow_step_impedance-eps-converte
 d-to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 12062 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/follow_step_impedan
 ce-eps-converted-to.pdf ./Slike/follow_step_impedance.eps>
@@ -2112,14 +2075,14 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[60 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/zunanje_koordinate_tq.pn
-g>] (C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\follow_step_vel_zoom.tex
+[60 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/zunanje_koordinate_tq.png>]
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\follow_step_vel_zoom.tex
 Package epstopdf Info: Source file: <./Slike/follow_step_vel_zoom.eps>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 101168 bytes
 (epstopdf)             Output file: <./Slike/follow_step_vel_zoom-eps-converted
 -to.pdf>
-(epstopdf)                    date: 2015-09-02 22:53:17
+(epstopdf)                    date: 2015-09-06 10:58:18
 (epstopdf)                    size: 5564 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/follow_step_vel_zoo
 m-eps-converted-to.pdf ./Slike/follow_step_vel_zoom.eps>
@@ -2139,15 +2102,15 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[61 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/impedance_control.png> <
-C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/follow_step_impedance-eps-con
-verted-to.pdf>]
+[61 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/impedance_control.png> <C:/Us
+ers/Vaio/Documents/GitHub/Diploma/Slike/follow_step_impedance-eps-converted-to.
+pdf>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[62 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/follow_step_vel_zoom-eps
--converted-to.pdf>]
+[62 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/follow_step_vel_zoom-eps-conv
+erted-to.pdf>]
   6.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2155,7 +2118,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [63
 
 ]
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\magistrska_timotej_gaspar.bbl
+(C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.bbl
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -2206,14 +2169,14 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 
 ]
   A.
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\jr3_calibration.tex
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\jr3_calibration.tex
 <./Slike/jr3_calibration.png, id=578, 202.50656pt x 345.54094pt>
 File: ./Slike/jr3_calibration.png Graphic file (type png)
 
 <use ./Slike/jr3_calibration.png>
 Package pdftex.def Info: ./Slike/jr3_calibration.png used on input line 3.
 (pdftex.def)             Requested size: 101.25302pt x 172.77003pt.
-) [71 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/jr3_calibration.png>]
+) [71 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/jr3_calibration.png>]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -2223,15 +2186,15 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 ]
   B.
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <14.4> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 1123.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 1121.
 
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\simulink-pa-10.tex
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\simulink-pa-10.tex
 Package epstopdf Info: Source file: <./Slike/simulink-pa-10.eps>
-(epstopdf)                    date: 2015-09-02 22:53:18
+(epstopdf)                    date: 2015-09-06 10:58:19
 (epstopdf)                    size: 78974 bytes
 (epstopdf)             Output file: <./Slike/simulink-pa-10-eps-converted-to.pd
 f>
-(epstopdf)                    date: 2015-09-02 22:53:18
+(epstopdf)                    date: 2015-09-06 10:58:19
 (epstopdf)                    size: 7263 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/simulink-pa-10-eps-
 converted-to.pdf ./Slike/simulink-pa-10.eps>
@@ -2245,9 +2208,9 @@ File: ./Slike/simulink-pa-10-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./Slike/simulink-pa-10-eps-converted-to.pdf used on in
 put line 3.
 (pdftex.def)             Requested size: 87.32603pt x 92.34476pt.
-) [73 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/simulink-pa-10-eps-con
-verted-to.pdf>]
-(C:\Users\HrabiaMol\Documents\GitHub\Diploma\Slike\simulink-pa-10-inside.tex
+) [73 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/simulink-pa-10-eps-converte
+d-to.pdf>]
+(C:\Users\Vaio\Documents\GitHub\Diploma\Slike\simulink-pa-10-inside.tex
 <./Slike/simulink-pa-10-inside.png, id=598, 1412.27625pt x 393.72093pt>
 File: ./Slike/simulink-pa-10-inside.png Graphic file (type png)
 
@@ -2257,49 +2220,47 @@ Package pdftex.def Info: ./Slike/simulink-pa-10-inside.png used on input line 3
 (pdftex.def)             Requested size: 282.45024pt x 78.74278pt.
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/sl' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1161.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1159.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
 
-[74 <C:/Users/HrabiaMol/Documents/GitHub/Diploma/Slike/simulink-pa-10-inside.pn
-g>] (C:\Users\HrabiaMol\Documents\GitHub\Diploma\magistrska_timotej_gaspar.aux)
- ) 
+[74 <C:/Users/Vaio/Documents/GitHub/Diploma/Slike/simulink-pa-10-inside.png>]
+(C:\Users\Vaio\Documents\GitHub\Diploma\magistrska_timotej_gaspar.aux) ) 
 Here is how much of TeX's memory you used:
- 19548 strings out of 493921
- 393551 string characters out of 3144864
- 495359 words of memory out of 3000000
- 22238 multiletter control sequences out of 15000+200000
- 18926 words of font info for 70 fonts, out of 3000000 for 9000
+ 17542 strings out of 493921
+ 334461 string characters out of 3147285
+ 456466 words of memory out of 3000000
+ 20246 multiletter control sequences out of 15000+200000
+ 18902 words of font info for 70 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 55i,17n,67p,3304b,718s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmbsy8.
-pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx6.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (88 pages, 6589777 bytes).
+ 56i,17n,63p,3304b,691s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmbx6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl12.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmtt12.pfb>
+Output written on magistrska_timotej_gaspar.pdf (88 pages, 6597952 bytes).
 PDF statistics:
  679 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

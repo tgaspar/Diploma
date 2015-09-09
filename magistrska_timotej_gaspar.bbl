@@ -15,7 +15,7 @@ Mitsubishi Heavy Industries, {\em Portable General Purpose Intelligent Arm -
 \newblock [Dostopano: 13. 8. 2015].
 
 \bibitem{mhi_pa10}
-M.~H.~I. Ltd., ``Mitsubishi clean room robot,'' {\em Seminarska naloga}, 2003.
+M.~H.~I. Ltd., ``Mitsubishi clean room robot,'' 2003.
 
 \bibitem{craig_robintro}
 J.~J. Craig, {\em Introduction to Robotics}.
@@ -42,11 +42,11 @@ J.~Lenar\v{c}i\v{c} in T.~Bajd, {\em Robotski mehanizmi}.
 \newblock Ljubljana: Univerza v Ljubljani, Zalo{\v{z}}ba FE in FRI, 2003.
 
 \bibitem{mihelj_hapt}
-M.~Mihelj, {\em Hapti?ni roboti}.
+M.~Mihelj, {\em Hapti\v{c}ni roboti}.
 \newblock Ljubljana: Univerza v Ljubljani, Zalo{\v{z}}ba FE in FRI, 2007.
 
 \bibitem{miljavec_stroji}
-D.~Miljavec in P.~Jereb, {\em Elektri?ni stroji: temeljna znanja}.
+D.~Miljavec in P.~Jereb, {\em Elektri\v{c}ni stroji: temeljna znanja}.
 \newblock Ljubljana: Univerza v Ljubljani, Zalo{\v{z}}ba FE in FRI, 2008.
 
 \bibitem{arc_tutorial}
@@ -67,9 +67,9 @@ R.~V. Aroca in G.~Cauri, ``A real time operating systems (rtos) comparison,''
   {\em XXIX Congresso da Sociedade Brasileira de Computação}, 2009.
 
 \bibitem{omrcen_jr3}
-D.~Omr?en in B.~Nemec, ``Meritev gibanja kolena z industrijskim robotom -
-  avtomatska kompenzacija gravitacije prijemala,'' {\em Strojni?ki vestnik},
-  str.~87 -- 97, 2002.
+D.~Omr\v{c}en in B.~Nemec, ``Meritev gibanja kolena z industrijskim robotom -
+  avtomatska kompenzacija gravitacije prijemala,'' {\em Strojni\v{c}ki
+  vestnik}, str.~87 -- 97, 2002.
 
 \bibitem{zupancic_tr}
 B.~Zupan\v{c}i\v{c}, {\em Teorija regulacij}.

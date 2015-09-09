@@ -31,7 +31,7 @@
 \delo{Magistrsko delo}
 \date{Ljubljana, 2015}
 \mentor{prof. dr. Matjaž Mihelj}
-\somentor{dr. Leon Žlajpah}
+\somentor{doc. dr. Leon Žlajpah}
 \begin{document}
 
 %------------------------ ZAÈETNI DEL -----------------------------------
@@ -88,9 +88,8 @@ matrika homogenih transformacij & $\mathbf{T}$  & - & - \\
 rotacijska matrika & $\mathbf{R}$  & - & - \\
 matrika vztrajnosti & $\mathbf{B}$  & - & - \\
 matrika Coriolisovih in centripetalnih silah & $\mathbf{C}$  & - & - \\
-vektor gravitacijskih prispevkov & $\mathbf{g}$  & - & - \\
+vektor gravitacijskih prispevkov & $\mathbf{g}$  & - & $ \frac{m}{s^2} $ \\
 vektor prispevkov trenja & $\mathbf{F}_f$  & Newton meter & Nm \\
-jacobijeva matrika & $\mathbf{J}$  & - & - \\
 vektor sil in navorov & $\mathbf{h}$  & - & - \\
 proporcionalno ojaèanje & $K_P$  & - & - \\
 diferencirno ojaèanje & $K_D$  & - & - \\
@@ -132,12 +131,11 @@ Vodenje na višjem nivoju smo realizirali v okolju \matsim. Razvili smo \simulink
 %*************************** POVZETEK V ANGLEŠÈINI ***********************
 \abstract
 
-For this thesis the authors have developed a server that enables the control of Mitsubishi PA-10 robot via Ethernet network using UDP package protokol. The server acts like a man in the middle for a UDP client and ARCNET 
-servo controller of the PA-10 robot. The server works in real time with sample frequency of 500 Hz. The server allows robot control with input velocities or torques which gives the user the reedom of implementing different robot control strategies.
+The thesis presents a server developed for the purpose of controlling the robot Mitsubishi PA-10 via Ethernet by sending UDP packets. The server acts as middleware between the UDP client and the ARCNET robot controller of the servomotors of the PA-10 robot. It works in real time with a sample frequency of 500Hz. It also allows to control the robot through the internal speed or torque regulator, which gives the users freedom to implement various control strategies.
 
-Different control strateges for robot control were presented. We made experiments in velocities and toqrque modes for joint and task space controllers. We also experimented on robot control in contact with enviroment. The experiments showed better resoults in velocity mode as the control is not dependent on dynamic parameters. The toqrue control was implemented with the use dynamic model. The absensce of precise dynamic model parameters lead to unprecise responses in torque mode control.
+The thesis presents the use of various robot control strategies. Experiments with velocity and torque control modes have been made in joint and task space.  Additional experiments also showed the possibility to control the robot in contact with the environment. The results of the experiments showed that the velocity control works better as it is not as dependent on the robot's dynamic parameters as the torque control mode which was implemented with the use of the dynamic model. But due to the probably imprecise dynamic model parameters used for the realization of the different torque mode controls the results of these are not as satisfactory.
 
-Higher level control was developed with \matsim program. We developed a \simulink block for communication with the developed server to allow future user easier use.
+Higher level control was developed in \matsim programme. We developed a \simulink block for communication with the developed server which gives future users easier ways to implement control algorithms.
 
 \keywords PA-10, inverse kinematics, inverse dynamics, robot control, redundant mechanisms, impendance control, admitance control, ARCNET-UDP server 
 
@@ -968,7 +966,7 @@ Shema takega vodenja je prikazana na sliki \ref{fig:impedance_control}.
 \begin{figure}[!h]
 	\centering
 	\scalebox{.6}{\input{./BlockDiagrams/impendance_control.tex}}
-	\caption{}
+	\caption{Bloèna shema impedanènega vodenja}
 	\label{fig:impedance_control}
 \end{figure}
 
@@ -1087,10 +1085,10 @@ Tako kot pri admitanènem vodenju smo tudi pri impedanènem vodenju napravili posk
 
 \section{Analiza rezultatov}
 
-Poskusi, ki so temeljili na razliènih naèinih vodenja so nam pokazali lastnosti razvitega strežnika, kvaliteto regulacijskih shem ter kvaliteto uporabljenega dinamiènega modela. Pomembna lastnost strežnika, ki deluje v korist vodenju, je visoka vzorèna frekvenca, kar omogoèa veèja ojaèanja ter hitrejše odzive. Pomembno pa je tudi opozoriti na zakasnitev v komunikaciji med klientom ter strežnikom, ki pa slabša kvaliteto vodenja. Mrtvi èas je prikazan na sliki \ref{fig:follow_step_vel_zoom}. Zakasnitev v komunikaciji med klientom in strežnikom je 0.008 s kar predstavlja 4 vzorce. Razlog za zakasnitev je lahko uporabljeno stikalo (\textit{ang. switch}) v mreži ali pa delovanje klienta. Pri hitrostnem vodenju brez kontakta okolice ta zakasnitev ne predstavlja veèjih težav v stabilnosti. Pri vodenju z okolico ter na podlagi inverzne dinamike pa jo. Zakasnitev se bo v nadaljnjem delu poskušalo odpraviti.
+Poskusi, ki so temeljili na razliènih naèinih vodenja so nam pokazali lastnosti razvitega strežnika, kvaliteto regulacijskih shem ter kvaliteto uporabljenega dinamiènega modela. Pomembna lastnost strežnika, ki deluje v korist vodenju, je visoka vzorèna frekvenca, kar omogoèa veèja ojaèanja ter hitrejše odzive. Pomembno pa je tudi opozoriti na zakasnitev v komunikaciji med klientom ter strežnikom, ki pa slabša kvaliteto vodenja. Mrtvi èas je lahko viden na sliki \ref{fig:follow_step_vel_zoom}. Zakasnitev v komunikaciji med klientom in strežnikom je 0.008 s kar predstavlja 4 vzorce. Razlog za zakasnitev je lahko uporabljeno stikalo (\textit{ang. switch}) v mreži ali pa delovanje klienta. Pri hitrostnem vodenju brez kontakta okolice ta zakasnitev ne predstavlja veèjih težav v stabilnosti. Pri vodenju z okolico ter na podlagi inverzne dinamike pa jo. Zakasnitev se bo v nadaljnjem delu poskušalo odpraviti.
 \input{./Slike/follow_step_vel_zoom.tex}
 
-Pri vodenju z uporabo inverzne dinamike pa bo potrebno razviti oz. doloèiti dinamièni model in njegove parametre bolj natanèno. Najveèji poudarek bo na èlenih matrik vztrajnosti ter kompenzaciji trenja. Vztrajnost vpliva na kvaliteto vodenja ko nastopijo veèji pospeški, kompenzacija trenja pa takrat, ko želimo robota voditi z nizko hitrostjo. Hkrati pa je potrebno tudi opozoriti na problem signala hitrosti, ki ga krmilnik motorjev sam po sebi ne vraèa in ga je zato potrebno izraèunati. V delu smo uporabili Kalmanov filter, saj bi odvod kota bil preveè ošumljen in bi to slabo vplivalo na vodenje. Z uporabo Kalmanovega filtra na klientovi strani smo uporabili že tako zakasnjen signal pozicije sklepov za izraèun kotne hitrosti, kar pomeni, da je bil signal hitrosti še dodatno zakasnjen, kar tudi slabo vpliva na kakovost vodenja. V nadaljnjem delu bi bilo potrebno implementirati dober izraèun hitrosti že na samem strežniku.
+Pri vodenju z uporabo inverzne dinamike pa bo potrebno razviti oz. doloèiti dinamièni model in njegove parametre bolj natanèno. Najveèji poudarek bo na èlenih matrik vztrajnosti ter kompenzaciji trenja. Vztrajnost vpliva na kvaliteto vodenja, ko nastopijo veèji pospeški, kompenzacija trenja pa takrat, ko želimo robota voditi z nizko hitrostjo. Hkrati pa je potrebno tudi opozoriti na problem signala hitrosti, ki ga krmilnik motorjev sam po sebi ne vraèa in ga je zato potrebno izraèunati. V delu smo uporabili Kalmanov filter, saj bi odvod kota bil preveè ošumljen in bi to slabo vplivalo na vodenje. Z uporabo Kalmanovega filtra na klientovi strani smo uporabili že tako zakasnjen signal pozicije sklepov za izraèun kotne hitrosti, kar pomeni, da je bil signal hitrosti še dodatno zakasnjen, kar tudi slabo vpliva na kakovost vodenja. V nadaljnjem delu bi bilo potrebno implementirati dober izraèun hitrosti že na samem strežniku.
 
 %*********************** ZAKLJUÈEK ********************************
 \chapter{Zakljuèek} \label{chap:zakljucek}
@@ -1115,7 +1113,7 @@ Nadaljnje delo predvideva razviti dinamièen model z izboljšanimi parametri za bo
 \appendix
 \chapter{Avtomatska identifikacija parametrov teže prijemala} \label{appendix:jr3-calibration}
 
-Program za identifikacijo prijemala je nastal v okolju \matlab in se ga uporablja preko vmesnika, ki je na sliki \ref{fig:jr3_calibration}. Program deluje tako, da robota najprej spravi v izhodišèno konfiguracijo sklepov in nato zaène obraèati 5. in 6. sklep. Program postavi prijemalo v tri razliène orientacije, ki so med seboj ortogonalne. Vsako lego drži vsaj toliko èasa, dokler ne dobi zadostnega števila odèitkov iz senzorja. Ko opravi meritve v treh razliènih legah izraèuna parametre prijemala za kompenzacijo njegove teže ter merilni odmik senzorja. 
+Program za identifikacijo prijemala je nastal v okolju \matlab in se ga uporablja preko vmesnika, ki je na sliki \ref{fig:jr3_calibration}. Program deluje tako, da robota najprej spravi v izhodišèno konfiguracijo sklepov in nato zaène obraèati 5. in 6. sklep. Program postavi prijemalo v tri razliène orientacije, ki so med seboj ortogonalne. Vsako lego drži vsaj toliko èasa, dokler ne dobi zadostnega števila odèitkov iz senzorja. Ko opravi meritve v treh razliènih legah, izraèuna parametre prijemala za kompenzacijo njegove teže ter merilni odmik senzorja. 
 
 \input{./Slike/jr3_calibration.tex}
 
@@ -1130,7 +1128,7 @@ Simulink knjižnica, ki je nastala za uporabljanje robota PA-10 v \matsim je prik
 	\item referenène hitrosti sklepov,
 	\item dodatni/rezervirani bajti.
 \end{itemize}
-Za izbrati hitrostni naèin vodenja, moramo na prvi vhod dati vrednost $ 0 $, za navorni naèin pa vrednost $ 1 $. Ta signal se lahko spremeni sproti med delovanjem programa. Vhoda za referenène navore ter hitrosti sprejmeta podatke v obliki vektorja s sedmimi elementi, za vsak sklep posebej. Dodatni bajti zaenkrat še niso v uporabi, vendar se lahko strežnik po potrebi prilagodi.
+Za izbran hitrostni naèin vodenja moramo na prvi vhod dati vrednost $ 0 $, za navorni naèin pa vrednost $ 1 $. Ta signal se lahko spremeni sproti med delovanjem programa. Vhoda za referenène navore ter hitrosti sprejmeta podatke v obliki vektorja s sedmimi elementi, za vsak sklep posebej. Dodatni bajti zaenkrat še niso v uporabi, vendar se lahko strežnik po potrebi prilagodi.
 
 Izhodi po vrsti pa so 
 \begin{itemize}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  9 SEP 2015 15:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  9 SEP 2015 15:57
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -804,7 +804,12 @@ Package xypdf Info: Line width: 0.47998pt on input line 35.
 
 
 {C:/Users/Timotej Gašpar/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [
-2] [3
+2]
+Underfull \hbox (badness 10000) in paragraph at lines 49--51
+
+ []
+
+[3
 
 ]
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -870,7 +875,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 ] (magistrska_timotej_gaspar.lof)
 \tf@lof=\write8
 
-Overfull \hbox (20.76576pt too wide) in paragraph at lines 71--104
+Overfull \hbox (20.76576pt too wide) in paragraph at lines 70--103
  [][] 
  []
 
@@ -948,7 +953,7 @@ Package pdftex.def Info: ./Slike/d-h_drawing-eps-converted-to.pdf used on input
 (pdftex.def)             Requested size: 418.56273pt x 246.16908pt.
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 189.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 188.
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -982,7 +987,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [12]
-Underfull \hbox (badness 1515) in paragraph at lines 361--362
+Underfull \hbox (badness 1515) in paragraph at lines 360--361
 []\OT1/cmr/m/n/12 Vektor $[][]$ vse-buje sile in na-vore, ki de-lu-jejo na vrh 
 ro-bota, $[][] =$
  []
@@ -1096,14 +1101,14 @@ Package epstopdf Info: Source file: <./Slike/little-arrow.eps>
 (epstopdf)                    size: 2653 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/little-arrow-eps-co
 nverted-to.pdf ./Slike/little-arrow.eps>
-(epstopdf)             \includegraphics on input line 456.
+(epstopdf)             \includegraphics on input line 455.
 Package epstopdf Info: Output file is already uptodate.
 <./Slike/little-arrow-eps-converted-to.pdf, id=147, 21.07875pt x 20.075pt>
 File: ./Slike/little-arrow-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/little-arrow-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/little-arrow-eps-converted-to.pdf used on inpu
-t line 456.
+t line 455.
 (pdftex.def)             Requested size: 12.64732pt x 12.04507pt.
  (Slike/pa10-state.tex
 Package epstopdf Info: Source file: <./Slike/pa10-state.eps>
@@ -2258,7 +2263,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 ]
   B.
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <14.4> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 1120.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 1119.
 
 (Slike/simulink-pa-10.tex
 Package epstopdf Info: Source file: <./Slike/simulink-pa-10.eps>
@@ -2308,7 +2313,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/sl' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1158.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1157.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -2351,7 +2356,7 @@ type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public
 cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:
 /Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Fil
 es/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (91 pages, 6197016 bytes).
+Output written on magistrska_timotej_gaspar.pdf (91 pages, 6197000 bytes).
 PDF statistics:
  742 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

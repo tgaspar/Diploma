@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  9 SEP 2015 15:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.18)  9 SEP 2015 16:20
 entering extended mode
 **magistrska_timotej_gaspar.tex
 (magistrska_timotej_gaspar.tex
@@ -668,6 +668,12 @@ G,.JBIG2,.JB2,.eps]
 \yyydec=\count156
 \tmpcount=\count157
 )
+("C:\Program Files\MiKTeX\tex\latex\xmpincl\xmpincl.sty"
+Package: xmpincl 2008/05/10 v2.2 Include XMP data in pdflatex
+
+("C:\Program Files\MiKTeX\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+))
 (BlockDiagrams/tikzsettings.tex
 ("C:\Program Files\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibr
 aryshapes.code.tex"
@@ -759,18 +765,18 @@ File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.0 (rcs-revision 1.9)
 arypositioning.code.tex"
 File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
 )) (macros.tex) (magistrska_timotej_gaspar.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 
 ABD: EveryShipout initializing macros
 ("C:\Program Files\MiKTeX\tex\context\base\supp-pdf.mkii"
@@ -787,25 +793,25 @@ ABD: EveryShipout initializing macros
 \makeMPintoPDFobject=\count163
 \everyMPtoPDFconversion=\toks43
 )
-LaTeX Info: Redefining \celsius on input line 35.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 35.
+LaTeX Info: Redefining \celsius on input line 36.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 36.
 
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 35.
-Package gensymb Info: Using \Omega for \ohm on input line 35.
+LaTeX Info: Redefining \ohm on input line 36.
+Package gensymb Info: Using \Omega for \ohm on input line 36.
 
 Package gensymb Warning: Not defining \micro.
 
-Package xypdf Info: Line width: 0.47998pt on input line 35.
+Package xypdf Info: Line width: 0.47998pt on input line 36.
 [1
 
 
 {C:/Users/Timotej Gašpar/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [
 2]
-Underfull \hbox (badness 10000) in paragraph at lines 49--51
+Underfull \hbox (badness 10000) in paragraph at lines 50--52
 
  []
 
@@ -875,7 +881,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 ] (magistrska_timotej_gaspar.lof)
 \tf@lof=\write8
 
-Overfull \hbox (20.76576pt too wide) in paragraph at lines 70--103
+Overfull \hbox (20.76576pt too wide) in paragraph at lines 71--104
  [][] 
  []
 
@@ -953,7 +959,7 @@ Package pdftex.def Info: ./Slike/d-h_drawing-eps-converted-to.pdf used on input
 (pdftex.def)             Requested size: 418.56273pt x 246.16908pt.
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 188.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 189.
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
@@ -987,7 +993,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
  []
 
 [12]
-Underfull \hbox (badness 1515) in paragraph at lines 360--361
+Underfull \hbox (badness 1515) in paragraph at lines 361--362
 []\OT1/cmr/m/n/12 Vektor $[][]$ vse-buje sile in na-vore, ki de-lu-jejo na vrh 
 ro-bota, $[][] =$
  []
@@ -1101,14 +1107,14 @@ Package epstopdf Info: Source file: <./Slike/little-arrow.eps>
 (epstopdf)                    size: 2653 bytes
 (epstopdf)             Command: <epstopdf --outfile=./Slike/little-arrow-eps-co
 nverted-to.pdf ./Slike/little-arrow.eps>
-(epstopdf)             \includegraphics on input line 455.
+(epstopdf)             \includegraphics on input line 456.
 Package epstopdf Info: Output file is already uptodate.
 <./Slike/little-arrow-eps-converted-to.pdf, id=147, 21.07875pt x 20.075pt>
 File: ./Slike/little-arrow-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./Slike/little-arrow-eps-converted-to.pdf>
 Package pdftex.def Info: ./Slike/little-arrow-eps-converted-to.pdf used on inpu
-t line 455.
+t line 456.
 (pdftex.def)             Requested size: 12.64732pt x 12.04507pt.
  (Slike/pa10-state.tex
 Package epstopdf Info: Source file: <./Slike/pa10-state.eps>
@@ -2263,7 +2269,7 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 ]
   B.
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <14.4> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 1119.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 1120.
 
 (Slike/simulink-pa-10.tex
 Package epstopdf Info: Source file: <./Slike/simulink-pa-10.eps>
@@ -2313,7 +2319,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/sl' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1157.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1158.
 
 
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
@@ -2328,10 +2334,10 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [77 <./Slike/simulink-pa-10-inside-eps-converted-to.pdf>]
 (magistrska_timotej_gaspar.aux) ) 
 Here is how much of TeX's memory you used:
- 19577 strings out of 493671
- 384981 string characters out of 3145458
- 501892 words of memory out of 3000000
- 22315 multiletter control sequences out of 15000+200000
+ 19636 strings out of 493671
+ 385786 string characters out of 3145458
+ 503086 words of memory out of 3000000
+ 22367 multiletter control sequences out of 15000+200000
  18926 words of font info for 70 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  55i,17n,67p,3304b,722s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2356,7 +2362,7 @@ type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public
 cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:
 /Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Fil
 es/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on magistrska_timotej_gaspar.pdf (91 pages, 6197000 bytes).
+Output written on magistrska_timotej_gaspar.pdf (91 pages, 6197001 bytes).
 PDF statistics:
  742 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
